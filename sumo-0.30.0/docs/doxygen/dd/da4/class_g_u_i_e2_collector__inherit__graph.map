@@ -1,0 +1,6 @@
+<map id="GUIE2Collector" name="GUIE2Collector">
+<area shape="rect" id="node2" href="$d1/de2/class_m_s_e2_collector.html" title="An areal detector corresponding to a sequence of consecutive lanes. " alt="" coords="138,579,385,3149"/>
+<area shape="rect" id="node3" href="$d2/da5/class_m_s_move_reminder.html" title="Something on a lane to be noticed about vehicle movement. " alt="" coords="5,204,253,531"/>
+<area shape="rect" id="node4" href="$d4/de2/class_m_s_detector_file_output.html" title="Base of value&#45;generating classes (detectors) " alt="" coords="278,241,509,494"/>
+<area shape="rect" id="node5" href="$d5/dbf/class_named.html" title="Base class for objects which have an id. " alt="" coords="335,5,452,156"/>
+</map>

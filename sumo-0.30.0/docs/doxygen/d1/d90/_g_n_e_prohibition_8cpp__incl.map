@@ -1,0 +1,35 @@
+<map id="GNEProhibition.cpp" name="GNEProhibition.cpp">
+<area shape="rect" id="node2" href="$db/d16/config_8h.html" title="config.h" alt="" coords="2390,512,2458,539"/>
+<area shape="rect" id="node7" href="$d6/dbe/polyfonts_8h.html" title="foreign/polyfonts/polyfonts.h" alt="" coords="4488,348,4675,375"/>
+<area shape="rect" id="node9" href="$da/d4c/_m_f_x_utils_8h.html" title="utils/foxtools/MFXUtils.h" alt="" coords="4291,266,4453,293"/>
+<area shape="rect" id="node11" href="$d3/d43/_position_vector_8h.html" title="utils/geom/PositionVector.h" alt="" coords="681,266,866,293"/>
+<area shape="rect" id="node17" href="$d8/d3a/_g_u_i_s_u_m_o_abstract_view_8h.html" title="utils/gui/windows/GUISUMOAbstract\lView.h" alt="" coords="2598,80,2837,121"/>
+<area shape="rect" id="node29" href="$d8/d08/_to_string_8h.html" title="utils/common/ToString.h" alt="" coords="1679,177,1846,203"/>
+<area shape="rect" id="node38" href="$d7/d72/_g_u_i_app_enum_8h.html" title="utils/gui/windows/GUIApp\lEnum.h" alt="" coords="4041,259,4215,300"/>
+<area shape="rect" id="node39" href="$d0/d53/_g_u_i_parameter_table_window_8h.html" title="utils/gui/div/GUIParameter\lTableWindow.h" alt="" coords="3012,169,3191,211"/>
+<area shape="rect" id="node42" href="$d9/ddc/_g_u_i_g_l_object_popup_menu_8h.html" title="utils/gui/globjects\l/GUIGLObjectPopupMenu.h" alt="" coords="3496,259,3683,300"/>
+<area shape="rect" id="node43" href="$dc/df0/_g_u_i_global_selection_8h.html" title="utils/gui/div/GUIGlobalSelection.h" alt="" coords="3917,177,4139,203"/>
+<area shape="rect" id="node45" href="$d9/d86/_g_l_helper_8h.html" title="utils/gui/div/GLHelper.h" alt="" coords="656,177,816,203"/>
+<area shape="rect" id="node46" href="$d3/d74/_g_l_includes_8h.html" title="utils/gui/globjects\l/GLIncludes.h" alt="" coords="2888,259,3013,300"/>
+<area shape="rect" id="node49" href="$d3/d6b/_g_n_e_prohibition_8h.html" title="GNEProhibition.h" alt="" coords="893,87,1016,114"/>
+<area shape="rect" id="node8" href="$d9/dd2/polyfonttypes_8h.html" title="polyfonttypes.h" alt="" coords="4539,430,4650,457"/>
+<area shape="rect" id="node14" href="$db/dd7/_abstract_poly_8h.html" title="AbstractPoly.h" alt="" coords="655,348,761,375"/>
+<area shape="rect" id="node15" href="$d4/d51/_position_8h.html" title="Position.h" alt="" coords="487,430,567,457"/>
+<area shape="rect" id="node20" href="$d4/de0/_m_f_x_mutex_8h.html" title="utils/foxtools/MFXMutex.h" alt="" coords="2427,266,2602,293"/>
+<area shape="rect" id="node22" href="$d9/df9/_boundary_8h.html" title="utils/geom/Boundary.h" alt="" coords="449,266,605,293"/>
+<area shape="rect" id="node23" href="$d8/d99/_r_g_b_color_8h.html" title="utils/common/RGBColor.h" alt="" coords="1921,266,2098,293"/>
+<area shape="rect" id="node25" href="$d4/d64/_s_u_m_o_time_8h.html" title="utils/common/SUMOTime.h" alt="" coords="2627,266,2813,293"/>
+<area shape="rect" id="node26" href="$da/d08/_polygon_8h.html" title="utils/shapes/Polygon.h" alt="" coords="2472,177,2629,203"/>
+<area shape="rect" id="node27" href="$db/dcf/_g_u_i_gl_object_types_8h.html" title="utils/gui/globjects\l/GUIGlObjectTypes.h" alt="" coords="3345,423,3495,464"/>
+<area shape="rect" id="node28" href="$db/d96/_s_u_m_o_r_tree_8h.html" title="foreign/rtree/SUMORTree.h" alt="" coords="2261,177,2448,203"/>
+<area shape="rect" id="node21" href="$da/dde/_abstract_mutex_8h.html" title="utils/common/AbstractMutex.h" alt="" coords="2189,430,2387,457"/>
+<area shape="rect" id="node24" href="$d7/db4/_util_exceptions_8h.html" title="utils/common/UtilExceptions.h" alt="" coords="2375,348,2574,375"/>
+<area shape="rect" id="node33" href="$d6/d7a/_s_u_m_o_x_m_l_definitions_8h.html" title="utils/xml/SUMOXMLDefinitions.h" alt="" coords="1287,348,1499,375"/>
+<area shape="rect" id="node34" href="$d2/d6d/_s_u_m_o_vehicle_class_8h.html" title="utils/common/SUMOVehicle\lClass.h" alt="" coords="1467,259,1656,300"/>
+<area shape="rect" id="node35" href="$de/d1a/_named_8h.html" title="utils/common/Named.h" alt="" coords="1753,348,1911,375"/>
+<area shape="rect" id="node36" href="$d7/d8d/_distribution___parameterized_8h.html" title="utils/distribution\l/Distribution_Parameterized.h" alt="" coords="1043,259,1240,300"/>
+<area shape="rect" id="node37" href="$da/dbd/_std_defs_8h.html" title="utils/common/StdDefs.h" alt="" coords="1987,348,2149,375"/>
+<area shape="rect" id="node41" href="$da/d78/_value_source_8h.html" title="utils/common/ValueSource.h" alt="" coords="3075,430,3269,457"/>
+<area shape="rect" id="node44" href="$d9/d1b/_g_u_i_selected_storage_8h.html" title="GUISelectedStorage.h" alt="" coords="3757,266,3915,293"/>
+<area shape="rect" id="node50" href="$d7/d4a/_g_n_e_net_element_8h.html" title="GNENetElement.h" alt="" coords="891,177,1019,203"/>
+</map>

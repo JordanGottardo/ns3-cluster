@@ -1,0 +1,36 @@
+<map id="PCLoaderXML.h" name="PCLoaderXML.h">
+<area shape="rect" id="node2" href="$db/d16/config_8h.html" title="config.h" alt="" coords="2927,856,2995,883"/>
+<area shape="rect" id="node4" href="$d9/db6/_p_c_poly_container_8h.html" title="PCPolyContainer.h" alt="" coords="3305,80,3441,107"/>
+<area shape="rect" id="node19" href="$d7/db4/_util_exceptions_8h.html" title="utils/common/UtilExceptions.h" alt="" coords="438,781,637,808"/>
+<area shape="rect" id="node43" href="$d6/d1a/_p_c_type_map_8h.html" title="PCTypeMap.h" alt="" coords="1213,617,1323,644"/>
+<area shape="rect" id="node44" href="$d7/d78/_shape_handler_8h.html" title="utils/shapes/ShapeHandler.h" alt="" coords="402,155,595,181"/>
+<area shape="rect" id="node7" href="$da/d08/_polygon_8h.html" title="utils/shapes/Polygon.h" alt="" coords="3625,535,3783,562"/>
+<area shape="rect" id="node21" href="$de/d0a/_point_of_interest_8h.html" title="utils/shapes/PointOfInterest.h" alt="" coords="3502,229,3695,256"/>
+<area shape="rect" id="node24" href="$d9/df9/_boundary_8h.html" title="utils/geom/Boundary.h" alt="" coords="4558,617,4714,644"/>
+<area shape="rect" id="node41" href="$d3/df9/_shape_container_8h.html" title="utils/shapes/ShapeContainer.h" alt="" coords="3090,155,3294,181"/>
+<area shape="rect" id="node8" href="$d3/d43/_position_vector_8h.html" title="utils/geom/PositionVector.h" alt="" coords="3614,617,3799,644"/>
+<area shape="rect" id="node14" href="$d9/d33/_parameterised_8h.html" title="utils/common/Parameterised.h" alt="" coords="3545,699,3749,726"/>
+<area shape="rect" id="node15" href="$da/d05/_shape_8h.html" title="Shape.h" alt="" coords="2374,617,2445,644"/>
+<area shape="rect" id="node10" href="$db/dd7/_abstract_poly_8h.html" title="AbstractPoly.h" alt="" coords="4331,699,4437,726"/>
+<area shape="rect" id="node11" href="$d4/d51/_position_8h.html" title="Position.h" alt="" coords="4613,781,4693,808"/>
+<area shape="rect" id="node16" href="$de/d1a/_named_8h.html" title="utils/common/Named.h" alt="" coords="2643,699,2802,726"/>
+<area shape="rect" id="node18" href="$d8/d99/_r_g_b_color_8h.html" title="utils/common/RGBColor.h" alt="" coords="1286,699,1463,726"/>
+<area shape="rect" id="node22" href="$de/dde/_string_utils_8h.html" title="utils/common/StringUtils.h" alt="" coords="813,781,987,808"/>
+<area shape="rect" id="node23" href="$d3/d6d/_geo_conv_helper_8h.html" title="utils/geom/GeoConvHelper.h" alt="" coords="4179,535,4375,562"/>
+<area shape="rect" id="node26" href="$d1/d3f/_output_device_8h.html" title="utils/iodevices/OutputDevice.h" alt="" coords="3201,304,3404,331"/>
+<area shape="rect" id="node27" href="$d8/d08/_to_string_8h.html" title="utils/common/ToString.h" alt="" coords="2566,453,2733,480"/>
+<area shape="rect" id="node31" href="$d6/d7a/_s_u_m_o_x_m_l_definitions_8h.html" title="utils/xml/SUMOXMLDefinitions.h" alt="" coords="2814,617,3026,644"/>
+<area shape="rect" id="node36" href="$db/d42/_plain_x_m_l_formatter_8h.html" title="PlainXMLFormatter.h" alt="" coords="3189,453,3336,480"/>
+<area shape="rect" id="node38" href="$de/d1f/_binary_formatter_8h.html" title="BinaryFormatter.h" alt="" coords="2857,379,2983,405"/>
+<area shape="rect" id="node33" href="$d2/d6d/_s_u_m_o_vehicle_class_8h.html" title="utils/common/SUMOVehicle\lClass.h" alt="" coords="2396,528,2585,569"/>
+<area shape="rect" id="node34" href="$d7/d8d/_distribution___parameterized_8h.html" title="utils/distribution\l/Distribution_Parameterized.h" alt="" coords="1995,692,2192,733"/>
+<area shape="rect" id="node35" href="$da/dbd/_std_defs_8h.html" title="StdDefs.h" alt="" coords="1012,781,1092,808"/>
+<area shape="rect" id="node32" href="$d6/d11/_string_bijection_8h.html" title="utils/common/StringBijection.h" alt="" coords="2368,699,2568,726"/>
+<area shape="rect" id="node37" href="$d0/df4/_output_formatter_8h.html" title="OutputFormatter.h" alt="" coords="2958,535,3085,562"/>
+<area shape="rect" id="node39" href="$d0/da2/_file_helpers_8h.html" title="utils/common/FileHelpers.h" alt="" coords="803,617,986,644"/>
+<area shape="rect" id="node40" href="$d4/d64/_s_u_m_o_time_8h.html" title="SUMOTime.h" alt="" coords="753,699,855,726"/>
+<area shape="rect" id="node42" href="$dd/d01/_named_object_cont_8h.html" title="utils/common/NamedObject\lCont.h" alt="" coords="3029,692,3216,733"/>
+<area shape="rect" id="node45" href="$d2/d70/_s_u_m_o_s_a_x_handler_8h.html" title="utils/xml/SUMOSAXHandler.h" alt="" coords="400,229,597,256"/>
+<area shape="rect" id="node46" href="$d3/d23/_generic_s_a_x_handler_8h.html" title="utils/xml/GenericSAXHandler.h" alt="" coords="962,304,1169,331"/>
+<area shape="rect" id="node50" href="$d7/d16/_s_u_m_o_s_a_x_attributes_8h.html" title="SUMOSAXAttributes.h" alt="" coords="1464,379,1616,405"/>
+</map>

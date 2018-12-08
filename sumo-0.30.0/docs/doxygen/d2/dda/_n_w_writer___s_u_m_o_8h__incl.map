@@ -1,0 +1,31 @@
+<map id="NWWriter_SUMO.h" name="NWWriter_SUMO.h">
+<area shape="rect" id="node2" href="$db/d16/config_8h.html" title="config.h" alt="" coords="1651,721,1719,748"/>
+<area shape="rect" id="node5" href="$d8/d0b/_n_b_edge_8h.html" title="netbuild/NBEdge.h" alt="" coords="1199,304,1331,331"/>
+<area shape="rect" id="node12" href="$d7/db4/_util_exceptions_8h.html" title="utils/common/UtilExceptions.h" alt="" coords="3442,639,3641,666"/>
+<area shape="rect" id="node28" href="$d2/d70/_s_u_m_o_s_a_x_handler_8h.html" title="utils/xml/SUMOSAXHandler.h" alt="" coords="1939,80,2136,107"/>
+<area shape="rect" id="node49" href="$d4/d25/_n_b_connection_defs_8h.html" title="netbuild/NBConnectionDefs.h" alt="" coords="177,155,373,181"/>
+<area shape="rect" id="node9" href="$de/d1a/_named_8h.html" title="utils/common/Named.h" alt="" coords="2778,639,2937,666"/>
+<area shape="rect" id="node11" href="$d9/d33/_parameterised_8h.html" title="utils/common/Parameterised.h" alt="" coords="857,557,1061,584"/>
+<area shape="rect" id="node14" href="$d0/d40/_vector_helper_8h.html" title="utils/common/VectorHelper.h" alt="" coords="1723,557,1917,584"/>
+<area shape="rect" id="node17" href="$de/dc6/_bresenham_8h.html" title="utils/geom/Bresenham.h" alt="" coords="997,386,1163,413"/>
+<area shape="rect" id="node18" href="$d3/d43/_position_vector_8h.html" title="utils/geom/PositionVector.h" alt="" coords="1238,475,1423,502"/>
+<area shape="rect" id="node22" href="$d2/d6d/_s_u_m_o_vehicle_class_8h.html" title="utils/common/SUMOVehicle\lClass.h" alt="" coords="1889,379,2079,420"/>
+<area shape="rect" id="node24" href="$d6/d7a/_s_u_m_o_x_m_l_definitions_8h.html" title="utils/xml/SUMOXMLDefinitions.h" alt="" coords="2021,475,2233,502"/>
+<area shape="rect" id="node25" href="$db/dde/_n_b_cont_8h.html" title="NBCont.h" alt="" coords="651,557,730,584"/>
+<area shape="rect" id="node26" href="$da/d0c/_n_b_helpers_8h.html" title="NBHelpers.h" alt="" coords="885,639,981,666"/>
+<area shape="rect" id="node27" href="$d0/d5f/_n_b_sign_8h.html" title="NBSign.h" alt="" coords="2256,475,2333,502"/>
+<area shape="rect" id="node19" href="$db/dd7/_abstract_poly_8h.html" title="AbstractPoly.h" alt="" coords="1541,557,1648,584"/>
+<area shape="rect" id="node20" href="$d4/d51/_position_8h.html" title="Position.h" alt="" coords="2127,639,2207,666"/>
+<area shape="rect" id="node23" href="$d6/d11/_string_bijection_8h.html" title="utils/common/StringBijection.h" alt="" coords="2093,557,2293,584"/>
+<area shape="rect" id="node29" href="$d3/d23/_generic_s_a_x_handler_8h.html" title="utils/xml/GenericSAXHandler.h" alt="" coords="2349,155,2555,181"/>
+<area shape="rect" id="node34" href="$d7/d16/_s_u_m_o_s_a_x_attributes_8h.html" title="SUMOSAXAttributes.h" alt="" coords="2312,229,2464,256"/>
+<area shape="rect" id="node35" href="$d4/d64/_s_u_m_o_time_8h.html" title="utils/common/SUMOTime.h" alt="" coords="3208,557,3395,584"/>
+<area shape="rect" id="node36" href="$d8/d08/_to_string_8h.html" title="utils/common/ToString.h" alt="" coords="2707,304,2874,331"/>
+<area shape="rect" id="node38" href="$d7/d8d/_distribution___parameterized_8h.html" title="utils/distribution\l/Distribution_Parameterized.h" alt="" coords="2509,468,2707,509"/>
+<area shape="rect" id="node48" href="$da/dbd/_std_defs_8h.html" title="StdDefs.h" alt="" coords="3113,639,3193,666"/>
+<area shape="rect" id="node39" href="$d6/d68/_rand_helper_8h.html" title="utils/common/RandHelper.h" alt="" coords="2520,557,2707,584"/>
+<area shape="rect" id="node47" href="$d2/d7a/_distribution_8h.html" title="Distribution.h" alt="" coords="2782,557,2879,584"/>
+<area shape="rect" id="node40" href="$da/d3b/_mersenne_twister_8h.html" title="foreign/mersenne/Mersenne\lTwister.h" alt="" coords="3977,632,4167,673"/>
+<area shape="rect" id="node42" href="$df/dd8/stdint_8h.html" title="stdint.h" alt="" coords="3870,721,3933,748"/>
+<area shape="rect" id="node50" href="$dd/d75/_n_b_connection_8h.html" title="NBConnection.h" alt="" coords="601,229,719,256"/>
+</map>

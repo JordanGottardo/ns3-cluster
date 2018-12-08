@@ -1,0 +1,17 @@
+<map id="NBEdge.h" name="NBEdge.h">
+<area shape="rect" id="node2" href="$db/d16/config_8h.html" title="config.h" alt="" coords="1063,393,1131,420"/>
+<area shape="rect" id="node8" href="$de/d1a/_named_8h.html" title="utils/common/Named.h" alt="" coords="1078,244,1237,271"/>
+<area shape="rect" id="node10" href="$d9/d33/_parameterised_8h.html" title="utils/common/Parameterised.h" alt="" coords="43,244,247,271"/>
+<area shape="rect" id="node11" href="$d7/db4/_util_exceptions_8h.html" title="utils/common/UtilExceptions.h" alt="" coords="457,319,655,345"/>
+<area shape="rect" id="node13" href="$d0/d40/_vector_helper_8h.html" title="utils/common/VectorHelper.h" alt="" coords="1761,169,1954,196"/>
+<area shape="rect" id="node16" href="$de/dc6/_bresenham_8h.html" title="utils/geom/Bresenham.h" alt="" coords="1619,87,1786,114"/>
+<area shape="rect" id="node17" href="$d3/d43/_position_vector_8h.html" title="utils/geom/PositionVector.h" alt="" coords="1518,169,1703,196"/>
+<area shape="rect" id="node21" href="$d2/d6d/_s_u_m_o_vehicle_class_8h.html" title="utils/common/SUMOVehicle\lClass.h" alt="" coords="740,80,929,121"/>
+<area shape="rect" id="node23" href="$d6/d7a/_s_u_m_o_x_m_l_definitions_8h.html" title="utils/xml/SUMOXMLDefinitions.h" alt="" coords="525,169,737,196"/>
+<area shape="rect" id="node24" href="$db/dde/_n_b_cont_8h.html" title="NBCont.h" alt="" coords="1363,244,1442,271"/>
+<area shape="rect" id="node25" href="$da/d0c/_n_b_helpers_8h.html" title="NBHelpers.h" alt="" coords="957,244,1053,271"/>
+<area shape="rect" id="node26" href="$d0/d5f/_n_b_sign_8h.html" title="NBSign.h" alt="" coords="323,169,400,196"/>
+<area shape="rect" id="node18" href="$db/dd7/_abstract_poly_8h.html" title="AbstractPoly.h" alt="" coords="1747,244,1853,271"/>
+<area shape="rect" id="node19" href="$d4/d51/_position_8h.html" title="Position.h" alt="" coords="1848,319,1928,345"/>
+<area shape="rect" id="node22" href="$d6/d11/_string_bijection_8h.html" title="utils/common/StringBijection.h" alt="" coords="475,244,675,271"/>
+</map>

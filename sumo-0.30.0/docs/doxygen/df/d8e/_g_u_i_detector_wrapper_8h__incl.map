@@ -1,0 +1,33 @@
+<map id="GUIDetectorWrapper.h" name="GUIDetectorWrapper.h">
+<area shape="rect" id="node2" href="$db/d16/config_8h.html" title="config.h" alt="" coords="2032,751,2100,777"/>
+<area shape="rect" id="node3" href="$d4/d51/_position_8h.html" title="utils/geom/Position.h" alt="" coords="147,676,294,703"/>
+<area shape="rect" id="node6" href="$d1/d28/_g_u_i_gl_object___abstract_add_8h.html" title="utils/gui/globjects\l/GUIGlObject_AbstractAdd.h" alt="" coords="785,333,976,375"/>
+<area shape="rect" id="node22" href="$d8/d3a/_g_u_i_s_u_m_o_abstract_view_8h.html" title="utils/gui/windows/GUISUMOAbstract\lView.h" alt="" coords="985,80,1224,121"/>
+<area shape="rect" id="node7" href="$db/dcf/_g_u_i_gl_object_types_8h.html" title="GUIGlObjectTypes.h" alt="" coords="878,519,1025,546"/>
+<area shape="rect" id="node8" href="$d2/d0d/_g_u_i_gl_object_8h.html" title="GUIGlObject.h" alt="" coords="1051,430,1158,457"/>
+<area shape="rect" id="node11" href="$d9/df9/_boundary_8h.html" title="utils/geom/Boundary.h" alt="" coords="337,519,493,546"/>
+<area shape="rect" id="node14" href="$da/dbd/_std_defs_8h.html" title="utils/common/StdDefs.h" alt="" coords="1174,676,1337,703"/>
+<area shape="rect" id="node15" href="$de/dde/_string_utils_8h.html" title="utils/common/StringUtils.h" alt="" coords="924,676,1099,703"/>
+<area shape="rect" id="node16" href="$d6/d11/_string_bijection_8h.html" title="utils/common/StringBijection.h" alt="" coords="2129,601,2329,628"/>
+<area shape="rect" id="node21" href="$d8/d99/_r_g_b_color_8h.html" title="utils/common/RGBColor.h" alt="" coords="2455,601,2632,628"/>
+<area shape="rect" id="node13" href="$db/dd7/_abstract_poly_8h.html" title="AbstractPoly.h" alt="" coords="494,601,601,628"/>
+<area shape="rect" id="node19" href="$d7/db4/_util_exceptions_8h.html" title="utils/common/UtilExceptions.h" alt="" coords="2229,676,2428,703"/>
+<area shape="rect" id="node25" href="$d4/de0/_m_f_x_mutex_8h.html" title="utils/foxtools/MFXMutex.h" alt="" coords="3719,430,3893,457"/>
+<area shape="rect" id="node27" href="$d4/d64/_s_u_m_o_time_8h.html" title="utils/common/SUMOTime.h" alt="" coords="1409,519,1595,546"/>
+<area shape="rect" id="node29" href="$da/d08/_polygon_8h.html" title="utils/shapes/Polygon.h" alt="" coords="1685,430,1842,457"/>
+<area shape="rect" id="node34" href="$db/d96/_s_u_m_o_r_tree_8h.html" title="foreign/rtree/SUMORTree.h" alt="" coords="2794,169,2981,196"/>
+<area shape="rect" id="node26" href="$da/dde/_abstract_mutex_8h.html" title="utils/common/AbstractMutex.h" alt="" coords="3707,676,3905,703"/>
+<area shape="rect" id="node30" href="$d3/d43/_position_vector_8h.html" title="utils/geom/PositionVector.h" alt="" coords="1671,519,1856,546"/>
+<area shape="rect" id="node31" href="$d9/d33/_parameterised_8h.html" title="utils/common/Parameterised.h" alt="" coords="1132,601,1336,628"/>
+<area shape="rect" id="node32" href="$da/d05/_shape_8h.html" title="Shape.h" alt="" coords="1932,519,2003,546"/>
+<area shape="rect" id="node33" href="$de/d1a/_named_8h.html" title="utils/common/Named.h" alt="" coords="1743,601,1901,628"/>
+<area shape="rect" id="node35" href="$dd/d53/_g_u_i_visualization_settings_8h.html" title="utils/gui/settings\l/GUIVisualizationSettings.h" alt="" coords="2796,244,2979,285"/>
+<area shape="rect" id="node46" href="$d2/d58/_r_tree_8h.html" title="RTree.h" alt="" coords="3671,251,3741,278"/>
+<area shape="rect" id="node36" href="$d8/d08/_to_string_8h.html" title="utils/common/ToString.h" alt="" coords="2205,341,2372,367"/>
+<area shape="rect" id="node44" href="$d7/d71/_g_u_i_property_scheme_storage_8h.html" title="GUIPropertySchemeStorage.h" alt="" coords="3209,430,3411,457"/>
+<area shape="rect" id="node40" href="$d6/d7a/_s_u_m_o_x_m_l_definitions_8h.html" title="utils/xml/SUMOXMLDefinitions.h" alt="" coords="2397,519,2609,546"/>
+<area shape="rect" id="node41" href="$d2/d6d/_s_u_m_o_vehicle_class_8h.html" title="utils/common/SUMOVehicle\lClass.h" alt="" coords="2037,423,2226,464"/>
+<area shape="rect" id="node42" href="$d7/d8d/_distribution___parameterized_8h.html" title="utils/distribution\l/Distribution_Parameterized.h" alt="" coords="2835,512,3033,553"/>
+<area shape="rect" id="node43" href="$d6/d68/_rand_helper_8h.html" title="utils/common/RandHelper.h" alt="" coords="2859,601,3046,628"/>
+<area shape="rect" id="node45" href="$db/d71/_g_u_i_property_scheme_8h.html" title="GUIPropertyScheme.h" alt="" coords="3259,519,3414,546"/>
+</map>

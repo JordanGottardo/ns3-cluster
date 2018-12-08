@@ -1,0 +1,46 @@
+<map id="SUMOSAXHandler" name="SUMOSAXHandler">
+<area shape="rect" id="node4" href="$df/dfe/class_a_g_activity_gen_handler.html" title="{AGActivityGenHandler\n||+ AGActivityGenHandler()\l+ ~AGActivityGenHandler()\l# myStartElement()\l* myStartElement()\l* myCity\l* myCurrentObject\l* currentBusLine\l* isRevStation\l* net\l* myProcess\l* parseGeneralCityInfo()\l* parseParameters()\l* parseStreets()\l* parseCityGates()\land 15 more...\l}" alt="" coords="5,1166,191,1449"/>
+<area shape="rect" id="node5" href="$db/dff/class_g_n_e_additional_handler.html" title="Builds trigger objects for GNENet (busStops, chargingStations, detectors, etc..) " alt="" coords="215,990,461,1625"/>
+<area shape="rect" id="node6" href="$de/d5c/class_g_n_e_poly_1_1_g_n_e_poly_handler.html" title="declare friend class " alt="" coords="486,1203,673,1412"/>
+<area shape="rect" id="node7" href="$d3/dfd/class_g_u_i_settings_handler.html" title="An XML&#45;handler for visualisation schemes. " alt="" coords="697,1063,873,1551"/>
+<area shape="rect" id="node8" href="$d5/da7/class_m_s_lane_speed_trigger.html" title="Changes the speed allowed on a set of lanes. " alt="" coords="897,1107,1083,1507"/>
+<area shape="rect" id="node10" href="$d6/d1d/class_m_s_triggered_rerouter.html" title="Reroutes vehicles passing an edge. " alt="" coords="1107,880,1335,1735"/>
+<area shape="rect" id="node12" href="$db/dfe/class_n_i_importer___open_street_map_1_1_edges_handler.html" title="A class which extracts OSM&#45;edges from a parsed OSM&#45;file. " alt="" coords="1359,1181,1541,1434"/>
+<area shape="rect" id="node13" href="$dd/da3/class_n_i_importer___open_street_map_1_1_nodes_handler.html" title="A class which extracts OSM&#45;nodes from a parsed OSM&#45;file. " alt="" coords="1565,1166,1748,1449"/>
+<area shape="rect" id="node14" href="$d3/d16/class_n_i_importer___open_street_map_1_1_relation_handler.html" title="A class which extracts relevant relation information from a parsed OSM&#45;file. " alt="" coords="1772,1115,1955,1500"/>
+<area shape="rect" id="node15" href="$d5/dfe/class_n_i_importer___s_u_m_o.html" title="Importer for networks stored in SUMO format. " alt="" coords="1979,983,2182,1632"/>
+<area shape="rect" id="node16" href="$db/dea/class_n_i_x_m_l_connections_handler.html" title="Importer for edge connections stored in XML. " alt="" coords="2207,1144,2440,1471"/>
+<area shape="rect" id="node17" href="$d9/d5d/class_n_i_x_m_l_edges_handler.html" title="Importer for network edges stored in XML. " alt="" coords="2465,865,2718,1749"/>
+<area shape="rect" id="node18" href="$d9/df7/class_n_i_x_m_l_nodes_handler.html" title="Importer for network nodes stored in XML. " alt="" coords="2743,1151,2957,1463"/>
+<area shape="rect" id="node19" href="$df/dcb/class_n_i_x_m_l_traffic_lights_handler.html" title="Importer for edge connections stored in XML. " alt="" coords="2981,1159,3191,1456"/>
+<area shape="rect" id="node20" href="$d0/d72/class_n_i_x_m_l_types_handler.html" title="Importer for edge type information stored in XML. " alt="" coords="3215,1225,3389,1390"/>
+<area shape="rect" id="node21" href="$d2/d97/class_o_d_amitran_handler.html" title="An XML&#45;Handler for districts. " alt="" coords="3414,1210,3577,1405"/>
+<area shape="rect" id="node22" href="$d3/dae/class_o_d_district_handler.html" title="An XML&#45;Handler for districts. " alt="" coords="3601,1173,3758,1441"/>
+<area shape="rect" id="node23" href="$d7/d84/class_p_c_loader_o_s_m.html" title="A reader of pois and polygons stored in OSM&#45;format. " alt="" coords="3783,1247,3947,1368"/>
+<area shape="rect" id="node24" href="$d9/d18/class_p_c_loader_o_s_m_1_1_edges_handler.html" title="A class which extracts OSM&#45;edges from a parsed OSM&#45;file. " alt="" coords="3971,1166,4179,1449"/>
+<area shape="rect" id="node25" href="$d8/d9f/class_p_c_loader_o_s_m_1_1_nodes_handler.html" title="A class which extracts OSM&#45;nodes from a parsed OSM&#45;file. " alt="" coords="4204,1188,4413,1427"/>
+<area shape="rect" id="node26" href="$dd/deb/class_p_c_loader_o_s_m_1_1_relations_handler.html" title="A class which extracts relevant way&#45;ids from relations in a parsed OSM&#45;file. " alt="" coords="4437,1166,4663,1449"/>
+<area shape="rect" id="node27" href="$dd/dc0/class_p_c_net_projection_loader.html" title="A reader for a SUMO network&#39;s projection description. " alt="" coords="4687,1225,4877,1390"/>
+<area shape="rect" id="node28" href="$d0/dfc/class_p_c_type_def_handler.html" title="A handler for loading polygon type maps. " alt="" coords="4901,1225,5071,1390"/>
+<area shape="rect" id="node29" href="$d3/d93/class_r_o_d_f_detector_handler.html" title="SAX2&#45;Handler for loading DFROUTER&#45;detector definitions. " alt="" coords="5095,1217,5280,1397"/>
+<area shape="rect" id="node30" href="$d2/d32/class_r_o_j_t_r_turn_def_loader.html" title="Loader for the of turning percentages and source/sink definitions. " alt="" coords="5305,1210,5491,1405"/>
+<area shape="rect" id="node31" href="$d1/ddc/class_r_o_m_a_route_handler.html" title="Parser and container for routes during their loading. " alt="" coords="5515,1203,5686,1412"/>
+<area shape="rect" id="node32" href="$df/d9d/class_r_o_net_handler.html" title="The handler that parses a SUMO&#45;network for its usage in a router. " alt="" coords="5710,1049,5891,1566"/>
+<area shape="rect" id="node33" href="$da/ded/class_s_a_x_weights_handler.html" title="An XML&#45;handler for network weights. " alt="" coords="5915,1181,6089,1434"/>
+<area shape="rect" id="node34" href="$da/da2/class_shape_handler.html" title="The XML&#45;Handler for network loading. " alt="" coords="6113,1166,6261,1449"/>
+<area shape="rect" id="node38" href="$d4/d33/class_s_u_m_o_route_handler.html" title="Parser for routes during their loading. " alt="" coords="6286,990,6502,1625"/>
+<area shape="rect" id="node46" href="$d2/db6/class_trajectories_handler.html" title="An XML&#45;Handler for amitran and netstate trajectories. " alt="" coords="6527,1100,6725,1515"/>
+<area shape="rect" id="node2" href="$da/da8/class_generic_s_a_x_handler.html" title="A handler which converts occuring elements and attributes into enums. " alt="" coords="3407,145,3584,648"/>
+<area shape="rect" id="node9" href="$d3/d76/class_g_u_i_lane_speed_trigger.html" title="Changes the speed allowed on a set of lanes (gui version) " alt="" coords="896,1922,1084,2219"/>
+<area shape="rect" id="node11" href="$de/d92/class_g_u_i_triggered_rerouter.html" title="Reroutes vehicles passing an edge One rerouter can be active on multiple edges. To reduce drawing loa..." alt="" coords="1128,1944,1313,2197"/>
+<area shape="rect" id="node35" href="$d1/dd7/class_g_n_e_application_window_1_1_g_n_e_shape_handler.html" title="The XML&#45;Handler for shapes loading network loading. " alt="" coords="5759,2010,5923,2131"/>
+<area shape="rect" id="node36" href="$da/d56/class_n_l_shape_handler.html" title="The XML&#45;Handler for shapes loading network loading. " alt="" coords="5947,2017,6099,2124"/>
+<area shape="rect" id="node37" href="$db/d4e/class_p_c_loader_x_m_l.html" title="A reader for polygons and pois stored in XML&#45;format. " alt="" coords="6123,1988,6262,2153"/>
+<area shape="rect" id="node39" href="$d7/df0/class_m_s_route_handler.html" title="Parser and container for routes during their loading. " alt="" coords="6286,1797,6502,2344"/>
+<area shape="rect" id="node45" href="$d8/da6/class_r_o_route_handler.html" title="Parser and container for routes during their loading. " alt="" coords="6526,1805,6742,2337"/>
+<area shape="rect" id="node40" href="$da/dbd/class_m_s_calibrator.html" title="Calibrates the flow on a segment to a specified one. " alt="" coords="6042,2487,6285,3005"/>
+<area shape="rect" id="node43" href="$d3/d56/class_m_s_state_handler.html" title="Parser and output filter for routes and vehicles state saving and loading. " alt="" coords="6309,2575,6479,2917"/>
+<area shape="rect" id="node44" href="$da/d57/class_n_l_handler.html" title="The XML&#45;Handler for network loading. " alt="" coords="6503,2392,6776,3100"/>
+<area shape="rect" id="node41" href="$d2/d8f/class_g_u_i_calibrator.html" title="Changes the speed allowed on a set of lanes (gui version) " alt="" coords="5969,3148,6147,3416"/>
+<area shape="rect" id="node42" href="$da/d96/class_m_e_triggered_calibrator.html" title="Calibrates the flow on a segment to a specified one. " alt="" coords="6171,3177,6369,3387"/>
+</map>

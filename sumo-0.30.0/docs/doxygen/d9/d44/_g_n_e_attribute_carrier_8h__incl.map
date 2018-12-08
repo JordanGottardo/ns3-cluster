@@ -1,0 +1,19 @@
+<map id="GNEAttributeCarrier.h" name="GNEAttributeCarrier.h">
+<area shape="rect" id="node2" href="$db/d16/config_8h.html" title="config.h" alt="" coords="1518,572,1586,599"/>
+<area shape="rect" id="node6" href="$d6/d7a/_s_u_m_o_x_m_l_definitions_8h.html" title="utils/xml/SUMOXMLDefinitions.h" alt="" coords="1231,326,1443,353"/>
+<area shape="rect" id="node11" href="$d8/d08/_to_string_8h.html" title="utils/common/ToString.h" alt="" coords="926,155,1093,181"/>
+<area shape="rect" id="node33" href="$de/d4a/_tpl_convert_8h.html" title="utils/common/TplConvert.h" alt="" coords="359,408,542,435"/>
+<area shape="rect" id="node34" href="$d5/d48/_g_u_i_icons_8h.html" title="utils/gui/images/GUIIcons.h" alt="" coords="2155,155,2341,181"/>
+<area shape="rect" id="node35" href="$dc/da2/_g_n_e_reference_counter_8h.html" title="GNEReferenceCounter.h" alt="" coords="1110,80,1279,107"/>
+<area shape="rect" id="node7" href="$d6/d11/_string_bijection_8h.html" title="utils/common/StringBijection.h" alt="" coords="1141,408,1341,435"/>
+<area shape="rect" id="node9" href="$d7/db4/_util_exceptions_8h.html" title="utils/common/UtilExceptions.h" alt="" coords="706,490,905,517"/>
+<area shape="rect" id="node15" href="$d2/d6d/_s_u_m_o_vehicle_class_8h.html" title="utils/common/SUMOVehicle\lClass.h" alt="" coords="711,229,900,271"/>
+<area shape="rect" id="node18" href="$de/d1a/_named_8h.html" title="utils/common/Named.h" alt="" coords="979,490,1138,517"/>
+<area shape="rect" id="node19" href="$d7/d8d/_distribution___parameterized_8h.html" title="utils/distribution\l/Distribution_Parameterized.h" alt="" coords="1555,319,1752,360"/>
+<area shape="rect" id="node30" href="$d4/d51/_position_8h.html" title="utils/geom/Position.h" alt="" coords="971,408,1117,435"/>
+<area shape="rect" id="node32" href="$da/dbd/_std_defs_8h.html" title="StdDefs.h" alt="" coords="469,490,549,517"/>
+<area shape="rect" id="node20" href="$d6/d68/_rand_helper_8h.html" title="utils/common/RandHelper.h" alt="" coords="1691,408,1877,435"/>
+<area shape="rect" id="node29" href="$d2/d7a/_distribution_8h.html" title="Distribution.h" alt="" coords="1518,408,1615,435"/>
+<area shape="rect" id="node22" href="$da/d3b/_mersenne_twister_8h.html" title="foreign/mersenne/Mersenne\lTwister.h" alt="" coords="2206,483,2397,524"/>
+<area shape="rect" id="node24" href="$df/dd8/stdint_8h.html" title="stdint.h" alt="" coords="2183,572,2246,599"/>
+</map>

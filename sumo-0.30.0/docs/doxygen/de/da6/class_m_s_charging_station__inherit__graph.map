@@ -1,0 +1,5 @@
+<map id="MSChargingStation" name="MSChargingStation">
+<area shape="rect" id="node4" href="$da/daf/class_g_u_i_charging_station.html" title="A lane area vehicles can halt at (gui&#45;version) " alt="" coords="18,1100,195,1368"/>
+<area shape="rect" id="node2" href="$d2/d39/class_m_s_stopping_place.html" title="A lane area vehicles can halt at. " alt="" coords="11,204,202,604"/>
+<area shape="rect" id="node3" href="$d5/dbf/class_named.html" title="Base class for objects which have an id. " alt="" coords="48,5,165,156"/>
+</map>

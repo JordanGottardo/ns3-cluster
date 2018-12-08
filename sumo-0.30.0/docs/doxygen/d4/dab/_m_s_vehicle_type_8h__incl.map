@@ -1,0 +1,20 @@
+<map id="MSVehicleType.h" name="MSVehicleType.h">
+<area shape="rect" id="node2" href="$db/d16/config_8h.html" title="config.h" alt="" coords="1613,483,1681,509"/>
+<area shape="rect" id="node6" href="$d4/d70/_m_s_c_f_model_8h.html" title="microsim/cfmodels/MSCFModel.h" alt="" coords="1465,162,1690,189"/>
+<area shape="rect" id="node8" href="$da/dbd/_std_defs_8h.html" title="utils/common/StdDefs.h" alt="" coords="1488,244,1651,271"/>
+<area shape="rect" id="node12" href="$d4/d64/_s_u_m_o_time_8h.html" title="SUMOTime.h" alt="" coords="195,326,298,353"/>
+<area shape="rect" id="node16" href="$d2/d6d/_s_u_m_o_vehicle_class_8h.html" title="utils/common/SUMOVehicle\lClass.h" alt="" coords="624,155,813,196"/>
+<area shape="rect" id="node21" href="$d6/d68/_rand_helper_8h.html" title="utils/common/RandHelper.h" alt="" coords="2265,244,2452,271"/>
+<area shape="rect" id="node22" href="$da/d3b/_mersenne_twister_8h.html" title="foreign/mersenne/Mersenne\lTwister.h" alt="" coords="2407,319,2598,360"/>
+<area shape="rect" id="node28" href="$d8/d88/_s_u_m_o_v_type_parameter_8h.html" title="utils/vehicle/SUMOVTypeParameter.h" alt="" coords="1019,80,1269,107"/>
+<area shape="rect" id="node30" href="$d8/d99/_r_g_b_color_8h.html" title="utils/common/RGBColor.h" alt="" coords="1283,326,1461,353"/>
+<area shape="rect" id="node9" href="$d0/da2/_file_helpers_8h.html" title="utils/common/FileHelpers.h" alt="" coords="1855,244,2038,271"/>
+<area shape="rect" id="node14" href="$d7/db4/_util_exceptions_8h.html" title="UtilExceptions.h" alt="" coords="779,408,893,435"/>
+<area shape="rect" id="node18" href="$d6/d11/_string_bijection_8h.html" title="utils/common/StringBijection.h" alt="" coords="907,326,1107,353"/>
+<area shape="rect" id="node20" href="$d6/d7a/_s_u_m_o_x_m_l_definitions_8h.html" title="utils/xml/SUMOXMLDefinitions.h" alt="" coords="613,244,825,271"/>
+<area shape="rect" id="node24" href="$df/dd8/stdint_8h.html" title="stdint.h" alt="" coords="2674,408,2737,435"/>
+<area shape="rect" id="node29" href="$d9/d33/_parameterised_8h.html" title="utils/common/Parameterised.h" alt="" coords="678,326,882,353"/>
+<area shape="rect" id="node31" href="$d7/d8d/_distribution___parameterized_8h.html" title="utils/distribution\l/Distribution_Parameterized.h" alt="" coords="1719,155,1916,196"/>
+<area shape="rect" id="node32" href="$d2/d7a/_distribution_8h.html" title="Distribution.h" alt="" coords="1682,244,1779,271"/>
+<area shape="rect" id="node33" href="$de/d1a/_named_8h.html" title="utils/common/Named.h" alt="" coords="1485,326,1643,353"/>
+</map>

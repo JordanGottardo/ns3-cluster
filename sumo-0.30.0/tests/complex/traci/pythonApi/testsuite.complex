@@ -1,0 +1,64 @@
+# Tests the lane API
+lane
+
+# Tests the edge API
+edge
+
+# Tests the vehicle API
+vehicle
+
+# Tests the vehicle API for the sublane-case. This uses the same runner as the 'vehicle' test case
+vehicle_sublane
+
+# Tests the vehicletype API
+vehicletype
+person
+
+# Tests the junction API
+junction
+
+# Tests the trafficlights API
+trafficlights
+
+# Tests the simulation API
+simulation
+
+# Tests the route API
+route
+
+# Tests the gui API
+gui
+
+# Tests the inductionloop API
+inductionloop
+
+# test lanearea detector
+lanearea
+
+# Tests the multientryexit API
+multientryexit
+
+# Tests the poi API
+poi
+
+# Tests the polygon API
+polygon
+
+# Tests the stop resume
+resume
+
+# Tests the distance retrieval after rerouting
+distance_after_reroute
+
+# test setting and getting of params to all objects which support it
+params
+
+# test setting up multiple connections
+multiconnect
+
+# test loading a simulation
+load
+
+# test various functions and options for influencing the behavior of rerouting functions
+rerouting
+bugs

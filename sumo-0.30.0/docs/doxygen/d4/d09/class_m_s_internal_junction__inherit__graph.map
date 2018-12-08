@@ -1,0 +1,5 @@
+<map id="MSInternalJunction" name="MSInternalJunction">
+<area shape="rect" id="node2" href="$dd/df2/class_m_s_logic_junction.html" title="{MSLogicJunction\n|# myIncomingLanes\l# myInternalLanes\l|+ getInternalLanes()\l+ postloadInit()\l+ ~MSLogicJunction()\l# MSLogicJunction()\l&#45; MSLogicJunction()\l&#45; operator=()\l}" alt="" coords="12,667,164,832"/>
+<area shape="rect" id="node3" href="$d2/de4/class_m_s_junction.html" title="The base class for an intersection. " alt="" coords="5,204,171,619"/>
+<area shape="rect" id="node4" href="$d5/dbf/class_named.html" title="Base class for objects which have an id. " alt="" coords="29,5,147,156"/>
+</map>

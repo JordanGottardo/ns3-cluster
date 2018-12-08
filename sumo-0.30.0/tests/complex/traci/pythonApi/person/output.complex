@@ -1,0 +1,83 @@
+Loading configuration... done.
+Could not connect to TraCI server at localhost:53502 [Errno 111] Connection refused
+ Retrying in 1 seconds
+step 0
+step 1
+step 2
+type pType2@horiz
+persons ['horiz', 'newPerson']
+person count 2
+examining horiz
+speed 1.37625571631
+pos (758.9823578158006, 504.975)
+angle 270.0
+road 2fi
+type pType2@horiz
+lanePos 241.017642184
+color (255, 255, 0, 255)
+length 2.0
+MinGap 2.22
+width 1.11
+waiting time 0.0
+stage 2
+remainingStages 1
+edges ['2fi', '2si', '1o']
+vehicle 
+{0: ['horiz', 'newPerson']}
+step 3
+{0: ['horiz', 'newPerson']}
+step 4
+{0: ['horiz', 'newPerson']}
+step 5
+{0: ['horiz', 'newPerson']}
+persons ['horiz', 'newPerson']
+person count 2
+examining horiz
+speed 1.23742354743
+pos (755.3374932061804, 504.975)
+angle 270.0
+road 2fi
+type pType2@horiz
+lanePos 244.662506794
+color (255, 255, 0, 255)
+length 2.0
+MinGap 2.22
+width 1.11
+waiting time 0.0
+stage 2
+remainingStages 1
+edges ['2fi', '2si', '1o']
+vehicle 
+persons ['horiz', 'newPerson']
+person count 2
+examining bla
+recovering from exception after asking for unknown person
+step 6
+getIDList ['horiz', 'newPerson']
+step 7
+{0: ['horiz', 'newPerson']}
+step 8
+{0: ['horiz', 'newPerson']}
+step 9
+{0: ['horiz', 'newPerson']}
+step 10
+{0: ['horiz', 'newPerson']}
+step 11
+{0: ['horiz', 'newPerson']}
+step 12
+{0: ['horiz', 'newPerson']}
+step 13
+{0: ['horiz', 'newPerson']}
+step 14
+{0: ['horiz', 'newPerson']}
+step 15
+{0: ['horiz', 'newPerson']}
+step 16
+{0: ['horiz', 'newPerson']}
+riding in vehicle: 'newPerson'
+persons on edge: '['newPerson']'
+:0_w1
+10.217046835
+:0_c0
+recovering from exception after asking for invalid stage index
+recovering from exception after asking for invalid stage index

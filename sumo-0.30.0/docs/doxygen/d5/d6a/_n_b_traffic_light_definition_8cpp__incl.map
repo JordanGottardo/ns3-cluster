@@ -1,0 +1,34 @@
+<map id="NBTrafficLightDefinition.cpp" name="NBTrafficLightDefinition.cpp">
+<area shape="rect" id="node2" href="$db/d16/config_8h.html" title="config.h" alt="" coords="3067,781,3135,808"/>
+<area shape="rect" id="node8" href="$d4/df7/_msg_handler_8h.html" title="utils/common/MsgHandler.h" alt="" coords="3227,632,3415,659"/>
+<area shape="rect" id="node10" href="$d8/d08/_to_string_8h.html" title="utils/common/ToString.h" alt="" coords="3627,229,3794,256"/>
+<area shape="rect" id="node28" href="$dc/da1/_n_b_traffic_light_definition_8h.html" title="NBTrafficLightDefinition.h" alt="" coords="1425,155,1596,181"/>
+<area shape="rect" id="node41" href="$dd/d0a/_n_b_link_possibility_matrix_8h.html" title="NBLinkPossibilityMatrix.h" alt="" coords="632,229,803,256"/>
+<area shape="rect" id="node42" href="$d3/d5c/_options_cont_8h.html" title="utils/options/OptionsCont.h" alt="" coords="1027,557,1205,584"/>
+<area shape="rect" id="node45" href="$d6/d5d/_n_b_traffic_light_logic_8h.html" title="NBTrafficLightLogic.h" alt="" coords="941,155,1091,181"/>
+<area shape="rect" id="node46" href="$d1/df8/_n_b_own_t_l_def_8h.html" title="NBOwnTLDef.h" alt="" coords="2857,80,2972,107"/>
+<area shape="rect" id="node50" href="$da/d7b/_n_b_cont_helper_8h.html" title="NBContHelper.h" alt="" coords="3107,311,3224,338"/>
+<area shape="rect" id="node13" href="$d6/d7a/_s_u_m_o_x_m_l_definitions_8h.html" title="utils/xml/SUMOXMLDefinitions.h" alt="" coords="2901,557,3113,584"/>
+<area shape="rect" id="node18" href="$d2/d6d/_s_u_m_o_vehicle_class_8h.html" title="utils/common/SUMOVehicle\lClass.h" alt="" coords="1968,468,2157,509"/>
+<area shape="rect" id="node21" href="$de/d1a/_named_8h.html" title="utils/common/Named.h" alt="" coords="2851,475,3010,502"/>
+<area shape="rect" id="node22" href="$d7/d8d/_distribution___parameterized_8h.html" title="utils/distribution\l/Distribution_Parameterized.h" alt="" coords="4021,304,4219,345"/>
+<area shape="rect" id="node25" href="$d4/d51/_position_8h.html" title="utils/geom/Position.h" alt="" coords="3608,475,3755,502"/>
+<area shape="rect" id="node27" href="$da/dbd/_std_defs_8h.html" title="StdDefs.h" alt="" coords="2285,393,2365,420"/>
+<area shape="rect" id="node14" href="$d6/d11/_string_bijection_8h.html" title="utils/common/StringBijection.h" alt="" coords="1736,632,1936,659"/>
+<area shape="rect" id="node16" href="$d7/db4/_util_exceptions_8h.html" title="utils/common/UtilExceptions.h" alt="" coords="1353,707,1551,733"/>
+<area shape="rect" id="node23" href="$d6/d68/_rand_helper_8h.html" title="utils/common/RandHelper.h" alt="" coords="4195,393,4381,420"/>
+<area shape="rect" id="node24" href="$d2/d7a/_distribution_8h.html" title="Distribution.h" alt="" coords="4022,393,4119,420"/>
+<area shape="rect" id="node31" href="$d0/d40/_vector_helper_8h.html" title="utils/common/VectorHelper.h" alt="" coords="3339,475,3533,502"/>
+<area shape="rect" id="node32" href="$d4/d64/_s_u_m_o_time_8h.html" title="utils/common/SUMOTime.h" alt="" coords="1029,475,1216,502"/>
+<area shape="rect" id="node33" href="$d9/d33/_parameterised_8h.html" title="utils/common/Parameterised.h" alt="" coords="398,632,602,659"/>
+<area shape="rect" id="node34" href="$db/dde/_n_b_cont_8h.html" title="NBCont.h" alt="" coords="2443,475,2522,502"/>
+<area shape="rect" id="node35" href="$dd/d75/_n_b_connection_8h.html" title="NBConnection.h" alt="" coords="1561,311,1679,338"/>
+<area shape="rect" id="node40" href="$d4/d25/_n_b_connection_defs_8h.html" title="NBConnectionDefs.h" alt="" coords="1493,229,1640,256"/>
+<area shape="rect" id="node36" href="$d8/d0b/_n_b_edge_8h.html" title="NBEdge.h" alt="" coords="2491,393,2573,420"/>
+<area shape="rect" id="node37" href="$de/dc6/_bresenham_8h.html" title="utils/geom/Bresenham.h" alt="" coords="4123,475,4290,502"/>
+<area shape="rect" id="node38" href="$d3/d43/_position_vector_8h.html" title="utils/geom/PositionVector.h" alt="" coords="2182,475,2367,502"/>
+<area shape="rect" id="node39" href="$da/d0c/_n_b_helpers_8h.html" title="NBHelpers.h" alt="" coords="1696,475,1792,502"/>
+<area shape="rect" id="node43" href="$da/d39/_option_8h.html" title="Option.h" alt="" coords="1083,632,1154,659"/>
+<area shape="rect" id="node47" href="$d4/da0/_n_b_node_8h.html" title="NBNode.h" alt="" coords="2873,155,2956,181"/>
+<area shape="rect" id="node49" href="$d5/df0/_geom_helper_8h.html" title="utils/geom/GeomHelper.h" alt="" coords="3206,393,3381,420"/>
+</map>

@@ -1,0 +1,257 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$d5/d6a/class_command.html" title="Base (microsim) event class. " alt="" coords="1119,449,1204,475"/>
+<area shape="rect" id="node2" href="$d4/de8/class_command___save_t_l_s_state.html" title="Writes the state of the tls to a file (in each second) " alt="" coords="1336,566,1517,593"/>
+<area shape="rect" id="node3" href="$da/d62/class_command___save_t_l_s_switches.html" title="Writes information about the green durations of a tls. " alt="" coords="1325,617,1529,643"/>
+<area shape="rect" id="node4" href="$d5/d9e/class_command___save_t_l_s_switch_states.html" title="Writes the switch times of a tls into a file when the tls switches. " alt="" coords="1313,667,1540,694"/>
+<area shape="rect" id="node5" href="$da/dbd/class_m_s_calibrator.html" title="Calibrates the flow on a segment to a specified one. " alt="" coords="1377,1729,1477,1755"/>
+<area shape="rect" id="node8" href="$db/d8a/class_m_s_c_model___non_interacting_1_1_move_to_next_edge.html" title="MSCModel_NonInteracting\l::MoveToNextEdge" alt="" coords="1335,5,1518,47"/>
+<area shape="rect" id="node9" href="$dd/df8/class_m_s_device___b_treceiver_1_1_b_treceiver_update.html" title="A global update performer. " alt="" coords="1347,71,1507,112"/>
+<area shape="rect" id="node10" href="$d5/da7/class_m_s_lane_speed_trigger.html" title="Changes the speed allowed on a set of lanes. " alt="" coords="1348,1090,1505,1117"/>
+<area shape="rect" id="node12" href="$d7/df4/class_m_s_p_model___non_interacting_1_1_move_to_next_edge.html" title="MSPModel_NonInteracting\l::MoveToNextEdge" alt="" coords="1336,136,1517,177"/>
+<area shape="rect" id="node13" href="$d8/df5/class_m_s_p_model___striping_1_1_move_pedestrians.html" title="MSPModel_Striping::\lMovePedestrians" alt="" coords="1353,201,1501,243"/>
+<area shape="rect" id="node14" href="$d0/db0/class_m_s_t_l_logic_control_1_1_switch_init_command.html" title="This event&#45;class is used to initialise a WAUT switch at a certain time. " alt="" coords="1335,267,1518,308"/>
+<area shape="rect" id="node15" href="$d2/d78/class_m_s_traffic_light_logic_1_1_switch_command.html" title="Class realising the switch between the traffic light phases. " alt="" coords="1356,332,1497,373"/>
+<area shape="rect" id="node16" href="$d0/da7/class_m_s_v_type_probe.html" title="Writes positions of vehicles that have a certain (named) type. " alt="" coords="1367,718,1486,745"/>
+<area shape="rect" id="node17" href="$d6/d7a/class_static_command.html" title="A wrapper for a Command function. " alt="" coords="1351,398,1503,425"/>
+<area shape="rect" id="node18" href="$d1/d7b/class_wrapping_command.html" title="A wrapper for a Command function. " alt="" coords="1339,449,1515,475"/>
+<area shape="rect" id="node19" href="$d1/d7b/class_wrapping_command.html" title="WrappingCommand\&lt; MSDevice\l_Routing \&gt;" alt="" coords="1318,500,1535,541"/>
+<area shape="rect" id="node6" href="$d2/d8f/class_g_u_i_calibrator.html" title="Changes the speed allowed on a set of lanes (gui version) " alt="" coords="1649,2175,1751,2202"/>
+<area shape="rect" id="node7" href="$da/d96/class_m_e_triggered_calibrator.html" title="Calibrates the flow on a segment to a specified one. " alt="" coords="1620,1891,1780,1918"/>
+<area shape="rect" id="node11" href="$d3/d76/class_g_u_i_lane_speed_trigger.html" title="Changes the speed allowed on a set of lanes (gui version) " alt="" coords="1620,1638,1780,1665"/>
+<area shape="rect" id="node21" href="$d7/dbe/class_g_n_e_internal_lane.html" title="This object is responsible for drawing a shape and for supplying a a popup menu. Messages are routete..." alt="" coords="1365,3818,1488,3845"/>
+<area shape="rect" id="node22" href="$d8/de1/class_g_n_e_lane.html" title="This lane is powered by an underlying GNEEdge and basically knows how to draw itself. " alt="" coords="1660,4021,1740,4047"/>
+<area shape="rect" id="node23" href="$d6/d58/class_g_n_e_reference_counter.html" title="GNEReferenceCounter" alt="" coords="817,3995,976,4022"/>
+<area shape="rect" id="node24" href="$d2/d6a/class_g_n_e_attribute_carrier.html" title="GNEAttributeCarrier" alt="" coords="1092,4071,1231,4098"/>
+<area shape="rect" id="node25" href="$d3/dbc/class_g_n_e_additional.html" title="An Element which don&#39;t belongs to GNENet but has influency in the simulation. " alt="" coords="1371,4173,1482,4199"/>
+<area shape="rect" id="node41" href="$d7/d37/class_g_n_e_net_element.html" title="GNENetElement" alt="" coords="1367,4071,1486,4098"/>
+<area shape="rect" id="node46" href="$df/dc7/class_g_n_e_p_o_i.html" title="GNEPOI" alt="" coords="1932,3970,2004,3997"/>
+<area shape="rect" id="node47" href="$d6/d46/class_g_n_e_poly.html" title="GNEPoly" alt="" coords="1929,3289,2007,3315"/>
+<area shape="rect" id="node26" href="$d1/d0d/class_g_n_e_calibrator.html" title="GNECalibrator" alt="" coords="1646,4173,1754,4199"/>
+<area shape="rect" id="node27" href="$d7/dbe/class_g_n_e_detector.html" title="GNEDetector" alt="" coords="1649,4553,1751,4579"/>
+<area shape="rect" id="node32" href="$d0/d5a/class_g_n_e_detector_e3.html" title="GNEDetectorE3" alt="" coords="1642,4223,1758,4250"/>
+<area shape="rect" id="node33" href="$d4/d93/class_g_n_e_rerouter.html" title="GNERerouter" alt="" coords="1649,4274,1751,4301"/>
+<area shape="rect" id="node34" href="$d2/dbe/class_g_n_e_route_probe.html" title="GNERouteProbe" alt="" coords="1639,4325,1761,4351"/>
+<area shape="rect" id="node35" href="$d5/dc2/class_g_n_e_stopping_place.html" title="GNEStoppingPlace" alt="" coords="1631,4426,1769,4453"/>
+<area shape="rect" id="node39" href="$d8/d0a/class_g_n_e_vaporizer.html" title="GNEVaporizer" alt="" coords="1646,4071,1754,4098"/>
+<area shape="rect" id="node40" href="$d8/d0f/class_g_n_e_variable_speed_sign.html" title="GNEVariableSpeedSign" alt="" coords="1617,4122,1783,4149"/>
+<area shape="rect" id="node28" href="$db/d52/class_g_n_e_detector_e1.html" title="GNEDetectorE1" alt="" coords="1910,4502,2026,4529"/>
+<area shape="rect" id="node29" href="$d0/d81/class_g_n_e_detector_e2.html" title="GNEDetectorE2" alt="" coords="1910,4553,2026,4579"/>
+<area shape="rect" id="node30" href="$da/d18/class_g_n_e_detector_entry.html" title="GNEDetectorEntry" alt="" coords="1903,4603,2033,4630"/>
+<area shape="rect" id="node31" href="$d2/d9e/class_g_n_e_detector_exit.html" title="GNEDetectorExit" alt="" coords="1907,4654,2029,4681"/>
+<area shape="rect" id="node36" href="$d9/dc0/class_g_n_e_bus_stop.html" title="A lane area vehicles can halt at (netedit&#45;version) " alt="" coords="1918,4451,2018,4478"/>
+<area shape="rect" id="node37" href="$d0/d86/class_g_n_e_charging_station.html" title="GNEChargingStation" alt="" coords="1895,4350,2041,4377"/>
+<area shape="rect" id="node38" href="$d9/de0/class_g_n_e_container_stop.html" title="A lane area vehicles can halt at (netedit&#45;version) " alt="" coords="1901,4401,2035,4427"/>
+<area shape="rect" id="node42" href="$d2/d18/class_g_n_e_connection.html" title="GNEConnection" alt="" coords="1641,3818,1759,3845"/>
+<area shape="rect" id="node43" href="$d6/da3/class_g_n_e_crossing.html" title="This object is responsible for drawing a shape and for supplying a a popup menu. Messages are routete..." alt="" coords="1648,3869,1752,3895"/>
+<area shape="rect" id="node44" href="$d9/deb/class_g_n_e_edge.html" title="A road/street connecting two junctions (netedit&#45;version) " alt="" coords="1659,3919,1741,3946"/>
+<area shape="rect" id="node45" href="$d9/def/class_g_n_e_junction.html" title="GNEJunction" alt="" coords="1651,3970,1749,3997"/>
+<area shape="rect" id="node48" href="$de/d94/class_g_u_i_gl_object.html" title="GUIGlObject" alt="" coords="1113,3346,1210,3373"/>
+<area shape="rect" id="node49" href="$df/d2c/class_g_n_e_net.html" title="A NBNetBuilder extended by visualisation and editing capabilities. " alt="" coords="1391,3463,1462,3490"/>
+<area shape="rect" id="node50" href="$dd/d52/class_g_u_i_base_vehicle.html" title="A MSVehicle extended by some values for usage within the gui. " alt="" coords="1365,3565,1488,3591"/>
+<area shape="rect" id="node53" href="$d0/d61/class_g_u_i_container.html" title="GUIContainer" alt="" coords="1375,3717,1478,3743"/>
+<area shape="rect" id="node54" href="$d4/d64/class_g_u_i_edge.html" title="A road/street connecting two junctions (gui&#45;version) " alt="" coords="1388,3245,1465,3271"/>
+<area shape="rect" id="node55" href="$d9/d5d/class_g_u_i_gl_object___abstract_add.html" title="GUIGlObject_AbstractAdd" alt="" coords="1338,2519,1515,2546"/>
+<area shape="rect" id="node69" href="$de/d2c/class_g_u_i_junction_wrapper.html" title="GUIJunctionWrapper" alt="" coords="1354,3295,1499,3322"/>
+<area shape="rect" id="node70" href="$d2/dda/class_g_u_i_lane.html" title="Representation of a lane in the micro simulation (gui&#45;version) " alt="" coords="1389,3194,1464,3221"/>
+<area shape="rect" id="node71" href="$da/d8c/class_g_u_i_net.html" title="A MSNet extended by some values for usage within the gui. " alt="" coords="1394,3615,1459,3642"/>
+<area shape="rect" id="node72" href="$d7/d9c/class_g_u_i_person.html" title="GUIPerson" alt="" coords="1383,3767,1471,3794"/>
+<area shape="rect" id="node73" href="$d2/d46/class_g_u_i_traffic_light_logic_wrapper.html" title="GUITrafficLightLogicWrapper" alt="" coords="1329,3346,1524,3373"/>
+<area shape="rect" id="node74" href="$dd/df7/class_g_u_i_triggered_rerouter_1_1_g_u_i_triggered_rerouter_edge.html" title="GUITriggeredRerouter\l::GUITriggeredRerouterEdge" alt="" coords="1328,3397,1525,3439"/>
+<area shape="rect" id="node51" href="$d1/de5/class_g_u_i_m_e_vehicle.html" title="A MSVehicle extended by some values for usage within the gui. " alt="" coords="1645,3666,1755,3693"/>
+<area shape="rect" id="node52" href="$d6/d17/class_g_u_i_vehicle.html" title="A MSVehicle extended by some values for usage within the gui. " alt="" coords="1655,3717,1745,3743"/>
+<area shape="rect" id="node56" href="$d8/d62/class_g_u_i_bus_stop.html" title="A lane area vehicles can halt at (gui&#45;version) " alt="" coords="1653,2454,1747,2481"/>
+<area shape="rect" id="node57" href="$da/daf/class_g_u_i_charging_station.html" title="A lane area vehicles can halt at (gui&#45;version) " alt="" coords="1629,2621,1771,2647"/>
+<area shape="rect" id="node58" href="$d0/d7d/class_g_u_i_container_stop.html" title="A lane area vehicles can halt at (gui&#45;version) " alt="" coords="1635,2570,1765,2597"/>
+<area shape="rect" id="node59" href="$dd/d4c/class_g_u_i_detector_wrapper.html" title="GUIDetectorWrapper" alt="" coords="1627,2519,1773,2546"/>
+<area shape="rect" id="node65" href="$d5/db6/class_g_u_i_parking_area.html" title="A lane area vehicles can halt at (gui&#45;version) " alt="" coords="1640,2338,1760,2365"/>
+<area shape="rect" id="node66" href="$dc/d32/class_g_u_i_point_of_interest.html" title="GUIPointOfInterest" alt="" coords="1635,3615,1765,3642"/>
+<area shape="rect" id="node67" href="$da/d4d/class_g_u_i_polygon.html" title="GUIPolygon" alt="" coords="1653,3063,1747,3090"/>
+<area shape="rect" id="node68" href="$de/d92/class_g_u_i_triggered_rerouter.html" title="Reroutes vehicles passing an edge One rerouter can be active on multiple edges. To reduce drawing loa..." alt="" coords="1621,1841,1779,1867"/>
+<area shape="rect" id="node60" href="$d4/d70/class_g_u_i_e2_collector_1_1_my_wrapper.html" title="GUIE2Collector::MyWrapper" alt="" coords="1873,2498,2063,2525"/>
+<area shape="rect" id="node61" href="$dd/d00/class_g_u_i_e3_collector_1_1_my_wrapper.html" title="GUIE3Collector::MyWrapper" alt="" coords="1873,2549,2063,2575"/>
+<area shape="rect" id="node62" href="$d8/d16/class_g_u_i_induct_loop_1_1_my_wrapper.html" title="A MSInductLoop&#45;visualiser. " alt="" coords="1875,2599,2061,2626"/>
+<area shape="rect" id="node63" href="$d4/d7f/class_g_u_i_instant_induct_loop_1_1_my_wrapper.html" title="A MSInductLoop&#45;visualiser. " alt="" coords="1894,2651,2042,2692"/>
+<area shape="rect" id="node64" href="$db/d54/class_g_u_i_m_e_induct_loop_1_1_my_wrapper.html" title="GUIMEInductLoop::MyWrapper" alt="" coords="1865,2717,2071,2743"/>
+<area shape="rect" id="node75" href="$d2/da5/class_m_s_move_reminder.html" title="Something on a lane to be noticed about vehicle movement. " alt="" coords="1094,1399,1229,1426"/>
+<area shape="rect" id="node76" href="$da/d1c/class_m_s_calibrator_1_1_vehicle_remover.html" title="MSCalibrator::VehicleRemover" alt="" coords="1323,1141,1531,1167"/>
+<area shape="rect" id="node77" href="$d1/d46/class_m_s_device.html" title="Abstract in&#45;vehicle device. " alt="" coords="1384,1039,1469,1066"/>
+<area shape="rect" id="node88" href="$d1/de2/class_m_s_e2_collector.html" title="An areal detector corresponding to a sequence of consecutive lanes. " alt="" coords="1371,1323,1482,1350"/>
+<area shape="rect" id="node90" href="$db/d1a/class_m_s_e3_collector_1_1_m_s_e3_entry_reminder.html" title="A place on the road net (at a certain lane and position on it) where the E3 area begins. " alt="" coords="1335,1192,1518,1233"/>
+<area shape="rect" id="node91" href="$d9/d2e/class_m_s_e3_collector_1_1_m_s_e3_leave_reminder.html" title="A place on the road net (at a certain lane and position on it) where the E3 area ends. " alt="" coords="1331,1257,1523,1299"/>
+<area shape="rect" id="node92" href="$de/d04/class_m_s_induct_loop.html" title="An unextended detector measuring at a fixed position on a fixed lane. " alt="" coords="1373,1374,1480,1401"/>
+<area shape="rect" id="node94" href="$d0/dde/class_m_s_instant_induct_loop.html" title="An instantaneous induction loop. " alt="" coords="1354,1425,1499,1451"/>
+<area shape="rect" id="node96" href="$d3/d7c/class_m_s_mean_data_1_1_mean_data_values.html" title="Data structure for mean (aggregated) edge/lane values. " alt="" coords="1317,769,1536,795"/>
+<area shape="rect" id="node102" href="$d4/d4e/class_m_s_route_probe.html" title="Writes routes of vehicles passing a certain edge. " alt="" coords="1370,1475,1483,1502"/>
+<area shape="rect" id="node103" href="$d6/d1d/class_m_s_triggered_rerouter.html" title="Reroutes vehicles passing an edge. " alt="" coords="1349,1678,1504,1705"/>
+<area shape="rect" id="node78" href="$d9/de6/class_m_s_device___battery.html" title="Battery device for electric vehicles. " alt="" coords="1633,827,1767,854"/>
+<area shape="rect" id="node79" href="$d9/df4/class_m_s_device___b_treceiver.html" title="A BT receiver. " alt="" coords="1620,878,1780,905"/>
+<area shape="rect" id="node80" href="$dc/d54/class_m_s_device___b_tsender.html" title="A BT sender. " alt="" coords="1623,929,1777,955"/>
+<area shape="rect" id="node81" href="$d9/dc0/class_m_s_device___emissions.html" title="A device which collects vehicular emissions. " alt="" coords="1623,979,1777,1006"/>
+<area shape="rect" id="node82" href="$d1/d45/class_m_s_device___example.html" title="A device which collects info on the vehicle trip (mainly on departure and arrival) ..." alt="" coords="1628,1030,1772,1057"/>
+<area shape="rect" id="node83" href="$de/da1/class_m_s_device___routing.html" title="A device that performs vehicle rerouting based on current edge speeds. " alt="" coords="1631,1081,1769,1107"/>
+<area shape="rect" id="node84" href="$d9/d10/class_m_s_device___s_s_m.html" title="A device which collects info on the vehicle trip (mainly on departure and arrival) ..." alt="" coords="1639,1131,1761,1158"/>
+<area shape="rect" id="node85" href="$df/d0b/class_m_s_device___transportable.html" title="MSDevice_Transportable" alt="" coords="1612,1182,1788,1209"/>
+<area shape="rect" id="node86" href="$d8/dfb/class_m_s_device___tripinfo.html" title="A device which collects info on the vehicle trip (mainly on departure and arrival) ..." alt="" coords="1631,1233,1769,1259"/>
+<area shape="rect" id="node87" href="$d3/db0/class_m_s_device___vehroutes.html" title="A device which collects info on the vehicle trip (mainly on departure and arrival) ..." alt="" coords="1623,1283,1777,1310"/>
+<area shape="rect" id="node89" href="$df/d50/class_g_u_i_e2_collector.html" title="The gui&#45;version of the MSE2Collector. " alt="" coords="1643,1334,1757,1361"/>
+<area shape="rect" id="node93" href="$d7/dcb/class_g_u_i_induct_loop.html" title="The gui&#45;version of the MSInductLoop. " alt="" coords="1645,1385,1755,1411"/>
+<area shape="rect" id="node95" href="$de/d0d/class_g_u_i_instant_induct_loop.html" title="The gui&#45;version of the MSInstantInductLoop. " alt="" coords="1626,1435,1774,1462"/>
+<area shape="rect" id="node97" href="$dc/d57/class_m_s_mean_data_1_1_mean_data_value_tracker.html" title="Data structure for mean (aggregated) edge/lane values for tracked vehicles. " alt="" coords="1595,761,1805,803"/>
+<area shape="rect" id="node98" href="$d0/dc9/class_m_s_mean_data___amitran_1_1_m_s_lane_mean_data_values.html" title="Data structure for mean (aggregated) edge/lane values. " alt="" coords="1607,500,1793,541"/>
+<area shape="rect" id="node99" href="$dd/d61/class_m_s_mean_data___emissions_1_1_m_s_lane_mean_data_values.html" title="Data structure for mean (aggregated) edge/lane values. " alt="" coords="1607,565,1793,607"/>
+<area shape="rect" id="node100" href="$dd/d5c/class_m_s_mean_data___harmonoise_1_1_m_s_lane_mean_data_values.html" title="Data structure for mean (aggregated) edge/lane values. " alt="" coords="1607,631,1793,672"/>
+<area shape="rect" id="node101" href="$df/d49/class_m_s_mean_data___net_1_1_m_s_lane_mean_data_values.html" title="Data structure for mean (aggregated) edge/lane values. " alt="" coords="1588,696,1812,737"/>
+<area shape="rect" id="node104" href="$dc/d5d/class_m_s_net.html" title="The simulated network and simulation perfomer. " alt="" coords="1130,3397,1193,3423"/>
+<area shape="rect" id="node105" href="$d8/d53/class_m_s_transportable.html" title="MSTransportable" alt="" coords="833,3742,960,3769"/>
+<area shape="rect" id="node106" href="$d1/dc4/class_m_s_container.html" title="MSContainer" alt="" coords="1111,3717,1211,3743"/>
+<area shape="rect" id="node107" href="$de/d25/class_m_s_person.html" title="MSPerson" alt="" coords="1119,3767,1204,3794"/>
+<area shape="rect" id="node108" href="$d5/dbf/class_named.html" title="Base class for objects which have an id. " alt="" coords="863,2222,930,2249"/>
+<area shape="rect" id="node109" href="$d8/d4f/class_distribution.html" title="Distribution" alt="" coords="1118,2557,1205,2583"/>
+<area shape="rect" id="node112" href="$d7/df8/class_intermodal_edge.html" title="the base edge type that is given to the internal router (SUMOAbstractRouter) " alt="" coords="1091,2185,1232,2227"/>
+<area shape="rect" id="node118" href="$da/d63/class_m_e_segment.html" title="A single mesoscopic segment (cell) " alt="" coords="1114,2134,1209,2161"/>
+<area shape="rect" id="node119" href="$d4/de2/class_m_s_detector_file_output.html" title="Base of value&#45;generating classes (detectors) " alt="" coords="1085,1653,1237,1679"/>
+<area shape="rect" id="node129" href="$df/d02/class_m_s_device___b_tsender_1_1_vehicle_information.html" title="Stores the information of a vehicle. " alt="" coords="1081,2752,1242,2793"/>
+<area shape="rect" id="node131" href="$d7/d27/class_m_s_edge.html" title="A road/street connecting two junctions. " alt="" coords="1124,3245,1199,3271"/>
+<area shape="rect" id="node132" href="$d2/de4/class_m_s_junction.html" title="The base class for an intersection. " alt="" coords="1116,2033,1207,2059"/>
+<area shape="rect" id="node137" href="$d9/d16/class_m_s_lane.html" title="Representation of a lane in the micro simulation. " alt="" coords="1125,3194,1197,3221"/>
+<area shape="rect" id="node138" href="$de/dd8/class_m_s_route.html" title="MSRoute" alt="" coords="1123,2941,1200,2967"/>
+<area shape="rect" id="node139" href="$d2/d39/class_m_s_stopping_place.html" title="A lane area vehicles can halt at. " alt="" coords="1097,2418,1226,2445"/>
+<area shape="rect" id="node142" href="$df/d93/class_m_s_traffic_light_logic.html" title="The parent class for traffic light logics. " alt="" coords="1091,2890,1232,2917"/>
+<area shape="rect" id="node159" href="$dd/dff/class_m_s_trigger.html" title="An abstract device that changes the state of the micro simulation. " alt="" coords="1118,1805,1205,1831"/>
+<area shape="rect" id="node160" href="$d7/d91/class_n_b_district.html" title="A class representing a single district. " alt="" coords="1121,2251,1201,2278"/>
+<area shape="rect" id="node161" href="$d7/d41/class_n_b_edge.html" title="The representation of a single edge during network building. " alt="" coords="1125,2991,1197,3018"/>
+<area shape="rect" id="node162" href="$d9/d4e/class_n_b_loaded_t_l_def_1_1_signal_group.html" title="A single signal group, may control several connections. " alt="" coords="1057,2302,1265,2329"/>
+<area shape="rect" id="node163" href="$d3/dd1/class_n_b_node.html" title="Represents a single node (junction) during network building. " alt="" coords="1125,2607,1198,2634"/>
+<area shape="rect" id="node164" href="$d3/de8/class_n_b_traffic_light_definition.html" title="The base class for traffic light logic definitions. " alt="" coords="1081,2839,1242,2866"/>
+<area shape="rect" id="node168" href="$d7/d9d/class_n_b_traffic_light_logic.html" title="A SUMO&#45;compliant built logic for a traffic light. " alt="" coords="1092,3042,1231,3069"/>
+<area shape="rect" id="node169" href="$d9/daf/class_n_g_edge.html" title="A netgen&#45;representation of an edge. " alt="" coords="1124,2658,1199,2685"/>
+<area shape="rect" id="node170" href="$d3/db0/class_n_g_node.html" title="A netgen&#45;representation of a node. " alt="" coords="1124,1247,1199,1274"/>
+<area shape="rect" id="node171" href="$d9/d38/class_o_d_district.html" title="A district (origin/destination) " alt="" coords="1120,1298,1203,1325"/>
+<area shape="rect" id="node172" href="$d2/dd7/class_r_o_d_f_detector.html" title="Class representing a detector within the DFROUTER. " alt="" coords="1106,1349,1217,1375"/>
+<area shape="rect" id="node173" href="$de/df5/class_r_o_edge.html" title="A basic edge for routing applications. " alt="" coords="1125,1881,1198,1907"/>
+<area shape="rect" id="node178" href="$dc/d45/class_r_o_lane.html" title="A single lane the router may use. " alt="" coords="1126,1450,1197,1477"/>
+<area shape="rect" id="node179" href="$d4/d5d/class_r_o_node.html" title="Base class for nodes used by the router. " alt="" coords="1124,1501,1199,1527"/>
+<area shape="rect" id="node180" href="$de/dcc/class_r_o_route.html" title="A complete router&#39;s route. " alt="" coords="1123,1551,1199,1578"/>
+<area shape="rect" id="node181" href="$d4/d8d/class_r_o_route_def.html" title="Base class for a vehicle&#39;s route definition. " alt="" coords="1113,1602,1210,1629"/>
+<area shape="rect" id="node182" href="$d7/da7/class_shape.html" title="A 2D&#45; or 3D&#45;Shape. " alt="" coords="1131,3143,1192,3170"/>
+<area shape="rect" id="node110" href="$dc/d0d/class_distribution___parameterized.html" title="Distribution_Parameterized" alt="" coords="1335,2722,1518,2749"/>
+<area shape="rect" id="node111" href="$d6/d23/class_distribution___points.html" title="Distribution_Points" alt="" coords="1361,2671,1492,2698"/>
+<area shape="rect" id="node113" href="$da/d7f/class_access_edge.html" title="the access edge connecting different modes that is given to the internal router (SUMOAbstractRouter) ..." alt="" coords="1337,2083,1517,2110"/>
+<area shape="rect" id="node114" href="$d8/d80/class_car_edge.html" title="the car edge type that is given to the internal router (SUMOAbstractRouter) " alt="" coords="1348,2134,1505,2161"/>
+<area shape="rect" id="node115" href="$dc/d72/class_pedestrian_edge.html" title="the pedestrian edge type that is given to the internal router (SUMOAbstractRouter) ..." alt="" coords="1355,2185,1498,2227"/>
+<area shape="rect" id="node116" href="$d5/d63/class_public_transport_edge.html" title="the public transport edge type connecting the stop edges " alt="" coords="1353,2251,1501,2292"/>
+<area shape="rect" id="node117" href="$d1/dc7/class_stop_edge.html" title="the stop edge type representing bus and train stops " alt="" coords="1345,2317,1508,2343"/>
+<area shape="rect" id="node120" href="$d3/d0e/class_m_e_induct_loop.html" title="An induction loop for mesoscopic simulation. " alt="" coords="1373,1526,1480,1553"/>
+<area shape="rect" id="node122" href="$db/de7/class_m_s_e3_collector.html" title="A detector of vehicles passing an area between entry/exit points. " alt="" coords="1371,1577,1482,1603"/>
+<area shape="rect" id="node124" href="$d3/d67/class_m_s_mean_data.html" title="Data collector for edges/lanes. " alt="" coords="1374,1627,1479,1654"/>
+<area shape="rect" id="node121" href="$dd/d63/class_g_u_i_m_e_induct_loop.html" title="GUIMEInductLoop" alt="" coords="1635,1486,1765,1513"/>
+<area shape="rect" id="node123" href="$d8/d42/class_g_u_i_e3_collector.html" title="The gui&#45;version of the MSE3Collector. " alt="" coords="1643,1537,1757,1563"/>
+<area shape="rect" id="node125" href="$d9/d10/class_m_s_mean_data___amitran.html" title="Network state mean data collector for edges/lanes. " alt="" coords="1621,1689,1779,1715"/>
+<area shape="rect" id="node126" href="$d0/def/class_m_s_mean_data___emissions.html" title="Emission data collector for edges/lanes. " alt="" coords="1613,1739,1787,1766"/>
+<area shape="rect" id="node127" href="$dc/d17/class_m_s_mean_data___harmonoise.html" title="Noise data collector for edges/lanes. " alt="" coords="1607,1790,1793,1817"/>
+<area shape="rect" id="node128" href="$d9/da2/class_m_s_mean_data___net.html" title="Network state mean data collector for edges/lanes. " alt="" coords="1634,1587,1766,1614"/>
+<area shape="rect" id="node130" href="$d8/d29/class_m_s_device___b_treceiver_1_1_vehicle_information.html" title="Stores the information of a vehicle. " alt="" coords="1347,2773,1507,2815"/>
+<area shape="rect" id="node133" href="$dd/df2/class_m_s_logic_junction.html" title="MSLogicJunction" alt="" coords="1365,1982,1489,2009"/>
+<area shape="rect" id="node136" href="$de/dab/class_m_s_no_logic_junction.html" title="MSNoLogicJunction" alt="" coords="1356,2033,1497,2059"/>
+<area shape="rect" id="node134" href="$d1/dfb/class_m_s_internal_junction.html" title="MSInternalJunction" alt="" coords="1633,1957,1767,1983"/>
+<area shape="rect" id="node135" href="$d3/dcd/class_m_s_right_of_way_junction.html" title="A junction with right&#45;of&#45;way &#45; rules. " alt="" coords="1619,2007,1781,2034"/>
+<area shape="rect" id="node140" href="$d0/d1b/class_m_s_charging_station.html" title="MSChargingStation" alt="" coords="1357,2621,1496,2647"/>
+<area shape="rect" id="node141" href="$db/d19/class_m_s_parking_area.html" title="A lane area vehicles can halt at. " alt="" coords="1368,2367,1485,2394"/>
+<area shape="rect" id="node143" href="$d6/dc8/class_m_s_off_traffic_light_logic.html" title="A traffic lights logic which represents a tls in an off&#45;mode. " alt="" coords="1348,3042,1505,3069"/>
+<area shape="rect" id="node144" href="$d8/d92/class_m_s_phased_traffic_light_logic.html" title="A fixed traffic light logic. " alt="" coords="1333,2469,1521,2495"/>
+<area shape="rect" id="node154" href="$dc/d0f/class_m_s_rail_signal.html" title="A signal for rails. " alt="" coords="1375,2991,1478,3018"/>
+<area shape="rect" id="node155" href="$d7/d57/class_m_s_simple_traffic_light_logic.html" title="A fixed traffic light logic. " alt="" coords="1335,3143,1518,3170"/>
+<area shape="rect" id="node145" href="$db/dc0/class_m_s_s_o_t_l_traffic_light_logic.html" title="A self&#45;organizing traffic light logic. " alt="" coords="1611,2389,1789,2415"/>
+<area shape="rect" id="node146" href="$dc/d9c/class_m_s_s_o_t_l_hi_level_traffic_light_logic.html" title="A self&#45;organizing high&#45;level traffic light logic. " alt="" coords="1873,2133,2063,2175"/>
+<area shape="rect" id="node149" href="$d7/d49/class_m_s_s_o_t_l_phase_traffic_light_logic.html" title="MSSOTLPhaseTrafficLightLogic" alt="" coords="1860,2199,2076,2226"/>
+<area shape="rect" id="node150" href="$d8/de1/class_m_s_s_o_t_l_platoon_traffic_light_logic.html" title="MSSOTLPlatoonTrafficLight\lLogic" alt="" coords="1873,2251,2063,2292"/>
+<area shape="rect" id="node151" href="$da/d25/class_m_s_s_o_t_l_policy_based_traffic_light_logic.html" title="A self&#45;organizing traffic light logic based on a particular policy. " alt="" coords="1871,2316,2065,2357"/>
+<area shape="rect" id="node152" href="$d6/d20/class_m_s_s_o_t_l_request_traffic_light_logic.html" title="MSSOTLRequestTrafficLight\lLogic" alt="" coords="1871,2381,2065,2423"/>
+<area shape="rect" id="node153" href="$de/d5a/class_m_s_s_o_t_l_wave_traffic_light_logic.html" title="MSSOTLWaveTrafficLightLogic" alt="" coords="1861,2447,2075,2474"/>
+<area shape="rect" id="node147" href="$d2/d01/class_m_s_deterministic_hi_level_traffic_light_logic.html" title="MSDeterministicHiLevelTraffic\lLightLogic" alt="" coords="2124,2104,2327,2145"/>
+<area shape="rect" id="node148" href="$d0/d7b/class_m_s_swarm_traffic_light_logic.html" title="MSSwarmTrafficLightLogic" alt="" coords="2134,2170,2317,2197"/>
+<area shape="rect" id="node156" href="$d5/db6/class_m_s_actuated_traffic_light_logic.html" title="An actuated (adaptive) traffic light logic. " alt="" coords="1603,3114,1797,3141"/>
+<area shape="rect" id="node157" href="$d5/ddf/class_m_s_delay_based_traffic_light_logic.html" title="An actuated traffic light logic based on time delay of approaching vehicles. " alt="" coords="1608,3165,1792,3207"/>
+<area shape="rect" id="node158" href="$d3/d28/class_m_s_rail_crossing.html" title="A signal for rails. " alt="" coords="1641,3231,1759,3258"/>
+<area shape="rect" id="node165" href="$db/d84/class_n_b_loaded_s_u_m_o_t_l_def.html" title="A loaded (complete) traffic light logic. " alt="" coords="1345,2941,1509,2967"/>
+<area shape="rect" id="node166" href="$dd/d6e/class_n_b_loaded_t_l_def.html" title="A loaded (complete) traffic light logic. " alt="" coords="1364,2839,1489,2866"/>
+<area shape="rect" id="node167" href="$d3/dfe/class_n_b_own_t_l_def.html" title="A traffic light logics which must be computed (only nodes/edges are given) " alt="" coords="1374,2890,1479,2917"/>
+<area shape="rect" id="node174" href="$d1/d9d/class_a_g_street.html" title="A model of the street in the city. " alt="" coords="1388,1779,1465,1806"/>
+<area shape="rect" id="node175" href="$d8/d77/class_r_o_d_f_edge.html" title="RODFEdge" alt="" coords="1381,1830,1472,1857"/>
+<area shape="rect" id="node176" href="$de/dc2/class_r_o_j_t_r_edge.html" title="An edge the jtr&#45;router may route through. " alt="" coords="1377,1881,1476,1907"/>
+<area shape="rect" id="node177" href="$da/d46/class_r_o_m_a_edge.html" title="A basic edge for routing applications. " alt="" coords="1380,1931,1473,1958"/>
+<area shape="rect" id="node183" href="$d8/dc6/class_point_of_interest.html" title="A point&#45;of&#45;interest. " alt="" coords="1373,3666,1481,3693"/>
+<area shape="rect" id="node184" href="$d9/d5b/class_s_u_m_o_1_1_polygon.html" title="A 2D&#45; or 3D&#45;polygon. " alt="" coords="1367,3093,1486,3119"/>
+<area shape="rect" id="node185" href="$d7/dc7/class_parameterised.html" title="An upper class for objects with additional parameters. " alt="" coords="841,3219,952,3246"/>
+<area shape="rect" id="node186" href="$d2/d9d/class_m_s_s_o_t_l_policy.html" title="Class for a low&#45;level policy. " alt="" coords="1104,4207,1219,4234"/>
+<area shape="rect" id="node192" href="$d5/de3/class_m_s_s_o_t_l_policy_desirability.html" title="This class determines the desirability algorithm of a MSSOTLPolicy when used in combination with a hi..." alt="" coords="1071,3970,1252,3997"/>
+<area shape="rect" id="node196" href="$d9/d25/struct_n_i_importer___open_street_map_1_1_edge.html" title="An internal definition of a loaded edge. " alt="" coords="1070,3499,1253,3540"/>
+<area shape="rect" id="node197" href="$d8/d51/class_s_u_m_o_vehicle_parameter.html" title="Structure representing possible vehicle parameter. " alt="" coords="1077,3565,1246,3591"/>
+<area shape="rect" id="node198" href="$de/d76/class_s_u_m_o_v_type_parameter.html" title="Structure representing possible vehicle parameter. " alt="" coords="1079,3447,1244,3474"/>
+<area shape="rect" id="node187" href="$d3/df9/class_m_s_s_o_t_l_congestion_policy.html" title="Class for low&#45;level congestion policy. " alt="" coords="1335,4325,1519,4351"/>
+<area shape="rect" id="node188" href="$d9/d80/class_m_s_s_o_t_l_marching_policy.html" title="Class for low&#45;level marching policy. " alt="" coords="1341,4375,1512,4402"/>
+<area shape="rect" id="node189" href="$df/d53/class_m_s_s_o_t_l_phase_policy.html" title="Class for low&#45;level phase policy. " alt="" coords="1349,4477,1504,4503"/>
+<area shape="rect" id="node190" href="$d8/db4/class_m_s_s_o_t_l_platoon_policy.html" title="Class for low&#45;level platoon policy. " alt="" coords="1346,4426,1507,4453"/>
+<area shape="rect" id="node191" href="$d9/d11/class_m_s_s_o_t_l_request_policy.html" title="Class for low&#45;level request policy. " alt="" coords="1344,4274,1509,4301"/>
+<area shape="rect" id="node193" href="$de/daa/class_m_s_s_o_t_l_policy5_d_family_stimulus.html" title="MSSOTLPolicy5DFamilyStimulus" alt="" coords="1315,3970,1538,3997"/>
+<area shape="rect" id="node194" href="$d9/d92/class_m_s_s_o_t_l_policy5_d_stimulus.html" title="MSSOTLPolicy5DStimulus" alt="" coords="1335,4021,1518,4047"/>
+<area shape="rect" id="node195" href="$df/d65/class_m_s_s_o_t_l_policy3_d_stimulus.html" title="MSSOTLPolicy3DStimulus" alt="" coords="1609,3767,1791,3794"/>
+<area shape="rect" id="node199" href="$d7/d3b/class_position.html" title="A point in 2D or 3D with translation and scaling methods. " alt="" coords="1126,3666,1197,3693"/>
+<area shape="rect" id="node200" href="$d7/d82/class_push_button_logic.html" title="PushButtonLogic" alt="" coords="1100,4258,1223,4285"/>
+<area shape="rect" id="node201" href="$d5/d9b/class_random_distributor.html" title="RandomDistributor\&lt;\l double \&gt;" alt="" coords="1091,2491,1231,2532"/>
+<area shape="rect" id="node202" href="$de/d08/class_sigmoid_logic.html" title="SigmoidLogic" alt="" coords="1109,4477,1214,4503"/>
+<area shape="rect" id="node203" href="$db/d61/class_s_u_m_o_vehicle.html" title="Representation of a vehicle. " alt="" coords="843,3793,950,3819"/>
+<area shape="rect" id="node204" href="$d9/dd6/class_m_s_base_vehicle.html" title="The base class for microscopic and mesoscopic vehicles. " alt="" coords="1102,3869,1221,3895"/>
+<area shape="rect" id="node205" href="$d4/dd3/class_m_e_vehicle.html" title="A vehicle from the mesoscopic point of view. " alt="" coords="1383,3869,1470,3895"/>
+<area shape="rect" id="node206" href="$d7/d90/class_m_s_vehicle.html" title="Representation of a vehicle in the micro simulation. " alt="" coords="1383,3919,1470,3946"/>
+<area shape="rect" id="node208" href="$da/da8/class_generic_s_a_x_handler.html" title="A handler which converts occuring elements and attributes into enums. " alt="" coords="164,3863,308,3890"/>
+<area shape="rect" id="node209" href="$d6/d44/class_n_i_importer___i_t_s_u_m_o_1_1_handler.html" title="NIImporter_ITSUMO::\lHandler" alt="" coords="471,3477,621,3519"/>
+<area shape="rect" id="node210" href="$df/da3/class_n_i_importer___m_a_t_sim_1_1_edges_handler.html" title="A class which extracts MATSIM&#45;edges from a parsed MATSIM&#45;file. " alt="" coords="471,3543,621,3584"/>
+<area shape="rect" id="node211" href="$d7/d5d/class_n_i_importer___m_a_t_sim_1_1_nodes_handler.html" title="A class which extracts MATSIM&#45;nodes from a parsed MATSIM&#45;file. " alt="" coords="471,3608,621,3649"/>
+<area shape="rect" id="node212" href="$d7/d17/class_n_i_importer___open_drive.html" title="Importer for networks stored in openDrive format. " alt="" coords="469,3674,623,3701"/>
+<area shape="rect" id="node213" href="$d0/d3a/class_n_i_importer___vissim_1_1_n_i_vissim_x_m_l_handler___conflict_area.html" title="NIImporter_Vissim::\lNIVissimXMLHandler_ConflictArea" alt="" coords="432,3725,660,3767"/>
+<area shape="rect" id="node214" href="$d6/d12/class_n_i_importer___vissim_1_1_n_i_vissim_x_m_l_handler___fahrzeugklassendefinition.html" title="NIImporter_Vissim::\lNIVissimXMLHandler_Fahrzeugklassendefinition" alt="" coords="390,3791,702,3832"/>
+<area shape="rect" id="node215" href="$db/d4c/class_n_i_importer___vissim_1_1_n_i_vissim_x_m_l_handler___geschwindigkeitsverteilungsdefinition.html" title="NIImporter_Vissim::\lNIVissimXMLHandler_Geschwindigkeitsverteilungsdefinition" alt="" coords="356,3856,736,3897"/>
+<area shape="rect" id="node216" href="$d3/dd2/class_n_i_importer___vissim_1_1_n_i_vissim_x_m_l_handler___parkplatzdefinition.html" title="NIImporter_Vissim::\lNIVissimXMLHandler_Parkplatzdefinition" alt="" coords="414,3921,678,3963"/>
+<area shape="rect" id="node217" href="$d7/d69/class_n_i_importer___vissim_1_1_n_i_vissim_x_m_l_handler___routenentscheidungsdefinition.html" title="A class which extracts VISSIM&#45;Routes from a parsed VISSIM&#45;file. " alt="" coords="377,3987,715,4028"/>
+<area shape="rect" id="node218" href="$d3/d3d/class_n_i_importer___vissim_1_1_n_i_vissim_x_m_l_handler___streckendefinition.html" title="NIImporter_Vissim::\lNIVissimXMLHandler_Streckendefinition" alt="" coords="415,4052,677,4093"/>
+<area shape="rect" id="node219" href="$d1/d45/class_n_i_importer___vissim_1_1_n_i_vissim_x_m_l_handler___v_wunschentscheidungsdefinition.html" title="NIImporter_Vissim::\lNIVissimXMLHandler_VWunschentscheidungsdefinition" alt="" coords="370,4117,722,4159"/>
+<area shape="rect" id="node220" href="$d2/d20/class_n_i_importer___vissim_1_1_n_i_vissim_x_m_l_handler___zuflussdefinition.html" title="NIImporter_Vissim::\lNIVissimXMLHandler_Zuflussdefinition" alt="" coords="421,4183,671,4224"/>
+<area shape="rect" id="node221" href="$db/db8/class_s_u_m_o_s_a_x_handler.html" title="SAX&#45;handler base for SUMO&#45;files. " alt="" coords="479,4249,613,4275"/>
+<area shape="rect" id="node222" href="$df/dfe/class_a_g_activity_gen_handler.html" title="AGActivityGenHandler" alt="" coords="818,4350,975,4377"/>
+<area shape="rect" id="node223" href="$db/dff/class_g_n_e_additional_handler.html" title="Builds trigger objects for GNENet (busStops, chargingStations, detectors, etc..) " alt="" coords="818,4401,975,4427"/>
+<area shape="rect" id="node224" href="$de/d5c/class_g_n_e_poly_1_1_g_n_e_poly_handler.html" title="declare friend class " alt="" coords="803,4451,990,4478"/>
+<area shape="rect" id="node225" href="$d3/dfd/class_g_u_i_settings_handler.html" title="An XML&#45;handler for visualisation schemes. " alt="" coords="827,4502,967,4529"/>
+<area shape="rect" id="node226" href="$db/dfe/class_n_i_importer___open_street_map_1_1_edges_handler.html" title="A class which extracts OSM&#45;edges from a parsed OSM&#45;file. " alt="" coords="805,4553,988,4595"/>
+<area shape="rect" id="node227" href="$dd/da3/class_n_i_importer___open_street_map_1_1_nodes_handler.html" title="A class which extracts OSM&#45;nodes from a parsed OSM&#45;file. " alt="" coords="805,4619,988,4660"/>
+<area shape="rect" id="node228" href="$d3/d16/class_n_i_importer___open_street_map_1_1_relation_handler.html" title="A class which extracts relevant relation information from a parsed OSM&#45;file. " alt="" coords="805,4684,988,4725"/>
+<area shape="rect" id="node229" href="$d5/dfe/class_n_i_importer___s_u_m_o.html" title="Importer for networks stored in SUMO format. " alt="" coords="833,4750,961,4777"/>
+<area shape="rect" id="node230" href="$db/dea/class_n_i_x_m_l_connections_handler.html" title="Importer for edge connections stored in XML. " alt="" coords="805,4801,988,4827"/>
+<area shape="rect" id="node231" href="$d9/d5d/class_n_i_x_m_l_edges_handler.html" title="Importer for network edges stored in XML. " alt="" coords="823,4851,970,4878"/>
+<area shape="rect" id="node232" href="$d9/df7/class_n_i_x_m_l_nodes_handler.html" title="Importer for network nodes stored in XML. " alt="" coords="823,4902,971,4929"/>
+<area shape="rect" id="node233" href="$df/dcb/class_n_i_x_m_l_traffic_lights_handler.html" title="Importer for edge connections stored in XML. " alt="" coords="806,4953,987,4979"/>
+<area shape="rect" id="node234" href="$d0/d72/class_n_i_x_m_l_types_handler.html" title="Importer for edge type information stored in XML. " alt="" coords="823,5003,970,5030"/>
+<area shape="rect" id="node235" href="$d2/d97/class_o_d_amitran_handler.html" title="An XML&#45;Handler for districts. " alt="" coords="829,5054,964,5081"/>
+<area shape="rect" id="node236" href="$d3/dae/class_o_d_district_handler.html" title="An XML&#45;Handler for districts. " alt="" coords="832,1222,961,1249"/>
+<area shape="rect" id="node237" href="$d7/d84/class_p_c_loader_o_s_m.html" title="A reader of pois and polygons stored in OSM&#45;format. " alt="" coords="839,1273,954,1299"/>
+<area shape="rect" id="node238" href="$d9/d18/class_p_c_loader_o_s_m_1_1_edges_handler.html" title="A class which extracts OSM&#45;edges from a parsed OSM&#45;file. " alt="" coords="793,1323,1001,1350"/>
+<area shape="rect" id="node239" href="$d8/d9f/class_p_c_loader_o_s_m_1_1_nodes_handler.html" title="A class which extracts OSM&#45;nodes from a parsed OSM&#45;file. " alt="" coords="792,1653,1001,1679"/>
+<area shape="rect" id="node240" href="$dd/deb/class_p_c_loader_o_s_m_1_1_relations_handler.html" title="A class which extracts relevant way&#45;ids from relations in a parsed OSM&#45;file. " alt="" coords="784,1703,1009,1730"/>
+<area shape="rect" id="node241" href="$dd/dc0/class_p_c_net_projection_loader.html" title="A reader for a SUMO network&#39;s projection description. " alt="" coords="815,3691,979,3718"/>
+<area shape="rect" id="node242" href="$d0/dfc/class_p_c_type_def_handler.html" title="A handler for loading polygon type maps. " alt="" coords="826,3843,967,3870"/>
+<area shape="rect" id="node243" href="$d3/d93/class_r_o_d_f_detector_handler.html" title="SAX2&#45;Handler for loading DFROUTER&#45;detector definitions. " alt="" coords="818,3894,975,3921"/>
+<area shape="rect" id="node244" href="$d2/d32/class_r_o_j_t_r_turn_def_loader.html" title="Loader for the of turning percentages and source/sink definitions. " alt="" coords="817,3945,976,3971"/>
+<area shape="rect" id="node245" href="$d1/ddc/class_r_o_m_a_route_handler.html" title="Parser and container for routes during their loading. " alt="" coords="825,4046,968,4073"/>
+<area shape="rect" id="node246" href="$df/d9d/class_r_o_net_handler.html" title="The handler that parses a SUMO&#45;network for its usage in a router. " alt="" coords="843,4097,951,4123"/>
+<area shape="rect" id="node247" href="$da/ded/class_s_a_x_weights_handler.html" title="An XML&#45;handler for network weights. " alt="" coords="824,4147,969,4174"/>
+<area shape="rect" id="node248" href="$da/da2/class_shape_handler.html" title="The XML&#45;Handler for network loading. " alt="" coords="843,4249,951,4275"/>
+<area shape="rect" id="node252" href="$d4/d33/class_s_u_m_o_route_handler.html" title="Parser for routes during their loading. " alt="" coords="825,4299,968,4326"/>
+<area shape="rect" id="node257" href="$d2/db6/class_trajectories_handler.html" title="An XML&#45;Handler for amitran and netstate trajectories. " alt="" coords="825,4198,968,4225"/>
+<area shape="rect" id="node249" href="$d1/dd7/class_g_n_e_application_window_1_1_g_n_e_shape_handler.html" title="The XML&#45;Handler for shapes loading network loading. " alt="" coords="1079,4309,1243,4351"/>
+<area shape="rect" id="node250" href="$da/d56/class_n_l_shape_handler.html" title="The XML&#45;Handler for shapes loading network loading. " alt="" coords="1099,4375,1223,4402"/>
+<area shape="rect" id="node251" href="$db/d4e/class_p_c_loader_x_m_l.html" title="A reader for polygons and pois stored in XML&#45;format. " alt="" coords="1106,4426,1217,4453"/>
+<area shape="rect" id="node253" href="$d7/df0/class_m_s_route_handler.html" title="Parser and container for routes during their loading. " alt="" coords="1099,4578,1223,4605"/>
+<area shape="rect" id="node256" href="$d8/da6/class_r_o_route_handler.html" title="Parser and container for routes during their loading. " alt="" coords="1100,4527,1223,4554"/>
+<area shape="rect" id="node254" href="$d3/d56/class_m_s_state_handler.html" title="Parser and output filter for routes and vehicles state saving and loading. " alt="" coords="1367,4603,1487,4630"/>
+<area shape="rect" id="node255" href="$da/d57/class_n_l_handler.html" title="The XML&#45;Handler for network loading. " alt="" coords="1384,4553,1469,4579"/>
+</map>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Fri Jan  6 15:59:24 2017 by SUMO Version dev-SVN-r22484
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="motorway.net.xml"/>
+        <route-files value="input_routes.rou.xml"/>
+        <additional-files value="input_additional.add.xml"/>
+    </input>
+
+    <processing>
+        <max-depart-delay value="1"/>
+    </processing>
+
+    <report>
+        <verbose value="true"/>
+        <xml-validation value="never"/>
+        <duration-log.statistics value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+    <mesoscopic>
+        <mesosim value="true"/>
+        <meso-jam-threshold value="-0.9"/>
+        <meso-junction-control value="true"/>
+    </mesoscopic>
+
+</configuration>
+-->
+
+<detector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/det_e1meso_file.xsd">
+    <interval begin="0.00" end="900.00" id="beg2_0" sampledSeconds="3521.78" density="40.44" occupancy="10.11" waitingTime="0.00" speed="28.12" departed="5" arrived="0" entered="1021" left="1021"/>
+    <interval begin="0.00" end="900.00" id="beg2_1" sampledSeconds="3521.78" density="40.44" occupancy="10.11" waitingTime="0.00" speed="28.12" departed="5" arrived="0" entered="1021" left="1021"/>
+    <interval begin="900.00" end="1800.00" id="beg2_0" sampledSeconds="7154.95" density="82.15" occupancy="20.54" waitingTime="0.00" speed="17.33" departed="58" arrived="0" entered="1223" left="1281"/>
+    <interval begin="900.00" end="1800.00" id="beg2_1" sampledSeconds="7154.95" density="82.15" occupancy="20.54" waitingTime="0.00" speed="17.33" departed="58" arrived="0" entered="1223" left="1281"/>
+    <interval begin="1800.00" end="2422.00" id="beg2_0" sampledSeconds="2379.81" density="39.54" occupancy="9.88" waitingTime="0.00" speed="28.40" departed="0" arrived="0" entered="696" left="701"/>
+    <interval begin="1800.00" end="2422.00" id="beg2_1" sampledSeconds="2379.81" density="39.54" occupancy="9.88" waitingTime="0.00" speed="28.40" departed="0" arrived="0" entered="696" left="701"/>
+</detector>

@@ -1,0 +1,21 @@
+<map id="NBTrafficLightLogic.h" name="NBTrafficLightLogic.h">
+<area shape="rect" id="node2" href="$db/d16/config_8h.html" title="config.h" alt="" coords="878,617,946,644"/>
+<area shape="rect" id="node8" href="$d4/d25/_n_b_connection_defs_8h.html" title="NBConnectionDefs.h" alt="" coords="1108,80,1255,107"/>
+<area shape="rect" id="node13" href="$de/d1a/_named_8h.html" title="utils/common/Named.h" alt="" coords="1841,311,1999,338"/>
+<area shape="rect" id="node15" href="$d9/d33/_parameterised_8h.html" title="utils/common/Parameterised.h" alt="" coords="2145,468,2349,495"/>
+<area shape="rect" id="node32" href="$d4/d64/_s_u_m_o_time_8h.html" title="utils/common/SUMOTime.h" alt="" coords="1304,468,1491,495"/>
+<area shape="rect" id="node10" href="$dd/d75/_n_b_connection_8h.html" title="NBConnection.h" alt="" coords="1179,155,1298,181"/>
+<area shape="rect" id="node11" href="$d8/d0b/_n_b_edge_8h.html" title="NBEdge.h" alt="" coords="1205,229,1288,256"/>
+<area shape="rect" id="node16" href="$d7/db4/_util_exceptions_8h.html" title="utils/common/UtilExceptions.h" alt="" coords="1517,543,1715,569"/>
+<area shape="rect" id="node18" href="$d0/d40/_vector_helper_8h.html" title="utils/common/VectorHelper.h" alt="" coords="681,468,874,495"/>
+<area shape="rect" id="node21" href="$de/dc6/_bresenham_8h.html" title="utils/geom/Bresenham.h" alt="" coords="195,393,362,420"/>
+<area shape="rect" id="node22" href="$d3/d43/_position_vector_8h.html" title="utils/geom/PositionVector.h" alt="" coords="386,393,571,420"/>
+<area shape="rect" id="node26" href="$d2/d6d/_s_u_m_o_vehicle_class_8h.html" title="utils/common/SUMOVehicle\lClass.h" alt="" coords="1217,304,1407,345"/>
+<area shape="rect" id="node28" href="$d6/d7a/_s_u_m_o_x_m_l_definitions_8h.html" title="utils/xml/SUMOXMLDefinitions.h" alt="" coords="999,393,1211,420"/>
+<area shape="rect" id="node29" href="$db/dde/_n_b_cont_8h.html" title="NBCont.h" alt="" coords="1063,311,1142,338"/>
+<area shape="rect" id="node30" href="$da/d0c/_n_b_helpers_8h.html" title="NBHelpers.h" alt="" coords="1532,311,1628,338"/>
+<area shape="rect" id="node31" href="$d0/d5f/_n_b_sign_8h.html" title="NBSign.h" alt="" coords="1621,393,1699,420"/>
+<area shape="rect" id="node23" href="$db/dd7/_abstract_poly_8h.html" title="AbstractPoly.h" alt="" coords="195,468,301,495"/>
+<area shape="rect" id="node24" href="$d4/d51/_position_8h.html" title="Position.h" alt="" coords="265,543,345,569"/>
+<area shape="rect" id="node27" href="$d6/d11/_string_bijection_8h.html" title="utils/common/StringBijection.h" alt="" coords="1515,468,1715,495"/>
+</map>

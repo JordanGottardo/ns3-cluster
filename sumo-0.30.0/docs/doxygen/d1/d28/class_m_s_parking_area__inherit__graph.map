@@ -1,0 +1,5 @@
+<map id="MSParkingArea" name="MSParkingArea">
+<area shape="rect" id="node4" href="$d5/db6/class_g_u_i_parking_area.html" title="A lane area vehicles can halt at (gui&#45;version) " alt="" coords="12,1100,189,1353"/>
+<area shape="rect" id="node2" href="$d2/d39/class_m_s_stopping_place.html" title="A lane area vehicles can halt at. " alt="" coords="5,204,196,604"/>
+<area shape="rect" id="node3" href="$d5/dbf/class_named.html" title="Base class for objects which have an id. " alt="" coords="42,5,159,156"/>
+</map>

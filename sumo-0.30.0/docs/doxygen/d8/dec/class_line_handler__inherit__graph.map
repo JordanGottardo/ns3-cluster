@@ -1,0 +1,9 @@
+<map id="LineHandler" name="LineHandler">
+<area shape="rect" id="node2" href="$da/d99/class_n_i_importer___dlr_navteq_1_1_connected_lanes_handler.html" title="Imports prohibitions regarding connectivity. " alt="" coords="5,241,205,391"/>
+<area shape="rect" id="node3" href="$d5/db6/class_n_i_importer___dlr_navteq_1_1_edges_handler.html" title="Importer of edges stored in unsplit elmar format. " alt="" coords="229,160,427,472"/>
+<area shape="rect" id="node4" href="$de/db9/class_n_i_importer___dlr_navteq_1_1_names_handler.html" title="Importer of street names in DLRNavteq&#39;s (aka elmar) format. " alt="" coords="451,241,600,391"/>
+<area shape="rect" id="node5" href="$de/d43/class_n_i_importer___dlr_navteq_1_1_nodes_handler.html" title="Importer of nodes stored in unsplit elmar format. " alt="" coords="624,233,773,399"/>
+<area shape="rect" id="node6" href="$d8/de2/class_n_i_importer___dlr_navteq_1_1_prohibition_handler.html" title="Imports prohibitions regarding connectivity. " alt="" coords="798,219,957,413"/>
+<area shape="rect" id="node7" href="$da/d74/class_n_i_importer___dlr_navteq_1_1_time_restrictions_handler.html" title="Importer of street names in DLRNavteq&#39;s (aka elmar) format. " alt="" coords="981,167,1179,465"/>
+<area shape="rect" id="node8" href="$dc/d86/class_n_i_importer___dlr_navteq_1_1_trafficlights_handler.html" title="Importer of traffic lights stored in DLRNavteq&#39;s (aka elmar) format. " alt="" coords="1203,226,1370,406"/>
+</map>

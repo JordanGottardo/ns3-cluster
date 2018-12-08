@@ -1,0 +1,31 @@
+<map id="ROVehicle.h" name="ROVehicle.h">
+<area shape="rect" id="node2" href="$db/d16/config_8h.html" title="config.h" alt="" coords="1543,885,1611,912"/>
+<area shape="rect" id="node5" href="$da/dbd/_std_defs_8h.html" title="utils/common/StdDefs.h" alt="" coords="452,565,615,591"/>
+<area shape="rect" id="node6" href="$d4/d64/_s_u_m_o_time_8h.html" title="utils/common/SUMOTime.h" alt="" coords="2756,565,2943,591"/>
+<area shape="rect" id="node10" href="$d0/d7a/_s_u_m_o_vehicle_parameter_8h.html" title="utils/vehicle/SUMOVehicle\lParameter.h" alt="" coords="3249,468,3429,509"/>
+<area shape="rect" id="node19" href="$d8/d88/_s_u_m_o_v_type_parameter_8h.html" title="utils/vehicle/SUMOVTypeParameter.h" alt="" coords="3453,475,3702,502"/>
+<area shape="rect" id="node31" href="$df/da8/_r_o_routable_8h.html" title="RORoutable.h" alt="" coords="2909,80,3013,107"/>
+<area shape="rect" id="node8" href="$d7/db4/_util_exceptions_8h.html" title="UtilExceptions.h" alt="" coords="3260,811,3375,837"/>
+<area shape="rect" id="node11" href="$d9/d33/_parameterised_8h.html" title="utils/common/Parameterised.h" alt="" coords="3767,729,3971,755"/>
+<area shape="rect" id="node13" href="$d8/d99/_r_g_b_color_8h.html" title="utils/common/RGBColor.h" alt="" coords="3362,729,3539,755"/>
+<area shape="rect" id="node14" href="$d2/d6d/_s_u_m_o_vehicle_class_8h.html" title="utils/common/SUMOVehicle\lClass.h" alt="" coords="3184,557,3373,599"/>
+<area shape="rect" id="node16" href="$d6/d11/_string_bijection_8h.html" title="utils/common/StringBijection.h" alt="" coords="2985,729,3185,755"/>
+<area shape="rect" id="node18" href="$d6/d7a/_s_u_m_o_x_m_l_definitions_8h.html" title="utils/xml/SUMOXMLDefinitions.h" alt="" coords="2974,647,3186,673"/>
+<area shape="rect" id="node20" href="$d7/d8d/_distribution___parameterized_8h.html" title="utils/distribution\l/Distribution_Parameterized.h" alt="" coords="1892,557,2089,599"/>
+<area shape="rect" id="node21" href="$d6/d68/_rand_helper_8h.html" title="utils/common/RandHelper.h" alt="" coords="1903,647,2089,673"/>
+<area shape="rect" id="node29" href="$d2/d7a/_distribution_8h.html" title="Distribution.h" alt="" coords="1679,647,1777,673"/>
+<area shape="rect" id="node23" href="$da/d3b/_mersenne_twister_8h.html" title="foreign/mersenne/Mersenne\lTwister.h" alt="" coords="1909,721,2099,763"/>
+<area shape="rect" id="node25" href="$df/dd8/stdint_8h.html" title="stdint.h" alt="" coords="2258,811,2321,837"/>
+<area shape="rect" id="node30" href="$de/d1a/_named_8h.html" title="utils/common/Named.h" alt="" coords="1330,729,1489,755"/>
+<area shape="rect" id="node32" href="$dc/d9e/_intermodal_router_8h.html" title="utils/vehicle/Intermodal\lRouter.h" alt="" coords="2047,155,2206,196"/>
+<area shape="rect" id="node35" href="$d4/df7/_msg_handler_8h.html" title="utils/common/MsgHandler.h" alt="" coords="1114,647,1302,673"/>
+<area shape="rect" id="node36" href="$d8/d08/_to_string_8h.html" title="utils/common/ToString.h" alt="" coords="1447,475,1614,502"/>
+<area shape="rect" id="node41" href="$d1/de7/_s_u_m_o_abstract_router_8h.html" title="SUMOAbstractRouter.h" alt="" coords="1942,393,2101,420"/>
+<area shape="rect" id="node43" href="$d6/d78/_dijkstra_router_t_t_8h.html" title="DijkstraRouterTT.h" alt="" coords="871,319,1007,345"/>
+<area shape="rect" id="node47" href="$db/d3f/_intermodal_network_8h.html" title="IntermodalNetwork.h" alt="" coords="2332,319,2476,345"/>
+<area shape="rect" id="node49" href="$d3/d53/_car_edge_8h.html" title="CarEdge.h" alt="" coords="438,319,525,345"/>
+<area shape="rect" id="node50" href="$d1/d02/_pedestrian_router_8h.html" title="PedestrianRouter.h" alt="" coords="1953,244,2089,271"/>
+<area shape="rect" id="node39" href="$d4/d51/_position_8h.html" title="utils/geom/Position.h" alt="" coords="652,729,799,755"/>
+<area shape="rect" id="node42" href="$db/da5/_sys_utils_8h.html" title="utils/common/SysUtils.h" alt="" coords="1767,811,1929,837"/>
+<area shape="rect" id="node48" href="$de/dd4/_intermodal_edge_8h.html" title="IntermodalEdge.h" alt="" coords="1791,393,1918,420"/>
+</map>

@@ -1,0 +1,35 @@
+<map id="NIFrame.cpp" name="NIFrame.cpp">
+<area shape="rect" id="node2" href="$db/d16/config_8h.html" title="config.h" alt="" coords="1910,632,1978,659"/>
+<area shape="rect" id="node6" href="$da/d39/_option_8h.html" title="utils/options/Option.h" alt="" coords="1357,475,1501,502"/>
+<area shape="rect" id="node9" href="$d7/db4/_util_exceptions_8h.html" title="utils/common/UtilExceptions.h" alt="" coords="1119,557,1318,584"/>
+<area shape="rect" id="node11" href="$d3/d5c/_options_cont_8h.html" title="utils/options/OptionsCont.h" alt="" coords="3099,393,3277,420"/>
+<area shape="rect" id="node13" href="$d7/dae/_options_i_o_8h.html" title="utils/options/OptionsIO.h" alt="" coords="1785,475,1949,502"/>
+<area shape="rect" id="node14" href="$d4/df7/_msg_handler_8h.html" title="utils/common/MsgHandler.h" alt="" coords="2951,475,3139,502"/>
+<area shape="rect" id="node15" href="$d8/d08/_to_string_8h.html" title="utils/common/ToString.h" alt="" coords="2151,229,2318,256"/>
+<area shape="rect" id="node26" href="$d6/d68/_rand_helper_8h.html" title="utils/common/RandHelper.h" alt="" coords="861,393,1048,420"/>
+<area shape="rect" id="node36" href="$d0/da2/_file_helpers_8h.html" title="utils/common/FileHelpers.h" alt="" coords="1911,393,2094,420"/>
+<area shape="rect" id="node38" href="$dd/df1/_n_b_net_builder_8h.html" title="netbuild/NBNetBuilder.h" alt="" coords="4160,80,4323,107"/>
+<area shape="rect" id="node46" href="$d6/de4/_n_w_frame_8h.html" title="netwrite/NWFrame.h" alt="" coords="43,155,186,181"/>
+<area shape="rect" id="node47" href="$d1/d0a/_system_frame_8h.html" title="utils/common/SystemFrame.h" alt="" coords="210,155,409,181"/>
+<area shape="rect" id="node48" href="$df/dad/_n_i_importer___dlr_navteq_8h.html" title="NIImporter_DlrNavteq.h" alt="" coords="1381,393,1539,420"/>
+<area shape="rect" id="node50" href="$d8/dfe/_n_i_frame_8h.html" title="NIFrame.h" alt="" coords="453,80,536,107"/>
+<area shape="rect" id="node19" href="$d6/d7a/_s_u_m_o_x_m_l_definitions_8h.html" title="utils/xml/SUMOXMLDefinitions.h" alt="" coords="2762,393,2974,420"/>
+<area shape="rect" id="node21" href="$d2/d6d/_s_u_m_o_vehicle_class_8h.html" title="utils/common/SUMOVehicle\lClass.h" alt="" coords="2647,304,2836,345"/>
+<area shape="rect" id="node24" href="$de/d1a/_named_8h.html" title="utils/common/Named.h" alt="" coords="3743,475,3902,502"/>
+<area shape="rect" id="node25" href="$d7/d8d/_distribution___parameterized_8h.html" title="utils/distribution\l/Distribution_Parameterized.h" alt="" coords="2020,304,2217,345"/>
+<area shape="rect" id="node33" href="$d4/d51/_position_8h.html" title="utils/geom/Position.h" alt="" coords="3745,393,3892,420"/>
+<area shape="rect" id="node35" href="$da/dbd/_std_defs_8h.html" title="StdDefs.h" alt="" coords="3591,393,3671,420"/>
+<area shape="rect" id="node20" href="$d6/d11/_string_bijection_8h.html" title="utils/common/StringBijection.h" alt="" coords="3164,475,3364,502"/>
+<area shape="rect" id="node32" href="$d2/d7a/_distribution_8h.html" title="Distribution.h" alt="" coords="2170,393,2267,420"/>
+<area shape="rect" id="node28" href="$da/d3b/_mersenne_twister_8h.html" title="foreign/mersenne/Mersenne\lTwister.h" alt="" coords="393,468,583,509"/>
+<area shape="rect" id="node30" href="$df/dd8/stdint_8h.html" title="stdint.h" alt="" coords="203,557,266,584"/>
+<area shape="rect" id="node37" href="$d4/d64/_s_u_m_o_time_8h.html" title="SUMOTime.h" alt="" coords="1973,475,2075,502"/>
+<area shape="rect" id="node39" href="$d7/db4/_n_b_edge_cont_8h.html" title="NBEdgeCont.h" alt="" coords="3447,229,3558,256"/>
+<area shape="rect" id="node40" href="$de/d1a/_n_b_type_cont_8h.html" title="NBTypeCont.h" alt="" coords="4821,229,4931,256"/>
+<area shape="rect" id="node41" href="$da/d09/_n_b_node_cont_8h.html" title="NBNodeCont.h" alt="" coords="3730,155,3841,181"/>
+<area shape="rect" id="node42" href="$d4/da0/_n_b_node_8h.html" title="NBNode.h" alt="" coords="3683,311,3765,338"/>
+<area shape="rect" id="node43" href="$d3/dd9/_n_b_traffic_light_logic_cont_8h.html" title="NBTrafficLightLogicCont.h" alt="" coords="5171,475,5349,502"/>
+<area shape="rect" id="node44" href="$d0/d43/_n_b_district_cont_8h.html" title="NBDistrictCont.h" alt="" coords="5373,475,5491,502"/>
+<area shape="rect" id="node45" href="$d1/d73/_n_b_p_t_stop_cont_8h.html" title="NBPTStopCont.h" alt="" coords="5023,475,5147,502"/>
+<area shape="rect" id="node49" href="$db/dba/_line_handler_8h.html" title="utils/importio/LineHandler.h" alt="" coords="1526,475,1709,502"/>
+</map>

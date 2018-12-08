@@ -1,0 +1,35 @@
+<map id="MSLogicJunction.cpp" name="MSLogicJunction.cpp">
+<area shape="rect" id="node2" href="$db/d16/config_8h.html" title="config.h" alt="" coords="1421,811,1489,837"/>
+<area shape="rect" id="node3" href="$d4/d26/_m_s_link_cont_8h.html" title="MSLinkCont.h" alt="" coords="471,311,575,338"/>
+<area shape="rect" id="node17" href="$dc/da4/_m_s_logic_junction_8h.html" title="MSLogicJunction.h" alt="" coords="713,401,847,427"/>
+<area shape="rect" id="node26" href="$d3/d38/_m_s_lane_8h.html" title="MSLane.h" alt="" coords="844,80,927,107"/>
+<area shape="rect" id="node5" href="$da/d9c/_m_s_link_8h.html" title="MSLink.h" alt="" coords="1825,401,1901,427"/>
+<area shape="rect" id="node7" href="$d4/d64/_s_u_m_o_time_8h.html" title="utils/common/SUMOTime.h" alt="" coords="1819,579,2005,606"/>
+<area shape="rect" id="node12" href="$d2/d6d/_s_u_m_o_vehicle_class_8h.html" title="utils/common/SUMOVehicle\lClass.h" alt="" coords="2635,483,2824,524"/>
+<area shape="rect" id="node16" href="$d6/d7a/_s_u_m_o_x_m_l_definitions_8h.html" title="utils/xml/SUMOXMLDefinitions.h" alt="" coords="2079,579,2291,606"/>
+<area shape="rect" id="node10" href="$d7/db4/_util_exceptions_8h.html" title="UtilExceptions.h" alt="" coords="2508,736,2623,763"/>
+<area shape="rect" id="node13" href="$d6/d11/_string_bijection_8h.html" title="utils/common/StringBijection.h" alt="" coords="2407,661,2607,688"/>
+<area shape="rect" id="node18" href="$d8/d61/_m_s_junction_8h.html" title="MSJunction.h" alt="" coords="1480,490,1581,517"/>
+<area shape="rect" id="node24" href="$da/dbd/_std_defs_8h.html" title="utils/common/StdDefs.h" alt="" coords="1429,579,1592,606"/>
+<area shape="rect" id="node19" href="$d4/d51/_position_8h.html" title="utils/geom/Position.h" alt="" coords="307,736,453,763"/>
+<area shape="rect" id="node21" href="$d3/d43/_position_vector_8h.html" title="utils/geom/PositionVector.h" alt="" coords="662,579,847,606"/>
+<area shape="rect" id="node23" href="$de/d1a/_named_8h.html" title="utils/common/Named.h" alt="" coords="3583,579,3742,606"/>
+<area shape="rect" id="node22" href="$db/dd7/_abstract_poly_8h.html" title="AbstractPoly.h" alt="" coords="397,661,504,688"/>
+<area shape="rect" id="node29" href="$d9/d33/_parameterised_8h.html" title="utils/common/Parameterised.h" alt="" coords="2077,661,2281,688"/>
+<area shape="rect" id="node30" href="$d8/dbf/_s_u_m_o_vehicle_8h.html" title="utils/vehicle/SUMOVehicle.h" alt="" coords="1455,155,1646,181"/>
+<area shape="rect" id="node43" href="$d6/d29/_named_r_tree_8h.html" title="utils/common/NamedRTree.h" alt="" coords="3595,490,3794,517"/>
+<area shape="rect" id="node47" href="$db/d92/_m_s_leader_info_8h.html" title="MSLeaderInfo.h" alt="" coords="681,661,797,688"/>
+<area shape="rect" id="node48" href="$db/dd5/_m_s_move_reminder_8h.html" title="MSMoveReminder.h" alt="" coords="1605,490,1749,517"/>
+<area shape="rect" id="node49" href="$dd/da8/_tra_c_i_server_a_p_i___lane_8h.html" title="traci&#45;server/TraCIServer\lAPI_Lane.h" alt="" coords="3340,572,3508,613"/>
+<area shape="rect" id="node32" href="$d1/de7/_s_u_m_o_abstract_router_8h.html" title="utils/vehicle/SUMOAbstract\lRouter.h" alt="" coords="2275,304,2458,345"/>
+<area shape="rect" id="node38" href="$d0/d7a/_s_u_m_o_vehicle_parameter_8h.html" title="utils/vehicle/SUMOVehicle\lParameter.h" alt="" coords="2534,393,2714,435"/>
+<area shape="rect" id="node40" href="$d1/d3f/_output_device_8h.html" title="utils/iodevices/OutputDevice.h" alt="" coords="1848,229,2051,256"/>
+<area shape="rect" id="node35" href="$db/da5/_sys_utils_8h.html" title="utils/common/SysUtils.h" alt="" coords="2799,736,2961,763"/>
+<area shape="rect" id="node36" href="$d4/df7/_msg_handler_8h.html" title="utils/common/MsgHandler.h" alt="" coords="2999,661,3187,688"/>
+<area shape="rect" id="node37" href="$d8/d08/_to_string_8h.html" title="utils/common/ToString.h" alt="" coords="2190,401,2357,427"/>
+<area shape="rect" id="node39" href="$d8/d99/_r_g_b_color_8h.html" title="utils/common/RGBColor.h" alt="" coords="3211,661,3389,688"/>
+<area shape="rect" id="node41" href="$db/d42/_plain_x_m_l_formatter_8h.html" title="PlainXMLFormatter.h" alt="" coords="1547,311,1693,338"/>
+<area shape="rect" id="node42" href="$de/d1f/_binary_formatter_8h.html" title="BinaryFormatter.h" alt="" coords="1937,311,2063,338"/>
+<area shape="rect" id="node44" href="$d2/d58/_r_tree_8h.html" title="foreign/rtree/RTree.h" alt="" coords="4053,579,4200,606"/>
+<area shape="rect" id="node50" href="$d8/d6b/storage_8h.html" title="foreign/tcpip/storage.h" alt="" coords="3768,661,3923,688"/>
+</map>

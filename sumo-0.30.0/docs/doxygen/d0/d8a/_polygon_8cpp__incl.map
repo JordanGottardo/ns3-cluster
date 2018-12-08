@@ -1,0 +1,31 @@
+<map id="Polygon.cpp" name="Polygon.cpp">
+<area shape="rect" id="node2" href="$db/d16/config_8h.html" title="config.h" alt="" coords="2110,647,2178,673"/>
+<area shape="rect" id="node3" href="$d1/d3f/_output_device_8h.html" title="utils/iodevices/OutputDevice.h" alt="" coords="2040,80,2243,107"/>
+<area shape="rect" id="node40" href="$de/dde/_string_utils_8h.html" title="utils/common/StringUtils.h" alt="" coords="195,565,370,591"/>
+<area shape="rect" id="node41" href="$d3/d6d/_geo_conv_helper_8h.html" title="utils/geom/GeoConvHelper.h" alt="" coords="3042,311,3238,338"/>
+<area shape="rect" id="node45" href="$da/d08/_polygon_8h.html" title="Polygon.h" alt="" coords="2656,311,2739,338"/>
+<area shape="rect" id="node6" href="$d8/d08/_to_string_8h.html" title="utils/common/ToString.h" alt="" coords="1610,229,1777,256"/>
+<area shape="rect" id="node10" href="$d6/d7a/_s_u_m_o_x_m_l_definitions_8h.html" title="utils/xml/SUMOXMLDefinitions.h" alt="" coords="1969,401,2181,427"/>
+<area shape="rect" id="node34" href="$db/d42/_plain_x_m_l_formatter_8h.html" title="PlainXMLFormatter.h" alt="" coords="1983,229,2129,256"/>
+<area shape="rect" id="node36" href="$de/d1f/_binary_formatter_8h.html" title="BinaryFormatter.h" alt="" coords="1630,155,1757,181"/>
+<area shape="rect" id="node16" href="$d2/d6d/_s_u_m_o_vehicle_class_8h.html" title="utils/common/SUMOVehicle\lClass.h" alt="" coords="1244,304,1433,345"/>
+<area shape="rect" id="node19" href="$de/d1a/_named_8h.html" title="utils/common/Named.h" alt="" coords="1745,565,1903,591"/>
+<area shape="rect" id="node20" href="$d7/d8d/_distribution___parameterized_8h.html" title="utils/distribution\l/Distribution_Parameterized.h" alt="" coords="1579,393,1776,435"/>
+<area shape="rect" id="node31" href="$d4/d51/_position_8h.html" title="utils/geom/Position.h" alt="" coords="3380,565,3527,591"/>
+<area shape="rect" id="node33" href="$da/dbd/_std_defs_8h.html" title="StdDefs.h" alt="" coords="445,565,525,591"/>
+<area shape="rect" id="node11" href="$d6/d11/_string_bijection_8h.html" title="utils/common/StringBijection.h" alt="" coords="1452,483,1652,509"/>
+<area shape="rect" id="node14" href="$d7/db4/_util_exceptions_8h.html" title="utils/common/UtilExceptions.h" alt="" coords="975,565,1174,591"/>
+<area shape="rect" id="node21" href="$d6/d68/_rand_helper_8h.html" title="utils/common/RandHelper.h" alt="" coords="961,483,1148,509"/>
+<area shape="rect" id="node30" href="$d2/d7a/_distribution_8h.html" title="Distribution.h" alt="" coords="1829,483,1926,509"/>
+<area shape="rect" id="node23" href="$da/d3b/_mersenne_twister_8h.html" title="foreign/mersenne/Mersenne\lTwister.h" alt="" coords="1198,557,1389,599"/>
+<area shape="rect" id="node25" href="$df/dd8/stdint_8h.html" title="stdint.h" alt="" coords="1115,647,1178,673"/>
+<area shape="rect" id="node35" href="$d0/df4/_output_formatter_8h.html" title="OutputFormatter.h" alt="" coords="1901,311,2027,338"/>
+<area shape="rect" id="node37" href="$d0/da2/_file_helpers_8h.html" title="utils/common/FileHelpers.h" alt="" coords="543,401,726,427"/>
+<area shape="rect" id="node39" href="$d4/d64/_s_u_m_o_time_8h.html" title="SUMOTime.h" alt="" coords="1223,483,1326,509"/>
+<area shape="rect" id="node42" href="$d9/df9/_boundary_8h.html" title="utils/geom/Boundary.h" alt="" coords="3147,401,3303,427"/>
+<area shape="rect" id="node44" href="$db/dd7/_abstract_poly_8h.html" title="AbstractPoly.h" alt="" coords="3217,483,3324,509"/>
+<area shape="rect" id="node46" href="$d3/d43/_position_vector_8h.html" title="utils/geom/PositionVector.h" alt="" coords="2539,401,2725,427"/>
+<area shape="rect" id="node47" href="$d9/d33/_parameterised_8h.html" title="utils/common/Parameterised.h" alt="" coords="2357,483,2561,509"/>
+<area shape="rect" id="node48" href="$da/d05/_shape_8h.html" title="Shape.h" alt="" coords="2445,401,2515,427"/>
+<area shape="rect" id="node49" href="$d8/d99/_r_g_b_color_8h.html" title="utils/common/RGBColor.h" alt="" coords="2687,483,2865,509"/>
+</map>

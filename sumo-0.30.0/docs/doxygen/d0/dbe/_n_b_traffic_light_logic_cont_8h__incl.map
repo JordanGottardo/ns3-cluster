@@ -1,0 +1,24 @@
+<map id="NBTrafficLightLogicCont.h" name="NBTrafficLightLogicCont.h">
+<area shape="rect" id="node2" href="$db/d16/config_8h.html" title="config.h" alt="" coords="1806,692,1874,719"/>
+<area shape="rect" id="node5" href="$dc/da1/_n_b_traffic_light_definition_8h.html" title="NBTrafficLightDefinition.h" alt="" coords="1468,80,1639,107"/>
+<area shape="rect" id="node10" href="$da/dbd/_std_defs_8h.html" title="utils/common/StdDefs.h" alt="" coords="144,617,307,644"/>
+<area shape="rect" id="node11" href="$de/d1a/_named_8h.html" title="utils/common/Named.h" alt="" coords="577,386,735,413"/>
+<area shape="rect" id="node13" href="$d0/d40/_vector_helper_8h.html" title="utils/common/VectorHelper.h" alt="" coords="2139,543,2333,569"/>
+<area shape="rect" id="node16" href="$d4/d64/_s_u_m_o_time_8h.html" title="utils/common/SUMOTime.h" alt="" coords="635,543,821,569"/>
+<area shape="rect" id="node17" href="$d7/db4/_util_exceptions_8h.html" title="UtilExceptions.h" alt="" coords="635,617,749,644"/>
+<area shape="rect" id="node19" href="$d9/d33/_parameterised_8h.html" title="utils/common/Parameterised.h" alt="" coords="947,543,1151,569"/>
+<area shape="rect" id="node20" href="$db/dde/_n_b_cont_8h.html" title="NBCont.h" alt="" coords="2355,386,2434,413"/>
+<area shape="rect" id="node21" href="$dd/d75/_n_b_connection_8h.html" title="NBConnection.h" alt="" coords="1494,229,1613,256"/>
+<area shape="rect" id="node34" href="$d4/d25/_n_b_connection_defs_8h.html" title="NBConnectionDefs.h" alt="" coords="1745,155,1892,181"/>
+<area shape="rect" id="node35" href="$dd/d0a/_n_b_link_possibility_matrix_8h.html" title="NBLinkPossibilityMatrix.h" alt="" coords="2459,155,2629,181"/>
+<area shape="rect" id="node22" href="$d8/d0b/_n_b_edge_8h.html" title="NBEdge.h" alt="" coords="1357,304,1440,331"/>
+<area shape="rect" id="node24" href="$de/dc6/_bresenham_8h.html" title="utils/geom/Bresenham.h" alt="" coords="2015,468,2182,495"/>
+<area shape="rect" id="node25" href="$d3/d43/_position_vector_8h.html" title="utils/geom/PositionVector.h" alt="" coords="1806,468,1991,495"/>
+<area shape="rect" id="node29" href="$d2/d6d/_s_u_m_o_vehicle_class_8h.html" title="utils/common/SUMOVehicle\lClass.h" alt="" coords="1233,379,1423,420"/>
+<area shape="rect" id="node31" href="$d6/d7a/_s_u_m_o_x_m_l_definitions_8h.html" title="utils/xml/SUMOXMLDefinitions.h" alt="" coords="1367,468,1579,495"/>
+<area shape="rect" id="node32" href="$da/d0c/_n_b_helpers_8h.html" title="NBHelpers.h" alt="" coords="912,386,1008,413"/>
+<area shape="rect" id="node33" href="$d0/d5f/_n_b_sign_8h.html" title="NBSign.h" alt="" coords="1115,468,1192,495"/>
+<area shape="rect" id="node26" href="$db/dd7/_abstract_poly_8h.html" title="AbstractPoly.h" alt="" coords="1907,543,2013,569"/>
+<area shape="rect" id="node27" href="$d4/d51/_position_8h.html" title="Position.h" alt="" coords="1933,617,2013,644"/>
+<area shape="rect" id="node30" href="$d6/d11/_string_bijection_8h.html" title="utils/common/StringBijection.h" alt="" coords="1277,543,1477,569"/>
+</map>

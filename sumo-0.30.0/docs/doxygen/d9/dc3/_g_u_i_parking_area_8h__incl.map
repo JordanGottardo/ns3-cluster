@@ -1,0 +1,24 @@
+<map id="GUIParkingArea.h" name="GUIParkingArea.h">
+<area shape="rect" id="node2" href="$db/d16/config_8h.html" title="config.h" alt="" coords="1586,497,1654,524"/>
+<area shape="rect" id="node5" href="$d6/d37/_command_8h.html" title="utils/common/Command.h" alt="" coords="2287,177,2465,203"/>
+<area shape="rect" id="node10" href="$d0/d40/_vector_helper_8h.html" title="utils/common/VectorHelper.h" alt="" coords="43,266,237,293"/>
+<area shape="rect" id="node13" href="$da/dc5/_m_s_stopping_place_8h.html" title="microsim/MSStoppingPlace.h" alt="" coords="1007,266,1204,293"/>
+<area shape="rect" id="node17" href="$d5/d45/_m_s_parking_area_8h.html" title="microsim/MSParkingArea.h" alt="" coords="805,177,990,203"/>
+<area shape="rect" id="node20" href="$d4/d51/_position_8h.html" title="Position.h" alt="" coords="385,423,465,449"/>
+<area shape="rect" id="node22" href="$d2/d0d/_g_u_i_gl_object_8h.html" title="utils/gui/globjects\l/GUIGlObject.h" alt="" coords="1752,169,1877,211"/>
+<area shape="rect" id="node30" href="$d1/d28/_g_u_i_gl_object___abstract_add_8h.html" title="utils/gui/globjects\l/GUIGlObject_AbstractAdd.h" alt="" coords="1853,80,2043,121"/>
+<area shape="rect" id="node31" href="$d9/ddc/_g_u_i_g_l_object_popup_menu_8h.html" title="utils/gui/globjects\l/GUIGLObjectPopupMenu.h" alt="" coords="2593,259,2780,300"/>
+<area shape="rect" id="node33" href="$d9/dbf/_g_u_i_manipulator_8h.html" title="gui/GUIManipulator.h" alt="" coords="2804,266,2951,293"/>
+<area shape="rect" id="node34" href="$db/df9/_f_x_real_spin_dial_8h.html" title="utils/foxtools/FXRealSpin\lDial.h" alt="" coords="2903,80,3073,121"/>
+<area shape="rect" id="node6" href="$d4/d64/_s_u_m_o_time_8h.html" title="utils/common/SUMOTime.h" alt="" coords="2231,266,2417,293"/>
+<area shape="rect" id="node8" href="$d7/db4/_util_exceptions_8h.html" title="UtilExceptions.h" alt="" coords="2305,348,2420,375"/>
+<area shape="rect" id="node15" href="$de/d1a/_named_8h.html" title="utils/common/Named.h" alt="" coords="954,348,1113,375"/>
+<area shape="rect" id="node18" href="$d3/d43/_position_vector_8h.html" title="utils/geom/PositionVector.h" alt="" coords="543,266,729,293"/>
+<area shape="rect" id="node19" href="$db/dd7/_abstract_poly_8h.html" title="AbstractPoly.h" alt="" coords="511,348,617,375"/>
+<area shape="rect" id="node23" href="$db/dcf/_g_u_i_gl_object_types_8h.html" title="GUIGlObjectTypes.h" alt="" coords="2009,266,2156,293"/>
+<area shape="rect" id="node24" href="$d9/df9/_boundary_8h.html" title="utils/geom/Boundary.h" alt="" coords="363,266,519,293"/>
+<area shape="rect" id="node26" href="$da/dbd/_std_defs_8h.html" title="utils/common/StdDefs.h" alt="" coords="1615,348,1777,375"/>
+<area shape="rect" id="node27" href="$de/dde/_string_utils_8h.html" title="utils/common/StringUtils.h" alt="" coords="1954,348,2129,375"/>
+<area shape="rect" id="node28" href="$d6/d11/_string_bijection_8h.html" title="utils/common/StringBijection.h" alt="" coords="1329,266,1529,293"/>
+<area shape="rect" id="node29" href="$d8/d99/_r_g_b_color_8h.html" title="utils/common/RGBColor.h" alt="" coords="1554,266,1731,293"/>
+</map>

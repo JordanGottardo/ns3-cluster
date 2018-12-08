@@ -1,0 +1,37 @@
+<map id="GNEVariableSpeedSign.cpp" name="GNEVariableSpeedSign.cpp">
+<area shape="rect" id="node2" href="$db/d16/config_8h.html" title="config.h" alt="" coords="1734,497,1802,524"/>
+<area shape="rect" id="node6" href="$db/dec/_geom_conv_helper_8h.html" title="utils/geom/GeomConvHelper.h" alt="" coords="1862,162,2068,189"/>
+<area shape="rect" id="node7" href="$d3/d43/_position_vector_8h.html" title="utils/geom/PositionVector.h" alt="" coords="2144,251,2330,278"/>
+<area shape="rect" id="node14" href="$d6/dbe/polyfonts_8h.html" title="foreign/polyfonts/polyfonts.h" alt="" coords="290,333,477,360"/>
+<area shape="rect" id="node16" href="$d6/d68/_rand_helper_8h.html" title="utils/common/RandHelper.h" alt="" coords="3825,333,4012,360"/>
+<area shape="rect" id="node19" href="$d2/d6d/_s_u_m_o_vehicle_class_8h.html" title="utils/common/SUMOVehicle\lClass.h" alt="" coords="3552,155,3741,196"/>
+<area shape="rect" id="node25" href="$d8/d08/_to_string_8h.html" title="utils/common/ToString.h" alt="" coords="3682,80,3848,107"/>
+<area shape="rect" id="node32" href="$d5/df0/_geom_helper_8h.html" title="utils/geom/GeomHelper.h" alt="" coords="3028,162,3203,189"/>
+<area shape="rect" id="node33" href="$d8/d3a/_g_u_i_s_u_m_o_abstract_view_8h.html" title="utils/gui/windows/GUISUMOAbstract\lView.h" alt="" coords="2144,155,2383,196"/>
+<area shape="rect" id="node36" href="$d7/d72/_g_u_i_app_enum_8h.html" title="utils/gui/windows/GUIApp\lEnum.h" alt="" coords="894,244,1068,285"/>
+<area shape="rect" id="node37" href="$dd/d26/_g_u_i_texture_sub_sys_8h.html" title="utils/gui/images/GUITexture\lSubSys.h" alt="" coords="760,155,951,196"/>
+<area shape="rect" id="node38" href="$dd/dd5/_g_u_i_textures_helper_8h.html" title="GUITexturesHelper.h" alt="" coords="568,251,716,278"/>
+<area shape="rect" id="node39" href="$d0/d53/_g_u_i_parameter_table_window_8h.html" title="utils/gui/div/GUIParameter\lTableWindow.h" alt="" coords="2588,244,2766,285"/>
+<area shape="rect" id="node40" href="$d9/ddc/_g_u_i_g_l_object_popup_menu_8h.html" title="utils/gui/globjects\l/GUIGLObjectPopupMenu.h" alt="" coords="1448,244,1634,285"/>
+<area shape="rect" id="node41" href="$dc/df0/_g_u_i_global_selection_8h.html" title="utils/gui/div/GUIGlobalSelection.h" alt="" coords="44,80,267,107"/>
+<area shape="rect" id="node42" href="$d9/d86/_g_l_helper_8h.html" title="utils/gui/div/GLHelper.h" alt="" coords="1421,162,1581,189"/>
+<area shape="rect" id="node43" href="$d2/d70/_s_u_m_o_s_a_x_handler_8h.html" title="utils/xml/SUMOSAXHandler.h" alt="" coords="4020,415,4217,442"/>
+<area shape="rect" id="node44" href="$dd/d82/_g_n_e_variable_speed_sign_8h.html" title="GNEVariableSpeedSign.h" alt="" coords="342,80,519,107"/>
+<area shape="rect" id="node45" href="$d4/dc1/_g_n_e_lane_8h.html" title="GNELane.h" alt="" coords="544,80,634,107"/>
+<area shape="rect" id="node46" href="$d9/d76/_g_n_e_view_net_8h.html" title="GNEViewNet.h" alt="" coords="2258,80,2368,107"/>
+<area shape="rect" id="node47" href="$db/d7d/_g_n_e_undo_list_8h.html" title="GNEUndoList.h" alt="" coords="433,251,545,278"/>
+<area shape="rect" id="node48" href="$df/d3b/_g_n_e_net_8h.html" title="GNENet.h" alt="" coords="1656,162,1736,189"/>
+<area shape="rect" id="node49" href="$d7/dcd/_g_n_e_change___attribute_8h.html" title="GNEChange_Attribute.h" alt="" coords="1058,162,1221,189"/>
+<area shape="rect" id="node50" href="$dd/d03/_g_n_e_variable_speed_sign_dialog_8h.html" title="GNEVariableSpeedSignDialog.h" alt="" coords="1371,333,1588,360"/>
+<area shape="rect" id="node13" href="$d9/df9/_boundary_8h.html" title="utils/geom/Boundary.h" alt="" coords="1862,251,2018,278"/>
+<area shape="rect" id="node10" href="$db/dd7/_abstract_poly_8h.html" title="AbstractPoly.h" alt="" coords="2177,333,2284,360"/>
+<area shape="rect" id="node11" href="$d4/d51/_position_8h.html" title="Position.h" alt="" coords="2281,415,2361,442"/>
+<area shape="rect" id="node15" href="$d9/dd2/polyfonttypes_8h.html" title="polyfonttypes.h" alt="" coords="366,415,476,442"/>
+<area shape="rect" id="node18" href="$da/d3b/_mersenne_twister_8h.html" title="foreign/mersenne/Mersenne\lTwister.h" alt="" coords="4444,408,4635,449"/>
+<area shape="rect" id="node21" href="$d7/db4/_util_exceptions_8h.html" title="utils/common/UtilExceptions.h" alt="" coords="3350,415,3548,442"/>
+<area shape="rect" id="node22" href="$d6/d11/_string_bijection_8h.html" title="utils/common/StringBijection.h" alt="" coords="3196,333,3396,360"/>
+<area shape="rect" id="node24" href="$d6/d7a/_s_u_m_o_x_m_l_definitions_8h.html" title="utils/xml/SUMOXMLDefinitions.h" alt="" coords="2942,251,3154,278"/>
+<area shape="rect" id="node29" href="$de/d1a/_named_8h.html" title="utils/common/Named.h" alt="" coords="4659,415,4818,442"/>
+<area shape="rect" id="node30" href="$d7/d8d/_distribution___parameterized_8h.html" title="utils/distribution\l/Distribution_Parameterized.h" alt="" coords="3785,244,3982,285"/>
+<area shape="rect" id="node31" href="$da/dbd/_std_defs_8h.html" title="StdDefs.h" alt="" coords="3916,415,3996,442"/>
+</map>

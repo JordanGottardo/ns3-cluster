@@ -1,0 +1,8 @@
+<map id="MSSimpleTrafficLightLogic" name="MSSimpleTrafficLightLogic">
+<area shape="rect" id="node5" href="$d5/db6/class_m_s_actuated_traffic_light_logic.html" title="An actuated (adaptive) traffic light logic. " alt="" coords="5,2039,228,2336"/>
+<area shape="rect" id="node6" href="$d5/ddf/class_m_s_delay_based_traffic_light_logic.html" title="An actuated traffic light logic based on time delay of approaching vehicles. " alt="" coords="252,2031,456,2343"/>
+<area shape="rect" id="node7" href="$d3/d28/class_m_s_rail_crossing.html" title="A signal for rails. " alt="" coords="480,1980,676,2395"/>
+<area shape="rect" id="node2" href="$df/d93/class_m_s_traffic_light_logic.html" title="The parent class for traffic light logics. " alt="" coords="249,292,459,1381"/>
+<area shape="rect" id="node3" href="$d5/dbf/class_named.html" title="Base class for objects which have an id. " alt="" coords="218,49,335,200"/>
+<area shape="rect" id="node4" href="$d7/dc7/class_parameterised.html" title="An upper class for objects with additional parameters. " alt="" coords="359,5,503,244"/>
+</map>

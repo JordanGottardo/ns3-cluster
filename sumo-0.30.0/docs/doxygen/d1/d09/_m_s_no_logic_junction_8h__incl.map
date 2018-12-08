@@ -1,0 +1,12 @@
+<map id="MSNoLogicJunction.h" name="MSNoLogicJunction.h">
+<area shape="rect" id="node2" href="$db/d16/config_8h.html" title="config.h" alt="" coords="823,379,891,405"/>
+<area shape="rect" id="node6" href="$d8/d61/_m_s_junction_8h.html" title="MSJunction.h" alt="" coords="785,80,887,107"/>
+<area shape="rect" id="node8" href="$d4/d51/_position_8h.html" title="utils/geom/Position.h" alt="" coords="920,304,1067,331"/>
+<area shape="rect" id="node11" href="$d3/d43/_position_vector_8h.html" title="utils/geom/PositionVector.h" alt="" coords="986,155,1171,181"/>
+<area shape="rect" id="node14" href="$de/d1a/_named_8h.html" title="utils/common/Named.h" alt="" coords="195,304,354,331"/>
+<area shape="rect" id="node16" href="$d4/d64/_s_u_m_o_time_8h.html" title="utils/common/SUMOTime.h" alt="" coords="337,229,524,256"/>
+<area shape="rect" id="node17" href="$d7/db4/_util_exceptions_8h.html" title="UtilExceptions.h" alt="" coords="379,304,493,331"/>
+<area shape="rect" id="node19" href="$d6/d7a/_s_u_m_o_x_m_l_definitions_8h.html" title="utils/xml/SUMOXMLDefinitions.h" alt="" coords="587,155,799,181"/>
+<area shape="rect" id="node13" href="$db/dd7/_abstract_poly_8h.html" title="AbstractPoly.h" alt="" coords="1025,229,1132,256"/>
+<area shape="rect" id="node20" href="$d6/d11/_string_bijection_8h.html" title="utils/common/StringBijection.h" alt="" coords="548,229,748,256"/>
+</map>

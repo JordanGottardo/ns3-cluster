@@ -1,0 +1,5 @@
+<map id="Distribution" name="Distribution">
+<area shape="rect" id="node3" href="$dc/d0d/class_distribution___parameterized.html" title="{Distribution_Parameterized\n|&#45; myParameter\l|+ Distribution_Parameterized()\l+ Distribution_Parameterized()\l+ Distribution_Parameterized()\l+ getMax()\l+ getParameter()\l+ getParameter()\l+ sample()\l+ toStr()\l+ ~Distribution_Parameterized()\l}" alt="" coords="5,388,216,583"/>
+<area shape="rect" id="node4" href="$d6/d23/class_distribution___points.html" title="{Distribution_Points\n||+ Distribution_Points()\l+ getMax()\l+ sample()\l+ toStr()\l+ ~Distribution_Points()\l}" alt="" coords="241,417,399,553"/>
+<area shape="rect" id="node2" href="$d5/dbf/class_named.html" title="Base class for objects which have an id. " alt="" coords="156,5,273,156"/>
+</map>

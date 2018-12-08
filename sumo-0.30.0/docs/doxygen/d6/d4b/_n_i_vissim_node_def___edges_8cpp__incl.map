@@ -1,0 +1,36 @@
+<map id="NIVissimNodeDef_Edges.cpp" name="NIVissimNodeDef_Edges.cpp">
+<area shape="rect" id="node2" href="$db/d16/config_8h.html" title="config.h" alt="" coords="2135,647,2203,673"/>
+<area shape="rect" id="node7" href="$d9/df9/_boundary_8h.html" title="utils/geom/Boundary.h" alt="" coords="200,401,356,427"/>
+<area shape="rect" id="node13" href="$d0/daa/_n_i_vissim_node_participating_edge_vector_8h.html" title="NIVissimNodeParticipating\lEdgeVector.h" alt="" coords="786,393,966,435"/>
+<area shape="rect" id="node16" href="$d9/d0a/_n_i_vissim_node_def_8h.html" title="NIVissimNodeDef.h" alt="" coords="676,311,814,338"/>
+<area shape="rect" id="node20" href="$d5/dad/_n_i_vissim_edge_8h.html" title="NIVissimEdge.h" alt="" coords="2260,80,2376,107"/>
+<area shape="rect" id="node27" href="$dd/deb/_n_i_vissim_connection_8h.html" title="NIVissimConnection.h" alt="" coords="1568,229,1720,256"/>
+<area shape="rect" id="node44" href="$d8/d64/_n_i_vissim_node_def___edges_8h.html" title="NIVissimNodeDef_Edges.h" alt="" coords="929,229,1113,256"/>
+<area shape="rect" id="node45" href="$dd/dab/_n_i_vissim_disturbance_8h.html" title="NIVissimDisturbance.h" alt="" coords="2717,80,2872,107"/>
+<area shape="rect" id="node10" href="$db/dd7/_abstract_poly_8h.html" title="AbstractPoly.h" alt="" coords="344,490,450,517"/>
+<area shape="rect" id="node11" href="$d4/d51/_position_8h.html" title="Position.h" alt="" coords="448,572,528,599"/>
+<area shape="rect" id="node15" href="$d2/d7f/_n_i_vissim_node_participating_edge_8h.html" title="NIVissimNodeParticipating\lEdge.h" alt="" coords="811,483,991,524"/>
+<area shape="rect" id="node17" href="$db/da9/_n_i_vissim_extended_edge_point_vector_8h.html" title="NIVissimExtendedEdgePoint\lVector.h" alt="" coords="1168,393,1362,435"/>
+<area shape="rect" id="node19" href="$d5/da7/_n_i_vissim_node_cluster_8h.html" title="NIVissimNodeCluster.h" alt="" coords="526,490,684,517"/>
+<area shape="rect" id="node18" href="$d1/d93/_n_i_vissim_extended_edge_point_8h.html" title="NIVissimExtendedEdgePoint.h" alt="" coords="1269,490,1472,517"/>
+<area shape="rect" id="node21" href="$dd/d2f/_n_i_vissim_connection_cluster_8h.html" title="NIVissimConnectionCluster.h" alt="" coords="1546,155,1741,181"/>
+<area shape="rect" id="node23" href="$d3/d43/_position_vector_8h.html" title="PositionVector.h" alt="" coords="2139,401,2258,427"/>
+<area shape="rect" id="node25" href="$d7/db4/_util_exceptions_8h.html" title="utils/common/UtilExceptions.h" alt="" coords="4588,572,4787,599"/>
+<area shape="rect" id="node28" href="$d9/d28/_n_i_vissim_abstract_edge_8h.html" title="NIVissimAbstractEdge.h" alt="" coords="2116,311,2280,338"/>
+<area shape="rect" id="node29" href="$de/dc8/_n_i_vissim_closed_lanes_vector_8h.html" title="NIVissimClosedLanesVector.h" alt="" coords="1648,490,1852,517"/>
+<area shape="rect" id="node33" href="$d8/d0b/_n_b_edge_8h.html" title="netbuild/NBEdge.h" alt="" coords="3390,229,3522,256"/>
+<area shape="rect" id="node22" href="$d5/df0/_geom_helper_8h.html" title="utils/geom/GeomHelper.h" alt="" coords="1918,311,2092,338"/>
+<area shape="rect" id="node31" href="$da/d7d/_n_i_vissim_bounded_cluster_object_8h.html" title="NIVissimBoundedClusterObject.h" alt="" coords="4265,490,4484,517"/>
+<area shape="rect" id="node30" href="$db/d21/_n_i_vissim_closed_lane_def_8h.html" title="NIVissimClosedLaneDef.h" alt="" coords="1661,572,1840,599"/>
+<area shape="rect" id="node34" href="$de/d1a/_named_8h.html" title="utils/common/Named.h" alt="" coords="3879,490,4038,517"/>
+<area shape="rect" id="node35" href="$d9/d33/_parameterised_8h.html" title="utils/common/Parameterised.h" alt="" coords="3172,490,3376,517"/>
+<area shape="rect" id="node36" href="$d0/d40/_vector_helper_8h.html" title="utils/common/VectorHelper.h" alt="" coords="2587,401,2780,427"/>
+<area shape="rect" id="node37" href="$de/dc6/_bresenham_8h.html" title="utils/geom/Bresenham.h" alt="" coords="3758,311,3924,338"/>
+<area shape="rect" id="node38" href="$d2/d6d/_s_u_m_o_vehicle_class_8h.html" title="utils/common/SUMOVehicle\lClass.h" alt="" coords="3544,304,3733,345"/>
+<area shape="rect" id="node40" href="$d6/d7a/_s_u_m_o_x_m_l_definitions_8h.html" title="utils/xml/SUMOXMLDefinitions.h" alt="" coords="3390,401,3602,427"/>
+<area shape="rect" id="node41" href="$db/dde/_n_b_cont_8h.html" title="NBCont.h" alt="" coords="3070,490,3148,517"/>
+<area shape="rect" id="node42" href="$da/d0c/_n_b_helpers_8h.html" title="NBHelpers.h" alt="" coords="4508,490,4604,517"/>
+<area shape="rect" id="node43" href="$d0/d5f/_n_b_sign_8h.html" title="NBSign.h" alt="" coords="3676,401,3753,427"/>
+<area shape="rect" id="node39" href="$d6/d11/_string_bijection_8h.html" title="utils/common/StringBijection.h" alt="" coords="3502,490,3702,517"/>
+<area shape="rect" id="node46" href="$dd/d75/_n_b_connection_8h.html" title="netbuild/NBConnection.h" alt="" coords="4841,155,5009,181"/>
+</map>
