@@ -1,0 +1,40 @@
+# -*- Mode: python; py-indent-offset: 4; indent-tabs-mode: nil; coding: utf-8; -*-
+
+# def options(opt):
+#     pass
+
+#def configure(conf):
+#     conf.check_nonfatal(header_name='stdint.h', define_name='HAVE_STDINT_H')
+def configure(conf):
+    conf.env.append_value("CXXFLAGS", ["-Wall", "-std=c++0x", "-frounding-math", "-I/home/jgottard/ns-3/CGAL_4_11/include/", "-I/home/jgottard/ns-3/mpfr_4_0_1/include", "-I/home/jgottard/ns-3/gmp_6_1_2/include", "-I/home/jgottard/ns-3/boost_1_54_0/include" ])
+    conf.env.append_value("LINKFLAGS", ["-L/home/jgottard/ns-3/CGAL_4_11/lib", "-L/home/jgottard/ns-3/gmp_6_1_2/lib", "-L/home/jgottard/ns-3/mpfr_4_0_1/lib", "-L/home/jgottard/ns-3/boost_1_54_0/lib", "-lboost_system"])
+    conf.env.append_value("LIB", ["CGAL", "CGAL_Core", "gmp", "mpfr", "boost_thread"])
+
+def build(bld):
+    module = bld.create_ns3_module('obstacle', ['core', 'mobility', 'propagation'])
+    module.source = [
+        'model/obstacle.cc',
+        'model/topology.cc',
+        'model/obstacle-shadowing-propagation-loss-model.cc',
+        'helper/obstacle-helper.cc',
+        ]
+
+    module_test = bld.create_ns3_module_test_library('obstacle')
+    module_test.source = [
+        'test/obstacle-test-suite.cc',
+        ]
+
+    headers = bld(features='ns3header')
+    headers.module = 'obstacle'
+    headers.source = [
+        'model/obstacle.h',
+        'model/topology.h',
+        'model/obstacle-shadowing-propagation-loss-model.h',
+        'helper/obstacle-helper.h',
+        ]
+
+    if bld.env.ENABLE_EXAMPLES:
+        bld.recurse('examples')
+
+    # bld.ns3_python_bindings()
+

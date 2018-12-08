@@ -1,0 +1,3 @@
+#!/bin/bash
+CXXFLAGS_EXTRA="-Wall -frounding-math -O3 -isystem" \
+./waf -d optimized --with-pybindgen=../pybindgen-0.17.0.post57+nga6376f2/  configure

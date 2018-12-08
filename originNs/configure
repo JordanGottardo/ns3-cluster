@@ -1,0 +1,4 @@
+#!/bin/bash
+CXXFLAGS_EXTRA="-Wno-error -frounding-math -O3 -isystem /home/mromanel/ns-3/CGAL-4.11/include" \
+LINKFLAGS_EXTRA="-rdynamic -L/home/mromanel/ns-3/CGAL-4.11/lib -L/home/mromanel/ns-3/CGAL-4.11/lib/x86_64-linux-gnu/ -L/home/mromanel/ns-3/CGAL-4.11/lib/x86_64-linux-gnu//libCGAL_Core.so.13.0.1" \
+./waf -d optimized --with-pybindgen=../pybindgen-0.17.0.post57+nga6376f2/  configure
