@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- generated on 2018-12-10 17:27:24.294654 by $Id: randomTrips.py 23999 2017-04-21 09:04:47Z behrisch $
-  options: -n ../mappe/testMap/osm.net.xml -d 25 -o ../mappe/testMap/osm.trips.xml
+<!-- generated on 2018-12-10 17:46:14.478382 by $Id: randomTrips.py 23999 2017-04-21 09:04:47Z behrisch $
+  options: -n ../mappe/testMap/osm.net.xml -d 25 -o ../mappe/testMap/osm-.trips.xml
 -->
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
 	<vType id="car" accel="0.8" decel="4.5" sigma="0.5" length="4" maxSpeed="50"/>

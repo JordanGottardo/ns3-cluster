@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on Mon Dec 10 17:27:23 2018 by Eclipse SUMO polyconvert Version 1.0.1
+<!-- generated on Mon Dec 10 17:46:13 2018 by Eclipse SUMO polyconvert Version 1.0.1
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/polyconvertConfiguration.xsd">
 
     <input>
@@ -10,7 +10,7 @@
     </input>
 
     <output>
-        <output-file value="../mappe/testMap/osm.poly.xml"/>
+        <output-file value="../mappe/testMap/osm-.poly.xml"/>
     </output>
 
     <pruning>

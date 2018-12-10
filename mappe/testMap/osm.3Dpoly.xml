@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- generated on 2018-12-08 17:37:55.480617 by <?xml version="1.0" encoding="UTF-8"?>
-  options: -i ../mappe/testMap/osm.osm.xml -p ../mappe/testMap/osm.poly.xml -o ../mappe/testMap/osm.3Dpoly.xml
+<!-- generated on 2018-12-10 17:46:17.981879 by <?xml version="1.0" encoding="UTF-8"?>
+  options: -i ../mappe/testMap/osm.osm.xml -p ../mappe/testMap/osm-.poly.xml -o ../mappe/testMap/osm.3Dpoly.xml
 -->
 <additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
 	<poly id="131487805" type="building" color="255.0,230.0,230.0" layer="-1.0" fill="1" shape="439.029453,576.326774 403.539287,573.050665 404.822346,558.233126 404.962558,556.61646 405.102771,554.999793 405.242985,553.383127 440.856969,556.422793 439.126876,575.222944 439.029453,576.326774"/>
