@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="CGImap 0.6.0 (11953 thorn-02.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <!-- STREETS -->
+ <node id="1" visible="true" lat="85.0511287798066" lon="0"/>
+ <node id="2" visible="true" lat="4000" lon="0"/>
+ <node id="3" visible="true" lat="4000" lon="4000"/>
+ <node id="4" visible="true" lat="0" lon="4000"/>
+
+ <way id="00000" visible="true">
+  <nd ref="1"/>
+  <nd ref="2"/>
+	<nd ref="3"/>
+	<nd ref="4"/>
+  <tag k="highway" v="residential"/>
+  <tag k="name" v="AllAround"/>
+  <tag k="oneway" v="yes"/>
+ </way>
+</osm>
