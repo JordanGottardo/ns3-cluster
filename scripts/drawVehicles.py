@@ -19,6 +19,7 @@ def main():
     maxTxRange = 900
     color1 = "#840000"
     color2 = "#677a04"
+    color3 = "#000000"
     
     thisScriptPath = os.path.dirname(os.path.realpath(__file__))
     ns2MobilityPath = os.path.dirname(thisScriptPath) + "/ns-3.26/Padova.ns2mobility.xml"
@@ -62,8 +63,9 @@ def main():
     plt.plot(xPos, yPos, ".")
     plt.plot(starterCoordX, starterCoordY, "ro")
 
-    plotTxRange(minTxRange, starterCoordX, starterCoordY, vehicleDistance, color1)
-    plotTxRange(maxTxRange, starterCoordX, starterCoordY, vehicleDistance, color2)
+    plotTxRange(minTxRange, starterCoordX, starterCoordY, vehicleDistance, color1, False)
+    plotTxRange(maxTxRange, starterCoordX, starterCoordY, vehicleDistance, color2, False)
+    plotTxRange(1000, starterCoordX, starterCoordY, vehicleDistance, color3, True)
     plt.legend(loc = "upper left")
    
     plt.show()
@@ -72,19 +74,22 @@ def main():
     
     
         
-def plotTxRange(txRange, starterCoordX, starterCoordY, vehicleDistance, color):
+def plotTxRange(txRange, starterCoordX, starterCoordY, vehicleDistance, color, plotInterval):
     x = np.linspace(-500, 3500, 100)
     y = np.linspace(-500, 3500, 100)
     X, Y = np.meshgrid(x, y)
 
-    realTxRange = (X - starterCoordX) ** 2 + (Y - starterCoordY) ** 2 - txRange**2
-    outerTxRange = (X - starterCoordX) ** 2 + (Y - starterCoordY) ** 2 - (txRange + vehicleDistance) ** 2 
-    innerTxRange = (X - starterCoordX) ** 2 + (Y - starterCoordY) ** 2 - (txRange - vehicleDistance) ** 2
-
-    # F = X**2 + Y**2 - 90000
+    realTxRange = (X - starterCoordX) ** 2 + (Y - starterCoordY) ** 2 - txRange ** 2
     CS = plt.contour(X, Y, realTxRange, [0], colors = color)
-    plt.contour(X, Y, outerTxRange, [0], colors = color, linestyles = "dashed")
-    plt.contour(X, Y, innerTxRange, [0], colors = color, linestyles = "dashed")
+
+    if (plotInterval):
+        outerTxRange = (X - starterCoordX) ** 2 + (Y - starterCoordY) ** 2 - (txRange + vehicleDistance) ** 2 
+        innerTxRange = (X - starterCoordX) ** 2 + (Y - starterCoordY) ** 2 - (txRange - vehicleDistance) ** 2
+        plt.contour(X, Y, outerTxRange, [0], colors = color, linestyles = "dashed")
+        plt.contour(X, Y, innerTxRange, [0], colors = color, linestyles = "dashed")
+    # F = X**2 + Y**2 - 90000
+    
+    
     # if (color == "#840000"):
     plt.clabel(CS, inline=1, fontsize=10)
     CS.collections[0].set_label(str(txRange) + " m")

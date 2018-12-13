@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project>
     	
-    <configuration id="cdt.managedbuild.config.gnu.cross.exe.debug.866585056" name="Debug">
+    <configuration id="cdt.managedbuild.config.gnu.cross.exe.debug.242069591" name="Debug">
         		
         <extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
             			
@@ -23,7 +23,7 @@
         	
     </configuration>
     	
-    <configuration id="cdt.managedbuild.config.gnu.cross.exe.release.1986773899" name="Release">
+    <configuration id="cdt.managedbuild.config.gnu.cross.exe.release.1961566895" name="Release">
         		
         <extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
             			

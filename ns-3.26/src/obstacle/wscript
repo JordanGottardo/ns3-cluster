@@ -6,8 +6,10 @@
 #def configure(conf):
 #     conf.check_nonfatal(header_name='stdint.h', define_name='HAVE_STDINT_H')
 def configure(conf):
-    conf.env.append_value("CXXFLAGS", ["-Wall", "-std=c++0x", "-frounding-math", "-I/home/jgottard/ns-3/CGAL_4_11/include/", "-I/home/jgottard/ns-3/mpfr_4_0_1/include", "-I/home/jgottard/ns-3/gmp_6_1_2/include", "-I/home/jgottard/ns-3/boost_1_54_0/include" ])
-    conf.env.append_value("LINKFLAGS", ["-L/home/jgottard/ns-3/CGAL_4_11/lib", "-L/home/jgottard/ns-3/gmp_6_1_2/lib", "-L/home/jgottard/ns-3/mpfr_4_0_1/lib", "-L/home/jgottard/ns-3/boost_1_54_0/lib", "-lboost_system"])
+#    conf.env.append_value("CXXFLAGS", ["-Wall", "-std=c++0x", "-frounding-math", "-I/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/CGAL_4_11/include/", "-I/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/mpfr_4_0_1/include", "-I/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/gmp_6_1_2/include", "-I/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/boost_1_54_0/include" ])
+    conf.env.append_value("CXXFLAGS", ["-Wall", "-std=c++0x", "-frounding-math" ])
+#    conf.env.append_value("LINKFLAGS", ["-L/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/CGAL_4_11/lib", "-L/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/gmp_6_1_2/lib", "-L/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/mpfr_4_0_1/lib", "-L/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/boost_1_54_0/lib", "-lboost_system"])
+    conf.env.append_value("LINKFLAGS", [])
     conf.env.append_value("LIB", ["CGAL", "CGAL_Core", "gmp", "mpfr", "boost_thread"])
 
 def build(bld):
