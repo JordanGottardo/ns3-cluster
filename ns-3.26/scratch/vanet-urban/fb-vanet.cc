@@ -86,7 +86,7 @@ public:
 	 * \param base first part of the new filename
 	 * \return none
 	 */
-	void EnableAlternativeFilename(std::string base);
+	void EnableAlternativeFilename(boost::filesystem::path path);
 
 	/**
 	 * \brief Add a value (cell) in the current row
@@ -130,12 +130,12 @@ public:
 	void CloseRow(void);
 
 private:
-	std::string					m_csvFilename;
+	boost::filesystem::path					m_csvFilePath;
 	std::stringstream		m_currentRow;
 };
 
 CSVManager::CSVManager ()
-:	m_csvFilename ("")
+:	m_csvFilePath ("")
 {
 	NS_LOG_FUNCTION (this);
 }
@@ -150,7 +150,7 @@ CSVManager::Setup (std::string filename)
 {
 	NS_LOG_FUNCTION (this);
 
-	m_csvFilename = filename;
+	m_csvFilePath = filename;
 }
 
 void
@@ -158,24 +158,19 @@ CSVManager::WriteHeader (std::string header)
 {
 	NS_LOG_FUNCTION (this);
 
-	boost::filesystem::path filePath(m_csvFilename);
-	boost::filesystem::path parentPath = filePath.parent_path();
-	cout << "parentPath = " + parentPath.string();
-//	std::ofstream out (m_csvFilename.c_str ());
-//	out << header.c_str() << std::endl;
-//	out.close ();
+	boost::filesystem::path parentPath = m_csvFilePath.parent_path();
+	boost::filesystem::create_directories(parentPath);
+	std::ofstream out (m_csvFilePath.string());
+	out << header.c_str() << std::endl;
+	out.close ();
 }
 
 void
-CSVManager::EnableAlternativeFilename(std::string base)
+CSVManager::EnableAlternativeFilename(boost::filesystem::path path)
 {
 	NS_LOG_FUNCTION (this);
-
-	std::string new_filename;
 	std::string separators = "/_,.";
 	std::string extension = ".csv";
-
-
 
 	// Get unix time
 	struct timeval tp;
@@ -183,13 +178,10 @@ CSVManager::EnableAlternativeFilename(std::string base)
 	long int ms = tp.tv_sec * 1000 + tp.tv_usec / 1000;
 
 	// Create the new filename
-	new_filename.append(base);
+//	new_filename.append(base);
 //	new_filename.append(separators, 1, 1);	// only '_'
 //	new_filename.append(std::to_string(ms));
-	new_filename.append(extension);
-
-	m_csvFilename = new_filename;
-	cout << m_csvFilename << std::endl;
+	m_csvFilePath = path += extension;
 }
 
 
@@ -239,7 +231,7 @@ CSVManager::CloseRow (void)
 	NS_LOG_FUNCTION (this);
 
 	// write current row
-	std::ofstream out (m_csvFilename.c_str (), std::ios::app);
+	std::ofstream out (m_csvFilePath.c_str (), std::ios::app);
 	out << m_currentRow.rdbuf() << std::endl;
 	out.close ();
 
@@ -427,6 +419,7 @@ private:
 	std::string								m_bldgFile;
 	std::string								m_mapBasePath;
 	std::string								m_mapBaseName;
+	std::string									m_mapBaseNameWithoutDistance;
 	double									m_TotalSimTime;
 
 
@@ -690,6 +683,7 @@ FBVanetExperiment::CommandSetup (int argc, char **argv)
 	std::size_t foundSlash = m_mapBasePath.find_last_of("/\\");
 	std::size_t foundDash = m_mapBasePath.find_last_of("-");
 	m_mapBaseName = m_mapBasePath.substr(foundSlash + 1);
+	m_mapBaseNameWithoutDistance = m_mapBaseName.substr(0, m_mapBaseName.find_last_of("-"));
 	m_vehicleDistance = std::stoi(m_mapBasePath.substr(foundDash + 1));
 	cout << "mapBaseName == " << m_mapBaseName << " vehicleDistance " << m_vehicleDistance << endl;
 }
@@ -756,6 +750,7 @@ FBVanetExperiment::RunSimulation ()
 void
 FBVanetExperiment::ProcessOutputs ()
 {
+//	TODO add thread safety (maybe in addValues methods?)
 	NS_LOG_FUNCTION (this);
 	NS_LOG_INFO ("Process outputs.");
 
@@ -851,7 +846,7 @@ FBVanetExperiment::CalculateOutFilePath () const {
 		protocol = "st500";
 	}
 
-	fileName.append("d" + vehicleDistance + "/b" + buildings + "/" + protocol + "-" + actualRange + "/"
+	fileName.append(m_mapBaseNameWithoutDistance + "/d" + vehicleDistance + "/b" + buildings + "/" + protocol + "-" + actualRange + "/"
 			+ m_mapBaseName + "-b" + buildings + "-" + protocol + "-" + actualRange);
 
 	return fileName;
@@ -877,28 +872,25 @@ int main (int argc, char *argv[])
 	// Manage data storage
 //	g_csvData.EnableAlternativeFilename ("/home/jgottard/ns-3/ns-3.26/out/scenario-urbano/" + std::to_string(m));	// cluster
 	//g_csvData.EnableAlternativeFilename ("out/scenario-urbano");
+//	g_csvData.WriteHeader ("\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
+//			"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
+//			"\"Slots\",\"Messages sent\",\"Messages received\"");
+	FBVanetExperiment experiment;
+	experiment.Configure (argc, argv);
+	std::string filePath = experiment.CalculateOutFilePath();
+	boost::filesystem::path path = boost::filesystem::current_path() /= "/out/scenario-urbano/";
+	path /= filePath;
+	g_csvData.EnableAlternativeFilename (path);
 	g_csvData.WriteHeader ("\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
-			"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
-			"\"Slots\",\"Messages sent\",\"Messages received\"");
+							"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
+							"\"Slots\",\"Messages sent\",\"Messages received\"");
 
 	for (uint32_t runId = 1; runId <= 1; runId++)
 	{
 	    NS_LOG_UNCOND("run id = ");
 	    NS_LOG_UNCOND(runId);
 		RngSeedManager::SetRun (runId);
-
-		{
-			FBVanetExperiment experiment;
-			experiment.Configure (argc, argv);
-			if (runId == 1) {
-				std::string filePath = experiment.CalculateOutFilePath();
-				g_csvData.EnableAlternativeFilename ("/home/jgottard/ns-3/ns-3.26/out/scenario-urbano/" + filePath);
-				g_csvData.WriteHeader ("\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
-						"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
-						"\"Slots\",\"Messages sent\",\"Messages received\"");
-			}
 //			experiment.Simulate ();
 //			experiment.ProcessOutputs ();
-		}
 	}
 }
