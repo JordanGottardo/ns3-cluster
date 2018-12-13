@@ -7,7 +7,7 @@ BUILD_PROFILE = 'debug'
 BUILD_SUFFIX = '-debug'
 CC = ['/usr/bin/gcc']
 CCDEFINES = ['_DEBUG']
-CCFLAGS = ['-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-Wall', '-std=c++11', '-Wall', '-std=c++0x', '-frounding-math', '-I/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/CGAL_4_11/include/', '-I/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/mpfr_4_0_1/include', '-I/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/gmp_6_1_2/include', '-I/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/boost_1_54_0/include', '-Wno-error=deprecated-declarations', '-fstrict-aliasing', '-Wstrict-aliasing']
+CCFLAGS = ['-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-Wall', '-std=c++11', '-Wall', '-std=c++0x', '-frounding-math', '-Wno-error=deprecated-declarations', '-fstrict-aliasing', '-Wstrict-aliasing']
 CCFLAGS_PTHREAD = '-pthread'
 CCLNK_SRC_F = []
 CCLNK_TGT_F = ['-o']
@@ -23,7 +23,7 @@ COMPILER_CC = 'gcc'
 COMPILER_CXX = 'g++'
 CPPPATH_ST = '-I%s'
 CXX = ['/usr/bin/g++']
-CXXFLAGS = ['-Wall', '-std=c++11', '-Wall', '-std=c++0x', '-frounding-math', '-I/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/CGAL_4_11/include/', '-I/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/mpfr_4_0_1/include', '-I/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/gmp_6_1_2/include', '-I/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/boost_1_54_0/include']
+CXXFLAGS = ['-Wall', '-std=c++11', '-Wall', '-std=c++0x', '-frounding-math']
 CXXFLAGS_MACBUNDLE = ['-fPIC']
 CXXFLAGS_PTHREAD = '-pthread'
 CXXFLAGS_PYEMBED = ['-fno-strict-aliasing', '-fwrapv', '-fdebug-prefix-map=/build/python2.7-3hk45v/python2.7-2.7.15~rc1=.', '-fstack-protector-strong', '-fno-strict-aliasing']
@@ -91,7 +91,7 @@ LIB_PYTHON2.7 = ['python2.7']
 LIB_RT = ['rt']
 LIB_SQLITE3 = ['sqlite3']
 LIB_ST = '-l%s'
-LINKFLAGS = ['-L/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/CGAL_4_11/lib', '-L/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/gmp_6_1_2/lib', '-L/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/mpfr_4_0_1/lib', '-L/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/boost_1_54_0/lib', '-lboost_system']
+LINKFLAGS = []
 LINKFLAGS_MACBUNDLE = ['-bundle', '-undefined', 'dynamic_lookup']
 LINKFLAGS_PTHREAD = '-pthread'
 LINKFLAGS_PYEMBED = ['-Wl,-Bsymbolic-functions', '-Wl,-z,relro']
