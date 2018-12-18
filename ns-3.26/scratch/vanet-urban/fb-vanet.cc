@@ -24,10 +24,21 @@
 * ------------------------------------------------------------------------------
 */
 
+#include <bits/stdint-uintn.h>
+#include <bits/types/struct_timeval.h>
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
+#include <sys/time.h>
+#include <cstddef>
+#include <cstdlib>
+#include <ctime>
 #include <fstream>
 #include <iostream>
-#include <sys/time.h>
-#include <boost/filesystem.hpp>
+#include <mutex>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <thread>
 
 #include "ns3/core-module.h"
 #include "ns3/node-list.h"
@@ -39,7 +50,6 @@
 #include "ns3/topology.h"
 #include "ns3/wifi-80211p-helper.h"
 #include "ns3/wave-mac-helper.h"
-
 #include "FBApplication.h"
 
 using namespace ns3;
@@ -131,11 +141,13 @@ public:
 
 private:
 	boost::filesystem::path					m_csvFilePath;
-	std::stringstream		m_currentRow;
+	std::stringstream						m_currentRow;
+//	std::mutex 									m_mutex;
+	unsigned int 							runId;
 };
 
 CSVManager::CSVManager ()
-:	m_csvFilePath ("")
+:	m_csvFilePath (""), runId(0)
 {
 	NS_LOG_FUNCTION (this);
 }
@@ -229,12 +241,13 @@ void
 CSVManager::CloseRow (void)
 {
 	NS_LOG_FUNCTION (this);
-
-	// write current row
+//	m_mutex.lock();
+	// write current row to file in an atomic way
 	std::ofstream out (m_csvFilePath.c_str (), std::ios::app);
-	out << m_currentRow.rdbuf() << std::endl;
+	out << runId << ","<< m_currentRow.rdbuf() << std::endl;
+	runId++;
 	out.close ();
-
+//	m_mutex.unlock();
 	// Delete (old) row
 	m_currentRow.str("");
 }
@@ -267,7 +280,7 @@ public:
 	 * \param argv program arguments
 	 * \return none
 	 */
-	void Configure (int argc, char **argv);
+	void Configure (int argc, char *argv[]);
 
 	/**
 	 * \brief Enacts simulation of an ns-3  application
@@ -285,8 +298,14 @@ public:
 	 * \brief Calculates the filepath where the output of the experiment will be saved (depends on input parameters)
 	 * \return file path
 	 */
-	const std::string CalculateOutFilePath () const;
+	const std::string CalculateOutFilePath(string finalLetter) const;
 
+
+	/**
+	 * \brief Calculates configure, runs and print results of the experiment
+	 * \return file path
+	 */
+	void RunAndPrintResults(int argc, char *argv[]);
 
 protected:
 	/**
@@ -295,7 +314,7 @@ protected:
 	 * \param argv program arguments
 	 * \return none
 	 */
-	void ParseCommandLineArguments (int argc, char **argv);
+	void ParseCommandLineArguments (int argc, char *argv[]);
 
 	/**
 	 * \brief Configure default attributes
@@ -362,7 +381,7 @@ private:
 	 * \brief Run the simulation
 	 * \return none
 	 */
-	void CommandSetup (int argc, char **argv);
+	void CommandSetup (int argc, char *argv[]);
 
 	/**
 	 * \brief Set up a prescribed scenario
@@ -460,7 +479,7 @@ FBVanetExperiment::~FBVanetExperiment ()
 }
 
 void
-FBVanetExperiment::Configure (int argc, char **argv)
+FBVanetExperiment::Configure (int argc, char *argv[])
 {
 	// Initial configuration and parameters parsing
 	ParseCommandLineArguments (argc, argv);
@@ -485,6 +504,56 @@ FBVanetExperiment::Simulate ()
 }
 
 void
+FBVanetExperiment::ProcessOutputs ()
+{
+	NS_LOG_FUNCTION (this);
+	NS_LOG_INFO ("Process outputs.");
+
+	std::stringstream dataStream;
+	m_fbApplication->PrintStats (dataStream);
+
+	g_csvData.AddValue((int) m_scenario);
+	g_csvData.AddValue((int) m_actualRange);
+	g_csvData.AddValue((int) m_staticProtocol);
+	g_csvData.AddValue((int) m_loadBuildings);
+	g_csvData.AddValue((int) m_nNodes);
+	g_csvData.AddMultipleValues(dataStream);
+	g_csvData.CloseRow ();
+}
+
+const std::string
+FBVanetExperiment::CalculateOutFilePath(string finalLetter) const {
+	std::string fileName = "";
+	std::string vehicleDistance = std::to_string(m_vehicleDistance);
+	std::string buildings = std::to_string(m_loadBuildings);
+	std::string protocol = "";
+	std::string actualRange = std::to_string(m_actualRange);
+
+
+	if (m_staticProtocol == PROTOCOL_FB) {
+		protocol = "fb";
+	}
+	else if (m_staticProtocol == PROTOCOL_STATIC_300) {
+		protocol = "st300";
+	}
+	else if (m_staticProtocol == PROTOCOL_STATIC_500) {
+		protocol = "st500";
+	}
+
+	fileName.append(m_mapBaseNameWithoutDistance + "/d" + vehicleDistance + "/b" + buildings + "/" + protocol + "-" + actualRange + "/"
+			+ m_mapBaseName + "-b" + buildings + "-" + protocol + "-" + actualRange + "-" + finalLetter);
+
+	return fileName;
+}
+
+void
+FBVanetExperiment::RunAndPrintResults(int argc, char *argv[]) {
+	Configure(argc, argv);
+	Simulate();
+	ProcessOutputs();
+}
+
+void
 FBVanetExperiment::ConfigureDefaults ()
 {
 	NS_LOG_FUNCTION (this);
@@ -502,7 +571,7 @@ FBVanetExperiment::ConfigureDefaults ()
 }
 
 void
-FBVanetExperiment::ParseCommandLineArguments (int argc, char **argv)
+FBVanetExperiment::ParseCommandLineArguments (int argc, char *argv[])
 {
 	NS_LOG_FUNCTION (this);
 
@@ -654,7 +723,7 @@ FBVanetExperiment::ConfigureFBApplication ()
 }
 
 void
-FBVanetExperiment::CommandSetup (int argc, char **argv)
+FBVanetExperiment::CommandSetup (int argc, char *argv[])
 {
 	NS_LOG_FUNCTION (this);
 	NS_LOG_INFO ("Parsing command line arguments.");
@@ -675,13 +744,14 @@ FBVanetExperiment::CommandSetup (int argc, char **argv)
 	cmd.AddValue ("totalTime", "Simulation end time", m_TotalSimTime);
 
 	cmd.AddValue ("mapBasePath", "Base path of map required for simulation "
-			"(e.g. ../maps/Padova-25, no extensions. The dash '-' in the name is mandatory)", m_mapBasePath);
+			"(e.g. ../maps/Padova-25.osm.xml. The dash '-' in the name is mandatory)", m_mapBasePath);
 
 	cmd.Parse (argc, argv);
 
 	// Calculates file base name and vehicle distance from file base path
-	std::size_t foundSlash = m_mapBasePath.find_last_of("/\\");
-	std::size_t foundDash = m_mapBasePath.find_last_of("-");
+	size_t foundSlash = m_mapBasePath.find_last_of("/\\");
+	size_t foundDash = m_mapBasePath.find_last_of("-");
+
 	m_mapBaseName = m_mapBasePath.substr(foundSlash + 1);
 	m_mapBaseNameWithoutDistance = m_mapBaseName.substr(0, m_mapBaseName.find_last_of("-"));
 	m_vehicleDistance = std::stoi(m_mapBasePath.substr(foundDash + 1));
@@ -698,38 +768,43 @@ FBVanetExperiment::SetupScenario ()
 	m_TotalSimTime = 990000.0;
 	m_areaOfInterest = 1000;	// meters
 //	m_vehiclesDistance = m_mapBaseName.find("-");	// meters
-	cout << m_mapBaseName.find("-");
-
-	if (m_scenario == 0)
-	{
-		// DEBUG, TODO: delete this scenario
-		m_bldgFile = "Griglia.poly.xml";
-		m_traceFile = "Griglia.ns2mobility.xml";
-
-		m_nNodes = 96;
-		m_startingNode = 23;
-
-		m_areaOfInterest = 500;
-	} else if (m_scenario == 1)
-	{
-		// Padova (2x2 km)
-		m_bldgFile = "Padova.poly.xml";
-		m_traceFile = "Padova.ns2mobility.xml";
-
-		m_nNodes = 2224;
-		m_startingNode = 313;
-	}
-	else if (m_scenario == 2)
-	{
-		// L.A.  (2x2 km)
-		m_bldgFile = "LA.poly.xml";
-		m_traceFile = "LA.ns2mobility.xml";
-
-		m_nNodes = 1905;
-		m_startingNode = 365;
-	}
-	else
-		NS_LOG_ERROR ("Invalid scenario specified. Values must be [1-2].");
+//	cout << m_mapBaseName.find("-");
+	m_bldgFile = m_mapBasePath + ".poly.xml";
+	m_traceFile = m_mapBasePath + ".ns2mobility.xml";
+//	cout << "traceFile = " + m_traceFile << endl;
+//	TODO parametrizzare nNodes e startingNode random
+	m_startingNode = rand() % m_nNodes;
+//
+//	if (m_scenario == 0)
+//	{
+//		// DEBUG, TODO: delete this scenario
+//		m_bldgFile = "Griglia.poly.xml";
+//		m_traceFile = "Griglia.ns2mobility.xml";
+//
+//		m_nNodes = 96;
+//		m_startingNode = 23;
+//
+//		m_areaOfInterest = 500;
+//	} else if (m_scenario == 1)
+//	{
+//		// Padova (2x2 km)
+//		m_bldgFile = "Padova.poly.xml";
+//		m_traceFile = "Padova.ns2mobility.xml";
+//
+//		m_nNodes = 2224;
+//		m_startingNode = 313;
+//	}
+//	else if (m_scenario == 2)
+//	{
+//		// L.A.  (2x2 km)
+//		m_bldgFile = "LA.poly.xml";
+//		m_traceFile = "LA.ns2mobility.xml";
+//
+//		m_nNodes = 1905;
+//		m_startingNode = 365;
+//	}
+//	else
+//		NS_LOG_ERROR ("Invalid scenario specified. Values must be [1-2].");
 
 	if (m_loadBuildings != 0)
 	{
@@ -747,25 +822,7 @@ FBVanetExperiment::RunSimulation ()
 	Run ();
 }
 
-void
-FBVanetExperiment::ProcessOutputs ()
-{
-//	TODO add thread safety (maybe in addValues methods?)
-	NS_LOG_FUNCTION (this);
-	NS_LOG_INFO ("Process outputs.");
 
-	std::stringstream dataStream;
-	m_fbApplication->PrintStats (dataStream);
-
-	g_csvData.AddValue((int) RngSeedManager::GetRun ());
-	g_csvData.AddValue((int) m_scenario);
-	g_csvData.AddValue((int) m_actualRange);
-	g_csvData.AddValue((int) m_staticProtocol);
-	g_csvData.AddValue((int) m_loadBuildings);
-	g_csvData.AddValue((int) m_nNodes);
-	g_csvData.AddMultipleValues(dataStream);
-	g_csvData.CloseRow ();
-}
 
 void
 FBVanetExperiment::Run ()
@@ -827,36 +884,20 @@ FBVanetExperiment::SetupPacketSend (Ipv4Address addr, Ptr<Node> node)
 	return sender;
 }
 
-const std::string
-FBVanetExperiment::CalculateOutFilePath () const {
-	std::string fileName = "";
-	std::string vehicleDistance = std::to_string(m_vehicleDistance);
-	std::string buildings = std::to_string(m_loadBuildings);
-	std::string protocol = "";
-	std::string actualRange = std::to_string(m_actualRange);
-
-
-	if (m_staticProtocol == PROTOCOL_FB) {
-		protocol = "fb";
-	}
-	else if (m_staticProtocol == PROTOCOL_STATIC_300) {
-		protocol = "st300";
-	}
-	else if (m_staticProtocol == PROTOCOL_STATIC_500) {
-		protocol = "st500";
-	}
-
-	fileName.append(m_mapBaseNameWithoutDistance + "/d" + vehicleDistance + "/b" + buildings + "/" + protocol + "-" + actualRange + "/"
-			+ m_mapBaseName + "-b" + buildings + "-" + protocol + "-" + actualRange);
-
-	return fileName;
-}
-
 
 /* -----------------------------------------------------------------------------
 *			MAIN
 * ------------------------------------------------------------------------------
 */
+
+void runExperiment(int argc, char *argv[], unsigned int minId, unsigned int maxId) {
+	cout << "runExperiment" << endl;
+	for (unsigned int i = minId; i < maxId; i++) {
+		cout << "run = " << i << endl;
+		FBVanetExperiment experiment;
+		experiment.RunAndPrintResults(argc, argv);
+	}
+}
 
 int main (int argc, char *argv[])
 {
@@ -866,18 +907,15 @@ int main (int argc, char *argv[])
 //    LogComponentEnable ("FBApplication", LOG_LEVEL_INFO);
 //    LogComponentEnable ("FBHeader", LOG_LEVEL_FUNCTION);
 //    LogComponentEnable ("FBNode", LOG_LEVEL_FUNCTION);
-    
-	uint32_t maxRun = RngSeedManager::GetRun ();
-//	uint32_t maxRun = 60;
-	// Manage data storage
-//	g_csvData.EnableAlternativeFilename ("/home/jgottard/ns-3/ns-3.26/out/scenario-urbano/" + std::to_string(m));	// cluster
-	//g_csvData.EnableAlternativeFilename ("out/scenario-urbano");
-//	g_csvData.WriteHeader ("\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
-//			"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
-//			"\"Slots\",\"Messages sent\",\"Messages received\"");
+	string finalLetter = to_string(*argv[1]);
+	unsigned int maxRun = RngSeedManager::GetRun();
+	unsigned int nThreads = 4;
+	unsigned int runPerThread = (int)(maxRun / nThreads);
+
+//	Before launching experiments, calculate output file path
 	FBVanetExperiment experiment;
 	experiment.Configure (argc, argv);
-	std::string filePath = experiment.CalculateOutFilePath();
+	std::string filePath = experiment.CalculateOutFilePath(finalLetter);
 	boost::filesystem::path path = boost::filesystem::current_path() /= "/out/scenario-urbano/";
 	path /= filePath;
 	g_csvData.EnableAlternativeFilename (path);
@@ -885,12 +923,21 @@ int main (int argc, char *argv[])
 							"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
 							"\"Slots\",\"Messages sent\",\"Messages received\"");
 
-	for (uint32_t runId = 1; runId <= 1; runId++)
-	{
-	    NS_LOG_UNCOND("run id = ");
-	    NS_LOG_UNCOND(runId);
-		RngSeedManager::SetRun (runId);
-//			experiment.Simulate ();
-//			experiment.ProcessOutputs ();
+	for(unsigned int i = 0; i < maxRun; i++) {
+		FBVanetExperiment experiment;
+		experiment.RunAndPrintResults(argc, argv);
 	}
+
+
+//	vector<thread*> threads;
+//	for (unsigned int i = 0; i < 4; i++) {
+//		cout << "starting thread " << i << endl;
+//		thread* thread = new std::thread(runExperiment, argc, argv, i * runPerThread, i * runPerThread + runPerThread);
+//		threads.push_back(thread);
+//	}
+//
+//	for (thread* thread : threads) {
+//		thread->join();
+//		delete thread;
+//	}
 }

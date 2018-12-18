@@ -291,7 +291,7 @@ FBApplication::ReceivePacket (Ptr<Socket> socket)
 
 		// Compute the distance between the sender and me (the node who received the message)
 	 	double distanceSenderToCurrent = ns3::CalculateDistance(senderPosition, currentPosition);
-	 	std::cout << "distanceSenderToCurrent = " + std::to_string(distanceSenderToCurrent) << std::endl;
+//	 	std::cout << "distanceSenderToCurrent = " + std::to_string(distanceSenderToCurrent) << std::endl;
 		uint32_t distanceSenderToCurrent_uint = std::floor (distanceSenderToCurrent);
 //		NS_LOG_UNCOND("distance = " << distanceSenderToCurrent_uint);
 
