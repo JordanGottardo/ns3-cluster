@@ -13,7 +13,7 @@ def configure(conf):
     conf.env.append_value("LIB", ["CGAL", "CGAL_Core", "gmp", "mpfr", "boost_thread"])
 
 def build(bld):
-    module = bld.create_ns3_module('obstacle', ['core', 'mobility', 'propagation'])
+    module = bld.create_ns3_module('obstacle', ['core', 'mobility', 'propagation', 'netanim'])
     module.source = [
         'model/obstacle.cc',
         'model/topology.cc',

@@ -1,4 +1,4 @@
-# project ns (3.26) configured on Thu Dec 13 12:26:28 2018 by
+# project ns (3.26) configured on Wed Dec 26 19:04:10 2018 by
 # waf 1.8.19 (abi 98, python 2070fc1 on linux2)
 # using ./waf configure
 #
@@ -724,9 +724,9 @@ Checking for compilation flag -Wl,--soname=foo support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_41c16279c6c47b785c22582f0742ee61/test.cpp[0m
+[1/1] Compiling [32mbuild/.conf_check_f1f5bb2a50b1a1608fb19a4e73c3a3fc/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-Wl,--soname=foo', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_41c16279c6c47b785c22582f0742ee61/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-Wall', '-Wl,--soname=foo', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_f1f5bb2a50b1a1608fb19a4e73c3a3fc/testbuild/test.cpp.1.o']
 ok
 ------------------------------------------------------
 Checking for program 'python'
@@ -829,12 +829,12 @@ int main(int argc, char **argv)
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_b0c39bbcd85c5ddfe7ffa9a6f99bad01/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_19fb50e8ce1ac750b33dd5d8ea7e0df1/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-fno-strict-aliasing', '-fdebug-prefix-map=/build/python2.7-3hk45v/python2.7-2.7.15~rc1=.', '-fstack-protector-strong', '-fwrapv', '-I/usr/include/python2.7', '-I/usr/include/x86_64-linux-gnu/python2.7', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-D_FORTIFY_SOURCE=2', '-DNDEBUG', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_b0c39bbcd85c5ddfe7ffa9a6f99bad01/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_b0c39bbcd85c5ddfe7ffa9a6f99bad01/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-fno-strict-aliasing', '-fdebug-prefix-map=/build/python2.7-3hk45v/python2.7-2.7.15~rc1=.', '-fstack-protector-strong', '-fwrapv', '-I/usr/include/python2.7', '-I/usr/include/x86_64-linux-gnu/python2.7', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-D_FORTIFY_SOURCE=2', '-DNDEBUG', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_19fb50e8ce1ac750b33dd5d8ea7e0df1/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_19fb50e8ce1ac750b33dd5d8ea7e0df1/testbuild/testprog[0m
 
-['/usr/bin/g++', '-Xlinker', '-export-dynamic', '-Wl,-O1', '-Wl,-Bsymbolic-functions', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_b0c39bbcd85c5ddfe7ffa9a6f99bad01/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/lib/python2.7/config-x86_64-linux-gnu', '-L/usr/lib', '-lpython2.7', '-lpthread', '-ldl', '-lutil', '-lm']
+['/usr/bin/g++', '-Xlinker', '-export-dynamic', '-Wl,-O1', '-Wl,-Bsymbolic-functions', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_19fb50e8ce1ac750b33dd5d8ea7e0df1/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/lib/python2.7/config-x86_64-linux-gnu', '-L/usr/lib', '-lpython2.7', '-lpthread', '-ldl', '-lutil', '-lm']
 yes
 ------------------------------------------------------------------
 Asking python-config for pyext '--cflags --libs --ldflags' flags
@@ -866,30 +866,30 @@ int main(int argc, char **argv)
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_23d27525abb11a68254039f038d27d16/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_ae10a3f0d31fc138e3578ae2df9a5634/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-fPIC', '-fno-strict-aliasing', '-fdebug-prefix-map=/build/python2.7-3hk45v/python2.7-2.7.15~rc1=.', '-fstack-protector-strong', '-fwrapv', '-I/usr/include/python2.7', '-I/usr/include/x86_64-linux-gnu/python2.7', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-D_FORTIFY_SOURCE=2', '-DNDEBUG', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_23d27525abb11a68254039f038d27d16/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_23d27525abb11a68254039f038d27d16/testbuild/testprog.so[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-fPIC', '-fno-strict-aliasing', '-fdebug-prefix-map=/build/python2.7-3hk45v/python2.7-2.7.15~rc1=.', '-fstack-protector-strong', '-fwrapv', '-I/usr/include/python2.7', '-I/usr/include/x86_64-linux-gnu/python2.7', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-D_FORTIFY_SOURCE=2', '-DNDEBUG', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_ae10a3f0d31fc138e3578ae2df9a5634/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_ae10a3f0d31fc138e3578ae2df9a5634/testbuild/testprog.so[0m
 
-['/usr/bin/g++', '-shared', '-Xlinker', '-export-dynamic', '-Wl,-O1', '-Wl,-Bsymbolic-functions', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_23d27525abb11a68254039f038d27d16/testbuild/testprog.so', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/lib/python2.7/config-x86_64-linux-gnu', '-L/usr/lib', '-lpython2.7', '-lpthread', '-ldl', '-lutil', '-lm']
+['/usr/bin/g++', '-shared', '-Xlinker', '-export-dynamic', '-Wl,-O1', '-Wl,-Bsymbolic-functions', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_ae10a3f0d31fc138e3578ae2df9a5634/testbuild/testprog.so', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/lib/python2.7/config-x86_64-linux-gnu', '-L/usr/lib', '-lpython2.7', '-lpthread', '-ldl', '-lutil', '-lm']
 yes
 ------------------------------------------------------------------
 Checking for compilation flag -fvisibility=hidden support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_41c16279c6c47b785c22582f0742ee61/test.cpp[0m
+[1/1] Compiling [32mbuild/.conf_check_f1f5bb2a50b1a1608fb19a4e73c3a3fc/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-fvisibility=hidden', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_41c16279c6c47b785c22582f0742ee61/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-Wall', '-std=c++11', '-fvisibility=hidden', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_f1f5bb2a50b1a1608fb19a4e73c3a3fc/testbuild/test.cpp.1.o']
 ok
 ------------------------------------------------------------------
 Checking for compilation flag -Wno-array-bounds support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_41c16279c6c47b785c22582f0742ee61/test.cpp[0m
+[1/1] Compiling [32mbuild/.conf_check_f1f5bb2a50b1a1608fb19a4e73c3a3fc/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-Wno-array-bounds', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_41c16279c6c47b785c22582f0742ee61/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-Wall', '-std=c++11', '-Wno-array-bounds', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_f1f5bb2a50b1a1608fb19a4e73c3a3fc/testbuild/test.cpp.1.o']
 ok
 ------------------------------------------------------------------
 Checking for pybindgen location
@@ -917,9 +917,9 @@ int main ()
 }
 
 <==
-[1/1] Compiling [32mbuild/.conf_check_dba97359d2948aa4cba1b755dea9ef10/test.cpp[0m
+[1/1] Compiling [32mbuild/.conf_check_0f9a406c350b0435f335f0ddff73e78e/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_dba97359d2948aa4cba1b755dea9ef10/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_0f9a406c350b0435f335f0ddff73e78e/testbuild/test.cpp.1.o']
 yes
 ------------------------------------------------------------------
 Checking for types uint64_t and unsigned long equivalence
@@ -938,9 +938,9 @@ int main ()
 }
 
 <==
-[1/1] Compiling [32mbuild/.conf_check_3e89fc5a8a53425e7d5ead232ebd5e25/test.cpp[0m
+[1/1] Compiling [32mbuild/.conf_check_91b0b811c001e4177318abe040d0315f/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_3e89fc5a8a53425e7d5ead232ebd5e25/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_91b0b811c001e4177318abe040d0315f/testbuild/test.cpp.1.o']
 err: ../test.cpp: In function ‘int main()’:
 ../test.cpp:7:37: error: conversion from ‘std::vector<long long unsigned int>’ to non-scalar type ‘std::vector<long unsigned int>’ requested
     std::vector< uint64_t > t = std::vector< unsigned long long > ();
@@ -953,8 +953,8 @@ from /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/bindin
     raise Errors.BuildError(self.producer.error)
 BuildError: Build failed
  -> task in 'testprog' failed (exit status 1): 
-	{task 139797102984016: cxx test.cpp -> test.cpp.1.o}
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_3e89fc5a8a53425e7d5ead232ebd5e25/testbuild/test.cpp.1.o']
+	{task 139656173591568: cxx test.cpp -> test.cpp.1.o}
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_91b0b811c001e4177318abe040d0315f/testbuild/test.cpp.1.o']
 
 no
 from /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/bindings/python: The configuration failed
@@ -976,12 +976,12 @@ int main ()
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_edf36ecb43d1c4fd7cd2460dce0200b3/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_ee111557563edacc6c5abc269bd1cad1/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_edf36ecb43d1c4fd7cd2460dce0200b3/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_edf36ecb43d1c4fd7cd2460dce0200b3/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_ee111557563edacc6c5abc269bd1cad1/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_ee111557563edacc6c5abc269bd1cad1/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_edf36ecb43d1c4fd7cd2460dce0200b3/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_ee111557563edacc6c5abc269bd1cad1/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 complete
 ------------------------------------------------------------------
 Checking for python module 'pygccxml'
@@ -1172,12 +1172,12 @@ Checking for boost linkage
 int main() { boost::system::error_code c; }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_de446b7f2201a8e9e8a401f3fb7805e5/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_c3c74dcf920ac463f2bb1bfa4ef6c407/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-I/usr/include', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_de446b7f2201a8e9e8a401f3fb7805e5/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_de446b7f2201a8e9e8a401f3fb7805e5/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-I/usr/include', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DHAVE_PYEMBED=1', '-DHAVE_PYEXT=1', '-DHAVE_PYTHON_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_c3c74dcf920ac463f2bb1bfa4ef6c407/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_c3c74dcf920ac463f2bb1bfa4ef6c407/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_de446b7f2201a8e9e8a401f3fb7805e5/testbuild/testprog', '-Wl,-Bstatic', '-L/usr/lib/x86_64-linux-gnu', '-Wl,-Bdynamic', '-L/usr/lib/x86_64-linux-gnu', '-lboost_system', '-lboost_signals', '-lboost_filesystem']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_c3c74dcf920ac463f2bb1bfa4ef6c407/testbuild/testprog', '-Wl,-Bstatic', '-L/usr/lib/x86_64-linux-gnu', '-Wl,-Bdynamic', '-L/usr/lib/x86_64-linux-gnu', '-lboost_system', '-lboost_signals', '-lboost_filesystem']
 ok
 ------------------------------------------------------------------
 Checking for click location
@@ -1211,9 +1211,9 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_b161a646c47581a70bdbbe9a47681c0e/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_76aba48315695c57be0ed828e8651e26/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_b161a646c47581a70bdbbe9a47681c0e/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_76aba48315695c57be0ed828e8651e26/testbuild/test.cpp.1.o']
 err: ../test.cpp: In function ‘int main(int, char**)’:
 ../test.cpp:5:7: error: ‘uint128_t’ was not declared in this scope
   if ((uint128_t *) 0) return 0;
@@ -1243,8 +1243,8 @@ from /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/src/co
     raise Errors.BuildError(self.producer.error)
 BuildError: Build failed
  -> task in 'testprog' failed (exit status 1): 
-	{task 139797102446928: cxx test.cpp -> test.cpp.1.o}
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_b161a646c47581a70bdbbe9a47681c0e/testbuild/test.cpp.1.o']
+	{task 139656173053392: cxx test.cpp -> test.cpp.1.o}
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_76aba48315695c57be0ed828e8651e26/testbuild/test.cpp.1.o']
 
 not found
 from /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/src/core: The configuration failed
@@ -1261,12 +1261,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_14e75c4e6ab4ffbeeef08353921deb74/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_8b0e5a7a7e9d6735027754c49e13496c/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_14e75c4e6ab4ffbeeef08353921deb74/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_14e75c4e6ab4ffbeeef08353921deb74/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_8b0e5a7a7e9d6735027754c49e13496c/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_8b0e5a7a7e9d6735027754c49e13496c/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_14e75c4e6ab4ffbeeef08353921deb74/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_8b0e5a7a7e9d6735027754c49e13496c/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking high precision implementation
@@ -1282,12 +1282,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_c492be73e8d4cd8da9ce6ebff6fa220b/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_cc92fced0e7c825047280981c981fe46/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_c492be73e8d4cd8da9ce6ebff6fa220b/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_c492be73e8d4cd8da9ce6ebff6fa220b/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_cc92fced0e7c825047280981c981fe46/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_cc92fced0e7c825047280981c981fe46/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_c492be73e8d4cd8da9ce6ebff6fa220b/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_cc92fced0e7c825047280981c981fe46/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header inttypes.h
@@ -1300,12 +1300,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_4aab40ece6f02eedef2bee9ab1a95b06/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_c61f24df87c392a5a323a384c47a5a08/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_4aab40ece6f02eedef2bee9ab1a95b06/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_4aab40ece6f02eedef2bee9ab1a95b06/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_c61f24df87c392a5a323a384c47a5a08/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_c61f24df87c392a5a323a384c47a5a08/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_4aab40ece6f02eedef2bee9ab1a95b06/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_c61f24df87c392a5a323a384c47a5a08/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header sys/inttypes.h
@@ -1318,9 +1318,9 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_3cdf844deb2abdb2dd7fffefaee9a4d8/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_7ced5309d4d0dafd53e40c98276506c9/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_3cdf844deb2abdb2dd7fffefaee9a4d8/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_7ced5309d4d0dafd53e40c98276506c9/testbuild/test.cpp.1.o']
 err: ../test.cpp:1:10: fatal error: sys/inttypes.h: No such file or directory
  #include <sys/inttypes.h>
           ^~~~~~~~~~~~~~~~
@@ -1333,8 +1333,8 @@ from /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/src/co
     raise Errors.BuildError(self.producer.error)
 BuildError: Build failed
  -> task in 'testprog' failed (exit status 1): 
-	{task 139797102407952: cxx test.cpp -> test.cpp.1.o}
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_3cdf844deb2abdb2dd7fffefaee9a4d8/testbuild/test.cpp.1.o']
+	{task 139656173017232: cxx test.cpp -> test.cpp.1.o}
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_7ced5309d4d0dafd53e40c98276506c9/testbuild/test.cpp.1.o']
 
 not found
 from /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/src/core: The configuration failed
@@ -1349,12 +1349,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_f6ff6d92bcded47477beacd42e92e8fe/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_d4e18636fc24da5c168d0f11719ac4cd/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_f6ff6d92bcded47477beacd42e92e8fe/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_f6ff6d92bcded47477beacd42e92e8fe/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_d4e18636fc24da5c168d0f11719ac4cd/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_d4e18636fc24da5c168d0f11719ac4cd/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_f6ff6d92bcded47477beacd42e92e8fe/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_d4e18636fc24da5c168d0f11719ac4cd/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header sys/stat.h
@@ -1367,12 +1367,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_36ace5d192980a5c5d5f5d01f0a73caf/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_882f1774e9fa49400363a39b6973c4b7/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_36ace5d192980a5c5d5f5d01f0a73caf/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_36ace5d192980a5c5d5f5d01f0a73caf/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_882f1774e9fa49400363a39b6973c4b7/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_882f1774e9fa49400363a39b6973c4b7/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_36ace5d192980a5c5d5f5d01f0a73caf/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_882f1774e9fa49400363a39b6973c4b7/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header dirent.h
@@ -1385,12 +1385,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_1392feb2e1d02dc3391d1d77b13e1315/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_7a43e25bb2f83a3893e897fc604cc4da/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_1392feb2e1d02dc3391d1d77b13e1315/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_1392feb2e1d02dc3391d1d77b13e1315/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_7a43e25bb2f83a3893e897fc604cc4da/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_7a43e25bb2f83a3893e897fc604cc4da/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_1392feb2e1d02dc3391d1d77b13e1315/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_7a43e25bb2f83a3893e897fc604cc4da/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header stdlib.h
@@ -1403,12 +1403,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_806c3b0747896f6756ee65aecb648ce6/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_31ecb8176eeb51ad69b80d533a0cb836/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_806c3b0747896f6756ee65aecb648ce6/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_806c3b0747896f6756ee65aecb648ce6/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_31ecb8176eeb51ad69b80d533a0cb836/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_31ecb8176eeb51ad69b80d533a0cb836/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_806c3b0747896f6756ee65aecb648ce6/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_31ecb8176eeb51ad69b80d533a0cb836/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header signal.h
@@ -1421,12 +1421,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_ef584a2a2f6f278b9ea7877ca4b8fcd3/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_bb3962908e8a85d0035de99a61a0cbe0/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_ef584a2a2f6f278b9ea7877ca4b8fcd3/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_ef584a2a2f6f278b9ea7877ca4b8fcd3/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_bb3962908e8a85d0035de99a61a0cbe0/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_bb3962908e8a85d0035de99a61a0cbe0/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_ef584a2a2f6f278b9ea7877ca4b8fcd3/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_bb3962908e8a85d0035de99a61a0cbe0/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header pthread.h
@@ -1441,12 +1441,12 @@ int main ()
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_ec81455bde1e3a5ee812f8ee3e77a072/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_02c9a4df42e8e7d15e7c774607949ebd/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-pthread', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_ec81455bde1e3a5ee812f8ee3e77a072/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_ec81455bde1e3a5ee812f8ee3e77a072/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-pthread', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_02c9a4df42e8e7d15e7c774607949ebd/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_02c9a4df42e8e7d15e7c774607949ebd/testbuild/testprog[0m
 
-['/usr/bin/g++', '-pthread', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_ec81455bde1e3a5ee812f8ee3e77a072/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', '-pthread', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_02c9a4df42e8e7d15e7c774607949ebd/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header stdint.h
@@ -1459,12 +1459,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_c492be73e8d4cd8da9ce6ebff6fa220b/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_cc92fced0e7c825047280981c981fe46/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_c492be73e8d4cd8da9ce6ebff6fa220b/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_c492be73e8d4cd8da9ce6ebff6fa220b/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_cc92fced0e7c825047280981c981fe46/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_cc92fced0e7c825047280981c981fe46/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_c492be73e8d4cd8da9ce6ebff6fa220b/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_cc92fced0e7c825047280981c981fe46/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header inttypes.h
@@ -1477,12 +1477,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_4aab40ece6f02eedef2bee9ab1a95b06/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_c61f24df87c392a5a323a384c47a5a08/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_4aab40ece6f02eedef2bee9ab1a95b06/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_4aab40ece6f02eedef2bee9ab1a95b06/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_c61f24df87c392a5a323a384c47a5a08/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_c61f24df87c392a5a323a384c47a5a08/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_4aab40ece6f02eedef2bee9ab1a95b06/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_c61f24df87c392a5a323a384c47a5a08/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header sys/inttypes.h
@@ -1495,9 +1495,9 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_3cdf844deb2abdb2dd7fffefaee9a4d8/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_7ced5309d4d0dafd53e40c98276506c9/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_3cdf844deb2abdb2dd7fffefaee9a4d8/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_7ced5309d4d0dafd53e40c98276506c9/testbuild/test.cpp.1.o']
 err: ../test.cpp:1:10: fatal error: sys/inttypes.h: No such file or directory
  #include <sys/inttypes.h>
           ^~~~~~~~~~~~~~~~
@@ -1510,8 +1510,8 @@ from /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/src/co
     raise Errors.BuildError(self.producer.error)
 BuildError: Build failed
  -> task in 'testprog' failed (exit status 1): 
-	{task 139797102578576: cxx test.cpp -> test.cpp.1.o}
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_3cdf844deb2abdb2dd7fffefaee9a4d8/testbuild/test.cpp.1.o']
+	{task 139656173073360: cxx test.cpp -> test.cpp.1.o}
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_7ced5309d4d0dafd53e40c98276506c9/testbuild/test.cpp.1.o']
 
 not found
 from /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/src/core: The configuration failed
@@ -1525,12 +1525,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_faf673dfad4b9cfcc2f3abb3a8f5b805/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_8a408b3954e6a769858486930646fff1/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-pthread', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_faf673dfad4b9cfcc2f3abb3a8f5b805/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_faf673dfad4b9cfcc2f3abb3a8f5b805/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-pthread', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_8a408b3954e6a769858486930646fff1/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_8a408b3954e6a769858486930646fff1/testbuild/testprog[0m
 
-['/usr/bin/g++', '-pthread', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_faf673dfad4b9cfcc2f3abb3a8f5b805/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lrt']
+['/usr/bin/g++', '-pthread', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_8a408b3954e6a769858486930646fff1/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lrt']
 yes
 ------------------------------------------------------------------
 Checking for header sys/ioctl.h
@@ -1543,12 +1543,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_0a4b9ee838e1af4ca6d1dc90ba08e713/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_fb019fbfba60e899c1630bc9c10b33eb/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_0a4b9ee838e1af4ca6d1dc90ba08e713/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_0a4b9ee838e1af4ca6d1dc90ba08e713/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_fb019fbfba60e899c1630bc9c10b33eb/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_fb019fbfba60e899c1630bc9c10b33eb/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_0a4b9ee838e1af4ca6d1dc90ba08e713/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_fb019fbfba60e899c1630bc9c10b33eb/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header net/if.h
@@ -1561,12 +1561,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_7dd867171dab47248693292d668a6cfe/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_fdc5bd1104ee9f6aca00f93dd27baa1f/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_7dd867171dab47248693292d668a6cfe/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_7dd867171dab47248693292d668a6cfe/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_fdc5bd1104ee9f6aca00f93dd27baa1f/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_fdc5bd1104ee9f6aca00f93dd27baa1f/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_7dd867171dab47248693292d668a6cfe/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_fdc5bd1104ee9f6aca00f93dd27baa1f/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header net/ethernet.h
@@ -1579,12 +1579,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_75ecd29bbe15e6d5c480be5c5beb279a/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_a67a23d0071ce868a285c0647d6d4fe2/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_75ecd29bbe15e6d5c480be5c5beb279a/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_75ecd29bbe15e6d5c480be5c5beb279a/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_a67a23d0071ce868a285c0647d6d4fe2/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_a67a23d0071ce868a285c0647d6d4fe2/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_75ecd29bbe15e6d5c480be5c5beb279a/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_a67a23d0071ce868a285c0647d6d4fe2/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header linux/if_tun.h
@@ -1597,12 +1597,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_2039c0e71f61fe1337c729a855899d34/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_bf48e3e0596865c3da4a23a081062c52/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_2039c0e71f61fe1337c729a855899d34/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_2039c0e71f61fe1337c729a855899d34/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_bf48e3e0596865c3da4a23a081062c52/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_bf48e3e0596865c3da4a23a081062c52/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_2039c0e71f61fe1337c729a855899d34/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_bf48e3e0596865c3da4a23a081062c52/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for header netpacket/packet.h
@@ -1615,12 +1615,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_82a04041795f8acc499a99172de838cb/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_a7b9a952cbe2414627bc28919ef23ecc/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_82a04041795f8acc499a99172de838cb/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_82a04041795f8acc499a99172de838cb/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_a7b9a952cbe2414627bc28919ef23ecc/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_a7b9a952cbe2414627bc28919ef23ecc/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_82a04041795f8acc499a99172de838cb/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_a7b9a952cbe2414627bc28919ef23ecc/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------------------
 Checking for NSC location
@@ -1645,12 +1645,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_2039c0e71f61fe1337c729a855899d34/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_bf48e3e0596865c3da4a23a081062c52/test.cpp[0m
 
-['/usr/bin/g++', '-Wall', '-std=c++11', '-Wall', '-std=c++0x', '-frounding-math', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_2039c0e71f61fe1337c729a855899d34/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_2039c0e71f61fe1337c729a855899d34/testbuild/testprog[0m
+['/usr/bin/g++', '-Wall', '-std=c++11', '-Wall', '-std=c++0x', '-frounding-math', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '../test.cpp', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_bf48e3e0596865c3da4a23a081062c52/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_bf48e3e0596865c3da4a23a081062c52/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_2039c0e71f61fe1337c729a855899d34/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lCGAL', '-lCGAL_Core', '-lgmp', '-lmpfr', '-lboost_thread']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_bf48e3e0596865c3da4a23a081062c52/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lCGAL', '-lCGAL_Core', '-lgmp', '-lmpfr', '-lboost_thread']
 yes
 ------------------------------------------------------------------
 Checking for python module 'gtk'
@@ -1705,27 +1705,27 @@ Checking for compilation flag -Wno-error=deprecated-d... support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_78f39ca647e12895bf851b8d1a0d73b2/test.c[0m
+[1/1] Compiling [32mbuild/.conf_check_c684baa449a553e49689c5e301f770d0/test.c[0m
 
-['/usr/bin/gcc', '-Wno-error=deprecated-declarations', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_78f39ca647e12895bf851b8d1a0d73b2/testbuild/test.c.1.o']
+['/usr/bin/gcc', '-Wno-error=deprecated-declarations', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_c684baa449a553e49689c5e301f770d0/testbuild/test.c.1.o']
 ok
 ------------------------------------------------------------------
 Checking for compilation flag -fstrict-aliasing support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_78f39ca647e12895bf851b8d1a0d73b2/test.c[0m
+[1/1] Compiling [32mbuild/.conf_check_c684baa449a553e49689c5e301f770d0/test.c[0m
 
-['/usr/bin/gcc', '-fstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_78f39ca647e12895bf851b8d1a0d73b2/testbuild/test.c.1.o']
+['/usr/bin/gcc', '-fstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_c684baa449a553e49689c5e301f770d0/testbuild/test.c.1.o']
 ok
 ------------------------------------------------------------------
 Checking for compilation flag -Wstrict-aliasing support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_78f39ca647e12895bf851b8d1a0d73b2/test.c[0m
+[1/1] Compiling [32mbuild/.conf_check_c684baa449a553e49689c5e301f770d0/test.c[0m
 
-['/usr/bin/gcc', '-Wstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_78f39ca647e12895bf851b8d1a0d73b2/testbuild/test.c.1.o']
+['/usr/bin/gcc', '-Wstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o', '/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/.conf_check_c684baa449a553e49689c5e301f770d0/testbuild/test.c.1.o']
 ok
 ------------------------------------------------------------------
 Checking for program 'doxygen'

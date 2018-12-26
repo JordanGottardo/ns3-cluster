@@ -50,6 +50,7 @@
 #include "ns3/topology.h"
 #include "ns3/wifi-80211p-helper.h"
 #include "ns3/wave-mac-helper.h"
+//#include "ns3/netanim-module.h"
 #include "FBApplication.h"
 
 using namespace ns3;
@@ -533,6 +534,9 @@ FBVanetExperiment::CalculateOutFilePath(string finalLetter) const {
 	if (m_staticProtocol == PROTOCOL_FB) {
 		protocol = "fb";
 	}
+	else if (m_staticProtocol == PROTOCOL_STATIC_100) {
+		protocol = "st100";
+	}
 	else if (m_staticProtocol == PROTOCOL_STATIC_300) {
 		protocol = "st300";
 	}
@@ -565,8 +569,10 @@ FBVanetExperiment::ConfigureDefaults ()
 	if (m_staticProtocol == 1)
 		m_staticProtocol = PROTOCOL_FB;
 	else if (m_staticProtocol == 2)
-		m_staticProtocol = PROTOCOL_STATIC_300;
+		m_staticProtocol = PROTOCOL_STATIC_100;
 	else if (m_staticProtocol == 3)
+		m_staticProtocol = PROTOCOL_STATIC_300;
+	else if (m_staticProtocol == 4)
 		m_staticProtocol = PROTOCOL_STATIC_500;
 }
 
@@ -631,8 +637,10 @@ FBVanetExperiment::SetupAdhocDevices ()
 	wifiPhy.SetChannel (wifiChannel.Create ());
 	wifiPhy.SetPcapDataLinkType (YansWifiPhyHelper::DLT_IEEE802_11);
 
-	// Set Tx Power
-	if (m_actualRange == 300)
+	// Set Tx Power TODO add power for 100
+	if (m_actualRange == 100)
+		m_txp = 4.6;
+	else if (m_actualRange == 300)
 		m_txp = 4.6;
 	else if (m_actualRange == 500)
 		m_txp = 13.4;
@@ -734,7 +742,7 @@ FBVanetExperiment::CommandSetup (int argc, char *argv[])
 	cmd.AddValue ("nnodes", "Number of nodes (i.e. vehicles)", m_nNodes);
 	cmd.AddValue ("nodes", "Id of the first node who will start an aler", m_startingNode);
 	cmd.AddValue ("actualRange", "Actual transimision range (meters)", m_actualRange);
-	cmd.AddValue ("protocol", "Estimantion protocol: 1=FB, 2=C300, 3=C500", m_staticProtocol);
+	cmd.AddValue ("protocol", "Estimantion protocol: 1=FB, 2=C100, 3=C300, 4=C500", m_staticProtocol);
 	cmd.AddValue ("flooding", "Enable flooding", m_flooding);
 	cmd.AddValue ("alertGeneration", "Time at which the first Alert Message should be generated.", m_alertGeneration);
 	cmd.AddValue ("area", "Radius of the area of interest", m_areaOfInterest);
@@ -755,7 +763,6 @@ FBVanetExperiment::CommandSetup (int argc, char *argv[])
 	m_mapBaseName = m_mapBasePath.substr(foundSlash + 1);
 	m_mapBaseNameWithoutDistance = m_mapBaseName.substr(0, m_mapBaseName.find_last_of("-"));
 	m_vehicleDistance = std::stoi(m_mapBasePath.substr(foundDash + 1));
-	cout << "mapBaseName == " << m_mapBaseName << " vehicleDistance " << m_vehicleDistance << endl;
 }
 
 void
@@ -771,9 +778,9 @@ FBVanetExperiment::SetupScenario ()
 //	cout << m_mapBaseName.find("-");
 	m_bldgFile = m_mapBasePath + ".poly.xml";
 	m_traceFile = m_mapBasePath + ".ns2mobility.xml";
-//	cout << "traceFile = " + m_traceFile << endl;
-//	TODO parametrizzare nNodes e startingNode random
 	m_startingNode = rand() % m_nNodes;
+	cout << "prova" << endl;
+	cout << "startingNode = " << m_startingNode << endl;
 //
 //	if (m_scenario == 0)
 //	{
@@ -830,7 +837,7 @@ FBVanetExperiment::Run ()
 	NS_LOG_FUNCTION (this);
 
 	Simulator::Stop (Seconds (m_TotalSimTime));
-
+//	AnimationInterface anim ("animation.xml");
 	Simulator::Run ();
 
 	Simulator::Destroy ();
@@ -909,8 +916,6 @@ int main (int argc, char *argv[])
 //    LogComponentEnable ("FBNode", LOG_LEVEL_FUNCTION);
 	string finalLetter = to_string(*argv[1]);
 	unsigned int maxRun = RngSeedManager::GetRun();
-	unsigned int nThreads = 4;
-	unsigned int runPerThread = (int)(maxRun / nThreads);
 
 //	Before launching experiments, calculate output file path
 	FBVanetExperiment experiment;
@@ -922,22 +927,10 @@ int main (int argc, char *argv[])
 	g_csvData.WriteHeader ("\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
 							"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
 							"\"Slots\",\"Messages sent\",\"Messages received\"");
-
 	for(unsigned int i = 0; i < maxRun; i++) {
+		cout << "run = " << i << endl;
 		FBVanetExperiment experiment;
 		experiment.RunAndPrintResults(argc, argv);
 	}
 
-
-//	vector<thread*> threads;
-//	for (unsigned int i = 0; i < 4; i++) {
-//		cout << "starting thread " << i << endl;
-//		thread* thread = new std::thread(runExperiment, argc, argv, i * runPerThread, i * runPerThread + runPerThread);
-//		threads.push_back(thread);
-//	}
-//
-//	for (thread* thread : threads) {
-//		thread->join();
-//		delete thread;
-//	}
 }

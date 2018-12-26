@@ -87,6 +87,11 @@ FBApplication::Install (uint32_t protocol, uint32_t broadcastPhaseStart, uint32_
 		m_estimatedRange = PROTOCOL_FB;
 		m_staticProtocol = false;
 	}
+	else if (protocol == PROTOCOL_STATIC_100)
+	{
+		m_estimatedRange = PROTOCOL_STATIC_100;
+		m_staticProtocol = true;
+	}
 	else if (protocol == PROTOCOL_STATIC_300)
 	{
 		m_estimatedRange = PROTOCOL_STATIC_300;
@@ -418,7 +423,7 @@ FBApplication::WaitAgain (Ptr<FBNode> fbNode, FBHeader fbHeader, uint32_t waitin
 		 uint32_t rnd1 = (rand() % 20)+1;
 		 uint32_t rnd2 = (rand() % 20)+1;
 		 uint32_t rnd3 = (rand() % 20)+1;
-		 Simulator::Schedule (MilliSeconds (10* (waitingTime+rnd+rnd1+rnd2+rnd3) * 200 * 3),
+		 Simulator::Schedule (MilliSeconds (10* (waitingTime+rnd+rnd1+rnd2+rnd3) * 200 * 3), //TODO cos'è sta roba?
 		 											&FBApplication::ForwardAlertMessage, this, fbNode, fbHeader, waitingTime);
 	 }
 }

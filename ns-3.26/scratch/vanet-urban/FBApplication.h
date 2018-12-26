@@ -28,9 +28,12 @@
 #include "FBNode.h"
 #include "FBHeader.h"
 
+using namespace std;
+
 namespace ns3 {
 
 static const uint32_t PROTOCOL_FB = 0;
+static const uint32_t PROTOCOL_STATIC_100 = 100;
 static const uint32_t PROTOCOL_STATIC_300 = 300;
 static const uint32_t PROTOCOL_STATIC_500 = 500;
 
