@@ -1,6 +1,10 @@
 #!/usr/bin/python
 
-# Invocation: ./generateAndRunTests.py ../maps/testMap/osm.osm.xml 25 if you want to specify map and distance by hand, othwerise ./generateAndRunTests.py if you want to automatically generate jobs for the scenarios and distances set in the main
+# Invocation: 
+# 	./generateAndRunTests.py ../maps/testMap/osm.osm.xml 25 
+# if you want to specify map and distance by hand, othwerise:
+# 	./generateAndRunTests.py 
+# if you want to automatically generate jobs for the scenarios and distances set in the main
 
 import sys, os
 import string
@@ -35,7 +39,7 @@ def runScenario(scenario, distance):
 	thisScriptPath = os.path.realpath(__file__)
 	thisScriptParentPath = os.path.dirname(thisScriptPath)
 	nsPath = os.path.join(os.path.dirname(thisScriptParentPath), "ns-3.26")
-	jobsPath = os.path.join(os.path.dirname(thisScriptParentPath), "jobs")
+	jobsPath = os.path.join(os.path.dirname(thisScriptParentPath), "jobsTemplate")
 	tempNewJobPath = os.path.join(jobsPath, "jobTemplate.job")
 	jobTemplatePath = os.path.join(thisScriptParentPath ,"jobTemplate.job")
 	#mapsPath = os.path.join(os.path.dirname(thisScriptParentPath), "maps")
@@ -74,21 +78,20 @@ def runScenario(scenario, distance):
 	for b in buildings:
 		for txRange in txRanges:
 			for protocol in protocols:
-				for finalLetter in range(0, 26): 
-					command = "NS_GLOBAL_VALUE=\"RngRun=2\" ./waf --run 'vanet-urban {0} --buildings={1} --actualRange={2} --protocol={3} --flooding=0 --area=1000 --nnodes={4} --mapBasePath={5}'".format(finalLetters[finalLetter], b, txRange, protocol, numNodes, mapPathWithoutExtension)
-					newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) +  "-b" + b + "-" + protocolsMap[protocol] + "-" + txRange + "-" + finalLetters[finalLetter]
-					newJobFilename = newJobName + ".job"
-					newJobPath = os.path.join(jobsPath, newJobFilename)
-					#print(command)
-					#print(fileName)
-					shutil.copy(jobTemplatePath, jobsPath)
-					os.rename(tempNewJobPath, newJobPath)
-					s = open(newJobPath).read()
-					s = s.replace("{**jobName}", newJobName)
-					s = s.replace("{**command}", command)
-					f = open(newJobPath, "w")
-					f.write(s)
-					f.close()
+				command = "NS_GLOBAL_VALUE=\"RngRun=2\" ./waf --run 'vanet-urban --buildings={0} --actualRange={1} --protocol={2} --flooding=0 --area=1000 --nnodes={3} --mapBasePath={4}'".format(b, txRange, protocol, numNodes, mapPathWithoutExtension)
+				newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) +  "-b" + b + "-" + protocolsMap[protocol] + "-" + txRange + "-"
+				newJobFilename = newJobName + ".job"
+				newJobPath = os.path.join(jobsPath, newJobFilename)
+				#print(command)
+				#print(fileName)
+				shutil.copy(jobTemplatePath, jobsPath)
+				os.rename(tempNewJobPath, newJobPath)
+				s = open(newJobPath).read()
+				s = s.replace("{**jobName}", newJobName)
+				s = s.replace("{**command}", command)
+				f = open(newJobPath, "w")
+				f.write(s)
+				f.close()
 
 					#print(command)
 
@@ -113,9 +116,11 @@ def runScenario(scenario, distance):
 
 def main():
 	#Edit these to launch automatically 
-	scenarios = ["Padova", "LA"]
-	distances = ["25", "35", "45"]
+	#scenarios = ["Padova", "LA"]
 	#distances = ["15", "25", "35", "45"]
+	scenarios = ["Padova"]
+	distances = ["25"]
+	
 	if (len(sys.argv) < 3):
 		for scenario in scenarios:
 			for distance in distances:

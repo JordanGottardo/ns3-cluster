@@ -721,7 +721,6 @@ def add_examples_programs(bld):
 def add_scratch_programs(bld):
     all_modules = [mod[len("ns3-"):] for mod in bld.env['NS3_ENABLED_MODULES']]
     try:
-        #aaaaaaa
         for filename in os.listdir("scratch"):
             if filename.startswith('.') or filename == 'CVS':
                 continue
@@ -740,10 +739,7 @@ def add_scratch_programs(bld):
                 obj.target = name
                 obj.name = obj.target
                 obj.install_path = None
-        #Added by Jordan: adds dependencies for programs inside scratch folder
-        bld.env.append_value("LIB", ["boost_system", "boost_filesystem"])
     except OSError:
-    
         return
 
 def _get_all_task_gen(self):

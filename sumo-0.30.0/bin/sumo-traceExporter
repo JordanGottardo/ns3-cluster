@@ -1,0 +1,5 @@
+#!/bin/bash
+THISFILEPATH=$(readlink -f $0)
+TEMP="$(dirname "$THISFILEPATH")"
+PARENTDIR="$(dirname "$TEMP")"
+python $PARENTDIR/tools/traceExporter.py $@

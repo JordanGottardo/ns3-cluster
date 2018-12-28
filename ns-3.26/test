@@ -1,6 +1,6 @@
 URBAN 
-NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'vanet-urban k --buildings=0 --actualRange=500 --protocol=4 --flooding=0 --area=1000 --nnodes=1073 --mapBasePath=../maps/Padova/Padova-45'
+NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'fb-vanet-urban --buildings=0 --actualRange=500 --protocol=4 --flooding=0 --area=1000 --mapBasePath=../maps/Padova/Padova-25'
 
 
 SENSORS
-NS_GLOBAL_VALUE="RngRun=10" ./waf --run 'vanet-3d  --sensors=1 --scenario=1 --actualRange=300 --protocol=2 --flooding=0 --buildings=1 --disabled=0'
+NS_GLOBAL_VALUE="RngRun=10" ./waf --run 'fb-vanet-3d  --sensors=0 --scenario=1 --actualRange=300 --protocol=2 --flooding=0 --buildings=1 --disabled=0'

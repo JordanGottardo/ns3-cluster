@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+#Invocation:
+#   ./drawVehicles.py graphTitle ../maps/Padova/Padova-25.ns2mobility.xml
+
 import os
 import sys
 import getopt
@@ -10,6 +13,7 @@ import matplotlib.pyplot as plt
 
 def main():
     graphTitle = sys.argv[1]
+    ns2MobilityRelativePath = sys.argv[2]
     print(graphTitle)
 
     print("Main!!")
@@ -22,7 +26,7 @@ def main():
     color3 = "#000000"
     
     thisScriptPath = os.path.dirname(os.path.realpath(__file__))
-    ns2MobilityPath = os.path.dirname(thisScriptPath) + "/ns-3.26/Padova.ns2mobility.xml"
+    ns2MobilityPath = os.path.join(thisScriptPath, ns2MobilityRelativePath)
     print("ns2mobility = " + ns2MobilityPath)
     print(thisScriptPath)
     print(os.getcwd())
