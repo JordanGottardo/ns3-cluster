@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>ChangeLog - SUMO - Simulation of Urban Mobility</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="sumo.css">
+  <link rel="license" href=
+  "http://creativecommons.org/licenses/by-sa/3.0/">
+</head>
+
+<body id="bmission">
+  <div id="container">
+    <div id="logo" style="text-align:left">
+      <img src="logo.png" width="128" height="128"
+      alt="SUMO-Simulation of Urban Mobility" style=
+      "float:left; margin-left:10px; margin-right:20px;">
+      <div id="logo_text1">SUMO</div>
+      <div id="logo_text2">Simulation of Urban MObility</div>
+    </div>
+
+    <div id="subsMenu">
+      <ul>
+        <li class="sub"><a href=
+        "http://sumo.dlr.de/">Home</a></li>
+
+        <li class="sub"><a href="Downloads.html">Download</a></li>
+
+        <li class="sub"><a href="index.html">Documentation</a></li>
+
+        <li class="sub"><a href=
+        "http://sumo.dlr.de/wiki/">Wiki</a></li>
+
+        <li class="sub"><a href=
+        "http://sumo.dlr.de/trac/">Trac</a></li>
+
+        <li class="sub"><a href=
+        "http://sumo.dlr.de/blog/">Blog</a></li>
+
+        <li class="sub"><a href="Contact.html">Contact</a></li>
+
+        <li class="sub"><a href=
+        "http://sourceforge.net/projects/sumo/">SF-Project</a></li>
+      </ul>
+    </div>
+
+    <div id="nav">
+      <div id="step1">
+        <h3>User</h3>
+        <ul>
+        <!-- nav begins --> <li>Introduction</li>
+<li style="list-style: none; display: inline"><ul>
+  <li><a href="Sumo_at_a_Glance.html">The traffic simulation SUMO</a></li>
+</ul></li>
+  <li>Basic Usage</li>
+<li style="list-style: none; display: inline"><ul>
+  <li><a href="Basics/Notation.html">Notation in this Documentation</a></li>
+  <li><a href="Basics/Basic_Computer_Skills.html">Needed, basic Computer Skills</a></li>
+  <li><a href="Installing.html">Installing SUMO</a></li>
+  <li><a href="Basics/Using_the_Command_Line_Applications.html">Using SUMO Command Line Applications</a></li>
+  <li><a href="Tutorials.html">Tutorials</a></li>
+  <li><a href="XMLValidation.html">Validating application inputs</a></li>
+</ul></li>
+  <li>Network Building</li>
+<li style="list-style: none; display: inline"><ul>
+  <li><a href="Networks/SUMO_Road_Networks.html">SUMO Road Networks</a></li>
+  <li><a href="Networks/Abstract_Network_Generation.html">Abstract networks generation</a></li>
+  <li><a href="NETCONVERT.html">NETCONVERT</a></li>
+<li style="list-style: none; display: inline"><ul>
+   <li><a href="Networks/Building_Networks_from_own_XML-descriptions.html">Defining own networks using XML</a></li>
+   <li><a href="Networks/Import.html">Importing non-SUMO networks</a></li>
+<li style="list-style: none; display: inline"><ul>
+    <li><a href="Networks/Import/OpenStreetMap.html">from OpenStreetMap</a></li>
+<li style="list-style: none; display: inline"><ul>
+     <li><a href="Networks/Import/OpenStreetMap.html#3-click_scenario_generation">3-Click Scenario Generator</a></li>
+</ul></li>
+    <li><a href="Networks/Import/VISUM.html">from VISUM</a></li>
+    <li><a href="Networks/Import/Vissim.html">from Vissim</a></li>
+    <li><a href="Networks/Import/OpenDRIVE.html">from OpenDRIVE</a></li>
+    <li><a href="Networks/Import/MATsim.html">from MATsim</a></li>
+    <li><a href="Networks/Import/ArcView.html">from ArcView (shapefiles)</a></li>
+    <li><a href="Networks/Import/DlrNavteq.html">from DlrNavTeq</a></li>
+    <li><a href="Networks/Import/RoboCup.html">from Robocup Simulation League</a></li>
+</ul></li>
+   <li><a href="Networks/Import/SUMO_Road_Networks.html">Importing SUMO networks</a></li>
+   <li><a href="Simulation/Motorways.html#Building_a_network_for_motorway_simulation">Building networks for motorway simulation</a></li>
+   <li><a href="Simulation/Pedestrians.html#Building_a_network_for_pedestrian_simulation">Building networks for pedestrian simulation</a></li>
+   <li><a href="Networks/Further_Options.html">Further NETCONVERT options</a></li>
+   <li><a href="Networks/Further_Outputs.html">Additional output</a></li>
+</ul></li>
+  <li><a href="NETEDIT.html">Creating and modifying networks with NETEDIT</a></li>
+  <li><a href="Networks/Elevation.html">Including elevation data</a></li>
+</ul></li>
+  <li>Demand Modelling</li>
+<li style="list-style: none; display: inline"><ul>
+  <li><a href="Demand/Introduction_to_demand_modelling_in_SUMO.html">Introduction to SUMO Demand Modelling</a></li>
+  <li><a href="Definition_of_Vehicles,_Vehicle_Types,_and_Routes.html">Definition of Vehicles, Vehicle Types, and Routes</a></li>
+  <li><a href="Simulation/Public_Transport.html">Simulation of public transport</a></li>
+  <li><a href="Specification/Persons.html">Simulation of individual persons and trip chains</a></li>
+  <li><a href="Specification/Logistics.html">Simulation of logistics</a></li>
+  <li><a href="Demand/Shortest_or_Optimal_Path_Routing.html">Shortest or Optimal Path Routing</a></li>
+  <li><a href="IntermodalRouting.html">Intermodal Routing</a></li>
+  <li><a href="Demand/Automatic_Routing_.html">Routing in the Simulation</a></li>
+  <li><a href="Demand/Dynamic_User_Assignment.html">Computing Dynamic User Assignment</a></li>
+  <li><a href="Tools/Misc.html#createVehTypeDistributions.py">Generate a vehicle type distribution to model the fleet</a></li>
+</ul></li>
+  <li>Data sources for demand generation</li>
+<li style="list-style: none; display: inline"><ul>
+  <li><a href="Demand/Importing_O/D_Matrices.html">Importing O/D Matrices</a></li>
+<li style="list-style: none; display: inline"><ul>
+   <li><a href="Demand/Further_Ways_to_import_VISUM_Demand_Definitions.html">Other VISUM Demand Importers</a></li>
+   <li><a href="Demand/Further_Ways_to_import_Vissim_Demand_Definitions.html">Other Vissim Demand Importers</a></li>
+</ul></li>
+  <li><a href="Demand/Routes_from_Observation_Points.html">Routes from Observation Points</a></li>
+  <li><a href="Demand/Routing_by_Turn_Probabilities.html">Routing by Turn Probabilities</a></li>
+  <li><a href="Demand/Activity-based_Demand_Generation.html">Activity-based Demand Generation</a></li>
+  <li><a href="Tools/Trip.html#randomTrips.py">Random Trips</a></li>
+</ul></li>
+  <li>Simulation</li>
+<li style="list-style: none; display: inline"><ul>
+  <li><a href="Simulation/Basic_Definition.html">Basic Definition</a></li>
+  <li><a href="Simulation/Output.html">Simulation output</a></li>
+  <li><a href="TraCI.html">TraCI (On-line Interaction)</a></li>
+  <li><a href="Simulation/SaveAndLoad.html">Saving and Loading Simulation State</a></li>
+</ul></li>
+  <li> Traffic Management and Other Structures </li>
+<li style="list-style: none; display: inline"><ul>
+  <li><a href="Simulation/Traffic_Lights.html">Traffic Lights</a></li>
+  <li><a href="Simulation/Public_Transport.html">Public Transport</a></li>
+  <li><a href="Simulation/Variable_Speed_Signs.html">Variable Speed Signs</a></li>
+  <li><a href="Simulation/Rerouter.html">Rerouter / Alternative Route Signage</a></li>
+  <li><a href="Simulation/Vaporizer.html">Vaporizer</a></li>
+  <li><a href="Simulation/Calibrator.html">Dynamic calibration of flow and speed</a></li>
+  <li><a href="Simulation/ParkingArea.html">Parking areas</a></li>
+</ul></li>
+  <li> Traffic Modes </li>
+<li style="list-style: none; display: inline"><ul>
+  <li><a href="Simulation/Pedestrians.html">Pedestrian simulation</a></li>
+  <li><a href="Simulation/Bicycles.html">Bicycle simulation</a></li>
+  <li><a href="Simulation/Railways.html">Railway simulation</a></li>
+  <li><a href="Simulation/Waterways.html">Waterway simulation</a></li>
+</ul></li>
+  <li> Additional Features </li>
+<li style="list-style: none; display: inline"><ul>
+  <li><a href="Models/Emissions.html">Emissions</a></li>
+  <li><a href="Models/Electric.html">Electric Vehicles</a></li>
+  <li><a href="Specification/Logistics.html">Logistics</a></li>
+  <li><a href="Simulation/GenericParameters.html">Generic Parameters</a></li>
+  <li><a href="Simulation/Shapes.html">Shapes Visualisation</a></li>
+  <li><a href="Simulation/Bluetooth.html">Wireless Device Detection</a></li>
+  <li><a href="Simulation/Emergency.html">Emergency Vehicles</a></li>
+</ul></li>
+  <li> Model details </li>
+<li style="list-style: none; display: inline"><ul>
+  <li><a href="Simulation/VehicleSpeed.html">Vehicle speed</a></li>
+  <li><a href="Simulation/VehicleInsertion.html">Vehicle insertion</a></li>
+  <li><a href="Simulation/VehiclePermissions.html">Vehicle permissions (access restrictions)</a></li>
+  <li><a href="Simulation/Intersections.html">Intersection dynamics</a></li>
+  <li><a href="Simulation/Randomness.html">Randomness</a></li>
+  <li><a href="Simulation/Routing.html">Routing and Re-routing</a></li>
+  <li><a href="Simulation/SublaneModel.html">Sublane Model</a></li>
+  <li><a href="Simulation/OppositeDirectionDriving.html">Opposite Direction Driving</a></li>
+  <li><a href="Simulation/Safety.html">Safety</a></li>
+  <li><a href="Simulation/Meso.html">Mesoscopic model</a></li>
+</ul></li>
+  <li> Common Problems </li>
+<li style="list-style: none; display: inline"><ul>
+  <li><a href="Simulation/Why_Vehicles_are_teleporting.html">Why Vehicles are teleporting</a></li>
+  <li><a href="FAQ.html#The_simulation_has_lots_of_jams.2Fdeadlocks._What_can_I_do.3F">Unexpected jamming</a></li>
+  <li><a href="FAQ.html#Why_do_the_vehicles_perform_unexpected_lane-changing_maneuvers.3F">Unexpected lane-changing maneuvers?</a></li>
+  <li><a href="FAQ.html#How_do_I_get_high_flows.2Fvehicle_densities.3F">How to get high flows?</a></li>
+</ul></li>
+  <li><a href="Tools/Main.html">Additional Tools</a></li>
+<li style="list-style: none; display: inline"><ul>
+  <li><a href="Tools/Import/OSM.html#osmWebWizard.py">osmWebWizard</a></li>
+  <li><a href="TraCI/Interfacing_TraCI_from_Python.html">TraCI/Interfacing_TraCI_from_Python</a></li>
+  <li><a href="Tools/Sumolib.html">Reading SUMO networks and outputs with Python (sumolib)</a></li>
+  <li><a href="Tools/Xml.html">Tools for converting SUMO outputs to CSV/Spreadsheet</a></li>
+  <li><a href="Tools/TraceExporter.html">Exporting mobility Traces (traceExporter)</a></li>
+  <li><a href="Tools/Net.html#netdiff.py">Determining the differences between two networks</a></li>
+  <li><a href="Tools/Visualization.html">Tools/Visualization</a></li>
+  <li><a href="Tools/Main.html">Tool index</a></li>
+</ul></li>
+  <li>Theory</li>
+<li style="list-style: none; display: inline"><ul>
+  <li><a href="Theory/Traffic_Simulations.html">Traffic simulations in general</a></li>
+</ul></li>
+  <li>Application Manuals</li>
+<li style="list-style: none; display: inline"><ul>
+  <li><a href="SUMO.html">SUMO</a></li>
+  <li><a href="SUMO-GUI.html">SUMO-GUI</a></li>
+  <li><a href="NETCONVERT.html">NETCONVERT</a></li>
+  <li><a href="NETEDIT.html">NETEDIT</a></li>
+  <li><a href="NETGENERATE.html">NETGENERATE</a></li>
+  <li><a href="OD2TRIPS.html">OD2TRIPS</a></li>
+  <li><a href="DUAROUTER.html">DUAROUTER</a></li>
+  <li><a href="JTRROUTER.html">JTRROUTER</a></li>
+  <li><a href="DFROUTER.html">DFROUTER</a></li>
+  <li><a href="MAROUTER.html">MAROUTER</a></li>
+  <li><a href="POLYCONVERT.html">POLYCONVERT</a></li>
+  <li><a href="ACTIVITYGEN.html">ACTIVITYGEN</a></li>
+  <li><a href="Tools/Emissions.html">EMISSIONSMAP</a></li>
+  <li><a href="Tools/Emissions.html">EMISSIONSDRIVINGCYCLE</a></li>
+</ul></li>
+  <li>Appendices</li>
+<li style="list-style: none; display: inline"><ul>
+  <li><a href="ChangeLog.html">ChangeLog</a></li>
+  <li><a href="Other/Glossary.html">Glossary</a></li>
+  <li><a href="FAQ.html">FAQ</a></li>
+  <li><a href="Tools/Main.html">Additional Tools</a></li>
+  <li><a href="Other/File_Extensions.html">Known File Extensions</a></li>
+</ul></li>
+<!-- nav ends -->
+        </ul>
+      </div>
+
+      <div id="step2">
+        <h3>Further Resources</h3>
+
+        <ul>
+          <li><a href="Data/Networks.html">Example
+          Networks</a></li>
+
+          <li><a href="Data/Scenarios.html">Example
+          Scenarios</a></li>
+
+          <li><a href="Data/Traffic_Data.html">Traffic
+          Data</a></li>
+        </ul>
+      </div>
+
+      <div id="step3">
+        <h3>Developer</h3>
+
+        <ul>
+          <li><a href="Developer/Main.html">Developer Docs</a></li>
+
+          <li><a href="http://sumo.dlr.de/daily/">Daily Tests
+          Status</a></li>
+
+          <li><a href="../doxygen/">Doxygen Documentation</a></li>
+
+          <li>Python Modules Documentation</li>
+
+          <li style="list-style: none; display: inline">
+            <ul>
+              <li><a href="../pydoc/traci.html">traci</a></li>
+
+              <li><a href="../pydoc/sumolib.html">sumolib</a></li>
+            </ul>
+          </li>
+
+          <li>Java Modules Documentation</li>
+
+          <li style="list-style: none; display: inline">
+            <ul>
+              <li><a href="../javadoc/traci4j/">TraCI4J</a></li>
+
+              <li><a href="../javadoc/traas/">TraaS</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="content">
+      <a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">ChangeLog</h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">generated on 2017-05-02 00:27:03.929878 from <a href="http://sumo.dlr.de/wiki/ChangeLog">the wiki page for ChangeLog</a> for SUMO 0.30.0</div>
+								<div id="contentSub"></div>
+												
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Version_0.30.0_.2802.05.2017.29"><span class="tocnumber">1</span> <span class="toctext">Version 0.30.0 (02.05.2017)</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Bugfixes"><span class="tocnumber">1.1</span> <span class="toctext">Bugfixes</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Enhancements"><span class="tocnumber">1.2</span> <span class="toctext">Enhancements</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Other"><span class="tocnumber">1.3</span> <span class="toctext">Other</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Version_0.29.0_.2816.02.2017.29"><span class="tocnumber">2</span> <span class="toctext">Version 0.29.0 (16.02.2017)</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Bugfixes_2"><span class="tocnumber">2.1</span> <span class="toctext">Bugfixes</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Enhancements_2"><span class="tocnumber">2.2</span> <span class="toctext">Enhancements</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Other_2"><span class="tocnumber">2.3</span> <span class="toctext">Other</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Version_0.28.0_.2801.11.2016.29"><span class="tocnumber">3</span> <span class="toctext">Version 0.28.0 (01.11.2016)</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Bugfixes_3"><span class="tocnumber">3.1</span> <span class="toctext">Bugfixes</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Enhancements_3"><span class="tocnumber">3.2</span> <span class="toctext">Enhancements</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Other_3"><span class="tocnumber">3.3</span> <span class="toctext">Other</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Version_0.27.1_.2827.07.2016.29"><span class="tocnumber">4</span> <span class="toctext">Version 0.27.1 (27.07.2016)</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#Bugfixes_4"><span class="tocnumber">4.1</span> <span class="toctext">Bugfixes</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Enhancements_4"><span class="tocnumber">4.2</span> <span class="toctext">Enhancements</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Older_Versions"><span class="tocnumber">5</span> <span class="toctext">Older Versions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#0.27.x"><span class="tocnumber">5.1</span> <span class="toctext">0.27.x</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#0.26.x"><span class="tocnumber">5.2</span> <span class="toctext">0.26.x</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#0.25.x"><span class="tocnumber">5.3</span> <span class="toctext">0.25.x</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#0.24.x"><span class="tocnumber">5.4</span> <span class="toctext">0.24.x</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#0.23.x"><span class="tocnumber">5.5</span> <span class="toctext">0.23.x</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#0.22.x"><span class="tocnumber">5.6</span> <span class="toctext">0.22.x</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#0.21.x"><span class="tocnumber">5.7</span> <span class="toctext">0.21.x</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#0.20.x"><span class="tocnumber">5.8</span> <span class="toctext">0.20.x</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#0.19.x"><span class="tocnumber">5.9</span> <span class="toctext">0.19.x</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#0.18.x"><span class="tocnumber">5.10</span> <span class="toctext">0.18.x</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#0.17.x"><span class="tocnumber">5.11</span> <span class="toctext">0.17.x</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#0.16.x"><span class="tocnumber">5.12</span> <span class="toctext">0.16.x</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#0.15.x"><span class="tocnumber">5.13</span> <span class="toctext">0.15.x</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#0.14.x"><span class="tocnumber">5.14</span> <span class="toctext">0.14.x</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#0.13.x"><span class="tocnumber">5.15</span> <span class="toctext">0.13.x</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#0.12.x"><span class="tocnumber">5.16</span> <span class="toctext">0.12.x</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#0.11.x"><span class="tocnumber">5.17</span> <span class="toctext">0.11.x</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#0.10.x"><span class="tocnumber">5.18</span> <span class="toctext">0.10.x</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#0.9.x"><span class="tocnumber">5.19</span> <span class="toctext">0.9.x</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#0.8.x"><span class="tocnumber">5.20</span> <span class="toctext">0.8.x</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#pre_0.8.x"><span class="tocnumber">5.21</span> <span class="toctext">pre 0.8.x</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Version_0.30.0_.2802.05.2017.29">Version 0.30.0 (02.05.2017)</span></h2>
+<h3><span class="mw-headline" id="Bugfixes">Bugfixes</span></h3>
+<ul><li> Simulation
+<ul><li> Random pedestrian decelerations (configured via option <span style="color: #111144; font-weight: bold; white-space: pre;">--pedestrian.striping.dawdling</span>) are now working. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2851">ticket2851</a></li>
+<li> Loading state-files with vehicles that stop at a <span class="inlxml">&lt;busStop&gt;</span> is now working. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2914">ticket2914</a></li>
+<li> Fixed collisions when using the sublane model. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2295">ticket2295</a>,<a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2924">ticket2924</a>, <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2154">ticket2154</a>, <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/3005">ticket3005</a></li>
+<li> Various fixes to lateral distance keeping in the sublane model.</li>
+<li> Vehicles now longer drive beyond the road borders when using the sublane model. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2988">ticket2988</a></li>
+<li> Fixed crash when loading saved stated with an arriving vehicle. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2938">ticket2938</a></li>
+<li> Option <span style="color: #111144; font-weight: bold; white-space: pre;">--load-state.offset</span> now properly applies to vehicles departing in the future that are part of the loaded state (i.e. due to having been loaded from an additional file before saving). This was a regression in version 0.29.0. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2949">ticket2949</a></li>
+<li> Simulation behaviour is no longer affected by randomly equipping vehicles with devices that only generate outputs. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2977">ticket2977</a></li>
+<li> vType-attribute <span class="inlxml">laneChangeModel</span> is no longer ignored (was silently replaced with "default", since version 0.28.0)</li>
+<li> Fixed deadlock when setting vehicle attributes <i>arrivalSpeed</i> and <i>arrivalPos</i> both to 0. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2995">ticket2995</a></li>
+<li> Fixed issue where a lane-change was blocked for invalid reasons causing deadlock. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2996">ticket2996</a></li>
+<li> When using <span class="inlxml">departLane="best"</span>, the look-ahead distance is now limited to 3000m for determining suitable insertion lanes. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2998">ticket2998</a></li>
+<li> loading state now writes tls states correctly <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/1229">ticket1229</a></li></ul></li></ul>
+<ul><li> NETCONVERT
+<ul><li> Various fixes to junction-shape computation. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2551">ticket2551</a>, <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2874">ticket2874</a>, <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/1443">ticket1443</a></li>
+<li> Ramp-guessing (option <span style="color: #111144; font-weight: bold; white-space: pre;">--ramps.guess</span>) no longer identifies sharply turning roads as motorway ramps.</li>
+<li> Fixed invalid right-of-way rules at junctions with type <i>traffic_light_right_on_red</i> when importing a <i>net.xml</i> file or editing with <a href="NETEDIT.html" title="NETEDIT">NETEDIT</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2976">ticket2976</a></li>
+<li> Networks built with option <span style="color: #111144; font-weight: bold; white-space: pre;">--junctions.scurve-stretch</span> now retain their shape when imported again. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2877">ticket2877</a></li>
+<li> Networks <a href="Networks/Import/VISUM.html" title="Networks/Import/VISUM">imported from VISUM</a> no longer round node positions to meters. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/3001">ticket3001</a></li>
+<li> Loading <i>.tll</i> files from a network that includes node types <span class="inlxml">rail_crossing</span> or <span class="inlxml">rail_signal</span> is now working. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2999">ticket2999</a></li>
+<li> Fixed crash when applying a <span class="inlxml">&lt;split&gt;</span> to an edge within a roundabout. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2737">ticket2737</a></li>
+<li> Fixed infinite loop when importing some OpenDRIVE networks. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2918">ticket2918</a></li></ul></li></ul>
+<ul><li> NETEDIT
+<ul><li> <a href="Networks/Building_Networks_from_own_XML-descriptions.html#vehicle-class_specific_speed_limits" title="Networks/Building Networks from own XML-descriptions">vClass-specific speed limits</a> are no longer lost when saving a network. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2508">ticket2508</a></li>
+<li> The lane shapes induced by option <span style="color: #111144; font-weight: bold; white-space: pre;">--rectangular-lane-cut</span> are no longer lost when editing a network</li>
+<li> Deleting whole edges is working again (regression in 0.29.0). <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2883">ticket2883</a></li>
+<li> Deleting edges and afterwards adding edges no longer creates node type "unregulated" (without right-of-way rules). <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2882">ticket2882</a></li>
+<li> Fixed visual glitches when opening left-hand networks. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2890">ticket2890</a></li>
+<li> Fixed various crashes. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2902">ticket2902</a>, <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/3010">ticket3010</a>, <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/3026">ticket3026</a>, <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2969">ticket2969</a></li>
+<li> Fixed coloring of green-verge lanes. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2961">ticket2961</a></li></ul></li></ul>
+<ul><li> TraCI
+<ul><li> Fixed mapping failures when calling <i>moveToXY</i>.</li>
+<li> Vehicles that are moving outside the road network due to <i>moveToXY</i> calls now return the correct position and angle.</li>
+<li> Function <i>vehicle.getSpeedWithoutTraCI</i> now correctly returns the current speed if the vehicle is not being influenced.</li>
+<li> Fixed crash when adding and erasing persons in the same step. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/3014">ticket3014</a></li></ul></li></ul>
+<ul><li> Tools
+<ul><li> Restored Python3.0 compatibility for sumolib and traci (regression in 0.29.0)</li>
+<li> carFollowing child-elements of vType element are now included in route2trips.py output. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2954">ticket2954</a></li>
+<li> Fixed OSM Web Wizard problems with spaces in SUMO_HOME path. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2939">ticket2939</a></li>
+<li> <a href="Tools/Routes.html#cutRoutes.py" title="Tools/Routes">cutRoutes.py</a> now writes two independent routes instead of one containing edges not contained in the reduced network. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/3011">ticket3011</a></li></ul></li></ul>
+<h3><span class="mw-headline" id="Enhancements">Enhancements</span></h3>
+<ul><li> Simulation
+<ul><li> <a href="Networks/Building_Networks_from_own_XML-descriptions.html#vehicle-class_specific_speed_limits" title="Networks/Building Networks from own XML-descriptions">vClass-specific speed limits</a> can now be loaded from an <a href="SUMO.html#Format_of_additional_files" title="SUMO"><i>additional-file</i></a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2870">ticket2870</a></li>
+<li> Refactored implementation of <a href="Simulation/Output/Lanearea_Detectors_(E2).html" title="Simulation/Output/Lanearea Detectors (E2)">E2 detectors</a>. These may now be defined to span over a sequence of lanes, XML-attribute <span class="inlxml">cont</span> is deprecated. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/1491">ticket1491</a>, <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/1877">ticket1877</a>, <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2773">ticket2773</a>, <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2871">ticket2871</a></li>
+<li> Added <a href="Simulation/Traffic_Lights.html#Based_on_Time_Loss" title="Simulation/Traffic Lights">traffic light type "delay_based"</a> which implements an alternative algorithm to type "actuated".</li>
+<li> Added option <span style="color: #111144; font-weight: bold; white-space: pre;">--time-to-impatience <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;TIME&gt;</i></a></span> which defines the waiting time until driver impatience grows from 0 to 1. Formerly this was tied to the value of <span style="color: #111144; font-weight: bold; white-space: pre;">--time-to-teleport</span>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2490">ticket2490</a></li>
+<li> <a href="Simulation/Output/Lanechange.html" title="Simulation/Output/Lanechange">lanechange-output</a> now includes the lateral gap to the closest neighbor. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2930">ticket2930</a></li>
+<li> <a href="Definition_of_Vehicles,_Vehicle_Types,_and_Routes.html#Speed_Distributions" title="Definition of Vehicles, Vehicle Types, and Routes">attribute <span class="inlxml">speedFactor</span></a> can use normal distributions with optional cutoff to define the distribution of vehicle speeds <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2925">ticket2925</a></li>
+<li> <a href="Simulation/Output/Traffic_Lights.html" title="Simulation/Output/Traffic Lights">Traffic light related outputs</a> have now consistent camelCase XML tags.</li>
+<li> Added option <span style="color: #111144; font-weight: bold; white-space: pre;">collision.stoptime <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;TIME&gt;</i></a></span> which lets vehicles stop for a time after experiencing a collision before the action set via <span style="color: #111144; font-weight: bold; white-space: pre;">--collision.action</span> takes place. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/1102">ticket1102</a></li>
+<li> <a href="Models/Electric.html" title="Models/Electric">Electric vehicles</a> are now initialized with a maximum capacity of 35kWh and and a half full battery by default (before, the default was 0 which always made it necessary to define this).</li>
+<li> <span style="color: #111144; font-weight: bold; white-space: pre;">--vehroute-output</span> now includes additional vehicle attributes such as <i>departLane</i> and <i>departSpeed</i> to facilitate scenario replaying.</li>
+<li> Increased maximum possible insertion flow when using <i>departLane</i> values <i>free,allowed</i> or <i>best</i> on multi-lane edges. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/3000">ticket3000</a> </li>
+<li> Improvements to lateral-gap keeping when using the <a href="Simulation/SublaneModel.html" title="Simulation/SublaneModel">sublane model</a>:
+<ul><li> Vehicles now attempt to equalize left and right gaps if there is insuffient lateral space  <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2932">ticket2932</a></li>
+<li> The semantics of attribute <span class="inlxml">minGapLat</span> where changed to define the desired gap at 50km/h and do not grow beyond that speed (before that threshold was at 100km/h)</li>
+<li> Vehicles now ignore follower vehicles behind the midpoint of their own length in regard to lateral gap keeping.</li></ul></li>
+<li> Added option <span style="color: #111144; font-weight: bold; white-space: pre;">--max-num-teleports <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;INT&gt;</i></a></span> which can abort the simulation after a number of teleports is exceeded. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/3003">ticket3003</a></li>
+<li> Added option <span style="color: #111144; font-weight: bold; white-space: pre;">--chargingstations-output <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;FILE&gt;</i></a></span> which generates output for <a href="Models/Electric.html#Charging_Station_output" title="Models/Electric">chargingStations</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2357">ticket2357</a></li></ul></li></ul>
+<ul><li> SUMO-GUI
+<ul><li> Added parameters <i>minGapLat,maxSpeedLat,latAlignment,boardingDuration,loadingDuration,car follow model</i> to the vType-parameter window.</li>
+<li> Added parameter <i>acceleration</i> to the vehicle-parameter window.</li>
+<li> Added option <i>Show type parameter dialog</i> to the person context menu. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2973">ticket2973</a></li>
+<li> When running the simulation with option <span style="color: #111144; font-weight: bold; white-space: pre;">--duration-log.statistics</span>, the average travel speed of completed trips is shown in the network parameter dialog.</li>
+<li> For long-running simulations the time displays can now show elapsed days. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2889">ticket2889</a></li></ul></li></ul>
+<ul><li> NETCONVERT
+<ul><li> Networks imported from <a href="Networks/Import/DlrNavteq.html" title="Networks/Import/DlrNavteq">DlrNavteq</a>-format now process <i>prohibited_manoeuvres</i> and <i>connected_lanes</i> input files. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/738">ticket738</a></li>
+<li> Edge types are now imported from a <i>.net.xml</i> file. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2508">ticket2508</a></li>
+<li> Added option <span style="color: #111144; font-weight: bold; white-space: pre;">--opendrive.curve-resolution <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;FLOAT&gt;</i></a></span> for setting the level of detail when importing road geometries from parmeterized curves. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2686">ticket2686</a></li>
+<li> Node shape computation (especially stop line position) can now be influenced by setting edge geometries that do not extend to the node position. 
+<ul><li> To deal with ambiguous stop line information in OpenDrive networks, the new option <span style="color: #111144; font-weight: bold; white-space: pre;">--opendrive.advance-stopline <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;FLOAT&gt;</i></a></span> may now now be used to affect the heuristic that computes stop line positioning based on the border between roads and connecting roads.</li></ul></li>
+<li> Bus stops can now be imported from OpenStreetMap. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2933">ticket2933</a></li>
+<li> Lanes within a network that have no incoming connection and edges that have no outgong connections are now reported. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2997">ticket2997</a></li>
+<li> Specific lanes can now be deleted <a href="Networks/Building_Networks_from_own_XML-descriptions.html#Deleting_edges_or_lanes" title="Networks/Building Networks from own XML-descriptions">via loaded <i>.edg.xml</i> files</a> (to ensure that connections are kept as intended). <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/3009">ticket3009</a></li></ul></li></ul>
+<ul><li> NETEDIT
+<ul><li> The junction visualization options <i>show link junction index</i> and <i>show link tls index</i> are now working <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2955">ticket2955</a></li>
+<li> When creating or moving edge and junction geometry, positions can now be <a href="NETEDIT.html#Background_Grid" title="NETEDIT">restricted to a regular grid</a> (i.e. multiples of 100). <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2776">ticket2776</a></li>
+<li> <a href="NETEDIT.html#Specifying_the_complete_geometry_of_an_edge_including_endpoints" title="NETEDIT">Custom edge geometry endpoints</a> values can now be entered in inspect mode. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2012">ticket2012</a></li></ul></li></ul>
+<ul><li> TraCI
+<ul><li> It is now possible to reload the simulation with new options by sending the <a href="TraCI/Control-related_commands.html#Command_0x01:_Load" title="TraCI/Control-related commands">load command</a>.</li>
+<li> Added <i>vehicle.setMaxSpeed</i> and <i>vehicle.getMaxSpeed</i> to the C++ client. Thanks to Raphael Riebl for the patch.</li>
+<li> Added <i>vehicle.changeTarget</i> to the C++ client.</li>
+<li> To allow vehicles to run a red light, speedmode <i>7</i> can now be used instead of <i>14</i>. This is much safer as it avoids rear-end collisions.</li>
+<li> Vehicles can now stop at a named ParkingArea or ChargingStation. The methods <i>traci.vehicle.setParkingAreaStop, traci.vehicle.setChargingStationStop</i> were added to the python client to simplify this. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2963">ticket2963</a></li>
+<li> vehicle function <i>moveToXY</i> now supports the special angle value <i>traci.constants.INVALID_DOUBLE_VALUE</i>. If this is set, the angle will not be factored into the scoring of candidate lanes and the vehicle will assume the angle of the best found lane. For vehicles outside the road network, the angle will be computed from the old and new position. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2262">ticket2262</a></li>
+<li> Vehicles now support <a href="TraCI/Vehicle_Value_Retrieval.html#Device_and_LaneChangeModel_Parameter_Retrieval_0x7e" title="TraCI/Vehicle Value Retrieval">retrieval of battery device parameters and retrieval of riding persons and containers as well as retrieval of laneChangeModel parameters</a> using the <i>vehicle.getParameter</i> function.</li>
+<li> Vehicles now support <a href="TraCI/Change_Vehicle_State.html#Setting_Device_and_LaneChangeModel_Parameters_.280x7e.29" title="TraCI/Change Vehicle State">setting of battery device parameters and laneChangeModel paramters</a> using the <i>vehicle.setParameter</i> function.</li>
+<li> Added <a href="Simulation/SublaneModel.html" title="Simulation/SublaneModel">sublane-model related</a> vehicle functions <i>getLateralLanePosition, getMaxSpeedLat, getMinGapLat, getLateralAlignment, setMaxSpeedLat, setMinGapLat, setLateralAlignment, changeSublane</i>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2216">ticket2216</a>, <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2001">ticket2001</a></li>
+<li> Added <a href="Simulation/SublaneModel.html" title="Simulation/SublaneModel">sublane-model related</a> vehicletype functions <i>getMaxSpeedLat, getMinGapLat, getLateralAlignment, setMaxSpeedLat, setMinGapLat, setLateralAlignment</i>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2216">ticket2216</a></li>
+<li> Function <i>edge.getLastStepPersonIDs</i> now includes persons riding in a vehicle which are on that edge. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2865">ticket2865</a></li>
+<li> The TraCI python client now supports <a href="TraCI/Interfacing_TraCI_from_Python.html#Adding_a_StepListener" title="TraCI/Interfacing TraCI from Python">StepListeners</a>.</li>
+<li> The lane-changing choices of the laneChange model can now be retrieved (with and without TraCI influence) using <a href="TraCI/Vehicle_Value_Retrieval.html" title="TraCI/Vehicle Value Retrieval">command <i>change lane information 0x13</i></a>.</li></ul></li></ul>
+<ul><li> Miscellaneous
+<ul><li> Improved routing efficiency of <a href="SUMO.html" title="SUMO">SUMO</a>,<a href="DUAROUTER.html" title="DUAROUTER">DUAROUTER</a> and <a href="MAROUTER.html" title="MAROUTER">MAROUTER</a> when using option <span style="color: #111144; font-weight: bold; white-space: pre;">--routing-algorithm astar</span> .</li></ul></li></ul>
+<ul><li> Tools
+<ul><li> <a href="Tools/Trip.html#randomTrips.py" title="Tools/Trip">randomTrips.py</a> now supports the option <span style="color: #111144; font-weight: bold; white-space: pre;">--flows <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;INT&gt;</i></a></span> to generate a number of random flows instead of individual vehicles.</li>
+<li> <a href="Tools/Routes.html#routeStats.py" title="Tools/Routes">routeStats.py</a> now supports generating statistics on departure time by setting the option <span style="color: #111144; font-weight: bold; white-space: pre;">--attribute depart</span>.</li>
+<li> <a href="Tools/tls.html#tls_csv2SUMO.py" title="Tools/tls">tls_csv2SUMO.py</a> can now take arbitrary strings as index and has improved signal group handling, thanks to Harald Schaefer</li>
+<li> more tools (including osmWebWizard) are python3 compatible</li></ul></li></ul>
+<h3><span class="mw-headline" id="Other">Other</span></h3>
+<ul><li> Documentation
+<ul><li> The <a href="TraCI.html#TraCI_Commands" title="TraCI">TraCI command documentation</a> now includes links to the corresponding python functions for each command.</li>
+<li> </li>
+<li> New <a href="Simulation/Safety.html" title="Simulation/Safety">overview page on safety-related behavior</a></li>
+<li> The <a href="Tutorials/quick_start.html" title="Tutorials/quick start">Quick Start tutorial</a> now describes how to create an network with <a href="NETEDIT.html" title="NETEDIT">NETEDIT</a></li></ul></li></ul>
+<ul><li> TraCI
+<ul><li> TraCI version is now 15</li>
+<li> some TraCI constants have been renamed
+<ul><li> CMD_SIMSTEP2 to CMD_SIMSTEP</li>
+<li> *AREAL_DETECTOR* to *LANEAREA*</li>
+<li> *MULTI_ENTRY_EXIT_DETECTOR* TO *MULTIENTRYEXIT*</li></ul></li></ul></li></ul>
+<ul><li> Miscellaneous
+<ul><li> The compile-option <span style="color: #111144; font-weight: bold; white-space: pre;">--disable-internal-lanes</span> was removed. Simulation without internal lanes is still possible using either the netconvert option <span style="color: #111144; font-weight: bold; white-space: pre;">--no-internal-links</span> or the simulation option <span style="color: #111144; font-weight: bold; white-space: pre;">--no-internal-links</span></li>
+<li> The compile-option <span style="color: #111144; font-weight: bold; white-space: pre;">--enable-memcheck</span> and the corresponding nvwa package were removed. Checking for memory leaks should be done using the clang build or valgrind.</li></ul></li></ul>
+<h2><span class="mw-headline" id="Version_0.29.0_.2816.02.2017.29">Version 0.29.0 (16.02.2017)</span></h2>
+<h3><span class="mw-headline" id="Bugfixes_2">Bugfixes</span></h3>
+<ul><li> Simulation
+<ul><li> Fixed emergency braking and collisions related to <a href="Simulation/OppositeDirectionDriving.html" title="Simulation/OppositeDirectionDriving">opposite-direction driving</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2652">ticket2652</a></li>
+<li> Fixed crashing related to <a href="Simulation/OppositeDirectionDriving.html" title="Simulation/OppositeDirectionDriving">opposite-direction driving</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2664">ticket2664</a></li>
+<li> Fixed implausible behaviour related to <a href="Simulation/OppositeDirectionDriving.html" title="Simulation/OppositeDirectionDriving">opposite-direction driving</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2665">ticket2665</a></li>
+<li> Fixed error where vehicles could not stop at the end of a lane for numerical reasons. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2670">ticket2670</a></li>
+<li> <a href="Simulation/GenericParameters.html" title="Simulation/GenericParameters">Generic parameters</a> of vehicles and vehicle types are now handled when <a href="Simulation/SaveAndLoad.html" title="Simulation/SaveAndLoad">saving and loading simulation state</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2690">ticket2690</a></li>
+<li> Stopped and parking vehicles are now handled when <a href="Simulation/SaveAndLoad.html" title="Simulation/SaveAndLoad">saving and loading simulation state</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/1301">ticket1301</a></li>
+<li> All vehicle parameters and vehicle stops are now handled when <a href="Simulation/SaveAndLoad.html" title="Simulation/SaveAndLoad">saving and loading simulation state</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2720">ticket2720</a></li>
+<li> Fixed extreme vehicle angles during lane changing when using the <a href="Simulation/SublaneModel.html" title="Simulation/SublaneModel">sublane model</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2741">ticket2741</a></li>
+<li> Fixed error when defining flows without vehicles. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2823">ticket2823</a></li>
+<li> Fixed issue where the heuristic to prevent junction blocking caused a vehicle to block itself. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2834">ticket2834</a></li>
+<li> Fixed bug that was causing pedestrian collisions. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2840">ticket2840</a></li>
+<li> The last vehicle from a flow is no longer missing if the flow duration is not a multiple of the <i>period</i> parameter. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2864">ticket2864</a></li></ul></li></ul>
+<ul><li> NETCONVERT
+<ul><li> Fixed errors when exporting elevation data to OpenDRIVE. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2641">ticket2641</a></li>
+<li> Fixed format conformity issues when exporting OpenDRIVE networks. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2673">ticket2673</a>, <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2674">ticket2674</a>, <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2682">ticket2682</a></li>
+<li> Networks exported in the <a href="Networks/Export.html#DlrNavteq" title="Networks/Export">DlrNavteq format</a> are now written with <span style="color: #111144; font-weight: bold; white-space: pre;">--numerical-ids</span> by default.</li>
+<li> Fixed crash when importing OpenDrive and using <a href="NETCONVERT.html#Edge_Removal" title="NETCONVERT">edge-removal options</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2685">ticket2685</a></li>
+<li> Improved connection guessing at roads with a lane reduction.</li>
+<li> Fixed crash when specifying a <a href="Networks/Building_Networks_from_own_XML-descriptions.html#Road_Segment_Refining" title="Networks/Building Networks from own XML-descriptions"><span class="inlxml">&lt;split&gt;</span></a>-element for a roundabout-edge. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2737">ticket2737</a></li>
+<li> The option <span style="color: #111144; font-weight: bold; white-space: pre;">--geometry.max-segment-length</span> is now working when importing OSM data. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2779">ticket2779</a></li>
+<li> Improved heuristic for option <span style="color: #111144; font-weight: bold; white-space: pre;">osm.layer-elevation</span> to reduce unrealistic up-and-down geometries.</li>
+<li> Fixed steep grades near intersections in networks with 3D-geometry. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2782">ticket2782</a></li>
+<li> Geometry fixes for output in <a href="Networks/Export.html#DlrNavteq" title="Networks/Export">DlrNavteq format</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2785">ticket2785</a>,<a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2786">ticket2786</a></li></ul></li></ul>
+<ul><li> NETEDIT
+<ul><li> Fixed crash when doing undo/redo connection changes at a newly created junction. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2662">ticket2662</a></li>
+<li> Fixed slow operation when switching between move-mode and other modes in a large network.</li>
+<li> Fixed slow operation when move junctions in large networks. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2699">ticket2699</a></li>
+<li> Selecting objects by <a href="NETEDIT.html#Match_Attribute" title="NETEDIT">matching against attributes</a> now works on windows. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2675">ticket2675</a></li>
+<li> Fixed crash when setting custom geometry endpoinds. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2693">ticket2693</a></li>
+<li> Fixed shortcuts <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2694">ticket2694</a></li>
+<li> Fixed crash when using option <span style="color: #111144; font-weight: bold; white-space: pre;">--numerical-ids</span>.</li>
+<li> Fixed visualization errors when using <span style="color: #111144; font-weight: bold; white-space: pre;">--offset.disable-normalizaton <i>false</i></span></li>
+<li> When adding sidewalks to selected lanes, pedestrians are now automatically forbidden on the other lanes. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2708">ticket2708</a></li>
+<li> Fixed an inconsistency with the definition of SUMO Time in Inspector mode. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2625">ticket2625</a></li></ul></li></ul>
+<ul><li> SUMO-GUI
+<ul><li> Fixed bug that was causing interface lag when right-clicking in networks with detailed geometry.</li>
+<li> Configuring the visualisation of generated induction loops for <a href="Simulation/Traffic_Lights.html#Actuated_Traffic_Lights" title="Simulation/Traffic Lights">actuated traffic lights</a> is now working. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2639">ticket2639</a></li>
+<li> Fixed crash when coloring lanes by occupancy. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2850">ticket2850</a></li></ul></li></ul>
+<ul><li> MESO
+<ul><li> when using option <span style="color: #111144; font-weight: bold; white-space: pre;">--meso-tls-penalty</span> the maximum flow at controlled intersections is now scaled according to fraction of available green time. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2753">ticket2753</a></li>
+<li> Fixed various issues related to inconsistent handling of net and gross time gaps. This was causing exaggerated speeds. The option <span style="color: #111144; font-weight: bold; white-space: pre;">--meso-taujf <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;TIME&gt;</i></a></span> now corresponds to the net time-gap (as do <span style="color: #111144; font-weight: bold; white-space: pre;">--meso-taufj, --meso-tauff</span>). It's default value has been reduced from <i>2.0</i> to <i>1.73</i> correspondingly (reproducing the old behavior at 100km/h).</li></ul></li></ul>
+<ul><li> MESO-GUI
+<ul><li> Fixed invalid coloring of the gap between lanes. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/1428">ticket1428</a></li></ul></li></ul>
+<ul><li> DUAROUTER
+<ul><li> The default vehicle class is now <i>passenger</i> (as in the simulation). Note, that non-passenger classes such as trains now need an explicit type definition to be able to use rail edges. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2829">ticket2829</a></li>
+<li> The last vehicle from a flow is no longer missing if the flow duration is not a multiple of the <i>period</i> parameter. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2864">ticket2864</a></li>
+<li> Various fixes to <a href="IntermodalRouting.html" title="IntermodalRouting">intermodal routing functionality</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2852">ticket2852</a>,<a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2857">ticket2857</a></li></ul></li></ul>
+<ul><li> TraCI
+<ul><li> Fixed crash when trying to reroute vehicles before their departure.</li>
+<li> Fixed inefficiency when calling <i>vehicle.rerouteTravelTime()</i> multiple times per simulation step (edge weights are now updated at most once per step).</li>
+<li> Various fixes to <i>vehicle.moveToXY</i> mapping behavior.</li>
+<li> unsubscribing now works in the python client. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2704">ticket2704</a></li>
+<li> The C++ client now properly closes the simulation when calling <i>close()</i></li>
+<li> Subscriptions to 2D-Positions are now working in the C++ client</li>
+<li> Deleting vehicles that have not yet departed is now working. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2803">ticket2803</a></li>
+<li> <a href="TraCI/Vehicle_Signalling.html" title="TraCI/Vehicle Signalling">Brake lights and blinkers</a> can now be set for the current simulation step. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2804">ticket2804</a></li>
+<li> Vehicle function <i>move to XY</i> now works for edges with custom length. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2809">ticket2809</a></li>
+<li> Vehicle function <i>move to XY</i> now actually uses the 'edgeID' and 'lane index' parameters to resolve ambiguities. It uses the 'origID' parameter if set and the lane id otherwise.</li>
+<li> Function <i>edge.adaptTravelTime(begin=... end=...)</i> is now working as expected with times in seconds. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2808">ticket2808</a></li></ul></li></ul>
+<ul><li> Tools
+<ul><li> <a href="Tools/Net.html#netdiff.py" title="Tools/Net">netdiff.py</a> now correctly handles changes to <span class="inlxml">spreadType</span> and other optional attributes. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2722">ticket2722</a></li>
+<li> <a href="Tools/Sumolib.html" title="Tools/Sumolib">sumolib.net</a> now returns consistent values for <i>edge.getShape()</i>: the center-line of all lanes. Previously, the raw edge shape used in netconvert was returned.</li>
+<li> <a href="Tools/Trip.html#randomTrips.py" title="Tools/Trip">randomTrips.py</a> now works correctly when giving the options <span style="color: #111144; font-weight: bold; white-space: pre;">--via, --validate</span> at the same time. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2821">ticket2821</a></li></ul></li></ul>
+<ul><li> Miscellaneous
+<ul><li> The <a href="Basics/Using_the_Command_Line_Applications.html#Writing_files" title="Basics/Using the Command Line Applications">special sub-string <i>TIME</i></a> in output file names is now working on Windows.</li>
+<li> Various fixes concerning the binary XML format <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2650">ticket2650</a>, <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2651">ticket2651</a></li></ul></li></ul>
+<h3><span class="mw-headline" id="Enhancements_2">Enhancements</span></h3>
+<ul><li> Simulation
+<ul><li> Added definition of <a href="Simulation/ParkingArea.html" title="Simulation/ParkingArea">parking areas</a> and functionality for <a href="Simulation/Rerouter.html#Rerouting_to_an_alternative_Parking_Area" title="Simulation/Rerouter">rerouting in search of a free parking space</a>. Many thanks to Mirco Sturari for this contribution.</li>
+<li> Added new output option <span style="color: #111144; font-weight: bold; white-space: pre;">--stop-output <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;FILE&gt;</i></a></span> for generating <a href="Simulation/Output/StopOutput.html" title="Simulation/Output/StopOutput">output on vehicle stops (for public transport, logistics, etc.)</a></li>
+<li> Vehicles that are inserted with <span class="inlxml">departPos="last"</span> now depart at the end of the lane when there are no leader vehicles. This reduces the overall variance in depart positions. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2571">ticket2571</a></li>
+<li> The <span style="color: #111144; font-weight: bold; white-space: pre;">--step-log-output</span> now includes statistics on time spend in TraCI functions. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2698">ticket2698</a></li>
+<li> When a <a href="Definition_of_Vehicles,_Vehicle_Types,_and_Routes.html#Vehicle_Emission_Classes" title="Definition of Vehicles, Vehicle Types, and Routes">vClass is specified for a vehicle type</a>, this information is used to <a href="Vehicle_Type_Parameter_Defaults.html" title="Vehicle Type Parameter Defaults">assign a default emissionClass</a> from the <a href="Models/Emissions/HBEFA3-based.html" title="Models/Emissions/HBEFA3-based">HBEFA3 model</a> (Before all vehicles had class <a href="Models/Emissions/HBEFA-based.html" title="Models/Emissions/HBEFA-based">"HBEFA2/P_7_7"</a> by default, even bicycles). The default class for passenger vehicles is now "HBEFA3/PC_G_EU4".</li>
+<li> Output files of the <a href="Simulation/Output/Multi-Entry_Multi-Exit_Detectors_(E3).html" title="Simulation/Output/Multi-Entry Multi-Exit Detectors (E3)" class="mw-redirect">MultiEntryExitDetector</a> now include <i>timeLoss</i> information. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2703">ticket2703</a></li>
+<li> Output files of the <a href="Simulation/Output/Lanearea_Detectors_(E2).html" title="Simulation/Output/Lanearea Detectors (E2)">LaneAreaDetector</a> now include <i>timeLoss</i> information. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2703">ticket2703</a></li>
+<li> Added option <span style="color: #111144; font-weight: bold; white-space: pre;">--load-state.remove-vehicles ID1[,ID2]*</span> for removing vehicles from a loaded state. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2774">ticket2774</a></li>
+<li> Pedestrians now use the <i>speedDev</i> attribute of their type to vary their walking speed. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2792">ticket2792</a></li>
+<li> <a href="Simulation/Output/TripInfo.html#Generated_Output" title="Simulation/Output/TripInfo">tripinfo-output</a> now includes the attribute <i>speedFactor</i> which may have been chosen randomly when loading the vehicle.</li>
+<li> Output precision is automatically increased whenever simulating with step-lengths below 10ms. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2816">ticket2816</a></li>
+<li> E1 detectors now support the attribute <i>vTypes</i> for collecting type specific measurements. The attribute <i>splitByType</i> is no longer supported.</li></ul></li></ul>
+<ul><li> SUMO-GUI
+<ul><li> Added new option <span style="color: #111144; font-weight: bold; white-space: pre;">--window-pos <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;INT&gt;</i></a>,<a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;INT&gt;</i></a></span> for specifying the initial window placement.</li>
+<li> Added new button to the object locator dialog that allows toggling selection status. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2687">ticket2687</a></li>
+<li> Parking vehicles are now listed in the vehicle locator dialog. This can be disabled using a new menu option. Teleporting vehicles can optionally be listed as well <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2750">ticket2750</a></li>
+<li> Vehicles can now be colored <i>by time loss</i> (accumulated over the whole route). The time loss is also shown in the vehicle parameter dialog.</li></ul></li></ul>
+<ul><li> MESO
+<ul><li> Added new option <span style="color: #111144; font-weight: bold; white-space: pre;">--meso-minor-penalty <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;TIME&gt;</i></a></span> for applying a time penalty when passing a minor link. This may be used to model slow down on approach or even intersection delays when running without <span style="color: #111144; font-weight: bold; white-space: pre;">--meso-junction-control</span>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2640">ticket2640</a></li>
+<li> When using the option <span style="color: #111144; font-weight: bold; white-space: pre;">--meso-tls-penalty <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;FLOAT&gt;</i></a></span> to model mesoscopic traffic lights, the maximum capacity of edges is now reduced according to the proportion of green-time and cycle time at controlled intersection. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2753">ticket2753</a></li></ul></li></ul>
+<ul><li> MESO-GUI
+<ul><li> The number of queues for the current segment is now shown in the edge parameter dialog</li>
+<li> The latest headway for the current segment is now shown in the edge parameter dialog</li></ul></li></ul>
+<ul><li> NETCONVERT
+<ul><li> Pedestrian rail crossings are now working. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2654">ticket2654</a></li>
+<li> Added new option <span style="color: #111144; font-weight: bold; white-space: pre;">--geometry.check-overlap <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;FLOAT&gt;</i></a></span> for finding edges with overlapping lanes. This is typically a sign of faulty inputs. The accompanying option <span style="color: #111144; font-weight: bold; white-space: pre;">--geometry.check-overlap.vertical-threshold <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;FLOAT&gt;</i></a></span> filters out edges that are separated vertically by at least the given value (default <i>4.0</i>). <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2648">ticket2648</a></li>
+<li> The options <span style="color: #111144; font-weight: bold; white-space: pre;">--keep-edges.explicit, --keep-edges.input-file</span> now allow for white-listing in combination with other removal options (edges are kept if listed explicitly or if any other keep-condition is met). <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2680">ticket2680</a> </li>
+<li> Added new option <span style="color: #111144; font-weight: bold; white-space: pre;">--osm.oneway-spread-right <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;BOOL&gt;</i></a></span> for setting the default <a href="Networks/Building_Networks_from_own_XML-descriptions.html#Edge_Descriptions" title="Networks/Building Networks from own XML-descriptions">spreadType</a> to <i>right</i> for one-way edges (i.e. motorways). </li>
+<li> The <a href="Networks/Building_Networks_from_own_XML-descriptions.html#Road_Segment_Refining" title="Networks/Building Networks from own XML-descriptions"><span class="inlxml">&lt;split&gt;</span></a>-element now supports the new attributes <i>idBefore, idAfter</i> to determine the ids of the newly created edges. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2731">ticket2731</a></li>
+<li> Added new option <span style="color: #111144; font-weight: bold; white-space: pre;">--reserved-ids <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;FILE&gt;</i></a></span> for loading a selecting of node and edge ids that shall be avoided in the output network.</li>
+<li> When importing networks from <a href="Networks/Import/DlrNavteq.html" title="Networks/Import/DlrNavteq">DlrNavteq</a> format, the new option <span style="color: #111144; font-weight: bold; white-space: pre;">--construction-date <b>YYYY-MM-DD</b></span> can now be used to interpret the readiness of roads under construction.</li>
+<li> Networks exported to <a href="Networks/Export.html#DlrNavteq" title="Networks/Export">DlrNavteq</a> format now contain additional information: bridge/tunnel information, <i>form of way</i>, ZIP code, prohibited_manoeuvres, connected_lanes</li>
+<li> Warnings are now issued when steep grades are present in the road network. The warning threshold can be configured using the new option <span style="color: #111144; font-weight: bold; white-space: pre;">geometry.max-grade <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;FLOAT&gt;</i></a></span>.</li>
+<li> &lt;laneOffset&gt; data is now imported from OpenDrive networks</li></ul></li></ul>
+<ul><li> NETEDIT
+<ul><li> Added new option <span style="color: #111144; font-weight: bold; white-space: pre;">--window-pos <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;INT&gt;</i></a>,<a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;INT&gt;</i></a></span> for specifying the initial window placement.</li>
+<li> new <a href="NETEDIT.html#Hotkeys" title="NETEDIT">hotkeys</a> implemented. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2694">ticket2694</a> </li>
+<li> New icons for edit modes. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2612">ticket2612</a> </li>
+<li> Added new button to the object locator dialog that allows toggling selection status. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2687">ticket2687</a></li></ul></li></ul>
+<ul><li> OD2TRIPS
+<ul><li> Added new option <span style="color: #111144; font-weight: bold; white-space: pre;">--flow-output.probability <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;BOOL&gt;</i></a></span> for generating probabilistic flows instead of evenly spaced flows. Thanks to Dominik Buse for the patch.</li></ul></li></ul>
+<ul><li> DUAROUTER
+<ul><li> Added option <span style="color: #111144; font-weight: bold; white-space: pre;">persontrip.walkfactor <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;FLOAT&gt;</i></a></span> to account for pedestrian delays in <a href="IntermodalRouting.html#Intermodal_Cost_Function" title="IntermodalRouting">intermodal routing</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2856">ticket2856</a></li></ul></li></ul>
+<ul><li> TraCI
+<ul><li> Added functions <i>person.getStage, person.getRemainingStages</i>, <i>person.getVehicle</i> and <i>person.getEdges</i> to the API, the python client and the C++ client. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/1595">ticket1595</a></li>
+<li> Added functions <i>person.add</i>, <i>person.appendWalkingStage</i>, <i>person.appendDrivingStage</i>, <i>person.appendWaitingStage</i>, person.removeStage<i>, </i>person.removeStages, person.setColor, person.setLength, person.setHeight, person.setWidth, person.setMinGap, person.setType<i> and </i>person.setSpeed<i> to the API, the python client and the C++ client. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2688">ticket2688</a></i></li>
+<li> The python client now supports <i>vehicle.getPosition3D</i>.</li>
+<li> Added the functions <i>vehicle.getLine</i> and <i>vehicle.setLine</i> to the python client and the C++ client <a href="Specification/Persons.html#Riding" title="Specification/Persons">(to be used for public transport)</a> <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2719">ticket2719</a></li>
+<li> Added the functions <i>vehicle.getVia</i> and <i>vehicle.setVia</i> to the python client and the C++ client (affects subsequent rerouting calls) <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2729">ticket2729</a></li>
+<li> Added the functions <i>polygon.getFilled</i> and <i>polygon.setFilled</i> to the python client</li></ul></li></ul>
+<ul><li> Tools
+<ul><li> <a href="Tools/Routes.html#route_departOffset" title="Tools/Routes">route_departOffset.py</a> now supports additional options for departure time modification based on arrival edge. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2568">ticket2568</a></li>
+<li> <a href="Tools/Sumolib.html" title="Tools/Sumolib">sumolib.net</a> now supports the new function <i>edge.getRawShape()</i> to retrieve the shape used by netconvert. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2742">ticket2742</a></li></ul></li></ul>
+<ul><li> Miscellaneous
+<ul><li> All applications now support the option <span style="color: #111144; font-weight: bold; white-space: pre;">--precision <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;INT&gt;</i></a></span> to specify the output precision as number of decimal places for floating point output. For lon/lat values this is configured separately using option <span style="color: #111144; font-weight: bold; white-space: pre;"> --precision.geo <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;INT&gt;</i></a></span>.</li></ul></li></ul>
+<h3><span class="mw-headline" id="Other_2">Other</span></h3>
+<ul><li> Documentation
+<ul><li> Added description of the <a href="SUMO-GUI.html#Selecting_Objects" title="SUMO-GUI">Object Locator</a>-menu</li>
+<li> Added documentation of <a href="SUMO-GUI.html#Road_Access_Permissions" title="SUMO-GUI">visualizing road access permissions</a></li>
+<li> Added documentation of <a href="NETEDIT.html#Crossings" title="NETEDIT">crossings</a> in NETEDIT</li>
+<li> Added documentation for the <a href="MESO.html#Model_Description" title="MESO" class="mw-redirect">MESO-model</a></li>
+<li> Extended documentation of the <a href="Simulation/SublaneModel.html" title="Simulation/SublaneModel">sublane-model</a></li>
+<li> Added <a href="TraCI.html#Performance" title="TraCI">TraCI performance information</a></li>
+<li> The <a href="TraCI.html#TraCI_Commands" title="TraCI">TraCI command reference</a> now includes links to the corresponding python method(s).</li>
+<li> Fixed inconsistencies in <a href="TraCI.html#TraCI_Commands" title="TraCI">TraCI command reference</a> (mostly methods that were available in the python client but not yet documented in the wiki).</li></ul></li></ul>
+<ul><li> Simulation
+<ul><li> A warning is now issued when trying to define a vehicle with vClass=<i>pedestrian</i> as this vClass should only be used for persons. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2830">ticket2830</a></li></ul></li></ul>
+<ul><li> TraCI
+<ul><li> TraCI version is now 14</li></ul></li></ul>
+<ul><li> Binary format
+<ul><li> SBX has now version number 2 <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2651">ticket2651</a></li></ul></li></ul>
+<ul><li> Miscellaneous
+<ul><li> <a href="SUMO-GUI.html" title="SUMO-GUI">SUMO-GUI</a> and <a href="NETEDIT.html" title="NETEDIT">NETEDIT</a> now remember their last window position</li></ul></li></ul>
+<h2><span class="mw-headline" id="Version_0.28.0_.2801.11.2016.29">Version 0.28.0 (01.11.2016)</span></h2>
+<h3><span class="mw-headline" id="Bugfixes_3">Bugfixes</span></h3>
+<ul><li> Simulation
+<ul><li> Fixed bug that was causing insufficient overtaking on a single-lane road when using sublane simulation (most noticeable with small step-lenghts). <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2518">ticket2518</a> </li>
+<li> Fixed invalid count of insertion-backlog for flows. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2535">ticket2535</a></li>
+<li> Added check for possibility to stop at scheduled stops during insertion. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2543">ticket2543</a></li>
+<li> Fixed invalid timeLoss values in <a href="Simulation/Output/TripInfo.html" title="Simulation/Output/TripInfo">tripinfo-output</a> (last step was counted twice for some vehicles).</li>
+<li> Fixed bug that would prevent a vehicle from reaching the end of it's route after rerouting while being teleported. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2554">ticket2554</a></li>
+<li> Fixed erroneous detector output for a special situation. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2556">ticket2556</a></li>
+<li> Fixed computation of energy loss for subsecond simulation. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2559">ticket2559</a></li>
+<li> Fixed crash when using <a href="Simulation/Rerouter.html#Closing_a_Street" title="Simulation/Rerouter">closing-rerouters</a> that prevent vehicles from departing after being loaded (related to <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2561">ticket2561</a>).</li>
+<li> Fixed invalid permissions when using multiple <a href="Simulation/Rerouter.html#Closing_a_Street" title="Simulation/Rerouter">closing-rerouters</a> that modify permissions of the same edge <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2560">ticket2560</a>.</li>
+<li> Fixed crash when using the <a href="Simulation/SublaneModel.html" title="Simulation/SublaneModel">sublane model</a> with varying lane widths. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2585">ticket2585</a></li>
+<li> The option <span style="color: #111144; font-weight: bold; white-space: pre;">--ignore-errors</span> now properly ignores <span class="inlxml">vClass</span>-related errors. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2148">ticket2148</a></li>
+<li> Vehicles are now properly angled during lane-changing in <a href="Simulation/SublaneModel.html" title="Simulation/SublaneModel">sublane-simulation</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2525">ticket2525</a></li></ul></li></ul>
+<ul><li> MESO
+<ul><li> Tripinfo-output now has appropriate <span class="inlxml">timeLoss</span> values. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2570">ticket2570</a></li></ul></li></ul>
+<ul><li> NETCONVERT
+<ul><li> Fixed invalid lane permissions when setting lane-specific attributes without specifying lane-specific permissions. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2515">ticket2515</a></li>
+<li> Fixed invalid elevation values at junctions when importing OpenDRIVE networks.</li>
+<li> Fixed crash when importing OpenDRIVE networks.</li>
+<li> Fixed invalid internal-lane geometries when exporting OpenDRIVE networks. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2562">ticket2562</a></li>
+<li> Fixed various specification conformity issues when exporting OpenDRIVE networks.</li>
+<li> Option <span style="color: #111144; font-weight: bold; white-space: pre;">--street-sign-output</span> now only generates signs at <i>real</i> intersections.</li>
+<li> Fixed error when loading a <i>.net.xml</i> file and patching lane numbers with an <i>.edg.xml</i> file. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2459">ticket2459</a></li></ul></li></ul>
+<ul><li> SUMO-GUI
+<ul><li> The visulization option <i>show lane borders</i> is now working.</li>
+<li> Fixed crash when user loads an empty E3 detector <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2249">ticket2249</a></li></ul></li></ul>
+<ul><li> NETEDIT
+<ul><li> Geometry nodes are no longer drawn when set to full transparency (alpha = 0).</li>
+<li> Geometry nodes are now colored for selected edges.</li>
+<li> All textures are now loaded instead of a white square or a netedit crash. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2594">ticket2594</a> <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2476">ticket2476</a> <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2597">ticket2597</a></li></ul></li></ul>
+<ul><li> DFROUTER
+<ul><li> Vehicles now always depart with the measured speeds. A vehicle type with non-zero <span class="inlxml">speedDev</span> is used to allow patching the <a href="Definition_of_Vehicles,_Vehicle_Types,_and_Routes.html#Speed_Distributions" title="Definition of Vehicles, Vehicle Types, and Routes">vehicle-specific speed factor</a> in <a href="SUMO.html" title="SUMO">SUMO</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2510">ticket2510</a></li></ul></li></ul>
+<ul><li> TraCI
+<ul><li> Vehicles added via method add() of the python client now have the correct departDelay value. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2540">ticket2540</a></li>
+<li> Vehicle type value retrieval via the <a href="TraCI/C%2B%2BTraCIAPI.html" title="TraCI/C++TraCIAPI">C++ API</a> is now working.</li>
+<li> Setting and retrieving edge travel times and efforts via the <a href="TraCI/C%2B%2BTraCIAPI.html" title="TraCI/C++TraCIAPI">C++ API</a> is now working.</li>
+<li> It is now possible to specify routes that contain <a href="Demand/Importing_O/D_Matrices.html#Describing_the_TAZ" title="Demand/Importing O/D Matrices">TAZ-edges</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2586">ticket2586</a></li></ul></li></ul>
+<h3><span class="mw-headline" id="Enhancements_3">Enhancements</span></h3>
+<ul><li> Simulation
+<ul><li> <a href="Simulation/Basic_Definition.html#Defining_the_Time_Step_Length_and_Integration_Method" title="Simulation/Basic Definition">Ballistic integration method</a> can be used by giving the option <span style="color: #111144; font-weight: bold; white-space: pre;">--step-method.ballistic</span>.</li>
+<li> <a href="Simulation/Output/Lanearea_Detectors_(E2).html" title="Simulation/Output/Lanearea Detectors (E2)">Areal Detectors</a> now output vehicle counts. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2523">ticket2523</a></li>
+<li> <a href="Simulation/Rerouter.html#Closing_a_Lane" title="Simulation/Rerouter">Rerouters can now be used to close individual lanes</a> to simulate dynamic work zones and accidents. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2229">ticket2229</a></li>
+<li> Electricity consumption is now included in emission outputs. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2211">ticket2211</a></li>
+<li> Added option <span style="color: #111144; font-weight: bold; white-space: pre;">--save-state.period <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;TIME&gt;</i></a></span> for periodically <a href="Simulation/SaveAndLoad.html#Saving" title="Simulation/SaveAndLoad">saving simulation state</a>. The new option <span style="color: #111144; font-weight: bold; white-space: pre;">--save-state.suffix <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;STRING&gt;</i></a></span> can be used to determine whether state should be saved in binary (<i>.sbx</i>) or XML (<i>.xml</i>). <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2441">ticket2441</a></li>
+<li> Tripinfo-output now includes the values <span class="inlxml">departPosLat,arrivalPosLat</span> when running a <a href="Simulation/SublaneModel.html" title="Simulation/SublaneModel">sublane-simulation</a>.</li>
+<li> Sublane simulation now supports the <a href="Definition_of_Vehicles,_Vehicle_Types,_and_Routes.html#Vehicles_and_Routes" title="Definition of Vehicles, Vehicle Types, and Routes">vehicle parameters</a> <span class="inlxml">departPosLat,arrivalPosLat</span>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2003">ticket2003</a></li>
+<li> Added option <span style="color: #111144; font-weight: bold; white-space: pre;">--tls.all-off <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;BOOL&gt;</i></a></span> for switching off all traffic lights in the simulation.</li></ul></li></ul>
+<ul><li> NETEDIT
+<ul><li> Added new option <span style="color: #111144; font-weight: bold; white-space: pre;">--new <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;BOOL&gt;</i></a></span> for starting with an empty network.</li>
+<li> Added new option <span style="color: #111144; font-weight: bold; white-space: pre;">--window-size <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;INT&gt;</i></a>,<a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;INT&gt;</i></a></span> for specifying the initial window size. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2514">ticket2514</a></li>
+<li> Junction attribute <i>tltype</i> is now supported.</li>
+<li> Joined TLS can now be defined by setting the junction attribute <i>tl</i> following the same rules as in <a href="Networks/Building_Networks_from_own_XML-descriptions.html#Node_Descriptions" title="Networks/Building Networks from own XML-descriptions"><i>.nod.xml</i> files</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2389">ticket2389</a></li>
+<li> Added support for restricted lanes (Sidewalks, buslanes and bikelanes). <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/1568">ticket1568</a></li>
+<li> Now junction visualization can be toggled between bubbles and their real shape when in <i>Move</i>-mode.</li>
+<li> Connections can now be shown in inspect mode (by activating a check-box) and their attributes can be edited. They can also be selected in select-mode and deleted in delete mode. When inspecting edges or lanes, controls for accessing their connections are now available. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2067">ticket2067</a></li>
+<li> Now delete mode has a frame with information and options for deleting. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2432">ticket2432</a></li>
+<li> Intervals of Rerouters can be edited using a dialog <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2480">ticket2480</a></li></ul></li></ul>
+<ul><li> SUMO-GUI
+<ul><li> Added new option <span style="color: #111144; font-weight: bold; white-space: pre;">--window-size <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;INT&gt;</i></a>,<a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;INT&gt;</i></a></span> for specifying the initial window size. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2514">ticket2514</a></li>
+<li> Added new visualization setting for drawing right-of-way rules (colored bars).</li>
+<li> <a href="SUMO-GUI.html#Using_Decals_within_SUMO-GUI" title="SUMO-GUI">Background images (decals)</a> now support the new Boolean attribute <i>screenRelative</i>. When set to <i>true</i>, position and size are relative to the drawing window instead of being relative to the network. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2438">ticket2438</a></li></ul></li></ul>
+<ul><li> NETCONVERT
+<ul><li> Ferry routes are now imported from <a href="Networks/Import/OpenStreetMap.html#Recommended_Typemaps" title="Networks/Import/OpenStreetMap">OSM when using the <i>ships</i> typemap</a>.</li>
+<li> Railway crossings are now imported from <a href="Networks/Import/OpenStreetMap.html" title="Networks/Import/OpenStreetMap">OSM</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2059">ticket2059</a></li>
+<li> Added new option <span style="color: #111144; font-weight: bold; white-space: pre;">--junctions.scurve-stretch <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;FLOAT&gt;</i></a></span> which generates longer intersection shapes whenever the number of lanes changes. This allows for smoother trajectories and is recommended when <a href="Networks/Further_Outputs.html#OpenDRIVE_Road_Networks" title="Networks/Further Outputs">writing OpenDRIVE networks</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2522">ticket2522</a></li>
+<li> Added new option <span style="color: #111144; font-weight: bold; white-space: pre;">--rectangular-lane-cut<a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;BOOL&gt;</i></a></span> which prevents oblique angles between edges and intersections. This option is automatically enabled when exporting OpenDRIVE networks. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2562">ticket2562</a></li>
+<li> The distance below which all approaching vehicles on foe lanes to a specific connection are visible can now be <a href="Networks/Building_Networks_from_own_XML-descriptions.html#Explicitly_setting_which_Edge_.2F_Lane_is_connected_to_which" title="Networks/Building Networks from own XML-descriptions">customized with the new connection attribute <span class="inlxml">visibility</span></a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2123">ticket2123</a>, <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/892">ticket892</a></li>
+<li> Elevation data is now interpolated when importing GeoTiff heightmaps. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/1962">ticket1962</a></li>
+<li> The geometry of <a href="Networks/Further_Outputs.html#OpenDRIVE_Road_Networks" title="Networks/Further Outputs">OpenDRIVE networks</a> is now exported with parameterized curves according to specification version 1.4. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2041">ticket2041</a></li>
+<li> Elevation data is now <a href="Networks/Import/OpenDRIVE.html" title="Networks/Import/OpenDRIVE">imported from OpenDRIVE</a> and <a href="Networks/Further_Outputs.html#OpenDRIVE_Road_Networks" title="Networks/Further Outputs">exported to OpenDRIVE</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2239">ticket2239</a>,<a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2240">ticket2240</a></li>
+<li> Added new option <span style="color: #111144; font-weight: bold; white-space: pre;">--default.disallow <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;STRING&gt;</i></a>,...</span> for simplifying specification of <a href="Simulation/VehiclePermissions.html#Network_definition" title="Simulation/VehiclePermissions">vehicle permissions</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2557">ticket2557</a></li>
+<li> When converting an OSM network to <a href="Networks/Export.html" title="Networks/Export">writingDlrNavteq or Amitran format</a>, functional road class is now based on OSM highway types. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2602">ticket2602</a></li></ul></li></ul>
+<ul><li> DFROUTER
+<ul><li> Vehicle types are now included in the <a href="Demand/Routes_from_Observation_Points.html#Saving_Flows_and_other_Values" title="Demand/Routes from Observation Points">emitters-output</a> by default. The new option <span style="color: #111144; font-weight: bold; white-space: pre;">--vtype-output <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;FILE&gt;</i></a></span> allows redirection the vTypes into a separate file.</li>
+<li> If the average measured speeds are systematically above the speed limit of the respective roads, the written vTypes use attribute <a href="Definition_of_Vehicles,_Vehicle_Types,_and_Routes.html#Speed_Distributions" title="Definition of Vehicles, Vehicle Types, and Routes">speedFactor</a> to reflect systematic speeding.</li>
+<li> Added new option <span style="color: #111144; font-weight: bold; white-space: pre;">--speeddev <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;FLOAT&gt;</i></a></span> to set a <a href="Definition_of_Vehicles,_Vehicle_Types,_and_Routes.html#Speed_Distributions" title="Definition of Vehicles, Vehicle Types, and Routes">speed deviation</a> for the generate vTypes</li></ul></li></ul>
+<ul><li> TraCI
+<ul><li> Added new convenience function <i>traci.start</i> that automatically selects a port, starts sumo on that port and connects. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2236">ticket2236</a></li>
+<li> Added new get/set command <i>height (0xbc)</i> to retrieve and modify vehicle height (applicable to vehicles and vehicle types). <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2573">ticket2573</a></li>
+<li> When adapting edge travel times and efforts, the (optional) parameters <i>begin</i> and <i>end</i> are now supported by the <a href="TraCI/Interfacing_TraCI_from_Python.html" title="TraCI/Interfacing TraCI from Python">python client</a> and the <a href="TraCI/C%2B%2BTraCIAPI.html" title="TraCI/C++TraCIAPI">C++ client</a>. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2584">ticket2584</a></li></ul></li></ul>
+<ul><li> Tools
+<ul><li> The tool <a href="Tools/Routes.html#route_departOffset" title="Tools/Routes">route_departOffset.py</a> (previously undocumented) now supports additional options for departure time modification based on departure edge and for shifting departures within one time interval to another interval. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2568">ticket2568</a></li>
+<li> <a href="Tools/Trip.html" title="Tools/Trip">randomTrips.py</a> supports the new alias <span style="color: #111144; font-weight: bold; white-space: pre;">--edge-permission</span> for former option <span style="color: #111144; font-weight: bold; white-space: pre;">--vclass</span>.</li></ul></li></ul>
+<h3><span class="mw-headline" id="Other_3">Other</span></h3>
+<ul><li> Documentation
+<ul><li> Added Tutorial for using <a href="Tutorials/OSMWebWizard.html" title="Tutorials/OSMWebWizard">the OSM-Web-Wizard</a>.</li>
+<li> More details on <a href="Simulation/VehicleInsertion.html" title="Simulation/VehicleInsertion">loading and inserting vehicles</a></li>
+<li> Added new overview page on <a href="Simulation/VehiclePermissions.html" title="Simulation/VehiclePermissions">vehicle permissions</a></li>
+<li> The <a href="NETEDIT.html" title="NETEDIT">NETEDIT</a> documentation on old and novel features has been expanded.</li>
+<li> The tool <a href="Tools/Routes.html#showDepartsAndArrivalsPerEdge" title="Tools/Routes">showDepartsAndArrivalsPerEdge.py</a> is now documented. It allows edge-coloring in <a href="SUMO-GUI.html" title="SUMO-GUI">SUMO-GUI</a> according to traffic statistics <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2263">ticket2263</a></li></ul></li></ul>
+<ul><li> TraCI
+<ul><li> TraCI version is now 13</li></ul></li></ul>
+<ul><li> Miscellaneous
+<ul><li> The full 24h-dataset for the <a href="Data/Scenarios/TAPASCologne.html" title="Data/Scenarios/TAPASCologne">TAPASCologne</a> scenario is now available</li>
+<li> The deprecated option <span style="color: #111144; font-weight: bold; white-space: pre;">--lanechange.allow-swap</span> is no longer supported. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2116">ticket2116</a></li>
+<li> The <span class="inlxml">laneChangeModel="JE2013"</span> has been removed due to strong similarity with <i>LC2013</i>. Using the model is deprecated and now defaults to <i>LC2013</i></li>
+<li> <a href="Contributed/SUMOPy.html" title="Contributed/SUMOPy">SUMOPy</a> has been added to the SUMO repository and to the relase. Many thanks to Joerg Schweizer.</li>
+<li> The libraries for the Windows build and release were updated to Fox 1.6.52 and Xerces-C 3.1.4 (with an additional fix for <a rel="nofollow" class="external text" href="https://issues.apache.org/jira/browse/XERCESC-2052">XERCESC-2052</a>)</li></ul></li></ul>
+<h2><span class="mw-headline" id="Version_0.27.1_.2827.07.2016.29">Version 0.27.1 (27.07.2016)</span></h2>
+<h3><span class="mw-headline" id="Bugfixes_4">Bugfixes</span></h3>
+<ul><li> NETCONVERT
+<ul><li> Original IDs are no longer lost when splitting edges. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2497">ticket2497</a></li>
+<li> Elevation data is now correctly imported from OpenDRIVE networks. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2239">ticket2239</a></li></ul></li></ul>
+<ul><li> NETEDIT
+<ul><li> Fixed crash when increasing the number of lanes by setting numLanes. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2505">ticket2505</a></li>
+<li> Fixed slow loading of large networks.</li>
+<li> Custom colors for selected junctions and edges are now working. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2386">ticket2386</a></li></ul></li></ul>
+<ul><li> DUAROUTER
+<ul><li> Fixed crash when using option <span style="color: #111144; font-weight: bold; white-space: pre;">--ignore-error</span> with invalid <span class="inlxml">via</span>-edges. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2494">ticket2494</a></li></ul></li></ul>
+<h3><span class="mw-headline" id="Enhancements_4">Enhancements</span></h3>
+<ul><li> Simulation
+<ul><li> Added new option <span style="color: #111144; font-weight: bold; white-space: pre;">save-state.period <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;TIME&gt;</i></a></span> to save simulation state periodically. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2441">ticket2441</a></li>
+<li> Added new option <span style="color: #111144; font-weight: bold; white-space: pre;">save-state.suffix <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;STRING&gt;</i></a></span> to determine the suffix of saved state files. The default is <i>.sbx</i> which saves in a binary format. Alternatively, <i>.xml</i> may be used which makes the state files human-readable. </li></ul></li></ul>
+<ul><li> NETCONVERT
+<ul><li> Networks exported to OpenDRIVE now use parametric curves to represent smooth geometry in place of straight-line segments. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2041">ticket2041</a></li>
+<li> Networks exported to OpenDRIVE now contain elevation data. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2240">ticket2240</a></li>
+<li> Parametric curves as specified in OpenDRIVE version 1.4 can now be imported. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2478">ticket2478</a></li>
+<li> Revised default OpenDRIVE typemap. Now imports additional lane types such as tram and rail. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2492">ticket2492</a></li>
+<li> Added new option <span style="color: #111144; font-weight: bold; white-space: pre;">osm.layer-elevation <a href="Basics/Notation.html#Referenced_Data_Types" title="Basics/Notation"><i>&lt;FLOAT&gt;</i></a></span> to import implicit elevation data from <a href="Networks/Import/OpenStreetMap.html#Layer_Information" title="Networks/Import/OpenStreetMap">OSM-layering information</a>.</li>
+<li> Networks imported from OpenDRIVE now contain edge type information based on the OpenDRIVE lane types. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2509">ticket2509</a></li></ul></li></ul>
+<ul><li> SUMO-GUI
+<ul><li> Added Visualization options for drawing intersections with exaggerated size and disable edge drawing based on custom widths. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2140">ticket2140</a></li>
+<li> Added Visualization option for indicating the driving direction of lanes. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2180">ticket2180</a></li>
+<li> Added Visualization option for drawing <a href="Simulation/SublaneModel.html" title="Simulation/SublaneModel">sublane boundaries</a></li>
+<li> Lanes can now be colored according to the number of vehicles that are delayed from entering the network. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2489">ticket2489</a></li></ul></li></ul>
+<ul><li> NETEDIT
+<ul><li> Added Visualization options for drawing intersections with exaggerated size and disable edge drawing based on custom widths. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2140">ticket2140</a></li>
+<li> Added Visualization option for indicating the driving direction of lanes. <a rel="nofollow" class="external text" href="http://sumo.dlr.de/trac.wsgi/ticket/2180">ticket2180</a></li></ul></li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Older_Versions">Older Versions</span></h2>
+<h3><span class="mw-headline" id="0.27.x">0.27.x</span></h3>
+<ul><li> <a href="Z/Changes_from_Version_0.26.0_to_Version_0.27.0.html" title="Z/Changes from Version 0.26.0 to Version 0.27.0">z/Changes from Version 0.26.0 to Version 0.27.0</a></li></ul>
+<h3><span class="mw-headline" id="0.26.x">0.26.x</span></h3>
+<ul><li> <a href="Z/Changes_from_Version_0.25.0_to_Version_0.26.0.html" title="Z/Changes from Version 0.25.0 to Version 0.26.0">z/Changes from Version 0.25.0 to Version 0.26.0</a></li></ul>
+<h3><span class="mw-headline" id="0.25.x">0.25.x</span></h3>
+<ul><li> <a href="Z/Changes_from_Version_0.24.0_to_Version_0.25.0.html" title="Z/Changes from Version 0.24.0 to Version 0.25.0">z/Changes from Version 0.24.0 to Version 0.25.0</a></li></ul>
+<h3><span class="mw-headline" id="0.24.x">0.24.x</span></h3>
+<ul><li> <a href="Z/Changes_from_Version_0.23.0_to_Version_0.24.0.html" title="Z/Changes from Version 0.23.0 to Version 0.24.0">z/Changes from Version 0.23.0 to Version 0.24.0</a></li></ul>
+<h3><span class="mw-headline" id="0.23.x">0.23.x</span></h3>
+<ul><li> <a href="Z/Changes_from_Version_0.22.0_to_Version_0.23.0.html" title="Z/Changes from Version 0.22.0 to Version 0.23.0">z/Changes from Version 0.22.0 to Version 0.23.0</a></li></ul>
+<h3><span class="mw-headline" id="0.22.x">0.22.x</span></h3>
+<ul><li> <a href="Z/Changes_from_Version_0.21.0_to_Version_0.22.0.html" title="Z/Changes from Version 0.21.0 to Version 0.22.0">z/Changes from Version 0.21.0 to Version 0.22.0</a></li></ul>
+<h3><span class="mw-headline" id="0.21.x">0.21.x</span></h3>
+<ul><li> <a href="Z/Changes_from_Version_0.20.0_to_Version_0.21.0.html" title="Z/Changes from Version 0.20.0 to Version 0.21.0">z/Changes from Version 0.20.0 to Version 0.21.0</a></li></ul>
+<h3><span class="mw-headline" id="0.20.x">0.20.x</span></h3>
+<ul><li> <a href="Z/Changes_from_Version_0.19.0_to_Version_0.20.0.html" title="Z/Changes from Version 0.19.0 to Version 0.20.0">z/Changes from Version 0.19.0 to Version 0.20.0</a></li></ul>
+<h3><span class="mw-headline" id="0.19.x">0.19.x</span></h3>
+<ul><li> <a href="Z/Changes_from_Version_0.18.0_to_Version_0.19.0.html" title="Z/Changes from Version 0.18.0 to Version 0.19.0">z/Changes from Version 0.18.0 to Version 0.19.0</a></li></ul>
+<h3><span class="mw-headline" id="0.18.x">0.18.x</span></h3>
+<ul><li> <a href="Z/Changes_from_Version_0.17.1_to_Version_0.18.0.html" title="Z/Changes from Version 0.17.1 to Version 0.18.0">z/Changes from Version 0.17.1 to Version 0.18.0</a></li></ul>
+<h3><span class="mw-headline" id="0.17.x">0.17.x</span></h3>
+<ul><li> <a href="Z/Changes_from_Version_0.17.0_to_Version_0.17.1.html" title="Z/Changes from Version 0.17.0 to Version 0.17.1">z/Changes from Version 0.17.0 to Version 0.17.1</a></li>
+<li> <a href="Z/Changes_from_Version_0.16.0_to_Version_0.17.0.html" title="Z/Changes from Version 0.16.0 to Version 0.17.0">z/Changes from Version 0.16.0 to Version 0.17.0</a></li></ul>
+<h3><span class="mw-headline" id="0.16.x">0.16.x</span></h3>
+<ul><li> <a href="Z/Changes_from_Version_0.15.0_to_Version_0.16.0.html" title="Z/Changes from Version 0.15.0 to Version 0.16.0">z/Changes from Version 0.15.0 to Version 0.16.0</a></li></ul>
+<h3><span class="mw-headline" id="0.15.x">0.15.x</span></h3>
+<ul><li> <a href="Z/Changes_from_Version_0.14.0_to_Version_0.15.0.html" title="Z/Changes from Version 0.14.0 to Version 0.15.0">z/Changes from Version 0.14.0 to Version 0.15.0</a></li></ul>
+<h3><span class="mw-headline" id="0.14.x">0.14.x</span></h3>
+<ul><li> <a href="Z/Changes_from_Version_0.13.1_to_Version_0.14.0.html" title="Z/Changes from Version 0.13.1 to Version 0.14.0">z/Changes from Version 0.13.1 to Version 0.14.0</a></li></ul>
+<h3><span class="mw-headline" id="0.13.x">0.13.x</span></h3>
+<ul><li> <a href="Z/Changes_from_Version_0.13.0_to_Version_0.13.1.html" title="Z/Changes from Version 0.13.0 to Version 0.13.1">z/Changes from Version 0.13.0 to Version 0.13.1</a></li>
+<li> <a href="Z/Changes_from_Version_0.12.3_to_Version_0.13.0.html" title="Z/Changes from Version 0.12.3 to Version 0.13.0">z/Changes from Version 0.12.3 to Version 0.13.0</a></li></ul>
+<h3><span class="mw-headline" id="0.12.x">0.12.x</span></h3>
+<ul><li> <a href="Z/Changes_from_Version_0.12.2_to_Version_0.12.3.html" title="Z/Changes from Version 0.12.2 to Version 0.12.3">z/Changes from Version 0.12.2 to Version 0.12.3</a></li>
+<li> <a href="Z/Changes_from_Version_0.12.1_to_Version_0.12.2.html" title="Z/Changes from Version 0.12.1 to Version 0.12.2">z/Changes from Version 0.12.1 to Version 0.12.2</a></li>
+<li> <a href="Z/Changes_from_Version_0.12.0_to_Version_0.12.1.html" title="Z/Changes from Version 0.12.0 to Version 0.12.1">z/Changes from Version 0.12.0 to Version 0.12.1</a></li>
+<li> <a href="Z/Changes_from_Version_0.11.1_to_Version_0.12.0.html" title="Z/Changes from Version 0.11.1 to Version 0.12.0">z/Changes from Version 0.11.1 to Version 0.12.0</a></li></ul>
+<h3><span class="mw-headline" id="0.11.x">0.11.x</span></h3>
+<ul><li> <a href="Z/Changes_from_Version_0.11.0_to_Version_0.11.1.html" title="Z/Changes from Version 0.11.0 to Version 0.11.1">z/Changes from Version 0.11.0 to Version 0.11.1</a></li>
+<li> <a href="Z/Changes_from_Version_0.10.3_to_Version_0.11.0.html" title="Z/Changes from Version 0.10.3 to Version 0.11.0">z/Changes from Version 0.10.3 to Version 0.11.0</a></li></ul>
+<h3><span class="mw-headline" id="0.10.x">0.10.x</span></h3>
+<ul><li> <a href="Z/Changes_from_Version_0.10.2_to_Version_0.10.3.html" title="Z/Changes from Version 0.10.2 to Version 0.10.3">z/Changes from Version 0.10.2 to Version 0.10.3</a></li>
+<li> <a href="Z/Changes_from_Version_0.10.1_to_Version_0.10.2.html" title="Z/Changes from Version 0.10.1 to Version 0.10.2">z/Changes from Version 0.10.1 to Version 0.10.2</a></li>
+<li> <a href="Z/Changes_from_Version_0.10.0_to_Version_0.10.1.html" title="Z/Changes from Version 0.10.0 to Version 0.10.1">z/Changes from Version 0.10.0 to Version 0.10.1</a></li>
+<li> <a href="Z/Changes_from_Version_0.9.10_to_Version_0.10.0.html" title="Z/Changes from Version 0.9.10 to Version 0.10.0">z/Changes from Version 0.9.10 to Version 0.10.0</a></li></ul>
+<h3><span class="mw-headline" id="0.9.x">0.9.x</span></h3>
+<ul><li> <a href="Z/Changes_from_version_0.9.9_to_version_0.9.10.html" title="Z/Changes from version 0.9.9 to version 0.9.10">z/Changes from version 0.9.9 to version 0.9.10</a></li>
+<li> <a href="Z/Changes_from_version_0.9.8_to_version_0.9.9.html" title="Z/Changes from version 0.9.8 to version 0.9.9">z/Changes from version 0.9.8 to version 0.9.9</a></li>
+<li> <a href="Z/Changes_from_version_0.9.7_to_version_0.9.8.html" title="Z/Changes from version 0.9.7 to version 0.9.8">z/Changes from version 0.9.7 to version 0.9.8</a></li>
+<li> <a href="Z/Changes_from_version_0.9.6_to_version_0.9.7.html" title="Z/Changes from version 0.9.6 to version 0.9.7">z/Changes from version 0.9.6 to version 0.9.7</a></li>
+<li> <a href="Z/Changes_from_version_0.9.5_to_version_0.9.6.html" title="Z/Changes from version 0.9.5 to version 0.9.6">z/Changes from version 0.9.5 to version 0.9.6</a></li>
+<li> <a href="Z/Changes_from_version_0.9.3_to_version_0.9.4.html" title="Z/Changes from version 0.9.3 to version 0.9.4">z/Changes from version 0.9.3 to version 0.9.4</a></li>
+<li> <a href="Z/Changes_from_version_0.9.2_to_version_0.9.3.html" title="Z/Changes from version 0.9.2 to version 0.9.3">z/Changes from version 0.9.2 to version 0.9.3</a></li>
+<li> <a href="Z/Changes_from_version_0.9.1_to_version_0.9.2.html" title="Z/Changes from version 0.9.1 to version 0.9.2">z/Changes from version 0.9.1 to version 0.9.2</a></li>
+<li> <a href="Z/Changes_from_version_0.9.0_to_version_0.9.1.html" title="Z/Changes from version 0.9.0 to version 0.9.1">z/Changes from version 0.9.0 to version 0.9.1</a></li>
+<li> <a href="Z/Changes_from_version_0.8.x_to_version_0.9.0.html" title="Z/Changes from version 0.8.x to version 0.9.0">z/Changes from version 0.8.x to version 0.9.0</a></li></ul>
+<h3><span class="mw-headline" id="0.8.x">0.8.x</span></h3>
+<ul><li> <a href="Z/Changes_from_version_0.8.2.2_to_version_0.8.3.html" title="Z/Changes from version 0.8.2.2 to version 0.8.3">z/Changes from version 0.8.2.2 to version 0.8.3</a></li>
+<li> <a href="Z/Changes_from_version_0.8.2.1_to_version_0.8.2.2.html" title="Z/Changes from version 0.8.2.1 to version 0.8.2.2">z/Changes from version 0.8.2.1 to version 0.8.2.2</a></li>
+<li> <a href="Z/Changes_from_version_0.8.0.2_to_version_0.8.2.1.html" title="Z/Changes from version 0.8.0.2 to version 0.8.2.1">z/Changes from version 0.8.0.2 to version 0.8.2.1</a></li>
+<li> <a href="Z/Changes_from_version_0.8.0.1_to_version_0.8.0.2.html" title="Z/Changes from version 0.8.0.1 to version 0.8.0.2">z/Changes from version 0.8.0.1 to version 0.8.0.2</a></li>
+<li> <a href="Z/Changes_from_version_0.8.0_to_version_0.8.0.1.html" title="Z/Changes from version 0.8.0 to version 0.8.0.1">z/Changes from version 0.8.0 to version 0.8.0.1</a></li></ul>
+<h3><span class="mw-headline" id="pre_0.8.x">pre 0.8.x</span></h3>
+<ul><li> <a href="Z/Changes_from_version_0.7.0_to_version_pre0.8.html" title="Z/Changes from version 0.7.0 to version pre0.8">z/Changes from version 0.7.0 to version pre0.8</a></li></ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.592 seconds
+Real time usage: 0.603 seconds
+Preprocessor visited node count: 2292/1000000
+Preprocessor generated node count: 6088/1000000
+Post‐expand include size: 22817/2097152 bytes
+Template argument size: 5485/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  265.547      1 - -total
+ 31.37%   83.310    207 - Template:Ticket
+ 22.09%   58.663     71 - Template:Option
+  3.22%    8.555     21 - Template:XML
+  1.43%    3.808     12 - Template:DT_INT
+  1.36%    3.624     10 - Template:DT_FLOAT
+  1.17%    3.096      5 - Template:DT_BOOL
+  1.15%    3.066      6 - Template:DT_TIME
+  1.09%    2.905      3 - Template:DT_STR
+  1.02%    2.703      1 - Template:AdditionalFile
+-->
+
+<!-- Saved in parser cache with key sumoSimWiki:pcache:idhash:10-0!*!0!!en!*!* and timestamp 20170501201022 and revision id 9448
+ -->
+</div>									</div><hr/><div id="lastmod">This page was last modified on 1 May 2017, at 22:10.</div> </div>
+
+    <div id="footer">
+      <div>
+        (c) 2011-2013, German Aerospace Center, Institute of
+        Transportation Systems
+      </div>
+
+      <div>
+        Layout based on <a href=
+        "http://www.oswd.org/design/preview/id/3365">"Three
+        Quarters"</a> by "SimplyGold"
+      </div>
+    </div>
+  </div>
+</body>
+</html>

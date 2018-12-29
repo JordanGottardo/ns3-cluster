@@ -1,0 +1,35 @@
+<map id="NBLoadedSUMOTLDef.cpp" name="NBLoadedSUMOTLDef.cpp">
+<area shape="rect" id="node2" href="$db/d16/config_8h.html" title="config.h" alt="" coords="2126,781,2194,808"/>
+<area shape="rect" id="node7" href="$d4/df7/_msg_handler_8h.html" title="utils/common/MsgHandler.h" alt="" coords="1326,632,1514,659"/>
+<area shape="rect" id="node10" href="$d8/d08/_to_string_8h.html" title="utils/common/ToString.h" alt="" coords="758,229,925,256"/>
+<area shape="rect" id="node27" href="$d3/d5c/_options_cont_8h.html" title="utils/options/OptionsCont.h" alt="" coords="4693,557,4872,584"/>
+<area shape="rect" id="node30" href="$d6/d5d/_n_b_traffic_light_logic_8h.html" title="NBTrafficLightLogic.h" alt="" coords="4209,155,4359,181"/>
+<area shape="rect" id="node42" href="$d1/df8/_n_b_own_t_l_def_8h.html" title="NBOwnTLDef.h" alt="" coords="2891,80,3005,107"/>
+<area shape="rect" id="node43" href="$dc/da1/_n_b_traffic_light_definition_8h.html" title="NBTrafficLightDefinition.h" alt="" coords="3448,155,3619,181"/>
+<area shape="rect" id="node45" href="$d4/da0/_n_b_node_8h.html" title="NBNode.h" alt="" coords="2300,155,2383,181"/>
+<area shape="rect" id="node49" href="$d5/d19/_n_b_loaded_s_u_m_o_t_l_def_8h.html" title="NBLoadedSUMOTLDef.h" alt="" coords="4450,80,4625,107"/>
+<area shape="rect" id="node14" href="$d6/d7a/_s_u_m_o_x_m_l_definitions_8h.html" title="utils/xml/SUMOXMLDefinitions.h" alt="" coords="2378,557,2590,584"/>
+<area shape="rect" id="node18" href="$d2/d6d/_s_u_m_o_vehicle_class_8h.html" title="utils/common/SUMOVehicle\lClass.h" alt="" coords="2607,468,2796,509"/>
+<area shape="rect" id="node20" href="$de/d1a/_named_8h.html" title="utils/common/Named.h" alt="" coords="1691,475,1850,502"/>
+<area shape="rect" id="node21" href="$d7/d8d/_distribution___parameterized_8h.html" title="utils/distribution\l/Distribution_Parameterized.h" alt="" coords="485,304,683,345"/>
+<area shape="rect" id="node24" href="$d4/d51/_position_8h.html" title="utils/geom/Position.h" alt="" coords="669,475,816,502"/>
+<area shape="rect" id="node26" href="$da/dbd/_std_defs_8h.html" title="StdDefs.h" alt="" coords="1640,393,1720,420"/>
+<area shape="rect" id="node15" href="$d6/d11/_string_bijection_8h.html" title="utils/common/StringBijection.h" alt="" coords="2517,632,2717,659"/>
+<area shape="rect" id="node17" href="$d7/db4/_util_exceptions_8h.html" title="utils/common/UtilExceptions.h" alt="" coords="3735,707,3934,733"/>
+<area shape="rect" id="node22" href="$d6/d68/_rand_helper_8h.html" title="utils/common/RandHelper.h" alt="" coords="195,393,381,420"/>
+<area shape="rect" id="node23" href="$d2/d7a/_distribution_8h.html" title="Distribution.h" alt="" coords="507,393,605,420"/>
+<area shape="rect" id="node28" href="$da/d39/_option_8h.html" title="Option.h" alt="" coords="4795,632,4866,659"/>
+<area shape="rect" id="node33" href="$d4/d25/_n_b_connection_defs_8h.html" title="NBConnectionDefs.h" alt="" coords="3299,229,3445,256"/>
+<area shape="rect" id="node36" href="$d9/d33/_parameterised_8h.html" title="utils/common/Parameterised.h" alt="" coords="4211,632,4415,659"/>
+<area shape="rect" id="node41" href="$d4/d64/_s_u_m_o_time_8h.html" title="utils/common/SUMOTime.h" alt="" coords="4241,475,4428,502"/>
+<area shape="rect" id="node34" href="$dd/d75/_n_b_connection_8h.html" title="NBConnection.h" alt="" coords="3438,311,3557,338"/>
+<area shape="rect" id="node35" href="$d8/d0b/_n_b_edge_8h.html" title="NBEdge.h" alt="" coords="2404,393,2487,420"/>
+<area shape="rect" id="node37" href="$d0/d40/_vector_helper_8h.html" title="utils/common/VectorHelper.h" alt="" coords="1926,475,2119,502"/>
+<area shape="rect" id="node38" href="$de/dc6/_bresenham_8h.html" title="utils/geom/Bresenham.h" alt="" coords="1297,475,1463,502"/>
+<area shape="rect" id="node39" href="$d3/d43/_position_vector_8h.html" title="utils/geom/PositionVector.h" alt="" coords="2143,475,2329,502"/>
+<area shape="rect" id="node40" href="$db/dde/_n_b_cont_8h.html" title="NBCont.h" alt="" coords="2821,475,2899,502"/>
+<area shape="rect" id="node44" href="$dd/d0a/_n_b_link_possibility_matrix_8h.html" title="NBLinkPossibilityMatrix.h" alt="" coords="3571,229,3741,256"/>
+<area shape="rect" id="node47" href="$d5/df0/_geom_helper_8h.html" title="utils/geom/GeomHelper.h" alt="" coords="985,393,1159,420"/>
+<area shape="rect" id="node48" href="$da/d7b/_n_b_cont_helper_8h.html" title="NBContHelper.h" alt="" coords="1468,311,1585,338"/>
+<area shape="rect" id="node50" href="$d7/db4/_n_b_edge_cont_8h.html" title="NBEdgeCont.h" alt="" coords="4662,393,4773,420"/>
+</map>

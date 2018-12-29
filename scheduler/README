@@ -1,0 +1,6 @@
+Per impostare un cron job da cli: crontab -e
+Si fa il copy paste della seguente riga:
+*/1 * * * * /home/abujari/ns-3.25/ns-3.25/scheduler/scheduler.sh 1>> /home/abujari/ns-3.25/ns-3.25/scheduler/schedule.out 2>> /home/abujari/ns-3.25/ns-3.25/scheduler/schedule.err
+
+La riga sopra fa scheduling ogni minuto del script scheduler.sh (dir assoluta) e ri-direziona I/O nei file (path assoluti)
+Il script scheduler.sh e' da modificare opportunamente in e.g., numero max. job coda, path, env_var etc. 

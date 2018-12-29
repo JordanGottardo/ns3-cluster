@@ -1,7 +1,0 @@
-<map id="MSJunction" name="MSJunction">
-<area shape="rect" id="node3" href="$dd/df2/class_m_s_logic_junction.html" title="{MSLogicJunction\n|# myIncomingLanes\l# myInternalLanes\l|+ getInternalLanes()\l+ postloadInit()\l+ ~MSLogicJunction()\l# MSLogicJunction()\l&#45; MSLogicJunction()\l&#45; operator=()\l}" alt="" coords="113,667,265,832"/>
-<area shape="rect" id="node6" href="$de/dab/class_m_s_no_logic_junction.html" title="{MSNoLogicJunction\n|&#45; myIncomingLanes\l&#45; myInternalLanes\l|+ getInternalLanes()\l+ MSNoLogicJunction()\l+ postloadInit()\l+ ~MSNoLogicJunction()\l&#45; MSNoLogicJunction()\l&#45; operator=()\l}" alt="" coords="290,667,459,832"/>
-<area shape="rect" id="node2" href="$d5/dbf/class_named.html" title="Base class for objects which have an id. " alt="" coords="223,5,340,156"/>
-<area shape="rect" id="node4" href="$d1/dfb/class_m_s_internal_junction.html" title="{MSInternalJunction\n|&#45; myInternalLaneFoes\l&#45; myInternalLinkFoes\l|+ getFoeInternalLanes()\l+ getFoeLinks()\l+ MSInternalJunction()\l+ postloadInit()\l+ ~MSInternalJunction()\l&#45; MSInternalJunction()\l&#45; operator=()\l}" alt="" coords="5,895,171,1075"/>
-<area shape="rect" id="node5" href="$d3/dcd/class_m_s_right_of_way_junction.html" title="A junction with right&#45;of&#45;way &#45; rules. " alt="" coords="195,880,386,1089"/>
-</map>

@@ -78,8 +78,8 @@ def runScenario(scenario, distance):
 	for b in buildings:
 		for txRange in txRanges:
 			for protocol in protocols:
-				command = "NS_GLOBAL_VALUE=\"RngRun=2\" ./waf --run 'vanet-urban --buildings={0} --actualRange={1} --protocol={2} --flooding=0 --area=1000 --nnodes={3} --mapBasePath={4}'".format(b, txRange, protocol, numNodes, mapPathWithoutExtension)
-				newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) +  "-b" + b + "-" + protocolsMap[protocol] + "-" + txRange + "-"
+				command = "NS_GLOBAL_VALUE=\"RngRun=2\" ./waf --run 'vanet-urban --buildings={0} --actualRange={1} --protocol={2} --flooding=0 --area=1000 --mapBasePath={3}'".format(b, txRange, protocol, mapPathWithoutExtension)
+				newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) +  "-b" + b + "-" + protocolsMap[protocol] + "-" + txRange
 				newJobFilename = newJobName + ".job"
 				newJobPath = os.path.join(jobsPath, newJobFilename)
 				#print(command)
