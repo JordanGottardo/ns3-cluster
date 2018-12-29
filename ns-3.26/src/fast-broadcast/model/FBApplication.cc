@@ -301,9 +301,9 @@ FBApplication::ReceivePacket (Ptr<Socket> socket)
 	 	double distanceSenderToCurrent = ns3::CalculateDistance(senderPosition, currentPosition);
 		uint32_t distanceSenderToCurrent_uint = std::floor (distanceSenderToCurrent);
 
-		if (distanceSenderToCurrent_uint > m_actualRange) {
-			cout << "Packet received by node " << node->GetId () << ", distance = "<< distanceSenderToCurrent << endl;
-		}
+//		if (distanceSenderToCurrent_uint > m_actualRange) {
+//			cout << "Packet received by node " << node->GetId () << ", distance = "<< distanceSenderToCurrent << endl;
+//		}
 		// If the node is in range I can read the packet
 		// uint32_t estimatedRange = fbNode->GetCMBR ();
 		// if (distanceSenderToCurrent_uint <= estimatedRange)

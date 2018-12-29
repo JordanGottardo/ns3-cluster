@@ -645,9 +645,8 @@ FBVanetExperiment::SetupAdhocDevices ()
 	wifiPhy.SetChannel (wifiChannel.Create ());
 	wifiPhy.SetPcapDataLinkType (YansWifiPhyHelper::DLT_IEEE802_11);
 
-	// Set Tx Power TODO add power for 100
 	if (m_actualRange == 100)
-		m_txp = 4.6;
+		m_txp = -7.0;
 	else if (m_actualRange == 300)
 		m_txp = 4.6;
 	else if (m_actualRange == 500)
@@ -659,6 +658,7 @@ FBVanetExperiment::SetupAdhocDevices ()
 																"ControlMode",StringValue (m_phyMode));
 	wifiPhy.Set ("TxPowerStart",DoubleValue (m_txp));
 	wifiPhy.Set ("TxPowerEnd", DoubleValue (m_txp));
+
 	// wifiPhy.Set ("EnergyDetectionThreshold", DoubleValue ());
 	wifiMac.SetType ("ns3::AdhocWifiMac");
 
@@ -796,7 +796,7 @@ FBVanetExperiment::SetupScenario ()
 	m_traceFile = m_mapBasePath + ".ns2mobility.xml";
 	m_nNodes = CalculateNumNodes();
 	m_startingNode = rand() % m_nNodes;
-	cout << "numNodes = " << m_nNodes;
+	cout << "numNodes = " << m_nNodes << endl;
 	cout << "startingNode = " << m_startingNode << endl;
 //
 //	if (m_scenario == 0)
@@ -845,7 +845,6 @@ FBVanetExperiment::CalculateNumNodes() const {
 	if (!ns2mobilityTraceFile.is_open()) {
 		NS_LOG_ERROR("Could not open ns2MobilityTraceFile");
 	}
-	cout << "ns2File = " << m_traceFile << endl;
 	string line;
 	unsigned int numNodes = 0;
 	while(getline(ns2mobilityTraceFile, line)) {
@@ -856,7 +855,6 @@ FBVanetExperiment::CalculateNumNodes() const {
 			unsigned int openParensPos = str.find_first_of("(");
 			unsigned int closeParensPos = str.find_first_of(")");
 			unsigned int numNodeCandidate = stoi(str.substr(openParensPos + 1, closeParensPos - openParensPos - 1));
-			cout << numNodeCandidate << endl;
 			if (numNodeCandidate > numNodes) {
 				numNodes = numNodeCandidate;
 			}
@@ -942,7 +940,7 @@ void runExperiment(int argc, char *argv[], unsigned int minId, unsigned int maxI
 
 int main (int argc, char *argv[])
 {
-    cout << "Start main urban";
+    cout << "Start main urban" << endl;
 	NS_LOG_UNCOND ("FB Vanet Experiment URBAN");
 	unsigned int maxRun = RngSeedManager::GetRun();
 

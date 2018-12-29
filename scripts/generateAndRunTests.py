@@ -27,7 +27,6 @@ def runScenario(scenario, distance):
 	buildings = ["0", "1"]
 	protocols = ["1", "2", "3", "4"]
 	txRanges = ["100", "300", "500"]
-	finalLetters = string.ascii_lowercase
 	protocolsMap = {
 		"1": "fb",
 		"2": "st100",
@@ -117,9 +116,9 @@ def runScenario(scenario, distance):
 def main():
 	#Edit these to launch automatically 
 	#scenarios = ["Padova", "LA"]
-	#distances = ["15", "25", "35", "45"]
-	scenarios = ["Padova"]
-	distances = ["25"]
+	distances = ["15", "25", "35", "45"]
+	scenarios = ["LA"]
+	#distances = ["25"]
 	
 	if (len(sys.argv) < 3):
 		for scenario in scenarios:
