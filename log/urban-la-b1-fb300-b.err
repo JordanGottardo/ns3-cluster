@@ -1,0 +1,18 @@
+FB Vanet Experiment URBAN
+run id = 
+1
+run id = 
+2
+run id = 
+3
+run id = 
+4
+run id = 
+5
+run id = 
+6
+run id = 
+7
+run id = 
+8
+Command ['/home/jgottard/ns-3/ns-3.26/build/scratch/vanet-urban/vanet-urban', '--buildings=1', '--actualRange=300', '--scenario=2', '--protocol=1', '--flooding=0', '--area=1000'] terminated with signal SIGBUS. Run it under a debugger to get more information (./waf --run <program> --command-template="gdb --args %s <args>").
