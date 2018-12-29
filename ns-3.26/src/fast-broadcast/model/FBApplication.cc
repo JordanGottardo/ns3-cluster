@@ -582,7 +582,7 @@ FBApplication::PrintStats (std::stringstream &dataStream)
 			<< (nums_sum / (double) circ) << ","
 			<< (slots_sum / (double) circ) << ","
 			<< m_sent << ","
-			<< m_received <<",";
+			<< m_received;
 //	NS_LOG_UNCOND("aoi = " << m_aoi << "aoi error " << m_aoi_error);
 }
 

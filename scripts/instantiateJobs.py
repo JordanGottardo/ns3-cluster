@@ -1,20 +1,27 @@
 #!/usr/bin/python
 
 # Invocation: 
-#	./instantiateJobs.py
+#	./instantiateJobs.py 30
+# if you want 30 jobs, otherwise
+#	./instantiateJobs.py 
+# which defaults to 30
 
 import sys, os
 import string
 import shutil
 
 def main():
+	if (len(sys.argv) > 1):
+		jobsNumber = sys.argv[1]
+	else:
+		jobsNumber = 30
 	thisScriptPath = os.path.realpath(__file__)
 	thisScriptParentPath = os.path.dirname(thisScriptPath)
 	jobsTemplatePath = os.path.join(os.path.dirname(thisScriptParentPath), "jobsTemplate")
 	jobsToSchedulePath = os.path.join(os.path.dirname(thisScriptParentPath), "scheduler/jobsToSchedule")
 
 	for fileName in os.listdir(jobsTemplatePath):
-		for i in range(0, 1):
+		for i in range(0, jobsNumber):
 			jobTemplateCompletePath = os.path.join(jobsTemplatePath, fileName)
 			jobCompletePath = os.path.join(jobsToSchedulePath, fileName)
 			shutil.copy(jobTemplateCompletePath, jobsToSchedulePath)
@@ -24,9 +31,7 @@ def main():
 			f.write(s)
 			f.close()
 			lastDashPos = fileName.rfind("-")
-			print("lastDashPos = " + str(lastDashPos))
 			fromEndTillDash = len(fileName) - lastDashPos - 1
-			print("fromEndTillDash = " + str(fromEndTillDash))
 			newJobFileName = fileName[:-fromEndTillDash] + str(i) + ".job"
 			jobCompletePathAfterRename =  os.path.join(jobsToSchedulePath, newJobFileName)
 			os.rename(jobCompletePath, jobCompletePathAfterRename)
