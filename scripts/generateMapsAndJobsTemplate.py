@@ -1,9 +1,9 @@
 #!/usr/bin/python
 
 # Invocation: 
-# 	./generateAndRunTests.py ../maps/testMap/osm.osm.xml 25 
+# 	./generateMapsAndJobsTemplate.py ../maps/testMap/osm.osm.xml 25 
 # if you want to specify map and distance by hand, othwerise:
-# 	./generateAndRunTests.py 
+# 	./generateMapsAndJobsTemplate.py 
 # if you want to automatically generate jobs for the scenarios and distances set in the main
 
 import sys, os
@@ -79,7 +79,7 @@ def runScenario(scenario, distance):
 			for protocol in protocols:
 				command = "NS_GLOBAL_VALUE=\"RngRun=2\" ./waf --run 'vanet-urban --buildings={0} --actualRange={1} --protocol={2} --flooding=0 --area=1000 --mapBasePath={3}'".format(b, txRange, protocol, mapPathWithoutExtension)
 				newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) +  "-b" + b + "-" + protocolsMap[protocol] + "-" + txRange
-				newJobFilename = newJobName + ".job"
+				newJobFilename = newJobName + "-.job"
 				newJobPath = os.path.join(jobsPath, newJobFilename)
 				#print(command)
 				#print(fileName)

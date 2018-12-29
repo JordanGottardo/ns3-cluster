@@ -7,4 +7,4 @@ Description: ns-3 module ns3-fast-broadcast
 Version: 3.26
 Libs: -L${libdir} -Wl,-Bdynamic -lns3.26-fast-broadcast-debug
 Cflags: -I${includedir}
-Requires: libns3.26-core-debug
+Requires: libns3.26-core-debug libns3.26-network-debug libns3.26-internet-debug libns3.26-mobility-debug libns3.26-wifi-debug libns3.26-obstacle-debug
