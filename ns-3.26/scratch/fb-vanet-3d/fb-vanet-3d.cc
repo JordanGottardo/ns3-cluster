@@ -823,7 +823,7 @@ FBVanetExperiment::ProcessOutputs ()
 	std::stringstream dataStream;
 	m_fbApplication->PrintStats (dataStream);
 //	TODO controllare se è giusto qua sotto
-	dataStream = dataStream << ",";
+	dataStream << ",";
 
 	g_csvData.AddValue((int) RngSeedManager::GetRun ());
 	g_csvData.AddValue((int) m_actualRange);
