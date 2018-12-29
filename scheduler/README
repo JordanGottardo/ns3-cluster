@@ -4,3 +4,5 @@ Si fa il copy paste della seguente riga:
 
 La riga sopra fa scheduling ogni minuto del script scheduler.sh (dir assoluta) e ri-direziona I/O nei file (path assoluti)
 Il script scheduler.sh e' da modificare opportunamente in e.g., numero max. job coda, path, env_var etc. 
+
+/1 * * * * /home/jgottard/ns-3/scheduler/scheduler.sh 1>> /home/jgottard/ns-3/scheduler/schedule.out 2>> /home/jgottard/ns-3/scheduler/schedule.err
