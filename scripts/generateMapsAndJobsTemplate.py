@@ -117,7 +117,7 @@ def main():
 	#Edit these to launch automatically 
 	#scenarios = ["Padova", "LA"]
 	distances = ["15", "25", "35", "45"]
-	scenarios = ["LA"]
+	scenarios = ["Padova"]
 	#distances = ["25"]
 	
 	if (len(sys.argv) < 3):
