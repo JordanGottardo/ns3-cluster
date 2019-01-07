@@ -1,0 +1,176 @@
+        %%******************************************%%
+        %%                                          %%
+        %%        Modello di tesi di laurea         %%
+        %%            di Andrea Giraldin            %%
+        %%                                          %%
+        %%             2 novembre 2012              %%
+        %%                                          %%
+        %%******************************************%%
+
+
+% I seguenti commenti speciali impostano:
+% 1. 
+% 2. PDFLaTeX come motore di composizione;
+% 3. tesi.tex come documento principale;
+% 4. il controllo ortografico italiano per l'editor.
+
+% !TEX encoding = UTF-8
+% !TEX TS-program = pdflatex
+% !TEX root = tesi.tex
+% !TEX spellcheck = it-IT
+
+\documentclass[10pt,                    % corpo del font principale
+               a4paper,                 % carta A4
+               twoside,                 % impagina per fronte-retro
+               openright,               % inizio capitoli a destra
+               english,                 
+               italian,                 
+               ]{book}    
+
+\usepackage[utf8]{inputenc}             % codifica di input; anche [latin1] va bene
+                                        % NOTA BENE! va accordata con le preferenze dell'editor
+
+%**************************************************************
+% Importazione package
+%************************************************************** 
+
+%\usepackage{amsmath,amssymb,amsthm}    % matematica
+
+\usepackage[english, italian]{babel}    % per scrivere in italiano e in inglese;
+                                        % l'ultima lingua (l'italiano) risulta predefinita
+
+\usepackage{bookmark}                   % segnalibri
+
+\usepackage{caption}                    % didascalie
+
+\usepackage{chngpage,calc}              % centra il frontespizio
+
+\usepackage{csquotes}                   % gestisce automaticamente i caratteri (")
+
+\usepackage{emptypage}                  % pagine vuote senza testatina e piede di pagina
+
+\usepackage{epigraph}					% per epigrafi
+
+\usepackage{eurosym}                    % simbolo dell'euro
+
+\usepackage[T1]{fontenc}                % codifica dei font:
+                                        % NOTA BENE! richiede una distribuzione *completa* di LaTeX
+
+%\usepackage{indentfirst}               % rientra il primo paragrafo di ogni sezione
+
+\usepackage{graphicx}                   % immagini
+
+\usepackage{hyperref}                   % collegamenti ipertestuali
+
+\usepackage[binding=5mm]{layaureo}      % margini ottimizzati per l'A4; rilegatura di 5 mm
+
+\usepackage{listings}                   % codici
+
+\usepackage{microtype}                  % microtipografia
+
+\usepackage{mparhack,fixltx2e,relsize}  % finezze tipografiche
+
+\usepackage{nameref}                    % visualizza nome dei riferimenti                                      
+
+\usepackage[font=small]{quoting}        % citazioni
+
+\usepackage{subfig}                     % sottofigure, sottotabelle
+
+\usepackage[italian]{varioref}          % riferimenti completi della pagina
+
+\usepackage[dvipsnames, table, x11names]{xcolor}         % colori
+
+\usepackage{booktabs}                   % tabelle                                       
+\usepackage{tabularx}                   % tabelle di larghezza prefissata                                    
+\usepackage{longtable}                  % tabelle su più pagine                                        
+%\usepackage{ltxtable}                   % tabelle su più pagine e adattabili in larghezza
+
+\usepackage[toc, acronym]{glossaries}   % glossario
+                                        % per includerlo nel documento bisogna:
+                                        % 1. compilare una prima volta tesi.tex;
+                                        % 2. eseguire: makeindex -s tesi.ist -t tesi.glg -o tesi.gls tesi.glo
+                                        % 3. eseguire: makeindex -s tesi.ist -t tesi.alg -o tesi.acr tesi.acn
+                                        % 4. compilare due volte tesi.tex.
+
+\usepackage[backend=biber,style=verbose-ibid,hyperref,backref]{biblatex}
+                                        % eccellente pacchetto per la bibliografia; 
+                                        % produce uno stile di citazione autore-anno; 
+                                        % lo stile "numeric-comp" produce riferimenti numerici
+                                        % per includerlo nel documento bisogna:
+                                        % 1. compilare una prima volta tesi.tex;
+                                        % 2. eseguire: biber tesi
+                                        % 3. compilare ancora tesi.tex.
+
+%**************************************************************
+% Pacchetti  e comandi Jordan
+%**************************************************************
+
+\usepackage{float}
+\usepackage{makecell}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+%\usepackage[space]{grffile}
+
+\usepackage{ltablex}
+\usepackage{tabu}
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+
+\raggedbottom
+
+
+\definecolor{I}{HTML}{0172CE} %old:0076FF %CornflowerBlue!50
+\definecolor{P}{HTML}{FFFFFF}
+\definecolor{D}{HTML}{CCE6FF}
+\newcolumntype{Y}{>{\centering\arraybackslash}X} % colonna X centrata per tabularx
+\renewcommand{\tabularxcolumn}[1]{>{\small}m{#1}}
+\newcommand\VRule[1][\arrayrulewidth]{\color{white} \vrule width 1pt}
+
+\newcommand\green[1]{\textcolor{ForestGreen}{#1}} %colore testo 
+\newcommand\red[1]{\textcolor{Red}{#1}}
+\newcommand\super[0]{\green{S}}
+\newcommand\nonsuper[0]{\red{NS}}
+\newcommand\impl[0]{\green{I}}
+\newcommand\nonimpl[0]{\red{NI}}
+
+\newcommand\greencheck[0]{\green{\ding{51}}}
+\newcommand\yellowcheck[0]{\textcolor{YellowOrange}{\ding{51}}}
+\newcommand\redx[0]{\red{\ding{55}}}
+\input{tesi-config}                     % file con le impostazioni personali
+
+\begin{document}
+%**************************************************************
+% Materiale iniziale
+%**************************************************************
+\frontmatter
+\input{inizio-fine/frontespizio}
+\input{inizio-fine/colophon}
+%\input{inizio-fine/dedica}
+\input{inizio-fine/sommario}
+\input{inizio-fine/ringraziamenti}
+\input{inizio-fine/indici}
+\cleardoublepage
+
+%**************************************************************
+% Materiale principale
+%**************************************************************
+\mainmatter
+\input{capitoli/capitolo-1}  
+\input{capitoli/capitolo-2}           
+\input{capitoli/capitolo-3}            
+\input{capitoli/capitolo-4}           
+%\input{capitoli/capitolo-4-old}             % Concept Preview
+%\input{capitoli/capitolo-5-old}             % Product Prototype
+%\input{capitoli/capitolo-6-old}             % Product Design Freeze e SOP
+%\input{capitoli/capitolo-7-old}             % Conclusioni
+%\appendix                               
+%\input{capitoli/capitolo-A-old}             % Appendice A
+
+%**************************************************************
+% Materiale finale
+%**************************************************************
+\backmatter
+\printglossaries
+\input{inizio-fine/bibliografia}
+\end{document}

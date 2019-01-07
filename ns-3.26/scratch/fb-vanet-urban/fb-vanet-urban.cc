@@ -443,6 +443,8 @@ private:
 	uint32_t								m_vehicleDistance;
 	uint32_t								m_scenario;
 	uint32_t								m_loadBuildings;
+	uint32_t								m_cwMin;
+	uint32_t								m_cwMax;
 	std::string								m_traceFile;
 	std::string								m_bldgFile;
 	std::string								m_mapBasePath;
@@ -474,6 +476,8 @@ FBVanetExperiment::FBVanetExperiment ()
 		m_vehicleDistance (250),
 		m_scenario (1),
 		m_loadBuildings (1),
+		m_cwMin(32),
+		m_cwMax(1024),
 		m_traceFile (""),
 		m_bldgFile (""),
 		m_TotalSimTime (30)
@@ -533,10 +537,13 @@ FBVanetExperiment::ProcessOutputs ()
 const std::string
 FBVanetExperiment::CalculateOutFilePath() const {
 	std::string fileName = "";
+	std::string cwMin = std::to_string(m_cwMin);
+	std::string cwMax = std::to_string(m_cwMax);
 	std::string vehicleDistance = std::to_string(m_vehicleDistance);
 	std::string buildings = std::to_string(m_loadBuildings);
 	std::string protocol = "";
 	std::string actualRange = std::to_string(m_actualRange);
+
 
 
 	if (m_staticProtocol == PROTOCOL_FB) {
@@ -552,8 +559,9 @@ FBVanetExperiment::CalculateOutFilePath() const {
 		protocol = "st500";
 	}
 
-	fileName.append(m_mapBaseNameWithoutDistance + "/d" + vehicleDistance + "/b" + buildings + "/" + protocol + "-" + actualRange + "/"
-			+ m_mapBaseName + "-b" + buildings + "-" + protocol + "-" + actualRange);
+	fileName.append("cw-" + cwMin + "-" + cwMax + "/" + m_mapBaseNameWithoutDistance + "/d" + vehicleDistance + "/b" + buildings
+			+ "/" + protocol + "-" + actualRange + "/" + m_mapBaseName + "-cw-" + cwMin + "-" + cwMax + "-b"
+			+ buildings + "-" + protocol + "-" + actualRange);
 
 	return fileName;
 }
@@ -724,7 +732,7 @@ FBVanetExperiment::ConfigureFBApplication ()
 														m_areaOfInterest,
 														m_vehicleDistance,
 														(m_flooding==1) ? true : false,
-														32, 1024);
+														m_cwMin, m_cwMax);
 	m_fbApplication->SetStartTime (Seconds (1));
 	m_fbApplication->SetStopTime (Seconds (m_TotalSimTime));
 
@@ -767,6 +775,8 @@ FBVanetExperiment::CommandSetup (int argc, char *argv[])
 	cmd.AddValue ("buildings", "Load building (obstacles)", m_loadBuildings);
 	cmd.AddValue ("trace", "Vehicles trace file (ns2mobility format)", m_traceFile);
 	cmd.AddValue ("totalTime", "Simulation end time", m_TotalSimTime);
+	cmd.AddValue ("cwMin", "Minimum contention window", m_cwMin);
+	cmd.AddValue ("cwMax", "Maximum contention window", m_cwMax);
 
 	cmd.AddValue ("mapBasePath", "Base path of map required for simulation "
 			"(e.g. ../maps/Padova-25.osm.xml. The dash '-' in the name is mandatory)", m_mapBasePath);

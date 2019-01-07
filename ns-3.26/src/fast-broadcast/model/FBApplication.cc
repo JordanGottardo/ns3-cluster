@@ -590,7 +590,7 @@ uint32_t
 FBApplication::ComputeContetionWindow (uint32_t maxRange, uint32_t distance)
 {
 	NS_LOG_FUNCTION (this << maxRange << distance);
-
+	cout << "cwMin = " << to_string(m_cwMin) << "cwMax = " << to_string((m_cwMax)) << endl;
 	double cwnd = 0.0;
 	double rapp = 0.0;
 
