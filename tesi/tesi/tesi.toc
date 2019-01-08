@@ -1,113 +1,20 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\babel@toc {italian}{}
-\babel@toc {italian}{}
+\babel@toc {english}{}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Tools and applications}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Network Simulator 3}{1}{section.1.1}
+\contentsline {section}{\numberline {1.1}Obstacle Shadowing propagation loss model}{1}{section.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}L'offerta di \textit {stage}}{3}{chapter.2}
+\contentsline {section}{\numberline {1.2}Network Simulator 3}{1}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}\textit {Stage} in IBC: motivazioni aziendali}{3}{section.2.1}
+\contentsline {subsection}{\numberline {1.2.1}Modules and module structure}{1}{subsection.1.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Il progetto}{4}{section.2.2}
+\contentsline {subsection}{\numberline {1.2.2}Key elements}{2}{subsection.1.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}Dominio applicativo}{4}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {1.2.3}Structure of a simulation}{3}{subsection.1.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}Introduzione a JCR}{5}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {1.2.4}NetAnim}{3}{subsection.1.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{RDBMS}{6}{section*.14}
+\contentsline {section}{\numberline {1.3}Simulation of Urban MObility}{4}{section.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{JCR}{6}{section*.16}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{RDBMS}{7}{section*.18}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{JCR}{7}{section*.20}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{RDBMS}{8}{section*.22}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{JCR}{8}{section*.23}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{RDBMS}{8}{section*.24}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{JCR}{8}{section*.25}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{RDBMS}{9}{section*.26}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{JCR}{9}{section*.27}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{RDBMS}{9}{section*.28}
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{JCR}{9}{section*.29}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.3}Obiettivi}{10}{subsection.2.2.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.4}Vincoli}{11}{subsection.2.2.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.5}Pianificazione del lavoro}{12}{subsection.2.2.5}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}\textit {Stage} in IBC: motivazioni personali}{13}{section.2.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Svolgimento del progetto}{15}{chapter.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Modello di sviluppo}{15}{section.3.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Analisi dei requisiti}{16}{section.3.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Scopo del prodotto}{16}{subsection.3.2.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Attori}{17}{subsection.3.2.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Casi d'uso}{17}{subsection.3.2.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}Requisiti}{18}{subsection.3.2.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Progettazione}{19}{section.3.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}DAO}{19}{subsection.3.3.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Struttura JCR}{20}{subsection.3.3.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.3}\textit {View}}{20}{subsection.3.3.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Codifica}{21}{section.3.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Verifica e validazione}{22}{section.3.5}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.1}\textit {Test}}{22}{subsection.3.5.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\textit {Test} prestazionali}{23}{section*.52}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Validazione}{24}{section*.55}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}Prodotto finale}{24}{section.3.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.1}\textit {Homepage}}{24}{subsection.3.6.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.2}Finestra di inserimento}{25}{subsection.3.6.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.3}Finestra di visualizzazione dettaglio e modifica}{25}{subsection.3.6.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.4}Finestra di ricerca}{26}{subsection.3.6.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Analisi retrospettiva}{29}{chapter.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Raggiungimento degli obiettivi}{29}{section.4.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}Progettuali}{29}{subsection.4.1.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.2}Aziendali}{30}{subsection.4.1.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.3}Personali}{31}{subsection.4.1.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Bilancio formativo personale}{31}{section.4.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Conoscenze}{31}{subsection.4.2.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Abilit\IeC {\`a}}{32}{subsection.4.2.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.3}Competenze}{32}{subsection.4.2.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Mancanze nell'insegnamento accademico}{33}{section.4.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliografia}{37}{chapter*.62}
+\contentsline {chapter}{Glossary}{7}{section*.16}

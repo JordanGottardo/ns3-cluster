@@ -91,7 +91,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxbibnames</bcf:key>
-      <bcf:value>3</bcf:value>
+      <bcf:value>999</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxcitenames</bcf:key>
@@ -107,11 +107,11 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minbibnames</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>mincitenames</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minitems</bcf:key>
@@ -127,11 +127,11 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortlocale</bcf:key>
-      <bcf:value>italian</bcf:value>
+      <bcf:value>english</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortingtemplatename</bcf:key>
-      <bcf:value>nty</bcf:value>
+      <bcf:value>none</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortsets</bcf:key>
@@ -289,7 +289,6 @@
     <bcf:option datatype="string">datelabel</bcf:option>
     <bcf:option datatype="string">backrefstyle</bcf:option>
     <bcf:option datatype="string">arxiv</bcf:option>
-    <bcf:option datatype="string">citepages</bcf:option>
     <bcf:option datatype="boolean">familyinits</bcf:option>
     <bcf:option datatype="boolean">giveninits</bcf:option>
     <bcf:option datatype="boolean">prefixinits</bcf:option>
@@ -373,8 +372,8 @@
     <bcf:option datatype="boolean">doi</bcf:option>
     <bcf:option datatype="boolean">eprint</bcf:option>
     <bcf:option datatype="boolean">related</bcf:option>
+    <bcf:option datatype="boolean">subentry</bcf:option>
     <bcf:option datatype="boolean">dashed</bcf:option>
-    <bcf:option datatype="boolean">ibidpage</bcf:option>
     <bcf:option datatype="integer">mincrossrefs</bcf:option>
     <bcf:option datatype="integer">minxrefs</bcf:option>
     <bcf:option datatype="integer">maxnames</bcf:option>
@@ -1925,42 +1924,23 @@
     <bcf:datasource type="file" datatype="bibtex">bibliografia.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
+    <bcf:citekey order="2">ROM2017</bcf:citekey>
+    <bcf:citekey order="3">ROM2017</bcf:citekey>
+    <bcf:citekey order="4">ROM2017</bcf:citekey>
+    <bcf:citekey order="5">ROM2017</bcf:citekey>
     <bcf:citekey order="0">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
-  <bcf:sortingtemplate name="nty">
+  <bcf:sortingtemplate name="none">
     <bcf:sort order="1">
-      <bcf:sortitem order="1">presort</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="2" final="1">
-      <bcf:sortitem order="1">sortkey</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="3">
-      <bcf:sortitem order="1">sortname</bcf:sortitem>
-      <bcf:sortitem order="2">author</bcf:sortitem>
-      <bcf:sortitem order="3">editor</bcf:sortitem>
-      <bcf:sortitem order="4">translator</bcf:sortitem>
-      <bcf:sortitem order="5">sorttitle</bcf:sortitem>
-      <bcf:sortitem order="6">title</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="4">
-      <bcf:sortitem order="1">sorttitle</bcf:sortitem>
-      <bcf:sortitem order="2">title</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="5">
-      <bcf:sortitem order="1">sortyear</bcf:sortitem>
-      <bcf:sortitem order="2">year</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="6">
-      <bcf:sortitem order="1">volume</bcf:sortitem>
-      <bcf:sortitem order="2">0</bcf:sortitem>
+      <bcf:sortitem order="1">citeorder</bcf:sortitem>
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
   <bcf:datalist section="0"
-                name="nty/global//global/global"
+                name="none/global//global/global"
                 type="entry"
-                sortingtemplatename="nty"
+                sortingtemplatename="none"
                 sortingnamekeytemplatename="global"
                 labelprefix=""
                 uniquenametemplatename="global"

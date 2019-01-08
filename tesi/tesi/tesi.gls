@@ -1,0 +1,21 @@
+\glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
+\begin{theglossary}\glossaryheader
+\glsgroupheading{F}\relax \glsresetentrylist %
+\glossentry{framework}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{iii}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{7}}}\glsgroupskip
+\glsgroupheading{J}\relax \glsresetentrylist %
+\glossentry{jackrabbit}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{iii}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{7}}}%
+\glossentry{jsr170}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{iii}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{7}}}%
+\glossentry{jsr283}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{iii}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{7}}}\glsgroupskip
+\glsgroupheading{W}\relax \glsresetentrylist %
+\glossentry{webapp}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{iii}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{7}}}%
+\end{theglossary}\glossarypostamble
