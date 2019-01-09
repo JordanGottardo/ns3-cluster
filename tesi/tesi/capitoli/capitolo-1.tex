@@ -5,8 +5,22 @@
 \chapter{Tools and applications}
 	In this chapter I will describe the tools and softwares I have utilized to carry out the simulations.
 	
+	\section{Radio Propagation Model}
+		A \gls{rpma} is an empirical mathematical formulation used to model the propagation of radio waves as a function of frequency, distance, transmission power and other variables. Over the years various RPMs have been developed, some aiming at modelling a general situation, while other more useful in specific scenarios. For example, we can range from the more general free space model, where only distance and power are considered, to more complex models which account for shadowing, reflection, scattering and other multipath losses.
+		
+		
+		The authors of \cite{6298165} classify the propagation models offered by the network simulator ns-3 in three different categories:
+		\begin{itemize}
+			\item \textbf{Abstract} propagation loss models, for example the Maximal Range model (also known as Unit Disk), which establishes that all transmissions within a certain range are all received without any loss
+			\item \textbf{Deterministic} path loss models, such as Friis propagation model, which models quadratic path loss as it occurs in free space, and Two Ray Ground, which assume propagation via two rays: a direct (LOS) one, and the one reflected by the ground.
+			\item \textbf{Stochastic} fading models such as the Nakagami model, which uses stochastic distributions to model path loss.
+		\end{itemize}
+	
 	\section{Obstacle Shadowing propagation loss model}
-		The original thesis \cite{ROM2017} implemented a Radio Propagation Model (RPM)  \gls{RPM}
+		The original thesis \cite{ROM2017} used a deterministic \gls{rpma} called Obstacle Shadowing propagation loss model presented in \cite{5720204} and implemented by the authors of \cite{Carpenter:2015:OMI:2756509.2756512}.  This propagation model calculates the loss in signal strength due to the shadowing effect of obstacles such as buildings. 
+		
+		
+		Other RPMs do not keep into conside
 	
 	\section{Network Simulator 3}
 		Network Simulator 3 (ns-3) is a discrete-event network simulator for Internet systems, targeted primarily for research and educational use. ns-3 is free software, licensed under the GNU GPLv2 license, and is publicly available for research, development, and use.

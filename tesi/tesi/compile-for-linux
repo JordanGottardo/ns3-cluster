@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR="./output"	# modificare per scegliere il nome della cartella di destinazione
+DIR="./"	# modificare per scegliere il nome della cartella di destinazione
 NAME="tesi"		# modificiare per scegliere il nome del file di origine (.tex)
 
 if [ ! -d $DIR ];
@@ -11,6 +11,7 @@ fi
 echo --------------------
 echo - Inizializzazione -
 echo --------------------
+# ./clean
 
 pdflatex -output-directory=$DIR $NAME
 biber $DIR/$NAME
@@ -37,9 +38,10 @@ echo ---------------------------------
 
 rm $DIR/*.acn $DIR/*.aux $DIR/*.bbl $DIR/*.bcf $DIR/*.glo
 rm $DIR/*.ist $DIR/*.lof $DIR/*.lot $DIR/*.run.xml $DIR/*.toc
+
 # Per mantenere i log commentare la linea seguente
 rm $DIR/*.blg  $DIR/*.log
 
-open $DIR/$NAME.pdf
+okular $DIR/$NAME.pdf
 
 echo ---------------------------- END -----------------------------

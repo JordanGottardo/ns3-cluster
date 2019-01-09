@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.24)  8 JAN 2019 19:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.24)  9 JAN 2019 17:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1756,38 +1756,13 @@ Package biblatex Info: Automatic encoding selection.
 \openout4 = `tesi.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'tesi.bbl' found.
- (./tesi.bbl)
+Package biblatex Info: ... file 'tesi.bbl' not found.
+
+No file tesi.bbl.
 Package biblatex Info: Reference section=0 on input line 147.
 Package biblatex Info: Reference segment=0 on input line 147.
-
-ABD: EveryShipout initializing macros (./inizio-fine/frontespizio.tex
-<immagini/logo-unipd.png, id=7, 943.525pt x 949.5475pt>
-File: immagini/logo-unipd.png Graphic file (type png)
-<use immagini/logo-unipd.png>
-Package pdftex.def Info: immagini/logo-unipd.png  used on input line 31.
-(pdftex.def)             Requested size: 169.62561pt x 170.71652pt.
- [1
-
-\openout8 = `tesi.ist'.
-
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./immagini/logo-unipd.png>
-])
-(./inizio-fine/colophon.tex
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 18.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 18.
-)
-(./inizio-fine/sommario.tex [2
-
-]
-LaTeX Font Info:    Try loading font information for U+msa on input line 32.
+ABD: EveryShipout initializing macros (./inizio-fine/indici.tex (./tesi.toc
+LaTeX Font Info:    Try loading font information for U+msa on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1795,15 +1770,63 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 32.
+LaTeX Font Info:    Try loading font information for U+msb on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 41.
+))
+\tf@toc=\write11
+\openout11 = `tesi.toc'.
+
+ [1
+
+\openout8 = `tesi.ist'.
+
+
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./tesi.lof)
+\tf@lof=\write12
+\openout12 = `tesi.lof'.
+
+ (./tesi.lot)
+\tf@lot=\write13
+\openout13 = `tesi.lot'.
+
+ [2
+
+])
+(./capitoli/capitolo-1.tex
+Chapter 1.
+
+LaTeX Warning: Citation '6298165' on page 1 undefined on input line 12.
+
+
+LaTeX Warning: Citation 'ROM2017' on page 1 undefined on input line 20.
+
+
+LaTeX Warning: Citation '5720204' on page 1 undefined on input line 20.
+
+
+LaTeX Warning: Citation 'Carpenter:2015:OMI:2756509.2756512' on page 1 undefine
+d on input line 20.
+
+[1
+
+
+
+
+]
+<immagini/ns-3-module.png, id=67, 1734.48pt x 718.685pt>
+File: immagini/ns-3-module.png Graphic file (type png)
+<use immagini/ns-3-module.png>
+Package pdftex.def Info: immagini/ns-3-module.png  used on input line 48.
+(pdftex.def)             Requested size: 372.0pt x 154.13043pt.
+ [2 <./immagini/ns-3-module.png>]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 64.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -1812,102 +1835,36 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-)
-(./inizio-fine/ringraziamenti.tex [3
-
-] [4
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 31--32
-
- []
-
-) (./inizio-fine/indici.tex [5] [6
-
-] (./tesi.toc)
-\tf@toc=\write11
-\openout11 = `tesi.toc'.
-
- [7
-
-] (./tesi.lof)
-\tf@lof=\write12
-\openout12 = `tesi.lof'.
-
- (./tesi.lot)
-\tf@lot=\write13
-\openout13 = `tesi.lot'.
-
-
-[8
-
-]) (./capitoli/capitolo-1.tex
-Chapter 1.
-
-LaTeX Warning: Citation 'ROM2017' on page 1 undefined on input line 9.
-
-
-! Package glossaries Error: Glossary entry `RPM' has not been defined.
-
-See the glossaries package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9 ... a Radio Propagation Model (RPM)  \gls{RPM}
-                                                  
-You need to define a glossary entry before you can use it.
-
-[1
-
-
-
-
-]
-<immagini/ns-3-module.png, id=118, 1734.48pt x 718.685pt>
-File: immagini/ns-3-module.png Graphic file (type png)
-<use immagini/ns-3-module.png>
-Package pdftex.def Info: immagini/ns-3-module.png  used on input line 34.
-(pdftex.def)             Requested size: 372.0pt x 154.13043pt.
- [2 <./immagini/ns-3-module.png>]
-<immagini/netanim.png, id=128, 674.52pt x 689.57625pt>
+ [3]
+<immagini/netanim.png, id=84, 674.52pt x 689.57625pt>
 File: immagini/netanim.png Graphic file (type png)
 <use immagini/netanim.png>
-Package pdftex.def Info: immagini/netanim.png  used on input line 81.
+Package pdftex.def Info: immagini/netanim.png  used on input line 95.
 (pdftex.def)             Requested size: 256.32027pt x 262.04169pt.
- [3]
 
-LaTeX Warning: Citation 'ROM2017' on page 4 undefined on input line 93.
 
-<immagini/sumo-process.png, id=137, 1173.38374pt x 751.80875pt>
+LaTeX Warning: Citation 'ROM2017' on page 4 undefined on input line 107.
+
+<immagini/sumo-process.png, id=89, 1173.38374pt x 751.80875pt>
 File: immagini/sumo-process.png Graphic file (type png)
 <use immagini/sumo-process.png>
-Package pdftex.def Info: immagini/sumo-process.png  used on input line 105.
+Package pdftex.def Info: immagini/sumo-process.png  used on input line 119.
 (pdftex.def)             Requested size: 372.0pt x 238.34673pt.
 
-LaTeX Warning: Citation 'ROM2017' on page 4 undefined on input line 106.
+LaTeX Warning: Citation 'ROM2017' on page 4 undefined on input line 120.
 
 
-LaTeX Warning: Citation 'ROM2017' on page 4 undefined on input line 106.
+LaTeX Warning: Citation 'ROM2017' on page 4 undefined on input line 120.
 
 [4 <./immagini/netanim.png>]
-<immagini/sumo-distances.png, id=144, 1957.3125pt x 2261.44875pt>
+<immagini/sumo-distances.png, id=96, 1957.3125pt x 2261.44875pt>
 File: immagini/sumo-distances.png Graphic file (type png)
 <use immagini/sumo-distances.png>
-Package pdftex.def Info: immagini/sumo-distances.png  used on input line 112.
+Package pdftex.def Info: immagini/sumo-distances.png  used on input line 126.
 (pdftex.def)             Requested size: 372.0pt x 429.78325pt.
  [5 <./immagini/sumo-process.png>]) [6 <./immagini/sumo-distances.png>] (./tesi
-.gls
-Overfull \hbox (33.80826pt too wide) in paragraph at lines 10--13
-[]\T1/cmr/m/n/10 (-20) Apache Jackrab-bit è una li-bre-ria Java open source che
- for-nisce un'implementazione
- []
-
-) (./tesi.acr) (./inizio-fine/bibliografia.tex [7
+.gls) (./tesi.acr) (./inizio-fine/bibliografia.tex
+[7
 
 
 
@@ -1937,33 +1894,27 @@ Package logreq Info: Writing requests to 'tesi.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 181.
  ) 
 Here is how much of TeX's memory you used:
- 37115 strings out of 492982
- 667651 string characters out of 6134895
- 1230772 words of memory out of 5000000
- 39785 multiletter control sequences out of 15000+600000
- 27339 words of font info for 104 fonts, out of 8000000 for 9000
+ 36191 strings out of 492982
+ 650073 string characters out of 6134895
+ 1215461 words of memory out of 5000000
+ 38946 multiletter control sequences out of 15000+600000
+ 19544 words of font info for 75 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 61i,7n,122p,1969b,2472s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,7n,122p,1969b,2471s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/
-type1/public/cm-super/sfbi1000.pfb></usr/share/texmf/fonts/type1/public/cm-supe
-r/sfbx0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr
-/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/t
-ype1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super
-/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/
-share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/ty
-pe1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/
-sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/s
-hare/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/typ
-e1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
-frm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1000.pfb></usr/sh
-are/texmf/fonts/type1/public/cm-super/sfsl1200.pfb></usr/share/texmf/fonts/type
-1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
-ti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on tesi.pdf (16 pages, 906706 bytes).
+type1/public/cm-super/sfbx0900.pfb></usr/share/texmf/fonts/type1/public/cm-supe
+r/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr
+/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/t
+ype1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super
+/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/
+share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/ty
+pe1/public/cm-super/sfsl1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/
+sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on tesi.pdf (10 pages, 667628 bytes).
 PDF statistics:
- 307 PDF objects out of 1000 (max. 8388607)
- 252 compressed objects within 3 object streams
- 54 named destinations out of 1000 (max. 500000)
- 28822 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 210 PDF objects out of 1000 (max. 8388607)
+ 177 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 18569 words of extra memory for PDF output out of 20736 (max. 10000000)
 
