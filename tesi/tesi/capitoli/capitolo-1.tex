@@ -6,21 +6,26 @@
 	In this chapter I will describe the tools and softwares I have utilized to carry out the simulations.
 	
 	\section{Radio Propagation Model}
-		A \gls{rpma} is an empirical mathematical formulation used to model the propagation of radio waves as a function of frequency, distance, transmission power and other variables. Over the years various RPMs have been developed, some aiming at modelling a general situation, while other more useful in specific scenarios. For example, we can range from the more general free space model, where only distance and power are considered, to more complex models which account for shadowing, reflection, scattering and other multipath losses.
+		A \gls{rpma} is an empirical mathematical formulation used to model the propagation of radio waves as a function of frequency, distance, transmission power and other variables. Over the years various RPMs have been developed, some aiming at modelling a general situation, while other more useful in specific scenarios. For example, we can range from the more general free space model, where only distance and power are considered, to more complex models which account for shadowing, reflection, scattering and other multipath losses. Moreover, it is important to keep into consideration the computational complexity and scalability of the model: some have poor accuracy but are scalable, while others have very good accuracy but can only work for small sets of nodes. As always, it is very important to find the right tradeoff between complexity and accuracy.
 		
 		
 		The authors of \cite{6298165} classify the propagation models offered by the network simulator ns-3 in three different categories:
 		\begin{itemize}
 			\item \textbf{Abstract} propagation loss models, for example the Maximal Range model (also known as Unit Disk), which establishes that all transmissions within a certain range are all received without any loss
-			\item \textbf{Deterministic} path loss models, such as Friis propagation model, which models quadratic path loss as it occurs in free space, and Two Ray Ground, which assume propagation via two rays: a direct (LOS) one, and the one reflected by the ground.
+			\item \textbf{Deterministic} path loss models, such as the Friis propagation model, which models quadratic path loss as it occurs in free space, and Two Ray Ground, which assume propagation via two rays: a direct (LOS) one, and the one reflected by the ground.
 			\item \textbf{Stochastic} fading models such as the Nakagami model, which uses stochastic distributions to model path loss.
 		\end{itemize}
 	
+	
+		These traditional models, especially the stochastic ones, work quite well to describe the wireless channel characteristics from a macroscopic point of view. However, given the probabilistic nature of the model, single transmissions are no affected by mesoscopic and microscopic effects of the sorrounding environment. To keep these effects into consideration , researchers have utilized Ray-Tracing, a geometrical optics technique used determine all possible signal paths between the transmitter and the receiver, considering reflection, diffraction and scattering of radio waves, suitable both for 2D and 3D scenarios \cite{245274} \cite{765022}.
+		
+		
+		However, a Ray-Tracing based approach, while producing a fairly accurate model, is not very scalable due to its high computational complexity, especially in a real-time scenario. To overcome this problem, the authors of \cite{STEPANOV200861} have resorted to a fairly computationally expensive pre-processing, but this leads to the need of pre-processing every scenario (and also every change in the scenario).
+		
+		
+	
 	\section{Obstacle Shadowing propagation loss model}
-		The original thesis \cite{ROM2017} used a deterministic \gls{rpma} called Obstacle Shadowing propagation loss model presented in \cite{5720204} and implemented by the authors of \cite{Carpenter:2015:OMI:2756509.2756512}.  This propagation model calculates the loss in signal strength due to the shadowing effect of obstacles such as buildings. 
-		
-		
-		Other RPMs do not keep into conside
+		The original thesis \cite{ROM2017}, after having analyzed various works concerning shadowing in urban scenarios \cite{Giordano:2010:CST:1860058.1860065} \cite{4020783} used a deterministic \gls{rpma} called Obstacle Shadowing propagation loss model presented in \cite{5720204} and implemented by the authors of \cite{Carpenter:2015:OMI:2756509.2756512}.  This propagation model calculates the loss in signal strength due to the shadowing effect of obstacles such as buildings. 
 	
 	\section{Network Simulator 3}
 		Network Simulator 3 (ns-3) is a discrete-event network simulator for Internet systems, targeted primarily for research and educational use. ns-3 is free software, licensed under the GNU GPLv2 license, and is publicly available for research, development, and use.

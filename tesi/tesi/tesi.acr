@@ -2,5 +2,8 @@
 \begin{theglossary}\glossaryheader
 \glsgroupheading{R}\relax \glsresetentrylist %
 \glossentry{rpma}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{1}}}%
+		\setentrycounter[]{page}\glsnumberformat{1\delimN 2}}}\glsgroupskip
+\glsgroupheading{V}\relax \glsresetentrylist %
+\glossentry{vaneta}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{7}}}%
 \end{theglossary}\glossarypostamble
