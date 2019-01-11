@@ -24,7 +24,7 @@
                twoside,                 % impagina per fronte-retro
                openright,               % inizio capitoli a destra
                english,                 
-               italian,                 
+               english,                 
                ]{book}    
 
 \usepackage[utf8]{inputenc}             % codifica di input; anche [latin1] va bene
@@ -36,7 +36,7 @@
 
 %\usepackage{amsmath,amssymb,amsthm}    % matematica
 
-\usepackage[english, italian]{babel}    % per scrivere in italiano e in inglese;
+\usepackage[english]{babel}    % per scrivere in italiano e in inglese;
                                         % l'ultima lingua (l'italiano) risulta predefinita
 
 \usepackage{bookmark}                   % segnalibri
@@ -76,7 +76,7 @@
 
 \usepackage{subfig}                     % sottofigure, sottotabelle
 
-\usepackage[italian]{varioref}          % riferimenti completi della pagina
+\usepackage[english]{varioref}          % riferimenti completi della pagina
 
 \usepackage[dvipsnames, table, x11names]{xcolor}         % colori
 
@@ -92,7 +92,7 @@
                                         % 3. eseguire: makeindex -s tesi.ist -t tesi.alg -o tesi.acr tesi.acn
                                         % 4. compilare due volte tesi.tex.
 
-\usepackage[backend=biber,style=verbose-ibid,hyperref,backref]{biblatex}
+\usepackage[backend=biber,style=ieee,hyperref]{biblatex}
                                         % eccellente pacchetto per la bibliografia; 
                                         % produce uno stile di citazione autore-anno; 
                                         % lo stile "numeric-comp" produce riferimenti numerici
@@ -137,6 +137,11 @@
 \newcommand\greencheck[0]{\green{\ding{51}}}
 \newcommand\yellowcheck[0]{\textcolor{YellowOrange}{\ding{51}}}
 \newcommand\redx[0]{\red{\ding{55}}}
+
+\newcommand\imgref[1]{\hyperref[#1]{figure \ref{#1}}}
+\newcommand\imgrefcap[1]{\hyperref[#1]{Figure \ref{#1}}}
+
+
 \input{tesi-config}                     % file con le impostazioni personali
 
 \begin{document}
@@ -144,11 +149,11 @@
 % Materiale iniziale
 %**************************************************************
 \frontmatter
-\input{inizio-fine/frontespizio}
-\input{inizio-fine/colophon}
+%\input{inizio-fine/frontespizio}
+%\input{inizio-fine/colophon}
 %\input{inizio-fine/dedica}
-\input{inizio-fine/sommario}
-\input{inizio-fine/ringraziamenti}
+%\input{inizio-fine/sommario}
+%\input{inizio-fine/ringraziamenti}
 \input{inizio-fine/indici}
 \cleardoublepage
 
@@ -158,8 +163,8 @@
 \mainmatter
 \input{capitoli/capitolo-1}  
 \input{capitoli/capitolo-2}           
-\input{capitoli/capitolo-3}            
-\input{capitoli/capitolo-4}           
+%\input{capitoli/capitolo-3}            
+%\input{capitoli/capitolo-4}           
 %\input{capitoli/capitolo-4-old}             % Concept Preview
 %\input{capitoli/capitolo-5-old}             % Product Prototype
 %\input{capitoli/capitolo-6-old}             % Product Design Freeze e SOP
