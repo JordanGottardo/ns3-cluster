@@ -12,7 +12,7 @@ import shutil
 
 def main():
 	if (len(sys.argv) > 1):
-		jobsNumber = sys.argv[1]
+		jobsNumber = int(sys.argv[1])
 	else:
 		jobsNumber = 30
 	thisScriptPath = os.path.realpath(__file__)
