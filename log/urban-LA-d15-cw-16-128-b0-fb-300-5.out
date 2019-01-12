@@ -1,17 +1,21 @@
-Host di esecuzione: dellsrv2
-Data: Mon Jan 7 14:18:02 CET 2019
+Host di esecuzione: gpu04
+Data: Fri Jan 11 14:12:03 CET 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-dellsrv2
+gpu04
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
 Start main urban
-numNodes = 2383
-startingNode = 1908
+numNodes = 2395
+startingNode = 521
 run = 0
-numNodes = 2383
-startingNode = 2101
+numNodes = 2395
+startingNode = 521
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
 cwMin = 16cwMax = 128
 cwMin = 16cwMax = 128
 cwMin = 16cwMax = 128
