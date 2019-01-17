@@ -12,6 +12,45 @@
 		\item the \textbf{Broadcasts Phase}, during which a car sends an alert message and the other cars need to forward it.
 	\end{enumerate}
 
+	\section{Estimation Phase}
+		During this phase, cars try to estimate their frontward and backward transmission range by the means of Hello messages. These beacons are sent periodically via broadcast to all the neighbors of a vehicle.
+		
+		
+		Time is divided into turns and, in order to keep estimations fresh, data collected during a certain turn is kept for the duration of the next turn, then discarded.
+		
+		
+		Using this approach, vehicles can estimate two different values:
+		\begin{itemize}
+			\item \textbf{\textit{Current-turn Maximum Front Range} (CMFR)}, which estimates the maximum frontward distance from which another car can be heard by the considered one;
+			\item \textbf{\textit{Current-turn Maximum Back Range} (CMFR)}, which estimates the maximum backward distance at which the considered car can be heard.
+		\end{itemize}
+		When the turn expires, the value of these variables is stored in the LMFR and LMBR variables (\textit{Latest-turn Maximum Front Range} and \textit{Latest-turn Maximum Back Range}, respectively). The algorithm uses both last turn and current turn data because the former guarantees values calculated with a larger pool of Hello messages, while the latter considers fresher information.
+		
+		\begin{algorithm}[H]
+			\begin{algorithmic}[1]
+				\ForEach{turn}
+					\State sending\_time $\gets$ random(turn\_size)
+					\State wait(sending\_time)
+					\If{$\neg$ (heard\_hello\_msg() $\lor$ heard\_collision())}
+						\State hello\_msg.declared\_max\_range $\gets$ max(LMFR, CMFR)
+						\State transmit(hello\_msg)
+					\EndIf
+				\EndFor
+			\end{algorithmic}
+%			for each turn
+%				sending_time := random(turn_size);
+%				wait(sending_time);
+%				if &$\neg$&(heard_hello_msg() &$\lor$& heard_collision())
+%					hello_msg.declared_max_range := max(LMFR, CMFR);
+%					transmit(hello_msg);
+%				endif
+%			endfor
+			\caption{Hello message sending procedure}
+		\end{algorithm}
+
+		
+		
+
 %\chapter{L'offerta di \textit{stage}}
 %\label{cap:loffertadistage}
 %

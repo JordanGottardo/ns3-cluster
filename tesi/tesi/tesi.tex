@@ -27,6 +27,9 @@
                english,                 
                ]{book}    
 
+\usepackage[T1]{fontenc}                % codifica dei font:
+% NOTA BENE! richiede una distribuzione *completa* di LaTeX
+
 \usepackage[utf8]{inputenc}             % codifica di input; anche [latin1] va bene
                                         % NOTA BENE! va accordata con le preferenze dell'editor
 
@@ -53,8 +56,7 @@
 
 \usepackage{eurosym}                    % simbolo dell'euro
 
-\usepackage[T1]{fontenc}                % codifica dei font:
-                                        % NOTA BENE! richiede una distribuzione *completa* di LaTeX
+
 
 %\usepackage{indentfirst}               % rientra il primo paragrafo di ogni sezione
 
@@ -64,7 +66,7 @@
 
 \usepackage[binding=5mm]{layaureo}      % margini ottimizzati per l'A4; rilegatura di 5 mm
 
-\usepackage{listings}                   % codici
+\usepackage{listings, lstautogobble}                   % codici
 
 \usepackage{microtype}                  % microtipografia
 
@@ -116,6 +118,8 @@
 \usepackage{tabu}
 \usepackage{amssymb}% http://ctan.org/pkg/amssymb
 \usepackage{pifont}% http://ctan.org/pkg/pifont
+\usepackage{algorithm} 
+\usepackage{algpseudocode}
 
 \raggedbottom
 
@@ -140,6 +144,17 @@
 
 \newcommand\imgref[1]{\hyperref[#1]{figure \ref{#1}}}
 \newcommand\imgrefcap[1]{\hyperref[#1]{Figure \ref{#1}}}
+
+%\lstset{% Add other global options here
+%	%basicstyle=\small\sffamily,
+%	escapechar=\&,	% char to escape out of listings and back to LaTeX
+%	autogobble=true,
+%	tabsize=4,
+%	numbers=left, numberstyle=\tiny, stepnumber=2, numbersep=5pt
+%}
+
+\algnewcommand\algorithmicforeach{\textbf{for each}}
+\algdef{S}[FOR]{ForEach}[1]{\algorithmicforeach\ #1\ \algorithmicdo}
 
 
 \input{tesi-config}                     % file con le impostazioni personali
