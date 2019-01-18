@@ -23,4 +23,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Estimation Phase}{7}{section.2.1}
 \defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Broadcast Phase}{8}{section.2.2}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Acronyms}{9}{section*.10}

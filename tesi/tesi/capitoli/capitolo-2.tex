@@ -37,17 +37,40 @@
 					\EndIf
 				\EndFor
 			\end{algorithmic}
-%			for each turn
-%				sending_time := random(turn_size);
-%				wait(sending_time);
-%				if &$\neg$&(heard_hello_msg() &$\lor$& heard_collision())
-%					hello_msg.declared_max_range := max(LMFR, CMFR);
-%					transmit(hello_msg);
-%				endif
-%			endfor
 			\caption{Hello message sending procedure}
 		\end{algorithm}
-
+		
+		\begin{algorithm}[H]
+			\begin{algorithmic}[1]
+				\State mp $\gets$ my\_position()
+				\State sp $\gets$ hello\_msg.sender\_position
+				\State drm $\gets$ hello\_msg.declared\_max\_range
+				\State d $\gets$ distance(mp, sp)
+				\If{received\_from\_front(hello\_msg)} 
+				\State CMFR $\gets$ max(CMFR, d, drm)
+				\Else
+				\State CMBR $\gets$ max(CMBR, d, drm)
+				\EndIf
+			\end{algorithmic}
+			\caption{Hello message receiving procedure}
+		\end{algorithm}
+	
+	\section{Broadcast Phase}
+		This phase is activated once a car, the Anomalous Vehicles (AV), sends an Alert Message. The cars can exploit the estimation of transmission ranges to reduce redundancy. Each car can exploit this information to assign itself a forwarding priority inversely proportional to the relative distance: the higher the relative distance, the higher the priority.  
+		
+		
+		When the Broadcast Phase is activated , a vehicle sends an alert message with application specific data. Broadcast specific data is also piggybacked on the AM, such as:
+		\begin{itemize}
+			\item \textbf{MaxRange:} the maximum range a transmission is expected to travel backward before the signal becomes too weak to be received. This value is utilized by following vehicles to rank their forwarding priority;
+			\item \textbf{SenderPosition}: the coordinates of the sender.
+		\end{itemize}
+		Upon reception, each vehicle waits for a random time called \textit{Contention Window} (CW). This window ranges from a minimum value (CWMin) and a maximum one (CWMax) depending on sending/forwarding car distance (Distance) and on the estimated transmission range (MaxRange), according to formula \ref{eq:contention-window}. It is quite easy to see that the higher the sender/forwarder distance is, the lower the contention window is.
+		\begin{gather}
+			\left\lfloor \left( \frac{\text{MaxRange} - \text{Distance}}{\text{MaxRange}} \times (\text{CWMax} - \text{CWMin}) \right) + \text{CWmin}  \right\rfloor
+			\label{eq:contention-window}
+		\end{gather}
+		If another forwarding of the same message coming from behind is heard during waiting time, the vehicle suppresses its transmission because the message has already been forwarded by a another vehicle further back in the column. On the contrary, if the same message is heard coming from the front, the procedure is restarted using the new parameters. The vehicle can forward the message only if the waiting time expires without having received the same message.
+		
 		
 		
 
