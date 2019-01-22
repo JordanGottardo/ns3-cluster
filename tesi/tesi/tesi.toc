@@ -25,4 +25,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}Broadcast Phase}{8}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Acronyms}{9}{section*.10}
+\contentsline {section}{\numberline {2.3}Two dimensions extension}{9}{section.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Acronyms}{11}{section*.10}
