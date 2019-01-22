@@ -1,17 +1,199 @@
-Host di esecuzione: hpblade01
-Data: Mon Jan 7 17:02:03 CET 2019
+Host di esecuzione: hpblade11
+Data: Sun Jan 13 18:07:03 CET 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-hpblade01
+hpblade11
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
 Start main urban
-numNodes = 2383
-startingNode = 962
+numNodes = 2395
+startingNode = 1928
 run = 0
-numNodes = 2383
-startingNode = 2057
+numNodes = 2395
+startingNode = 1418
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
+cwMin = 16cwMax = 128
 cwMin = 16cwMax = 128
 cwMin = 16cwMax = 128
 cwMin = 16cwMax = 128
