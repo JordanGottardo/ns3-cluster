@@ -42,7 +42,12 @@ def readCsvFromDirectory(path):
 					nodesOnCirc.append(int(row[6]))
 					totalCoverage.append(int(row[7]))
 					covOnCirc.append(int(row[8]))
-					hops.append(float(row[10]))
+					if (not math.isnan(float(row[10]))):
+						hops.append(float(row[10]))
+					
+					if (len(hops) > 0 and math.isnan(hops[-1])):
+						print("found nan in hops")
+						print(file)
 					#print(hops[-1])
 					#if (math.isnan(hops[-1])):
 					#	print(file)

@@ -18,7 +18,7 @@
  * Authors: Marco Romanelli <marco.romanelli.1@studenti.unipd.it>
  */
 
- #include "../shared/FBNode.h"
+ #include "FBNode.h"
 
 #include "ns3/core-module.h"
  #include "ns3/log.h"

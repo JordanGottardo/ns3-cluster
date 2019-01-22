@@ -22,8 +22,8 @@
 #ifndef FBAPPLICATION_H
 #define FBAPPLICATION_H
 
-#include "../shared/FBHeader.h"
-#include "../shared/FBNode.h"
+#include "FBHeader.h"
+#include "FBNode.h"
 #include "ns3/application.h"
 #include "ns3/network-module.h"
 

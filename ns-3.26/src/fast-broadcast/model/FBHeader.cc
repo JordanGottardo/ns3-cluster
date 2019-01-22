@@ -18,7 +18,7 @@
  * Authors: Marco Romanelli <marco.romanelli.1@studenti.unipd.it>
  */
 
-#include "../shared/FBHeader.h"
+#include "FBHeader.h"
 
 #include "ns3/log.h"
 #include "ns3/uinteger.h"

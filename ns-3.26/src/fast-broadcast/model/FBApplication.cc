@@ -572,7 +572,7 @@ FBApplication::PrintStats (std::stringstream &dataStream)
 			}
 		}
 	}
-
+//	Time when the first alert message was sent
 	Time timeref = this->GetFBNode(m_startingNode)->GetTimestamp();
 
 	dataStream << circCont << ","
