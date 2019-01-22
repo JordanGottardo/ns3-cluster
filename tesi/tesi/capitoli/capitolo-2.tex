@@ -12,6 +12,68 @@
 		\item the \textbf{Broadcasts Phase}, during which a car sends an alert message and the other cars need to forward it.
 	\end{enumerate}
 
+	\section{Estimation Phase}
+		During this phase, cars try to estimate their frontward and backward transmission range by the means of Hello messages. These beacons are sent periodically via broadcast to all the neighbors of a vehicle.
+		
+		
+		Time is divided into turns and, in order to keep estimations fresh, data collected during a certain turn is kept for the duration of the next turn, then discarded.
+		
+		
+		Using this approach, vehicles can estimate two different values:
+		\begin{itemize}
+			\item \textbf{\textit{Current-turn Maximum Front Range} (CMFR)}, which estimates the maximum frontward distance from which another car can be heard by the considered one;
+			\item \textbf{\textit{Current-turn Maximum Back Range} (CMFR)}, which estimates the maximum backward distance at which the considered car can be heard.
+		\end{itemize}
+		When the turn expires, the value of these variables is stored in the LMFR and LMBR variables (\textit{Latest-turn Maximum Front Range} and \textit{Latest-turn Maximum Back Range}, respectively). The algorithm uses both last turn and current turn data because the former guarantees values calculated with a larger pool of Hello messages, while the latter considers fresher information.
+		
+		\begin{algorithm}[H]
+			\begin{algorithmic}[1]
+				\ForEach{turn}
+					\State sending\_time $\gets$ random(turn\_size)
+					\State wait(sending\_time)
+					\If{$\neg$ (heard\_hello\_msg() $\lor$ heard\_collision())}
+						\State hello\_msg.declared\_max\_range $\gets$ max(LMFR, CMFR)
+						\State transmit(hello\_msg)
+					\EndIf
+				\EndFor
+			\end{algorithmic}
+			\caption{Hello message sending procedure}
+		\end{algorithm}
+		
+		\begin{algorithm}[H]
+			\begin{algorithmic}[1]
+				\State mp $\gets$ my\_position()
+				\State sp $\gets$ hello\_msg.sender\_position
+				\State drm $\gets$ hello\_msg.declared\_max\_range
+				\State d $\gets$ distance(mp, sp)
+				\If{received\_from\_front(hello\_msg)} 
+				\State CMFR $\gets$ max(CMFR, d, drm)
+				\Else
+				\State CMBR $\gets$ max(CMBR, d, drm)
+				\EndIf
+			\end{algorithmic}
+			\caption{Hello message receiving procedure}
+		\end{algorithm}
+	
+	\section{Broadcast Phase}
+		This phase is activated once a car, the Anomalous Vehicles (AV), sends an Alert Message. The cars can exploit the estimation of transmission ranges to reduce redundancy. Each car can exploit this information to assign itself a forwarding priority inversely proportional to the relative distance: the higher the relative distance, the higher the priority.  
+		
+		
+		When the Broadcast Phase is activated , a vehicle sends an alert message with application specific data. Broadcast specific data is also piggybacked on the AM, such as:
+		\begin{itemize}
+			\item \textbf{MaxRange:} the maximum range a transmission is expected to travel backward before the signal becomes too weak to be received. This value is utilized by following vehicles to rank their forwarding priority;
+			\item \textbf{SenderPosition}: the coordinates of the sender.
+		\end{itemize}
+		Upon reception, each vehicle waits for a random time called \textit{Contention Window} (CW). This window ranges from a minimum value (CWMin) and a maximum one (CWMax) depending on sending/forwarding car distance (Distance) and on the estimated transmission range (MaxRange), according to formula \ref{eq:contention-window}. It is quite easy to see that the higher the sender/forwarder distance is, the lower the contention window is.
+		\begin{gather}
+			\left\lfloor \left( \frac{\text{MaxRange} - \text{Distance}}{\text{MaxRange}} \times (\text{CWMax} - \text{CWMin}) \right) + \text{CWmin}  \right\rfloor
+			\label{eq:contention-window}
+		\end{gather}
+		If another forwarding of the same message coming from behind is heard during waiting time, the vehicle suppresses its transmission because the message has already been forwarded by a another vehicle further back in the column. On the contrary, if the same message is heard coming from the front, the procedure is restarted using the new parameters. The vehicle can forward the message only if the waiting time expires without having received the same message.
+		
+		
+		
+
 %\chapter{L'offerta di \textit{stage}}
 %\label{cap:loffertadistage}
 %
