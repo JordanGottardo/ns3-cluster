@@ -28,7 +28,7 @@
 		The original thesis \cite{ROM2017}, after having analyzed various works concerning shadowing in urban scenarios \cite{Giordano:2010:CST:1860058.1860065} \cite{4020783} used a deterministic \gls{rpma} called Obstacle Shadowing propagation loss model presented in \cite{5720204} and implemented by the authors of \cite{Carpenter:2015:OMI:2756509.2756512}.  This propagation model calculates the loss in signal strength due to the shadowing effect of obstacles such as buildings. 
 		
 		
-		The authors of \cite{5720204} was designed as an extension of well-established fading models, which can be expressed by Equation \ref{eq:fading-models}, where:
+		The authors of \cite{5720204} designed the model as an extension of well-established fading models, which can be expressed by Equation \ref{eq:fading-models}, where:
 		\begin{itemize}
 			\item $P$ are the transmit or receive powers of the radios;
 			\item $G$ are the antenna gains;
@@ -49,14 +49,27 @@
 		The authors extended the general model shown in \ref{eq:fading-models} adding a $L_{obs}$ term for each obstacle in the line of sight between sender and receiver. The term is described by Equation \ref{eq:osbtacle-model}, where:
 		\begin{itemize}
 			\item $n$ is the number of times that the line of sight intersects the borders of the obstacle;
-			\item $d_m$ is the length of the obstacle's intersection;
+			\item $d_m$ is the length of the obstacle's intersections;
 			\item $\beta$ represents the attenuation due to the exterior wall of a building, in dB per wall;
 			\item $\gamma$ represents an approximation of the internal structure of a building.
 		\end{itemize}
 		
+		
+		Parameters $\beta$ and $\gamma$ can be fitted to represent different types of buildings. $\beta \approx$ 9.6 dB per wall and $\gamma \approx$ 0.4 dB/m are the values proposed by the authors for buildings in suburban areas.
+		
 		\begin{gather}\label{eq:osbtacle-model}
 			L_{obs} = \beta n + \gamma d_m
 		\end{gather}
+	
+	
+		\imgrefcap{fig:sumo-obstacle} shows an example of transmission where the signal encounters $n =$ 4 walls. 
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{immagini/sumo-obstacle}
+			\caption{Example of obstacle shadowing in vehicle-to-vehicle communication. Walls encountered by the signal are surrounded in red circles}
+			\label{fig:sumo-obstacle}
+		\end{figure}
 %
 %%**************************************************************
 %\chapter{L'azienda}
