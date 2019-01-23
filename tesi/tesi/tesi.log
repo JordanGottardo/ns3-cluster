@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.24)  18 JAN 2019 16:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.24)  22 JAN 2019 17:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1872,7 +1872,7 @@ Overfull \hbox (10.3969pt too wide) in paragraph at lines 28--29
  []
 
 [2]
-<immagini/ns-3-module.png, id=79, 1734.48pt x 718.685pt>
+<immagini/ns-3-module.png, id=81, 1734.48pt x 718.685pt>
 File: immagini/ns-3-module.png Graphic file (type png)
 <use immagini/ns-3-module.png>
 Package pdftex.def Info: immagini/ns-3-module.png  used on input line 53.
@@ -1886,7 +1886,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
  [3 <./immagini/ns-3-module.png>]
-<immagini/netanim.png, id=90, 674.52pt x 689.57625pt>
+<immagini/netanim.png, id=92, 674.52pt x 689.57625pt>
 File: immagini/netanim.png Graphic file (type png)
 <use immagini/netanim.png>
 Package pdftex.def Info: immagini/netanim.png  used on input line 100.
@@ -1895,7 +1895,7 @@ Package pdftex.def Info: immagini/netanim.png  used on input line 100.
 
 LaTeX Warning: Citation 'ROM2017' on page 5 undefined on input line 112.
 
-<immagini/sumo-process.png, id=99, 1173.38374pt x 751.80875pt>
+<immagini/sumo-process.png, id=101, 1173.38374pt x 751.80875pt>
 File: immagini/sumo-process.png Graphic file (type png)
 <use immagini/sumo-process.png>
 Package pdftex.def Info: immagini/sumo-process.png  used on input line 124.
@@ -1906,7 +1906,7 @@ LaTeX Warning: Citation 'ROM2017' on page 5 undefined on input line 125.
 
 LaTeX Warning: Citation 'ROM2017' on page 5 undefined on input line 125.
 
-<immagini/sumo-distances.png, id=100, 1957.3125pt x 2261.44875pt>
+<immagini/sumo-distances.png, id=102, 1957.3125pt x 2261.44875pt>
 File: immagini/sumo-distances.png Graphic file (type png)
 <use immagini/sumo-distances.png>
 Package pdftex.def Info: immagini/sumo-distances.png  used on input line 131.
@@ -1917,15 +1917,24 @@ Chapter 2.
 
 LaTeX Warning: Citation '4199282' on page 7 undefined on input line 6.
 
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 40.
 [7
 
-]) [8] (./tesi.gls) (./tesi.acr) (./inizio-fine/bibliografia.tex [9
+]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 45.
+ [8]
+
+LaTeX Warning: Citation '4199282' on page 9 undefined on input line 111.
+
+
+LaTeX Warning: Citation 'BAR2017' on page 9 undefined on input line 111.
+
+) [9] [10] (./tesi.gls) (./tesi.acr) (./inizio-fine/bibliografia.tex [11
 
 
 
-] [10
+]
+[12
 
 ])
 
@@ -1951,11 +1960,11 @@ Package logreq Info: Writing requests to 'tesi.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
  ) 
 Here is how much of TeX's memory you used:
- 36837 strings out of 492982
- 659705 string characters out of 6134895
+ 36855 strings out of 492982
+ 659964 string characters out of 6134895
  1224164 words of memory out of 5000000
- 39537 multiletter control sequences out of 15000+600000
- 23244 words of font info for 90 fonts, out of 8000000 for 9000
+ 39546 multiletter control sequences out of 15000+600000
+ 23363 words of font info for 91 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  61i,13n,122p,1969b,2471s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
@@ -1972,10 +1981,10 @@ onts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm
 </usr/share/texmf/fonts/type1/public/cm-super/sfsl1000.pfb></usr/share/texmf/fo
 nts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-
 super/sftt1000.pfb>
-Output written on tesi.pdf (12 pages, 746001 bytes).
+Output written on tesi.pdf (14 pages, 751715 bytes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
- 221 compressed objects within 3 object streams
- 48 named destinations out of 1000 (max. 500000)
- 22177 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 285 PDF objects out of 1000 (max. 8388607)
+ 243 compressed objects within 3 object streams
+ 55 named destinations out of 1000 (max. 500000)
+ 22185 words of extra memory for PDF output out of 24883 (max. 10000000)
 
