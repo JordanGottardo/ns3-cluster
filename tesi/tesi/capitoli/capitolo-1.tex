@@ -2,22 +2,22 @@
 % !TEX TS-program = pdflatex
 % !TEX root = ../tesi.tex
 
-\chapter{Tools and applications}
+\chapter{Introduction}
 	In this chapter I will describe the tools and softwares I have utilized to carry out the simulations.
 	
-	\section{Radio Propagation Model}
-		A \gls{rpma} is an empirical mathematical formulation used to model the propagation of radio waves as a function of frequency, distance, transmission power and other variables. Over the years various RPMs have been developed, some aiming at modelling a general situation, while other more useful in specific scenarios. For example, we can range from the more general free space model, where only distance and power are considered, to more complex models which account for shadowing, reflection, scattering and other multipath losses. Moreover, it is important to keep into consideration the computational complexity and scalability of the model: some have poor accuracy but are scalable, while others have very good accuracy but can only work for small sets of nodes. As always, it is very important to find the right tradeoff between complexity and accuracy.
+	\section{Radio Propagation Models}
+		A \gls{rpma} is an empirical mathematical formulation used to model the propagation of radio waves as a function of frequency, distance, transmission power and other variables. Over the years various RPMs have been developed, some aiming at modelling a general situation, and others more useful in specific scenarios. For example, implementations range from the more general free space model, where only distance and power are considered, to more complex models which account for shadowing, reflection, scattering and other multipath losses. Moreover, it is important to keep into consideration the computational complexity and scalability of the model: some have poor accuracy but are scalable, while others have very good accuracy but can only work for small sets of nodes. As always, it is very important to find the right tradeoff between complexity and accuracy.
 		
 		
 		The authors of \cite{6298165} classify the propagation models offered by the network simulator ns-3 in three different categories:
 		\begin{itemize}
-			\item \textbf{Abstract} propagation loss models, for example the Maximal Range model (also known as Unit Disk), which establishes that all transmissions within a certain range are all received without any loss
-			\item \textbf{Deterministic} path loss models, such as the Friis propagation model, which models quadratic path loss as it occurs in free space, and Two Ray Ground, which assume propagation via two rays: a direct (LOS) one, and the one reflected by the ground.
+			\item \textbf{Abstract} propagation loss models, for example the Maximal Range model (also known as Unit Disk), which establishes that all transmissions within a certain range are all received without any loss;
+			\item \textbf{Deterministic} path loss models, such as the Friis propagation model, which models quadratic path loss as it occurs in free space, and Two Ray Ground, which assume propagation via two rays: a direct (\acrshort{losa}) one, and the one reflected by the ground;
 			\item \textbf{Stochastic} fading models such as the Nakagami model, which uses stochastic distributions to model path loss.
 		\end{itemize}
 	
 	
-		These traditional models, especially the stochastic ones, work quite well to describe the wireless channel characteristics from a macroscopic point of view. However, given the probabilistic nature of the model, single transmissions are no affected by mesoscopic and microscopic effects of the sorrounding environment. To keep these effects into consideration , researchers have utilized Ray-Tracing, a geometrical optics technique used determine all possible signal paths between the transmitter and the receiver, considering reflection, diffraction and scattering of radio waves, suitable both for 2D and 3D scenarios \cite{245274} \cite{765022}.
+		These traditional models, especially the stochastic ones, work quite well to describe the wireless channel characteristics from a macroscopic point of view. However, given the probabilistic nature of the model, single transmissions are not affected by the mesoscopic and microscopic effects of the sorrounding environment. To keep these effects into consideration, researchers have utilized Ray-Tracing, a geometrical optics technique used to determine all possible signal paths between the transmitter and the receiver, considering reflection, diffraction and scattering of radio waves, suitable both for 2D and 3D scenarios \cite{245274} \cite{765022}.
 		
 		
 		However, a Ray-Tracing based approach, while producing a fairly accurate model, is not very scalable due to its high computational complexity, especially in a real-time scenario. To overcome this problem, the authors of \cite{STEPANOV200861} have resorted to a fairly computationally expensive pre-processing, but this leads to the need of pre-processing every scenario (and also every change in the scenario).
@@ -26,114 +26,37 @@
 	
 	\section{Obstacle Shadowing propagation loss model}
 		The original thesis \cite{ROM2017}, after having analyzed various works concerning shadowing in urban scenarios \cite{Giordano:2010:CST:1860058.1860065} \cite{4020783} used a deterministic \gls{rpma} called Obstacle Shadowing propagation loss model presented in \cite{5720204} and implemented by the authors of \cite{Carpenter:2015:OMI:2756509.2756512}.  This propagation model calculates the loss in signal strength due to the shadowing effect of obstacles such as buildings. 
+		
+		
+		The authors of \cite{5720204} was designed as an extension of well-established fading models, which can be expressed by Equation \ref{eq:fading-models}, where:
+		\begin{itemize}
+			\item $P$ are the transmit or receive powers of the radios;
+			\item $G$ are the antenna gains;
+			\item $L$ indicate the terms capturing loss effects during transmission.
+		\end{itemize}
+		
+		\begin{gather}
+			P_r[dBm] = P_t[dBm] + G_t[dB] + G_r[dB] - \sum L_x[dB] 														\label{eq:fading-models}
+		\end{gather}
 	
-	\section{Network Simulator 3}
-		Network Simulator 3 (ns-3) is a discrete-event network simulator for Internet systems, targeted primarily for research and educational use. ns-3 is free software, licensed under the GNU GPLv2 license, and is publicly available for research, development, and use.
-		
-		
-		ns-3 development began in 2006 by a team lead by Tom Henderson, George Riley, Sally Floyd and Sumit Roy. Its first version was released on June 30, 2008. 
-		
-		
-		ns-3 is the successor of ns-2, released in 1989. The fact that the former was built from scratch makes it impossible to have backward compatibility. In fact, ns-2 used oTCL scripting language to describe network topologies and C++ to write the core of the simulation. This choice was due to avoid the very time consuming C++ code recompilation, exploiting the interpreted language oTCL. ns-2 mixed the \jquote{fast to run, slow to change} C++ with the \jquote{slow to run, fast to change} oTCL language. Since compilation time was not an issue with modern computing capabilities, ns-3 developers chose to utilize exclusively C++ code (and optional Python bindings) to develop simulations.
-	
-		\subsection{Modules and module structure}
-			ns-3 is composed of various modules, which are groups of classes, examples and tests each related to a certain feature. The components of a module work in a cohesive way in order to offer APIs to other modules and users. Some examples of built-in modules are:
-			\begin{itemize}
-				\item WiFi;
-				\item AODV; 
-				\item CSMA.
-			\end{itemize}
-			The obstacle shadowing propagation loss model and the Fast Broadcast algorithm have been implemented as modules too.
-			
-			
-			Modules follow a prototypical structure in order to promote clarity and offer built-in documentation. \imgrefcap{fig:ns-3-module} shows the typical module structure.
-			
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=\textwidth]{immagini/ns-3-module}
-				\caption{ns-3 module structure}
-				\label{fig:ns-3-module}
-			\end{figure}
-		
-			The following directories can be found inside a module's root directory:
-			\begin{itemize}
-				\item \textbf{bindings:} Python bindings used to make the module's API compatible with Python;
-				\item \textbf{doc:} documentation of the module;
-				\item \textbf{examples:} examples and proof of concepts of what can be done using the module;
-				\item \textbf{helper:} higher level APIs to make the module easier to use;
-				\item \textbf{model:} headers and source files which implement the module's logic; 
-				\item \textbf{test:} test suite and test cases to test the module.
-			\end{itemize}
-		
-		\subsection{Key elements}
-			The element at the base of ns-3 is called \textit{node}, instance of \texttt{ns3::Node}. A node can be thought of as a shell of a computer. Various other elements can be added to nodes, such as:
-			\begin{itemize}
-				\item NetDevices (e.g. NICs), which enable nodes to communicate over \textit{channels};
-				\item protocols;
-				\item applications. 
-			\end{itemize}
-			It is the last those which implement the logic of a simulation. For example, the \texttt{UdoEchoClientApplication} and \texttt{UdpEchoServerApplication} can be used to implement a client/server application which exchange and print the packets' content over the network. The Fast Broadcast protocol has been implemented as an application as well.
-			
-			
-			The \textit{channels} model various type of transmission media, such as the wired and the wireless ones.
-			
-		\subsection{Structure of a simulation}
-			A simulation can be implemented in many ways, but in most cases the following steps are executed:
-			\begin{itemize}
-				\item manage command line arguments (e.g. number of nodes to consider in the simulation, transmission range, etc.);
-				\item initialize all the necessary fields in classes;
-				\item create nodes;
-				\item set up physical and MAC layers;
-				\item set up link layer, routing protocols and addresses;
-				\item configure and install applications on nodes;
-				\item position nodes and (optionally) give them a mobility model;
-				\item schedule user defined events, such as transmissions of packets;
-				\item start the simulation;
-				\item collect and manage output data.
-			\end{itemize}
-		
-		\subsection{NetAnim}
-			Netanim is an offline animator tool based on the Qt toolkit. It collects an XML tracefile during the execution of a simulation and can be used to animate the simulation, analyzing packet transmissions and contents.
-			
-			\begin{figure}[H]
-				\centering
-				\includegraphics[scale=0.38]{immagini/netanim}
-				\caption{Packet transmission in NetAnim}
-				\label{fig:netanim}
-			\end{figure}
-		
-	\section{Simulation of Urban MObility}
-		Simulation of Urban MObility is an open-source road traffic simulation package. It is written in C++ and licensed under GPLv3. 
-		
-		
-		It offers different tools to analyze and manage real maps from the urban mobility point of view, including pedestrian movement and various types of vehicles.
-		
+		Common RPMs can be written as components L of \ref{eq:fading-models} and chained to obtain the compound attenuation. For example, Equation \ref{eq:tworayground-model} and \ref{eq:lognorm-model} represent respectively the Two-Ray Ground and Log-Normal models.
 
-		The original work \cite{ROM2017} utilized SUMO to produce, starting from real maps obtained from OpenStreetMap (OSM), two files:
-		\begin{enumerate}
-			\item a \texttt{.poly} file using the SUMO tool Polyconvert. This file contains information about all the obstacles, such as buildings, useful for the Obstacle Shadowing module.
-			\item a \texttt{.ns2mobility} file using the SUMO tool TraceExporter. This file contains information about the vehicles and their positioning. 
-		\end{enumerate}
-		The process of generating these two files necessary for ns-3 simulations requires some intermediate steps. The full process is represented in \imgref{fig:sumo-process}. 
+		\begin{gather}
+			L_{TwoRayGround} = 10 \lg \left( \frac{d^4 L}{h^2_t h^2_t} \right)	\qquad [dB]		\label{eq:tworayground-model} \\
+			L_{LogNorm} = 10 \lg \left( X_\sigma \right)	\qquad [dB]													\label{eq:lognorm-model}
+		\end{gather}
 		
-		The original work considered a only a distance of 25 meters between vehicles; this work considers various distances, ranging from 15 to 45 meters. \imgrefcap{fig:sumo-distances}  shows the same scenario (Padua) with different distances between vehicles.
-
-%		TODO tradurre immagine e aggiungere graficamente foreach distance???
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=\textwidth]{immagini/sumo-process}
-			\caption{Steps to generate necessary files using SUMO (\cite{ROM2017})}
-			\label{fig:sumo-process}
-		\end{figure}
+		The authors extended the general model shown in \ref{eq:fading-models} adding a $L_{obs}$ term for each obstacle in the line of sight between sender and receiver. The term is described by Equation \ref{eq:osbtacle-model}, where:
+		\begin{itemize}
+			\item $n$ is the number of times that the line of sight intersects the borders of the obstacle;
+			\item $d_m$ is the length of the obstacle's intersection;
+			\item $\beta$ represents the attenuation due to the exterior wall of a building, in dB per wall;
+			\item $\gamma$ represents an approximation of the internal structure of a building.
+		\end{itemize}
 		
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=\textwidth]{immagini/sumo-distances}
-			\caption{Padua scenario with vehicle distance equals to 15 meters (top) and 45 meters (bottom). Vehicles painted yellow}
-			\label{fig:sumo-distances}
-		\end{figure}
-
-
+		\begin{gather}\label{eq:osbtacle-model}
+			L_{obs} = \beta n + \gamma d_m
+		\end{gather}
 %
 %%**************************************************************
 %\chapter{L'azienda}

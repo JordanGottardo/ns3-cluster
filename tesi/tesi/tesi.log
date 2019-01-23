@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.24)  22 JAN 2019 17:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.24)  23 JAN 2019 13:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1871,13 +1871,37 @@ Overfull \hbox (10.3969pt too wide) in paragraph at lines 28--29
 [] \T1/cmr/m/n/10 (-20) and im-ple-mented by the au-thors of [].
  []
 
-[2]
-<immagini/ns-3-module.png, id=81, 1734.48pt x 718.685pt>
+
+LaTeX Warning: Citation '5720204' on page 2 undefined on input line 31.
+
+) (./capitoli/capitolo-2.tex [2]
+Chapter 2.
+
+LaTeX Warning: Citation '4199282' on page 3 undefined on input line 6.
+
+[3
+
+]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 45.
+ [4]
+
+LaTeX Warning: Citation '4199282' on page 5 undefined on input line 111.
+
+
+LaTeX Warning: Citation 'BAR2017' on page 5 undefined on input line 111.
+
+) (./capitoli/capitolo-3.tex [5] [6]
+Chapter 3.
+<immagini/ns-3-module.png, id=135, 1734.48pt x 718.685pt>
 File: immagini/ns-3-module.png Graphic file (type png)
 <use immagini/ns-3-module.png>
-Package pdftex.def Info: immagini/ns-3-module.png  used on input line 53.
+Package pdftex.def Info: immagini/ns-3-module.png  used on input line 30.
 (pdftex.def)             Requested size: 372.0pt x 154.13043pt.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 69.
+[7
+
+]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 46.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
@@ -1885,56 +1909,39 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [3 <./immagini/ns-3-module.png>]
-<immagini/netanim.png, id=92, 674.52pt x 689.57625pt>
+ [8 <./immagini/ns-3-module.png>]
+<immagini/netanim.png, id=151, 674.52pt x 689.57625pt>
 File: immagini/netanim.png Graphic file (type png)
 <use immagini/netanim.png>
-Package pdftex.def Info: immagini/netanim.png  used on input line 100.
+Package pdftex.def Info: immagini/netanim.png  used on input line 77.
 (pdftex.def)             Requested size: 256.32027pt x 262.04169pt.
- [4 <./immagini/netanim.png>]
+ [9 <./immagini/netanim.png>]
 
-LaTeX Warning: Citation 'ROM2017' on page 5 undefined on input line 112.
+LaTeX Warning: Citation 'ROM2017' on page 10 undefined on input line 89.
 
-<immagini/sumo-process.png, id=101, 1173.38374pt x 751.80875pt>
+<immagini/sumo-process.png, id=160, 1173.38374pt x 852.18375pt>
 File: immagini/sumo-process.png Graphic file (type png)
 <use immagini/sumo-process.png>
-Package pdftex.def Info: immagini/sumo-process.png  used on input line 124.
-(pdftex.def)             Requested size: 372.0pt x 238.34673pt.
+Package pdftex.def Info: immagini/sumo-process.png  used on input line 100.
+(pdftex.def)             Requested size: 372.0pt x 270.16873pt.
 
-LaTeX Warning: Citation 'ROM2017' on page 5 undefined on input line 125.
+LaTeX Warning: Citation 'ROM2017' on page 10 undefined on input line 101.
 
 
-LaTeX Warning: Citation 'ROM2017' on page 5 undefined on input line 125.
+LaTeX Warning: Citation 'ROM2017' on page 10 undefined on input line 101.
 
-<immagini/sumo-distances.png, id=102, 1957.3125pt x 2261.44875pt>
+<immagini/sumo-distances.png, id=161, 1957.3125pt x 2261.44875pt>
 File: immagini/sumo-distances.png Graphic file (type png)
 <use immagini/sumo-distances.png>
-Package pdftex.def Info: immagini/sumo-distances.png  used on input line 131.
+Package pdftex.def Info: immagini/sumo-distances.png  used on input line 107.
 (pdftex.def)             Requested size: 372.0pt x 429.78325pt.
-[5 <./immagini/sumo-process.png>]) (./capitoli/capitolo-2.tex [6 <./immagini/su
-mo-distances.png>]
-Chapter 2.
-
-LaTeX Warning: Citation '4199282' on page 7 undefined on input line 6.
-
-[7
-
-]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 45.
- [8]
-
-LaTeX Warning: Citation '4199282' on page 9 undefined on input line 111.
-
-
-LaTeX Warning: Citation 'BAR2017' on page 9 undefined on input line 111.
-
-) [9] [10] (./tesi.gls) (./tesi.acr) (./inizio-fine/bibliografia.tex [11
-
-
-
-]
+) [10 <./immagini/sumo-process.png>] [11 <./immagini/sumo-distances.png>]
 [12
+
+] (./tesi.gls) (./tesi.acr) (./inizio-fine/bibliografia.tex [13
+
+
+] [14
 
 ])
 
@@ -1960,31 +1967,33 @@ Package logreq Info: Writing requests to 'tesi.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
  ) 
 Here is how much of TeX's memory you used:
- 36855 strings out of 492982
- 659964 string characters out of 6134895
- 1224164 words of memory out of 5000000
- 39546 multiletter control sequences out of 15000+600000
- 23363 words of font info for 91 fonts, out of 8000000 for 9000
+ 36911 strings out of 492982
+ 660767 string characters out of 6134895
+ 1224285 words of memory out of 5000000
+ 39583 multiletter control sequences out of 15000+600000
+ 23595 words of font info for 95 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 61i,13n,122p,1969b,2471s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,13n,122p,1969b,2473s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/
-cm-super/sfbi1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pf
-b></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/
-fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/f
-onts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm
--super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-</usr/share/texmf/fonts/type1/public/cm-super/sfsl1000.pfb></usr/share/texmf/fo
-nts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-
-super/sftt1000.pfb>
-Output written on tesi.pdf (14 pages, 751715 bytes).
+f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbi1000.pfb
+></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf/f
+onts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm
+-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fo
+nts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-
+super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb><
+/usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fon
+ts/type1/public/cm-super/sfsl1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on tesi.pdf (16 pages, 799717 bytes).
 PDF statistics:
- 285 PDF objects out of 1000 (max. 8388607)
- 243 compressed objects within 3 object streams
- 55 named destinations out of 1000 (max. 500000)
- 22185 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 324 PDF objects out of 1000 (max. 8388607)
+ 277 compressed objects within 3 object streams
+ 63 named destinations out of 1000 (max. 500000)
+ 22193 words of extra memory for PDF output out of 24883 (max. 10000000)
 
