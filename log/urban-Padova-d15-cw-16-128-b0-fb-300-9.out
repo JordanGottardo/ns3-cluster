@@ -1,86 +1,17 @@
-Host di esecuzione: hpblade08
-Data: Tue Jan 22 13:04:02 CET 2019
+Host di esecuzione: dellsrv5
+Data: Wed Jan 23 17:26:03 CET 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-hpblade08
+dellsrv5
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
 Start main urban
 numNodes = 2855
-startingNode = 1864
+startingNode = 462
 run = 0
 numNodes = 2855
-startingNode = 1864
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
+startingNode = 462
 cwMin = 16cwMax = 128
 cwMin = 16cwMax = 128
 cwMin = 16cwMax = 128
