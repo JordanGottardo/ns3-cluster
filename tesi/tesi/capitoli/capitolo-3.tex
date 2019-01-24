@@ -45,11 +45,11 @@
 	\subsection{Key elements}
 	The element at the base of ns-3 is called \textit{node}, instance of \texttt{ns3::Node}. A node can be thought of as a shell of a computer. Various other elements can be added to nodes, such as:
 	\begin{itemize}
-		\item NetDevices (e.g. \acrshort{nica}s, which enable nodes to communicate over \textit{channels};
+		\item NetDevices (e.g. \acrshort{nica}s, which enable nodes to communicate over \textit{channels});
 		\item protocols;
 		\item applications. 
 	\end{itemize}
-	It is the last those which implement the logic of a simulation. For example, the \texttt{UdoEchoClientApplication} and \texttt{UdpEchoServerApplication} can be used to implement a client/server application which exchange and print the packets' content over the network. The Fast Broadcast protocol has been implemented as an application as well.
+	The applications implement the logic of a simulation. For example, the \texttt{UdoEchoClientApplication} and \texttt{UdpEchoServerApplication} can be used to implement a client/server application which exchange and print the packets' content over the network. The Fast Broadcast protocol has been implemented as an application as well.
 	
 	
 	The \textit{channels} model various type of transmission media, such as the wired and the wireless ones.
@@ -105,7 +105,7 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=\textwidth]{immagini/sumo-distances}
-		\caption{Padua scenario with vehicle distance equals to 15 meters (top) and 45 meters (bottom). Vehicles painted yellow}
+		\caption{Padua scenario with vehicle distance equals to 15 meters (top) and 45 meters (bottom)}
 		\label{fig:sumo-distances}
 	\end{figure}
 %\chapter{Svolgimento del progetto}

@@ -120,6 +120,12 @@
 		
 		When a vehicle receives an Alert Message, the origin-vehicle distance is confronted with the origin-sender distance: the vehicle can forward the message only if the former is greater than or equal to the latter, otherwise it simply discards the message.
 		%TODO aggiungere immagine
+		
+		
+		For example, suppose that vehicle A is the origin of the Alert Message and B receives it, but C doesn't due to interference. B computes origin-vehicle distance, $d(A, B)$, and origin-sender distance, $d(A, A)$, which in this case are respectively 300m and 0m. Since origin-vehicle is greater than origin-sender, B can forward the Alert Message.
+		
+		
+		Now suppose that C receives the message from B. C computes origin-vehicle distance, $d(A, B)$, and origin-sender distance, $d(A, B)$. Since the former is not greater than or equal to the latter, C is not a candidate for forwarding and suppresses the transmission.
 
 %\chapter{L'offerta di \textit{stage}}
 %\label{cap:loffertadistage}

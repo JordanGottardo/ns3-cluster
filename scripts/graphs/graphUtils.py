@@ -12,7 +12,8 @@ import csv
 import scipy.stats as st
 import math
 
-
+def countLinesInCsv(csv):
+	return sum(1 for row in csv)
 		
 def calculateMeanAndConfInt(list):
 	npArray = np.array(list)
@@ -31,9 +32,15 @@ def readCsvFromDirectory(path):
 	totalCoveragePercent = []
 	covOnCircPercent = []
 	for fileName in os.listdir(path):
-			with open(os.path.join(path, fileName), "r") as file:
-				csvFile = csv.reader(file, delimiter=",")
-				firstLine = True
+		deleteBecauseEmpty = False
+		fullPath = os.path.join(path, fileName)
+		with open(fullPath, "r") as file:
+			csvFile = csv.reader(file, delimiter=",")
+			firstLine = True
+			if (countLinesInCsv(csvFile) < 2):
+				deleteBecauseEmpty = True
+			else:
+				file.seek(0)
 				for row in csvFile:
 					if (firstLine):
 						firstLine = False
@@ -44,23 +51,20 @@ def readCsvFromDirectory(path):
 					covOnCirc.append(int(row[8]))
 					if (not math.isnan(float(row[10]))):
 						hops.append(float(row[10]))
-					
-					if (len(hops) > 0 and math.isnan(hops[-1])):
-						print("found nan in hops")
-						print(file)
-					#print(hops[-1])
-					#if (math.isnan(hops[-1])):
+					#if (len(hops) > 0 and math.isnan(hops[-1])):
+					#	print("found nan in hops")
 					#	print(file)
 					messageSent.append(int(row[12]))
 					totalCoveragePercent.append(((float(totalCoverage[-1]) / float(totalNodes[-1])) * 100))	
-					
 					covOnCircPercent.append(((float(covOnCirc[-1]) / float(nodesOnCirc[-1])) * 100))
+		if (deleteBecauseEmpty == True):
+			os.remove(fullPath)
 					
 	totalCovMean , totalCovConfInt = calculateMeanAndConfInt(totalCoveragePercent)
 	covOnCircMean, covOnCircConfInt = calculateMeanAndConfInt(covOnCircPercent)
 	hopsMean, hopsConfInt = calculateMeanAndConfInt(hops)
 	messageSentMean, messageSentConfInt = calculateMeanAndConfInt(messageSent)
-
+	print("totalCovMean = " + str(totalCovMean))
 	return {"totalCoverageMean": totalCovMean, 
 			"totalCovConfInt": totalCovConfInt,
 			"covOnCircMean": covOnCircMean,
