@@ -64,7 +64,6 @@ def readCsvFromDirectory(path):
 	covOnCircMean, covOnCircConfInt = calculateMeanAndConfInt(covOnCircPercent)
 	hopsMean, hopsConfInt = calculateMeanAndConfInt(hops)
 	messageSentMean, messageSentConfInt = calculateMeanAndConfInt(messageSent)
-	print("totalCovMean = " + str(totalCovMean))
 	return {"totalCoverageMean": totalCovMean, 
 			"totalCovConfInt": totalCovConfInt,
 			"covOnCircMean": covOnCircMean,

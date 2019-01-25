@@ -46,9 +46,7 @@ def printSingleGraph(cw, folder, graphTitle, xList, xLabels, yLabel, figureTitle
 	widthDistance = [-1, 0, 1]
 	#widthDistance = [-1.5, -0.5, 0.5, 1.5]
 	for protocol in protocols:
-		print("protocol = " + protocol)
 		rects.append((ax.bar(ind + widthDistance[count] * barWidth, yDataDictionary[protocol], barWidth, color=colors[count], label=protocol, yerr=confIntDictionary[protocol], capsize=4)))
-		#rects.append((ax.bar(ind + widthDistance[count] * barWidth, yDataDictionary[protocol], barWidth, color=colors[count], label=protocol, capsize=4)))
 		count = count + 1
 
 	ax.set_ylabel(yLabel)
@@ -240,7 +238,23 @@ def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePre
 					protocols,
 					True)
 
-#def prin(cw, protocols, figurePrefix, graphTitleExtension, folder):
+def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, figurePrefix, graphTitleExtension, folder):
+	plt.rcParams["figure.figsize"] = [18, 10]
+	basePath = os.path.join("/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano-old/", cw, "Padova/d25/b1/")
+	compoundData = initCompoundData(protocols)
+	appendCompoundData(basePath, protocols, compoundData)
+	printSingleGraph(cw,
+					folder,
+					"Padua scenario with buildings, number of alert messages sent with varying vehicle distance (" + graphTitleExtension + ")",
+					xList,
+					xLabels, 
+					"Number of sent alert messages",
+					figurePrefix + "DistanceVsAlertMessagesSent",
+					compoundData["totCoverageMeans"],
+					compoundData["totCoverageConfInts"],
+					protocols,
+					True)
+
 
 
 if __name__ == "__main__":
