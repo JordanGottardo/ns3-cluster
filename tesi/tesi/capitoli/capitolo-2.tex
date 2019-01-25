@@ -21,8 +21,8 @@
 		
 		Using this approach, vehicles can estimate two different values:
 		\begin{itemize}
-			\item \textbf{\textit{Current-turn Maximum Front Range} (CMFR)}, which estimates the maximum frontward distance from which another car can be heard by the considered one;
-			\item \textbf{\textit{Current-turn Maximum Back Range} (CMFR)}, which estimates the maximum backward distance at which the considered car can be heard.
+			\item \textit{Current-turn Maximum Front Range (CMFR)}, which estimates the maximum frontward distance from which another car can be heard by the considered one;
+			\item \textit{Current-turn Maximum Back Range} (CMBR), which estimates the maximum backward distance at which the considered car can be heard.
 		\end{itemize}
 		When the turn expires, the value of these variables is stored in the LMFR and LMBR variables (\textit{Latest-turn Maximum Front Range} and \textit{Latest-turn Maximum Back Range}, respectively). The algorithm uses both last turn and current turn data because the former guarantees values calculated with a larger pool of Hello Messages, while the latter considers fresher information.
 		
@@ -119,13 +119,23 @@
 		
 		
 		When a vehicle receives an Alert Message, the origin-vehicle distance is confronted with the origin-sender distance: the vehicle can forward the message only if the former is greater than or equal to the latter, otherwise it simply discards the message.
-		%TODO aggiungere immagine
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{immagini/fb-2dpicc}
+			\caption{Example of Fast Broadcast in 2d scenario}
+			\label{fig:fb-2d}
+		\end{figure}
 		
 		
-		For example, suppose that vehicle A is the origin of the Alert Message and B receives it, but C doesn't due to interference. B computes origin-vehicle distance, $d(A, B)$, and origin-sender distance, $d(A, A)$, which in this case are respectively 300m and 0m. Since origin-vehicle is greater than origin-sender, B can forward the Alert Message.
+		
+		For example, suppose that vehicle A is the origin of the Alert Message and B receives it, but C doesn't due to an obstacle in the line of sight. B computes origin-vehicle distance, $d(A, B)$, and origin-sender distance, $d(A, A)$, which in this case are respectively 120 and 0m. Since origin-vehicle is greater than origin-sender, B can forward the Alert Message.
 		
 		
-		Now suppose that C receives the message from B. C computes origin-vehicle distance, $d(A, B)$, and origin-sender distance, $d(A, B)$. Since the former is not greater than or equal to the latter, C is not a candidate for forwarding and suppresses the transmission.
+		Now suppose that C receives the message from B. C computes origin-vehicle distance, $d(A, C)$, and origin-sender distance, $d(A, B)$, which amount to 70 and 120m respectively. Since the former is not greater than or equal to the latter, C is not a candidate for forwarding and suppresses the transmission.
+		
+		
+		D receives the message from B as well. D is a good candidate for transmission since the origin-vehicle distance, which amounts to 180m, is greater than origin-sender distance, equal to 120m.
 
 %\chapter{L'offerta di \textit{stage}}
 %\label{cap:loffertadistage}
