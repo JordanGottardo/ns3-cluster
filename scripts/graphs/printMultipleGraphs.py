@@ -31,21 +31,21 @@ def printSingleGraphRomanelliComparison(cw, folder, graphTitle, xList, xLabels, 
 	yDataDictionary = listsToList(yDataDictionary, protocols)
 	confIntDictionary = listsToList(confIntDictionary, protocols)
 
-	ind = np.arange(len(xList))
-	n = len(xList)
+	ind = np.arange(len(xLabels))
+	n = len(xLabels)
 	#barWidth = float((float(1)/float(n)) * float(0.90))
 	barWidth = 0.35
 	fig, ax = plt.subplots()
 	rects = []
 	count = 0
 	colors = ["0.3", "0.5"]
-	widthDistance = [0, 1]
+	#widthDistance = [0, 1]
 	#widthDistance = [-1, 0, 1]
 	#widthDistance = [-1.5, -0.5, 0.5, 1.5]
 	#for protocol in protocols:
 		#rects.append((ax.bar(ind + widthDistance[count] * barWidth, yDataDictionary[protocol], barWidth, color=colors[count], label=protocol, yerr=confIntDictionary[protocol], capsize=4)))
-	rects.append((ax.bar(ind , yDataDictionary, barWidth, color=colors[0], yerr=confIntDictionary, label="Jordan", capsize=4)))
-	rects.append((ax.bar(ind + barWidth, romData, barWidth, color=colors[1], label="Romanelli")))
+	rects.append((ax.bar(ind - barWidth / 2, yDataDictionary, barWidth, color=colors[0], yerr=confIntDictionary, label="Jordan", capsize=4)))
+	rects.append((ax.bar(ind + barWidth / 2, romData, barWidth, color=colors[1], label="Romanelli")))
 
 	ax.set_ylabel(yLabel)
 	if not autoscale:
@@ -55,7 +55,11 @@ def printSingleGraphRomanelliComparison(cw, folder, graphTitle, xList, xLabels, 
 	ax.set_xticklabels(xLabels)
 	#ax.set_xticklabels(["15m", "25m", "35m", "45m"])
 
-	ax.legend(loc="upper right")
+	box = ax.get_position()
+	ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+	ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+
+	#ax.legend(loc="upper center")
 
 	def autolabel(rects, xpos='center'):
 		"""
@@ -90,25 +94,6 @@ def printSingleGraphRomanelliComparison(cw, folder, graphTitle, xList, xLabels, 
 
 def printSingleGraph(cw, folder, graphTitle, xList, xLabels, yLabel, figureTitle, yDataDictionary, 
 					confIntDictionary, protocols, autoscale=False, yBottomLim=0, yTopLim=100):
-	'''
-	print()
-	print()
-	print()
-	print("xList = ")
-	print(xList)
-	print("xLabels = ")
-	print(xLabels)
-	print("yLabel = ")
-	print(yLabel)
-	print("figureTitle = ")
-	print(figureTitle)
-	print("yDataDictionary = ")
-	print(yDataDictionary)
-	print("confIntDictionary = ")
-	print(confIntDictionary)
-	print("protocols = ")
-	print(protocols)
-	'''
 	ind = np.arange(len(xList))
 	n = len(xList)
 	barWidth = float((float(1)/float(4)) * float(0.90))
@@ -131,7 +116,8 @@ def printSingleGraph(cw, folder, graphTitle, xList, xLabels, yLabel, figureTitle
 	ax.set_xticklabels(xLabels)
 	#ax.set_xticklabels(["15m", "25m", "35m", "45m"])
 
-	ax.legend(loc="upper right")
+	ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+	#ax.legend(loc="upper right")
 
 	def autolabel(rects, xpos='center'):
 		"""
@@ -314,7 +300,7 @@ def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePre
 
 def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, figurePrefix, graphTitleExtension, folder):
 	plt.rcParams["figure.figsize"] = [18, 10]
-	basePath = os.path.join("/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano/", cw, "Padova/d15/b1/")
+	basePath = os.path.join("/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano-old/", cw, "Padova/d25/b1/")
 	compoundData = initCompoundData(protocols)
 	appendCompoundData(basePath, protocols, compoundData)
 	print(compoundData)
