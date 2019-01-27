@@ -17,13 +17,16 @@ def main():
 												"st", "Static protocols", "vehicleDistanceComparison")
 
 	# contention window comparison
-	#for cw in contentionWindows:
 	cwXLabels = ["cw-16-128", "cw-32-1024"]
 	printMultipleGraphs.printCwComparison(contentionWindows, 25, fbProtocols, contentionWindows, cwXLabels,
 												"fb", "Fast Broadcast protocols", "contentionWindowComparison")
 	printMultipleGraphs.printCwComparison(contentionWindows, 25, stProtocols, contentionWindows, cwXLabels,
 												"st", "Static protocols", "contentionWindowComparison")
 
+	# Romanelli comparison
+	allProtocols = ["fb-300", "fb-500", "st300-300", "st300-500", "st500-300", "st500-500"]
+	printMultipleGraphs.printRomanelliComparison(contentionWindows[1], 25, allProtocols, allProtocols, allProtocols,
+												"rom", "", "romanelliComparison")
 
 if __name__ == "__main__":
 	main()
