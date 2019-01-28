@@ -297,7 +297,7 @@ def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePre
 					compoundData["messageSentConfInts"],
 					protocols,
 					True)
-
+ 
 def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, figurePrefix, graphTitleExtension, folder):
 	plt.rcParams["figure.figsize"] = [18, 10]
 	basePath = os.path.join("/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano-old/", cw, "Padova/d25/b1/")
