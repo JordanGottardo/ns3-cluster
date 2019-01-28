@@ -257,42 +257,42 @@ def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePre
 	# Print graphs
 	printSingleGraph(cw,
 					folder,
-					"Padua scenario with buildings, total coverage with varying vehicle distance (" + graphTitleExtension + ")",
+					"Padua scenario with buildings, total coverage with varying contention window (" + graphTitleExtension + ")",
 					xList,
 					xLabels, 
 					"Total coverage (%)",
-					figurePrefix + "DistanceVsTotalCover", 
+					figurePrefix + "CwVsTotalCover", 
 					compoundData["totCoverageMeans"],
 					compoundData["totCoverageConfInts"],
 					protocols)
 	printSingleGraph(cw,
 					folder,
-					"Padua scenario with buildings, coverage on circumference with varying vehicle distance (" + graphTitleExtension + ")", 
+					"Padua scenario with buildings, coverage on circumference with varying contention window (" + graphTitleExtension + ")", 
 					xList,
 					xLabels,
 					"Coverage on circumference (%)",
-					figurePrefix + "DistanceVsCoverOnCircumference",
+					figurePrefix + "CwVsCoverOnCircumference",
 					compoundData["covOnCircMeans"],
 					compoundData["covOnCircConfInts"],
 					protocols)
 	printSingleGraph(cw,
 					folder,
-					"Padua scenario with buildings, number of hops with varying vehicle distance (" + graphTitleExtension + ")", 
+					"Padua scenario with buildings, number of hops with varying contention window (" + graphTitleExtension + ")", 
 					xList,
 					xLabels,
 					"Number of hops",
-					figurePrefix + "DistanceVsNumberOfHops",
+					figurePrefix + "CwVsNumberOfHops",
 					compoundData["hopsMeans"],
 					compoundData["hopsConfInts"],
 					protocols,
 					True)
 	printSingleGraph(cw,
 					folder,
-					"Padua scenario with buildings, number of alert messages sent with varying vehicle distance (" + graphTitleExtension + ")",
+					"Padua scenario with buildings, number of alert messages sent with varying contention window (" + graphTitleExtension + ")",
 					xList,
 					xLabels, 
 					"Number of sent alert messages",
-					figurePrefix + "DistanceVsAlertMessagesSent",
+					figurePrefix + "CwVsAlertMessagesSent",
 					compoundData["messageSentMeans"],
 					compoundData["messageSentConfInts"],
 					protocols,
@@ -303,7 +303,6 @@ def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, fig
 	basePath = os.path.join("/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano-old/", cw, "Padova/d25/b1/")
 	compoundData = initCompoundData(protocols)
 	appendCompoundData(basePath, protocols, compoundData)
-	print(compoundData)
 	#romTotCov = [45.49, 94.35, 47.45, 56.93, 50.30, 94.11]
 	#romCovCirc = [23.81, 94.75, 22.06, 64.80, 27.78, 93.88]
 	#romNumHops = [7.30, 2.14, 6.62, 3.41, 7.57, 2.07]
