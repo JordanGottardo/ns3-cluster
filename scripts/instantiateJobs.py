@@ -20,7 +20,8 @@ def main():
 	jobsTemplatePath = os.path.join(os.path.dirname(thisScriptParentPath), "jobsTemplate")
 	jobsToSchedulePath = os.path.join(os.path.dirname(thisScriptParentPath), "scheduler/jobsToSchedule")
 	if (not os.path.isdir(jobsToSchedulePath)):
-		os.remove(jobsToSchedulePath)
+		if (os.path.exists(jobsToSchedulePath)):
+			os.remove(jobsToSchedulePath)
 		os.mkdir(jobsToSchedulePath)
 	for fileName in os.listdir(jobsTemplatePath):
 		for i in range(0, jobsNumber):

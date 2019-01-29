@@ -24,8 +24,8 @@ def main():
 												"st", "Static protocols", "contentionWindowComparison")
 
 	# Romanelli comparison
-	#allProtocols = ["fb-300", "fb-500", "st300-300", "st300-500", "st500-300", "st500-500"]
-	allProtocols = ["fb-300", "fb-500", "st300-300", "st500-500"]
+	allProtocols = ["fb-300", "fb-500", "st300-300", "st300-500", "st500-300", "st500-500"]
+	#allProtocols = ["fb-300", "fb-500", "st300-300", "st500-500"]
 	printMultipleGraphs.printRomanelliComparison(contentionWindows[1], 25, allProtocols, allProtocols, allProtocols,
 												"rom", "", "romanelliComparison")
 
