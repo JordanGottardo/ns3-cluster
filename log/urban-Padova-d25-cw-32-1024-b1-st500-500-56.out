@@ -1,5 +1,5 @@
 Host di esecuzione: hpblade01
-Data: Sun Jan 27 23:54:02 CET 2019
+Data: Tue Jan 29 09:35:02 CET 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
 hpblade01
@@ -8,10 +8,39 @@ Launching job for execution
 after set
 Start main urban
 numNodes = 1775
-startingNode = 691
+startingNode = 161
 run = 0
 numNodes = 1775
-startingNode = 1749
+startingNode = 298
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
 cwMin = 32cwMax = 1024
 cwMin = 32cwMax = 1024
 cwMin = 32cwMax = 1024
