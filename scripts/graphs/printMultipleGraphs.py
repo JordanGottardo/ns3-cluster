@@ -303,14 +303,16 @@ def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, fig
 	basePath = os.path.join("/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano/", cw, "Padova/d25/b1/")
 	compoundData = initCompoundData(protocols)
 	appendCompoundData(basePath, protocols, compoundData)
-	#romTotCov = [45.49, 94.35, 47.45, 56.93, 50.30, 94.11]
-	#romCovCirc = [23.81, 94.75, 22.06, 64.80, 27.78, 93.88]
-	#romNumHops = [7.30, 2.14, 6.62, 3.41, 7.57, 2.07]
-	#romAlertSent = [219, 109, 236, 45, 253, 107]
-	romTotCov = [45.49, 94.35, 47.45, 94.11]
-	romCovCirc = [23.81, 94.75, 22.06, 93.88]
-	romNumHops = [7.30, 2.14, 6.62, 2.07]
-	romAlertSent = [219, 109, 236, 107]
+	romTotCov = [45.49, 94.35, 47.45, 56.93, 50.30, 94.11]
+	romCovCirc = [23.81, 94.75, 22.06, 64.80, 27.78, 93.88]
+	romNumHops = [7.30, 2.14, 6.62, 3.41, 7.57, 2.07]
+	romAlertSent = [219, 109, 236, 45, 253, 107]
+	#romTotCov = [45.49, 94.35, 47.45, 94.11]
+	#romCovCirc = [23.81, 94.75, 22.06, 93.88]
+	#romNumHops = [7.30, 2.14, 6.62, 2.07]
+	#romAlertSent = [219, 109, 236, 107]
+	print(compoundData["totCoverageMeans"])
+	print(romTotCov)
 	printSingleGraphRomanelliComparison(cw,
 					folder,
 					"Padua scenario with buildings, total coverage",
@@ -323,7 +325,6 @@ def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, fig
 					romTotCov,
 					protocols,
 					True)
-
 	printSingleGraphRomanelliComparison(cw,
 					folder,
 					"Padua scenario with buildings, coverage on circumference",
