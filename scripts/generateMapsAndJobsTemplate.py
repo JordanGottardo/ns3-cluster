@@ -25,8 +25,10 @@ def findNumNodes(mobilityFilePath):
 def runScenario(cw, scenario, distance):
 	# Protocols and transmission ranges
 	buildings = ["0", "1"]
-	protocols = ["1", "2", "3", "4"]
-	txRanges = ["100", "300", "500"]
+	#protocols = ["1", "2", "3", "4"]
+	protocols = ["3", "4"]
+	#txRanges = ["100", "300", "500"]
+	txRanges = ["300", "500"]
 	protocolsMap = {
 		"1": "fb",
 		"2": "st100",
@@ -79,11 +81,11 @@ def runScenario(cw, scenario, distance):
 			for protocol in protocols:
 				protocolName = protocolsMap[protocol]
 				#Removes creation of jobs where static protocol and txRange are different (e.g. STATIC100 with 500 tx range)
-				if (len(protocolName) > 3 and protocolName[-3:] != txRange):
-					print(protocolName)
-					print(protocolName[-3:])
-					print(txRange)
-					continue
+				#if (len(protocolName) > 3 and protocolName[-3:] != txRange):
+				#	print(protocolName)
+				#	print(protocolName[-3:])
+				#	print(txRange)
+				#	continue
 				command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --protocol={2} --flooding=0 --area=1000 --mapBasePath={3} --cwMin={4} --cwMax={5}".format(b, txRange, protocol, mapPathWithoutExtension, cwMin, cwMax)
 				newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-" + protocolsMap[protocol] + "-" + txRange
 				newJobFilename = newJobName + "-.job"
@@ -111,11 +113,12 @@ def runScenario(cw, scenario, distance):
 def main():
 	#Edit these to launch automatically 
 	#scenarios = ["Padova", "LA"]
-	contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
+	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
 	#contentionWindows = [{"cwMin": 16, "cwMax": 128}]
-	distances = ["15", "25", "35", "45"]
+	contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
+	#distances = ["15", "25", "35", "45"]
 	scenarios = ["Padova"]
-	#distances = ["25"]
+	distances = ["25"]
 	
 	# Removes all previous job templates in output directory
 	thisScriptPath = os.path.realpath(__file__)
