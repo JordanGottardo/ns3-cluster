@@ -26,10 +26,10 @@
 		\end{itemize}
 		When the turn expires, the value of these variables is stored in the LMFR and LMBR variables (\textit{Latest-turn Maximum Front Range} and \textit{Latest-turn Maximum Back Range}, respectively). The algorithm uses both last turn and current turn data because the former guarantees values calculated with a larger pool of Hello Messages, while the latter considers fresher information.
 		
-		When sending a Hello Message (Algorithm \ref{alg:hello-message-sending}), the vehicle inially waits for a random time between 0 and \textit{turnSize}. After this, if it has not heard another Hello Message or a collision, it proceeds to transmit a Hello Message containing the estimation of its frontward transmission range.
+		When sending a Hello Message (Algorithm \ref{alg:hello-message-sending}), the vehicle initially waits for a random time between 0 and \textit{turnSize}. After this, if it has not heard another Hello Message or a collision, it proceeds to transmit a Hello Message containing the estimation of its frontward transmission range.
 		
 		
-		When receiving a Hello Message (Algorithm \ref{alg:hello-message-receiving}), the vehicle retrives its distance and the sender's distance, calculates the distance between these two positions and then updates the CMFR field if the message comes from ahead, otherwise CMBR is updated. The new value is obtained as the maximum between the old CMFR or CMBR value, the distance between the vehicle and the sender, and the sender's transmission range estimation included in the Hello Message.
+		When receiving a Hello Message (Algorithm \ref{alg:hello-message-receiving}), the vehicle retrieves its position and the sender's position, calculates the distance between these two positions and then updates the CMFR field if the message comes from ahead, otherwise CMBR is updated. The new value is obtained as the maximum between the old CMFR or CMBR value, the distance between the vehicle and the sender, and the sender's transmission range estimation included in the Hello Message.
 		
 		\begin{algorithm}[H]
 			\begin{algorithmic}[1]
@@ -63,10 +63,10 @@
 		\end{algorithm}
 	
 	\section{Broadcast Phase}
-		This phase is activated once a car sends an Alert Message. The other cars can exploit the estimation of transmission ranges to reduce redundancy. Each vehicle can exploit this information to assign itself a forwarding priority inversely proportional to the relative distance: the higher the relative distance, the higher the priority.  
+		This phase is activated once a car sends an Alert Message. The other cars can exploit the estimation of transmission ranges to reduce redundancy in message broadcast. Each vehicle can exploit this information to assign itself a forwarding priority inversely proportional to the relative distance: the higher the relative distance, the higher the priority.  
 		
 		
-		When the Broadcast Phase is activated , a vehicle sends an alert message with application specific data. Broadcast specific data is also piggybacked on the Alert Message, such as:
+		When the Broadcast Phase is activated , a vehicle sends an Alert Message with application specific data. Broadcast specific data is also piggybacked on the Alert Message, such as:
 		\begin{itemize}
 			\item \textit{MaxRange:} the maximum range a transmission is expected to travel backward before the signal becomes too weak to be received. This value is utilized by following vehicles to rank their forwarding priority;
 			\item \textit{SenderPosition}: the coordinates of the sender.

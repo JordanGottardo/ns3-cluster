@@ -25,7 +25,7 @@ def listsToList(listOfLists, protocols):
 	return toReturn
 
 
-def printSingleGraphRomanelliComparison(cw, folder, graphTitle, xList, xLabels, yLabel, figureTitle, yDataDictionary, 
+def printSingleGraphRomanelliComparison(cw, folder, graphTitle, xList, xLabels, xLabel, yLabel, figureTitle, yDataDictionary, 
 					confIntDictionary, romData, protocols, autoscale=False, yBottomLim=0, yTopLim=100):
 	
 	yDataDictionary = listsToList(yDataDictionary, protocols)
@@ -47,10 +47,11 @@ def printSingleGraphRomanelliComparison(cw, folder, graphTitle, xList, xLabels, 
 	rects.append((ax.bar(ind - barWidth / 2, yDataDictionary, barWidth, color=colors[0], yerr=confIntDictionary, label="Jordan", capsize=4)))
 	rects.append((ax.bar(ind + barWidth / 2, romData, barWidth, color=colors[1], label="Romanelli")))
 
-	ax.set_ylabel(yLabel)
+	ax.set_xlabel(xLabel, fontsize=15)
+	ax.set_ylabel(yLabel, fontsize=15)
 	if not autoscale:
 		ax.set_ylim(yBottomLim, yTopLim)
-	ax.set_title(graphTitle)
+	ax.set_title(graphTitle, fontsize=20)
 	ax.set_xticks(ind)
 	ax.set_xticklabels(xLabels)
 	#ax.set_xticklabels(["15m", "25m", "35m", "45m"])
@@ -92,7 +93,7 @@ def printSingleGraphRomanelliComparison(cw, folder, graphTitle, xList, xLabels, 
 	#plt.savefig('b2.pdf', bbox_inches='tight')
 	#plt.show()
 
-def printSingleGraph(cw, folder, graphTitle, xList, xLabels, yLabel, figureTitle, yDataDictionary, 
+def printSingleGraph(cw, folder, graphTitle, xList, xLabels, xLabel, yLabel, figureTitle, yDataDictionary, 
 					confIntDictionary, protocols, autoscale=False, yBottomLim=0, yTopLim=100):
 	ind = np.arange(len(xList))
 	n = len(xList)
@@ -108,10 +109,11 @@ def printSingleGraph(cw, folder, graphTitle, xList, xLabels, yLabel, figureTitle
 		rects.append((ax.bar(ind + widthDistance[count] * barWidth, yDataDictionary[protocol], barWidth, color=colors[count], label=protocol, yerr=confIntDictionary[protocol], capsize=4)))
 		count = count + 1
 
-	ax.set_ylabel(yLabel)
+	ax.set_xlabel(xLabel, fontsize=15)
+	ax.set_ylabel(yLabel, fontsize=15)
 	if not autoscale:
 		ax.set_ylim(yBottomLim, yTopLim)
-	ax.set_title(graphTitle)
+	ax.set_title(graphTitle, fontsize=20)
 	ax.set_xticks(ind)
 	ax.set_xticklabels(xLabels)
 	#ax.set_xticklabels(["15m", "25m", "35m", "45m"])
@@ -198,6 +200,7 @@ def appendCompoundData(basePath, protocols, compoundData):
 def printDistanceComparison(cw, vehicleDistances, protocols, xList, xLabels, figurePrefix, graphTitleExtension, folder):	
 	plt.rcParams["figure.figsize"] = [18, 10]
 	basePath = os.path.join("/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano", cw, "Padova")
+	xLabel = "Vehicle distance"
 	compoundData = initCompoundData(protocols)
 	for distance in vehicleDistances:
 		basePathWithDistance = os.path.join(basePath, "d" + str(distance), "b1")
@@ -208,6 +211,7 @@ def printDistanceComparison(cw, vehicleDistances, protocols, xList, xLabels, fig
 					"Padua scenario with buildings, total coverage with varying vehicle distance (" + graphTitleExtension + ")",
 					xList,
 					xLabels, 
+					xLabel, 
 					"Total coverage (%)",
 					figurePrefix + "DistanceVsTotalCover", 
 					compoundData["totCoverageMeans"],
@@ -218,6 +222,7 @@ def printDistanceComparison(cw, vehicleDistances, protocols, xList, xLabels, fig
 					"Padua scenario with buildings, coverage on circumference with varying vehicle distance (" + graphTitleExtension + ")", 
 					xList,
 					xLabels,
+					xLabel, 
 					"Coverage on circumference (%)",
 					figurePrefix + "DistanceVsCoverOnCircumference",
 					compoundData["covOnCircMeans"],
@@ -228,6 +233,7 @@ def printDistanceComparison(cw, vehicleDistances, protocols, xList, xLabels, fig
 					"Padua scenario with buildings, number of hops with varying vehicle distance (" + graphTitleExtension + ")", 
 					xList,
 					xLabels,
+					xLabel, 
 					"Number of hops",
 					figurePrefix + "DistanceVsNumberOfHops",
 					compoundData["hopsMeans"],
@@ -239,6 +245,7 @@ def printDistanceComparison(cw, vehicleDistances, protocols, xList, xLabels, fig
 					"Padua scenario with buildings, number of alert messages sent with varying vehicle distance (" + graphTitleExtension + ")",
 					xList,
 					xLabels, 
+					xLabel, 
 					"Number of sent alert messages",
 					figurePrefix + "DistanceVsAlertMessagesSent",
 					compoundData["messageSentMeans"],
@@ -251,6 +258,7 @@ def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePre
 	basePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
 	basePath2 = os.path.join("Padova", "d" + str(vehicleDistance), "b1")
 	compoundData = initCompoundData(protocols)
+	xLabel = "Contention window"
 	for cw in cws:
 		basePathWithDistance = os.path.join(basePath, cw, basePath2)
 		appendCompoundData(basePathWithDistance, protocols, compoundData)
@@ -260,6 +268,7 @@ def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePre
 					"Padua scenario with buildings, total coverage with varying contention window (" + graphTitleExtension + ")",
 					xList,
 					xLabels, 
+					xLabel,
 					"Total coverage (%)",
 					figurePrefix + "CwVsTotalCover", 
 					compoundData["totCoverageMeans"],
@@ -270,6 +279,7 @@ def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePre
 					"Padua scenario with buildings, coverage on circumference with varying contention window (" + graphTitleExtension + ")", 
 					xList,
 					xLabels,
+					xLabel,
 					"Coverage on circumference (%)",
 					figurePrefix + "CwVsCoverOnCircumference",
 					compoundData["covOnCircMeans"],
@@ -280,6 +290,7 @@ def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePre
 					"Padua scenario with buildings, number of hops with varying contention window (" + graphTitleExtension + ")", 
 					xList,
 					xLabels,
+					xLabel,
 					"Number of hops",
 					figurePrefix + "CwVsNumberOfHops",
 					compoundData["hopsMeans"],
@@ -291,6 +302,7 @@ def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePre
 					"Padua scenario with buildings, number of alert messages sent with varying contention window (" + graphTitleExtension + ")",
 					xList,
 					xLabels, 
+					xLabel,
 					"Number of sent alert messages",
 					figurePrefix + "CwVsAlertMessagesSent",
 					compoundData["messageSentMeans"],
@@ -301,6 +313,7 @@ def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePre
 def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, figurePrefix, graphTitleExtension, folder):
 	plt.rcParams["figure.figsize"] = [18, 10]
 	basePath = os.path.join("/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano/", cw, "Padova/d25/b1/")
+	xLabel = "Protocol-transmission range"
 	compoundData = initCompoundData(protocols)
 	appendCompoundData(basePath, protocols, compoundData)
 	romTotCov = [45.49, 94.35, 47.45, 56.93, 50.30, 94.11]
@@ -318,6 +331,7 @@ def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, fig
 					"Padua scenario with buildings, total coverage",
 					xList,
 					xLabels, 
+					xLabel,
 					"Total coverage (%)",
 					figurePrefix + "TotalCoverage",
 					compoundData["totCoverageMeans"],
@@ -330,6 +344,7 @@ def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, fig
 					"Padua scenario with buildings, coverage on circumference",
 					xList,
 					xLabels,
+					xLabel,
 					"Coverage on circumference (%)",
 					figurePrefix + "CoverageOnCirc",
 					compoundData["covOnCircMeans"],
@@ -341,6 +356,7 @@ def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, fig
 					"Padua scenario with buildings, number of hops",
 					xList,
 					xLabels,
+					xLabel,
 					"Number of hops",
 					figurePrefix + "NumberOfHops",
 					compoundData["hopsMeans"],
@@ -353,6 +369,7 @@ def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, fig
 					"Padua scenario with buildings, number of alert messages sent",
 					xList,
 					xLabels, 
+					xLabel,
 					"Number of sent alert messages",
 					figurePrefix + "AlertMessagesSent",
 					compoundData["messageSentMeans"],

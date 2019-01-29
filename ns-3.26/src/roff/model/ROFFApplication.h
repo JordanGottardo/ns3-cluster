@@ -125,6 +125,15 @@ private:
 	void HandleAlertMessage (Ptr<ROFFNode> fbNode, ROFFNode fbHeader, uint32_t distance);
 
 	/**
+	* \brief Calculate min diff between nodes
+	* \return mindiff
+	*/
+	double ROFFApplication::CalculateMinDiff() {
+	//	TODO
+	//	calculate minDiff between nodes
+	}
+
+	/**
 	* \brief Wait a specific amount of time
 	* \param fbNode node that received the message
 	* \param fbHeader header received in the message
