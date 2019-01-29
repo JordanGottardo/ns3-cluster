@@ -197,7 +197,7 @@ def appendCompoundData(basePath, protocols, compoundData):
 
 def printDistanceComparison(cw, vehicleDistances, protocols, xList, xLabels, figurePrefix, graphTitleExtension, folder):	
 	plt.rcParams["figure.figsize"] = [18, 10]
-	basePath = os.path.join("/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano-old", cw, "Padova")
+	basePath = os.path.join("/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano", cw, "Padova")
 	compoundData = initCompoundData(protocols)
 	for distance in vehicleDistances:
 		basePathWithDistance = os.path.join(basePath, "d" + str(distance), "b1")
@@ -248,7 +248,7 @@ def printDistanceComparison(cw, vehicleDistances, protocols, xList, xLabels, fig
 
 def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePrefix, graphTitleExtension, folder):	
 	plt.rcParams["figure.figsize"] = [18, 10]
-	basePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano-old"
+	basePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
 	basePath2 = os.path.join("Padova", "d" + str(vehicleDistance), "b1")
 	compoundData = initCompoundData(protocols)
 	for cw in cws:
@@ -300,7 +300,7 @@ def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePre
  
 def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, figurePrefix, graphTitleExtension, folder):
 	plt.rcParams["figure.figsize"] = [18, 10]
-	basePath = os.path.join("/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano-old/", cw, "Padova/d25/b1/")
+	basePath = os.path.join("/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano/", cw, "Padova/d25/b1/")
 	compoundData = initCompoundData(protocols)
 	appendCompoundData(basePath, protocols, compoundData)
 	#romTotCov = [45.49, 94.35, 47.45, 56.93, 50.30, 94.11]
