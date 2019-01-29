@@ -24,11 +24,12 @@ def findNumNodes(mobilityFilePath):
 
 def runScenario(cw, scenario, distance):
 	# Protocols and transmission ranges
-	buildings = ["0", "1"]
+	#buildings = ["0", "1"]
+	buildings = ["1"]
 	#protocols = ["1", "2", "3", "4"]
-	protocols = ["3", "4"]
+	protocols = ["2", "3", "4"]
 	#txRanges = ["100", "300", "500"]
-	txRanges = ["300", "500"]
+	txRanges = ["100", "300", "500"]
 	protocolsMap = {
 		"1": "fb",
 		"2": "st100",
@@ -113,12 +114,12 @@ def runScenario(cw, scenario, distance):
 def main():
 	#Edit these to launch automatically 
 	#scenarios = ["Padova", "LA"]
-	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
+	contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
 	#contentionWindows = [{"cwMin": 16, "cwMax": 128}]
-	contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
-	#distances = ["15", "25", "35", "45"]
+	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
+	distances = ["15", "25", "35", "45"]
 	scenarios = ["Padova"]
-	distances = ["25"]
+	#distances = ["25"]
 	
 	# Removes all previous job templates in output directory
 	thisScriptPath = os.path.realpath(__file__)
