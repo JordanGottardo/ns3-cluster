@@ -29,7 +29,7 @@ def runScenario(cw, scenario, distance):
 	#protocols = ["1", "2", "3", "4"]
 	protocols = ["2", "3", "4"]
 	#txRanges = ["100", "300", "500"]
-	txRanges = ["100", "300", "500"]
+	txRanges = ["300", "500"]
 	protocolsMap = {
 		"1": "fb",
 		"2": "st100",
@@ -115,8 +115,8 @@ def main():
 	#Edit these to launch automatically 
 	#scenarios = ["Padova", "LA"]
 	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
-	contentionWindows = [{"cwMin": 16, "cwMax": 128}]
-	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
+	#contentionWindows = [{"cwMin": 16, "cwMax": 128}]
+	contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
 	#distances = ["15", "25", "35", "45"]
 	scenarios = ["Padova"]
 	distances = ["25"]

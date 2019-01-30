@@ -145,6 +145,79 @@ FBApplication::AddNode (Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink, bo
 	m_nNodes++;
 }
 
+
+void
+FBApplication::PrintStats (std::stringstream &dataStream)
+{
+	NS_LOG_FUNCTION (this);
+
+	uint32_t cover = 1;	// 'cause we count m_startingNode
+	uint32_t circ = 0, circCont = 0;
+
+	double radiusMin = m_aoi - m_aoi_error;
+	double radiusMax = m_aoi + m_aoi_error;
+
+	long double time_sum = 0;
+	long double nums_sum = 0;
+	long double slots_sum = 0;
+
+	for (uint32_t i = 0; i < m_nNodes; i++)
+	{
+		Ptr<FBNode> current = m_nodes.at (i);
+		uint32_t nodeId = current->GetId ();
+
+		// Skip the starting node
+		if (nodeId == m_startingNode)
+			continue;
+
+		// If this isn't a vehciles, skip
+		if (!current->AmIaVehicle ())
+			continue;
+
+		// Update the total cover value
+		if (current->GetReceived ())
+			cover++;
+
+		// Compute cover on circumference of radius m_aoi
+		Ptr<FBNode> startingNode = this->GetFBNode(m_startingNode);
+
+		Vector currentPosition = current->GetPosition ();
+		Vector startingNodePosition = startingNode->GetPosition ();
+
+		double distance = ns3::CalculateDistance (currentPosition, startingNodePosition);
+
+		// Check if the current vehicle is in the circumference and within the range
+		if ((distance >= radiusMin) && (distance <= radiusMax))
+		{
+			// Update the number of vehicles in the circumference
+			circCont++;
+
+			// Update the cover value
+			if (current->GetReceived ())
+			{
+				circ++;
+
+				// Update mean time, nums and slots
+				nums_sum += current->GetNum() + 1;
+				slots_sum += current->GetSlot();
+				time_sum += current->GetTimestamp().GetMicroSeconds ();
+			}
+		}
+	}
+//	Time when the first alert message was sent
+	Time timeref = this->GetFBNode(m_startingNode)->GetTimestamp();
+
+	dataStream << circCont << ","
+			<< cover << ","
+			<< circ << ","
+			<< (time_sum / (double) circ) - timeref.GetMicroSeconds () << ","
+			<< (nums_sum / (double) circ) << ","
+			<< (slots_sum / (double) circ) << ","
+			<< m_sent << ","
+			<< m_received;
+//	NS_LOG_UNCOND("aoi = " << m_aoi << "aoi error " << m_aoi_error);
+}
+
 void
 FBApplication::StartApplication (void)
 {
@@ -512,78 +585,6 @@ FBApplication::GetFBNode (uint32_t id)
 	uint32_t idin = m_id2id[id];
 
 	return m_nodes.at (idin);
-}
-
-void
-FBApplication::PrintStats (std::stringstream &dataStream)
-{
-	NS_LOG_FUNCTION (this);
-
-	uint32_t cover = 1;	// 'cause we count m_startingNode
-	uint32_t circ = 0, circCont = 0;
-
-	double radiusMin = m_aoi - m_aoi_error;
-	double radiusMax = m_aoi + m_aoi_error;
-
-	long double time_sum = 0;
-	long double nums_sum = 0;
-	long double slots_sum = 0;
-
-	for (uint32_t i = 0; i < m_nNodes; i++)
-	{
-		Ptr<FBNode> current = m_nodes.at (i);
-		uint32_t nodeId = current->GetId ();
-
-		// Skip the starting node
-		if (nodeId == m_startingNode)
-			continue;
-
-		// If this isn't a vehciles, skip
-		if (!current->AmIaVehicle ())
-			continue;
-
-		// Update the total cover value
-		if (current->GetReceived ())
-			cover++;
-
-		// Compute cover on circumference of radius m_aoi
-		Ptr<FBNode> startingNode = this->GetFBNode(m_startingNode);
-
-		Vector currentPosition = current->GetPosition ();
-		Vector startingNodePosition = startingNode->GetPosition ();
-
-		double distance = ns3::CalculateDistance (currentPosition, startingNodePosition);
-
-		// Check if the current vehicle is in the circumference and within the range
-		if ((distance >= radiusMin) && (distance <= radiusMax))
-		{
-			// Update the number of vehicles in the circumference
-			circCont++;
-
-			// Update the cover value
-			if (current->GetReceived ())
-			{
-				circ++;
-
-				// Update mean time, nums and slots
-				nums_sum += current->GetNum() + 1;
-				slots_sum += current->GetSlot();
-				time_sum += current->GetTimestamp().GetMicroSeconds ();
-			}
-		}
-	}
-//	Time when the first alert message was sent
-	Time timeref = this->GetFBNode(m_startingNode)->GetTimestamp();
-
-	dataStream << circCont << ","
-			<< cover << ","
-			<< circ << ","
-			<< (time_sum / (double) circ) - timeref.GetMicroSeconds () << ","
-			<< (nums_sum / (double) circ) << ","
-			<< (slots_sum / (double) circ) << ","
-			<< m_sent << ","
-			<< m_received;
-//	NS_LOG_UNCOND("aoi = " << m_aoi << "aoi error " << m_aoi_error);
 }
 
 uint32_t
