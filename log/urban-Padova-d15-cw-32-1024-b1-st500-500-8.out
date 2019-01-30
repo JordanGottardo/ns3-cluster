@@ -1,17 +1,112 @@
-Host di esecuzione: hpblade01
-Data: Sat Jan 26 20:48:02 CET 2019
+Host di esecuzione: hpblade16
+Data: Tue Jan 29 15:27:01 CET 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-hpblade01
+hpblade16
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
 Start main urban
 numNodes = 2855
-startingNode = 853
+startingNode = 796
 run = 0
 numNodes = 2855
-startingNode = 2264
+startingNode = 633
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
 cwMin = 32cwMax = 1024
 cwMin = 32cwMax = 1024
 cwMin = 32cwMax = 1024
