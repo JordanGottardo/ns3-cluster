@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.24)  25 JAN 2019 16:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.24)  29 JAN 2019 18:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1786,11 +1786,11 @@ Package biblatex Info: Automatic encoding selection.
 \openout4 = `tesi.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'tesi.bbl' not found.
-
-No file tesi.bbl.
+Package biblatex Info: ... file 'tesi.bbl' found.
+ (./tesi.bbl)
 Package biblatex Info: Reference section=0 on input line 162.
 Package biblatex Info: Reference segment=0 on input line 162.
+
 ABD: EveryShipout initializing macros (./inizio-fine/indici.tex (./tesi.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 6.
 
@@ -1874,12 +1874,13 @@ Overfull \hbox (10.3969pt too wide) in paragraph at lines 26--27
 
 LaTeX Warning: Citation '5720204' on page 2 undefined on input line 29.
 
-<immagini/sumo-obstacle.png, id=89, 1906.12125pt x 842.14626pt>
+[2]
+<immagini/sumo-obstacle.png, id=103, 1906.12125pt x 842.14626pt>
 File: immagini/sumo-obstacle.png Graphic file (type png)
 <use immagini/sumo-obstacle.png>
 Package pdftex.def Info: immagini/sumo-obstacle.png  used on input line 67.
 (pdftex.def)             Requested size: 372.0pt x 164.35278pt.
-[2]) (./capitoli/capitolo-2.tex [3 <./immagini/sumo-obstacle.png>] [4
+) (./capitoli/capitolo-2.tex [3 <./immagini/sumo-obstacle.png>] [4
 
 ]
 Chapter 2.
@@ -1983,8 +1984,8 @@ Package logreq Info: Writing requests to 'tesi.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
  ) 
 Here is how much of TeX's memory you used:
- 36965 strings out of 492982
- 661630 string characters out of 6134895
+ 36967 strings out of 492982
+ 661646 string characters out of 6134895
  1225734 words of memory out of 5000000
  39623 multiletter control sequences out of 15000+600000
  23363 words of font info for 98 fonts, out of 8000000 for 9000
@@ -2006,7 +2007,7 @@ super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb><
 /usr/share/texmf/fonts/type1/public/cm-super/sfsl1000.pfb></usr/share/texmf/fon
 ts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sftt1000.pfb>
-Output written on tesi.pdf (18 pages, 849409 bytes).
+Output written on tesi.pdf (18 pages, 849473 bytes).
 PDF statistics:
  342 PDF objects out of 1000 (max. 8388607)
  290 compressed objects within 3 object streams

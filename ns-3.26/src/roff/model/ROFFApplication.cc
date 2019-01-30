@@ -90,6 +90,11 @@ void ns3::ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> fbNode,
 //		then broadcast the message
 }
 
+double ROFFApplication::CalculateMinDiff() {
+//	TODO
+//	calculate minDiff between nodes
+}
+
 void ns3::ROFFApplication::WaitAgain(Ptr<ROFFNode> fbNode, ROFFNode fbHeader,
 		uint32_t waitingTime) {
 }
