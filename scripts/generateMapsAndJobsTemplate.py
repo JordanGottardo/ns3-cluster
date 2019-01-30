@@ -115,11 +115,11 @@ def main():
 	#Edit these to launch automatically 
 	#scenarios = ["Padova", "LA"]
 	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
-	#contentionWindows = [{"cwMin": 16, "cwMax": 128}]
-	contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
-	distances = ["15", "25", "35", "45"]
+	contentionWindows = [{"cwMin": 16, "cwMax": 128}]
+	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
+	#distances = ["15", "25", "35", "45"]
 	scenarios = ["Padova"]
-	#distances = ["25"]
+	distances = ["25"]
 	
 	# Removes all previous job templates in output directory
 	thisScriptPath = os.path.realpath(__file__)
