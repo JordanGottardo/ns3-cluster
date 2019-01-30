@@ -1,0 +1,90 @@
+Host di esecuzione: hpblade08
+Data: Tue Jan 29 19:58:02 CET 2019
+Directory: /home/jgottard/ns-3/ns-3.26
+Questo job viene eseguito sui seguenti nodi:
+hpblade08
+PBS_WORKDIR=/home/jgottard
+Launching job for execution
+after set
+Start main urban
+numNodes = 1071
+startingNode = 547
+run = 0
+numNodes = 1071
+startingNode = 13
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
