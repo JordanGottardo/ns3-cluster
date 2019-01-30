@@ -44,8 +44,8 @@ def printSingleGraphRomanelliComparison(cw, folder, graphTitle, xList, xLabels, 
 	#widthDistance = [-1.5, -0.5, 0.5, 1.5]
 	#for protocol in protocols:
 		#rects.append((ax.bar(ind + widthDistance[count] * barWidth, yDataDictionary[protocol], barWidth, color=colors[count], label=protocol, yerr=confIntDictionary[protocol], capsize=4)))
-	rects.append((ax.bar(ind - barWidth / 2, yDataDictionary, barWidth, color=colors[0], yerr=confIntDictionary, label="Jordan", capsize=4)))
-	rects.append((ax.bar(ind + barWidth / 2, romData, barWidth, color=colors[1], label="Romanelli")))
+	rects.append((ax.bar(ind, yDataDictionary, barWidth, color=colors[0], yerr=confIntDictionary, capsize=4)))
+	#rects.append((ax.bar(ind + barWidth / 2, romData, barWidth, color=colors[1], label="Romanelli")))
 
 	ax.set_xlabel(xLabel, fontsize=15)
 	ax.set_ylabel(yLabel, fontsize=15)
@@ -239,7 +239,9 @@ def printDistanceComparison(cw, vehicleDistances, protocols, xList, xLabels, fig
 					compoundData["hopsMeans"],
 					compoundData["hopsConfInts"],
 					protocols,
-					True)
+					False, 
+					0,
+					20)
 	printSingleGraph(cw,
 					folder,
 					"Padua scenario with buildings, number of alert messages sent with varying vehicle distance (" + graphTitleExtension + ")",
@@ -251,7 +253,9 @@ def printDistanceComparison(cw, vehicleDistances, protocols, xList, xLabels, fig
 					compoundData["messageSentMeans"],
 					compoundData["messageSentConfInts"],
 					protocols,
-					True)
+					False,
+					0,
+					250)
 
 def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePrefix, graphTitleExtension, folder):	
 	plt.rcParams["figure.figsize"] = [18, 10]
@@ -296,7 +300,9 @@ def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePre
 					compoundData["hopsMeans"],
 					compoundData["hopsConfInts"],
 					protocols,
-					True)
+					False,
+					0,
+					20)
 	printSingleGraph(cw,
 					folder,
 					"Padua scenario with buildings, number of alert messages sent with varying contention window (" + graphTitleExtension + ")",
@@ -308,7 +314,9 @@ def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePre
 					compoundData["messageSentMeans"],
 					compoundData["messageSentConfInts"],
 					protocols,
-					True)
+					False,
+					0,
+					160)
  
 def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, figurePrefix, graphTitleExtension, folder):
 	plt.rcParams["figure.figsize"] = [18, 10]
@@ -338,7 +346,7 @@ def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, fig
 					compoundData["totCoverageConfInts"],
 					romTotCov,
 					protocols,
-					True)
+					False)
 	printSingleGraphRomanelliComparison(cw,
 					folder,
 					"Padua scenario with buildings, coverage on circumference",
@@ -350,7 +358,8 @@ def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, fig
 					compoundData["covOnCircMeans"],
 					compoundData["covOnCircConfInts"],
 					romCovCirc,
-					protocols)
+					protocols,
+					False)
 	printSingleGraphRomanelliComparison(cw,
 					folder,
 					"Padua scenario with buildings, number of hops",
