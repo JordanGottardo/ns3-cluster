@@ -26,8 +26,8 @@ def runScenario(cw, scenario, distance):
 	# Protocols and transmission ranges
 	#buildings = ["0", "1"]
 	buildings = ["1"]
-	#protocols = ["1", "2", "3", "4"]
-	protocols = ["2", "3", "4"]
+	protocols = ["1", "2", "3", "4"]
+	#protocols = ["2", "3", "4"]
 	#txRanges = ["100", "300", "500"]
 	txRanges = ["300", "500"]
 	protocolsMap = {
