@@ -30,7 +30,7 @@
 #include <boost/filesystem/operations.hpp>
 #include <boost/filesystem/path.hpp>
 
-#include "../shared/FBApplication.h"
+#include "ns3/FBApplication.h"
 #include "ns3/core-module.h"
 #include "ns3/node-list.h"
 #include "ns3/network-module.h"
