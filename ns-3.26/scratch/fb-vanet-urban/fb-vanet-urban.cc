@@ -310,6 +310,18 @@ public:
 	 */
 	void RunAndPrintResults(int argc, char *argv[]);
 
+	/**
+	* \brief printToFile getter
+	* \return printToFile
+	*/
+	uint32_t GetPrintToFile() const;
+
+	/**
+	* \brief printCoords getter
+	* \return printCoords
+	*/
+	uint32_t GetPrintCoords() const;
+
 protected:
 	/**
 	 * \brief Process command line arguments
@@ -417,8 +429,7 @@ private:
    * \brief Prints actual position and velocity when a course change event occurs
    * \return none
    */
-	static void
-	CourseChange (std::ostream *os, std::string foo, Ptr<const MobilityModel> mobility);
+	static void	CourseChange (std::ostream *os, std::string foo, Ptr<const MobilityModel> mobility);
 
 
 	Ptr<FBApplication>						m_fbApplication;
@@ -427,11 +438,11 @@ private:
 	Ptr<ListPositionAllocator> 				m_adhocPositionAllocator;
 	NetDeviceContainer						m_adhocDevices;
 	Ipv4InterfaceContainer					m_adhocInterfaces;
-	std::vector <Ptr<Socket>>				m_adhocSources;
-	std::vector <Ptr<Socket>>				m_adhocSinks;
-	std::string								m_packetSize;
-	std::string								m_rate;
-	std::string								m_phyMode;
+	vector <Ptr<Socket>>					m_adhocSources;
+	vector <Ptr<Socket>>					m_adhocSinks;
+	string									m_packetSize;
+	string									m_rate;
+	string									m_phyMode;
 	double									m_txp;
 	uint32_t								m_port;
 	uint32_t								m_actualRange;
@@ -445,12 +456,14 @@ private:
 	uint32_t								m_loadBuildings;
 	uint32_t								m_cwMin;
 	uint32_t								m_cwMax;
-	std::string								m_traceFile;
-	std::string								m_bldgFile;
-	std::string								m_mapBasePath;
-	std::string								m_mapBaseName;
-	std::string									m_mapBaseNameWithoutDistance;
+	string									m_traceFile;
+	string									m_bldgFile;
+	string									m_mapBasePath;
+	string									m_mapBaseName;
+	string									m_mapBaseNameWithoutDistance;
 	double									m_TotalSimTime;
+	uint32_t								m_printToFile;
+	uint32_t								m_printCoords;
 
 
 };
@@ -461,27 +474,28 @@ private:
 */
 
 FBVanetExperiment::FBVanetExperiment ()
-	:	m_nNodes (0),	// random value, it will be set later
-		m_packetSize ("64"),
-		m_rate ("2048bps"),
-		m_phyMode ("DsssRate11Mbps"),
-		m_txp (20),
-		m_port (9),
-		m_actualRange (300),
-		m_startingNode (0),
-		m_staticProtocol (1),
-		m_flooding (0),
-		m_alertGeneration (20),
-		m_areaOfInterest (1000),
-		m_vehicleDistance (250),
-		m_scenario (1),
-		m_loadBuildings (1),
+	:	m_nNodes(0),	// random value, it will be set later
+		m_packetSize("64"),
+		m_rate("2048bps"),
+		m_phyMode("DsssRate11Mbps"),
+		m_txp(20),
+		m_port(9),
+		m_actualRange(300),
+		m_startingNode(0),
+		m_staticProtocol(1),
+		m_flooding(0),
+		m_alertGeneration(20),
+		m_areaOfInterest(1000),
+		m_vehicleDistance(250),
+		m_scenario(1),
+		m_loadBuildings(1),
 		m_cwMin(32),
 		m_cwMax(1024),
-		m_traceFile (""),
-		m_bldgFile (""),
-		m_TotalSimTime (30)
-{
+		m_traceFile(""),
+		m_bldgFile(""),
+		m_TotalSimTime(30),
+		m_printToFile(1),
+		m_printCoords(0) {
 	srand (time (0));
 
 	RngSeedManager::SetSeed (time (0));
@@ -516,26 +530,24 @@ FBVanetExperiment::Simulate ()
 	RunSimulation ();
 }
 
-void
-FBVanetExperiment::ProcessOutputs ()
-{
+void FBVanetExperiment::ProcessOutputs () {
 	NS_LOG_FUNCTION (this);
-	NS_LOG_INFO ("Process outputs.");
 
+	NS_LOG_INFO ("Process outputs.");
 	std::stringstream dataStream;
 	m_fbApplication->PrintStats (dataStream);
-
-	g_csvData.AddValue((int) m_scenario);
-	g_csvData.AddValue((int) m_actualRange);
-	g_csvData.AddValue((int) m_staticProtocol);
-	g_csvData.AddValue((int) m_loadBuildings);
-	g_csvData.AddValue((int) m_nNodes);
-	g_csvData.AddMultipleValues(dataStream);
-	g_csvData.CloseRow ();
+	if (m_printToFile) {
+		g_csvData.AddValue((int) m_scenario);
+		g_csvData.AddValue((int) m_actualRange);
+		g_csvData.AddValue((int) m_staticProtocol);
+		g_csvData.AddValue((int) m_loadBuildings);
+		g_csvData.AddValue((int) m_nNodes);
+		g_csvData.AddMultipleValues(dataStream);
+		g_csvData.CloseRow ();
+	}
 }
 
-const std::string
-FBVanetExperiment::CalculateOutFilePath() const {
+const std::string FBVanetExperiment::CalculateOutFilePath() const {
 	std::string fileName = "";
 	std::string cwMin = std::to_string(m_cwMin);
 	std::string cwMax = std::to_string(m_cwMax);
@@ -543,8 +555,6 @@ FBVanetExperiment::CalculateOutFilePath() const {
 	std::string buildings = std::to_string(m_loadBuildings);
 	std::string protocol = "";
 	std::string actualRange = std::to_string(m_actualRange);
-
-
 
 	if (m_staticProtocol == PROTOCOL_FB) {
 		protocol = "fb";
@@ -566,11 +576,18 @@ FBVanetExperiment::CalculateOutFilePath() const {
 	return fileName;
 }
 
-void
-FBVanetExperiment::RunAndPrintResults(int argc, char *argv[]) {
+void FBVanetExperiment::RunAndPrintResults(int argc, char *argv[]) {
 	Configure(argc, argv);
 	Simulate();
 	ProcessOutputs();
+}
+
+uint32_t FBVanetExperiment::GetPrintToFile() const {
+	return m_printToFile;
+}
+
+uint32_t FBVanetExperiment::GetPrintCoords() const {
+	return m_printCoords;
 }
 
 void
@@ -706,17 +723,13 @@ FBVanetExperiment::ConfigureConnections ()
 	}
 }
 
-void
-FBVanetExperiment::ConfigureTracingAndLogging ()
-{
+void FBVanetExperiment::ConfigureTracingAndLogging () {
 	NS_LOG_FUNCTION (this);
 
 	Packet::EnablePrinting ();
 }
 
-void
-FBVanetExperiment::ConfigureFBApplication ()
-{
+void FBVanetExperiment::ConfigureFBApplication () {
 	NS_LOG_FUNCTION (this);
 	NS_LOG_INFO ("Configure FB application.");
 
@@ -726,13 +739,15 @@ FBVanetExperiment::ConfigureFBApplication ()
 
 	// Create the application and schedule start and end time
 	m_fbApplication = CreateObject<FBApplication> ();
-	m_fbApplication->Install (m_staticProtocol,
-														m_alertGeneration,
-														m_actualRange,
-														m_areaOfInterest,
-														m_vehicleDistance,
-														(m_flooding==1) ? true : false,
-														m_cwMin, m_cwMax);
+//	m_fbApplication->Install
+	m_fbApplication->Install(m_staticProtocol,
+							m_alertGeneration,
+							m_actualRange,
+							m_areaOfInterest,
+							m_vehicleDistance,
+							(m_flooding==1) ? true : false,
+							m_cwMin, m_cwMax, m_printCoords
+							);
 	m_fbApplication->SetStartTime (Seconds (1));
 	m_fbApplication->SetStopTime (Seconds (m_TotalSimTime));
 
@@ -746,18 +761,14 @@ FBVanetExperiment::ConfigureFBApplication ()
 	m_adhocNodes.Get (m_startingNode)->AddApplication (m_fbApplication);
 }
 
-void
-FBVanetExperiment::RunSimulation ()
-{
+void FBVanetExperiment::RunSimulation () {
 	NS_LOG_FUNCTION (this);
 	NS_LOG_INFO ("Run simulation.");
 
 	Run ();
 }
 
-void
-FBVanetExperiment::CommandSetup (int argc, char *argv[])
-{
+void FBVanetExperiment::CommandSetup (int argc, char *argv[]) {
 	NS_LOG_FUNCTION (this);
 	NS_LOG_INFO ("Parsing command line arguments.");
 
@@ -780,13 +791,13 @@ FBVanetExperiment::CommandSetup (int argc, char *argv[])
 
 	cmd.AddValue ("mapBasePath", "Base path of map required for simulation "
 			"(e.g. ../maps/Padova-25.osm.xml. The dash '-' in the name is mandatory)", m_mapBasePath);
+	cmd.AddValue ("printToFile", "Print data to file or not: 0 not print, 1 print ", m_printToFile);
+	cmd.AddValue ("printCoords", "Print coords to file or not: 0 not print, 1 print ", m_printCoords);
 
 	cmd.Parse (argc, argv);
 }
 
-void
-FBVanetExperiment::SetupScenario ()
-{
+void FBVanetExperiment::SetupScenario () {
 	NS_LOG_FUNCTION (this);
 //	NS_LOG_INFO ("Configure current scenario (" << m_scenario << ").");
 
@@ -847,8 +858,7 @@ FBVanetExperiment::SetupScenario ()
 	}
 }
 
-unsigned int
-FBVanetExperiment::CalculateNumNodes() const {
+unsigned int FBVanetExperiment::CalculateNumNodes() const {
 	NS_LOG_FUNCTION (this);
 	ifstream ns2mobilityTraceFile;
 	ns2mobilityTraceFile.open(m_traceFile, ios::in);
@@ -873,9 +883,7 @@ FBVanetExperiment::CalculateNumNodes() const {
 	return numNodes;
 }
 
-void
-FBVanetExperiment::Run ()
-{
+void FBVanetExperiment::Run() {
 	NS_LOG_FUNCTION (this);
 
 	Simulator::Stop (Seconds (m_TotalSimTime));
@@ -885,17 +893,14 @@ FBVanetExperiment::Run ()
 	Simulator::Destroy ();
 }
 
-void
-FBVanetExperiment::CourseChange (std::ostream *os, std::string foo, Ptr<const MobilityModel> mobility)
-{
+void FBVanetExperiment::CourseChange (std::ostream *os, std::string foo, Ptr<const MobilityModel> mobility) {
 	NS_LOG_FUNCTION ( &os << foo << mobility);	// problem with the argument *os
 
-  Vector pos = mobility->GetPosition (); // Get position
-  Vector vel = mobility->GetVelocity (); // Get velocity
+	Vector pos = mobility->GetPosition (); // Get position
+	Vector vel = mobility->GetVelocity (); // Get velocity
+	int nodeId = mobility->GetObject<Node> ()->GetId ();
 
-  int nodeId = mobility->GetObject<Node> ()->GetId ();
-
-  NS_LOG_DEBUG ("Changing pos for node " << nodeId << " at " << Simulator::Now ().GetSeconds ()
+	NS_LOG_DEBUG ("Changing pos for node " << nodeId << " at " << Simulator::Now ().GetSeconds ()
 	 							<< "; POS: (" << pos.x << ", " << pos.y << ", " << pos.z << ")"
 								<< "; VEL: (" << vel.x << ", " << vel.y << ", " << vel.z << ").");
 }
@@ -957,13 +962,19 @@ int main (int argc, char *argv[])
 //	Before launching experiments, calculate output file path
 	FBVanetExperiment experiment;
 	experiment.Configure (argc, argv);
-	std::string filePath = experiment.CalculateOutFilePath();
-	boost::filesystem::path path = boost::filesystem::current_path() /= "/out/scenario-urbano/";
-	path /= filePath;
-	g_csvData.EnableAlternativeFilename (path);
-	g_csvData.WriteHeader ("\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
+	if (experiment.GetPrintToFile()) {
+		string filePath = experiment.CalculateOutFilePath();
+		string additionalPath = "/out/scenario-urbano/";
+		if(experiment.GetPrintCoords()) {
+			additionalPath = "/out/scenario-urbano-con-coord/";
+		}
+		boost::filesystem::path path = boost::filesystem::current_path() /= additionalPath;
+		path /= filePath;
+		g_csvData.EnableAlternativeFilename (path);
+		g_csvData.WriteHeader ("\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
 							"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
-							"\"Slots\",\"Messages sent\",\"Messages received\"");
+							"\"Slots\",\"Messages sent\",\"Messages received\", \"Received coordinates\", \"Node coords\"");
+	}
 	for(unsigned int i = 0; i < maxRun; i++) {
 		cout << "run = " << i << endl;
 		FBVanetExperiment experiment;
