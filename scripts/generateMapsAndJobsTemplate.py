@@ -87,7 +87,7 @@ def runScenario(cw, scenario, distance):
 				#	print(protocolName[-3:])
 				#	print(txRange)
 				#	continue
-				command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --protocol={2} --flooding=0 --area=1000 --mapBasePath={3} --cwMin={4} --cwMax={5}".format(b, txRange, protocol, mapPathWithoutExtension, cwMin, cwMax)
+				command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --protocol={2} --flooding=0 --area=1000 --mapBasePath={3} --cwMin={4} --cwMax={5} --printToFile=1 --printCoords=0".format(b, txRange, protocol, mapPathWithoutExtension, cwMin, cwMax)
 				newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-" + protocolsMap[protocol] + "-" + txRange
 				newJobFilename = newJobName + "-.job"
 				newJobPath = os.path.join(jobsPath, newJobFilename)
