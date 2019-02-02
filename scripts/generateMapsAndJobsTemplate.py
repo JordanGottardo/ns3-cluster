@@ -81,12 +81,12 @@ def runScenario(cw, scenario, distance):
 		for txRange in txRanges:
 			for protocol in protocols:
 				protocolName = protocolsMap[protocol]
-				#Removes creation of jobs where static protocol and txRange are different (e.g. STATIC100 with 500 tx range)
-				#if (len(protocolName) > 3 and protocolName[-3:] != txRange):
-				#	print(protocolName)
-				#	print(protocolName[-3:])
-				#	print(txRange)
-				#	continue
+				#Removes creation of jobs where static protocol and txRange are different (e.g. STATIC100 with 500 tx range) only for distance != 25
+				if ( distance != "25" and (len(protocolName) > 3 and protocolName[-3:] != txRange)):
+					#print(protocolName)
+					#print(protocolName[-3:])
+					#print(txRange)
+					continue
 				command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --protocol={2} --flooding=0 --area=1000 --mapBasePath={3} --cwMin={4} --cwMax={5} --printToFile=1 --printCoords=0".format(b, txRange, protocol, mapPathWithoutExtension, cwMin, cwMax)
 				newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-" + protocolsMap[protocol] + "-" + txRange
 				newJobFilename = newJobName + "-.job"
