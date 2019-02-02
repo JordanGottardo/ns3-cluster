@@ -1,0 +1,7 @@
+<<<<<<< HEAD:ns-3.26/out/scenario-urbano/cw-32-1024/Padova/d25/b1/fb-500/Padova-25-cw-32-1024-b1-fb-500-1548979745296.csv
+"id","Scenario","Actual Range","Protocol","Buildings","Total nodes","Nodes on circ","Total coverage","Coverage on circ","Alert received mean time","Hops","Slots","Messages sent","Messages received"
+0,1,500,0,1,1775,58,1607,58,5.82632e+08,2.94828,16.9138,106,10994
+=======
+"id","Scenario","Actual Range","Protocol","Buildings","Total nodes","Nodes on circ","Total coverage","Coverage on circ","Alert received mean time","Hops","Slots","Messages sent","Messages received", "Received coordinates", "Node coords"
+0,1,500,500,0,1775,66,1711,66,4.94001e+08,3.10606,9.39394,30,6418,
+>>>>>>> 8d6a5a2b07dff0ec66743ee6306df55b187339c3:ns-3.26/out/scenario-urbano-con-coord/cw-32-1024/Padova/d25/b0/st500-500/Padova-25-cw-32-1024-b0-st500-500-1549042400275.csv

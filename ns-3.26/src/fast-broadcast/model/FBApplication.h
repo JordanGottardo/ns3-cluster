@@ -26,6 +26,9 @@
 #include "FBNode.h"
 #include "ns3/application.h"
 #include "ns3/network-module.h"
+#include "ns3/object-vector.h"
+
+using namespace std;
 
 
 namespace ns3 {
@@ -61,9 +64,11 @@ public:
 	 * \param flooding enable or disable flooding
 	 * \param cwMin minumum size of the contention window (slots)
 	 * \param cwMin maximum size of the contention window (slots)
+	 * * \param whether to print coordinates on file (1=true, 0=false)
 	 * \return none
 	 */
-	void Install (uint32_t protocol, uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi, uint32_t aoi_error, bool flooding, uint32_t cwMin, uint32_t cwMax);
+	virtual void Install (uint32_t protocol, uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi,
+				  uint32_t aoi_error, bool flooding, uint32_t cwMin, uint32_t cwMax, uint32_t printCoords);
 
 	/**
 	 * \brief Add a new node to the applicatin and set up protocol parameters
@@ -80,9 +85,10 @@ public:
 	 * \param dataStream output data
 	 * \return none
 	 */
-	void PrintStats (std::stringstream &dataStream);
+	void PrintStats (stringstream &dataStream);
 
 private:
+
 	/**
 	 * \brief Application specific startup code
 	 *
@@ -197,16 +203,24 @@ private:
 	 */
 	uint32_t ComputeContetionWindow (uint32_t maxRange, uint32_t distance);
 
+	/**
+	* \brief Returns a string from a vector
+	* \return the string with the content of the vector
+	 */
+	template <typename T>
+	string StringifyVector(const vector<T>& v);
+
+
 private:
 	uint32_t																m_nNodes;	// number of nodes
-	std::vector<Ptr<FBNode>>								m_nodes;	// nodes that run this application
-	std::map<uint32_t, uint32_t> 						m_id2id;	// map node id with index in m_nodes
+	vector<Ptr<FBNode>>														m_nodes;	// nodes that run this application
+	map<uint32_t, uint32_t> 												m_id2id;	// map node id with index in m_nodes
 	uint32_t																m_startingNode; // index of the node that will generate the Alert Message
-	bool																		m_staticProtocol;	// true if static protocol is used
+	bool																	m_staticProtocol;	// true if static protocol is used
 	uint32_t													 			m_broadcastPhaseStart;	// broadcast phase start time (seconds)
 	uint32_t													 			m_cwMin;	// min size of the contention window (in slot)
 	uint32_t													 			m_cwMax;	// max size of the contention window (in slot)
-	bool															 			m_flooding;	// used for control the flooding of the Alert messages
+	bool															 		m_flooding;	// used for control the flooding of the Alert messages
 	uint32_t													 			m_actualRange;	// real transmission range
 	uint32_t													 			m_estimatedRange;	// range of transmission to be estimated
 	uint32_t																m_aoi;	// radius of the area of interest (meters)
@@ -214,6 +228,10 @@ private:
 	uint32_t													 			m_packetPayload; // size of the packet payload
 	uint32_t													 			m_received;	// number of hello messages sent
 	uint32_t																m_sent; // // number of alert messages sent
+
+	uint32_t																m_collisions; // number of collisions
+	vector<Vector>															m_receivedCoords; // coordinates of nodes which have received alert messages, duplicates allowed
+	uint32_t																m_printCoords; // 1 to print coordinates, 0 otherwise
 };
 
 } // namespace ns3
