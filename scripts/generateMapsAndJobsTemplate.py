@@ -29,7 +29,7 @@ def runScenario(cw, scenario, distance):
 	protocols = ["1", "2", "3", "4"]
 	#protocols = ["2", "3", "4"]
 	#txRanges = ["100", "300", "500"]
-	txRanges = ["300", "500"]
+	txRanges = ["100", "300", "500"]
 	protocolsMap = {
 		"1": "fb",
 		"2": "st100",
@@ -87,7 +87,7 @@ def runScenario(cw, scenario, distance):
 				#	print(protocolName[-3:])
 				#	print(txRange)
 				#	continue
-				command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --protocol={2} --flooding=0 --area=1000 --mapBasePath={3} --cwMin={4} --cwMax={5}".format(b, txRange, protocol, mapPathWithoutExtension, cwMin, cwMax)
+				command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --protocol={2} --flooding=0 --area=1000 --mapBasePath={3} --cwMin={4} --cwMax={5} --printToFile=1 --printCoords=0".format(b, txRange, protocol, mapPathWithoutExtension, cwMin, cwMax)
 				newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-" + protocolsMap[protocol] + "-" + txRange
 				newJobFilename = newJobName + "-.job"
 				newJobPath = os.path.join(jobsPath, newJobFilename)
@@ -115,11 +115,11 @@ def main():
 	#Edit these to launch automatically 
 	#scenarios = ["Padova", "LA"]
 	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
-	#contentionWindows = [{"cwMin": 16, "cwMax": 128}]
+	contentionWindows = [{"cwMin": 16, "cwMax": 128}]
 	contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
 	#distances = ["15", "25", "35", "45"]
 	scenarios = ["Padova"]
-	distances = ["25"]
+	distances = ["25", "35", "45"]
 	
 	# Removes all previous job templates in output directory
 	thisScriptPath = os.path.realpath(__file__)
