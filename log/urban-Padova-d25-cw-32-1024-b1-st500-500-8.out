@@ -1,17 +1,22 @@
-Host di esecuzione: hpblade16
-Data: Wed Jan 30 19:56:02 CET 2019
+Host di esecuzione: dellsrv4
+Data: Fri Feb 1 18:11:02 CET 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-hpblade16
+dellsrv4
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
 Start main urban
 numNodes = 1775
-startingNode = 1538
+startingNode = 1560
 run = 0
 numNodes = 1775
-startingNode = 1473
+startingNode = 717
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
+cwMin = 32cwMax = 1024
 cwMin = 32cwMax = 1024
 cwMin = 32cwMax = 1024
 cwMin = 32cwMax = 1024
