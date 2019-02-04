@@ -1,5 +1,5 @@
 Host di esecuzione: hpblade11
-Data: Wed Jan 30 22:04:03 CET 2019
+Data: Sat Feb 2 21:56:03 CET 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
 hpblade11
@@ -8,13 +8,8 @@ Launching job for execution
 after set
 Start main urban
 numNodes = 1775
-startingNode = 62
+startingNode = 1482
 run = 0
 numNodes = 1775
-startingNode = 114
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
+startingNode = 850
+FbApplication::PrintStuff2344 2344

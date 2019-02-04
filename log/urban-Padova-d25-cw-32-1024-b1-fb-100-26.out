@@ -1,125 +1,15 @@
-Host di esecuzione: hpblade01
-Data: Sun Jan 27 13:05:02 CET 2019
+Host di esecuzione: hpblade06
+Data: Sat Feb 2 16:12:04 CET 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-hpblade01
+hpblade06
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
 Start main urban
 numNodes = 1775
-startingNode = 354
+startingNode = 125
 run = 0
 numNodes = 1775
-startingNode = 640
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
+startingNode = 1727
+FbApplication::PrintStuff382 382

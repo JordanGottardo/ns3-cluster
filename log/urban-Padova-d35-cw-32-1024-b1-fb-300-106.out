@@ -1,0 +1,15 @@
+Host di esecuzione: dellsrv4
+Data: Sun Feb 3 14:07:02 CET 2019
+Directory: /home/jgottard/ns-3/ns-3.26
+Questo job viene eseguito sui seguenti nodi:
+dellsrv4
+PBS_WORKDIR=/home/jgottard
+Launching job for execution
+after set
+Start main urban
+numNodes = 1317
+startingNode = 862
+run = 0
+numNodes = 1317
+startingNode = 933
+FbApplication::PrintStuff368 368
