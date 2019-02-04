@@ -82,7 +82,10 @@ def runScenario(cw, scenario, distance):
 			for protocol in protocols:
 				protocolName = protocolsMap[protocol]
 				#Removes creation of jobs where static protocol and txRange are different (e.g. STATIC100 with 500 tx range) only for distance != 25
-				if ( distance != "25" and (len(protocolName) > 3 and protocolName[-3:] != txRange)):
+				if ( (distance != "25" and len(protocolName) > 3 and protocolName[-3:] != txRange)
+					or
+					(cwMin == 16 and len(protocolName) > 3 and protocolName[-3:] != txRange)
+				   ):
 					#print(protocolName)
 					#print(protocolName[-3:])
 					#print(txRange)
@@ -115,11 +118,11 @@ def main():
 	#Edit these to launch automatically 
 	#scenarios = ["Padova", "LA"]
 	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
-	#contentionWindows = [{"cwMin": 16, "cwMax": 128}]
-	contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
+	contentionWindows = [{"cwMin": 16, "cwMax": 128}]
+	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
 	#distances = ["15", "25", "35", "45"]
 	scenarios = ["Padova"]
-	distances = ["25", "35", "45"]
+	distances = ["25"]
 	
 	# Removes all previous job templates in output directory
 	thisScriptPath = os.path.realpath(__file__)
