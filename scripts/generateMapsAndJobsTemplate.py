@@ -119,7 +119,7 @@ def main():
 	contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
 	#distances = ["15", "25", "35", "45"]
 	scenarios = ["Padova"]
-	distances = ["15"]
+	distances = ["25", "35", "45"]
 	
 	# Removes all previous job templates in output directory
 	thisScriptPath = os.path.realpath(__file__)
