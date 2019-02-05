@@ -144,7 +144,6 @@ public:
 private:
 	boost::filesystem::path					m_csvFilePath;
 	std::stringstream						m_currentRow;
-//	std::mutex 									m_mutex;
 	unsigned int 							runId;
 };
 
@@ -740,13 +739,14 @@ void FBVanetExperiment::ConfigureFBApplication () {
 	// Create the application and schedule start and end time
 	m_fbApplication = CreateObject<FBApplication> ();
 //	m_fbApplication->Install
+
 	m_fbApplication->Install(m_staticProtocol,
 							m_alertGeneration,
 							m_actualRange,
 							m_areaOfInterest,
 							m_vehicleDistance,
 							(m_flooding==1) ? true : false,
-							m_cwMin, m_cwMax, m_printCoords
+							m_cwMin, m_cwMax, m_printCoords, m_vehicleDistance
 							);
 	m_fbApplication->SetStartTime (Seconds (1));
 	m_fbApplication->SetStopTime (Seconds (m_TotalSimTime));
@@ -973,7 +973,8 @@ int main (int argc, char *argv[])
 		g_csvData.EnableAlternativeFilename (path);
 		g_csvData.WriteHeader ("\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
 							"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
-							"\"Slots\",\"Messages sent\",\"Messages received\", \"Received coordinates\", \"Node coords\"");
+							"\"Slots\",\"Messages sent\",\"Messages received\", \"Starting x\", \"Starting y\","
+							"\"Starting node\", \"Vehicle distance\", \"Received coordinates\", \"Node coords\"");
 	}
 	for(unsigned int i = 0; i < maxRun; i++) {
 		cout << "run = " << i << endl;
