@@ -27,6 +27,7 @@
 #include "ns3/application.h"
 #include "ns3/network-module.h"
 #include "ns3/object-vector.h"
+#include "TransmissionList.h"
 
 using namespace std;
 
@@ -54,7 +55,7 @@ public:
 	FBApplication ();
 	virtual ~FBApplication();
 
-	/**
+	 /**
 	 * \brief Set up some application parameters
 	 * \param protocol fb or static protocol
 	 * \param broadcastPhaseStart time after which broadcast phase will start (seconds)
@@ -64,11 +65,12 @@ public:
 	 * \param flooding enable or disable flooding
 	 * \param cwMin minumum size of the contention window (slots)
 	 * \param cwMin maximum size of the contention window (slots)
-	 * * \param whether to print coordinates on file (1=true, 0=false)
+	 * \param printCoords whether to print coordinates on file (1=true, 0=false)
+	 * \param vehicleDistance distance between vehicles
 	 * \return none
 	 */
 	virtual void Install (uint32_t protocol, uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi,
-				  uint32_t aoi_error, bool flooding, uint32_t cwMin, uint32_t cwMax, uint32_t printCoords);
+				  uint32_t aoi_error, bool flooding, uint32_t cwMin, uint32_t cwMax, uint32_t printCoords, uint32_t vehicleDistance);
 
 	/**
 	 * \brief Add a new node to the applicatin and set up protocol parameters
@@ -232,6 +234,8 @@ private:
 	uint32_t																m_collisions; // number of collisions
 	vector<Vector>															m_receivedCoords; // coordinates of nodes which have received alert messages, duplicates allowed
 	uint32_t																m_printCoords; // 1 to print coordinates, 0 otherwise
+	uint32_t																m_vehicleDistance; //distance between vehicles
+	TransmissionList														m_transmissionList; //list to discover path of alert messages
 };
 
 } // namespace ns3

@@ -1,12 +1,12 @@
 #!/usr/bin/python
 
 #Invocation:
-#   ./drawVehicles.py graphTitle ../maps/Padova/Padova-25.ns2mobility.xml
+#   ./drawVehicles.py graphTitle ../../maps/Padova/Padova-25.ns2mobility.xml
 
 import os
 import sys
 import getopt
-import numpy as np
+import numpy as np  
 import matplotlib
 import matplotlib.pyplot as plt
 
@@ -63,10 +63,14 @@ def main():
     plt.xlabel("x")
     plt.ylabel("y")
     plt.title(graphTitle)
-
+    
     plt.plot(xPos, yPos, ".")
+    print starterCoordX
+    print starterCoordY
     plt.plot(starterCoordX, starterCoordY, "ro")
 
+    print starterCoordX
+    print starterCoordY
     plotTxRange(minTxRange, starterCoordX, starterCoordY, vehicleDistance, color1, False)
     plotTxRange(maxTxRange, starterCoordX, starterCoordY, vehicleDistance, color2, False)
     plotTxRange(1000, starterCoordX, starterCoordY, vehicleDistance, color3, True)
@@ -82,7 +86,8 @@ def plotTxRange(txRange, starterCoordX, starterCoordY, vehicleDistance, color, p
     x = np.linspace(-500, 3500, 100)
     y = np.linspace(-500, 3500, 100)
     X, Y = np.meshgrid(x, y)
-
+    print starterCoordX
+    print starterCoordY
     realTxRange = (X - starterCoordX) ** 2 + (Y - starterCoordY) ** 2 - txRange ** 2
     CS = plt.contour(X, Y, realTxRange, [0], colors = color)
 

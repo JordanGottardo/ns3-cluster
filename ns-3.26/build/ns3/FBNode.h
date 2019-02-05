@@ -209,17 +209,17 @@ public:
 	 */
 	void SetMeAsVehicle (bool value);
 
-	uint32_t							m_id;	// node id
-	Ptr<Node>							m_node;	// ns-3 node
-	Ptr<Socket> 					m_socket; // ns-3 socket
-	uint32_t 	  					m_CMFR;	// Current Maximum Front Range
-	uint32_t 	  					m_LMFR;	// Last Maximum Front Range
-	uint32_t 	  					m_CMBR;	// Current Maximum Back Range
-	uint32_t 	  					m_LMBR; // Last Maximum Back Range
-	Vector 								m_position;	// node current position
-	uint32_t							m_num;	// legacy with barichello's code
-	int32_t								m_phase;	// legacy with barichello's code
-	uint32_t							m_slot;	// legacy with barichello's code
+	uint32_t								m_id;	// node id
+	Ptr<Node>								m_node;	// ns-3 node
+	Ptr<Socket> 							m_socket; // ns-3 socket
+	uint32_t 	  							m_CMFR;	// Current Maximum Front Range
+	uint32_t 	  							m_LMFR;	// Last Maximum Front Range
+	uint32_t 	  							m_CMBR;	// Current Maximum Back Range
+	uint32_t 	  							m_LMBR; // Last Maximum Back Range
+	Vector 									m_position;	// node current position
+	uint32_t								m_num;	// legacy with barichello's code
+	int32_t									m_phase;	// legacy with barichello's code
+	uint32_t								m_slot;	// legacy with barichello's code
 	bool 									m_received;	// legacy with barichello's code
 	bool 									m_sent;	// legacy with barichello's code
 	Time									m_timestamp;	// used for statistics
