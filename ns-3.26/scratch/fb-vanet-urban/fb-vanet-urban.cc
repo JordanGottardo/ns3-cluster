@@ -51,7 +51,7 @@
 #include "ns3/topology.h"
 #include "ns3/wifi-80211p-helper.h"
 #include "ns3/wave-mac-helper.h"
-//#include "ns3/netanim-module.h"
+#include "ns3/netanim-module.h"
 #include "ns3/FBApplication.h"
 
 using namespace ns3;
@@ -474,7 +474,7 @@ private:
 
 FBVanetExperiment::FBVanetExperiment ()
 	:	m_nNodes(0),	// random value, it will be set later
-		m_packetSize("64"),
+		m_packetSize("68"), //added
 		m_rate("2048bps"),
 		m_phyMode("DsssRate11Mbps"),
 		m_txp(20),
@@ -637,9 +637,9 @@ FBVanetExperiment::ConfigureMobility ()
 	NS_LOG_INFO ("Loading ns2 mobility file \"" << m_traceFile << "\".");
 
 	// Disable node movements
-	ns2.DisableNodeMovements ();
+	ns2.DisableNodeMovements();
 
-	ns2.Install (); // configure movements for each node, while reading trace file
+	ns2.Install(); // configure movements for each node, while reading trace file
 
 	// Configure callback for logging
 	std::ofstream m_os;
@@ -669,12 +669,15 @@ FBVanetExperiment::SetupAdhocDevices ()
 	wifiPhy.SetChannel (wifiChannel.Create ());
 	wifiPhy.SetPcapDataLinkType (YansWifiPhyHelper::DLT_IEEE802_11);
 
-	if (m_actualRange == 100)
+	if (m_actualRange == 100) {
 		m_txp = -7.0;
-	else if (m_actualRange == 300)
+	}
+	else if (m_actualRange == 300) {
 		m_txp = 4.6;
-	else if (m_actualRange == 500)
+	}
+	else if (m_actualRange == 500) {
 		m_txp = 13.4;
+	}
 
 	WifiMacHelper wifiMac;
 	wifi.SetRemoteStationManager ("ns3::ConstantRateWifiManager",
@@ -887,7 +890,8 @@ void FBVanetExperiment::Run() {
 	NS_LOG_FUNCTION (this);
 
 	Simulator::Stop (Seconds (m_TotalSimTime));
-//	AnimationInterface anim ("animation.xml");
+//	AnimationInterface anim ("testAnimationWithPacketMetadata.xml");
+//	anim.EnablePacketMetadata (true);
 	Simulator::Run ();
 
 	Simulator::Destroy ();
@@ -974,7 +978,8 @@ int main (int argc, char *argv[])
 		g_csvData.WriteHeader ("\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
 							"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
 							"\"Slots\",\"Messages sent\",\"Messages received\", \"Starting x\", \"Starting y\","
-							"\"Starting node\", \"Vehicle distance\", \"Received coordinates\", \"Node coords\"");
+							"\"Starting node\", \"Vehicle distance\", \"Received coordinates\", "
+							"\"Node coords\", \"Transmission map\", \"Received on circ coords\"");
 	}
 	for(unsigned int i = 0; i < maxRun; i++) {
 		cout << "run = " << i << endl;

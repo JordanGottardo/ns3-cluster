@@ -8,14 +8,13 @@
 
 namespace ns3 {
 
-class KeyableVector: Vector {
+class KeyableVector: public Vector {
 
 public:
 	KeyableVector(Vector v);
 	bool operator <(const KeyableVector& v) const;
 	bool operator ==(const KeyableVector& v) const;
 //	bool operator !=(const KeyableVector& v) const;
-
 
 };
 }

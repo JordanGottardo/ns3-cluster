@@ -81,6 +81,12 @@ public:
 	void SetPhase (int8_t value);
 
 	/**
+	 * \brief set the senderId of the message
+	 * \param value senderId of the message
+	 */
+	void SetSenderId(uint32_t value);
+
+	/**
 	 * \returns the spatial location (gps) of the sender
 	 */
 	Vector GetPosition (void) const;
@@ -109,6 +115,11 @@ public:
 	 * \returns the phase of the message
 	 */
 	int32_t GetPhase (void) const;
+
+	/**
+	 * \returns the senderId of the message
+	 */
+	uint32_t GetSenderId(void) const;
 
 	/**
    * Get the most derived TypeId for this Object.
@@ -184,6 +195,8 @@ private:
 	uint32_t			m_type;
 	uint32_t			m_slot;
 	int32_t				m_phase;
+
+	uint32_t				m_senderId; //added
 };
 
 } // namespace ns3

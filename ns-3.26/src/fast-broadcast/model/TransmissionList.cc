@@ -11,15 +11,23 @@ namespace ns3 {
 
 void TransmissionList::AddEdge(KeyableVector source, KeyableVector destination) {
 	if (transmissions.count(source) == 0) {
-//		TODO
+		transmissions.insert(pair<KeyableVector, vector<KeyableVector>>(source, vector<KeyableVector>()));
 	}
 	transmissions.at(source).push_back(destination);
 }
 
-void TransmissionList::PrintTransmission() const {
-//	for(const map<KeyableVector, KeyableVector>::iterator it = transmissions.begin(); it != transmissions.end(); ++it) {
-//			cout << it->first << " " << it->second << endl;
-//	}
+string TransmissionList::ToString() const {
+	stringstream ss;
+	for(auto it = transmissions.begin(); it != transmissions.end(); ++it) {
+//		copies the key
+		ss << it->first<<"{";
+		vector<KeyableVector> v = it->second;
+		for (auto kv: v) {
+			ss << kv << ";";
+		}
+		ss << "}";
+	}
+	return ss.str();
 }
 
 }

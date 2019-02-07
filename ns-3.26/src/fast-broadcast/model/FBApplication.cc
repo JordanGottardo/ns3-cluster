@@ -146,12 +146,6 @@ void FBApplication::AddNode (Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sin
 
 void FBApplication::PrintStats (std::stringstream &dataStream) {
 
-	cout << "StartBroadcastPhase" << endl;
-	m_transmissionList.PrintTransmission();
-//	for (auto a : m_nodes) {
-//		cout << a->GetNode()->GetId() << endl;
-//	}
-
 	NS_LOG_FUNCTION (this);
 
 	uint32_t cover = 1;	// 'cause we count m_startingNode
@@ -163,6 +157,8 @@ void FBApplication::PrintStats (std::stringstream &dataStream) {
 	long double time_sum = 0;
 	long double nums_sum = 0;
 	long double slots_sum = 0;
+
+	stringstream receivedOnCircCoords;
 
 	for (uint32_t i = 0; i < m_nNodes; i++)	{
 		Ptr<FBNode> current = m_nodes.at (i);
@@ -196,6 +192,7 @@ void FBApplication::PrintStats (std::stringstream &dataStream) {
 			// Update the cover value
 			if (current->GetReceived()) {
 				circ++;
+				receivedOnCircCoords << currentPosition << ";";
 				// Update mean time, nums and slots
 				nums_sum += current->GetNum() + 1;
 				slots_sum += current->GetSlot();
@@ -225,7 +222,16 @@ void FBApplication::PrintStats (std::stringstream &dataStream) {
 		 Ptr<FBNode> startingNode = GetFBNode(m_startingNode);
 
 		dataStream << startingNode->GetPosition().x << "," << startingNode->GetPosition().y << "," << m_startingNode << "," <<
-				m_vehicleDistance << "," << receivedCoords << "," << nodeCoords.str();
+				m_vehicleDistance << "," << receivedCoords << "," << nodeCoords.str() << "," << "a" <<
+				"," << receivedOnCircCoords.str();
+	}
+	cout << "print transmilist" << endl;
+	for (auto it = m_transmissionList.begin(); it != m_transmissionList.end(); ++it) {
+		cout << it->first << ":{";
+		for (auto el: it->second) {
+			cout << el << ",";
+		}
+		cout << "}" << endl;
 	}
 
 //	NS_LOG_UNCOND("aoi = " << m_aoi << "aoi error " << m_aoi_error);
@@ -330,6 +336,8 @@ void FBApplication::GenerateAlertMessage (Ptr<FBNode> fbNode) {
 	fbHeader.SetPhase(0);
 	fbHeader.SetSlot(0);
 
+	fbHeader.SetSenderId(fbNode->GetId()); // added
+
 	Ptr<Packet> packet = Create<Packet> (m_packetPayload);
 	packet->AddHeader(fbHeader);
 
@@ -370,10 +378,6 @@ void FBApplication::ReceivePacket(Ptr<Socket> socket) {
 		// Compute the distance between the sender and me (the node who received the message)
 	 	double distanceSenderToCurrent = ns3::CalculateDistance(senderPosition, currentPosition);
 		uint32_t distanceSenderToCurrent_uint = std::floor (distanceSenderToCurrent);
-
-//		if (distanceSenderToCurrent_uint > m_actualRange) {
-//			cout << "Packet received by node " << node->GetId () << ", distance = "<< distanceSenderToCurrent << endl;
-//		}
 		// If the node is in range I can read the packet
 		// uint32_t estimatedRange = fbNode->GetCMBR ();
 		// if (distanceSenderToCurrent_uint <= estimatedRange)
@@ -384,7 +388,6 @@ void FBApplication::ReceivePacket(Ptr<Socket> socket) {
 		else if (messageType == ALERT_MESSAGE) {
 			m_received++;
 			m_receivedCoords.push_back(fbNode->GetPosition());
-
 			// Get the phase
 			int32_t phase = fbHeader.GetPhase();
 
@@ -406,6 +409,16 @@ void FBApplication::ReceivePacket(Ptr<Socket> socket) {
 				fbNode->SetSlot(fbNode->GetSlot() + sl);
 				fbNode->SetReceived(true);
 
+				uint32_t senderId = fbHeader.GetSenderId();
+				uint32_t receiverId = node->GetId();
+
+				auto it = m_transmissionList.find(senderId);
+				if (it == m_transmissionList.end()) {
+					cout << "senderId = " << senderId << endl;
+					m_transmissionList[senderId] = vector<uint32_t>();
+				}
+				m_transmissionList[senderId].push_back(receiverId);
+
 				if (fbNode->GetNum() == 0) {
 					fbNode->SetNum(phase);
 				}
@@ -413,7 +426,7 @@ void FBApplication::ReceivePacket(Ptr<Socket> socket) {
 				// check if the message is coming fron the front
 				if (phase > fbNode->GetPhase()) {
 					fbNode->SetPhase(phase);
-					m_transmissionList.AddEdge(KeyableVector(fbHeader.GetPosition()), KeyableVector(fbNode->GetPosition()));
+//					m_transmissionList.AddEdge(KeyableVector(fbHeader.GetPosition()), KeyableVector(fbNode->GetPosition()));
 					HandleAlertMessage(fbNode, fbHeader, distanceSenderToCurrent_uint);
 				}
 			}
@@ -457,7 +470,6 @@ void FBApplication::HandleHelloMessage (Ptr<FBNode> fbNode, FBHeader fbHeader) {
 void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader, uint32_t distance) {
 	// We assume that the message is coming from the front
 	NS_LOG_FUNCTION (this << fbNode << fbHeader << distance);
-
 	uint32_t nodeId = fbNode->GetNode()->GetId();
 
 	NS_LOG_DEBUG ("Handle an Alert Message (" << nodeId << ").");
@@ -521,6 +533,9 @@ void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader
 		fbHeader.SetPhase (phase + 1);
 		fbHeader.SetSlot (fbNode->GetSlot() + waitingTime);
 
+		fbHeader.SetSenderId (fbNode->GetId());
+		cout << "forward alert message senderId = " << fbNode->GetId() << endl;
+
 		Ptr<Packet> packet = Create<Packet> (m_packetPayload);
 		packet->AddHeader (fbHeader);
 
@@ -538,7 +553,7 @@ void FBApplication::StopNode (Ptr<FBNode> fbNode) {
 	Ptr<Node> node = fbNode->GetNode ();
 
 	Ptr<ConstantVelocityMobilityModel> mob = node->GetObject<ConstantVelocityMobilityModel>();
-	mob->SetVelocity (Vector (0, 0, 0));
+	mob->SetVelocity(Vector (0, 0, 0));
 }
 
 Ptr<FBNode> FBApplication::GetFBNode (Ptr<Node> node) {
