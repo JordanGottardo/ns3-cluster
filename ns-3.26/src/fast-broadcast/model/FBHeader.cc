@@ -86,6 +86,13 @@ namespace ns3 {
 		m_phase = value;
 	}
 
+	void
+	FBHeader::SetSenderId (uint32_t value)
+	{
+		NS_LOG_FUNCTION (this);
+		m_senderId = value;
+	}
+
 	Vector
 	FBHeader::GetPosition (void) const
 	{
@@ -128,6 +135,13 @@ namespace ns3 {
 		return m_phase;
 	}
 
+	uint32_t
+	FBHeader::GetSenderId (void) const
+	{
+		NS_LOG_FUNCTION (this);
+		return m_senderId;
+	}
+
 	TypeId
 	FBHeader::GetInstanceTypeId (void) const
 	{
@@ -139,10 +153,11 @@ namespace ns3 {
 	{
 		// Vector3D = 24  * 2
 		// uint32_t = 4		* 4
+		// added one uint32_t (node id) = 4
 
 		NS_LOG_FUNCTION (this);
 
-		uint32_t length = 64;
+		uint32_t length = 68;
 		return length;
 	}
 
@@ -162,6 +177,8 @@ namespace ns3 {
 		i.WriteU32(m_type);
 		i.WriteU32(m_slot);
 		i.WriteU32(m_phase);
+
+		i.WriteU32(m_senderId);
 	}
 
 	uint32_t
@@ -184,6 +201,8 @@ namespace ns3 {
 		m_slot = i.ReadU32 ();
 		m_phase = i.ReadU32 ();
 
+		m_senderId = i.ReadU32();
+
 		return  GetSerializedSize  ();
 	}
 
@@ -196,7 +215,8 @@ namespace ns3 {
 			<< "m_maxRange " << m_maxRange << " "
 			<< "m_type " << m_maxRange << " "
 			<< "m_slot " << m_slot << " "
-			<< "m_phase " << m_phase << std::endl;
+			<< "m_phase " << m_phase << " "
+			<< "m senderId " << m_senderId << std::endl;
 	}
 
 } // namespace ns3

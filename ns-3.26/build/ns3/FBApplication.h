@@ -235,7 +235,9 @@ private:
 	vector<Vector>															m_receivedCoords; // coordinates of nodes which have received alert messages, duplicates allowed
 	uint32_t																m_printCoords; // 1 to print coordinates, 0 otherwise
 	uint32_t																m_vehicleDistance; //distance between vehicles
-	TransmissionList														m_transmissionList; //list to discover path of alert messages
+	map<uint32_t, vector<uint32_t>>											m_transmissionList; //list to discover path of alert messages
+//	TransmissionList														m_transmissionList; //list to discover path of alert messages
+//	int																		counter = 0;
 };
 
 } // namespace ns3

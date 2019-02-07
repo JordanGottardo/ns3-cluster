@@ -18,7 +18,7 @@ public:
 
 	void AddEdge(KeyableVector source, KeyableVector destination);
 
-	void PrintTransmission() const;
+	string ToString() const;
 
 
 private:
