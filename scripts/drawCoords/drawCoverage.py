@@ -15,8 +15,9 @@ import coordUtils as coordUtils
 
 def main():
     relativeFileName = sys.argv[1]
-    plt.rcParams["figure.figsize"] = [10, 10]
+    ns2MobilityFile = "../../maps/Padova/Padova-25.ns2mobility.xml"
     polyFilePath = "../../maps/Padova/Padova-25.poly.xml"
+    plt.rcParams["figure.figsize"] = [10, 10]
     circRadius = 1000
 
     startingVehicle = 0
@@ -30,8 +31,9 @@ def main():
     startingY = 0
     transmissionMap = {}
     receivedCoordsOnCirc = []
+    receivedOnCircIds = []
 
-    txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc = coordUtils.parseFile(relativeFileName)
+    txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds = coordUtils.parseFile(relativeFileName, ns2MobilityFile) 
 
     plt.plot(xNodeCoords, yNodeCoords, ".", color="red")
     plt.plot(xReceivedCoords, yReceivedCoords, ".", color="green")
@@ -43,7 +45,7 @@ def main():
     coordUtils.plotBuildings(polyFilePath)
     
     #plt.savefig("prova.pdf")
-    #plt.show()
+    plt.show()
    
         #print(line)
 

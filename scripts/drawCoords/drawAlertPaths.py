@@ -13,9 +13,9 @@ import csv
 import xml.etree.ElementTree as ET
 import coordUtils as coordUtils
 
-def findSender(nodeCoord, transmissionMap):
+def findSender(id, transmissionMap):
     for entry in transmissionMap.items():
-        if nodeCoord in entry[1]:
+        if id in entry[1]:
             return entry[0]
     return None   
 '''
@@ -42,8 +42,9 @@ def findSource(transmissionMap):
 
 def main():
     relativeFileName = sys.argv[1]
-    plt.rcParams["figure.figsize"] = [10, 10]
+    ns2MobilityFile = "../../maps/Padova/Padova-25.ns2mobility.xml"
     polyFilePath = "../../maps/Padova/Padova-25.poly.xml"
+    plt.rcParams["figure.figsize"] = [10, 10]
     circRadius = 1000
 
     startingVehicle = 0
@@ -57,40 +58,39 @@ def main():
     startingY = 0
     transmissionMap = {}
     receivedCoordsOnCirc = []
+    receivedOnCircIds = []
 
-    txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc = coordUtils.parseFile(relativeFileName)
+    txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds = coordUtils.parseFile(relativeFileName, ns2MobilityFile)
 
     plt.plot(xNodeCoords, yNodeCoords, ".", color="red")
     plt.plot(xReceivedCoords, yReceivedCoords, ".", color="green")
     plt.plot(startingX, startingY, "ro", color="blue", markersize=10)
-  
-    startingVector = coordUtils.Vector(startingX, startingY, 0)
-    pathsToPlot = {item: [item] for item in receivedCoordsOnCirc}
-    for coordOnCirc in receivedCoordsOnCirc:
-        sender = findSender(coordOnCirc, transmissionMap)
+
+    pathsToPlot = {item: [item] for item in receivedOnCircIds}
+    for idOnCirc in receivedOnCircIds:
+        sender = findSender(idOnCirc, transmissionMap)
         while (sender is not None):
-            pathsToPlot[coordOnCirc].append(sender)
+            pathsToPlot[idOnCirc].append(sender)
             sender = findSender(sender, transmissionMap)
-        pathsToPlot[coordOnCirc].append(startingVector)
+        pathsToPlot[idOnCirc].append(str(startingVehicle))
 
     count = 0
-
     for entry in pathsToPlot.items():
         #if (count > 0):
-           # continue
+        #    continue
         #count = count + 1
         path = entry[1]
-        print("path = ")
-        print(path)
+        #print("path = ")
+        #print(path)
         size = len(path)
-        print(size)
+        #print(size)
         i = 0
         baseColor = 0.3
         while(i < size - 1):
-            print("ciclo")
-            baseColor += 0.3
-            coord1 = path[i]
-            coord2 = path[i + 1]
+            #print("ciclo")
+            #baseColor += 0.3
+            coord1 = coordUtils.findCoordsFromFile(path[i], ns2MobilityFile)
+            coord2 = coordUtils.findCoordsFromFile(path[i + 1], ns2MobilityFile)
             c1 = np.array((coord1.x, coord1.y, coord1.z))
             c2 = np.array((coord2.x, coord2.y, coord2.z))
             print(np.linalg.norm(c1-c2))
@@ -98,7 +98,7 @@ def main():
             plt.plot([coord1.x, coord2.x], [coord1.y, coord2.y], color=str(baseColor))
             i = i + 1
         
-
+    plt.plot(startingX, startingY, "ro", color="blue", markersize=10)
 
 
     # trova coordinate di quelli che hanno ricevuto e che sono all'interno della circonferenza (c++)

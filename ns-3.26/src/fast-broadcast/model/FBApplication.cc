@@ -158,7 +158,7 @@ void FBApplication::PrintStats (std::stringstream &dataStream) {
 	long double nums_sum = 0;
 	long double slots_sum = 0;
 
-	stringstream receivedOnCircCoords;
+	stringstream receivedOnCircIds;
 
 	for (uint32_t i = 0; i < m_nNodes; i++)	{
 		Ptr<FBNode> current = m_nodes.at (i);
@@ -192,7 +192,7 @@ void FBApplication::PrintStats (std::stringstream &dataStream) {
 			// Update the cover value
 			if (current->GetReceived()) {
 				circ++;
-				receivedOnCircCoords << currentPosition << ";";
+				receivedOnCircIds << current->GetId() << "_";
 				// Update mean time, nums and slots
 				nums_sum += current->GetNum() + 1;
 				slots_sum += current->GetSlot();
@@ -202,12 +202,12 @@ void FBApplication::PrintStats (std::stringstream &dataStream) {
 	}
 //	Time when the first alert message was sent
 	Time timeref = this->GetFBNode(m_startingNode)->GetTimestamp();
-	string receivedCoords = StringifyVector(m_receivedCoords);
-	stringstream nodeCoords;
+	string receivedNodes = StringifyVector(m_receivedNodes);
+	stringstream nodeIds;
 
 	for (auto i = m_nodes.begin(); i != m_nodes.end(); ++i) {
-		Vector coord = (*i)->GetPosition();
-		nodeCoords << coord << "_";
+		uint32_t coord = (*i)->GetId();
+		nodeIds << coord << "_";
 	}
 
 	dataStream << circCont << ","
@@ -222,17 +222,11 @@ void FBApplication::PrintStats (std::stringstream &dataStream) {
 		 Ptr<FBNode> startingNode = GetFBNode(m_startingNode);
 
 		dataStream << startingNode->GetPosition().x << "," << startingNode->GetPosition().y << "," << m_startingNode << "," <<
-				m_vehicleDistance << "," << receivedCoords << "," << nodeCoords.str() << "," << "a" <<
-				"," << receivedOnCircCoords.str();
+				m_vehicleDistance << "," << receivedNodes << "," << nodeIds.str() << "," << StringifyTransmissionMap() <<
+				"," << receivedOnCircIds.str();
+		cout << receivedOnCircIds.str() << endl;
 	}
-	cout << "print transmilist" << endl;
-	for (auto it = m_transmissionList.begin(); it != m_transmissionList.end(); ++it) {
-		cout << it->first << ":{";
-		for (auto el: it->second) {
-			cout << el << ",";
-		}
-		cout << "}" << endl;
-	}
+
 
 //	NS_LOG_UNCOND("aoi = " << m_aoi << "aoi error " << m_aoi_error);
 }
@@ -387,7 +381,6 @@ void FBApplication::ReceivePacket(Ptr<Socket> socket) {
 		}
 		else if (messageType == ALERT_MESSAGE) {
 			m_received++;
-			m_receivedCoords.push_back(fbNode->GetPosition());
 			// Get the phase
 			int32_t phase = fbHeader.GetPhase();
 
@@ -412,9 +405,10 @@ void FBApplication::ReceivePacket(Ptr<Socket> socket) {
 				uint32_t senderId = fbHeader.GetSenderId();
 				uint32_t receiverId = node->GetId();
 
+				m_receivedNodes.push_back(fbNode->GetId());
 				auto it = m_transmissionList.find(senderId);
 				if (it == m_transmissionList.end()) {
-					cout << "senderId = " << senderId << endl;
+//					cout << "senderId = " << senderId << endl;
 					m_transmissionList[senderId] = vector<uint32_t>();
 				}
 				m_transmissionList[senderId].push_back(receiverId);
@@ -534,7 +528,7 @@ void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader
 		fbHeader.SetSlot (fbNode->GetSlot() + waitingTime);
 
 		fbHeader.SetSenderId (fbNode->GetId());
-		cout << "forward alert message senderId = " << fbNode->GetId() << endl;
+//		cout << "forward alert message senderId = " << fbNode->GetId() << endl;
 
 		Ptr<Packet> packet = Create<Packet> (m_packetPayload);
 		packet->AddHeader (fbHeader);
@@ -600,8 +594,20 @@ template <typename T>
 string FBApplication::StringifyVector(const vector<T>& v) {
 	stringstream ss;
 //	cout << "FbApplication::PrintStuff" << m_receivedCoords.size() << " " << m_received << endl;
-	for (auto i = m_receivedCoords.begin(); i != m_receivedCoords.end(); ++i) {
+	for (auto i = m_receivedNodes.begin(); i != m_receivedNodes.end(); ++i) {
 		ss << *i <<"_";
+	}
+	return ss.str();
+}
+
+string FBApplication::StringifyTransmissionMap() const {
+	stringstream ss;
+	for (auto it = m_transmissionList.begin(); it != m_transmissionList.end(); ++it) {
+		ss << it->first << ":{";
+		for (auto el: it->second) {
+			ss << el << ";";
+		}
+		ss << "}";
 	}
 	return ss.str();
 }

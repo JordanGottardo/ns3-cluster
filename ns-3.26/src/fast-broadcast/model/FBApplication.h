@@ -212,6 +212,10 @@ private:
 	template <typename T>
 	string StringifyVector(const vector<T>& v);
 
+	/**
+	* \brief Returns a string representation of m_transmissionMap
+	* \return  a string representation of m_transmissionMap	 */
+	string StringifyTransmissionMap() const;
 
 private:
 	uint32_t																m_nNodes;	// number of nodes
@@ -232,7 +236,7 @@ private:
 	uint32_t																m_sent; // // number of alert messages sent
 
 	uint32_t																m_collisions; // number of collisions
-	vector<Vector>															m_receivedCoords; // coordinates of nodes which have received alert messages, duplicates allowed
+	vector<uint32_t>														m_receivedNodes; // ids of nodes which have received alert messages, duplicates allowed
 	uint32_t																m_printCoords; // 1 to print coordinates, 0 otherwise
 	uint32_t																m_vehicleDistance; //distance between vehicles
 	map<uint32_t, vector<uint32_t>>											m_transmissionList; //list to discover path of alert messages

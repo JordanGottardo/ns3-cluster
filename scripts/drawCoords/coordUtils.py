@@ -31,7 +31,6 @@ class Vector:
     def __str__(self):
         return "Vector({0},{1},{2})".format(self.x, self.y, self.z)
 
-    def _privateM(self)
   
 
 def plotTxRange(txRange, starterCoordX, starterCoordY, vehicleDistance, color, plotInterval):
@@ -51,26 +50,53 @@ def plotTxRange(txRange, starterCoordX, starterCoordY, vehicleDistance, color, p
     plt.clabel(CS, inline=1, fontsize=10)
     CS.collections[0].set_label(str(txRange) + " m")
 
-def retrieveCoords(coords):
+def findCoordsFromFile(nodeId, ns2MobilityFile):
+    with open(ns2MobilityFile, "r") as file:
+        lines = file.readlines()
+        numLines = len(lines)
+        count = 0
+        while(count < numLines):
+            line = lines[count]
+            splitLine = line.split(" ")
+            if (len(splitLine) != 4):
+                count = count + 1
+                continue
+            id = splitLine[0].split("_")
+            id = id[1].replace("(", "")
+            id = id.replace(")", "")
+            line = file.readline()
+            if (id == nodeId):
+                x = splitLine[3].strip()
+                y = lines[count + 1].split(" ")[3].strip()
+                z = lines[count + 2].split(" ")[3].strip()
+                return Vector(x, y, z)
+            count = count + 1
+    print("error: coordinate not found for node")
+    print(nodeId)
+            
+
+
+def retrieveCoords(ids, ns2MobilityFile):
     xCoords = []
     yCoords = []
-    coords = coords.split("_")
-    for coord in coords:
-        splitCoord = coord.split(":")
-        if (len(splitCoord) != 3):
-            continue;
-        xCoords.append(float(splitCoord[0]))
-        yCoords.append(float(splitCoord[1]))
+    splitIds = ids.split("_")
+
+    for id in splitIds:
+        if (len(id) == 0):
+            continue
+        coords = findCoordsFromFile(id, ns2MobilityFile)
+        xCoords.append(coords.x)
+        yCoords.append(coords.y)
     return xCoords, yCoords
 
-def retrieveCoordsAsVector(rawCoords):
+def retrieveCoordsAsVector(ids, ns2MobilityFile):
     coords = []
-    splitCoords = rawCoords.split(";")
-    for c in splitCoords:
-        if (len(c) == 0):
+    splitIds = ids.split("_")
+    for id in splitIds:
+        if (len(id) == 0):
             continue
-        splitC = c.split(":")
-        coords.append(Vector(splitC[0], splitC[1], splitC[2]))
+        coord = findCoordsFromFile(id, ns2MobilityFile)
+        coords.append(coord)
     return coords
 
 def buildVectorFromCoords(coords):
@@ -88,8 +114,8 @@ def parseTransmissionMap(rawTransmissionMap):
         afterOpenCurlyRemove = s.split("{")
         #print("after open curly remove")
         #print(afterOpenCurlyRemove)
-        keyVector = buildVectorFromCoords(afterOpenCurlyRemove[0])
-        
+        #keyVector = buildVectorFromCoords(afterOpenCurlyRemove[0])
+        keyNode = afterOpenCurlyRemove[0].split(":")[0]
         #print("key vector")
         #print(keyVector)
         destinations = afterOpenCurlyRemove[1]
@@ -98,19 +124,19 @@ def parseTransmissionMap(rawTransmissionMap):
         splitDestinations = destinations.split(";")
         #print("splitDestinations")
         #print(splitDestinations)
-        transmissionMap[keyVector] = []
+        transmissionMap[keyNode] = []
         for dest in splitDestinations:
             #print("dest")
             #print(dest)
             if(len(dest) == 0):
                 continue
-            destVector = buildVectorFromCoords(dest)
-            transmissionMap[keyVector].append(destVector)
-    print[transmissionMap]
+            #destVector = buildVectorFromCoords(dest)
+            transmissionMap[keyNode].append(dest)
+    #print[transmissionMap]
     return transmissionMap
 
 
-def parseFile(filePath):
+def parseFile(filePath, ns2MobilityFile):
     startingVehicle = 0
     vehicleDistance = 0
     txRange = 0
@@ -118,8 +144,8 @@ def parseFile(filePath):
     yReceivedCoords = []
     xNodeCoords = []
     yNodeCoords = []
-    nodeCoords = []
-    receivedCoords = []
+    nodeIds = []
+    receivedIds = []
     receivedCoordsOnCirc = []
     startingX = 0
     startingY = 0
@@ -132,15 +158,16 @@ def parseFile(filePath):
         startingY = float(line[15])
         startingVehicle = int(line[16])
         vehicleDistance = int(line[17])
-        receivedCoords = line[18]
-        nodeCoords = line[19]
-        xReceivedCoords, yReceivedCoords = retrieveCoords(receivedCoords)
-        xNodeCoords, yNodeCoords = retrieveCoords(nodeCoords)
+        receivedIds = line[18]
+        nodeIds = line[19]
+        xReceivedCoords, yReceivedCoords = retrieveCoords(receivedIds, ns2MobilityFile)
+        xNodeCoords, yNodeCoords = retrieveCoords(nodeIds, ns2MobilityFile)
         rawTransmissionMap = line[20]
-        rawReceivedOnCircCoords = line[21]
-        receivedCoordsOnCirc = retrieveCoordsAsVector(rawReceivedOnCircCoords)
+        receivedOnCircIds = line[21]
+        receivedCoordsOnCirc = retrieveCoordsAsVector(receivedOnCircIds, ns2MobilityFile)
+        receivedOnCircIds = filter(None, receivedOnCircIds.split("_"))
         transmissionMap = parseTransmissionMap(rawTransmissionMap)
-    return txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc
+    return txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds
 
 def plotBuildings(polyFilePath):
     tree = ET.parse(polyFilePath)
