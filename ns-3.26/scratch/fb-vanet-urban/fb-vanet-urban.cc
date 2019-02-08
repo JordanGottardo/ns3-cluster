@@ -978,8 +978,8 @@ int main (int argc, char *argv[])
 		g_csvData.WriteHeader ("\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
 							"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
 							"\"Slots\",\"Messages sent\",\"Messages received\", \"Starting x\", \"Starting y\","
-							"\"Starting node\", \"Vehicle distance\", \"Received coordinates\", "
-							"\"Node coords\", \"Transmission map\", \"Received on circ coords\"");
+							"\"Starting node\", \"Vehicle distance\", \"Received node ids\", "
+							"\"Node ids\", \"Transmission map\", \"Received on circ nodes\"");
 	}
 	for(unsigned int i = 0; i < maxRun; i++) {
 		cout << "run = " << i << endl;
