@@ -445,7 +445,7 @@ private:
 	double									m_txp;
 	uint32_t								m_port;
 	uint32_t								m_actualRange;
-	uint32_t								m_startingNode;
+	int32_t									m_startingNode;
 	uint32_t								m_staticProtocol;
 	uint32_t								m_flooding;
 	uint32_t								m_alertGeneration;
@@ -480,7 +480,7 @@ FBVanetExperiment::FBVanetExperiment ()
 		m_txp(20),
 		m_port(9),
 		m_actualRange(300),
-		m_startingNode(0),
+		m_startingNode(-1),
 		m_staticProtocol(1),
 		m_flooding(0),
 		m_alertGeneration(20),
@@ -779,7 +779,7 @@ void FBVanetExperiment::CommandSetup (int argc, char *argv[]) {
 
 	// allow command line overrides
 //	cmd.AddValue ("nnodes", "Number of nodes (i.e. vehicles)", m_nNodes);
-//	cmd.AddValue ("nodes", "Id of the first node who will start an aler", m_startingNode);
+	cmd.AddValue ("startingNode", "Id of the first node who will start an aler", m_startingNode);
 	cmd.AddValue ("actualRange", "Actual transimision range (meters)", m_actualRange);
 	cmd.AddValue ("protocol", "Estimantion protocol: 1=FB, 2=C100, 3=C300, 4=C500", m_staticProtocol);
 	cmd.AddValue ("flooding", "Enable flooding", m_flooding);
@@ -819,7 +819,9 @@ void FBVanetExperiment::SetupScenario () {
 	m_bldgFile = m_mapBasePath + ".poly.xml";
 	m_traceFile = m_mapBasePath + ".ns2mobility.xml";
 	m_nNodes = CalculateNumNodes();
-	m_startingNode = rand() % m_nNodes;
+	if (m_startingNode == -1) {
+		m_startingNode = rand() % m_nNodes;
+	}
 	cout << "numNodes = " << m_nNodes << endl;
 	cout << "startingNode = " << m_startingNode << endl;
 //
@@ -968,18 +970,27 @@ int main (int argc, char *argv[])
 	experiment.Configure (argc, argv);
 	if (experiment.GetPrintToFile()) {
 		string filePath = experiment.CalculateOutFilePath();
-		string additionalPath = "/out/scenario-urbano/";
+		string additionalPath;
+		string header;
+
 		if(experiment.GetPrintCoords()) {
 			additionalPath = "/out/scenario-urbano-con-coord/";
+			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
+					"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
+					"\"Slots\",\"Messages sent\",\"Messages received\", \"Starting x\", \"Starting y\","
+					"\"Starting node\", \"Vehicle distance\", \"Received node ids\", "
+					"\"Node ids\", \"Transmission map\", \"Received on circ nodes\", \"Version\"";
+		}
+		else {
+			additionalPath = "/out/scenario-urbano/";
+			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
+								"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
+								"\"Slots\",\"Messages sent\",\"Messages received\", \"Version\"";
 		}
 		boost::filesystem::path path = boost::filesystem::current_path() /= additionalPath;
 		path /= filePath;
-		g_csvData.EnableAlternativeFilename (path);
-		g_csvData.WriteHeader ("\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
-							"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
-							"\"Slots\",\"Messages sent\",\"Messages received\", \"Starting x\", \"Starting y\","
-							"\"Starting node\", \"Vehicle distance\", \"Received node ids\", "
-							"\"Node ids\", \"Transmission map\", \"Received on circ nodes\"");
+		g_csvData.EnableAlternativeFilename(path);
+		g_csvData.WriteHeader(header);
 	}
 	for(unsigned int i = 0; i < maxRun; i++) {
 		cout << "run = " << i << endl;

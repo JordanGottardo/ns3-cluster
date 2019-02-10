@@ -28,6 +28,7 @@ def readCsvFromDirectory(path):
 	totalCoverage = []
 	covOnCirc = []
 	hops = []
+	slots = []
 	messageSent = []
 	totalCoveragePercent = []
 	covOnCircPercent = []
@@ -51,6 +52,10 @@ def readCsvFromDirectory(path):
 					covOnCirc.append(int(row[8]))
 					if (not math.isnan(float(row[10]))):
 						hops.append(float(row[10]))
+					if (not math.isnan(float(row[11]))):
+						slots.append(float(row[11]))
+					print(fullPath)
+					print(float(row[11]))
 					#if (len(hops) > 0 and math.isnan(hops[-1])):
 					#	print("found nan in hops")
 					#	print(file)
@@ -64,6 +69,7 @@ def readCsvFromDirectory(path):
 	covOnCircMean, covOnCircConfInt = calculateMeanAndConfInt(covOnCircPercent)
 	hopsMean, hopsConfInt = calculateMeanAndConfInt(hops)
 	messageSentMean, messageSentConfInt = calculateMeanAndConfInt(messageSent)
+	slotsWaitedMean, slotsWaitedConfInt = calculateMeanAndConfInt(slots)
 	return {"totalCoverageMean": totalCovMean, 
 			"totalCovConfInt": totalCovConfInt,
 			"covOnCircMean": covOnCircMean,
@@ -71,6 +77,8 @@ def readCsvFromDirectory(path):
 			"hopsMean": hopsMean,
 			"hopsConfInt": hopsConfInt,
 			"messageSentMean": messageSentMean,
-			"messageSentConfInt": messageSentConfInt
+			"messageSentConfInt": messageSentConfInt,
+			"slotsWaitedMean": slotsWaitedMean,
+			"slotsWaitedConfInt": slotsWaitedConfInt
 	}
 
