@@ -90,6 +90,7 @@ def printSingleGraphRomanelliComparison(cw, folder, graphTitle, xList, xLabels, 
 		os.makedirs(outPathDirectory)
 	
 	plt.savefig(outPath + ".pdf")
+	plt.clf()
 	#plt.savefig('b2.pdf', bbox_inches='tight')
 	#plt.show()
 
@@ -149,6 +150,7 @@ def printSingleGraph(cw, folder, graphTitle, xList, xLabels, xLabel, yLabel, fig
 		os.makedirs(outPathDirectory)
 	
 	plt.savefig(outPath + ".pdf")
+	plt.clf()
 	#plt.savefig('b2.pdf', bbox_inches='tight')
 	#plt.show()
 
@@ -161,6 +163,8 @@ def initCompoundData(protocols):
 	hopsConfInts = {}
 	messageSentMeans = {}
 	messageSentConfInts = {}
+	slotsWaitedMeans = {}
+	slotsWaitedConfInts = {}
 
 	compoundData = {}
 	compoundData["totCoverageMeans"] = totCoverageMeans
@@ -171,6 +175,8 @@ def initCompoundData(protocols):
 	compoundData["hopsConfInts"] = hopsConfInts
 	compoundData["messageSentMeans"] = messageSentMeans
 	compoundData["messageSentConfInts"] = messageSentConfInts
+	compoundData["slotsWaitedMeans"] = slotsWaitedMeans
+	compoundData["slotsWaitedConfInts"] = slotsWaitedConfInts
 
 	for protocol in protocols:
 		totCoverageMeans[protocol] = []
@@ -181,6 +187,8 @@ def initCompoundData(protocols):
 		hopsConfInts[protocol] = []
 		messageSentMeans[protocol] = []
 		messageSentConfInts[protocol] = []
+		slotsWaitedMeans[protocol] = []
+		slotsWaitedConfInts[protocol] = []
 	return compoundData
 
 def appendCompoundData(basePath, protocols, compoundData):
@@ -195,6 +203,8 @@ def appendCompoundData(basePath, protocols, compoundData):
 		compoundData["hopsConfInts"][protocol].append(data["hopsConfInt"])
 		compoundData["messageSentMeans"][protocol].append(data["messageSentMean"])
 		compoundData["messageSentConfInts"][protocol].append(data["messageSentConfInt"])
+		compoundData["slotsWaitedMeans"][protocol].append(data["slotsWaitedMean"])
+		compoundData["slotsWaitedConfInts"][protocol].append(data["slotsWaitedConfInt"])
 	return None
 
 def printDistanceComparison(cw, vehicleDistances, protocols, xList, xLabels, figurePrefix, graphTitleExtension, folder):	
@@ -256,6 +266,18 @@ def printDistanceComparison(cw, vehicleDistances, protocols, xList, xLabels, fig
 					False,
 					0,
 					250)
+	printSingleGraph(cw,
+					folder,
+					"Padua scenario with buildings, number of slots waited with varying vehicle distance (" + graphTitleExtension + ")",
+					xList,
+					xLabels, 
+					xLabel, 
+					"Number of slots waited",
+					figurePrefix + "DistanceVsSlotsWaited",
+					compoundData["slotsWaitedMeans"],
+					compoundData["slotsWaitedConfInts"],
+					protocols,
+					True)
 
 def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePrefix, graphTitleExtension, folder):	
 	plt.rcParams["figure.figsize"] = [18, 10]
@@ -317,6 +339,18 @@ def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePre
 					False,
 					0,
 					160)
+	printSingleGraph(cw,
+					folder,
+					"Padua scenario with buildings, number of slots waited with varying contention window (" + graphTitleExtension + ")",
+					xList,
+					xLabels, 
+					xLabel, 
+					"Number of slots waited",
+					figurePrefix + "CwVsSlotsWaited",
+					compoundData["slotsWaitedMeans"],
+					compoundData["slotsWaitedConfInts"],
+					protocols,
+					True)
  
 def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, figurePrefix, graphTitleExtension, folder):
 	plt.rcParams["figure.figsize"] = [18, 10]
@@ -328,6 +362,7 @@ def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, fig
 	romCovCirc = [23.81, 94.75, 22.06, 64.80, 27.78, 93.88]
 	romNumHops = [7.30, 2.14, 6.62, 3.41, 7.57, 2.07]
 	romAlertSent = [219, 109, 236, 45, 253, 107]
+	romSlotsWaited = [0, 0, 0, 0, 0, 0]
 	#romTotCov = [45.49, 94.35, 47.45, 94.11]
 	#romCovCirc = [23.81, 94.75, 22.06, 93.88]
 	#romNumHops = [7.30, 2.14, 6.62, 2.07]
@@ -384,6 +419,19 @@ def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, fig
 					compoundData["messageSentMeans"],
 					compoundData["messageSentConfInts"],
 					romAlertSent,
+					protocols,
+					True)
+	printSingleGraphRomanelliComparison(cw,
+					folder,
+					"Padua scenario with buildings, number of slots waited",
+					xList,
+					xLabels, 
+					xLabel, 
+					"Number of slots waited",
+					figurePrefix + "SlotsWaited",
+					compoundData["slotsWaitedMeans"],
+					compoundData["slotsWaitedConfInts"],
+					romSlotsWaited,
 					protocols,
 					True)
 

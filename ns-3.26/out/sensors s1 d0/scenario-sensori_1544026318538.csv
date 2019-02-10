@@ -1,7 +1,0 @@
-"id","Actual Range","Protocol","Buildings","Sensors","Nodes disabled","Total nodes","Vehicles enabled","Vehicles on circ","Total vehicles coverage","Vehicles coverage on circ","Alert received mean time","Mean hops","Mean slots","Messages sent","Messages received","Messages sent by sensors","Messages received by sensors"
-1,300,0,1,1,0,361,295,34,241,27,2.80865e+09,2.59259,355.889,72,880,66,3234,
-2,300,0,1,1,0,361,295,34,109,10,1.01214e+09,2.1,110.9,38,445,66,2521,
-3,300,0,1,1,0,361,295,34,234,27,2.34916e+09,2.55556,292.667,72,896,66,3314,
-4,300,0,1,1,0,361,295,34,221,28,3.55108e+09,3.14286,462.75,70,824,66,3183,
-5,300,0,1,1,0,361,295,34,243,28,2.83944e+09,2.53571,384.536,69,858,66,3194,
-6,300,0,1,1,0,361,295,34,247,30,3.15772e+09,3.23333,377.867,80,989,66,3525,

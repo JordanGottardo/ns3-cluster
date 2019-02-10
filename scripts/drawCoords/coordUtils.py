@@ -144,7 +144,7 @@ def parseFile(filePath, ns2MobilityFile):
     yReceivedCoords = []
     xNodeCoords = []
     yNodeCoords = []
-    nodeIds = []
+    rawNodeIds = []
     receivedIds = []
     receivedCoordsOnCirc = []
     startingX = 0
@@ -159,9 +159,10 @@ def parseFile(filePath, ns2MobilityFile):
         startingVehicle = int(line[16])
         vehicleDistance = int(line[17])
         receivedIds = line[18]
-        nodeIds = line[19]
+        rawNodeIds = line[19]
+        nodeIds = filter(None, rawNodeIds.split("_"))
         xReceivedCoords, yReceivedCoords = retrieveCoords(receivedIds, ns2MobilityFile)
-        xNodeCoords, yNodeCoords = retrieveCoords(nodeIds, ns2MobilityFile)
+        xNodeCoords, yNodeCoords = retrieveCoords(rawNodeIds, ns2MobilityFile)
         rawTransmissionMap = line[20]
         receivedOnCircIds = line[21]
         receivedCoordsOnCirc = retrieveCoordsAsVector(receivedOnCircIds, ns2MobilityFile)
