@@ -26,15 +26,19 @@ def main():
     polyFilePath = "../../maps/Padova/Padova-25.poly.xml"
     plt.rcParams["figure.figsize"] = [10, 10]
     circRadius = 1000
-    baseFolder = "./in/scenario-urbano-con-coord/cw-32-1024/Padova/d25/"
+    baseFolder = "../../ns-3.26/out/scenario-urbano-con-coord/cw-32-1024/Padova/d25/"
 
     for buildingFolder in os.listdir(baseFolder):
         buildingPath = os.path.join(baseFolder, buildingFolder)
         if (os.path.isdir(buildingPath)):
             for protocolFolder in os.listdir(buildingPath):
                 protocolPath = os.path.join(buildingPath, protocolFolder)
+                count = 0
                 if (os.path.isdir(protocolPath)):
                     for csvFilename in os.listdir(protocolPath):
+                        if (count > 2):
+                            continue
+                        count += 1
                         relativeFileName = os.path.join(protocolPath, csvFilename)
                         print("Plotting" + relativeFileName)
                         outFilePath = os.path.join("./out/alertPaths", buildingFolder, protocolFolder, os.path.splitext(csvFilename)[0] + ".pdf")

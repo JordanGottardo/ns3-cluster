@@ -33,13 +33,14 @@ def readCsvFromDirectory(path):
 	totalCoveragePercent = []
 	covOnCircPercent = []
 	for fileName in os.listdir(path):
-		deleteBecauseEmpty = False
+		#deleteBecauseEmpty = False
 		fullPath = os.path.join(path, fileName)
 		with open(fullPath, "r") as file:
 			csvFile = csv.reader(file, delimiter=",")
 			firstLine = True
 			if (countLinesInCsv(csvFile) < 2):
-				deleteBecauseEmpty = True
+				#deleteBecauseEmpty = True
+				continue
 			else:
 				file.seek(0)
 				for row in csvFile:
@@ -54,16 +55,14 @@ def readCsvFromDirectory(path):
 						hops.append(float(row[10]))
 					if (not math.isnan(float(row[11]))):
 						slots.append(float(row[11]))
-					print(fullPath)
-					print(float(row[11]))
 					#if (len(hops) > 0 and math.isnan(hops[-1])):
 					#	print("found nan in hops")
 					#	print(file)
 					messageSent.append(int(row[12]))
 					totalCoveragePercent.append(((float(totalCoverage[-1]) / float(totalNodes[-1])) * 100))	
 					covOnCircPercent.append(((float(covOnCirc[-1]) / float(nodesOnCirc[-1])) * 100))
-		if (deleteBecauseEmpty == True):
-			os.remove(fullPath)
+		#if (deleteBecauseEmpty == True):
+			#os.remove(fullPath)
 					
 	totalCovMean , totalCovConfInt = calculateMeanAndConfInt(totalCoveragePercent)
 	covOnCircMean, covOnCircConfInt = calculateMeanAndConfInt(covOnCircPercent)
