@@ -212,8 +212,8 @@ void FBApplication::PrintStats (std::stringstream &dataStream) {
 	for (auto i = m_nodes.begin(); i != m_nodes.end(); ++i) {
 		uint32_t id = (*i)->GetId();
 		nodeIds << id << "_";
-		Vector pos = (*i)->GetPosition();
-//		if ( pos.x > 1450.0 && pos.x < 1500.0 && pos.y > 1500.0 && pos.y < 1550.0) {
+//		Vector pos = (*i)->GetPosition();
+//		if ( pos.x > 1050.0 && pos.x < 1250.0 && pos.y > 1800.0 && pos.y < 1900.0) {
 //			cout << id << endl;
 //		}
 	}

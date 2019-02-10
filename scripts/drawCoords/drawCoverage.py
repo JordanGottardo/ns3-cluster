@@ -20,8 +20,7 @@ def main():
     polyFilePath = "../../maps/Padova/Padova-25.poly.xml"
     plt.rcParams["figure.figsize"] = [10, 10]
     circRadius = 1000
-    baseFolder = "./in/scenario-urbano-con-coord/cw-32-1024/Padova/d25/"
-
+    baseFolder = "../../ns-3.26/out/scenario-urbano-con-coord/cw-32-1024/Padova/d25/"
 
     for buildingFolder in os.listdir(baseFolder):
         buildingPath = os.path.join(baseFolder, buildingFolder)
