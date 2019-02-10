@@ -1,0 +1,2 @@
+"id","Scenario","Actual Range","Protocol","Buildings","Total nodes","Nodes on circ","Total coverage","Coverage on circ","Alert received mean time","Hops","Slots","Messages sent","Messages received", "Received coordinates", "Node coords"
+0,1,100,0,1,2855,42,344,5,1.00856e+10,14.6,1023.4,81,987,

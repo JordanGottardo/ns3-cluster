@@ -1,0 +1,15 @@
+Host di esecuzione: hpblade11
+Data: Fri Feb 8 18:51:48 CET 2019
+Directory: /home/jgottard/ns-3/ns-3.26
+Questo job viene eseguito sui seguenti nodi:
+hpblade11
+PBS_WORKDIR=/home/jgottard
+Launching job for execution
+after set
+Start main urban
+numNodes = 1775
+startingNode = 1697
+run = 0
+numNodes = 1775
+startingNode = 317
+FbApplication::PrintStuff67 67

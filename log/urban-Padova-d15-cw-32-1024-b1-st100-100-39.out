@@ -1,5 +1,5 @@
 Host di esecuzione: dellsrv6
-Data: Tue Jan 29 11:32:03 CET 2019
+Data: Fri Feb 8 01:59:46 CET 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
 dellsrv6
@@ -8,19 +8,8 @@ Launching job for execution
 after set
 Start main urban
 numNodes = 2855
-startingNode = 2697
+startingNode = 2165
 run = 0
 numNodes = 2855
-startingNode = 2406
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
-cwMin = 32cwMax = 1024
+startingNode = 2251
+FbApplication::PrintStuff1117 1117
