@@ -1,0 +1,3 @@
+"id","Scenario","Actual Range","Protocol","Buildings","Total nodes","Nodes on circ","Total coverage","Coverage on circ","Alert received mean time","Hops","Slots","Messages sent","Messages received", "Starting x", "Starting y","Starting node", "Vehicle distance", "Received node ids", "Node ids", "Transmission map", "Received on circ nodes"
+0,1,500,500,1,1775,58,1638,58,3.48642e+08,3.05172,14.1724,108,11477,
+0,1,500,500,1,1775,58,1638,58,3.48642e+08,3.05172,14.1724,108,11477,

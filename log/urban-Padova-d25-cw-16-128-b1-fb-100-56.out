@@ -1,5 +1,5 @@
 Host di esecuzione: hpblade01
-Data: Sat Jan 26 22:05:03 CET 2019
+Data: Fri Feb 8 17:02:00 CET 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
 hpblade01
@@ -8,48 +8,8 @@ Launching job for execution
 after set
 Start main urban
 numNodes = 1775
-startingNode = 1029
+startingNode = 1599
 run = 0
 numNodes = 1775
-startingNode = 1400
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
-cwMin = 16cwMax = 128
+startingNode = 1132
+FbApplication::PrintStuff2 2
