@@ -12,22 +12,28 @@ def main():
 	# vehicle distance comparison
 	distanceXLabels = list(map(lambda distance: str(distance) + "m", vehicleDistances))
 	printMultipleGraphs.printDistanceComparison(contentionWindows[1], vehicleDistances, fbProtocols, vehicleDistances, distanceXLabels,
-												"fb", "Fast Broadcast protocols", "vehicleDistanceComparison")
+												"fb", "Fast Broadcast protocols", "vehicleDistanceComparison", True)
 	printMultipleGraphs.printDistanceComparison(contentionWindows[1], vehicleDistances, stProtocols, vehicleDistances, distanceXLabels,
-												"st", "Static protocols", "vehicleDistanceComparison")
+												"st", "Static protocols", "vehicleDistanceComparison", True)
 
 	# contention window comparison
 	cwXLabels = ["cw-16-128", "cw-32-1024"]
 	printMultipleGraphs.printCwComparison(contentionWindows, 25, fbProtocols, contentionWindows, cwXLabels,
-												"fb", "Fast Broadcast protocols", "contentionWindowComparison")
+												"fb", "Fast Broadcast protocols", "contentionWindowComparison", True)
 	printMultipleGraphs.printCwComparison(contentionWindows, 25, stProtocols, contentionWindows, cwXLabels,
-												"st", "Static protocols", "contentionWindowComparison")
+												"st", "Static protocols", "contentionWindowComparison", True)
 
 	# Romanelli comparison
+	basePath1 = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
 	allProtocols = ["fb-300", "fb-500", "st300-300", "st300-500", "st500-300", "st500-500"]
 	#allProtocols = ["fb-300", "fb-500", "st300-300", "st500-500"]
 	printMultipleGraphs.printRomanelliComparison(contentionWindows[1], 25, allProtocols, allProtocols, allProtocols,
-												"rom", "", "romanelliComparison")
+												"rom", "", "romanelliComparison", basePath1, True)
+
+	# Romanelli comparison with coord (fixed starting vehicle)
+	basePath2 = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano-con-coord"
+	printMultipleGraphs.printRomanelliComparison(contentionWindows[1], 25, allProtocols, allProtocols, allProtocols,
+												"rom", "", "coord/romanelliComparison", basePath2, True)
 
 if __name__ == "__main__":
 	main()

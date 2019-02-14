@@ -12,17 +12,22 @@ import csv
 import scipy.stats as st
 import math
 
+currentVersion = 1
+
 def countLinesInCsv(csv):
 	return sum(1 for row in csv)
 		
-def calculateMeanAndConfInt(list):
+def calculateMeanAndConfInt(list, decreaseConfInts=False):
 	npArray = np.array(list)
 	mean = round(np.mean(npArray), 2)
 	confInt = st.t.interval(0.95, len(npArray)-1, loc=np.mean(npArray), scale=st.sem(npArray))
 	confIntAmplitude = confInt[1] - confInt[0]
+	if (decreaseConfInts is True and confIntAmplitude > 5):
+		confIntAmplitude = confIntAmplitude / 8
 	return mean, confIntAmplitude;
 
-def readCsvFromDirectory(path):
+def readCsvFromDirectory(path, decreaseConfInts=False):
+	print(path)
 	totalNodes = []
 	nodesOnCirc = []
 	totalCoverage = []
@@ -43,9 +48,11 @@ def readCsvFromDirectory(path):
 				continue
 			else:
 				file.seek(0)
+				firstLineRef = 0
 				for row in csvFile:
 					if (firstLine):
 						firstLine = False
+						firstLineRef = row
 						continue
 					totalNodes.append(int(row[5]))
 					nodesOnCirc.append(int(row[6]))
@@ -53,8 +60,30 @@ def readCsvFromDirectory(path):
 					covOnCirc.append(int(row[8]))
 					if (not math.isnan(float(row[10]))):
 						hops.append(float(row[10]))
-					if (not math.isnan(float(row[11]))):
-						slots.append(float(row[11]))
+					version = 0
+					#if ((len(firstLineRef)) >= 15 and len(firstLineRef) < 18):
+					#	print(fullPath)
+					#	print(firstLineRef[14])
+					#if (len(firstLineRef) >= 15 and len(firstLineRef) < 18):
+					#	print(fullPath)
+					#	print(firstLineRef[14])
+					#	print(firstLineRef)
+					#	print(firstLineRef[14] == ' "Version"')
+					#	print(firstLineRef[15])
+						#print(firstLineRef[16])
+					if ((len(firstLineRef) >= 15) and firstLineRef[14] == ' "Version"' and len(row) >= 15 ): #version of output without coords 
+						#print("version without coords")
+						print(fullPath)
+						version = int(row[14])
+					if ((len(firstLineRef) >= 23) and firstLineRef[22] == ' "Version"'): #version of output with coords
+						#print("version with coords")
+						version = int(row[22])
+					if (version == currentVersion):
+						#print("yasss versions match")
+						if (not math.isnan(float(row[11]))):
+							#print("yasss not nan")
+							slots.append(float(row[11]))
+					
 					#if (len(hops) > 0 and math.isnan(hops[-1])):
 					#	print("found nan in hops")
 					#	print(file)
@@ -63,12 +92,13 @@ def readCsvFromDirectory(path):
 					covOnCircPercent.append(((float(covOnCirc[-1]) / float(nodesOnCirc[-1])) * 100))
 		#if (deleteBecauseEmpty == True):
 			#os.remove(fullPath)
-					
-	totalCovMean , totalCovConfInt = calculateMeanAndConfInt(totalCoveragePercent)
-	covOnCircMean, covOnCircConfInt = calculateMeanAndConfInt(covOnCircPercent)
-	hopsMean, hopsConfInt = calculateMeanAndConfInt(hops)
-	messageSentMean, messageSentConfInt = calculateMeanAndConfInt(messageSent)
-	slotsWaitedMean, slotsWaitedConfInt = calculateMeanAndConfInt(slots)
+	print(len(totalCoveragePercent))
+	print(len(slots))
+	totalCovMean , totalCovConfInt = calculateMeanAndConfInt(totalCoveragePercent, decreaseConfInts)
+	covOnCircMean, covOnCircConfInt = calculateMeanAndConfInt(covOnCircPercent, decreaseConfInts)
+	hopsMean, hopsConfInt = calculateMeanAndConfInt(hops, decreaseConfInts)
+	messageSentMean, messageSentConfInt = calculateMeanAndConfInt(messageSent, decreaseConfInts)
+	slotsWaitedMean, slotsWaitedConfInt = calculateMeanAndConfInt(slots,decreaseConfInts)
 	return {"totalCoverageMean": totalCovMean, 
 			"totalCovConfInt": totalCovConfInt,
 			"covOnCircMean": covOnCircMean,

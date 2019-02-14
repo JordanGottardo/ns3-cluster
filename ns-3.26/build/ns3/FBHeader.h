@@ -196,7 +196,7 @@ private:
 	uint32_t			m_slot;
 	int32_t				m_phase;
 
-	uint32_t				m_senderId; //added
+	uint32_t			m_senderId; //added
 };
 
 } // namespace ns3

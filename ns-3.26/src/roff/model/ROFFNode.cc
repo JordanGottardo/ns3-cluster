@@ -25,6 +25,10 @@ namespace ns3 {
 		m_position = position;
 	}
 
+	void ROFFNode::AddOrUpdateNeighbor(const uint32_t& nodeId, Vector pos, milliseconds timeStamp) {
+		m_neighborTable.AddOrUpdateEntry(nodeId, pos, timeStamp);
+	}
+
 }
 
 

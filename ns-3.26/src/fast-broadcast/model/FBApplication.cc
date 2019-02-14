@@ -148,7 +148,7 @@ void FBApplication::AddNode (Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sin
 }
 
 
-void FBApplication::PrintStats (std::stringstream &dataStream) {
+void FBApplication::PrintStats(std::stringstream &dataStream) {
 
 	NS_LOG_FUNCTION (this);
 
@@ -173,11 +173,11 @@ void FBApplication::PrintStats (std::stringstream &dataStream) {
 			continue;
 
 		// If this isn't a vehciles, skip
-		if (!current->AmIaVehicle ())
+		if (!current->AmIaVehicle())
 			continue;
 
 		// Update the total cover value
-		if (current->GetReceived ())
+		if (current->GetReceived())
 			cover++;
 
 		// Compute cover on circumference of radius m_aoi
@@ -232,9 +232,11 @@ void FBApplication::PrintStats (std::stringstream &dataStream) {
 	}
 	else {
 		 Ptr<FBNode> startingNode = GetFBNode(m_startingNode);
-		dataStream << "," << startingNode->GetPosition().x << "," << startingNode->GetPosition().y << "," << m_startingNode << "," <<
+		 string transmissionVector = StringifyVector(m_transmissionVector);
+
+		 dataStream << "," << startingNode->GetPosition().x << "," << startingNode->GetPosition().y << "," << m_startingNode << "," <<
 				m_vehicleDistance << "," << receivedNodes << "," << nodeIds.str() << "," << StringifyTransmissionMap() <<
-				"," << receivedOnCircIds.str() << "," << VERSION;
+				"," << receivedOnCircIds.str() << "," << VERSION << "," << transmissionVector;
 	}
 
 
@@ -254,11 +256,11 @@ void FBApplication::StartApplication (void) {
 	if (!m_staticProtocol) {
 		// Start Estimation Phase
 		NS_LOG_INFO ("Start Estimation Phase.");
-		GenerateHelloTraffic (5);
+		GenerateHelloTraffic(5);
 	}
 
 	// Schedule Broadcast Phase
-	Simulator::Schedule (Seconds (m_broadcastPhaseStart), &FBApplication::StartBroadcastPhase, this);
+	Simulator::Schedule(Seconds(m_broadcastPhaseStart), &FBApplication::StartBroadcastPhase, this);
 }
 
 void FBApplication::StopApplication (void) {
@@ -407,14 +409,14 @@ void FBApplication::ReceivePacket(Ptr<Socket> socket) {
 			if (distanceCurrentToStarter > distanceSenderToStarter && !fbNode->GetReceived()) {
 
 				// Store when the current has received the first packet
-				fbNode->SetTimestamp (Simulator::Now());
+				fbNode->SetTimestamp(Simulator::Now());
 
 				uint32_t sl = fbHeader.GetSlot();
 				fbNode->SetSlot(fbNode->GetSlot() + sl);
 				fbNode->SetReceived(true);
 
 				uint32_t senderId = fbHeader.GetSenderId();
-				uint32_t receiverId = node->GetId();
+				uint32_t receiverId = fbNode->GetId();
 
 				m_receivedNodes.push_back(fbNode->GetId());
 				auto it = m_transmissionList.find(senderId);
@@ -423,6 +425,7 @@ void FBApplication::ReceivePacket(Ptr<Socket> socket) {
 					m_transmissionList[senderId] = vector<uint32_t>();
 				}
 				m_transmissionList[senderId].push_back(receiverId);
+				m_transmissionVector.push_back(Edge(senderId, receiverId, phase));
 
 				if (fbNode->GetNum() == 0) {
 					fbNode->SetNum(phase);
@@ -485,7 +488,7 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader, ui
 
 	// Compute a random waiting time (1 <= waitingTime <= cwnd)
 	uint32_t waitingTime = (rand() % cwnd) + 1;
-
+//	cout << "waitingTime = " << waitingTime << endl;
 	// Wait and then forward the message
 	if (m_flooding == false)
 		Simulator::ScheduleWithContext(nodeId, MilliSeconds(waitingTime * 200 * 3),
@@ -515,19 +518,22 @@ void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader
 	NS_LOG_FUNCTION (this << fbNode << oldFBHeader);
 
 	// Get the phase
-	int32_t phase = oldFBHeader.GetPhase ();
+	int32_t phase = oldFBHeader.GetPhase();
+	Vector oldPos = oldFBHeader.GetPosition();//added
+	Vector position = fbNode->UpdatePosition();
+	double distance = ns3::CalculateDistance(position, oldPos);
 
 	// If I'm the first to wake up, I must forward the message
-	if ((!m_flooding && phase >= fbNode->GetPhase ()) || (m_flooding && !fbNode->GetSent ())) {
+	if ((!m_flooding && phase >= fbNode->GetPhase()) || (m_flooding && !fbNode->GetSent())) {
 		NS_LOG_DEBUG ("Forwarding Alert Message (" << fbNode->GetNode()->GetId() << ").");
 
 		// Create a packet with the correct parameters taken from the node
 		uint32_t LMBR, CMBR, maxi;
 		LMBR = fbNode->GetLMBR();
 		CMBR = fbNode->GetCMBR();
-		maxi = std::max (LMBR, CMBR);
+		maxi = std::max(LMBR, CMBR);
 
-		Vector position = fbNode->UpdatePosition();
+//		Vector position = fbNode->UpdatePosition();
 		Vector starterPosition = oldFBHeader.GetStarterPosition();
 
 		FBHeader fbHeader;
@@ -544,12 +550,21 @@ void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader
 		Ptr<Packet> packet = Create<Packet>(m_packetPayload);
 		packet->AddHeader(fbHeader);
 
+		//
+		//
+		//
+
+//		cout << "invio distance = " <<  distance << " time= " << waitingTime <<endl;
+
 		// Forward
-		fbNode->Send (packet);
-		fbNode->SetSent (true);
+		fbNode->Send(packet);
+		fbNode->SetSent(true);
 
 		m_sent++;
 	}
+//	else {
+//		cout << "deferro distance= " << distance << " waitingTime= "<< waitingTime << endl;
+//	}
 }
 
 void FBApplication::StopNode (Ptr<FBNode> fbNode) {
@@ -588,8 +603,7 @@ uint32_t FBApplication::ComputeContetionWindow (uint32_t maxRange, uint32_t dist
 	NS_LOG_FUNCTION (this << maxRange << distance);
 	double cwnd = 0.0;
 	double rapp = 0.0;
-//	cout << "maxRange= " << maxRange << endl;
-//	cout << "distance= " << distance << endl;
+//	cout << "maxRange= " << maxRange << " distance= " << distance << endl;
 
 	if (maxRange != 0)
 		rapp = ( ((double)maxRange) - ((double)distance) ) / (double) maxRange;
@@ -609,7 +623,7 @@ template <typename T>
 string FBApplication::StringifyVector(const vector<T>& v) {
 	stringstream ss;
 //	cout << "FbApplication::PrintStuff" << m_receivedCoords.size() << " " << m_received << endl;
-	for (auto i = m_receivedNodes.begin(); i != m_receivedNodes.end(); ++i) {
+	for (auto i = v.begin(); i != v.end(); ++i) {
 		ss << *i <<"_";
 	}
 	return ss.str();

@@ -27,7 +27,7 @@
 #include "ns3/application.h"
 #include "ns3/network-module.h"
 #include "ns3/object-vector.h"
-#include "TransmissionList.h"
+#include "Edge.h"
 
 using namespace std;
 
@@ -240,6 +240,7 @@ private:
 	uint32_t																m_printCoords; // 1 to print coordinates, 0 otherwise
 	uint32_t																m_vehicleDistance; //distance between vehicles
 	map<uint32_t, vector<uint32_t>>											m_transmissionList; //list to discover path of alert messages
+	vector<Edge>															m_transmissionVector; //vector to discover paths of alert messages (single broadcasts ordered by time of reception)
 //	TransmissionList														m_transmissionList; //list to discover path of alert messages
 //	int																		counter = 0;
 };

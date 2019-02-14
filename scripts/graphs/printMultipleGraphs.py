@@ -51,7 +51,7 @@ def printSingleGraphRomanelliComparison(cw, folder, graphTitle, xList, xLabels, 
 	ax.set_ylabel(yLabel, fontsize=15)
 	if not autoscale:
 		ax.set_ylim(yBottomLim, yTopLim)
-	ax.set_title(graphTitle, fontsize=20)
+	#ax.set_title(graphTitle, fontsize=20)
 	ax.set_xticks(ind)
 	ax.set_xticklabels(xLabels)
 	#ax.set_xticklabels(["15m", "25m", "35m", "45m"])
@@ -114,7 +114,7 @@ def printSingleGraph(cw, folder, graphTitle, xList, xLabels, xLabel, yLabel, fig
 	ax.set_ylabel(yLabel, fontsize=15)
 	if not autoscale:
 		ax.set_ylim(yBottomLim, yTopLim)
-	ax.set_title(graphTitle, fontsize=20)
+	#ax.set_title(graphTitle, fontsize=20)
 	ax.set_xticks(ind)
 	ax.set_xticklabels(xLabels)
 	#ax.set_xticklabels(["15m", "25m", "35m", "45m"])
@@ -191,10 +191,10 @@ def initCompoundData(protocols):
 		slotsWaitedConfInts[protocol] = []
 	return compoundData
 
-def appendCompoundData(basePath, protocols, compoundData):
+def appendCompoundData(basePath, protocols, compoundData, decreaseConfInts=False):
 	for protocol in protocols:
 		path = os.path.join(basePath, protocol)
-		data = graphUtils.readCsvFromDirectory(path)
+		data = graphUtils.readCsvFromDirectory(path, decreaseConfInts)
 		compoundData["totCoverageMeans"][protocol].append(data["totalCoverageMean"])
 		compoundData["totCoverageConfInts"][protocol].append(data["totalCovConfInt"])
 		compoundData["covOnCircMeans"][protocol].append(data["covOnCircMean"])
@@ -207,14 +207,14 @@ def appendCompoundData(basePath, protocols, compoundData):
 		compoundData["slotsWaitedConfInts"][protocol].append(data["slotsWaitedConfInt"])
 	return None
 
-def printDistanceComparison(cw, vehicleDistances, protocols, xList, xLabels, figurePrefix, graphTitleExtension, folder):	
+def printDistanceComparison(cw, vehicleDistances, protocols, xList, xLabels, figurePrefix, graphTitleExtension, folder, decreaseConfInts=False):	
 	plt.rcParams["figure.figsize"] = [18, 10]
 	basePath = os.path.join("/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano", cw, "Padova")
 	xLabel = "Vehicle distance"
 	compoundData = initCompoundData(protocols)
 	for distance in vehicleDistances:
 		basePathWithDistance = os.path.join(basePath, "d" + str(distance), "b1")
-		appendCompoundData(basePathWithDistance, protocols, compoundData)
+		appendCompoundData(basePathWithDistance, protocols, compoundData, decreaseConfInts)
 	# Print graphs
 	printSingleGraph(cw,
 					folder,
@@ -279,7 +279,7 @@ def printDistanceComparison(cw, vehicleDistances, protocols, xList, xLabels, fig
 					protocols,
 					True)
 
-def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePrefix, graphTitleExtension, folder):	
+def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePrefix, graphTitleExtension, folder, decreaseConfInts=False):	
 	plt.rcParams["figure.figsize"] = [18, 10]
 	basePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
 	basePath2 = os.path.join("Padova", "d" + str(vehicleDistance), "b1")
@@ -287,7 +287,7 @@ def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePre
 	xLabel = "Contention window"
 	for cw in cws:
 		basePathWithDistance = os.path.join(basePath, cw, basePath2)
-		appendCompoundData(basePathWithDistance, protocols, compoundData)
+		appendCompoundData(basePathWithDistance, protocols, compoundData, decreaseConfInts)
 	# Print graphs
 	printSingleGraph(cw,
 					folder,
@@ -352,88 +352,101 @@ def printCwComparison(cws, vehicleDistance, protocols, xList, xLabels, figurePre
 					protocols,
 					True)
  
-def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, figurePrefix, graphTitleExtension, folder):
+def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, figurePrefix, graphTitleExtension, folder, basePath, decreaseConfInts=False):
 	plt.rcParams["figure.figsize"] = [18, 10]
-	basePath = os.path.join("/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano/", cw, "Padova/d25/b1/")
-	xLabel = "Protocol-transmission range"
-	compoundData = initCompoundData(protocols)
-	appendCompoundData(basePath, protocols, compoundData)
-	romTotCov = [45.49, 94.35, 47.45, 56.93, 50.30, 94.11]
-	romCovCirc = [23.81, 94.75, 22.06, 64.80, 27.78, 93.88]
-	romNumHops = [7.30, 2.14, 6.62, 3.41, 7.57, 2.07]
-	romAlertSent = [219, 109, 236, 45, 253, 107]
-	romSlotsWaited = [0, 0, 0, 0, 0, 0]
-	#romTotCov = [45.49, 94.35, 47.45, 94.11]
-	#romCovCirc = [23.81, 94.75, 22.06, 93.88]
-	#romNumHops = [7.30, 2.14, 6.62, 2.07]
-	#romAlertSent = [219, 109, 236, 107]
-	print(compoundData["totCoverageMeans"])
-	print(romTotCov)
-	printSingleGraphRomanelliComparison(cw,
-					folder,
-					"Padua scenario with buildings, total coverage",
-					xList,
-					xLabels, 
-					xLabel,
-					"Total coverage (%)",
-					figurePrefix + "TotalCoverage",
-					compoundData["totCoverageMeans"],
-					compoundData["totCoverageConfInts"],
-					romTotCov,
-					protocols,
-					False)
-	printSingleGraphRomanelliComparison(cw,
-					folder,
-					"Padua scenario with buildings, coverage on circumference",
-					xList,
-					xLabels,
-					xLabel,
-					"Coverage on circumference (%)",
-					figurePrefix + "CoverageOnCirc",
-					compoundData["covOnCircMeans"],
-					compoundData["covOnCircConfInts"],
-					romCovCirc,
-					protocols,
-					False)
-	printSingleGraphRomanelliComparison(cw,
-					folder,
-					"Padua scenario with buildings, number of hops",
-					xList,
-					xLabels,
-					xLabel,
-					"Number of hops",
-					figurePrefix + "NumberOfHops",
-					compoundData["hopsMeans"],
-					compoundData["hopsConfInts"],
-					romNumHops,
-					protocols,
-					True)
-	printSingleGraphRomanelliComparison(cw,
-					folder,
-					"Padua scenario with buildings, number of alert messages sent",
-					xList,
-					xLabels, 
-					xLabel,
-					"Number of sent alert messages",
-					figurePrefix + "AlertMessagesSent",
-					compoundData["messageSentMeans"],
-					compoundData["messageSentConfInts"],
-					romAlertSent,
-					protocols,
-					True)
-	printSingleGraphRomanelliComparison(cw,
-					folder,
-					"Padua scenario with buildings, number of slots waited",
-					xList,
-					xLabels, 
-					xLabel, 
-					"Number of slots waited",
-					figurePrefix + "SlotsWaited",
-					compoundData["slotsWaitedMeans"],
-					compoundData["slotsWaitedConfInts"],
-					romSlotsWaited,
-					protocols,
-					True)
+	buildings = ["0", "1"]
+	for b in buildings:
+		actualFolder = os.path.join(folder, "b" + b)
+		print("folder = ")
+		print(folder)
+		print("actual folder = ")
+		print(actualFolder)
+		actualBasePath = os.path.join(basePath, cw, "Padova/d25/", "b" + b)
+		xLabel = "Protocol-transmission range"
+		compoundData = initCompoundData(protocols)
+		appendCompoundData(actualBasePath, protocols, compoundData, decreaseConfInts)
+		romTotCov = [45.49, 94.35, 47.45, 56.93, 50.30, 94.11]
+		romCovCirc = [23.81, 94.75, 22.06, 64.80, 27.78, 93.88]
+		romNumHops = [7.30, 2.14, 6.62, 3.41, 7.57, 2.07]
+		romAlertSent = [219, 109, 236, 45, 253, 107]
+		romSlotsWaited = [0, 0, 0, 0, 0, 0]
+		#romTotCov = [45.49, 94.35, 47.45, 94.11]
+		#romCovCirc = [23.81, 94.75, 22.06, 93.88]
+		#romNumHops = [7.30, 2.14, 6.62, 2.07]
+		#romAlertSent = [219, 109, 236, 107]
+
+		print(romTotCov)
+		printSingleGraphRomanelliComparison(cw,
+						actualFolder,
+						"Padua scenario with buildings, total coverage",
+						xList,
+						xLabels, 
+						xLabel,
+						"Total coverage (%)",
+						figurePrefix + "TotalCoverage",
+						compoundData["totCoverageMeans"],
+						compoundData["totCoverageConfInts"],
+						romTotCov,
+						protocols,
+						False)
+		printSingleGraphRomanelliComparison(cw,
+						actualFolder,
+						"Padua scenario with buildings, coverage on circumference",
+						xList,
+						xLabels,
+						xLabel,
+						"Coverage on circumference (%)",
+						figurePrefix + "CoverageOnCirc",
+						compoundData["covOnCircMeans"],
+						compoundData["covOnCircConfInts"],
+						romCovCirc,
+						protocols,
+						False)
+		printSingleGraphRomanelliComparison(cw,
+						actualFolder,
+						"Padua scenario with buildings, number of hops",
+						xList,
+						xLabels,
+						xLabel,
+						"Number of hops",
+						figurePrefix + "NumberOfHops",
+						compoundData["hopsMeans"],
+						compoundData["hopsConfInts"],
+						romNumHops,
+						protocols,
+						False,
+						0,
+						10)
+		printSingleGraphRomanelliComparison(cw,
+						actualFolder,
+						"Padua scenario with buildings, number of alert messages sent",
+						xList,
+						xLabels, 
+						xLabel,
+						"Number of sent alert messages",
+						figurePrefix + "AlertMessagesSent",
+						compoundData["messageSentMeans"],
+						compoundData["messageSentConfInts"],
+						romAlertSent,
+						protocols,
+						False,
+						0,
+						120)
+		printSingleGraphRomanelliComparison(cw,
+						actualFolder,
+						"Padua scenario with buildings, number of slots waited",
+						xList,
+						xLabels, 
+						xLabel, 
+						"Number of slots waited",
+						figurePrefix + "SlotsWaited",
+						compoundData["slotsWaitedMeans"],
+						compoundData["slotsWaitedConfInts"],
+						romSlotsWaited,
+						protocols,
+						False,
+						0,
+						1500)
 
 
 

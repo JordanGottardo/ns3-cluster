@@ -31,7 +31,24 @@ class Vector:
     def __str__(self):
         return "Vector({0},{1},{2})".format(self.x, self.y, self.z)
 
-  
+class Edge:
+    def __init__(self, x, y, z):
+        self.source = int(x) 
+        self.destination = int(y) 
+        self.phase = int(z)
+
+    def __repr__(self):
+        return "({0}, {1}, {2})".format(self.source, self.destination, self.phase)
+
+    def __str__(self):
+        return "Edge({0},{1},{2})".format(self.source, self.destination, self.phase)
+
+def isFileComplete(filePath):
+    with open(filePath) as f:
+        for i, l in enumerate(f):
+            pass
+    return (i == 1)
+
 
 def plotTxRange(txRange, starterCoordX, starterCoordY, vehicleDistance, color, plotInterval):
     x = np.linspace(0, 3000, 100)
@@ -51,6 +68,7 @@ def plotTxRange(txRange, starterCoordX, starterCoordY, vehicleDistance, color, p
     CS.collections[0].set_label(str(txRange) + " m")
 
 def findCoordsFromFile(nodeId, ns2MobilityFile):
+    nodeId = str(nodeId)
     with open(ns2MobilityFile, "r") as file:
         lines = file.readlines()
         numLines = len(lines)
@@ -112,29 +130,28 @@ def parseTransmissionMap(rawTransmissionMap):
         if(len(s) == 0):
             continue
         afterOpenCurlyRemove = s.split("{")
-        #print("after open curly remove")
-        #print(afterOpenCurlyRemove)
-        #keyVector = buildVectorFromCoords(afterOpenCurlyRemove[0])
         keyNode = afterOpenCurlyRemove[0].split(":")[0]
-        #print("key vector")
-        #print(keyVector)
         destinations = afterOpenCurlyRemove[1]
-        #print("destinations")
-        #print(destinations)
         splitDestinations = destinations.split(";")
-        #print("splitDestinations")
-        #print(splitDestinations)
         transmissionMap[keyNode] = []
         for dest in splitDestinations:
-            #print("dest")
-            #print(dest)
             if(len(dest) == 0):
                 continue
-            #destVector = buildVectorFromCoords(dest)
             transmissionMap[keyNode].append(dest)
-    #print[transmissionMap]
     return transmissionMap
 
+def parseTransmissionVector(rawTransmissionVector):
+    rawEdges = rawTransmissionVector.split("_")
+    transmissionVector = []
+    for rawEdge in rawEdges:
+        if (len(rawEdge) > 0):
+            afterDashSplit = rawEdge.split("-")
+            source = afterDashSplit[0]
+            afterStarSplit = afterDashSplit[1].split("*")
+            destination = afterStarSplit[0]
+            phase = afterStarSplit[1]
+            transmissionVector.append(Edge(source, destination, phase))
+    return transmissionVector
 
 def parseFile(filePath, ns2MobilityFile):
     startingVehicle = 0
@@ -165,10 +182,12 @@ def parseFile(filePath, ns2MobilityFile):
         xNodeCoords, yNodeCoords = retrieveCoords(rawNodeIds, ns2MobilityFile)
         rawTransmissionMap = line[20]
         receivedOnCircIds = line[21]
+        rawTransmissionVector = line[23]
         receivedCoordsOnCirc = retrieveCoordsAsVector(receivedOnCircIds, ns2MobilityFile)
         receivedOnCircIds = filter(None, receivedOnCircIds.split("_"))
         transmissionMap = parseTransmissionMap(rawTransmissionMap)
-    return txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds
+        transmissionVector = parseTransmissionVector(rawTransmissionVector)
+    return txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds, transmissionVector
 
 def plotBuildings(polyFilePath):
     tree = ET.parse(polyFilePath)
