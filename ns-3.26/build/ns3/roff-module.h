@@ -7,6 +7,10 @@
     
 
 // Module headers:
+#include "NBTEntry.h"
+#include "NeighborTable.h"
+#include "ROFFApplication.h"
+#include "ROFFHeader.h"
+#include "ROFFNode.h"
 #include "roff-helper.h"
-#include "roff.h"
 #endif

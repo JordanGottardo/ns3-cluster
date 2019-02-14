@@ -166,7 +166,6 @@ namespace ns3 {
 	{
 		NS_LOG_FUNCTION (this);
 		Buffer::Iterator i = start;
-
 		i.WriteU64(m_position.x);
 		i.WriteU64(m_position.y);
 		i.WriteU64(m_position.z);

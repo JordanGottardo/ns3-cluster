@@ -9,8 +9,12 @@
 def build(bld):
     module = bld.create_ns3_module('roff', ['core'])
     module.source = [
-        'model/roff.cc',
-        'helper/roff-helper.cc',
+    	'helper/roff-helper.cc',
+        'model/ROFFNode.cc',
+        'model/ROFFHeader.cc',
+        'model/ROFFApplication.cc',
+        'model/NeighborTable.cc',
+        'model/NBTEntry.cc'
         ]
 
     module_test = bld.create_ns3_module_test_library('roff')
@@ -21,8 +25,12 @@ def build(bld):
     headers = bld(features='ns3header')
     headers.module = 'roff'
     headers.source = [
-        'model/roff.h',
         'helper/roff-helper.h',
+        'model/ROFFNode.h',
+        'model/ROFFHeader.h',
+        'model/ROFFApplication.h',
+        'model/NeighborTable.h',
+        'model/NBTEntry.h'
         ]
 
     if bld.env.ENABLE_EXAMPLES:

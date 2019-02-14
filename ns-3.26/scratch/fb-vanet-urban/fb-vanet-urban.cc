@@ -979,7 +979,7 @@ int main (int argc, char *argv[])
 					"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
 					"\"Slots\",\"Messages sent\",\"Messages received\", \"Starting x\", \"Starting y\","
 					"\"Starting node\", \"Vehicle distance\", \"Received node ids\", "
-					"\"Node ids\", \"Transmission map\", \"Received on circ nodes\", \"Version\"";
+					"\"Node ids\", \"Transmission map\", \"Received on circ nodes\", \"Version\", \"Transmission vector\"";
 		}
 		else {
 			additionalPath = "/out/scenario-urbano/";

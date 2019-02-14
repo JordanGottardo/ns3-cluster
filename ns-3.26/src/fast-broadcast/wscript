@@ -14,8 +14,7 @@ def build(bld):
         'model/FBApplication.cc',
         'model/FBHeader.cc',
         'model/FBNode.cc',
-        'model/TransmissionList.cc',
-        'model/KeyableVector.cc'
+        'model/Edge.cc'
         ]
 
     module_test = bld.create_ns3_module_test_library('fast-broadcast')
@@ -29,8 +28,7 @@ def build(bld):
         'model/FBApplication.h',
         'model/FBHeader.h',
         'model/FBNode.h',
-        'model/TransmissionList.h',
-        'model/KeyableVector.h'
+        'model/Edge.h'
         ]
 
     if bld.env.ENABLE_EXAMPLES:

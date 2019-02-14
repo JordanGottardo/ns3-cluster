@@ -7,9 +7,8 @@
     
 
 // Module headers:
+#include "Edge.h"
 #include "FBApplication.h"
 #include "FBHeader.h"
 #include "FBNode.h"
-#include "KeyableVector.h"
-#include "TransmissionList.h"
 #endif
