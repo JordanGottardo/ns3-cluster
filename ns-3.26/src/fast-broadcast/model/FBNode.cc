@@ -210,31 +210,31 @@
 	}
 
 	void
-	FBNode::SetLMBR (uint32_t value)
+	FBNode::SetLMBR(uint32_t value)
 	{
 	  NS_LOG_FUNCTION (this << value);
 	  m_LMBR = value;
 	}
 
 	Vector
-	FBNode::UpdatePosition (void)
+	FBNode::UpdatePosition(void)
 	{
-		NS_LOG_FUNCTION (this);
-		Ptr<MobilityModel> positionmodel = m_node->GetObject<MobilityModel> ();
+		NS_LOG_FUNCTION(this);
+		Ptr<MobilityModel> positionmodel = m_node->GetObject<MobilityModel>();
 
 		// Check if a mobility model exists
 		if (positionmodel != 0)
 		{
-			m_position = positionmodel->GetPosition ();
+			m_position = positionmodel->GetPosition();
 		}
 
 		return m_position;
 	}
 
 	void
-	FBNode::SetNum (uint32_t value)
+	FBNode::SetNum(uint32_t value)
 	{
-		NS_LOG_FUNCTION (this << value);
+		NS_LOG_FUNCTION(this << value);
 		m_num = value;
 	}
 

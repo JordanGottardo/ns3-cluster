@@ -66,8 +66,8 @@ def plotSingleTransmission(relativeFileName, outFileBasePath, numTransmissionToP
             c1 = np.array((sourceCoord.x, sourceCoord.y, sourceCoord.z))
             c2 = np.array((destCoord.x, destCoord.y, destCoord.z))
             plt.plot(sourceCoord.x, sourceCoord.y, "ro", color="#af41f4", markersize=5)
-            plt.plot([sourceCoord.x, destCoord.x], [sourceCoord.y, destCoord.y], color=lineColor)
-            plt.plot(destCoord.x, destCoord.y, ".", color="green", markersize=7)   
+            plt.plot([sourceCoord.x, destCoord.x], [sourceCoord.y, destCoord.y], color=lineColor, linewidth=0.3)
+            plt.plot(destCoord.x, destCoord.y, ".", color="green", markersize=5)   
             plt.plot(startingX, startingY, "ro", color="blue", markersize=5)
 
             coordUtils.plotTxRange(circRadius, startingX, startingY, vehicleDistance, color1, True)

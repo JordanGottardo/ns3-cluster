@@ -48,7 +48,6 @@ def plotAlertPath(relativeFileName, outFilePath):
 
     plt.plot(xNodeCoords, yNodeCoords, ".", color="red")
     plt.plot(xReceivedCoords, yReceivedCoords, ".", color="green")
-    plt.plot(startingX, startingY, "ro", color="blue", markersize=10)
 
     pathsToPlot = {item: [item] for item in receivedOnCircIds}
     for idOnCirc in receivedOnCircIds:
@@ -78,11 +77,12 @@ def plotAlertPath(relativeFileName, outFilePath):
             c1 = np.array((coord1.x, coord1.y, coord1.z))
             c2 = np.array((coord2.x, coord2.y, coord2.z))
             #print(np.linalg.norm(c1-c2))
-            plt.plot(coord1.x, coord1.y, "ro", color="#af41f4", markersize=7)
-            plt.plot([coord1.x, coord2.x], [coord1.y, coord2.y], color=lineColor)
+            if (i > 0):
+                plt.plot(coord1.x, coord1.y, "ro", color="#af41f4", markersize=5)
+            plt.plot([coord1.x, coord2.x], [coord1.y, coord2.y], color=lineColor, , linewidth=0.3)
             i = i + 1
         
-    plt.plot(startingX, startingY, "ro", color="blue", markersize=10)
+    plt.plot(startingX, startingY, "ro", color="blue", markersize=5)
 
     color1 = "#840000"
     coordUtils.plotTxRange(circRadius, startingX, startingY, vehicleDistance, color1, True)

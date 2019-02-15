@@ -76,7 +76,8 @@ FBApplication::FBApplication ()
 		m_collisions (0),
 		m_printCoords(0),
 		m_vehicleDistance(25),
-		m_transmissionList() {
+		m_transmissionList(),
+		m_transmissionVector() {
 		NS_LOG_FUNCTION (this);
 
 	srand(time(0));
@@ -124,26 +125,26 @@ void FBApplication::Install(uint32_t protocol, uint32_t broadcastPhaseStart, uin
 void FBApplication::AddNode (Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink, bool onstats) {
 	NS_LOG_FUNCTION (this << node);
 
-	Ptr<FBNode> fbNode = CreateObject<FBNode> ();
-	fbNode->SetNode (node);
-	fbNode->SetId (node->GetId ());
-	fbNode->SetSocket (source);
-	sink->SetRecvCallback (MakeCallback (&FBApplication::ReceivePacket, this));
-	fbNode->SetCMFR (m_estimatedRange);
-	fbNode->SetLMFR (m_estimatedRange);
-	fbNode->SetCMBR (m_estimatedRange);
-	fbNode->SetLMBR (m_estimatedRange);
-	fbNode->UpdatePosition ();
-	fbNode->SetNum (0);
-	fbNode->SetPhase (-1);
-	fbNode->SetSlot (0);
-	fbNode->SetReceived (false);
-	fbNode->SetSent (false);
-	fbNode->SetMeAsVehicle (onstats);
+	Ptr<FBNode> fbNode = CreateObject<FBNode>();
+	fbNode->SetNode(node);
+	fbNode->SetId(node->GetId());
+	fbNode->SetSocket(source);
+	sink->SetRecvCallback(MakeCallback (&FBApplication::ReceivePacket, this));
+	fbNode->SetCMFR(m_estimatedRange);
+	fbNode->SetLMFR(m_estimatedRange);
+	fbNode->SetCMBR(m_estimatedRange);
+	fbNode->SetLMBR(m_estimatedRange);
+	fbNode->UpdatePosition();
+	fbNode->SetNum(0);
+	fbNode->SetPhase(-1);
+	fbNode->SetSlot(0);
+	fbNode->SetReceived(false);
+	fbNode->SetSent(false);
+	fbNode->SetMeAsVehicle(onstats);
 
 	// misc stuff
 	m_nodes.push_back (fbNode);
-	m_id2id[fbNode->GetId ()] = m_nodes.size() - 1;
+	m_id2id[fbNode->GetId()] = m_nodes.size() - 1;
 	m_nNodes++;
 }
 
@@ -243,11 +244,11 @@ void FBApplication::PrintStats(std::stringstream &dataStream) {
 //	NS_LOG_UNCOND("aoi = " << m_aoi << "aoi error " << m_aoi_error);
 }
 
-void FBApplication::StartApplication (void) {
-  NS_LOG_FUNCTION (this);
+void FBApplication::StartApplication(void) {
+	NS_LOG_FUNCTION(this);
 
 	// Get startingNode as node and as fbNode
-	m_startingNode = this->GetNode ()->GetId ();
+	m_startingNode = this->GetNode()->GetId();
 
 	if (m_id2id.count(m_startingNode) == 0) {
 		NS_LOG_ERROR ("Starting node is not a fb node!");
@@ -263,11 +264,11 @@ void FBApplication::StartApplication (void) {
 	Simulator::Schedule(Seconds(m_broadcastPhaseStart), &FBApplication::StartBroadcastPhase, this);
 }
 
-void FBApplication::StopApplication (void) {
-	NS_LOG_FUNCTION (this);
+void FBApplication::StopApplication(void) {
+	NS_LOG_FUNCTION(this);
 }
 
-void FBApplication::GenerateHelloTraffic (uint32_t count) {
+void FBApplication::GenerateHelloTraffic(uint32_t count) {
 
 //	NS_LOG_INFO (this << count);
 	NS_LOG_INFO(count);
@@ -283,8 +284,8 @@ void FBApplication::GenerateHelloTraffic (uint32_t count) {
 			int pos = rand() % m_nNodes;
 			he.push_back (pos);
 			Ptr<FBNode> fbNode = m_nodes.at(pos);
-			Simulator::ScheduleWithContext (fbNode->GetNode ()->GetId (),
-																			MicroSeconds (i * time_factor),
+			Simulator::ScheduleWithContext (fbNode->GetNode()->GetId(),
+																			MicroSeconds(i * time_factor),
 																			&FBApplication::GenerateHelloMessage, this, fbNode);
 		}
 
@@ -294,14 +295,14 @@ void FBApplication::GenerateHelloTraffic (uint32_t count) {
 	}
 }
 
-void FBApplication::StartBroadcastPhase (void) {
-	NS_LOG_FUNCTION (this);
-	NS_LOG_INFO ("Start Broadcast Phase.");
+void FBApplication::StartBroadcastPhase(void) {
+	NS_LOG_FUNCTION(this);
+	NS_LOG_INFO("Start Broadcast Phase.");
 
 	Ptr<FBNode> fbNode = this->GetFBNode(m_startingNode);
 
 	// Generate the first alert message
-	GenerateAlertMessage (fbNode);
+	GenerateAlertMessage(fbNode);
 }
 
 void FBApplication::GenerateHelloMessage (Ptr<FBNode> fbNode) {
@@ -323,8 +324,8 @@ void FBApplication::GenerateHelloMessage (Ptr<FBNode> fbNode) {
 }
 
 void FBApplication::GenerateAlertMessage (Ptr<FBNode> fbNode) {
-	NS_LOG_FUNCTION (this << fbNode);
-	NS_LOG_DEBUG ("Generate Alert Message (" << fbNode->GetNode ()->GetId () << ").");
+	NS_LOG_FUNCTION(this << fbNode);
+	NS_LOG_DEBUG("Generate Alert Message (" << fbNode->GetNode()->GetId() << ").");
 
 	// Create a packet with the correct parameters taken from the node
 	uint32_t LMBR, CMBR, maxi;
@@ -352,7 +353,7 @@ void FBApplication::GenerateAlertMessage (Ptr<FBNode> fbNode) {
 	m_sent++;
 
 	// Store current time
-	fbNode->SetTimestamp(Simulator::Now ());
+	fbNode->SetTimestamp(Simulator::Now());
 }
 
 void FBApplication::ReceivePacket(Ptr<Socket> socket) {
