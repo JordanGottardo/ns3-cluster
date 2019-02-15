@@ -1,10 +1,10 @@
 #!/usr/bin/python2
 #coding=utf-8
 #Invocation:
-#   ./drawHops.py
+#   ./drawSingleHops.py
 # OR
-#   ./drawHops.py path.csv
-# example: ./drawHops.py /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano-con-coord/cw-32-1024/Padova/d25/b0/st500-500/Padova-25-cw-32-1024-b0-st500-500-1550077028283.csv
+#   ./drawSingleHops.py path.csv
+# example: ./drawSingleHops.py /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano-con-coord/cw-32-1024/Padova/d25/b0/st500-500/Padova-25-cw-32-1024-b0-st500-500-1550077028283.csv
 
 import os
 import sys
@@ -26,7 +26,7 @@ def findMaxHop(transmissionVector):
     return max(map(lambda edge: edge.phase, transmissionVector))
 
 def plotHops(relativeFileName, outFileBasePath):
-    print("Plotting alet path " + relativeFileName)
+    print("Plotting hops " + relativeFileName)
     startingVehicle = 0
     vehicleDistance = 0
     txRange = 0
@@ -44,27 +44,22 @@ def plotHops(relativeFileName, outFileBasePath):
     txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds, transmissionVector = coordUtils.parseFile(relativeFileName, ns2MobilityFile)
 
     maxHop = findMaxHop(transmissionVector)
-    count = 0
     for hop in range(0, maxHop + 1):
-        if (count > 0):
-            continue
-        #count += 1
         lineColor = "0.4"
 
         plt.plot(xNodeCoords, yNodeCoords, ".", color="red")
-        plt.plot(xReceivedCoords, yReceivedCoords, ".", color="green")
+        #plt.plot(xReceivedCoords, yReceivedCoords, ".", color="green")
         
         filteredTransmissionVector = filter(lambda x: x.phase <= hop, transmissionVector)
         for edge in filteredTransmissionVector:
             #print(edge)
             sourceCoord = coordUtils.findCoordsFromFile(edge.source, ns2MobilityFile)
             destCoord = coordUtils.findCoordsFromFile(edge.destination, ns2MobilityFile)
-            c1 = np.array((sourceCoord.x, sourceCoord.y, sourceCoord.z))
-            c2 = np.array((destCoord.x, destCoord.y, destCoord.z))
-            plt.plot(sourceCoord.x, sourceCoord.y, "ro", color="#af41f4", markersize=7)
-            plt.plot([sourceCoord.x, destCoord.x], [sourceCoord.y, destCoord.y], color=lineColor)
+            plt.plot(destCoord.x, destCoord.y, ".", color="green")
+            plt.plot(sourceCoord.x, sourceCoord.y, "ro", color="#af41f4", markersize=5)
+            plt.plot([sourceCoord.x, destCoord.x], [sourceCoord.y, destCoord.y], color=lineColor, linewidth=0.3)
             
-        plt.plot(startingX, startingY, "ro", color="blue", markersize=10)
+        plt.plot(startingX, startingY, "ro", color="blue", markersize=5)
 
         color1 = "#840000"
         coordUtils.plotTxRange(circRadius, startingX, startingY, vehicleDistance, color1, True)
@@ -85,10 +80,10 @@ def plotHops(relativeFileName, outFileBasePath):
         
 
 def main():
-    print("Draw alert paths")
+    print("Draw hops")
     if (len(sys.argv) > 1):
         relativeFileName = sys.argv[1]
-        plotHops(relativeFileName, "./outSinglefileHops/outHops")
+        plotHops(relativeFileName, "./out/singlefileHops/outHops")
     else:
         for buildingFolder in os.listdir(baseFolder):
             buildingPath = os.path.join(baseFolder, buildingFolder)
@@ -102,7 +97,7 @@ def main():
                             if (count > 2 or not coordUtils.isFileComplete(relativeFileName)):
                                 continue
                             count += 1
-                            outFilePath = os.path.join("./out/alertPaths", buildingFolder, protocolFolder, os.path.splitext(csvFilename)[0] + ".pdf")
+                            outFilePath = os.path.join("./out/hops", buildingFolder, protocolFolder, os.path.splitext(csvFilename)[0] + ".pdf")
                             plotHops(relativeFileName, outFilePath)
                         
 

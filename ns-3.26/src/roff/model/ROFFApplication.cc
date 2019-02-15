@@ -8,9 +8,9 @@
 
 namespace ns3 {
 
-NS_LOG_COMPONENT_DEFINE ("ROFFApplication");
+NS_LOG_COMPONENT_DEFINE("ROFFApplication");
 
-NS_OBJECT_ENSURE_REGISTERED (ROFFApplication);
+NS_OBJECT_ENSURE_REGISTERED(ROFFApplication);
 
 TypeId ROFFApplication::GetTypeId() {
 	  static TypeId tid = TypeId ("ns3::ROFFApplication")
@@ -19,21 +19,22 @@ TypeId ROFFApplication::GetTypeId() {
 	  return tid;
 }
 
-ROFFApplication::ROFFApplication() {
-//	TODO
+
+void ROFFApplication::Install(uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi,
+	uint32_t aoi_error, uint32_t vehicleDistance) {
+	NS_LOG_FUNCTION(this);
+	m_broadcastPhaseStart = broadcastPhaseStart;
+	m_aoi = aoi;
+	m_aoi_error = aoi_error;
+	m_actualRange = actualRange;
+	m_vehicleDistance = vehicleDistance;
 }
 
-ROFFApplication::~ROFFApplication() {
-//	TODO
-}
-
-void ROFFApplication::Install() {
-//	TODO
-}
-
-void ROFFApplication::AddNode(Ptr<Node> node, Ptr<Socket> source,
-		Ptr<Socket> sink) {
-//	TODO
+void ROFFApplication::AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink) {
+	NS_LOG_FUNCTION(this);
+	Ptr<ROFFNode> fbNode = CreateObject<ROFFNode>(source);
+	sink->SetRecvCallback(MakeCallback(&ROFFApplication::ReceivePacket, this));
+	m_nodes[fbNode->GetId()] = fbNode;
 }
 
 void ROFFApplication::PrintStats(std::stringstream& dataStream) {
@@ -41,11 +42,14 @@ void ROFFApplication::PrintStats(std::stringstream& dataStream) {
 }
 
 void ROFFApplication::StartApplication(void) {
-//	TODO
+	NS_LOG_FUNCTION(this);
+
+	m_startingNode = this->GetNode()->GetId();
+	Simulator::Schedule(Seconds(m_broadcastPhaseStart), &ROFFApplication::StartBroadcastPhase, this);
 }
 
 void ROFFApplication::StopApplication(void) {
-//	TODO
+	NS_LOG_FUNCTION(this);
 }
 
 void ROFFApplication::GenerateHelloTraffic(uint32_t count) {
@@ -56,16 +60,18 @@ void ROFFApplication::GenerateHelloTraffic(uint32_t count) {
 }
 
 void ROFFApplication::StartBroadcastPhase(void) {
-//	TODO
+	NS_LOG_FUNCTION(this);
+	GenerateAlertMessage(m_nodes.at(m_startingNode));
 }
 
-void ROFFApplication::GenerateHelloMessage(Ptr<ROFFNode> fbNode) {
+void ROFFApplication::GenerateHelloMessage(Ptr<ROFFNode> node) {
 // TODO
 // Generate hello message, attaching current position and node id
 // Broadcast hello message
 }
 
-void ROFFApplication::GenerateAlertMessage(Ptr<ROFFNode> fbNode) {
+void ROFFApplication::GenerateAlertMessage(Ptr<ROFFNode> node) {
+	NS_LOG_FUNCTION (this << node);
 // TODO
 //	Generate alert message
 //	Generate ESD bitmap from neighbor table (NBT)
@@ -94,13 +100,13 @@ void ROFFApplication::ReceivePacket(Ptr<Socket> socket) {
 //		if alert, handle alert message
 }
 
-void ROFFApplication::HandleHelloMessage(Ptr<ROFFNode> fbNode,
-		ROFFNode fbHeader) {
+void ROFFApplication::HandleHelloMessage(Ptr<ROFFNode> node,
+		ROFFNode header) {
 //	update relative's entry to sender in receiver's NBT
 }
 
-void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> fbNode,
-		ROFFNode fbHeader, uint32_t distance) {
+void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
+		ROFFNode header, uint32_t distance) {
 //	TODO
 //	initiate forward priority acquisition
 //	after that, calculate minDiff
@@ -113,12 +119,12 @@ double ROFFApplication::CalculateMinDiff() {
 //	calculate minDiff between nodes
 }
 
-void ROFFApplication::WaitAgain(Ptr<ROFFNode> fbNode, ROFFNode fbHeader,
+void ROFFApplication::WaitAgain(Ptr<ROFFNode> fbNode, ROFFNode header,
 		uint32_t waitingTime) {
 }
 
 void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> fbNode,
-		ROFFNode oldFBHeader, uint32_t waitingTime) {
+		ROFFNode oldHeader, uint32_t waitingTime) {
 // TODO
 //	broadcast alert message
 }
@@ -126,15 +132,12 @@ void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> fbNode,
 void ROFFApplication::StopNode(Ptr<ROFFNode> fbNode) {
 }
 
-Ptr<ROFFNode> ROFFApplication::GetFBNode(Ptr<Node> node) {
-}
-
-Ptr<ROFFNode> ROFFApplication::GetFBNode(uint32_t id) {
-}
 
 uint32_t ROFFApplication::ComputeContentionWindow(uint32_t maxRange,
 		uint32_t distance) {
 }
+
+
 }
 
 

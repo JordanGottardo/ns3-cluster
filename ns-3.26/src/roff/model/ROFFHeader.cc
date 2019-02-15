@@ -28,10 +28,6 @@ namespace ns3 {
 	}
 
 
-
-
-
-
 	void ROFFHeader::SetType(uint32_t type) {
 		m_type = type;
 	}
