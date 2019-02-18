@@ -23,7 +23,7 @@ circRadius = 1000
 baseFolder = "../../ns-3.26/out/scenario-urbano-con-coord/cw-32-1024/Padova/d25/"
 
 
-def plotSingleTransmission(relativeFileName, outFileBasePath, numTransmissionToPlot):
+def plotSingleTransmission(relativeFileName, outFileBasePath, numTransmissionToPlot=None):
     print("Plotting single transmission " + relativeFileName)
     startingVehicle = 0
     vehicleDistance = 0
@@ -42,18 +42,23 @@ def plotSingleTransmission(relativeFileName, outFileBasePath, numTransmissionToP
     txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds, transmissionVector = coordUtils.parseFile(relativeFileName, ns2MobilityFile)
 
     nodeCoordsMap = {}
-
     color1 = "#840000"
+
+    if (numTransmissionToPlot is None):
+        numTransmissionToPlot = len(transmissionVector) - 1
 
     for i in range(1, numTransmissionToPlot + 1):
         plt.plot(xNodeCoords, yNodeCoords, ".", color="red")
         coordUtils.plotTxRange(circRadius, startingX, startingY, vehicleDistance, color1, True)
         count = 0
+        print(i)
         for edge in transmissionVector:
             if (count >= i):
                 break
             count += 1
-            lineColor = "0.4"
+            lineColor = "0.8"
+            if (count == i - 1):
+                lineColor = "0.35"
             source = edge.source
             destination = edge.destination
             if (not source in nodeCoordsMap):
@@ -66,7 +71,7 @@ def plotSingleTransmission(relativeFileName, outFileBasePath, numTransmissionToP
             c1 = np.array((sourceCoord.x, sourceCoord.y, sourceCoord.z))
             c2 = np.array((destCoord.x, destCoord.y, destCoord.z))
             plt.plot(sourceCoord.x, sourceCoord.y, "ro", color="#af41f4", markersize=5)
-            plt.plot([sourceCoord.x, destCoord.x], [sourceCoord.y, destCoord.y], color=lineColor, linewidth=0.3)
+            plt.plot([sourceCoord.x, destCoord.x], [sourceCoord.y, destCoord.y], color=lineColor, linewidth=0.3, alpha=0.7)
             plt.plot(destCoord.x, destCoord.y, ".", color="green", markersize=5)   
             plt.plot(startingX, startingY, "ro", color="blue", markersize=5)
 
@@ -89,7 +94,9 @@ def plotSingleTransmission(relativeFileName, outFileBasePath, numTransmissionToP
 def main():
     print("Draw single transmissions")
     relativeFileName = sys.argv[1]
-    numTransmissionToPlot = int(sys.argv[2])
+    numTransmissionToPlot = None
+    if (len(sys.argv) > 2):
+        numTransmissionToPlot = int(sys.argv[2])
     plotSingleTransmission(relativeFileName, "./out/singlefileSingleTransmission/singleTransmission", numTransmissionToPlot)
 
 if __name__ == "__main__":

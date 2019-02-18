@@ -78,8 +78,8 @@ def plotAlertPath(relativeFileName, outFilePath):
             c2 = np.array((coord2.x, coord2.y, coord2.z))
             #print(np.linalg.norm(c1-c2))
             if (i > 0):
-                plt.plot(coord1.x, coord1.y, "ro", color="#af41f4", markersize=5)
-            plt.plot([coord1.x, coord2.x], [coord1.y, coord2.y], color=lineColor, , linewidth=0.3)
+                plt.plot(coord1.x, coord1.y, "ro", color="#560589", markersize=5)
+            plt.plot([coord1.x, coord2.x], [coord1.y, coord2.y], color=lineColor, linewidth=0.3)
             i = i + 1
         
     plt.plot(startingX, startingY, "ro", color="blue", markersize=5)
@@ -103,7 +103,7 @@ def main():
     print("Draw alert paths")
     if (len(sys.argv) > 1):
         relativeFileName = sys.argv[1]
-        plotAlertPath(relativeFileName, "./outAlertPath.pdf")
+        plotAlertPath(relativeFileName, "./out/singlefileAlertPath/alertPath.pdf")
     else:
         for buildingFolder in os.listdir(baseFolder):
             buildingPath = os.path.join(baseFolder, buildingFolder)

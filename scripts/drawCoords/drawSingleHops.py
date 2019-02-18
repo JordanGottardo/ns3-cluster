@@ -43,21 +43,36 @@ def plotHops(relativeFileName, outFileBasePath):
 
     txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds, transmissionVector = coordUtils.parseFile(relativeFileName, ns2MobilityFile)
 
+    nodeCoordsMap = {}
+
     maxHop = findMaxHop(transmissionVector)
     for hop in range(0, maxHop + 1):
-        lineColor = "0.4"
+        print("hop" + str(hop))
 
         plt.plot(xNodeCoords, yNodeCoords, ".", color="red")
         #plt.plot(xReceivedCoords, yReceivedCoords, ".", color="green")
         
-        filteredTransmissionVector = filter(lambda x: x.phase <= hop, transmissionVector)
+        filteredTransmissionVector = filter(lambda x: x.phase <= hop, transmissionVector)           
         for edge in filteredTransmissionVector:
             #print(edge)
+            lineColor = "0.8"
+            sourceColor = "#560589"
+            if (edge.phase == hop):
+                lineColor = "0.35"
+                sourceColor = "#bf59ff"
+            source = edge.source
+            destination = edge.destination
+            if (not source in nodeCoordsMap):
+                nodeCoordsMap[source] = coordUtils.findCoordsFromFile(edge.source, ns2MobilityFile)
+            if (not destination in nodeCoordsMap):
+                nodeCoordsMap[destination] = coordUtils.findCoordsFromFile(edge.destination, ns2MobilityFile)
+            sourceCoord = nodeCoordsMap[source]
+            destCoord = nodeCoordsMap[destination]
             sourceCoord = coordUtils.findCoordsFromFile(edge.source, ns2MobilityFile)
             destCoord = coordUtils.findCoordsFromFile(edge.destination, ns2MobilityFile)
             plt.plot(destCoord.x, destCoord.y, ".", color="green")
-            plt.plot(sourceCoord.x, sourceCoord.y, "ro", color="#af41f4", markersize=5)
-            plt.plot([sourceCoord.x, destCoord.x], [sourceCoord.y, destCoord.y], color=lineColor, linewidth=0.3)
+            plt.plot(sourceCoord.x, sourceCoord.y, "ro", color=sourceColor, markersize=5)
+            plt.plot([sourceCoord.x, destCoord.x], [sourceCoord.y, destCoord.y], color=lineColor, linewidth=0.3, alpha=0.7)
             
         plt.plot(startingX, startingY, "ro", color="blue", markersize=5)
 
