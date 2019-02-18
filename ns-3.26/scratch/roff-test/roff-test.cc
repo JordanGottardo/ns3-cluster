@@ -723,9 +723,12 @@ void ROFFVanetExperiment::ConfigureROFFApplication () {
 							   m_vehicleDistance,
 							   m_vehicleDistance
 							  );
+	NS_LOG_UNCOND("POST INSTALL");
 	m_roffApplication->SetStartTime(Seconds(1));
+	NS_LOG_UNCOND("POST START TIME");
 	m_roffApplication->SetStopTime(Seconds(m_TotalSimTime));
 
+	NS_LOG_UNCOND("PRE ADD NODE");
 	// Add nodes to the application
 	for (uint32_t i = 0; i < m_nNodes; i++) {
 		m_roffApplication->AddNode(m_adhocNodes.Get(i), m_adhocSources.at(i), m_adhocSinks.at(i));
@@ -733,6 +736,7 @@ void ROFFVanetExperiment::ConfigureROFFApplication () {
 
 	// Add the application to a node
 	m_adhocNodes.Get (m_startingNode)->AddApplication(m_roffApplication);
+	NS_LOG_UNCOND("END CONFIGURE ROFF APP");
 }
 
 void ROFFVanetExperiment::RunSimulation () {
@@ -755,7 +759,7 @@ void ROFFVanetExperiment::CommandSetup (int argc, char *argv[]) {
 //	cmd.AddValue ("protocol", "Estimantion protocol: 1=FB, 2=C100, 3=C300, 4=C500", m_staticProtocol);
 //	cmd.AddValue ("flooding", "Enable flooding", m_flooding);
 //	cmd.AddValue("alertGeneration", "Time at which the first Alert Message should be generated.", m_alertGeneration);
-//	cmd.AddValue("area", "Radius of the area of interest", m_areaOfInterest);
+	cmd.AddValue("area", "Radius of the area of interest", m_areaOfInterest);
 //	cmd.AddValue ("scenario", "1=Padova, 2=Los Angeles", m_scenario);
 	cmd.AddValue("buildings", "Load building (obstacles)", m_loadBuildings);
 	cmd.AddValue("trace", "Vehicles trace file (ns2mobility format)", m_traceFile);
@@ -788,7 +792,12 @@ void ROFFVanetExperiment::SetupScenario () {
 	m_vehicleDistance = std::stoi(m_mapBasePath.substr(foundDash + 1));
 
 	m_bldgFile = m_mapBasePath + ".poly.xml";
-	m_traceFile = m_mapBasePath + ".ns2mobility.xml";
+
+
+
+
+
+//	m_traceFile = m_mapBasePath + ".ns2mobility.xml";
 	m_nNodes = CalculateNumNodes();
 	if (m_startingNode == -1) {
 		m_startingNode = rand() % m_nNodes;
@@ -856,7 +865,7 @@ unsigned int ROFFVanetExperiment::CalculateNumNodes() const {
 			}
 		}
 	}
-	return numNodes;
+	return numNodes + 1;
 }
 
 void ROFFVanetExperiment::Run() {

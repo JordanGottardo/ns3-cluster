@@ -885,7 +885,7 @@ unsigned int FBVanetExperiment::CalculateNumNodes() const {
 			}
 		}
 	}
-	return numNodes;
+	return numNodes + 1;
 }
 
 void FBVanetExperiment::Run() {
