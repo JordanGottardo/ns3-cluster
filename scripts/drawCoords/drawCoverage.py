@@ -63,7 +63,7 @@ def main():
     print("Draw coverage")
     if (len(sys.argv) > 1):
         relativeFileName = sys.argv[1]
-        plotCoverage(relativeFileName, "./outCoverage.pdf")
+        plotCoverage(relativeFileName, "./out/singlefileCoverage/coverage.pdf")
     else:
         for buildingFolder in os.listdir(baseFolder):
             buildingPath = os.path.join(baseFolder, buildingFolder)

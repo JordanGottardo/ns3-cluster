@@ -26,7 +26,7 @@ class Vector:
         return not(self == other)  
 
     def __repr__(self):
-        return "({0}, {1}, {2})".format(self.x, self.y, self.z)
+        return "({0}, {1}, {2})\n".format(self.x, self.y, self.z)
 
     def __str__(self):
         return "Vector({0},{1},{2})".format(self.x, self.y, self.z)
@@ -196,7 +196,7 @@ def plotBuildings(polyFilePath):
     count = 0
     for poly in polyList:
         polyType = poly.get("type")
-        if (polyType != "building" and polyType != "amenity"):
+        if (polyType != "building" and polyType != "unknown"):
         #if (polyType == "water" or polyType == "residential" or polyType == "landuse" or polyType == "natural"
         #or polyType == "historic"):
         #amenity
