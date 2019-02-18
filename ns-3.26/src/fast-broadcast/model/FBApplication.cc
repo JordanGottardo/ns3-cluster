@@ -122,8 +122,8 @@ void FBApplication::Install(uint32_t protocol, uint32_t broadcastPhaseStart, uin
 	m_vehicleDistance = vehicleDistance;
 }
 
-void FBApplication::AddNode (Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink, bool onstats) {
-	NS_LOG_FUNCTION (this << node);
+void FBApplication::AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink, bool onstats) {
+	NS_LOG_FUNCTION(this << node);
 
 	Ptr<FBNode> fbNode = CreateObject<FBNode>();
 	fbNode->SetNode(node);
@@ -323,7 +323,7 @@ void FBApplication::GenerateHelloMessage (Ptr<FBNode> fbNode) {
 	fbNode->Send(packet);
 }
 
-void FBApplication::GenerateAlertMessage (Ptr<FBNode> fbNode) {
+void FBApplication::GenerateAlertMessage(Ptr<FBNode> fbNode) {
 	NS_LOG_FUNCTION(this << fbNode);
 	NS_LOG_DEBUG("Generate Alert Message (" << fbNode->GetNode()->GetId() << ").");
 
@@ -333,7 +333,7 @@ void FBApplication::GenerateAlertMessage (Ptr<FBNode> fbNode) {
 	CMBR = fbNode->GetCMBR();
 	maxi = std::max(LMBR, CMBR);
 
-	Vector position = fbNode->UpdatePosition ();
+	Vector position = fbNode->UpdatePosition();
 
 	FBHeader fbHeader;
 	fbHeader.SetType(ALERT_MESSAGE);
@@ -575,6 +575,7 @@ void FBApplication::StopNode (Ptr<FBNode> fbNode) {
 
 	Ptr<ConstantVelocityMobilityModel> mob = node->GetObject<ConstantVelocityMobilityModel>();
 	mob->SetVelocity(Vector (0, 0, 0));
+
 }
 
 Ptr<FBNode> FBApplication::GetFBNode (Ptr<Node> node) {

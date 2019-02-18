@@ -14,6 +14,10 @@
 #include "ns3/vector.h"
 #include "ns3/socket.h"
 #include "ns3/packet.h"
+#include "ns3/log.h"
+#include "ns3/mobility-model.h"
+#include "ns3/constant-velocity-mobility-model.h"
+
 #include "NeighborTable.h"
 #include <iostream>
 
@@ -25,13 +29,30 @@ namespace ns3 {
 class ROFFNode: public Object {
 
 public:
+
+	ROFFNode();
+
+
+	ROFFNode(Ptr<Node> node, Ptr<Socket> socket);
+
+	//	Getters
 	const Ptr<Node>& GetNode() const;
 
+	Ptr<Socket> GetSocket() const;
+
+	uint32_t GetId() const;
+
+	const Vector GetPosition() const;
+
+	//	void SetPosition(const Vector& position);
+
+//	Setters
 	void SetNode(const Ptr<Node>& node);
 
-	const Vector& GetPosition() const;
+	void SetSocket(Ptr<Socket> socket);
 
-	void SetPosition(const Vector& position);
+//	Methods
+	void Send(Ptr<Packet> packet);
 
 	void AddOrUpdateNeighbor(const uint32_t& nodeId, Vector pos, milliseconds timeStamp = duration_cast<milliseconds>(
 		    system_clock::now().time_since_epoch()));
@@ -39,10 +60,9 @@ public:
 private:
 
 	Ptr<Node>			m_node; // ns-3 node
-	Vector				m_position; // node current position
+	Ptr<Socket> 		m_socket; // ns-3 socket
 	NeighborTable		m_neighborTable;
-//						m_esdBitmap boost dynamic_bitset
-//	TODO 				esdBitmap size?
+
 };
 
 }

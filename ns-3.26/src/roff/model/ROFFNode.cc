@@ -8,11 +8,16 @@
 #include "ROFFNode.h"
 
 namespace ns3 {
+	NS_LOG_COMPONENT_DEFINE("ROFFNode");
+
+	NS_OBJECT_ENSURE_REGISTERED(ROFFNode);
 
 	ROFFNode::ROFFNode() {
+		NS_LOG_FUNCTION(this);
 	}
 
-	ROFFNode::ROFFNode(Ptr<Socket> socket): m_socket(socket) {
+	ROFFNode::ROFFNode(Ptr<Node> node, Ptr<Socket> socket): m_node(node), m_socket(socket) {
+		NS_LOG_FUNCTION(this);
 	}
 
 	const Ptr<Node>& ROFFNode::GetNode() const {
@@ -27,9 +32,9 @@ namespace ns3 {
 		return m_node->GetId();
 	}
 
-//	const Vector& ROFFNode::GetPosition() const {
-//		return m_position;
-//	}
+	const Vector ROFFNode::GetPosition() const {
+		return m_node->GetObject<MobilityModel>()->GetPosition();
+	}
 
 //	void ROFFNode::SetPosition(const Vector& position) {
 //		m_position = position;
@@ -43,6 +48,13 @@ namespace ns3 {
 	void ROFFNode::SetNode(const Ptr<Node>& node) {
 		m_node = node;
 	}
+
+//	Methods
+
+	void ROFFNode::Send(Ptr<Packet> packet) {
+		m_socket->Send(packet);
+	}
+
 
 	void ROFFNode::AddOrUpdateNeighbor(const uint32_t& nodeId, Vector pos, milliseconds timeStamp) {
 		m_neighborTable.AddOrUpdateEntry(nodeId, pos, timeStamp);
