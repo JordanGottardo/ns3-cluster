@@ -86,6 +86,8 @@ ObstacleShadowingPropagationLossModel::GetLoss (Ptr<MobilityModel> a, Ptr<Mobili
       Point_3 p1(p1_x, p1_y, p1_z);
       Point_3 p2(p2_x, p2_y, p2_z);
 
+//      std::cout << "GetLoss tra pos " << p1 << " e pos " << p2 << std::endl;
+
       // and testing for obstacles within m_radius=200m
       // get the obstructed loss, from the topology class
       L_obs = topology->GetObstructedLossBetween(p1, p2, m_radius);
@@ -99,9 +101,12 @@ ObstacleShadowingPropagationLossModel::DoCalcRxPower (double txPowerDbm,
 						Ptr<MobilityModel> a,
 						Ptr<MobilityModel> b) const
 {
+	std::cout << "GetLoss tra pos " << a->GetPosition() << " e pos " << b->GetPosition() <<
+			" con txPower= " << txPowerDbm << std::endl;
   double retVal = 0.0;
   double loss = GetLoss (a, b);
   retVal = txPowerDbm - loss;
+  std::cout << "valore after loss " << retVal << std::endl;
   return (retVal);
 }
 

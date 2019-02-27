@@ -40,8 +40,9 @@ def plotHops(relativeFileName, outFileBasePath):
     receivedCoordsOnCirc = []
     receivedOnCircIds = []
     transmissionVector = []
+    nodeIds = []
 
-    txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds, transmissionVector = coordUtils.parseFile(relativeFileName, ns2MobilityFile)
+    txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds, transmissionVector, nodeIds = coordUtils.parseFile(relativeFileName, ns2MobilityFile)
 
     nodeCoordsMap = {}
 
@@ -49,7 +50,7 @@ def plotHops(relativeFileName, outFileBasePath):
     for hop in range(0, maxHop + 1):
         print("hop" + str(hop))
 
-        plt.plot(xNodeCoords, yNodeCoords, ".", color="red")
+        plt.plot(xNodeCoords, yNodeCoords, ".", markersize=5, color="red")
         #plt.plot(xReceivedCoords, yReceivedCoords, ".", color="green")
         
         filteredTransmissionVector = filter(lambda x: x.phase <= hop, transmissionVector)           

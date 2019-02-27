@@ -15,6 +15,13 @@ namespace ns3 {
 
 	NS_OBJECT_ENSURE_REGISTERED(ROFFHeader);
 
+//	Constructor
+
+	ROFFHeader::ROFFHeader(): m_type(HELLO_MESSAGE),
+							  m_senderId(0),
+							  m_position(Vector(0, 0, 0)) {
+	}
+
 //	Getters
 
 	uint32_t ROFFHeader::GetType() const {
@@ -51,41 +58,48 @@ namespace ns3 {
 
 	uint32_t ROFFHeader::GetSerializedSize() const {
 //		uint32_t 4 * 2
-//		uint64_t (double) 8 * 4
-		return 8 + 32;
+//		uint64_t (double) 8 * 3
+//		return 8 + 32;
+		return 4 * 2 + 8 * 3;
+	}
+
+	void ROFFHeader::WriteDouble(Buffer::Iterator* iter, double d) const {
+		const double* buf = &(d);
+		const uint8_t* buf2 = reinterpret_cast<const uint8_t*> (buf);
+		iter->Write(buf2, 8);
 	}
 
 	void ROFFHeader::Serialize(Buffer::Iterator start) const {
 		NS_LOG_FUNCTION(this);
-		Buffer::Iterator i = start;
 
-		i.WriteU32(m_type);
-		i.WriteU32(m_senderId);
-		const double* const buf = &(m_position.x);
-		const uint8_t* const buf2 = reinterpret_cast<const uint8_t* const> (buf);
-		i.Write(buf2, 8);
-		i.WriteU64(m_position.y);
-		i.WriteU64(m_position.z);
+		start.WriteU32(m_type);
+		start.WriteU32(m_senderId);
+//		cout << "Serialize m_type = " << m_type << " m_senderId" << m_senderId
+//				<< " coord " << m_position << endl;
+		WriteDouble(&start, m_position.x);
+		WriteDouble(&start, m_position.y);
+		WriteDouble(&start, m_position.z);
+	}
 
-//		DoubleValue v(m_position.x);
-//		v.
+	double ROFFHeader::ReadDouble(Buffer::Iterator* iter) const {
+		uint64_t x;
+		uint8_t* buf = reinterpret_cast<uint8_t*>(&x);
+		iter->Read(buf, 8);
+		double d = *(reinterpret_cast<double*>(buf));
+		return d;
 	}
 
 	uint32_t ROFFHeader::Deserialize(Buffer::Iterator start) {
 		NS_LOG_FUNCTION(this);
-		Buffer::Iterator i = start;
 
-		m_type = i.ReadU32();
-		m_senderId = i.ReadU32();
-		uint32_t x, y, z;
-		uint8_t* buf;
-		i.Read(buf, 8);
-		double x1 = *(reinterpret_cast<double*>(buf));
-		cout << x1 << endl;
-		y = i.ReadU64();
-		z = i.ReadU64();
+		m_type = start.ReadU32();
+		m_senderId = start.ReadU32();
+		double x = ReadDouble(&start);
+		double y = ReadDouble(&start);
+		double z = ReadDouble(&start);
 		m_position = Vector(x, y, z);
-//		TODO serializzare meglio i double
+//		cout << "Deserialize m_type = " << m_type << " m_senderId " << m_senderId << "coord= "
+//				<< m_position << endl;
 		return GetSerializedSize();
 
 	}

@@ -28,18 +28,18 @@ void ROFFApplication::Install(uint32_t broadcastPhaseStart, uint32_t actualRange
 	m_aoi_error = aoi_error;
 	m_actualRange = actualRange;
 	m_vehicleDistance = vehicleDistance;
-	NS_LOG_UNCOND("END INSTALL");
+//	NS_LOG_UNCOND("END INSTALL");
 }
 
 void ROFFApplication::AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink) {
 	NS_LOG_FUNCTION(this);
 	Ptr<ROFFNode> roffNode = CreateObject<ROFFNode>(node, source);
-	NS_LOG_UNCOND("post create node");
+//	NS_LOG_UNCOND("post create node");
 	sink->SetRecvCallback(MakeCallback(&ROFFApplication::ReceivePacket, this));
-	NS_LOG_UNCOND("post cback");
+//	NS_LOG_UNCOND("post cback");
 	m_nodes[roffNode->GetId()] = roffNode;
-	cout << roffNode->GetId() << endl;
-	NS_LOG_UNCOND("end add node");
+//	cout << "ROFFAPP AddNode " << roffNode->GetId() << endl;
+//	NS_LOG_UNCOND("end add node");
 }
 
 void ROFFApplication::PrintStats(std::stringstream& dataStream) {
@@ -92,7 +92,7 @@ void ROFFApplication::GenerateAlertMessage(Ptr<ROFFNode> node) {
 	header.SetPosition(node->GetPosition());
 
 	Ptr<Packet> packet = Create<Packet>(m_packetPayload);
-	cout << "add " << node->GetPosition() << endl;
+//	cout << "add " << node->GetPosition() << endl;
 	packet->AddHeader(header);
 	node->Send(packet);
 }
@@ -101,14 +101,15 @@ void ROFFApplication::ReceivePacket(Ptr<Socket> socket) {
 	NS_LOG_FUNCTION(this << socket);
 
 	Ptr<Node> node = socket->GetNode();
-
+	cout << "received packet by node " << node->GetId() << endl;
 	Address senderAddress;
 	Ptr<Packet> packet;
 
 	while ((packet = socket->RecvFrom(senderAddress))) {
 		ROFFHeader header;
 		packet->RemoveHeader(header);
-		cout << "receive " << header.GetPosition() << endl;
+		cout << "received packet by node " << node->GetId() <<
+				" from node in pos " <<  header.GetPosition() << endl;
 	}
 //	TODO
 //	Check if hello or alert

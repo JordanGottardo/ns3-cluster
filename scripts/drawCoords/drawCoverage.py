@@ -38,10 +38,11 @@ def plotCoverage(relativeFileName, outFilePath):
     receivedCoordsOnCirc = []
     receivedOnCircIds = []
     transmissionVector = []
+    nodeIds = []
 
-    txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds, transmissionVector = coordUtils.parseFile(relativeFileName, ns2MobilityFile) 
+    txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds, transmissionVector, nodeIds = coordUtils.parseFile(relativeFileName, ns2MobilityFile) 
 
-    plt.plot(xNodeCoords, yNodeCoords, ".", color="red")
+    plt.plot(xNodeCoords, yNodeCoords, ".",markersize=5, color="red")
     plt.plot(xReceivedCoords, yReceivedCoords, ".", color="green")
     plt.plot(startingX, startingY, "ro", color="blue", markersize=5)
 

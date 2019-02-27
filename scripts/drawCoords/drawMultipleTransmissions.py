@@ -45,8 +45,9 @@ def plotSingleTransmission(relativeFileName, outFileBasePath, numTransmissionToP
     receivedCoordsOnCirc = []
     receivedOnCircIds = []
     transmissionVector = []
+    nodeIds = []
 
-    txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds, transmissionVector = coordUtils.parseFile(relativeFileName, ns2MobilityFile)
+    txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds, transmissionVector, nodeIds = coordUtils.parseFile(relativeFileName, ns2MobilityFile)
 
     nodeCoordsMap = {}
     color1 = "#840000"
@@ -57,7 +58,7 @@ def plotSingleTransmission(relativeFileName, outFileBasePath, numTransmissionToP
         print("source " + str(count))
         count += 1
     
-        plt.plot(xNodeCoords, yNodeCoords, ".", color="red")
+        plt.plot(xNodeCoords, yNodeCoords, ".", markersize=5, color="red")
         coordUtils.plotTxRange(circRadius, startingX, startingY, vehicleDistance, color1, True)
 
         for edge in transmissionVector:
