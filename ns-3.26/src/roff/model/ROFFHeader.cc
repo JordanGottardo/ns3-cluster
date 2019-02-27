@@ -8,12 +8,14 @@
 
 #include "ROFFHeader.h"
 
-#include "ns3/log.h"
+
 
 namespace ns3 {
 	NS_LOG_COMPONENT_DEFINE("ROFFHeader");
 
 	NS_OBJECT_ENSURE_REGISTERED(ROFFHeader);
+
+//	Getters
 
 	uint32_t ROFFHeader::GetType() const {
 		return m_type;
@@ -27,10 +29,7 @@ namespace ns3 {
 		return m_position;
 	}
 
-
-
-
-
+//	Setters
 
 	void ROFFHeader::SetType(uint32_t type) {
 		m_type = type;
@@ -44,6 +43,7 @@ namespace ns3 {
 		m_position = position;
 	}
 
+//	Methods
 
 	TypeId ROFFHeader::GetInstanceTypeId() const {
 		return GetTypeId();
@@ -61,7 +61,9 @@ namespace ns3 {
 
 		i.WriteU32(m_type);
 		i.WriteU32(m_senderId);
-		i.WriteU64(m_position.x);
+		const double* const buf = &(m_position.x);
+		const uint8_t* const buf2 = reinterpret_cast<const uint8_t* const> (buf);
+		i.Write(buf2, 8);
 		i.WriteU64(m_position.y);
 		i.WriteU64(m_position.z);
 
@@ -76,7 +78,10 @@ namespace ns3 {
 		m_type = i.ReadU32();
 		m_senderId = i.ReadU32();
 		uint32_t x, y, z;
-		x = i.ReadU64();
+		uint8_t* buf;
+		i.Read(buf, 8);
+		double x1 = *(reinterpret_cast<double*>(buf));
+		cout << x1 << endl;
 		y = i.ReadU64();
 		z = i.ReadU64();
 		m_position = Vector(x, y, z);

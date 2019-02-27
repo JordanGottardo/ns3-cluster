@@ -4,3 +4,14 @@ NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'fb-vanet-urban --buildings=0 --startingN
 
 SENSORS
 NS_GLOBAL_VALUE="RngRun=10" ./waf --run 'fb-vanet-3d  --sensors=0 --scenario=1 --actualRange=300 --protocol=2 --flooding=0 --buildings=1 --disabled=0'
+
+
+
+
+ROFF
+
+NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'roff-test --buildings=0 --actualRange=500 --area=1000 --mapBasePath=../maps/Padova/Padova-25 --trace=../maps/testRoff/testRoff.ns2mobility.xml --printToFile=0 --printCoords=1'
+
+ROFF WITH LOGGING
+
+NS_LOG="roff-test=all:ROFFApplication=all"  NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'roff-test --buildings=0 --actualRange=500 --area=1000 --mapBasePath=../maps/Padova/Padova-25 --trace=../maps/testRoff/testRoff.ns2mobility.xml --printToFile=0 --printCoords=1'

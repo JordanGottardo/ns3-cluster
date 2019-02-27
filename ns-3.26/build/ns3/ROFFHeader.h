@@ -12,6 +12,7 @@
 #include "ns3/object-vector.h"
 #include "ns3/vector.h"
 #include "ns3/double.h"
+#include "ns3/log.h"
 
 using namespace std;
 

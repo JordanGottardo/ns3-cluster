@@ -43,7 +43,7 @@ def plotCoverage(relativeFileName, outFilePath):
 
     plt.plot(xNodeCoords, yNodeCoords, ".", color="red")
     plt.plot(xReceivedCoords, yReceivedCoords, ".", color="green")
-    plt.plot(startingX, startingY, "ro", color="blue", markersize=10)
+    plt.plot(startingX, startingY, "ro", color="blue", markersize=5)
 
     color1 = "#840000"
     coordUtils.plotTxRange(circRadius, startingX, startingY, vehicleDistance, color1, True)
@@ -63,7 +63,7 @@ def main():
     print("Draw coverage")
     if (len(sys.argv) > 1):
         relativeFileName = sys.argv[1]
-        plotCoverage(relativeFileName, "./outCoverage.pdf")
+        plotCoverage(relativeFileName, "./out/singlefileCoverage/coverage.pdf")
     else:
         for buildingFolder in os.listdir(baseFolder):
             buildingPath = os.path.join(baseFolder, buildingFolder)

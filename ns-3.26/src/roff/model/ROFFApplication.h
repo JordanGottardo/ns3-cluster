@@ -22,10 +22,10 @@ namespace ns3 {
 class ROFFApplication: public Application {
 
 public:
-	ROFFApplication ();
-	virtual ~ROFFApplication();
 
 	static TypeId GetTypeId();
+
+//	virtual ~ROFFApplication();
 
 	/**
 	* \brief Set up some application parameters
@@ -39,10 +39,11 @@ public:
 	* \param cwMin maximum size of the contention window (slots)
 	* \return none
 	*/
-	void Install();
+	void Install(uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi,
+			uint32_t aoi_error, uint32_t m_vehicleDistance);
 
 	/**
-	* \brief Add a new node to the applicatin and set up protocol parameters
+	* \brief Add a new node to the application and set up protocol parameters
 	* \param node node to add
 	* \param source source socket of the node
 	* \param sink sink socket of the node
@@ -75,39 +76,39 @@ private:
 	* This method should be overridden by all or most application
 	* subclasses.
 	*/
-	virtual void StopApplication (void);
+	virtual void StopApplication(void);
 
 	/**
 	* \brief Start the estimation phase
 	* \param count count
 	* \return none
 	*/
-	void GenerateHelloTraffic (uint32_t count);
+	void GenerateHelloTraffic(uint32_t count);
 
 	/**
 	* \brief Start the broadcast phase
 	* \return none
 	*/
-	void StartBroadcastPhase (void);
+	void StartBroadcastPhase(void);
 
 	/**
 	 * \brief Send a Hello message to all nodes in its range
 	 * \return none
 	 */
-	void GenerateHelloMessage (Ptr<ROFFNode> fbNode);
+	void GenerateHelloMessage(Ptr<ROFFNode> node);
 
 	/**
 	* \brief Send a Alert message
 	* \return none
 	*/
-	void GenerateAlertMessage (Ptr<ROFFNode> fbNode);
+	void GenerateAlertMessage(Ptr<ROFFNode> node);
 
 	/**
 	* \brief Process a received packet
 	* \param socket the receiving socket
 	* \return none
 	*/
-	void ReceivePacket (Ptr<Socket> socket);
+	void ReceivePacket(Ptr<Socket> socket);
 
 	/**
 	* \brief Handle a Hello message
@@ -115,7 +116,7 @@ private:
 	* \param fbHeader header received in the message
 	* \return none
 	*/
-	void HandleHelloMessage (Ptr<ROFFNode> fbNode, ROFFNode fbHeader);
+	void HandleHelloMessage(Ptr<ROFFNode> node, ROFFNode header);
 
 	/**
 	* \brief Handle an Alert message
@@ -124,7 +125,7 @@ private:
 	* \param distance distance between the sender of the message and the node (meters)
 	* \return none
 	*/
-	void HandleAlertMessage (Ptr<ROFFNode> fbNode, ROFFNode fbHeader, uint32_t distance);
+	void HandleAlertMessage(Ptr<ROFFNode> node, ROFFNode header, uint32_t distance);
 
 	/**
 	* \brief Calculate min diff between nodes
@@ -139,7 +140,7 @@ private:
 	* \param waitingTime contention window value
 	* \return none
 	*/
-	void WaitAgain (Ptr<ROFFNode> fbNode,  ROFFNode fbHeader, uint32_t waitingTime);
+	void WaitAgain(Ptr<ROFFNode> node,  ROFFNode header, uint32_t waitingTime);
 
 	/**
 	* \brief Forward an Alert message
@@ -148,28 +149,15 @@ private:
 	* \param waitingTime contention window value
 	* \return none
 	*/
-	void ForwardAlertMessage (Ptr<ROFFNode> fbNode, ROFFNode oldFBHeader, uint32_t waitingTime);
+	void ForwardAlertMessage(Ptr<ROFFNode> node, ROFFNode oldHeader, uint32_t waitingTime);
 
 	/**
 	* \brief Stop a node
 	* \param fbNode node to be stopped
 	* \return none
 	*/
-	void StopNode (Ptr<ROFFNode> fbNode);
+	void StopNode(Ptr<ROFFNode> node);
 
-	/**
-	* \brief Retrieve a fbNode from a ns3::Node
-	* \param node original node
-	* \return a fbNode
-	*/
-	Ptr<ROFFNode> GetFBNode (Ptr<Node> node);
-
-	/**
-	* \brief Retrieve a fbNode from a ns3::Node
-	* \param id original node id
-	* \return a fbNode
-	*/
-	Ptr<ROFFNode> GetFBNode (uint32_t id);
 
 	/**
 	* \brief Compute contention window
@@ -177,12 +165,25 @@ private:
 	* \param distance distance between nodes (meters)
 	* \return the value of the contention window
 	*/
-	uint32_t ComputeContentionWindow (uint32_t maxRange, uint32_t distance);
+	uint32_t ComputeContentionWindow(uint32_t maxRange, uint32_t distance);
 
 private:
-	uint32_t 						m_nnodes;
-	std::vector<Ptr<ROFFNode>>		m_nodes;
-	uint32_t						m_startingNode;
+//	Application data
+	uint32_t 						m_nNodes; // number of nodes
+	uint32_t						m_startingNode; // index of the node that will generate the Alert Message
+	uint32_t						m_broadcastPhaseStart; // broadcast phase start time (seconds)
+	uint32_t						m_actualRange; // real transmission range
+	uint32_t						m_aoi; // radius of the area of interest (meters)
+	uint32_t						m_aoi_error;	// meters +/- with respect to the radius
+	uint32_t						m_packetPayload; // size of the packet payload
+	uint32_t						m_vehicleDistance; //distance between vehicles
+
+	map<uint32_t, Ptr<ROFFNode>>	m_nodes; // nodes that run this application
+
+//	Output data
+	uint32_t						m_received;	// number of hello messages sent
+	uint32_t						m_sent; // // number of alert messages sent
+
 
 };
 
