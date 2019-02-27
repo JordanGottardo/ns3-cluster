@@ -105,11 +105,15 @@ void ROFFApplication::ReceivePacket(Ptr<Socket> socket) {
 	Address senderAddress;
 	Ptr<Packet> packet;
 
+	Vector currentPosition = node->GetObject<MobilityModel>()->GetPosition();
+
 	while ((packet = socket->RecvFrom(senderAddress))) {
 		ROFFHeader header;
 		packet->RemoveHeader(header);
+		Vector senderPosition = header.GetPosition();
+		double distance =  ns3::CalculateDistance(senderPosition, currentPosition);
 		cout << "received packet by node " << node->GetId() <<
-				" from node in pos " <<  header.GetPosition() << endl;
+				" from node in pos " << senderPosition << " distance= " << distance << endl;
 	}
 //	TODO
 //	Check if hello or alert

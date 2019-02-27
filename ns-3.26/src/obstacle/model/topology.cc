@@ -78,6 +78,7 @@ Topology::GetTopology (void)
   if (*ptopo == 0)
     {
       // create the topology
+//	  std::cout << "new topo" << std::endl;
       *ptopo = new Topology();
     }
 
@@ -185,16 +186,19 @@ Topology::LoadBuildings(std::string bldgFilename)
     }
   else
     {
+//	  m_obstacles.clear();
       Topology * topology = Topology::GetTopology();
       NS_ASSERT(topology != 0);
-
+      int lineCount = 0;
+      topology->m_obstacles.clear();
       NS_LOG_DEBUG ("Reading file: " << bldgFilename);
       while (!file.eof () )
         {
           std::string line;
 
           getline (file, line);
-
+//          std::cout << line << std::endl;
+          lineCount++;
           NS_LOG_DEBUG (line);
 
           size_t posB = line.find("type=\"building");
@@ -206,6 +210,8 @@ Topology::LoadBuildings(std::string bldgFilename)
 
               // found a building
               // get the building id (name) and shape (vertices)
+
+//        	  std::cout << line << std::endl;
               std::string polyid;
               std::string shape;
 							std::string height;
@@ -217,6 +223,7 @@ Topology::LoadBuildings(std::string bldgFilename)
                   if (pos2 != std::string::npos)
                     {
                       polyid = line.substr(pos + 4, pos2 - (pos + 4));
+//                      std::cout << polyid << std::endl;
                       pos = line.find("shape=\"");
                       if (pos != std::string::npos)
                       {
@@ -244,7 +251,8 @@ Topology::LoadBuildings(std::string bldgFilename)
                 }
             }
         }
-			NS_LOG_INFO ("Number of buildings found: " << nBuildings << ".");
+//	  std::cout << "linee lette= " << lineCount << std::endl;
+	  NS_LOG_INFO ("Number of buildings found: " << nBuildings << ".");
       NS_LOG_INFO ("Topology buildings bounded by x:" << topology->GetMinX() << "," << topology->GetMaxX() << " y:" << topology->GetMinY() << "," << topology->GetMaxY() << ".");
       // all obstacles have been loaded
       // so now create a searchable range tree based on those obstacles
@@ -256,7 +264,7 @@ void
 Topology::MakeRangeTree()
 {
   NS_LOG_FUNCTION (this);
-
+//  std::cout << "makeRangeTree obstacles= " << m_obstacles.size() << std::endl;
   m_rangeTree.make_tree(m_obstacles.begin(), m_obstacles.end());
 }
 
@@ -455,11 +463,10 @@ Topology::GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double 
   double dy = p2y - p1y;
   double distP1toP2sq = dx * dx + dy * dy;
   // distance must be less then (2r)^2 = 4r^2
-  double x4rSq = 4.0 * rSq; //todo da mettere a 8, originariamente era a 4
-  std::cout << "distP1toP2sq= " << distP1toP2sq << " x4rSq= " << x4rSq << std::endl;
+  double x4rSq = 4.0 * rSq;
+//  std::cout << "distP1toP2sq= " << distP1toP2sq << " x4rSq= " << x4rSq << std::endl;
   if (distP1toP2sq < x4rSq)
     {
-	  std::cout << "dentro if " << std::endl;
       // now search by range tree search
       // get bounding box, and extend by r is all directions
       double xmin = std::min(p1x, p2x) - r;
@@ -469,20 +476,23 @@ Topology::GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double 
       Point pLow(xmin, ymin);
       Point pHigh(xmax, ymax);
       Interval win(Interval(pLow, pHigh));
+      int count = 0;
       m_outputList.clear();
       m_rangeTree.window_query(win, std::back_inserter(m_outputList));
       std::vector<Key>::iterator current = m_outputList.begin();
 			uint32_t index = 0;	// another check
 			uint32_t limit = m_outputList.size ();
-	  std::cout << "number of buildings found = " << limit << std::endl;
+
+//	  std::cout << "number of buildings found = " << limit << std::endl;
       while (current != m_outputList.end() && index < limit)
 			// don't know why, but without the second condition it goes SIGSEGV
 			// because <current> goes off limits
         {
           Obstacle obstacle = (*current).second;
           std::string id = obstacle.GetId();
-          Point center = obstacle.GetCenter();
 
+          Point center = obstacle.GetCenter();
+//          std::cout << "obstacle id = " << id << " center= " << center << std::endl;
           double dx1 = CGAL::to_double(center.x()) - p1x;
           double dy1 = CGAL::to_double(center.y()) - p1y;
           double distCtoP1sq = dx1 * dx1 + dy1 * dy1;
@@ -490,13 +500,13 @@ Topology::GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double 
           double dx2 = CGAL::to_double(center.x()) - p2x;
           double dy2 = CGAL::to_double(center.y()) - p2y;
           double distCtoP2sq = dx2 * dx2 + dy2 * dy2;
-          std::cout << "distCtoP1sq " << distCtoP1sq << " distCtoP2sq " << distCtoP2sq << std::endl;
-          std::cout << "rsq " << rSq << std::endl;
+//          std::cout << "distCtoP1sq " << distCtoP1sq << " distCtoP2sq " << distCtoP2sq << std::endl;
+//          std::cout << "rsq " << rSq << std::endl;
           if (((distCtoP1sq - rSq) < 0)
               && ((distCtoP2sq - rSq) < 0))
-            { // TODO non entra mai qua
+            {
               // obtstacle is within range
-			  std::cout << "obstacle is within range" << std::endl;
+//			  std::cout << "obstacle is within range" << std::endl;
               double obstructedDistanceBetween = 0.0;
               int intersections = 0;
 
@@ -523,16 +533,18 @@ Topology::GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double 
               // d_m is the distance in meters of propagation through the obstacle
               if ((obstructedDistanceBetween > 0.0) && (intersections > 1))
                 {
-            	  std::cout << "obstacle id = " << id << " intersections= " << intersections <<
-            			  " distance= " << obstructedDistanceBetween << std::endl;
+//            	  std::cout << "obstacle id = " << id << " intersections= " << intersections <<
+//            			  " distance= " << obstructedDistanceBetween << std::endl;
                   double beta = obstacle.GetBeta();
                   double gamma = obstacle.GetGamma();
                   obstructedLoss = beta * (double) intersections + gamma * obstructedDistanceBetween;
+                  count++;
                 }
             }
           current++;
 					index++;
         }
+//      std::cout << "trovati " << count << " buildings nel LOS" << std::endl;
     }
 
   // cache results

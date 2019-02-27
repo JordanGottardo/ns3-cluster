@@ -222,3 +222,4 @@ def plotBuildings(polyFilePath, plotBuildingIds=False, ax=None):
             xCenter = sumX / len(xShapeCoords)
             yCenter = sumY / len(yShapeCoords)
             ax.annotate(polyId, xy=(xCenter, yCenter), size=8)
+    print(str(count))
