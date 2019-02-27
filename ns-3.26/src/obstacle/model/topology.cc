@@ -401,7 +401,6 @@ double
 Topology::GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double r)
 {
   NS_LOG_FUNCTION (this);
-
   // initially assume no loss
   double obstructedLoss = 0.0;
 
@@ -456,9 +455,11 @@ Topology::GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double 
   double dy = p2y - p1y;
   double distP1toP2sq = dx * dx + dy * dy;
   // distance must be less then (2r)^2 = 4r^2
-  double x4rSq = 4.0 * rSq;
+  double x4rSq = 4.0 * rSq; //todo da mettere a 8, originariamente era a 4
+  std::cout << "distP1toP2sq= " << distP1toP2sq << " x4rSq= " << x4rSq << std::endl;
   if (distP1toP2sq < x4rSq)
     {
+	  std::cout << "dentro if " << std::endl;
       // now search by range tree search
       // get bounding box, and extend by r is all directions
       double xmin = std::min(p1x, p2x) - r;
@@ -473,6 +474,7 @@ Topology::GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double 
       std::vector<Key>::iterator current = m_outputList.begin();
 			uint32_t index = 0;	// another check
 			uint32_t limit = m_outputList.size ();
+	  std::cout << "number of buildings found = " << limit << std::endl;
       while (current != m_outputList.end() && index < limit)
 			// don't know why, but without the second condition it goes SIGSEGV
 			// because <current> goes off limits
@@ -488,12 +490,13 @@ Topology::GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double 
           double dx2 = CGAL::to_double(center.x()) - p2x;
           double dy2 = CGAL::to_double(center.y()) - p2y;
           double distCtoP2sq = dx2 * dx2 + dy2 * dy2;
-
+          std::cout << "distCtoP1sq " << distCtoP1sq << " distCtoP2sq " << distCtoP2sq << std::endl;
+          std::cout << "rsq " << rSq << std::endl;
           if (((distCtoP1sq - rSq) < 0)
               && ((distCtoP2sq - rSq) < 0))
-            {
+            { // TODO non entra mai qua
               // obtstacle is within range
-
+			  std::cout << "obstacle is within range" << std::endl;
               double obstructedDistanceBetween = 0.0;
               int intersections = 0;
 
@@ -520,6 +523,8 @@ Topology::GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double 
               // d_m is the distance in meters of propagation through the obstacle
               if ((obstructedDistanceBetween > 0.0) && (intersections > 1))
                 {
+            	  std::cout << "obstacle id = " << id << " intersections= " << intersections <<
+            			  " distance= " << obstructedDistanceBetween << std::endl;
                   double beta = obstacle.GetBeta();
                   double gamma = obstacle.GetGamma();
                   obstructedLoss = beta * (double) intersections + gamma * obstructedDistanceBetween;

@@ -24,6 +24,10 @@ static const uint32_t ALERT_MESSAGE = 1;
 class ROFFHeader: public Header {
 public:
 
+//	Constructor
+	ROFFHeader();
+
+//	Getters
 	const Vector& GetPosition() const;
 
 	uint32_t GetType() const;
@@ -31,12 +35,17 @@ public:
 	uint32_t GetSenderId() const;
 
 
-
+//	Setters
 	void SetType(uint32_t type);
 
 	void SetSenderId(uint32_t senderId);
 
 	void SetPosition(const Vector& position);
+
+
+	void WriteDouble(Buffer::Iterator* iter, double d) const;
+
+	double ReadDouble(Buffer::Iterator* iter) const;
 
 	virtual TypeId GetInstanceTypeId() const;
 

@@ -1,0 +1,16 @@
+$node_(0) set X_ 1153.84
+$node_(0) set Y_ 1884.7
+$node_(0) set Z_ 0
+$ns_ at 0.0 "$node_(0) setdest 1153.84 1884.7 0.00"
+$node_(1) set X_ 1470.83
+$node_(1) set Y_ 2259.92
+$node_(1) set Z_ 0
+$ns_ at 0.0 "$node_(1) setdest 1470.83 2259.92 0.00"
+$node_(2) set X_ 562.01
+$node_(2) set Y_ 2641.28
+$node_(2) set Z_ 0
+$ns_ at 0.0 "$node_(2) setdest 562.01 2641.28 0.00"
+<!-- 0     310
+	1 	   5
+	2	   406
+-->

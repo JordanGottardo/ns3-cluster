@@ -187,14 +187,15 @@ def parseFile(filePath, ns2MobilityFile):
         receivedOnCircIds = filter(None, receivedOnCircIds.split("_"))
         transmissionMap = parseTransmissionMap(rawTransmissionMap)
         transmissionVector = parseTransmissionVector(rawTransmissionVector)
-    return txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds, transmissionVector
+    return txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds, transmissionVector, nodeIds
 
-def plotBuildings(polyFilePath):
+def plotBuildings(polyFilePath, plotBuildingIds=False, ax=None):
     tree = ET.parse(polyFilePath)
     root = tree.getroot()
     polyList = list(root.iter("poly"))
     count = 0
     for poly in polyList:
+        polyId = poly.get("id")
         polyType = poly.get("type")
         if (polyType != "building" and polyType != "unknown"):
         #if (polyType == "water" or polyType == "residential" or polyType == "landuse" or polyType == "natural"
@@ -207,8 +208,17 @@ def plotBuildings(polyFilePath):
         splitCoords = coords.split( )
         xShapeCoords = []
         yShapeCoords = []
+        sumX = 0
+        sumY = 0
         for coord in splitCoords:
             splitCoords2 = coord.split(",")
             xShapeCoords.append(float(splitCoords2[0]))
             yShapeCoords.append(float(splitCoords2[1]))
+            sumX += xShapeCoords[-1]
+            sumY += yShapeCoords[-1]
         plt.fill(xShapeCoords, yShapeCoords, color="red", alpha=0.15)
+
+        if (plotBuildingIds):
+            xCenter = sumX / len(xShapeCoords)
+            yCenter = sumY / len(yShapeCoords)
+            ax.annotate(polyId, xy=(xCenter, yCenter), size=8)

@@ -423,6 +423,7 @@ void
 WifiPhy::SetEdThreshold (double threshold)
 {
   NS_LOG_FUNCTION (this << threshold);
+  std::cout << "WifyPhy SetEDThreshold " << threshold << std::endl;
   m_edThresholdW = DbmToW (threshold);
 }
 

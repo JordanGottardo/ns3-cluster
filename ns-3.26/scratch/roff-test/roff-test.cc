@@ -638,6 +638,7 @@ ROFFVanetExperiment::SetupAdhocDevices() {
 	wifi.SetStandard(WIFI_PHY_STANDARD_80211b);
 
 	YansWifiPhyHelper wifiPhy =  YansWifiPhyHelper::Default();
+//	wifiPhy.
 	YansWifiChannelHelper wifiChannel;
 	wifiChannel.SetPropagationDelay("ns3::ConstantSpeedPropagationDelayModel");
 	wifiChannel.AddPropagationLoss("ns3::TwoRayGroundPropagationLossModel", "Frequency", DoubleValue(freq), "HeightAboveZ", DoubleValue(1.5));
@@ -667,6 +668,7 @@ ROFFVanetExperiment::SetupAdhocDevices() {
 	wifiMac.SetType("ns3::AdhocWifiMac");
 
 	m_adhocDevices = wifi.Install(wifiPhy, wifiMac, m_adhocNodes);
+
 }
 
 void ROFFVanetExperiment::ConfigureConnections() {
@@ -723,12 +725,12 @@ void ROFFVanetExperiment::ConfigureROFFApplication () {
 							   m_vehicleDistance,
 							   m_vehicleDistance
 							  );
-	NS_LOG_UNCOND("POST INSTALL");
+//	NS_LOG_UNCOND("POST INSTALL");
 	m_roffApplication->SetStartTime(Seconds(1));
-	NS_LOG_UNCOND("POST START TIME");
+//	NS_LOG_UNCOND("POST START TIME");
 	m_roffApplication->SetStopTime(Seconds(m_TotalSimTime));
 
-	NS_LOG_UNCOND("PRE ADD NODE");
+//	NS_LOG_UNCOND("PRE ADD NODE");
 	// Add nodes to the application
 	for (uint32_t i = 0; i < m_nNodes; i++) {
 		m_roffApplication->AddNode(m_adhocNodes.Get(i), m_adhocSources.at(i), m_adhocSinks.at(i));
@@ -736,7 +738,7 @@ void ROFFVanetExperiment::ConfigureROFFApplication () {
 
 	// Add the application to a node
 	m_adhocNodes.Get (m_startingNode)->AddApplication(m_roffApplication);
-	NS_LOG_UNCOND("END CONFIGURE ROFF APP");
+//	NS_LOG_UNCOND("END CONFIGURE ROFF APP");
 }
 
 void ROFFVanetExperiment::RunSimulation () {
@@ -927,15 +929,6 @@ Ptr<Socket> ROFFVanetExperiment::SetupPacketSend (Ipv4Address addr, Ptr<Node> no
 *			MAIN
 * ------------------------------------------------------------------------------
 */
-
-void runExperiment(int argc, char *argv[], unsigned int minId, unsigned int maxId) {
-	cout << "runExperiment" << endl;
-	for (unsigned int i = minId; i < maxId; i++) {
-		cout << "run = " << i << endl;
-		ROFFVanetExperiment experiment;
-		experiment.RunAndPrintResults(argc, argv);
-	}
-}
 
 int main (int argc, char *argv[])
 {

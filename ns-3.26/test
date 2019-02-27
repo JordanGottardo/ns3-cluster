@@ -12,6 +12,13 @@ ROFF
 
 NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'roff-test --buildings=0 --actualRange=500 --area=1000 --mapBasePath=../maps/Padova/Padova-25 --trace=../maps/testRoff/testRoff.ns2mobility.xml --printToFile=0 --printCoords=1'
 
+ROFF WITHOUT LOGGING
+
+NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'roff-test --buildings=0 --actualRange=500 --area=1000 --mapBasePath=../maps/Padova/Padova-25 --trace=../maps/testRoff/testRoff.ns2mobility.xml --printToFile=0 --printCoords=1'
+
 ROFF WITH LOGGING
 
 NS_LOG="roff-test=all:ROFFApplication=all"  NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'roff-test --buildings=0 --actualRange=500 --area=1000 --mapBasePath=../maps/Padova/Padova-25 --trace=../maps/testRoff/testRoff.ns2mobility.xml --printToFile=0 --printCoords=1'
+
+ROFF WITHOUT LOGGING WITH STARTING NODE 0
+NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'roff-test --buildings=0 --actualRange=500 --area=1000 --mapBasePath=../maps/Padova/Padova-25 --trace=../maps/testRoff/testRoff.ns2mobility.xml --printToFile=0 --printCoords=1 --startingNode=0'

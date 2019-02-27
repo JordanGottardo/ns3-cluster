@@ -38,8 +38,9 @@ def plotSingleTransmission(relativeFileName, outFileBasePath, numTransmissionToP
     receivedCoordsOnCirc = []
     receivedOnCircIds = []
     transmissionVector = []
+    nodeIds = []
 
-    txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds, transmissionVector = coordUtils.parseFile(relativeFileName, ns2MobilityFile)
+    txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds, transmissionVector, nodeIds = coordUtils.parseFile(relativeFileName, ns2MobilityFile)
 
     nodeCoordsMap = {}
     color1 = "#840000"
@@ -48,7 +49,7 @@ def plotSingleTransmission(relativeFileName, outFileBasePath, numTransmissionToP
         numTransmissionToPlot = len(transmissionVector) - 1
 
     for i in range(1, numTransmissionToPlot + 1):
-        plt.plot(xNodeCoords, yNodeCoords, ".", color="red")
+        plt.plot(xNodeCoords, yNodeCoords, ".", markersize=5, color="red")
         coordUtils.plotTxRange(circRadius, startingX, startingY, vehicleDistance, color1, True)
         count = 0
         print(i)
@@ -87,7 +88,12 @@ def plotSingleTransmission(relativeFileName, outFileBasePath, numTransmissionToP
             except OSError as exc: # Guard against race condition
                 if exc.errno != errno.EEXIST:
                     raise
-        plt.savefig(outFileBasePath + "-transmission" + str(i) + ".pdf")
+        newI = str(i)
+        if (len(newI) == 1):
+            newI = "00" + newI
+        elif (len(newI) == 2):
+            newI = "0" + newI
+        plt.savefig(outFileBasePath + "-transmission" + newI + ".pdf")
         plt.clf()
         
 

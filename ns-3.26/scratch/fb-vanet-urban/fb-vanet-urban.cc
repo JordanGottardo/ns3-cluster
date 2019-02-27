@@ -950,15 +950,6 @@ FBVanetExperiment::SetupPacketSend (Ipv4Address addr, Ptr<Node> node)
 * ------------------------------------------------------------------------------
 */
 
-void runExperiment(int argc, char *argv[], unsigned int minId, unsigned int maxId) {
-	cout << "runExperiment" << endl;
-	for (unsigned int i = minId; i < maxId; i++) {
-		cout << "run = " << i << endl;
-		FBVanetExperiment experiment;
-		experiment.RunAndPrintResults(argc, argv);
-	}
-}
-
 int main (int argc, char *argv[])
 {
     cout << "Start main urban" << endl;
