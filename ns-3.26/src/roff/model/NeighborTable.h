@@ -12,6 +12,8 @@
 
 #include <iostream>
 #include <chrono>
+#include "ns3/nstime.h"
+
 using namespace std;
 using namespace std::chrono;
 
@@ -22,8 +24,7 @@ public:
 
 	static TypeId GetTypeId();
 
-	void AddOrUpdateEntry(uint32_t nodeId, Vector pos, milliseconds timeStamp = duration_cast<milliseconds>(
-		    system_clock::now().time_since_epoch()));
+	void AddOrUpdateEntry(uint32_t nodeId, Vector pos, Time timeStamp = Simulator::Now());
 
 
 private:

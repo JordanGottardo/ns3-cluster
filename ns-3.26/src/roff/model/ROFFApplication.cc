@@ -50,7 +50,8 @@ void ROFFApplication::StartApplication(void) {
 	NS_LOG_FUNCTION(this);
 
 	m_startingNode = this->GetNode()->GetId();
-	Simulator::Schedule(Seconds(m_broadcastPhaseStart), &ROFFApplication::StartBroadcastPhase, this);
+	GenerateHelloTraffic(0);
+//	Simulator::Schedule(Seconds(m_broadcastPhaseStart), &ROFFApplication::StartBroadcastPhase, this);
 }
 
 void ROFFApplication::StopApplication(void) {
@@ -58,6 +59,8 @@ void ROFFApplication::StopApplication(void) {
 }
 
 void ROFFApplication::GenerateHelloTraffic(uint32_t count) {
+	NS_LOG_FUNCTION(this);
+
 //	TODO
 //	Generate some hello traffic: how often should we send beacons?
 //	Each vehicle should send beacons every x ms
@@ -101,6 +104,7 @@ void ROFFApplication::ReceivePacket(Ptr<Socket> socket) {
 	NS_LOG_FUNCTION(this << socket);
 
 	Ptr<Node> node = socket->GetNode();
+	Ptr<ROFFNode> roffNode = m_nodes.at(node->GetId());
 	cout << "received packet by node " << node->GetId() << endl;
 	Address senderAddress;
 	Ptr<Packet> packet;
@@ -117,9 +121,9 @@ void ROFFApplication::ReceivePacket(Ptr<Socket> socket) {
 
 		uint32_t packetType = header.GetType();
 		if (packetType == HELLO_MESSAGE) {
-			HandleHelloMessage(node, header);
-		} else if (packet == ALERT_MESSAGE) {
-			HandleAlertMessage(node, header, distance)
+			HandleHelloMessage(roffNode, header);
+		} else if (packetType == ALERT_MESSAGE) {
+//			HandleAlertMessage(node, header, distance)
 		}
 	}
 //	TODO
@@ -130,7 +134,10 @@ void ROFFApplication::ReceivePacket(Ptr<Socket> socket) {
 
 void ROFFApplication::HandleHelloMessage(Ptr<ROFFNode> node,
 		ROFFHeader header) {
-//	update relative's entry to sender in receiver's NBT
+	NS_LOG_FUNCTION(this << node << header);
+	uint32_t senderId = header.GetSenderId();
+	Vector senderPosition = header.GetPosition();
+	node->AddOrUpdateNeighbor(senderId, senderPosition, Simulator::Now());
 }
 
 void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,

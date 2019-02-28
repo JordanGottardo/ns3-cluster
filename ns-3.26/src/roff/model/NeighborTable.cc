@@ -24,8 +24,8 @@ TypeId NeighborTable::GetTypeId() {
   return tid;
 }
 
-void NeighborTable::AddOrUpdateEntry(uint32_t nodeId, Vector pos, milliseconds timeStamp) {
-	NS_LOG_FUNCTION(this << nodeId << pos << to_string(timeStamp.count()));
+void NeighborTable::AddOrUpdateEntry(uint32_t nodeId, Vector pos, Time timeStamp) {
+	NS_LOG_FUNCTION(this << nodeId << pos << timeStamp);
 	m_table[nodeId] = NBTEntry(pos, timeStamp);
 }
 

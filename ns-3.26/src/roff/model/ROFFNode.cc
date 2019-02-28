@@ -20,7 +20,7 @@ namespace ns3 {
 		NS_LOG_FUNCTION(this);
 	}
 
-	const Ptr<Node>& ROFFNode::GetNode() const {
+	Ptr<Node> ROFFNode::GetNode() const {
 		return m_node;
 	}
 
@@ -45,7 +45,7 @@ namespace ns3 {
 		m_socket = socket;
 	}
 
-	void ROFFNode::SetNode(const Ptr<Node>& node) {
+	void ROFFNode::SetNode(Ptr<Node> node) {
 		m_node = node;
 	}
 
@@ -56,7 +56,7 @@ namespace ns3 {
 	}
 
 
-	void ROFFNode::AddOrUpdateNeighbor(const uint32_t& nodeId, Vector pos, milliseconds timeStamp) {
+	void ROFFNode::AddOrUpdateNeighbor(uint32_t nodeId, Vector pos, Time timeStamp) {
 		m_neighborTable.AddOrUpdateEntry(nodeId, pos, timeStamp);
 	}
 

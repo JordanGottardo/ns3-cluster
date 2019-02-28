@@ -116,7 +116,7 @@ private:
 	* \param fbHeader header received in the message
 	* \return none
 	*/
-	void HandleHelloMessage(Ptr<ROFFNode> node, ROFFNode header);
+	void HandleHelloMessage(Ptr<ROFFNode> node, ROFFHeader header);
 
 	/**
 	* \brief Handle an Alert message
