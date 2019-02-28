@@ -11,6 +11,9 @@
 #include "ns3/header.h"
 #include "ns3/object-vector.h"
 #include "ns3/vector.h"
+#include "ns3/log.h"
+#include "ns3/nstime.h"
+
 #include <iostream>
 #include <chrono>
 
@@ -23,23 +26,19 @@ public:
 
 	NBTEntry();
 
-	NBTEntry(Vector position, std::chrono::milliseconds timeStamp);
+	NBTEntry(Vector position, Time timeStamp);
 
 	Vector GetPosition() const;
 
-	std::chrono::milliseconds GetTimeStamp() const;
+	Time GetTimeStamp() const;
 
 	void SetPosition(Vector position);
 
-	void SetTimeStamp(std::chrono::milliseconds timeStamp);
-
-
-
-
+	void SetTimeStamp(Time timeStamp);
 
 private:
 	Vector									m_position; // node's position
-	std::chrono::milliseconds				m_timeStamp; // last time the entry was updated
+	Time									m_timeStamp; // last time the entry was updated
 
 
 
