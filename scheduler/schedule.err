@@ -21854,6 +21854,7 @@ Cannot connect to specified server host 'grid0.math.unipd.it'.
 qstat: cannot connect to server grid0.math.unipd.it (errno=0) Success
 ls: cannot access /home/jgottard/ns-3/scheduler/jobsToSchedule: No such file or directory
 ls: cannot access /home/jgottard/ns-3/scheduler/jobsToSchedule: No such file or directory
+<<<<<<< HEAD
 qstat: symbol lookup error: qstat: undefined symbol: prt_job_err
 qstat: symbol lookup error: qstat: undefined symbol: prt_job_err
 qstat: symbol lookup error: qstat: undefined symbol: prt_job_err
@@ -25506,3 +25507,5 @@ qstat: cannot connect to server grid0.math.unipd.it (errno=0) Success
 Unable to communicate with grid0.math.unipd.it(10.22.6.247)
 Cannot connect to specified server host 'grid0.math.unipd.it'.
 qstat: cannot connect to server grid0.math.unipd.it (errno=0) Success
+=======
+>>>>>>> 0b008cbeb78859eb1d6df37db9b8a59de48e03c4
