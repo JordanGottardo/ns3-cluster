@@ -60,7 +60,8 @@ void ROFFApplication::StopApplication(void) {
 
 void ROFFApplication::GenerateHelloTraffic(uint32_t count) {
 	NS_LOG_FUNCTION(this);
-
+	Ptr<ROFFNode> roffNode = m_nodes.at(0);
+	Simulator::Schedule(Seconds(2), &ROFFApplication::GenerateHelloMessage, this, roffNode);
 //	TODO
 //	Generate some hello traffic: how often should we send beacons?
 //	Each vehicle should send beacons every x ms
@@ -73,9 +74,16 @@ void ROFFApplication::StartBroadcastPhase(void) {
 }
 
 void ROFFApplication::GenerateHelloMessage(Ptr<ROFFNode> node) {
-// TODO
-// Generate hello message, attaching current position and node id
-// Broadcast hello message
+	uint32_t headerType = HELLO_MESSAGE;
+	uint32_t nodeId = node->GetId();
+	Vector position = node->GetPosition();
+
+	ROFFHeader header(headerType, nodeId, position);
+
+	Ptr<Packet> packet = Create<Packet>(m_packetPayload);
+	packet->AddHeader(header);
+	node->Send(packet);
+
 }
 
 void ROFFApplication::GenerateAlertMessage(Ptr<ROFFNode> node) {
@@ -105,7 +113,7 @@ void ROFFApplication::ReceivePacket(Ptr<Socket> socket) {
 
 	Ptr<Node> node = socket->GetNode();
 	Ptr<ROFFNode> roffNode = m_nodes.at(node->GetId());
-	cout << "received packet by node " << node->GetId() << endl;
+	cout << "received packet by node " << node->GetId() << " at time=" << Simulator::Now().GetSeconds() << endl;
 	Address senderAddress;
 	Ptr<Packet> packet;
 

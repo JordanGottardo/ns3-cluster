@@ -8,13 +8,13 @@
 
 #include "NeighborTable.h"
 
-#include "ns3/log.h"
-
 namespace ns3 {
 
 NS_LOG_COMPONENT_DEFINE("NeighborTable");
-//
+
 NS_OBJECT_ENSURE_REGISTERED(NeighborTable);
+
+
 
 
 TypeId NeighborTable::GetTypeId() {

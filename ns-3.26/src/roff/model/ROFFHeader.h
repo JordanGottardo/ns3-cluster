@@ -27,6 +27,8 @@ public:
 //	Constructor
 	ROFFHeader();
 
+	ROFFHeader(uint32_t type, uint32_t sender, Vector position);
+
 //	Getters
 	const Vector& GetPosition() const;
 

@@ -12,6 +12,15 @@
 #include "ROFFNode.h"
 #include "ns3/application.h"
 #include "ns3/network-module.h"
+#include "ns3/simulator.h"
+#include "ns3/log.h"
+#include "ns3/uinteger.h"
+#include "ns3/boolean.h"
+#include "ns3/object-ptr-container.h"
+#include "ns3/core-module.h"
+#include "ns3/network-module.h"
+#include "ns3/constant-velocity-mobility-model.h"
+#include "ns3/mobility-module.h"
 
 namespace ns3 {
 
