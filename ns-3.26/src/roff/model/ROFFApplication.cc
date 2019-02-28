@@ -114,6 +114,13 @@ void ROFFApplication::ReceivePacket(Ptr<Socket> socket) {
 		double distance =  ns3::CalculateDistance(senderPosition, currentPosition);
 		cout << "received packet by node " << node->GetId() <<
 				" from node in pos " << senderPosition << " distance= " << distance << endl;
+
+		uint32_t packetType = header.GetType();
+		if (packetType == HELLO_MESSAGE) {
+			HandleHelloMessage(node, header);
+		} else if (packet == ALERT_MESSAGE) {
+			HandleAlertMessage(node, header, distance)
+		}
 	}
 //	TODO
 //	Check if hello or alert
@@ -122,7 +129,7 @@ void ROFFApplication::ReceivePacket(Ptr<Socket> socket) {
 }
 
 void ROFFApplication::HandleHelloMessage(Ptr<ROFFNode> node,
-		ROFFNode header) {
+		ROFFHeader header) {
 //	update relative's entry to sender in receiver's NBT
 }
 
