@@ -25430,3 +25430,79 @@ pbs_connect couldn't read the size of information from trqauthd
 Unable to communicate with grid0.math.unipd.it(10.22.6.247)
 Communication failure.
 qstat: cannot connect to server grid0.math.unipd.it (errno=0) Success
+pbs_connect received error code 15134 ('Pbs Server is currently too busy to service this request. Please retry this request.') from trqauthd
+
+Unable to communicate with grid0.math.unipd.it(10.22.6.247)
+Communication failure.
+qstat: cannot connect to server grid0.math.unipd.it (errno=0) Success
+pbs_connect received error code 15134 ('Pbs Server is currently too busy to service this request. Please retry this request.') from trqauthd
+
+Unable to communicate with grid0.math.unipd.it(10.22.6.247)
+Communication failure.
+qstat: cannot connect to server grid0.math.unipd.it (errno=0) Success
+pbs_connect received error code 15033 ('Batch protocol error') from trqauthd
+
+Unable to communicate with grid0.math.unipd.it(10.22.6.247)
+Cannot connect to specified server host 'grid0.math.unipd.it'.
+qstat: cannot connect to server grid0.math.unipd.it (errno=0) Success
+pbs_connect received error code 15033 ('Batch protocol error') from trqauthd
+
+Unable to communicate with grid0.math.unipd.it(10.22.6.247)
+Cannot connect to specified server host 'grid0.math.unipd.it'.
+qstat: cannot connect to server grid0.math.unipd.it (errno=0) Success
+pbs_connect received error code 15033 ('Batch protocol error') from trqauthd
+
+Unable to communicate with grid0.math.unipd.it(10.22.6.247)
+Cannot connect to specified server host 'grid0.math.unipd.it'.
+qstat: cannot connect to server grid0.math.unipd.it (errno=0) Success
+pbs_connect received error code 15033 ('Batch protocol error') from trqauthd
+
+Unable to communicate with grid0.math.unipd.it(10.22.6.247)
+protocol failure.
+qstat: cannot connect to server grid0.math.unipd.it (errno=0) Success
+pbs_connect received error code 15033 ('Batch protocol error') from trqauthd
+
+Unable to communicate with grid0.math.unipd.it(10.22.6.247)
+Cannot connect to specified server host 'grid0.math.unipd.it'.
+qstat: cannot connect to server grid0.math.unipd.it (errno=0) Success
+pbs_connect received error code -2 ('(null)') from trqauthd
+
+Unable to communicate with grid0.math.unipd.it(10.22.6.247)
+qstat: cannot connect to server grid0.math.unipd.it (errno=0) Success
+pbs_connect received error code -2 ('(null)') from trqauthd
+
+Unable to communicate with grid0.math.unipd.it(10.22.6.247)
+Cannot connect to specified server host 'grid0.math.unipd.it'.
+qstat: cannot connect to server grid0.math.unipd.it (errno=0) Success
+pbs_connect received error code -2 ('(null)') from trqauthd
+
+Unable to communicate with grid0.math.unipd.it(10.22.6.247)
+Cannot connect to specified server host 'grid0.math.unipd.it'.
+qstat: cannot connect to server grid0.math.unipd.it (errno=0) Success
+pbs_connect received error code -2 ('(null)') from trqauthd
+
+Unable to communicate with grid0.math.unipd.it(10.22.6.247)
+Cannot connect to specified server host 'grid0.math.unipd.it'.
+qstat: cannot connect to server grid0.math.unipd.it (errno=0) Success
+pbs_connect received error code -2 ('(null)') from trqauthd
+
+Unable to communicate with grid0.math.unipd.it(10.22.6.247)
+Cannot connect to specified server host 'grid0.math.unipd.it'.
+qstat: cannot connect to server grid0.math.unipd.it (errno=0) Success
+pbs_connect received error code -2 ('(null)') from trqauthd
+
+Unable to communicate with grid0.math.unipd.it(10.22.6.247)
+qstat: cannot connect to server grid0.math.unipd.it (errno=0) Success
+pbs_connect received error code -2 ('(null)') from trqauthd
+
+Unable to communicate with grid0.math.unipd.it(10.22.6.247)
+Cannot connect to specified server host 'grid0.math.unipd.it'.
+qstat: cannot connect to server grid0.math.unipd.it (errno=0) Success
+
+Unable to communicate with grid0.math.unipd.it(10.22.6.247)
+Cannot connect to specified server host 'grid0.math.unipd.it'.
+qstat: cannot connect to server grid0.math.unipd.it (errno=0) Success
+
+Unable to communicate with grid0.math.unipd.it(10.22.6.247)
+Cannot connect to specified server host 'grid0.math.unipd.it'.
+qstat: cannot connect to server grid0.math.unipd.it (errno=0) Success
