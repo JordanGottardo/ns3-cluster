@@ -20,6 +20,8 @@
 
 #include "NeighborTable.h"
 #include <iostream>
+#include <boost/dynamic_bitset.hpp>
+
 
 using namespace std;
 using namespace std::chrono;
@@ -55,6 +57,10 @@ public:
 	void Send(Ptr<Packet> packet);
 
 	void AddOrUpdateNeighbor(uint32_t nodeId, Vector pos, Time timeStamp = Simulator::Now());
+
+	uint32_t GetNBTSize() const;
+
+	boost::dynamic_bitset<> GetESDBitmap(uint32_t distanceRange) const;
 
 private:
 

@@ -21,13 +21,16 @@ TypeId ROFFApplication::GetTypeId() {
 
 
 void ROFFApplication::Install(uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi,
-	uint32_t aoi_error, uint32_t vehicleDistance) {
+	uint32_t aoi_error, uint32_t vehicleDistance, uint32_t beaconInterval, uint32_t distanceRange) {
 	NS_LOG_FUNCTION(this);
 	m_broadcastPhaseStart = broadcastPhaseStart;
 	m_aoi = aoi;
 	m_aoi_error = aoi_error;
 	m_actualRange = actualRange;
 	m_vehicleDistance = vehicleDistance;
+	m_beaconInterval = beaconInterval;
+	m_distanceRange = distanceRange;
+	m_randomVariable = CreateObject<UniformRandomVariable>();
 //	NS_LOG_UNCOND("END INSTALL");
 }
 
@@ -50,26 +53,34 @@ void ROFFApplication::StartApplication(void) {
 	NS_LOG_FUNCTION(this);
 
 	m_startingNode = this->GetNode()->GetId();
-	GenerateHelloTraffic(0);
-//	Simulator::Schedule(Seconds(m_broadcastPhaseStart), &ROFFApplication::StartBroadcastPhase, this);
+	GenerateHelloTraffic();
+	Simulator::Schedule(Seconds(m_broadcastPhaseStart), &ROFFApplication::StartBroadcastPhase, this);
 }
 
 void ROFFApplication::StopApplication(void) {
 	NS_LOG_FUNCTION(this);
 }
 
-void ROFFApplication::GenerateHelloTraffic(uint32_t count) {
+void ROFFApplication::GenerateHelloTraffic() {
 	NS_LOG_FUNCTION(this);
 	Ptr<ROFFNode> roffNode = m_nodes.at(0);
-	Simulator::Schedule(Seconds(2), &ROFFApplication::GenerateHelloMessage, this, roffNode);
-//	TODO
-//	Generate some hello traffic: how often should we send beacons?
-//	Each vehicle should send beacons every x ms
-//	Evaluate whether to use redundant beacon transmissions
+
+	for (int i = 0; i < 3; i++) {
+		for (auto entry: m_nodes) {
+			Ptr<ROFFNode> roffNode = entry.second;
+			// Generate random waiting time between [0, beaconInterval*2]. Average is beaconInterval
+			uint32_t waitingTime = m_randomVariable->GetInteger(0, m_beaconInterval * 2);
+			Simulator::Schedule(MilliSeconds(waitingTime), &ROFFApplication::GenerateHelloMessage, this, roffNode);
+		}
+	}
 }
 
 void ROFFApplication::StartBroadcastPhase(void) {
 	NS_LOG_FUNCTION(this);
+	for (auto entry: m_nodes) {
+		Ptr<ROFFNode> roffNode = entry.second;
+		cout << "nbt size= " << roffNode->GetNBTSize() << endl;
+	}
 	GenerateAlertMessage(m_nodes.at(m_startingNode));
 }
 
@@ -97,10 +108,12 @@ void ROFFApplication::GenerateAlertMessage(Ptr<ROFFNode> node) {
 // Include ESD bitmap and node's current position in alert message
 //	Broadcast alert message
 //
-	ROFFHeader header;
-	Vector pos = node->GetPosition();
-	cout << pos << endl;
-	header.SetPosition(node->GetPosition());
+	uint32_t headerType = HELLO_MESSAGE;
+	uint32_t nodeId = node->GetId();
+	Vector position = node->GetPosition();
+	boost::dynamic_bitset<> esdBitmap = node->GetESDBitmap(m_distanceRange);
+	cout << "esdBitmap = " << esdBitmap;
+	ROFFHeader header(headerType, nodeId, position);
 
 	Ptr<Packet> packet = Create<Packet>(m_packetPayload);
 //	cout << "add " << node->GetPosition() << endl;
@@ -113,7 +126,7 @@ void ROFFApplication::ReceivePacket(Ptr<Socket> socket) {
 
 	Ptr<Node> node = socket->GetNode();
 	Ptr<ROFFNode> roffNode = m_nodes.at(node->GetId());
-	cout << "received packet by node " << node->GetId() << " at time=" << Simulator::Now().GetSeconds() << endl;
+//	cout << "received packet by node " << node->GetId() << " at time=" << Simulator::Now().GetSeconds() << endl;
 	Address senderAddress;
 	Ptr<Packet> packet;
 
@@ -124,14 +137,16 @@ void ROFFApplication::ReceivePacket(Ptr<Socket> socket) {
 		packet->RemoveHeader(header);
 		Vector senderPosition = header.GetPosition();
 		double distance =  ns3::CalculateDistance(senderPosition, currentPosition);
-		cout << "received packet by node " << node->GetId() <<
-				" from node in pos " << senderPosition << " distance= " << distance << endl;
+//		cout << "received packet by node " << node->GetId() <<
+//				" from node in pos " << senderPosition << " distance= " << distance << endl;
 
 		uint32_t packetType = header.GetType();
 		if (packetType == HELLO_MESSAGE) {
 			HandleHelloMessage(roffNode, header);
 		} else if (packetType == ALERT_MESSAGE) {
 //			HandleAlertMessage(node, header, distance)
+		} else {
+			NS_LOG_ERROR("Packet type not recognized");
 		}
 	}
 //	TODO

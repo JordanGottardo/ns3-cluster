@@ -24,7 +24,8 @@ namespace ns3 {
 
 	ROFFHeader::ROFFHeader(uint32_t type, uint32_t sender, Vector position): m_type(type),
 																 m_senderId(sender),
-																 m_position(position) {
+																 m_position(position),
+																 m_esdBitmap() {
 
 	}
 

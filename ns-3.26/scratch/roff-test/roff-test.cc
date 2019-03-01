@@ -461,7 +461,8 @@ private:
 	double									m_TotalSimTime;
 	uint32_t								m_printToFile;
 	uint32_t								m_printCoords;
-
+	uint32_t								m_beaconInterval;
+	uint32_t								m_distanceRange;
 
 };
 
@@ -492,7 +493,9 @@ ROFFVanetExperiment::ROFFVanetExperiment():
 		m_bldgFile(""),
 		m_TotalSimTime(30),
 		m_printToFile(1),
-		m_printCoords(0) {
+		m_printCoords(0),
+		m_beaconInterval(100),
+		m_distanceRange(1) {
 	srand(time(0));
 
 	RngSeedManager::SetSeed(time(0));
@@ -723,7 +726,9 @@ void ROFFVanetExperiment::ConfigureROFFApplication () {
 							   m_actualRange,
 							   m_areaOfInterest,
 							   m_vehicleDistance,
-							   m_vehicleDistance
+							   m_vehicleDistance,
+							   m_beaconInterval,
+							   m_distanceRange
 							  );
 //	NS_LOG_UNCOND("POST INSTALL");
 	m_roffApplication->SetStartTime(Seconds(1));
@@ -773,6 +778,8 @@ void ROFFVanetExperiment::CommandSetup (int argc, char *argv[]) {
 			"(e.g. ../maps/Padova-25.osm.xml. The dash '-' in the name is mandatory)", m_mapBasePath);
 	cmd.AddValue("printToFile", "Print data to file or not: 0 not print, 1 print ", m_printToFile);
 	cmd.AddValue("printCoords", "Print coords to file or not: 0 not print, 1 print ", m_printCoords);
+	cmd.AddValue("beaconInterval", "Time between beacons (hello messages) in milliseconds ", m_beaconInterval);
+	cmd.AddValue("distanceRange", "Distance range used to create ESD bitmap (called 'k' in ROFF article", m_distanceRange);
 
 	cmd.Parse(argc, argv);
 }
