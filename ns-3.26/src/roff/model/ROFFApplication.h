@@ -12,6 +12,16 @@
 #include "ROFFNode.h"
 #include "ns3/application.h"
 #include "ns3/network-module.h"
+#include "ns3/simulator.h"
+#include "ns3/log.h"
+#include "ns3/uinteger.h"
+#include "ns3/boolean.h"
+#include "ns3/object-ptr-container.h"
+#include "ns3/core-module.h"
+#include "ns3/network-module.h"
+#include "ns3/constant-velocity-mobility-model.h"
+#include "ns3/mobility-module.h"
+#include "ns3/nstime.h"
 
 namespace ns3 {
 
@@ -40,7 +50,8 @@ public:
 	* \return none
 	*/
 	void Install(uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi,
-			uint32_t aoi_error, uint32_t m_vehicleDistance);
+			uint32_t aoi_error, uint32_t m_vehicleDistance, uint32_t beaconInterval,
+			uint32_t m_distanceRange);
 
 	/**
 	* \brief Add a new node to the application and set up protocol parameters
@@ -83,7 +94,7 @@ private:
 	* \param count count
 	* \return none
 	*/
-	void GenerateHelloTraffic(uint32_t count);
+	void GenerateHelloTraffic();
 
 	/**
 	* \brief Start the broadcast phase
@@ -177,6 +188,9 @@ private:
 	uint32_t						m_aoi_error;	// meters +/- with respect to the radius
 	uint32_t						m_packetPayload; // size of the packet payload
 	uint32_t						m_vehicleDistance; //distance between vehicles
+	uint32_t 						m_beaconInterval;
+	uint32_t						m_distanceRange;
+	Ptr<UniformRandomVariable> 		m_randomVariable;
 
 	map<uint32_t, Ptr<ROFFNode>>	m_nodes; // nodes that run this application
 

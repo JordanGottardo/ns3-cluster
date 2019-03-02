@@ -57,7 +57,17 @@ namespace ns3 {
 
 
 	void ROFFNode::AddOrUpdateNeighbor(uint32_t nodeId, Vector pos, Time timeStamp) {
+		NS_LOG_FUNCTION(this << nodeId << pos << timeStamp);
 		m_neighborTable.AddOrUpdateEntry(nodeId, pos, timeStamp);
+	}
+
+	uint32_t ROFFNode::GetNBTSize() const {
+		return m_neighborTable.GetNBTSize();
+	}
+
+	boost::dynamic_bitset<> ROFFNode::GetESDBitmap(uint32_t distanceRange) const {
+		Vector thisNodePos = GetPosition();
+		return m_neighborTable.GetESDBitmap(thisNodePos, distanceRange);
 	}
 
 }

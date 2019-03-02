@@ -20,6 +20,8 @@
 
 #include "NeighborTable.h"
 #include <iostream>
+#include <boost/dynamic_bitset.hpp>
+
 
 using namespace std;
 using namespace std::chrono;
@@ -36,7 +38,7 @@ public:
 	ROFFNode(Ptr<Node> node, Ptr<Socket> socket);
 
 	//	Getters
-	const Ptr<Node>& GetNode() const;
+	Ptr<Node> GetNode() const;
 
 	Ptr<Socket> GetSocket() const;
 
@@ -47,15 +49,18 @@ public:
 	//	void SetPosition(const Vector& position);
 
 //	Setters
-	void SetNode(const Ptr<Node>& node);
+	void SetNode(Ptr<Node> node);
 
 	void SetSocket(Ptr<Socket> socket);
 
 //	Methods
 	void Send(Ptr<Packet> packet);
 
-	void AddOrUpdateNeighbor(const uint32_t& nodeId, Vector pos, milliseconds timeStamp = duration_cast<milliseconds>(
-		    system_clock::now().time_since_epoch()));
+	void AddOrUpdateNeighbor(uint32_t nodeId, Vector pos, Time timeStamp = Simulator::Now());
+
+	uint32_t GetNBTSize() const;
+
+	boost::dynamic_bitset<> GetESDBitmap(uint32_t distanceRange) const;
 
 private:
 

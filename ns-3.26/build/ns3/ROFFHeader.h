@@ -13,6 +13,7 @@
 #include "ns3/vector.h"
 #include "ns3/double.h"
 #include "ns3/log.h"
+#include <boost/dynamic_bitset.hpp>
 
 using namespace std;
 
@@ -26,6 +27,8 @@ public:
 
 //	Constructor
 	ROFFHeader();
+
+	ROFFHeader(uint32_t type, uint32_t sender, Vector position);
 
 //	Getters
 	const Vector& GetPosition() const;
@@ -59,16 +62,16 @@ public:
 
 private:
 	//	============== Generic data ================
-	uint32_t			m_type;
+	uint32_t							m_type;
 
 	//	============== Hello message data ================
 //	Position of vehicle sending Hello Message
-	uint32_t		m_senderId;
-	Vector			m_position;
+	uint32_t							m_senderId;
+	Vector								m_position;
 
 	//	============== Alert message data ================
 // TODO check size of esdBitmap
-//					m_esdBitmap
+	boost::dynamic_bitset<>				m_esdBitmap;
 
 
 
