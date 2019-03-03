@@ -25,7 +25,7 @@ def findNumNodes(mobilityFilePath):
 def runScenario(cw, scenario, distance):
 	# Protocols and transmission ranges
 	#buildings = ["0", "1"]
-	buildings = ["1"]
+	buildings = ["0"]
 	#protocols = ["1", "2", "3", "4"]
 	protocols = ["1"]
 	#txRanges = ["100", "300", "500"]

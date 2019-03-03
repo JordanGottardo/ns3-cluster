@@ -492,8 +492,10 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader, ui
 //	cout << "waitingTime = " << waitingTime << endl;
 	// Wait and then forward the message
 	if (m_flooding == false)
-		Simulator::ScheduleWithContext(nodeId, MilliSeconds(waitingTime * 200 * 3),
-																	&FBApplication::WaitAgain, this, fbNode, fbHeader, waitingTime);
+//		Simulator::ScheduleWithContext(nodeId, MilliSeconds(waitingTime * 200 * 3),
+//																	&FBApplication::WaitAgain, this, fbNode, fbHeader, waitingTime);
+		Simulator::ScheduleWithContext(nodeId, MicroSeconds(waitingTime * 9),
+																			&FBApplication::ForwardAlertMessage, this, fbNode, fbHeader, waitingTime);
 	else
 		Simulator::ScheduleWithContext(nodeId, MilliSeconds(0),
 																	&FBApplication::ForwardAlertMessage, this, fbNode, fbHeader, waitingTime);
