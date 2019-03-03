@@ -272,7 +272,7 @@ void FBApplication::GenerateHelloTraffic(uint32_t count) {
 
 //	NS_LOG_INFO (this << count);
 	NS_LOG_INFO(count);
-
+	cout << "GenerateHelloTraffic " << count << endl;
 	std::vector<int> he;
 	uint32_t hel = (int) m_nNodes / 100 * 50;		// 40% of total nodes
 	uint32_t time_factor = 10;
@@ -517,6 +517,7 @@ void FBApplication::WaitAgain(Ptr<FBNode> fbNode, FBHeader fbHeader, uint32_t wa
 
 void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader, uint32_t waitingTime) {
 	NS_LOG_FUNCTION (this << fbNode << oldFBHeader);
+	cout << "forward alert message" << endl;
 
 	// Get the phase
 	int32_t phase = oldFBHeader.GetPhase();
