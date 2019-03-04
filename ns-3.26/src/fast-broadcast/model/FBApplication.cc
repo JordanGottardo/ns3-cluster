@@ -272,7 +272,7 @@ void FBApplication::GenerateHelloTraffic(uint32_t count) {
 
 //	NS_LOG_INFO (this << count);
 	NS_LOG_INFO(count);
-	cout << "GenerateHelloTraffic " << count << endl;
+	NS_LOG_DEBUG("GenerateHelloTraffic " << count);
 	std::vector<int> he;
 	uint32_t hel = (int) m_nNodes / 100 * 50;		// 40% of total nodes
 	uint32_t time_factor = 10;
@@ -287,10 +287,16 @@ void FBApplication::GenerateHelloTraffic(uint32_t count) {
 			Simulator::ScheduleWithContext (fbNode->GetNode()->GetId(),
 																			MicroSeconds(i * time_factor),
 																			&FBApplication::GenerateHelloMessage, this, fbNode);
+			if (i % 100 == 0) {
+				cout << i << endl;
+			}
 		}
 
 		// Other nodes must send Hello messages
 		double s = ceil((hel * time_factor) / 1000000.0);
+		auto start = std::chrono::system_clock::now();
+		std::time_t start_time = std::chrono::system_clock::to_time_t(start);
+		cout << "s= " << s << "at time= " << std::ctime(&start_time) << endl;
 		Simulator::Schedule (Seconds (s), &FBApplication::GenerateHelloTraffic, this, count - 1);
 	}
 }
@@ -307,6 +313,9 @@ void FBApplication::StartBroadcastPhase(void) {
 
 void FBApplication::GenerateHelloMessage (Ptr<FBNode> fbNode) {
 	NS_LOG_FUNCTION (this << fbNode);
+    auto start = std::chrono::system_clock::now();
+    std::time_t start_time = std::chrono::system_clock::to_time_t(start);
+	NS_LOG_DEBUG("generateHelloMessage (" << fbNode->GetId() << ")." << "at time= " << std::ctime(&start_time));
 //	NS_LOG_DEBUG ("Generate Hello Message (" << fbNode->GetNode ()->GetId () << ").");
 
 	// Create a packet with the correct parameters taken from the node
@@ -519,8 +528,6 @@ void FBApplication::WaitAgain(Ptr<FBNode> fbNode, FBHeader fbHeader, uint32_t wa
 
 void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader, uint32_t waitingTime) {
 	NS_LOG_FUNCTION (this << fbNode << oldFBHeader);
-	cout << "forward alert message" << endl;
-
 	// Get the phase
 	int32_t phase = oldFBHeader.GetPhase();
 	Vector oldPos = oldFBHeader.GetPosition();//added
