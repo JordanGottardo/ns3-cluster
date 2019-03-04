@@ -1,5 +1,5 @@
 Host di esecuzione: dellsrv1
-Data: Sun Mar 3 18:44:02 CET 2019
+Data: Mon Mar 4 09:04:03 CET 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
 dellsrv1
@@ -8,16 +8,101 @@ Launching job for execution
 after set
 Start main urban
 numNodes = 1776
-startingNode = 607
+startingNode = 310
 run = 0
 numNodes = 1776
-startingNode = 607
+startingNode = 310
 GenerateHelloTraffic 5
 GenerateHelloTraffic 4
 GenerateHelloTraffic 3
 GenerateHelloTraffic 2
 GenerateHelloTraffic 1
 GenerateHelloTraffic 0
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
+forward alert message
 forward alert message
 forward alert message
 forward alert message

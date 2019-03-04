@@ -1,68 +1,23 @@
-Host di esecuzione: dellsrv2
-Data: Sun Mar 3 19:11:02 CET 2019
+Host di esecuzione: dellsrv4
+Data: Mon Mar 4 09:31:01 CET 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-dellsrv2
+dellsrv4
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
 Start main urban
 numNodes = 1776
-startingNode = 214
+startingNode = 310
 run = 0
 numNodes = 1776
-startingNode = 214
+startingNode = 310
 GenerateHelloTraffic 5
 GenerateHelloTraffic 4
 GenerateHelloTraffic 3
 GenerateHelloTraffic 2
 GenerateHelloTraffic 1
 GenerateHelloTraffic 0
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
-forward alert message
 forward alert message
 forward alert message
 forward alert message
