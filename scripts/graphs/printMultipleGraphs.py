@@ -388,7 +388,7 @@ def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, fig
 						compoundData["totCoverageConfInts"],
 						romTotCov,
 						protocols,
-						False)
+						True)
 		printSingleGraphRomanelliComparison(cw,
 						actualFolder,
 						"Padua scenario with buildings, coverage on circumference",
@@ -401,7 +401,7 @@ def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, fig
 						compoundData["covOnCircConfInts"],
 						romCovCirc,
 						protocols,
-						False)
+						True)
 		printSingleGraphRomanelliComparison(cw,
 						actualFolder,
 						"Padua scenario with buildings, number of hops",
@@ -414,7 +414,7 @@ def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, fig
 						compoundData["hopsConfInts"],
 						romNumHops,
 						protocols,
-						False,
+						True,
 						0,
 						10)
 		printSingleGraphRomanelliComparison(cw,
@@ -429,7 +429,7 @@ def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, fig
 						compoundData["messageSentConfInts"],
 						romAlertSent,
 						protocols,
-						False,
+						True,
 						0,
 						120)
 		printSingleGraphRomanelliComparison(cw,
@@ -444,7 +444,7 @@ def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, fig
 						compoundData["slotsWaitedConfInts"],
 						romSlotsWaited,
 						protocols,
-						False,
+						True,
 						0,
 						1500)
 

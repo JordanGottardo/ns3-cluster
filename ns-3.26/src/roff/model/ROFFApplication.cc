@@ -79,7 +79,7 @@ void ROFFApplication::StartBroadcastPhase(void) {
 	NS_LOG_FUNCTION(this);
 	for (auto entry: m_nodes) {
 		Ptr<ROFFNode> roffNode = entry.second;
-		cout << "nbt size= " << roffNode->GetNBTSize() << endl;
+		cout << "ROFFApplication::StartBroadcastPhase nbt size= " << roffNode->GetNBTSize() << endl;
 	}
 	GenerateAlertMessage(m_nodes.at(m_startingNode));
 }
@@ -99,7 +99,7 @@ void ROFFApplication::GenerateHelloMessage(Ptr<ROFFNode> node) {
 
 void ROFFApplication::GenerateAlertMessage(Ptr<ROFFNode> node) {
 	NS_LOG_FUNCTION (this << node);
-
+	cout << "ROFFApplication::Generate ALert message " << endl;
 // TODO
 //	Generate alert message
 //	Generate ESD bitmap from neighbor table (NBT)
