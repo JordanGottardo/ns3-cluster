@@ -39,21 +39,21 @@ boost::dynamic_bitset<> NeighborTable::GetESDBitmap(Vector pos, uint32_t distanc
 	if (m_table.empty()) {
 		return esdBitmap;
 	}
-	cout << "NeighborTable::GetESDBitmap table size= " << m_table.size() << endl;
-	uint32_t maxDistance = GetMaxDistance(pos);
+//	cout << "NeighborTable::GetESDBitmap table size= " << m_table.size() << endl;
+	uint32_t maxDistance = GetMaxDistance(pos) / distanceRange;
 	esdBitmap = boost::dynamic_bitset<>(maxDistance + 1);
-	cout << "NeighborTable::GetESDBitmap maxDistance= " << maxDistance << endl;
-	cout << "NeighborTable::GetESDBitmap bitmapSize= " << esdBitmap.size() << endl;
+//	cout << "NeighborTable::GetESDBitmap maxDistance= " << maxDistance << endl;
+//	cout << "NeighborTable::GetESDBitmap bitmapSize= " << esdBitmap.size() << endl;
 	for (uint32_t i = 0; i <= maxDistance; i++) {
 		// Because boost::dynamic_bitset operator[] goes from less significant to more significant bits
-		uint32_t index = maxDistance - i - 1;
-		cout << "NeighborTable::GetESDBitmap index= " << index << endl;
-		cout << "NeighborTable::GetESDBitmap before exists" << endl;
+		uint32_t index = maxDistance - i;
+//		cout << "NeighborTable::GetESDBitmap index= " << index << endl;
+//		cout << "NeighborTable::GetESDBitmap before exists" << endl;
 		if (ExistsNodeAtDistance(i, distanceRange, pos)) {
-			cout << "NeighborTable::GetESDBitmap before assign 1" << endl;
+//			cout << "NeighborTable::GetESDBitmap before assign 1" << endl;
 			esdBitmap[index] = 1;
 		} else {
-			cout << "NeighborTable::GetESDBitmap before assign 0" << endl;
+//			cout << "NeighborTable::GetESDBitmap before assign 0" << endl;
 
 			esdBitmap[index] = 0;
 		}
@@ -77,24 +77,20 @@ uint32_t NeighborTable::GetMaxDistance(Vector pos) const {
 }
 
 uint32_t NeighborTable::ExistsNodeAtDistance(uint32_t dist, uint32_t distanceRange, Vector pos) const {
-//	TODO errore qua dentro, SIGSEV
-	cout << "NeighborTable:: ExistsNodeAtDistance dist= " << dist << " distanceRange= " <<distanceRange <<
-			" pos= " << pos
-			<< endl;
-	cout << m_table.size() << endl;
+//	cout << "NeighborTable:: ExistsNodeAtDistance dist= " << dist << " distanceRange= " <<distanceRange <<
+//			" pos= " << pos
+//			<< endl;
+//	cout << m_table.size() << endl;
 	for (auto entry: m_table) {
-		cout << "a" << endl;
+//		cout << "a" << endl;
 		NS_LOG_FUNCTION(this << pos << distanceRange << pos);
-		cout << entry.first << endl;
+//		cout << entry.first << endl;
 		uint32_t distance = rint(ns3::CalculateDistance(pos, entry.second.GetPosition()));
-		cout << distance << endl;
+//		cout << distance << endl;
 		if (distance >= distanceRange * dist && distance <= distanceRange*(dist +1) - 1 ) {
-			cout << "NeighborTable:: ExistsNodeAtDistance return 1" << endl;
-
 			return 1;
 		}
 	}
-	cout << "NeighborTable:: ExistsNodeAtDistance return 0" << endl;
 	return 0;
 }
 
