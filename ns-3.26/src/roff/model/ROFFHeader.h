@@ -13,6 +13,7 @@
 #include "ns3/vector.h"
 #include "ns3/double.h"
 #include "ns3/log.h"
+#include <bitset>
 #include <boost/dynamic_bitset.hpp>
 #include <boost/dynamic_bitset/serialization.hpp>
 #include <boost/archive/text_oarchive.hpp>
@@ -53,12 +54,6 @@ public:
 	void SetESDBitmap(const boost::dynamic_bitset<>& esdBitmap);
 
 
-	void WriteDouble(Buffer::Iterator* iter, double d) const;
-
-	void WriteESDBitmap(Buffer::Iterator* iter) const;
-
-	double ReadDouble(Buffer::Iterator* iter) const;
-
 	virtual TypeId GetInstanceTypeId() const;
 
 	virtual uint32_t GetSerializedSize() const;
@@ -70,6 +65,19 @@ public:
 	virtual void Print(ostream& os) const;
 
 private:
+
+	void WriteDouble(Buffer::Iterator* iter, double d) const;
+
+	void WriteESDBitmap(Buffer::Iterator* iter) const;
+
+	void ReadESDBitmap(Buffer::Iterator* iter, uint32_t bitmapSize);
+
+	double ReadDouble(Buffer::Iterator* iter) const;
+
+	double GetESDBitmapRoundedSizeInBytes(uint32_t bitmapSize) const;
+
+	void ConcatBitsets(boost::dynamic_bitset<>& a, const boost::dynamic_bitset<>& b) const;
+
 	//	============== Generic data ================
 	uint32_t							m_type;
 

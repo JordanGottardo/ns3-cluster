@@ -1,7 +1,7 @@
 #!/usr/bin/python2
 #coding=utf-8
 #Invocation:
-#   ./drawNodeNames.py
+#   ./drawNodeNames.py plotBuildingsName
 # OR
 #   ./drawNodeNames.py path.csv
 # example: ./drawNodeNames.py /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano-con-coord/cw-32-1024/Padova/d25/b1/fb-500/Padova-25-cw-32-1024-b1-fb-500-1550230600642.csv
@@ -54,7 +54,7 @@ def plotCoverage(relativeFileName, outFilePath):
 
     color1 = "#840000"
     coordUtils.plotTxRange(circRadius, startingX, startingY, vehicleDistance, color1, True)
-    coordUtils.plotBuildings(polyFilePath, True, ax)
+    coordUtils.plotBuildings(polyFilePath, False, ax)
     
     #Save file
     if not os.path.exists(os.path.dirname(outFilePath)):

@@ -463,6 +463,7 @@ private:
 	double									m_TotalSimTime;
 	uint32_t								m_printToFile;
 	uint32_t								m_printCoords;
+	uint32_t								m_createObstacleShadowingLossFile;
 
 
 };
@@ -494,7 +495,8 @@ FBVanetExperiment::FBVanetExperiment ()
 		m_bldgFile(""),
 		m_TotalSimTime(30),
 		m_printToFile(1),
-		m_printCoords(0) {
+		m_printCoords(0),
+		m_createObstacleShadowingLossFile(0) {
 	srand (time (0));
 
 	RngSeedManager::SetSeed (time (0));
@@ -664,7 +666,10 @@ FBVanetExperiment::SetupAdhocDevices ()
 	wifiChannel.AddPropagationLoss ("ns3::TwoRayGroundPropagationLossModel", "Frequency", DoubleValue (freq), "HeightAboveZ", DoubleValue (1.5));
 	if (m_loadBuildings != 0)
 	{
-		wifiChannel.AddPropagationLoss ("ns3::ObstacleShadowingPropagationLossModel", "Radius", DoubleValue (500));
+		wifiChannel.AddPropagationLoss ("ns3::ObstacleShadowingPropagationLossModel",
+										"Radius", DoubleValue(500),
+										"CreateFile", IntegerValue(m_createObstacleShadowingLossFile),
+										"MapBasePath", StringValue(m_mapBasePath));
 	}
 	wifiPhy.SetChannel (wifiChannel.Create ());
 	wifiPhy.SetPcapDataLinkType (YansWifiPhyHelper::DLT_IEEE802_11);
@@ -796,6 +801,9 @@ void FBVanetExperiment::CommandSetup (int argc, char *argv[]) {
 			"(e.g. ../maps/Padova-25.osm.xml. The dash '-' in the name is mandatory)", m_mapBasePath);
 	cmd.AddValue ("printToFile", "Print data to file or not: 0 not print, 1 print ", m_printToFile);
 	cmd.AddValue ("printCoords", "Print coords to file or not: 0 not print, 1 print ", m_printCoords);
+	cmd.AddValue ("createObstacleShadowingLossFile", "Create file which saves obstacle losses (dBm) keyed by "
+			"senderCoord, receiverCoord : 0 not create, 1 create ", m_createObstacleShadowingLossFile);
+
 
 	cmd.Parse (argc, argv);
 }

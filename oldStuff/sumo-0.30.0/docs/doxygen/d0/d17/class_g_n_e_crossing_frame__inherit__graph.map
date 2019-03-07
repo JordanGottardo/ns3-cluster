@@ -1,3 +1,0 @@
-<map id="GNECrossingFrame" name="GNECrossingFrame">
-<area shape="rect" id="node2" href="$d1/db9/class_g_n_e_frame.html" title="{GNEFrame\n|# myContentFrame\l# myFrameHeaderFont\l# myFrameHeaderLabel\l# myHeaderFrame\l# myHeaderLeftFrame\l# myHeaderRightFrame\l# myViewNet\l&#45; myScrollWindowsContents\l|+ focusUpperElement()\l+ getFrameHeaderFont()\l+ getFrameHeaderLabel()\l+ getViewNet()\l+ GNEFrame()\l+ hide()\l+ setFrameWidth()\l+ show()\l+ ~GNEFrame()\l# GNEFrame()\l&#45; GNEFrame()\l&#45; operator=()\l}" alt="" coords="6,131,197,472"/>
-</map>

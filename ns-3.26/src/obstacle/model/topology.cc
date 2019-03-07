@@ -406,7 +406,7 @@ Topology::GetObstructedDistance(const Point_3 &p1, const Point_3 &p2, Obstacle &
 }
 
 double
-Topology::GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double r)
+GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double r, uint32_t createFile, std::string mapBasePath)
 {
   NS_LOG_FUNCTION (this);
   // initially assume no loss
@@ -420,6 +420,9 @@ Topology::GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double 
   double p2x = CGAL::to_double(p2.x());
   double p2y = CGAL::to_double(p2.y());
 	double p2z = CGAL::to_double(p2.z());
+// TODO
+//	check if file exists
+// if so load it in map
 
   // test first to see if we have a cached value
   // for loss between these two points

@@ -1,4 +1,0 @@
-<trips>
-    <vType id="bus" emissionClass="HBEFA3/bus"/>
-	<trip depart="0" from="beg" to="end" type="bus"/>
-</trips>

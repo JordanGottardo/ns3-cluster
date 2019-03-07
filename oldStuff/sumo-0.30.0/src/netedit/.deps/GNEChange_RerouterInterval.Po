@@ -1,4 +1,0 @@
-GNEChange_RerouterInterval.o: GNEChange_RerouterInterval.cpp \
- /usr/include/stdc-predef.h
-
-/usr/include/stdc-predef.h:

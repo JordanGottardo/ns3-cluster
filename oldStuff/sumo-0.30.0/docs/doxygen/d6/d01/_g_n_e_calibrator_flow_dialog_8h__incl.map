@@ -1,8 +1,0 @@
-<map id="GNECalibratorFlowDialog.h" name="GNECalibratorFlowDialog.h">
-<area shape="rect" id="node2" href="$db/d16/config_8h.html" title="config.h" alt="" coords="248,379,316,405"/>
-<area shape="rect" id="node3" href="$d2/dba/_g_n_e_additional_dialog_8h.html" title="GNEAdditionalDialog.h" alt="" coords="44,229,204,256"/>
-<area shape="rect" id="node6" href="$dc/d2c/_g_n_e_calibrator_flow_8h.html" title="GNECalibratorFlow.h" alt="" coords="254,80,401,107"/>
-<area shape="rect" id="node7" href="$d7/db4/_util_exceptions_8h.html" title="utils/common/UtilExceptions.h" alt="" coords="616,304,815,331"/>
-<area shape="rect" id="node10" href="$d6/d7a/_s_u_m_o_x_m_l_definitions_8h.html" title="utils/xml/SUMOXMLDefinitions.h" alt="" coords="294,155,506,181"/>
-<area shape="rect" id="node11" href="$d6/d11/_string_bijection_8h.html" title="utils/common/StringBijection.h" alt="" coords="345,229,545,256"/>
-</map>

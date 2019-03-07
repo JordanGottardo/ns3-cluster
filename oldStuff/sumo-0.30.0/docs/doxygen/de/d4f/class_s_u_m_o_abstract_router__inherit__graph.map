@@ -1,7 +1,0 @@
-<map id="SUMOAbstractRouter&lt; E, V &gt;" name="SUMOAbstractRouter&lt; E, V &gt;">
-<area shape="rect" id="node2" href="$dc/da6/class_a_star_router.html" title="Computes the shortest path through a network using the A* algorithm. " alt="" coords="5,380,165,663"/>
-<area shape="rect" id="node3" href="$dd/d67/class_c_h_router.html" title="Computes the shortest path through a contracted network. " alt="" coords="189,365,384,677"/>
-<area shape="rect" id="node4" href="$d9/d53/class_c_h_router_wrapper.html" title="Computes the shortest path through a contracted network. " alt="" coords="409,409,589,633"/>
-<area shape="rect" id="node5" href="$d8/d00/class_dijkstra_router_effort.html" title="Computes the shortest path through a network using the Dijkstra algorithm. " alt="" coords="613,380,776,663"/>
-<area shape="rect" id="node6" href="$d2/d6c/class_dijkstra_router_t_t.html" title="Computes the shortest path through a network using the Dijkstra algorithm. " alt="" coords="801,395,975,648"/>
-</map>

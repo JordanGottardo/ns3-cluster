@@ -73,7 +73,9 @@ private:
                                 Ptr<MobilityModel> b) const;
   virtual int64_t DoAssignStreams (int64_t stream);
 
-	double	m_radius;
+	double			m_radius;
+	uint32_t 		m_createFile;
+	std::string 	m_mapBasePath;
 };
 
 } // namespace ns3

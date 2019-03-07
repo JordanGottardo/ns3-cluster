@@ -106,7 +106,7 @@ public:
    * \param r limiting radius for obstacles between p1 and p2
    * \return tbd
    */
-  double GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double r);
+  double GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double r, uint32_t createFile, std::string mapBasePath);
 
   /**
    * \brief Tests if the topology has any obstacles (loaded within it)

@@ -14,18 +14,8 @@ $node_(3) set X_ 1104.17
 $node_(3) set Y_ 1948.48
 $node_(3) set Z_ 0
 $ns_ at 0.0 "$node_(3) setdest 1104.17 1948.48 0.00"
-$node_(4) set X_ 1470.83
-$node_(4) set Y_ 2259.92
-$node_(4) set Z_ 0
-$ns_ at 0.0 "$node_(4) setdest 1470.83 2259.92 0.00"
-$node_(5) set X_ 562.01
-$node_(5) set Y_ 2641.28
-$node_(5) set Z_ 0
-$ns_ at 0.0 "$node_(5) setdest 562.01 2641.28 0.00"
 <!-- 0     310
 	1 	   293
 	2	   309
 	3	   294
-	4	   5
-	5	   406
 -->

@@ -1,4 +1,0 @@
-GNEChange_CalibratorItem.o: GNEChange_CalibratorItem.cpp \
- /usr/include/stdc-predef.h
-
-/usr/include/stdc-predef.h:

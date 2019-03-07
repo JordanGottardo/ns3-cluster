@@ -1,9 +1,0 @@
-<map id="GNEAdditionalDialog" name="GNEAdditionalDialog">
-<area shape="rect" id="node3" href="$d4/dcd/class_g_n_e_calibrator_dialog.html" title="Dialog for edit calibrators. " alt="" coords="5,483,215,1118"/>
-<area shape="rect" id="node4" href="$df/d6d/class_g_n_e_calibrator_flow_dialog.html" title="Dialog for edit rerouter intervals. " alt="" coords="239,579,450,1023"/>
-<area shape="rect" id="node5" href="$d9/de0/class_g_n_e_calibrator_route_dialog.html" title="Dialog for edit rerouter intervals. " alt="" coords="475,593,692,1008"/>
-<area shape="rect" id="node6" href="$d2/d6a/class_g_n_e_calibrator_vehicle_type_dialog.html" title="Dialog for edit rerouter intervals. " alt="" coords="717,542,951,1059"/>
-<area shape="rect" id="node7" href="$de/df6/class_g_n_e_rerouter_dialog.html" title="Dialog for edit rerouters. " alt="" coords="975,608,1173,993"/>
-<area shape="rect" id="node8" href="$d9/dd6/class_g_n_e_rerouter_interval_dialog.html" title="Dialog for edit rerouter intervals. " alt="" coords="1197,461,1452,1140"/>
-<area shape="rect" id="node9" href="$d0/ddc/class_g_n_e_variable_speed_sign_dialog.html" title="{GNEVariableSpeedSignDialog\n|# myAddRow\l# myDataList\l# myRowFrame\l# myRowSpeed\l# myRowStep\l# mySteps\l# myVariableSpeedSignParent\l|+ GNEVariableSpeedSignDialog()\l+ ~GNEVariableSpeedSignDialog()\l+ onCmdAddRow()\l+ onCmdRemoveRow()\l+ onCmdAccept()\l+ onCmdCancel()\l+ onCmdReset()\l# GNEVariableSpeedSignDialog()\l&#45; GNEVariableSpeedSignDialog()\l&#45; operator=()\l&#45; updateTable()\l* onCmdAddRow()\l* onCmdRemoveRow()\l* onCmdAccept()\l* onCmdCancel()\l* onCmdReset()\l}" alt="" coords="1477,608,1711,993"/>
-</map>

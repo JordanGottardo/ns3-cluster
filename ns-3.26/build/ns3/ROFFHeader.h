@@ -13,7 +13,11 @@
 #include "ns3/vector.h"
 #include "ns3/double.h"
 #include "ns3/log.h"
+#include <bitset>
 #include <boost/dynamic_bitset.hpp>
+#include <boost/dynamic_bitset/serialization.hpp>
+#include <boost/archive/text_oarchive.hpp>
+#include <boost/archive/text_iarchive.hpp>
 
 using namespace std;
 
@@ -28,7 +32,7 @@ public:
 //	Constructor
 	ROFFHeader();
 
-	ROFFHeader(uint32_t type, uint32_t sender, Vector position);
+	ROFFHeader(uint32_t type, uint32_t sender, Vector position, boost::dynamic_bitset<> esdBitmap);
 
 //	Getters
 	const Vector& GetPosition() const;
@@ -36,6 +40,8 @@ public:
 	uint32_t GetType() const;
 
 	uint32_t GetSenderId() const;
+
+	boost::dynamic_bitset<> GetESDBitmap() const;
 
 
 //	Setters
@@ -45,10 +51,8 @@ public:
 
 	void SetPosition(const Vector& position);
 
+	void SetESDBitmap(const boost::dynamic_bitset<>& esdBitmap);
 
-	void WriteDouble(Buffer::Iterator* iter, double d) const;
-
-	double ReadDouble(Buffer::Iterator* iter) const;
 
 	virtual TypeId GetInstanceTypeId() const;
 
@@ -61,6 +65,19 @@ public:
 	virtual void Print(ostream& os) const;
 
 private:
+
+	void WriteDouble(Buffer::Iterator* iter, double d) const;
+
+	void WriteESDBitmap(Buffer::Iterator* iter) const;
+
+	void ReadESDBitmap(Buffer::Iterator* iter, uint32_t bitmapSize);
+
+	double ReadDouble(Buffer::Iterator* iter) const;
+
+	double GetESDBitmapRoundedSizeInBytes(uint32_t bitmapSize) const;
+
+	void ConcatBitsets(boost::dynamic_bitset<>& a, const boost::dynamic_bitset<>& b) const;
+
 	//	============== Generic data ================
 	uint32_t							m_type;
 

@@ -1,7 +1,0 @@
-<map id="NBTrafficLightDefinition" name="NBTrafficLightDefinition">
-<area shape="rect" id="node4" href="$db/d84/class_n_b_loaded_s_u_m_o_t_l_def.html" title="A loaded (complete) traffic light logic. " alt="" coords="5,1048,219,1448"/>
-<area shape="rect" id="node5" href="$dd/d6e/class_n_b_loaded_t_l_def.html" title="A loaded (complete) traffic light logic. " alt="" coords="243,997,458,1499"/>
-<area shape="rect" id="node6" href="$d3/dfe/class_n_b_own_t_l_def.html" title="A traffic light logics which must be computed (only nodes/edges are given) " alt="" coords="482,975,689,1521"/>
-<area shape="rect" id="node2" href="$d5/dbf/class_named.html" title="Base class for objects which have an id. " alt="" coords="215,49,332,200"/>
-<area shape="rect" id="node3" href="$d7/dc7/class_parameterised.html" title="An upper class for objects with additional parameters. " alt="" coords="356,5,500,244"/>
-</map>

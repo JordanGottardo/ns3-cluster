@@ -503,7 +503,7 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader, ui
 	if (m_flooding == false)
 //		Simulator::ScheduleWithContext(nodeId, MilliSeconds(waitingTime * 200 * 3),
 //																	&FBApplication::WaitAgain, this, fbNode, fbHeader, waitingTime);
-		Simulator::ScheduleWithContext(nodeId, MicroSeconds(waitingTime * 9),
+		Simulator::ScheduleWithContext(nodeId, MilliSeconds(waitingTime),
 																			&FBApplication::ForwardAlertMessage, this, fbNode, fbHeader, waitingTime);
 	else
 		Simulator::ScheduleWithContext(nodeId, MilliSeconds(0),

@@ -46,7 +46,17 @@ ObstacleShadowingPropagationLossModel::GetTypeId (void)
 								 "Radius used for optimization (meters)",
 								 DoubleValue (200),
 								 MakeDoubleAccessor (&ObstacleShadowingPropagationLossModel::m_radius),
-								 MakeDoubleChecker<double> ());
+								 MakeDoubleChecker<double> ())
+	 .AddAttribute("CreateFile",
+				   "Whether or not to create file to save obstacle losses keyed by senderId, receiverId",
+				   IntegerValue(0),
+				   MakeIntegerAccessor(&ObstacleShadowingPropagationLossModel::m_createFile),
+				   MakeIntegerChecker<uint32_t>())
+    .AddAttribute("MapBasePath",
+				  "Base path of file which contains obstacle losses",
+				  StringValue(""),
+				  MakeStringAccessor(&ObstacleShadowingPropagationLossModel::m_mapBasePath),
+				  MakeStringChecker());
 
   return tid;
 }
@@ -72,7 +82,8 @@ ObstacleShadowingPropagationLossModel::GetLoss (Ptr<MobilityModel> a, Ptr<Mobili
   // get the topology instance, to search for obstacles
   Topology * topology = Topology::GetTopology();
   NS_ASSERT(topology != 0);
-
+  std::cout << "ObstacleShadowingPropagationLossModel::GetLoss CreateFile= " << m_createFile << std::endl;
+  std::cout << "ObstacleShadowingPropagationLossModel::GetLoss mapBasepath= " << m_mapBasePath << std::endl;
   if (topology->HasObstacles() == true)
     {
       // additional loss for obstacles
@@ -90,7 +101,7 @@ ObstacleShadowingPropagationLossModel::GetLoss (Ptr<MobilityModel> a, Ptr<Mobili
 
       // and testing for obstacles within m_radius=200m
       // get the obstructed loss, from the topology class
-      L_obs = topology->GetObstructedLossBetween(p1, p2, m_radius);
+      L_obs = topology->GetObstructedLossBetween(p1, p2, m_radius, m_createFile, m_mapBasePath);
     }
 
   return L_obs;
