@@ -79,7 +79,7 @@ void ROFFApplication::StartBroadcastPhase(void) {
 	NS_LOG_FUNCTION(this);
 	for (auto entry: m_nodes) {
 		Ptr<ROFFNode> roffNode = entry.second;
-		cout << "nbt size= " << roffNode->GetNBTSize() << endl;
+		cout << "ROFFApplication::StartBroadcastPhase nbt size= " << roffNode->GetNBTSize() << endl;
 	}
 	GenerateAlertMessage(m_nodes.at(m_startingNode));
 }
@@ -89,7 +89,7 @@ void ROFFApplication::GenerateHelloMessage(Ptr<ROFFNode> node) {
 	uint32_t nodeId = node->GetId();
 	Vector position = node->GetPosition();
 
-	ROFFHeader header(headerType, nodeId, position);
+	ROFFHeader header(headerType, nodeId, position, boost::dynamic_bitset<>());
 
 	Ptr<Packet> packet = Create<Packet>(m_packetPayload);
 	packet->AddHeader(header);
@@ -99,7 +99,7 @@ void ROFFApplication::GenerateHelloMessage(Ptr<ROFFNode> node) {
 
 void ROFFApplication::GenerateAlertMessage(Ptr<ROFFNode> node) {
 	NS_LOG_FUNCTION (this << node);
-
+	cout << "ROFFApplication::Generate ALert message " << endl;
 // TODO
 //	Generate alert message
 //	Generate ESD bitmap from neighbor table (NBT)
@@ -108,12 +108,13 @@ void ROFFApplication::GenerateAlertMessage(Ptr<ROFFNode> node) {
 // Include ESD bitmap and node's current position in alert message
 //	Broadcast alert message
 //
-	uint32_t headerType = HELLO_MESSAGE;
+	uint32_t headerType = ALERT_MESSAGE;
 	uint32_t nodeId = node->GetId();
 	Vector position = node->GetPosition();
 	boost::dynamic_bitset<> esdBitmap = node->GetESDBitmap(m_distanceRange);
-	cout << "esdBitmap = " << esdBitmap;
-	ROFFHeader header(headerType, nodeId, position);
+	cout << "ROFFApplication::GenerateAlertMessage esdBitmap = " << esdBitmap << " size= " <<
+			esdBitmap.size() << endl;
+	ROFFHeader header(headerType, nodeId, position, esdBitmap);
 
 	Ptr<Packet> packet = Create<Packet>(m_packetPayload);
 //	cout << "add " << node->GetPosition() << endl;

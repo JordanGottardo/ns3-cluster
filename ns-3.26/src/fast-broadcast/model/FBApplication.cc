@@ -554,7 +554,7 @@ void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader
 		fbHeader.SetPosition(position);
 		fbHeader.SetPhase(phase + 1);
 		fbHeader.SetSlot(fbNode->GetSlot() + waitingTime);
-//		cout << waitingTime << endl;
+		cout << waitingTime << endl;
 		fbHeader.SetSenderId(fbNode->GetId());
 //		cout << "forward alert message senderId = " << fbNode->GetId() << endl;
 
@@ -565,7 +565,7 @@ void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader
 		//
 		//
 
-//		cout << "invio distance = " <<  distance << " time= " << waitingTime <<endl;
+		cout << "invio distance = " <<  distance << " time= " << waitingTime <<endl;
 
 		// Forward
 		fbNode->Send(packet);
