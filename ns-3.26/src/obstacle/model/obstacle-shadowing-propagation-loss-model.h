@@ -75,6 +75,7 @@ private:
 
 	double			m_radius;
 	uint32_t 		m_createFile;
+	uint32_t 		m_useFile;
 	std::string 	m_mapBasePath;
 };
 

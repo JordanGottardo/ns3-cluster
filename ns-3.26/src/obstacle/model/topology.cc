@@ -38,7 +38,27 @@ Topology::Topology () :
   m_minX(999999999.0),
   m_minY(999999999.0),
   m_maxX(-999999999.0),
-  m_maxY(-999999999.0)
+  m_maxY(-999999999.0),
+  m_createFile(0),
+  m_useFile(0),
+  m_mapBasePath("")
+//  m_createFile(0)
+{
+  NS_LOG_FUNCTION (this);
+}
+
+Topology::Topology(uint32_t createFile, uint32_t useFile, std::string mapBasePath):
+  // initially very large values
+  // so that obstacle bounding box
+  // updates will be made
+  m_minX(999999999.0),
+  m_minY(999999999.0),
+  m_maxX(-999999999.0),
+  m_maxY(-999999999.0),
+  m_createFile(createFile),
+  m_useFile(useFile),
+  m_mapBasePath(mapBasePath)
+//  m_createFile(0)
 {
   NS_LOG_FUNCTION (this);
 }
@@ -68,8 +88,35 @@ Topology::PeekTopology (void)
   return &topo;
 }
 
+void
+Topology::LoadTableFromFile() {
+	std::string fileName = m_mapBasePath + ".losses";
+	std::ifstream file (fileName.c_str (), std::ios::in);
+	if (!(file.is_open())){
+		NS_FATAL_ERROR("Could not open buildings file " << fileName.c_str() << " for reading, aborting here \n");
+	}
+
+	while (!file.eof()) {
+		std::string line;
+		getline(file, line);
+		if (line.empty()) {
+			continue;
+		}
+		std::cout << line << std::endl;
+		int pos = line.find(";");
+		std::string key = line.substr(0, pos);
+		double loss = stod(line.substr(pos + 1, line.size()));
+		std::cout << "Topology::LoadTableFromFile key = " << key << " loss " << loss << std::endl;
+		m_obstructedDistanceMapFromFile.insert(TStrDblPair(key, loss));
+	}
+
+
+
+
+}
+
 Topology *
-Topology::GetTopology (void)
+Topology::GetTopology (uint32_t createFile, uint32_t useFile, std::string mapBasePath)
 {
   Topology **ptopo = PeekTopology ();
   /* Please, don't include any calls to logging macros in this function
@@ -79,7 +126,7 @@ Topology::GetTopology (void)
     {
       // create the topology
 //	  std::cout << "new topo" << std::endl;
-      *ptopo = new Topology();
+      *ptopo = new Topology(createFile, useFile, mapBasePath);
     }
 
   return *ptopo;
@@ -173,10 +220,10 @@ CreateShape(std::string id, std::string vertices, std::string height)
 static Range_tree_2_type m_rangeTree;
 
 void
-Topology::LoadBuildings(std::string bldgFilename)
+Topology::LoadBuildings(std::string bldgFilename, uint32_t createFile, uint32_t useFile, std::string mapBasePath)
 {
   NS_LOG_INFO ("Load buildings.");
-
+  std::cout << "loadbuildings usefile = " << useFile << std::endl;
 	uint32_t nBuildings = 0;
 
   std::ifstream file (bldgFilename.c_str (), std::ios::in);
@@ -187,7 +234,7 @@ Topology::LoadBuildings(std::string bldgFilename)
   else
     {
 //	  m_obstacles.clear();
-      Topology * topology = Topology::GetTopology();
+      Topology * topology = Topology::GetTopology(createFile, useFile, mapBasePath);
       NS_ASSERT(topology != 0);
       int lineCount = 0;
       topology->m_obstacles.clear();
@@ -251,6 +298,14 @@ Topology::LoadBuildings(std::string bldgFilename)
                 }
             }
         }
+
+      if (createFile) {
+    	  std::string fileName = mapBasePath + ".losses";
+    	  remove(fileName.c_str());
+      }
+      if (useFile) {
+    	  topology->LoadTableFromFile();
+      }
 //	  std::cout << "linee lette= " << lineCount << std::endl;
 	  NS_LOG_INFO ("Number of buildings found: " << nBuildings << ".");
       NS_LOG_INFO ("Topology buildings bounded by x:" << topology->GetMinX() << "," << topology->GetMaxX() << " y:" << topology->GetMinY() << "," << topology->GetMaxY() << ".");
@@ -406,7 +461,7 @@ Topology::GetObstructedDistance(const Point_3 &p1, const Point_3 &p2, Obstacle &
 }
 
 double
-GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double r, uint32_t createFile, std::string mapBasePath)
+Topology::GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double r)
 {
   NS_LOG_FUNCTION (this);
   // initially assume no loss
@@ -420,43 +475,47 @@ GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double r, uint32_
   double p2x = CGAL::to_double(p2.x());
   double p2y = CGAL::to_double(p2.y());
 	double p2z = CGAL::to_double(p2.z());
-// TODO
-//	check if file exists
-// if so load it in map
 
   // test first to see if we have a cached value
   // for loss between these two points
   // using their positions to the nearest 0.1m
 
   char buff[100];
+  char buff2[100];
+  std::string key2;
   sprintf(buff, "%010.1f %010.1f %010.1f", p1x, p1y, p1z);
   std::string p1Pos = buff;
   sprintf(buff, "%010.1f %010.1f %010.1f", p2x, p2y, p2z);
   std::string p2Pos = buff;
   sprintf(buff, "%s %s", p1Pos.c_str(), p2Pos.c_str());
   std::string key = buff;
-
   // check if cached
-  if (m_obstructedDistanceMap.count(key) > 0)
+  if (m_obstructedDistanceMap.count(key) > 0 or m_obstructedDistanceMapFromFile.count(key) > 0)
     {
       // found it
       TStrDblMap::iterator it;
       it = m_obstructedDistanceMap.find(key);
+      if (it == m_obstructedDistanceMap.end()) {
+          it = m_obstructedDistanceMapFromFile.find(key);
+      }
       obstructedLoss = it->second;
       return obstructedLoss;
     }
   else
     {
       // B to A is same as A to B
-      sprintf(buff, "%s %s", p2Pos.c_str(), p1Pos.c_str());
-      std::string key = buff;
-      if (m_obstructedDistanceMap.count(key) > 0)
-        {
-          // found it
-          TStrDblMap::iterator it;
-          it = m_obstructedDistanceMap.find(key);
-          obstructedLoss = it->second;
-          return obstructedLoss;
+      sprintf(buff2, "%s %s", p2Pos.c_str(), p1Pos.c_str());
+      key2 = buff2;
+      if (m_obstructedDistanceMap.count(key) > 0 or m_obstructedDistanceMapFromFile.count(key) > 0)
+      {
+        // found it
+        TStrDblMap::iterator it;
+        it = m_obstructedDistanceMap.find(key);
+        if (it == m_obstructedDistanceMap.end()) {
+            it = m_obstructedDistanceMapFromFile.find(key);
+        }
+        obstructedLoss = it->second;
+        return obstructedLoss;
         }
     }
 
@@ -557,6 +616,17 @@ GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double r, uint32_
       m_obstructedDistanceMap.clear();
     }
   m_obstructedDistanceMap.insert(TStrDblPair(key, obstructedLoss));
+
+  if (m_createFile) {
+
+	  if (m_obstructedDistanceMapFromFile.count(key) == 0 && m_obstructedDistanceMapFromFile.count(key2) == 0) {
+		  m_obstructedDistanceMapFromFile.insert(TStrDblPair(key, obstructedLoss));
+		  std::string fileName = m_mapBasePath + ".losses";
+		  std::ofstream file (fileName.c_str (), std::ios::app);
+		  file << key <<";" << obstructedLoss << std::endl;
+//		  std::cout << "scrivo" << key <<";" << obstructedLoss << std::endl;
+	  }
+  }
 
   return obstructedLoss;
 }

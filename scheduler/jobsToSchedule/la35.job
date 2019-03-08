@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ### job name
-#PBS -N p25
+#PBS -N la35
 
 ### Programma non-rerunable
 #PBS -r n
@@ -54,5 +54,5 @@ export PATH=/home/jgottard/ns-3/ns-3.26/build/src/fd-net-device:/home/jgottard/n
 ###echo "boostdir = $BOOSTDIR"
 
 ### Below we append the launch command
-NS_GLOBAL_VALUE="RngRun=1" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings=1 --actualRange=500 --protocol=1 --flooding=0 --area=1000 --mapBasePath=../maps/Padova/Padova-25 --cwMin=32 --cwMax=1024 --printToFile=0 --printCoords=1 -startingNode=310 --createObstacleShadowingLossFile=1 --useObstacleShadowingLossFile=0
+NS_GLOBAL_VALUE="RngRun=1" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings=1 --actualRange=500 --protocol=1 --flooding=0 --area=1000 --mapBasePath=../maps/LA/LA-35 --cwMin=32 --cwMax=1024 --printToFile=0 --printCoords=1 -startingNode=310 --createObstacleShadowingLossFile=1 --useObstacleShadowingLossFile=0
 

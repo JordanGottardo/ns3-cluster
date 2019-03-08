@@ -23,6 +23,7 @@
 #define TOPOLOGY_H
 
 #include "obstacle.h"
+#include <stdio.h>
 
 namespace ns3 {
 
@@ -48,6 +49,8 @@ public:
    */
   Topology ();
 
+
+  Topology (uint32_t createFile, uint32_t useFile, std::string mapBasePath);
   /**
    * \brief Run
    * \return none
@@ -64,16 +67,24 @@ public:
 
   /**
    * \brief Gets the topology instance
+   * \param createFile whether to create file with saved losses
+   * \param useFile whether to load file with saved losses
    * \return the topology instance
    */
-  static Topology * GetTopology();
+  static Topology * GetTopology(uint32_t createFile, uint32_t useFile, std::string mapBasePath);
 
+  /**
+   * \brief Loads table with saved losses (dBm) from file
+   * \return none
+   */
+  void LoadTableFromFile();
   /**
    * \brief Load buildings into the topology
    * \param bldgFilename the filename that contains buildings data
    * \return none
    */
-  static void LoadBuildings(std::string bldgFilename);
+  static void LoadBuildings(std::string bldgFilename, uint32_t createFile = 0, uint32_t useFile = 0, std::string mapBasePath = "");
+
 
   /**
    * \brief Gets the minimum X value of buildings in the topology
@@ -209,6 +220,15 @@ public:
   // e.g., when nodes are stationary (obstacle are, too) so
   // there is no change to previously calculated results.
   TStrDblMap m_obstructedDistanceMap;
+
+  //Same as above, except that
+// 1) it is loaded from file
+// 2) it is not emptied limited to size 1000
+  TStrDblMap m_obstructedDistanceMapFromFile;
+
+  uint32_t 		m_createFile;
+  uint32_t 		m_useFile;
+  std::string 	m_mapBasePath;
 };
 
 } // namespace ns3

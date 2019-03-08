@@ -257,7 +257,7 @@ void FBApplication::StartApplication(void) {
 	if (!m_staticProtocol) {
 		// Start Estimation Phase
 		NS_LOG_INFO ("Start Estimation Phase.");
-		GenerateHelloTraffic(5);
+		GenerateHelloTraffic(2); //todo rimettere a 5
 	}
 
 	// Schedule Broadcast Phase
@@ -274,7 +274,7 @@ void FBApplication::GenerateHelloTraffic(uint32_t count) {
 	NS_LOG_INFO(count);
 	NS_LOG_DEBUG("GenerateHelloTraffic " << count);
 	std::vector<int> he;
-	uint32_t hel = (int) m_nNodes / 100 * 50;		// 40% of total nodes
+	uint32_t hel = (int) m_nNodes / 100 * 100;		// 40% of total nodes todo rimettere a 50
 	uint32_t time_factor = 10;
 
 	if (count > 0)

@@ -76,7 +76,7 @@ private:
 
 	double GetESDBitmapRoundedSizeInBytes(uint32_t bitmapSize) const;
 
-	void ConcatBitsets(boost::dynamic_bitset<>& a, const boost::dynamic_bitset<>& b) const;
+	void ConcatBitsets(boost::dynamic_bitset& a, const boost::dynamic_bitset& b) const;
 
 	//	============== Generic data ================
 	uint32_t							m_type;

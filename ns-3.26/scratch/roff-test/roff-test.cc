@@ -848,7 +848,7 @@ void ROFFVanetExperiment::SetupScenario () {
 	if (m_loadBuildings != 0)
 	{
 		NS_LOG_INFO ("Loading buildings file \"" << m_bldgFile << "\".");
-		Topology::LoadBuildings(m_bldgFile);
+//		Topology::LoadBuildings(m_bldgFile); //todo riabilitare
 	}
 }
 
