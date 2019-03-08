@@ -1,14 +1,69 @@
-Host di esecuzione: dellsrv5
-Data: Thu Feb 28 16:37:07 CET 2019
+Host di esecuzione: hpblade13
+Data: Mon Mar 4 15:16:06 CET 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-dellsrv5
+hpblade13
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
 Start main urban
 numNodes = 1776
-startingNode = 1304
+startingNode = 310
 run = 0
 numNodes = 1776
-startingNode = 1613
+startingNode = 310
+0
+100
+200
+300
+400
+500
+600
+700
+800
+s= 1at time= Mon Mar  4 15:16:20 2019
+
+0
+100
+200
+300
+400
+500
+600
+700
+800
+s= 1at time= Tue Mar  5 05:11:09 2019
+
+0
+100
+200
+300
+400
+500
+600
+700
+800
+s= 1at time= Tue Mar  5 18:50:07 2019
+
+0
+100
+200
+300
+400
+500
+600
+700
+800
+s= 1at time= Wed Mar  6 08:15:15 2019
+
+0
+100
+200
+300
+400
+500
+600
+700
+800
+s= 1at time= Wed Mar  6 21:41:16 2019
+
