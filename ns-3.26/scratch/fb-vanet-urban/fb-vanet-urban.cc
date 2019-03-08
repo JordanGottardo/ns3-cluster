@@ -870,7 +870,6 @@ void FBVanetExperiment::SetupScenario () {
 
 	if (m_loadBuildings != 0)
 	{
-		cout << "load buildings " << endl;
 		NS_LOG_INFO ("Loading buildings file \"" << m_bldgFile << "\".");
 		Topology::LoadBuildings(m_bldgFile, m_createObstacleShadowingLossFile, m_useObstacleShadowingLossFile, m_mapBasePath);
 	}

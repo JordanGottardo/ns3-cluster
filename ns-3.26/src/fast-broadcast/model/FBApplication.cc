@@ -287,16 +287,12 @@ void FBApplication::GenerateHelloTraffic(uint32_t count) {
 			Simulator::ScheduleWithContext (fbNode->GetNode()->GetId(),
 																			MicroSeconds(i * time_factor),
 																			&FBApplication::GenerateHelloMessage, this, fbNode);
-			if (i % 100 == 0) {
-				cout << i << endl;
-			}
 		}
 
 		// Other nodes must send Hello messages
 		double s = ceil((hel * time_factor) / 1000000.0);
 		auto start = std::chrono::system_clock::now();
 		std::time_t start_time = std::chrono::system_clock::to_time_t(start);
-		cout << "s= " << s << "at time= " << std::ctime(&start_time) << endl;
 		Simulator::Schedule (Seconds (s), &FBApplication::GenerateHelloTraffic, this, count - 1);
 	}
 }
@@ -554,7 +550,6 @@ void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader
 		fbHeader.SetPosition(position);
 		fbHeader.SetPhase(phase + 1);
 		fbHeader.SetSlot(fbNode->GetSlot() + waitingTime);
-		cout << waitingTime << endl;
 		fbHeader.SetSenderId(fbNode->GetId());
 //		cout << "forward alert message senderId = " << fbNode->GetId() << endl;
 
@@ -565,7 +560,7 @@ void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader
 		//
 		//
 
-		cout << "invio distance = " <<  distance << " time= " << waitingTime <<endl;
+//		cout << "invio distance = " <<  distance << " time= " << waitingTime <<endl;
 
 		// Forward
 		fbNode->Send(packet);

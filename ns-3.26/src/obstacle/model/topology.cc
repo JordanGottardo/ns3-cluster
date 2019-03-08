@@ -102,11 +102,11 @@ Topology::LoadTableFromFile() {
 		if (line.empty()) {
 			continue;
 		}
-		std::cout << line << std::endl;
+//		std::cout << line << std::endl;
 		int pos = line.find(";");
 		std::string key = line.substr(0, pos);
 		double loss = stod(line.substr(pos + 1, line.size()));
-		std::cout << "Topology::LoadTableFromFile key = " << key << " loss " << loss << std::endl;
+//		std::cout << "Topology::LoadTableFromFile key = " << key << " loss " << loss << std::endl;
 		m_obstructedDistanceMapFromFile.insert(TStrDblPair(key, loss));
 	}
 
@@ -223,7 +223,7 @@ void
 Topology::LoadBuildings(std::string bldgFilename, uint32_t createFile, uint32_t useFile, std::string mapBasePath)
 {
   NS_LOG_INFO ("Load buildings.");
-  std::cout << "loadbuildings usefile = " << useFile << std::endl;
+//  std::cout << "loadbuildings usefile = " << useFile << std::endl;
 	uint32_t nBuildings = 0;
 
   std::ifstream file (bldgFilename.c_str (), std::ios::in);
