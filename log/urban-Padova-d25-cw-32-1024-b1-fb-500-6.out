@@ -7,8 +7,8 @@ PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
 Start main urban
-numNodes = 1776
+numNodes = 2856
 startingNode = 310
 run = 0
-numNodes = 1776
+numNodes = 2856
 startingNode = 310
