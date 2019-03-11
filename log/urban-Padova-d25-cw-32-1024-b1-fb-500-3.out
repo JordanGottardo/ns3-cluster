@@ -1,5 +1,5 @@
 Host di esecuzione: dellsrv3
-Data: Sun Mar 3 14:09:03 CET 2019
+Data: Mon Mar 4 15:16:07 CET 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
 dellsrv3
@@ -8,9 +8,62 @@ Launching job for execution
 after set
 Start main urban
 numNodes = 1776
-startingNode = 1215
+startingNode = 310
 run = 0
 numNodes = 1776
-startingNode = 882
-GenerateHelloTraffic 5
-GenerateHelloTraffic 4
+startingNode = 310
+0
+100
+200
+300
+400
+500
+600
+700
+800
+s= 1at time= Mon Mar  4 15:16:17 2019
+
+0
+100
+200
+300
+400
+500
+600
+700
+800
+s= 1at time= Tue Mar  5 10:57:29 2019
+
+0
+100
+200
+300
+400
+500
+600
+700
+800
+s= 1at time= Wed Mar  6 06:17:27 2019
+
+0
+100
+200
+300
+400
+500
+600
+700
+800
+s= 1at time= Thu Mar  7 01:59:02 2019
+
+0
+100
+200
+300
+400
+500
+600
+700
+800
+s= 1at time= Thu Mar  7 19:47:42 2019
+
