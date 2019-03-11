@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Fri Jan 11 13:26:35 2019 by Eclipse SUMO polyconvert Version 1.0.1
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/polyconvertConfiguration.xsd">
+
+    <input>
+        <net-file value="../maps/Padova/Padova.net.xml"/>
+        <osm-files value="../maps/Padova/Padova.osm.xml"/>
+        <shapefile.add-param value="true"/>
+    </input>
+
+    <output>
+        <output-file value="../maps/Padova/Padova-25.poly.xml"/>
+    </output>
+
+    <pruning>
+        <prune.in-net value="true"/>
+        <prune.explicit value="fountain"/>
+    </pruning>
+
+    <processing>
+        <poi-layer-offset value="5"/>
+    </processing>
+
+</configuration>
+-->
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <location netOffset="-724093.06,-5030502.58" convBoundary="-1393.39,-689.19,5170.08,3342.99" origBoundary="11.845441,45.385455,11.929688,45.422127" projParameter="+proj=utm +zone=32 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"/>
+
+    <poly id="101521983" type="building" color="255,230,230" fill="1" layer="-1.00" shape="1470.220534,2228.072845 1490.858370,2294.019742 1495.233192,2306.167930 1505.635989,2301.846867 1518.031665,2295.917633 1502.547876,2274.794647 1489.102545,2255.813812 1474.885566,2227.761823 1470.220534,2228.072845"/>
+</additional>

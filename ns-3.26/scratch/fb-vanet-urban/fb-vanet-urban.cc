@@ -831,6 +831,7 @@ void FBVanetExperiment::SetupScenario () {
 	m_bldgFile = m_mapBasePath + ".poly.xml";
 	m_traceFile = m_mapBasePath + ".ns2mobility.xml";
 	m_nNodes = CalculateNumNodes();
+	cout << "numNodes = " << m_nNodes << endl;
 	if (m_startingNode == -1) {
 		m_startingNode = rand() % m_nNodes;
 	}

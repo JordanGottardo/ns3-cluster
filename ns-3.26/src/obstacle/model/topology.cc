@@ -105,9 +105,17 @@ Topology::LoadTableFromFile() {
 //		std::cout << line << std::endl;
 		int pos = line.find(";");
 		std::string key = line.substr(0, pos);
+		int keySize = key.size();
+		int halfKeySize = keySize / 2;
+		// A to B is the same B to A
+		std::string key2 = key.substr(halfKeySize + 1, keySize) + " " +  key.substr(0, halfKeySize);
+//		std::cout << "key1 = " << key << std::endl;
+//		std::cout << "key2 = " << key2 << std::endl;
+//		std::cout << "key size = " << key.size() << std::endl;
 		double loss = stod(line.substr(pos + 1, line.size()));
 //		std::cout << "Topology::LoadTableFromFile key = " << key << " loss " << loss << std::endl;
 		m_obstructedDistanceMapFromFile.insert(TStrDblPair(key, loss));
+		m_obstructedDistanceMapFromFile.insert(TStrDblPair(key2, loss));
 	}
 
 
@@ -489,6 +497,8 @@ Topology::GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double 
   std::string p2Pos = buff;
   sprintf(buff, "%s %s", p1Pos.c_str(), p2Pos.c_str());
   std::string key = buff;
+//  std::cout << "topo mapFromFile size= " << m_obstructedDistanceMapFromFile.size() << std::endl;
+
   // check if cached
   if (m_obstructedDistanceMap.count(key) > 0 or m_obstructedDistanceMapFromFile.count(key) > 0)
     {
@@ -496,6 +506,7 @@ Topology::GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double 
       TStrDblMap::iterator it;
       it = m_obstructedDistanceMap.find(key);
       if (it == m_obstructedDistanceMap.end()) {
+//    	  std::cout << "topo found in file " << std::endl;
           it = m_obstructedDistanceMapFromFile.find(key);
       }
       obstructedLoss = it->second;
@@ -518,6 +529,7 @@ Topology::GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double 
         return obstructedLoss;
         }
     }
+  std::cout << "not found in file key= " << key << std::endl;
 
   // optimization
   // only if dist between p1 and p2 < 2r

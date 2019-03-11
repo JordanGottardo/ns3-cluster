@@ -257,7 +257,8 @@ void FBApplication::StartApplication(void) {
 	if (!m_staticProtocol) {
 		// Start Estimation Phase
 		NS_LOG_INFO ("Start Estimation Phase.");
-		GenerateHelloTraffic(2); //todo rimettere a 5
+		GenerateHelloTraffic(1);
+//		GenerateHelloTraffic(5); //todo edit
 	}
 
 	// Schedule Broadcast Phase
@@ -274,16 +275,21 @@ void FBApplication::GenerateHelloTraffic(uint32_t count) {
 	NS_LOG_INFO(count);
 	NS_LOG_DEBUG("GenerateHelloTraffic " << count);
 	std::vector<int> he;
-	uint32_t hel = (int) m_nNodes / 100 * 100;		// 40% of total nodes todo rimettere a 50
+//	uint32_t hel = (int) m_nNodes / 100 * 50;		// 40% of total nodes
+	uint32_t hel = (int) m_nNodes;		// 40% of total nodes
 	uint32_t time_factor = 10;
-
+	cout << "hel= " << hel << endl;
 	if (count > 0)
 	{
 		for (uint32_t i = 0; i < hel; i++)
 		{
-			int pos = rand() % m_nNodes;
-			he.push_back (pos);
-			Ptr<FBNode> fbNode = m_nodes.at(pos);
+//			int pos = rand() % m_nNodes;
+//			he.push_back (pos);
+//			Ptr<FBNode> fbNode = m_nodes.at(pos);
+//			Simulator::ScheduleWithContext (fbNode->GetNode()->GetId(),
+//																			MicroSeconds(i * time_factor),
+//																			&FBApplication::GenerateHelloMessage, this, fbNode);
+			Ptr<FBNode> fbNode = m_nodes.at(i);
 			Simulator::ScheduleWithContext (fbNode->GetNode()->GetId(),
 																			MicroSeconds(i * time_factor),
 																			&FBApplication::GenerateHelloMessage, this, fbNode);
@@ -321,6 +327,9 @@ void FBApplication::GenerateHelloMessage (Ptr<FBNode> fbNode) {
 	fbHeader.SetMaxRange (fbNode->GetCMBR ());
 	fbHeader.SetStarterPosition (position);
 	fbHeader.SetPosition (position);
+
+	fbHeader.SetSenderId(fbNode->GetId()); // added
+
 
 	Ptr<Packet> packet = Create<Packet> (m_packetPayload);
 	packet->AddHeader(fbHeader);
@@ -373,11 +382,12 @@ void FBApplication::ReceivePacket(Ptr<Socket> socket) {
 
   while ((packet = socket->RecvFrom(senderAddress)))
   {
-		NS_LOG_DEBUG ("Packet received by node " << node->GetId() << ".");
+
 
 		FBHeader fbHeader;
 		packet->RemoveHeader(fbHeader);
 
+		NS_LOG_DEBUG ("Packet received by node " << node->GetId() << " from node " << fbHeader.GetSenderId() << ".");
 		// Get the type of the message (Hello or Alert)
 		uint32_t messageType = fbHeader.GetType();
 
