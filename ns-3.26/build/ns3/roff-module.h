@@ -9,6 +9,8 @@
 // Module headers:
 #include "NBTEntry.h"
 #include "NeighborTable.h"
+#include "PositionRankingKey.h"
+#include "PositionRankingMap.h"
 #include "ROFFApplication.h"
 #include "ROFFHeader.h"
 #include "ROFFNode.h"
