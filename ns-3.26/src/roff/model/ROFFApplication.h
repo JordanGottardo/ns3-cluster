@@ -22,6 +22,7 @@
 #include "ns3/constant-velocity-mobility-model.h"
 #include "ns3/mobility-module.h"
 #include "ns3/nstime.h"
+#include "PositionRankingMap.h"
 
 namespace ns3 {
 
@@ -136,22 +137,13 @@ private:
 	* \param distance distance between the sender of the message and the node (meters)
 	* \return none
 	*/
-	void HandleAlertMessage(Ptr<ROFFNode> node, ROFFNode header, uint32_t distance);
+	void HandleAlertMessage(Ptr<ROFFNode> node, ROFFHeader header, uint32_t distance);
 
 	/**
 	* \brief Calculate min diff between nodes
 	* \return mindiff
 	*/
 	double CalculateMinDiff();
-
-	/**
-	* \brief Wait a specific amount of time
-	* \param fbNode node that received the message
-	* \param fbHeader header received in the message
-	* \param waitingTime contention window value
-	* \return none
-	*/
-	void WaitAgain(Ptr<ROFFNode> node,  ROFFNode header, uint32_t waitingTime);
 
 	/**
 	* \brief Forward an Alert message
@@ -176,9 +168,16 @@ private:
 	* \param distance distance between nodes (meters)
 	* \return the value of the contention window
 	*/
-	uint32_t ComputeContentionWindow(uint32_t maxRange, uint32_t distance);
 
-private:
+	PositionRankingMap CreatePositionsRanking(boost::dynamic_bitset<> esdBitmap);
+
+	uint32_t ComputeWaitingTime(Ptr<ROFFNode> node, uint32_t distSenderToNode,
+			PositionRankingMap rankingMap, uint32_t priority);
+
+	uint32_t ComputeMinDiff(uint32_t distSenderToNode, uint32_t distSenderToAnotherNode);
+
+	uint32_t ComputeMinDiffArmir()); //todo
+
 //	Application data
 	uint32_t 						m_nNodes; // number of nodes
 	uint32_t						m_startingNode; // index of the node that will generate the Alert Message

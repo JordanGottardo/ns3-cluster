@@ -100,20 +100,13 @@ void ROFFApplication::GenerateHelloMessage(Ptr<ROFFNode> node) {
 void ROFFApplication::GenerateAlertMessage(Ptr<ROFFNode> node) {
 	NS_LOG_FUNCTION (this << node);
 	cout << "ROFFApplication::Generate ALert message " << endl;
-// TODO
-//	Generate alert message
-//	Generate ESD bitmap from neighbor table (NBT)
-//		ESI bitmap size is delta+1, where delta is the maximum distance between the
-//		the node and the PFCs in the NBT
-// Include ESD bitmap and node's current position in alert message
-//	Broadcast alert message
-//
+
 	uint32_t headerType = ALERT_MESSAGE;
 	uint32_t nodeId = node->GetId();
 	Vector position = node->GetPosition();
 	boost::dynamic_bitset<> esdBitmap = node->GetESDBitmap(m_distanceRange);
-	cout << "ROFFApplication::GenerateAlertMessage esdBitmap = " << esdBitmap << " size= " <<
-			esdBitmap.size() << endl;
+//	cout << "ROFFApplication::GenerateAlertMessage esdBitmap = " << esdBitmap << " size= " <<
+//			esdBitmap.size() << endl;
 	ROFFHeader header(headerType, nodeId, position, esdBitmap);
 
 	Ptr<Packet> packet = Create<Packet>(m_packetPayload);
@@ -145,7 +138,7 @@ void ROFFApplication::ReceivePacket(Ptr<Socket> socket) {
 		if (packetType == HELLO_MESSAGE) {
 			HandleHelloMessage(roffNode, header);
 		} else if (packetType == ALERT_MESSAGE) {
-//			HandleAlertMessage(node, header, distance)
+			HandleAlertMessage(roffNode, header, distance);
 		} else {
 			NS_LOG_ERROR("Packet type not recognized");
 		}
@@ -165,7 +158,24 @@ void ROFFApplication::HandleHelloMessage(Ptr<ROFFNode> node,
 }
 
 void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
-		ROFFNode header, uint32_t distance) {
+		ROFFHeader header, uint32_t distance) {
+	boost::dynamic_bitset<> esdBitmap =  header.GetESDBitmap();
+	Vector senderPosition = header.GetPosition();
+	Vector nodePosition = node->GetPosition();
+	uint32_t dist = rint(ns3::CalculateDistance(senderPosition, nodePosition));
+	uint32_t posToCheck = dist / m_distanceRange;
+	if (esdBitmap[posToCheck] == 0) {
+		return;
+	}
+	PositionRankingMap rankingOfPositions = CreatePositionsRanking(esdBitmap);
+	uint32_t priority = rankingOfPositions.GetPriority(dist);
+	uint32_t waitingTime = ComputeWaitingTime(node, dist, rankingOfPositions, priority);
+
+	// calcola distanza tra node e header.position
+	// controlla se in header.esdBitmap[position*distanceRange ecc) è uguale a 1
+	// se sì, node è papabile all'inoltro
+	// altrimenti, node deferra e non invia
+
 //	TODO
 //	initiate forward priority acquisition
 //	after that, calculate minDiff
@@ -178,9 +188,6 @@ double ROFFApplication::CalculateMinDiff() {
 //	calculate minDiff between nodes
 }
 
-void ROFFApplication::WaitAgain(Ptr<ROFFNode> fbNode, ROFFNode header,
-		uint32_t waitingTime) {
-}
 
 void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> fbNode,
 		ROFFNode oldHeader, uint32_t waitingTime) {
@@ -192,11 +199,44 @@ void ROFFApplication::StopNode(Ptr<ROFFNode> fbNode) {
 }
 
 
-uint32_t ROFFApplication::ComputeContentionWindow(uint32_t maxRange,
-		uint32_t distance) {
+
+PositionRankingMap ROFFApplication::CreatePositionsRanking(boost::dynamic_bitset<> esdBitmap) {
+	PositionRankingMap rankingMap(m_distanceRange);
+	uint32_t priority = 1;
+	for (uint32_t i = 0; i < esdBitmap.size(); i++) {
+		if (esdBitmap[i] == 1) {
+			uint32_t index = esdBitmap.size() - i - 1;
+			rankingMap.AddEntry(index, priority);
+			priority++;
+		}
+	}
+	return rankingMap;
 }
 
+uint32_t ROFFApplication::ComputeWaitingTime(Ptr<ROFFNode> node, uint32_t distSenderToNode,
+		PositionRankingMap rankingMap, uint32_t priority) {
+	uint32_t waitingTime = 0;
+	for (uint32_t pr = priority - 1; pr > 0; pr ++) {
+		uint32_t upperDistanceLimit = rankingMap.GetUpperDistanceLimit(pr);
+		waitingTime += ComputeMinDiff(distSenderToNode, upperDistanceLimit);
+	}
+	return waitingTime;
+}
+
+uint32_t ROFFApplication::ComputeMinDiff(uint32_t distSenderToNode, uint32_t distSenderToAnotherNode) {
+	uint32_t rxTx = 2;
+	uint32_t ccaTime = 8;
+	uint32_t c = 299792458; //speed of light
+	uint32_t maxDist = distSenderToNode + distSenderToAnotherNode;
+	uint32_t propagationDelay = (((double)maxDist) / ((double)c)) * 1000 * 1000; //in microseconds
+	return  propagationDelay + rxTx + ccaTime;
+}
+
+uint32_t ROFFApplication::ComputeMinDiffArmir() {
+	//todo
+}
 
 }
+
 
 

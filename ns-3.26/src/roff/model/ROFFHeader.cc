@@ -97,7 +97,7 @@ namespace ns3 {
 
 	void ROFFHeader::WriteESDBitmap(Buffer::Iterator* iter) const {
 		uint32_t size = m_esdBitmap.size();
-		cout << "ROFFHeader::WriteESDBitmap original " << m_esdBitmap << endl;
+//		cout << "ROFFHeader::WriteESDBitmap original " << m_esdBitmap << endl;
 		if (size > 0 && size % 8 != 0) {
 			uint32_t posToShift = 8 - (size % 8);
 			if (posToShift < 8) {
@@ -106,8 +106,8 @@ namespace ns3 {
 					esdBitmapToExtend.push_back(0);
 				}
 				esdBitmapToExtend.to_ulong();
-				cout << "ROFFHeader::WriteESDBitmapToExtend after size= " << esdBitmapToExtend.size() <<
-						" " << esdBitmapToExtend << endl;
+//				cout << "ROFFHeader::WriteESDBitmapToExtend after size= " << esdBitmapToExtend.size() <<
+//						" " << esdBitmapToExtend << endl;
 				// Writes bitset to buffer chunk by chunk (8 bytes chunk)
 //
 //				boost::dynamic_bitset<> chunk;
@@ -135,7 +135,7 @@ namespace ns3 {
 					boost::dynamic_bitset<> chunk(8);
 					for (int j = 0; j < 8; j++) {
 						chunk[j] = esdBitmapToExtend[i + j];
-						cout << "esdBitmapToExtend[i+j= " << esdBitmapToExtend[i + j] << endl;
+//						cout << "esdBitmapToExtend[i+j= " << esdBitmapToExtend[i + j] << endl;
 					}
 					unsigned long ulong = chunk.to_ulong();
 //					uint8_t * ptr = reinterpret_cast<uint8_t*>(&ulong);
@@ -144,7 +144,7 @@ namespace ns3 {
 //					cout << "bulong= " << bulong << endl;
 					uint8_t byte = static_cast<uint8_t>(ulong);
 					boost::dynamic_bitset<> b(8, byte);
-					cout << "serialize i= " << i << " b= " << b << endl;
+//					cout << "serialize i= " << i << " b= " << b << endl;
 					iter->WriteU8(byte);
 				}
 
@@ -161,7 +161,7 @@ namespace ns3 {
 
 	void ROFFHeader::Serialize(Buffer::Iterator start) const {
 		NS_LOG_FUNCTION(this);
-		cout << "ROFFHeader::Serialize " << endl;
+//		cout << "ROFFHeader::Serialize " << endl;
 		start.WriteU32(m_type);
 		start.WriteU32(m_senderId);
 //		cout << "Serialize m_type = " << m_type << " m_senderId" << m_senderId
@@ -199,7 +199,9 @@ namespace ns3 {
 	}
 
 	void ROFFHeader::ConcatBitsets(boost::dynamic_bitset<>& a, const boost::dynamic_bitset<>& b) const {
-//		for (int )
+		for (int i = 0; i < b.size(); i++) {
+			a.push_back(b[i]);
+		}
 	}
 
 	void ROFFHeader::ReadESDBitmap(Buffer::Iterator* iter, uint32_t bitmapSize) {
@@ -209,9 +211,11 @@ namespace ns3 {
 			uint8_t value = iter->ReadU8();
 			// todo costruire bitset con value e stampare
 			boost::dynamic_bitset<> b(8, value);
+//			cout << "ROFFHeader::readEsdBitmap i= " << i << " esdBitmapBefore " << m_esdBitmap
+//								<< " b= "<< b << endl;
 			ConcatBitsets(m_esdBitmap, b);
 
-			cout << "readEsdBitmap i= " << i << " b= " << b << endl;
+//			cout << "ROFFHeader::readEsdBitmap after= << " << m_esdBitmap << endl;
 //			cout << "i = " << value << endl;
 		}
 	}

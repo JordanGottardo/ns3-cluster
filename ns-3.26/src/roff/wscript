@@ -16,7 +16,9 @@ def build(bld):
         'model/ROFFHeader.cc',
         'model/ROFFApplication.cc',
         'model/NeighborTable.cc',
-        'model/NBTEntry.cc'
+        'model/NBTEntry.cc',
+        'model/PositionRankingMap.cc',
+        'model/PositionRankingKey.cc'
         ]
 
     module_test = bld.create_ns3_module_test_library('roff')
@@ -32,7 +34,9 @@ def build(bld):
         'model/ROFFHeader.h',
         'model/ROFFApplication.h',
         'model/NeighborTable.h',
-        'model/NBTEntry.h'
+        'model/NBTEntry.h',
+        'model/PositionRankingMap.h',
+        'model/PositionRankingKey.h'
         ]
 
     if bld.env.ENABLE_EXAMPLES:
