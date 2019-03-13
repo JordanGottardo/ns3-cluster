@@ -30,6 +30,8 @@ public:
 
 	uint32_t GetUpperDistanceLimit(uint32_t priority);
 
+	PositionRankingKey GetRange(uint32_t priority);
+
 private:
 
 	uint32_t 									m_distanceRange;

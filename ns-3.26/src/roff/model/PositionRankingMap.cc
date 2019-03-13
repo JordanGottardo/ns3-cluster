@@ -44,6 +44,16 @@ uint32_t PositionRankingMap::GetUpperDistanceLimit(uint32_t priority) {
 	return INT_MAX;
 }
 
+PositionRankingKey PositionRankingMap::GetRange(uint32_t priority) {
+	for (auto pair: m_positionRanking) {
+		if (pair.second == priority) {
+			return pair.first;
+		}
+	}
+	NS_LOG_ERROR("Range not found for priority= " << priority);
+	return PositionRankingKey();
+}
+
 
 
 

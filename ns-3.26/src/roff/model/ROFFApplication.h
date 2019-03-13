@@ -176,7 +176,10 @@ private:
 
 	uint32_t ComputeMinDiff(uint32_t distSenderToNode, uint32_t distSenderToAnotherNode);
 
-	uint32_t ComputeMinDiffArmir()); //todo
+	uint32_t ComputeWaitingTimeArmir(Ptr<ROFFNode> node, boost::dynamic_bitset<> esdBitmap,
+				PositionRankingMap rankingMap, uint32_t priority);
+
+	uint32_t ComputeMinDiffArmir();
 
 //	Application data
 	uint32_t 						m_nNodes; // number of nodes

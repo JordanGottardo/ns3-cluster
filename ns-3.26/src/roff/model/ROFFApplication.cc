@@ -216,7 +216,7 @@ PositionRankingMap ROFFApplication::CreatePositionsRanking(boost::dynamic_bitset
 uint32_t ROFFApplication::ComputeWaitingTime(Ptr<ROFFNode> node, uint32_t distSenderToNode,
 		PositionRankingMap rankingMap, uint32_t priority) {
 	uint32_t waitingTime = 0;
-	for (uint32_t pr = priority - 1; pr > 0; pr ++) {
+	for (uint32_t pr = priority - 1; pr > 0; pr--) {
 		uint32_t upperDistanceLimit = rankingMap.GetUpperDistanceLimit(pr);
 		waitingTime += ComputeMinDiff(distSenderToNode, upperDistanceLimit);
 	}
@@ -230,6 +230,23 @@ uint32_t ROFFApplication::ComputeMinDiff(uint32_t distSenderToNode, uint32_t dis
 	uint32_t maxDist = distSenderToNode + distSenderToAnotherNode;
 	uint32_t propagationDelay = (((double)maxDist) / ((double)c)) * 1000 * 1000; //in microseconds
 	return  propagationDelay + rxTx + ccaTime;
+}
+
+uint32_t ComputeWaitingTimeArmir(Ptr<ROFFNode> node, boost::dynamic_bitset<> esdBitmap,
+				PositionRankingMap rankingMap, uint32_t priority) {
+	uint32_t waitingTime = 0;
+	Vector senderPos = node->GetPosition();
+	for (uint32_t pr = priority - 1; pr > 0; pr--) {
+//		todo
+//		controllare che il sender sia nella esd del nodo
+//		una volta fatto ciò, ottenere le sue coord e ricostruire il suo vicinato
+//		matchare vicinato ricostruito con esdbitmap per identificare i nodi e ottenere le loro pos
+		PositionRankingKey range = rankingMap.GetRange(pr); //todo vedere se i calcoli sono fatti giusti
+//		con la giusta distanza
+		uint32_t dist = 0;
+		Vector coords = node->GetCoordsOfVehicleInRange(range, dist);
+		waitingTime += ComputeMinDiffArmir(senderPos, coords, dist);
+	}
 }
 
 uint32_t ROFFApplication::ComputeMinDiffArmir() {

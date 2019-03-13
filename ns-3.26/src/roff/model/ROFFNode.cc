@@ -70,6 +70,11 @@ namespace ns3 {
 		return m_neighborTable.GetESDBitmap(thisNodePos, distanceRange);
 	}
 
+	Vector ROFFNode::GetCoordsOfVehicleInRange(PositionRankingKey range, uint32_t& dist) const {
+		Vector position = GetPosition();
+		return m_neighborTable.GetCoordsOfVehicleInRange(range, position, dist);
+	}
+
 }
 
 

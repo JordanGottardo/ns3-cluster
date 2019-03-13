@@ -94,5 +94,21 @@ uint32_t NeighborTable::ExistsNodeAtDistance(uint32_t dist, uint32_t distanceRan
 	return 0;
 }
 
+Vector NeighborTable::GetCoordsOfVehicleInRange(PositionRankingKey range, Vector nodePosition, uint32_t& dist) const {
+	for (auto entry: m_table) {
+		Vector otherNodePosition = entry.second.GetPosition();
+		uint32_t distance = ns3::CalculateDistance(nodePosition, otherNodePosition);
+		for (uint32_t d = range.GetLowerDistanceLimit(); dist <= range.GetUpperDistanceLimit(); dist++) {
+			if (distance == d) {
+				dist = d;
+				return otherNodePosition;
+			}
+		}
+	}
+	NS_LOG_ERROR("Coords not found for vehicle in range= " << nodePosition << " and node in pos= " << nodePosition);
+	return Vector();
+
+}
+
 }
 
