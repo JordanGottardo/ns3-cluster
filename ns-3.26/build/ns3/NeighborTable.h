@@ -16,6 +16,7 @@
 #include "ns3/log.h"
 #include "ns3/simulator.h"
 #include "float.h"
+#include "PositionRankingKey.h"
 
 #include <boost/dynamic_bitset.hpp>
 
@@ -37,6 +38,7 @@ public:
 
 	boost::dynamic_bitset<> GetESDBitmap(Vector pos, uint32_t distanceRange) const;
 
+Vector GetCoordsOfVehicleInRange(PositionRankingKey range, Vector nodePosition) const;
 
 
 private:

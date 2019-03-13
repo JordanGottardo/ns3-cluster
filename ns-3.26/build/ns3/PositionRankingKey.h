@@ -9,17 +9,22 @@
 #define POSITIONRANKINGKEY_H
 
 #include "ns3/log.h"
+#include "ns3/object.h"
 #include <iostream>
 #include <climits>
 using namespace std;
 
 namespace ns3 {
 
-class PositionRankingKey {
+class PositionRankingKey: public Object {
 
 public:
 
+	PositionRankingKey();
+
 	PositionRankingKey(uint32_t low, uint32_t up);
+
+	uint32_t GetLowerDistanceLimit() const;
 
 	uint32_t GetUpperDistanceLimit() const;
 
@@ -27,12 +32,16 @@ public:
 
 	bool IsInRange(const uint32_t distance) const;
 
+	friend std::ostream &operator << (std::ostream &os, const PositionRankingKey& key);
+
 private:
 
 	uint32_t m_lowerDistanceLimit;
 	uint32_t m_upperDistanceLimit;
 
 };
+
+
 
 }
 

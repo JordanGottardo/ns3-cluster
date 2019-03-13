@@ -19,6 +19,7 @@
 #include "ns3/constant-velocity-mobility-model.h"
 
 #include "NeighborTable.h"
+#include "PositionRankingKey.h"
 #include <iostream>
 #include <boost/dynamic_bitset.hpp>
 
@@ -61,6 +62,8 @@ public:
 	uint32_t GetNBTSize() const;
 
 	boost::dynamic_bitset<> GetESDBitmap(uint32_t distanceRange) const;
+
+	Vector GetCoordsOfVehicleInRange(PositionRankingKey range) const;
 
 private:
 
