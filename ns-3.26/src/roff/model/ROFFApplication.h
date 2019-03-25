@@ -23,6 +23,7 @@
 #include "ns3/mobility-module.h"
 #include "ns3/nstime.h"
 #include "PositionRankingMap.h"
+#include <boost/dynamic_bitset.hpp>
 
 namespace ns3 {
 
@@ -140,19 +141,13 @@ private:
 	void HandleAlertMessage(Ptr<ROFFNode> node, ROFFHeader header, uint32_t distance);
 
 	/**
-	* \brief Calculate min diff between nodes
-	* \return mindiff
-	*/
-	double CalculateMinDiff();
-
-	/**
 	* \brief Forward an Alert message
 	* \param fbNode node that received the message
 	* \param fbHeader header received in the message
 	* \param waitingTime contention window value
 	* \return none
 	*/
-	void ForwardAlertMessage(Ptr<ROFFNode> node, ROFFNode oldHeader, uint32_t waitingTime);
+	void ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHeader, uint32_t waitingTime);
 
 	/**
 	* \brief Stop a node
@@ -169,17 +164,18 @@ private:
 	* \return the value of the contention window
 	*/
 
-	PositionRankingMap CreatePositionsRanking(boost::dynamic_bitset<> esdBitmap);
-
 	uint32_t ComputeWaitingTime(Ptr<ROFFNode> node, uint32_t distSenderToNode,
 			PositionRankingMap rankingMap, uint32_t priority);
 
 	uint32_t ComputeMinDiff(uint32_t distSenderToNode, uint32_t distSenderToAnotherNode);
 
-	uint32_t ComputeWaitingTimeArmir(Ptr<ROFFNode> node, boost::dynamic_bitset<> esdBitmap,
+	uint32_t ComputeWaitingTimeArmir(Ptr<ROFFNode> node, Vector senderCoords,
 				PositionRankingMap rankingMap, uint32_t priority);
 
-	uint32_t ComputeMinDiffArmir();
+	uint32_t ComputeMinDiffArmir(Vector fwdCoords, Vector lowerPriorityNodeCoords,
+			Vector higherPriorityNodeCoords);
+
+	double ComputePropagationDelay(Vector coord1, Vector coord2);
 
 //	Application data
 	uint32_t 						m_nNodes; // number of nodes

@@ -12,6 +12,7 @@
 #include "ns3/object.h"
 #include "PositionRankingKey.h"
 #include <iostream>
+#include <boost/dynamic_bitset.hpp>
 
 using namespace std;
 
@@ -23,6 +24,8 @@ public:
 
 	PositionRankingMap(uint32_t distRange);
 
+	PositionRankingMap(uint32_t distRange, boost::dynamic_bitset<> esdBitmap);
+
 	// index is calculated as esdBitmap.size - i - 1
 	void AddEntry(uint32_t index, uint32_t priority);
 
@@ -31,6 +34,8 @@ public:
 	uint32_t GetUpperDistanceLimit(uint32_t priority);
 
 	PositionRankingKey GetRange(uint32_t priority);
+
+	friend std::ostream &operator << (std::ostream &os, const PositionRankingMap& map);
 
 private:
 

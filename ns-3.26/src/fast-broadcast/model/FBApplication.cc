@@ -258,7 +258,7 @@ void FBApplication::StartApplication(void) {
 		// Start Estimation Phase
 		NS_LOG_INFO ("Start Estimation Phase.");
 //		GenerateHelloTraffic(1);
-		GenerateHelloTraffic(5);
+		GenerateHelloTraffic(2);
 	}
 
 	// Schedule Broadcast Phase
@@ -310,7 +310,7 @@ void FBApplication::StartBroadcastPhase(void) {
 	Ptr<FBNode> fbNode = this->GetFBNode(m_startingNode);
 
 	// Generate the first alert message
-	GenerateAlertMessage(fbNode);
+//	GenerateAlertMessage(fbNode);
 }
 
 void FBApplication::GenerateHelloMessage (Ptr<FBNode> fbNode) {

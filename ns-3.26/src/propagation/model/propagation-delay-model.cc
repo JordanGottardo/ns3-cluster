@@ -111,6 +111,8 @@ ConstantSpeedPropagationDelayModel::GetDelay (Ptr<MobilityModel> a, Ptr<Mobility
 {
   double distance = a->GetDistanceFrom (b);
   double seconds = distance / m_speed;
+//  std::cout << "ConstantSpeedPropagationDelayModel::GetDelay distance= " << distance <<
+//		  " m_speed" << m_speed << " seconds= " << seconds << std::endl;
   return Seconds (seconds);
 }
 void

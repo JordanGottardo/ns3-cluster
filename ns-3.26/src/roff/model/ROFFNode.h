@@ -43,16 +43,26 @@ public:
 
 	Ptr<Socket> GetSocket() const;
 
+	bool GetReceived() const;
+
+	bool GetSent() const;
+
 	uint32_t GetId() const;
 
 	const Vector GetPosition() const;
 
-	//	void SetPosition(const Vector& position);
+	int32_t GetPhase() const;
 
 //	Setters
 	void SetNode(Ptr<Node> node);
 
 	void SetSocket(Ptr<Socket> socket);
+
+	void SetReceived(bool received);
+
+	void SetSent(bool sent);
+
+	void SetPhase(int32_t phase);
 
 //	Methods
 	void Send(Ptr<Packet> packet);
@@ -63,13 +73,18 @@ public:
 
 	boost::dynamic_bitset<> GetESDBitmap(uint32_t distanceRange) const;
 
-	Vector GetCoordsOfVehicleInRange(PositionRankingKey range, uint32_t& dist) const;
+	Vector GetCoordsOfVehicleInRange(PositionRankingKey range, Vector senderCoords, int32_t& dist) const;
+
+	bool IsNodeWinnerInContention(uint32_t dist, Vector pos) const;
 
 private:
 
 	Ptr<Node>			m_node; // ns-3 node
 	Ptr<Socket> 		m_socket; // ns-3 socket
 	NeighborTable		m_neighborTable;
+	bool				m_received; // whether the node has received an alert message
+	bool				m_sent; // whether the node has sent an alert message
+	int32_t				m_phase; // number of hops before the node received the alert message
 
 };
 

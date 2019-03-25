@@ -35,26 +35,29 @@ uint32_t NeighborTable::GetNBTSize() const {
 
 boost::dynamic_bitset<> NeighborTable::GetESDBitmap(Vector pos, uint32_t distanceRange) const {
 	NS_LOG_FUNCTION(this << pos << distanceRange);
+//	NS_LOG_DEBUG(this << pos << distanceRange);
 	boost::dynamic_bitset<> esdBitmap;
 	if (m_table.empty()) {
 		return esdBitmap;
 	}
 //	cout << "NeighborTable::GetESDBitmap table size= " << m_table.size() << endl;
 	uint32_t maxDistance = GetMaxDistance(pos) / distanceRange;
-	esdBitmap = boost::dynamic_bitset<>(maxDistance + 1);
+	uint32_t esdBitmapSize = maxDistance + 1;
+	esdBitmap = boost::dynamic_bitset<>(esdBitmapSize);
 //	cout << "NeighborTable::GetESDBitmap maxDistance= " << maxDistance << endl;
-//	cout << "NeighborTable::GetESDBitmap bitmapSize= " << esdBitmap.size() << endl;
-	for (uint32_t i = 0; i <= maxDistance; i++) {
+//	cout << "NeighborTable::GetESDBitmap bitmapSize= " << esdBitmapSize << endl;
+	for (uint32_t i = 0; i < esdBitmapSize; i++) {
 		// Because boost::dynamic_bitset operator[] goes from less significant to more significant bits
-		uint32_t index = maxDistance - i;
+		uint32_t index = esdBitmapSize - i - 1;
 //		cout << "NeighborTable::GetESDBitmap index= " << index << endl;
 //		cout << "NeighborTable::GetESDBitmap before exists" << endl;
 		if (ExistsNodeAtDistance(i, distanceRange, pos)) {
-//			cout << "NeighborTable::GetESDBitmap before assign 1" << endl;
+//			cout << "NeighborTable::GetESDBitmap before assign 1, distance= " << i << "index= " << index << endl;
+//			cout << esdBitmap << endl;
 			esdBitmap[index] = 1;
+//			cout << esdBitmap << endl;
 		} else {
 //			cout << "NeighborTable::GetESDBitmap before assign 0" << endl;
-
 			esdBitmap[index] = 0;
 		}
 	}
@@ -83,7 +86,7 @@ uint32_t NeighborTable::ExistsNodeAtDistance(uint32_t dist, uint32_t distanceRan
 //	cout << m_table.size() << endl;
 	for (auto entry: m_table) {
 //		cout << "a" << endl;
-		NS_LOG_FUNCTION(this << pos << distanceRange << pos);
+//		NS_LOG_FUNCTION(this << pos << distanceRange << pos);
 //		cout << entry.first << endl;
 		uint32_t distance = rint(ns3::CalculateDistance(pos, entry.second.GetPosition()));
 //		cout << distance << endl;
@@ -94,21 +97,46 @@ uint32_t NeighborTable::ExistsNodeAtDistance(uint32_t dist, uint32_t distanceRan
 	return 0;
 }
 
-Vector NeighborTable::GetCoordsOfVehicleInRange(PositionRankingKey range, Vector nodePosition, uint32_t& dist) const {
+Vector NeighborTable::GetCoordsOfVehicleInRange(PositionRankingKey range, Vector nodePosition, int32_t& dist) const {
+//	cout << "NeighborTable::GetCoordsOfVehicleInRange range= " << range <<
+//					" nodePosition= " << nodePosition << endl;
+//	check if the
 	for (auto entry: m_table) {
 		Vector otherNodePosition = entry.second.GetPosition();
-		uint32_t distance = ns3::CalculateDistance(nodePosition, otherNodePosition);
-		for (uint32_t d = range.GetLowerDistanceLimit(); dist <= range.GetUpperDistanceLimit(); dist++) {
+//		cout << "NeighborTable::GetCoordsOfVehicleInRange otherNodePosition= " << otherNodePosition << endl;
+		uint32_t distance = rint(ns3::CalculateDistance(nodePosition, otherNodePosition));
+//		cout << distance << endl;
+		for (uint32_t d = range.GetLowerDistanceLimit(); d <= range.GetUpperDistanceLimit(); d++) {
+//			cout << distance << " " << d << endl;
 			if (distance == d) {
 				dist = d;
 				return otherNodePosition;
 			}
 		}
 	}
-	NS_LOG_ERROR("Coords not found for vehicle in range= " << nodePosition << " and node in pos= " << nodePosition);
-	return Vector();
 
+
+	NS_LOG_INFO("NeighborTable::GetCoordsOfVehicleInRange "
+			"Coords not found for vehicle in range= " << range << " and node in pos= " << nodePosition);
+	dist = -1;
+	return Vector();
 }
+
+	bool NeighborTable::IsNodeWinnerInContention(uint32_t id, uint32_t dist, Vector pos) const {
+		for (auto entry: m_table) {
+	//		cout << "a" << endl;
+	//		NS_LOG_FUNCTION(this << pos << distanceRange << pos);
+	//		cout << entry.first << endl;
+			uint32_t otherNodeId = entry.first;
+			uint32_t distance = rint(ns3::CalculateDistance(pos, entry.second.GetPosition()));
+	//		cout << distance << endl;
+			if (distance == dist && otherNodeId > id) {
+				return false;
+			}
+		}
+		return true;
+	}
+
 
 }
 

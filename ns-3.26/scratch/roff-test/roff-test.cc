@@ -644,7 +644,8 @@ ROFFVanetExperiment::SetupAdhocDevices() {
 //	wifiPhy.
 	YansWifiChannelHelper wifiChannel;
 	wifiChannel.SetPropagationDelay("ns3::ConstantSpeedPropagationDelayModel");
-	wifiChannel.AddPropagationLoss("ns3::TwoRayGroundPropagationLossModel", "Frequency", DoubleValue(freq), "HeightAboveZ", DoubleValue(1.5));
+//	wifiChannel.AddPropagationLoss("ns3::TwoRayGroundPropagationLossModel", "Frequency", DoubleValue(freq), "HeightAboveZ", DoubleValue(1.5));
+		wifiChannel.AddPropagationLoss("ns3::RangePropagationLossModel", "MaxRange", DoubleValue(m_actualRange));
 	if (m_loadBuildings != 0) {
 		wifiChannel.AddPropagationLoss ("ns3::ObstacleShadowingPropagationLossModel", "Radius", DoubleValue(750));
 	}

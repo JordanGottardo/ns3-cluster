@@ -529,7 +529,7 @@ Topology::GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double 
         return obstructedLoss;
         }
     }
-  std::cout << "not found in file key= " << key << std::endl;
+//  std::cout << "not found in file key= " << key << std::endl;
 
   // optimization
   // only if dist between p1 and p2 < 2r

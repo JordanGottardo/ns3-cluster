@@ -38,7 +38,7 @@ bool PositionRankingKey::IsInRange(const uint32_t distance) const {
 }
 
 std::ostream& operator << (std::ostream &os, const PositionRankingKey& key) {
-	os << "PositionRankingKey( " << key.m_lowerDistanceLimit << "," << key.m_lowerDistanceLimit << ")" << std::endl;
+	os << "PositionRankingKey( " << key.m_lowerDistanceLimit << "," << key.m_upperDistanceLimit << ")" << std::endl;
 	return os;
 }
 

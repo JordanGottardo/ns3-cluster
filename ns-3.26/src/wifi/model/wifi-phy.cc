@@ -423,7 +423,7 @@ void
 WifiPhy::SetEdThreshold (double threshold)
 {
   NS_LOG_FUNCTION (this << threshold);
-//  std::cout << "WifyPhy SetEDThreshold " << threshold << std::endl;
+//  std::cout << "WifiPhy::SetEdThreshold " << threshold << std::endl;
   m_edThresholdW = DbmToW (threshold);
 }
 
@@ -443,6 +443,7 @@ void
 WifiPhy::SetCcaMode1Threshold (double threshold)
 {
   NS_LOG_FUNCTION (this << threshold);
+//  std::cout << "WifiPhy::SetCcaMode1Threshold " << threshold << std::endl;
   m_ccaMode1ThresholdW = DbmToW (threshold);
 }
 

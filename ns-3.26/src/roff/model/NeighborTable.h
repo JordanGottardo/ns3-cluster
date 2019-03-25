@@ -38,8 +38,9 @@ public:
 
 	boost::dynamic_bitset<> GetESDBitmap(Vector pos, uint32_t distanceRange) const;
 
-Vector GetCoordsOfVehicleInRange(PositionRankingKey range, Vector nodePosition, uint32_t& dist) const;
+	Vector GetCoordsOfVehicleInRange(PositionRankingKey range, Vector nodePosition, int32_t& dist) const;
 
+	bool IsNodeWinnerInContention(uint32_t id, uint32_t dist, Vector pos) const;
 
 private:
 

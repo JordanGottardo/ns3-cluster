@@ -32,7 +32,8 @@ public:
 //	Constructor
 	ROFFHeader();
 
-	ROFFHeader(uint32_t type, uint32_t sender, Vector position, boost::dynamic_bitset<> esdBitmap);
+	ROFFHeader(uint32_t type, uint32_t sender, Vector position,
+			   boost::dynamic_bitset<> esdBitmap, uint32_t phase = 0);
 
 //	Getters
 	const Vector& GetPosition() const;
@@ -43,6 +44,8 @@ public:
 
 	boost::dynamic_bitset<> GetESDBitmap() const;
 
+	uint32_t GetPhase() const;
+
 
 //	Setters
 	void SetType(uint32_t type);
@@ -52,6 +55,8 @@ public:
 	void SetPosition(const Vector& position);
 
 	void SetESDBitmap(const boost::dynamic_bitset<>& esdBitmap);
+
+	void SetPhase(uint32_t phase);
 
 
 	virtual TypeId GetInstanceTypeId() const;
@@ -76,7 +81,7 @@ private:
 
 	double GetESDBitmapRoundedSizeInBytes(uint32_t bitmapSize) const;
 
-	void ConcatBitsets(boost::dynamic_bitset<>& a, const boost::dynamic_bitset<>& b) const;
+	void ConcatBitsets(boost::dynamic_bitset<>& a, const boost::dynamic_bitset<>& b, uint32_t count=8) const;
 
 	//	============== Generic data ================
 	uint32_t							m_type;
@@ -88,7 +93,9 @@ private:
 
 	//	============== Alert message data ================
 // TODO check size of esdBitmap
+	uint32_t							m_phase;
 	boost::dynamic_bitset<>				m_esdBitmap;
+
 
 
 

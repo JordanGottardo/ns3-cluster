@@ -115,17 +115,17 @@ ObstacleShadowingPropagationLossModel::DoCalcRxPower (double txPowerDbm,
 						Ptr<MobilityModel> a,
 						Ptr<MobilityModel> b) const
 {
-//	std::cout << "GetLoss tra pos " << a->GetPosition() << " e pos " << b->GetPosition() <<
-//			" con txPower= " << txPowerDbm << std::endl;
+	std::cout << "GetLoss tra pos " << a->GetPosition() << " e pos " << b->GetPosition() <<
+			" con txPower= " << txPowerDbm << std::endl;
   double retVal = 0.0;
-  if (txPowerDbm < -96.0) {
+//  if (txPowerDbm < -96.0) {
 //	  std::cout << "droppo" << std::endl;
-	  return txPowerDbm;
-  }
+//	  return txPowerDbm;
+//  }
   double loss = GetLoss (a, b);
   retVal = txPowerDbm - loss;
-//  std::cout << "GetLoss tra pos " << a->GetPosition() << " e pos " << b->GetPosition()
-//		  << " valore after loss " << retVal << std::endl;
+  std::cout << "GetLoss tra pos " << a->GetPosition() << " e pos " << b->GetPosition()
+		  << " valore after loss " << retVal << std::endl;
   return (retVal);
 }
 
