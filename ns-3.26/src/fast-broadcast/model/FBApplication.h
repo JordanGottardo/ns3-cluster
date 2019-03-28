@@ -158,7 +158,7 @@ private:
 	 * \param distance distance between the sender of the message and the node (meters)
 	 * \return none
 	 */
-	void HandleAlertMessage (Ptr<FBNode> fbNode, FBHeader fbHeader, uint32_t distance);
+	void HandleAlertMessage (Ptr<FBNode> fbNode, FBHeader fbHeader);
 
 	/**
 	 * \brief Wait a specific amount of time

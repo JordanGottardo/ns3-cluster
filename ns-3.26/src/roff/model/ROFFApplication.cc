@@ -65,14 +65,14 @@ void ROFFApplication::GenerateHelloTraffic() {
 	NS_LOG_FUNCTION(this);
 	Ptr<ROFFNode> roffNode = m_nodes.at(0);
 //
-//	for (int i = 0; i < 100; i++) {
-//		for (auto entry: m_nodes) {
-//			Ptr<ROFFNode> roffNode = entry.second;
-//			// Generate random waiting time between [0, beaconInterval*2]. Average is beaconInterval
-//			uint32_t waitingTime = m_randomVariable->GetInteger(0, m_beaconInterval * 2);
-//			Simulator::Schedule(MilliSeconds(waitingTime), &ROFFApplication::GenerateHelloMessage, this, roffNode);
-//		}
-//	}
+	for (int i = 0; i < 100; i++) {
+		for (auto entry: m_nodes) {
+			Ptr<ROFFNode> roffNode = entry.second;
+			// Generate random waiting time between [0, beaconInterval*2]. Average is beaconInterval
+			uint32_t waitingTime = m_randomVariable->GetInteger(0, m_beaconInterval * 2);
+			Simulator::Schedule(MilliSeconds(waitingTime), &ROFFApplication::GenerateHelloMessage, this, roffNode);
+		}
+	}
 }
 
 void ROFFApplication::StartBroadcastPhase(void) {
@@ -135,8 +135,8 @@ void ROFFApplication::ReceivePacket(Ptr<Socket> socket) {
 		packet->RemoveHeader(header);
 		Vector senderPosition = header.GetPosition();
 		double distance =  ns3::CalculateDistance(senderPosition, currentPosition);
-		cout << "received packet by node " << node->GetId() <<
-				" from node in pos " << senderPosition << " distance= " << distance << endl;
+//		cout << "received packet by node " << node->GetId() <<
+//				" from node in pos " << senderPosition << " distance= " << distance << endl;
 
 		uint32_t packetType = header.GetType();
 		if (packetType == HELLO_MESSAGE) {

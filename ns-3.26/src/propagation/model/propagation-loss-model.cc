@@ -404,11 +404,11 @@ TwoRayGroundPropagationLossModel::DoCalcRxPower (double txPowerDbm,
    */
 
   double distance = a->GetDistanceFrom (b);
-  std::cout << "TwoRayGroundPropagationLossModel::DoCalcRxPower a= " << a->GetPosition() << " b= "
-  			<< b->GetPosition() << " txPowerDbm= " << txPowerDbm << " distance= " << distance << std::endl;
+//  std::cout << "TwoRayGroundPropagationLossModel::DoCalcRxPower a= " << a->GetPosition() << " b= "
+//  			<< b->GetPosition() << " txPowerDbm= " << txPowerDbm << " distance= " << distance << std::endl;
   if (distance <= m_minDistance)
     {
-	  std::cout << "TwoRayGroundPropagationLossModel::DoCalcRxPower cb distance<=minDistance" << std::endl;
+//	  std::cout << "TwoRayGroundPropagationLossModel::DoCalcRxPower cb distance<=minDistance" << std::endl;
       return txPowerDbm;
     }
 
@@ -434,8 +434,8 @@ TwoRayGroundPropagationLossModel::DoCalcRxPower (double txPowerDbm,
       double pr = 10 * std::log10 (numerator / denominator);
       NS_LOG_DEBUG ("Receiver within crossover (" << dCross << "m) for Two_ray path; using Friis");
       NS_LOG_DEBUG ("distance=" << distance << "m, attenuation coefficient=" << pr << "dB");
-      std::cout << "friis, distance= " << distance << "dCross= " << dCross <<
-         		  "starting power= " << txPowerDbm << " final power= " << (txPowerDbm + pr) << std::endl;
+//      std::cout << "friis, distance= " << distance << "dCross= " << dCross <<
+//         		  "starting power= " << txPowerDbm << " final power= " << (txPowerDbm + pr) << std::endl;
       return txPowerDbm + pr;
     }
   else   // Use Two-Ray Pathloss
@@ -446,8 +446,8 @@ TwoRayGroundPropagationLossModel::DoCalcRxPower (double txPowerDbm,
       double rayDenominator = tmp * tmp * m_systemLoss;
       double rayPr = 10 * std::log10 (rayNumerator / rayDenominator);
       NS_LOG_DEBUG ("distance=" << distance << "m, attenuation coefficient=" << rayPr << "dB");
-      std::cout << "TRG, distance= " << distance << "dCross= " << dCross <<
-               		  "starting power= " << txPowerDbm << " final power= " << (txPowerDbm + rayPr) << std::endl;
+//      std::cout << "TRG, distance= " << distance << "dCross= " << dCross <<
+//               		  "starting power= " << txPowerDbm << " final power= " << (txPowerDbm + rayPr) << std::endl;
       return txPowerDbm + rayPr;
 
     }
