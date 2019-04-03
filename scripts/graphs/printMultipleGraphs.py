@@ -448,7 +448,9 @@ def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, fig
 						0,
 						1500)
 
-
+def printFbVsRoff()
+	protocols = ["fast-broadcast", "roff"]
+	compoundData = initCompoundData(protocols)
 
 if __name__ == "__main__":
 	main()

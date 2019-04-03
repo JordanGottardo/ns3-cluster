@@ -4,6 +4,7 @@ import printMultipleGraphs
 import sys
 
 def main():
+	'''
 	#contentionWindows = ["cw-32-1024"]
 	contentionWindows = ["cw-16-128", "cw-32-1024"]
 	vehicleDistances = [15, 25, 35, 45]
@@ -37,6 +38,7 @@ def main():
 	basePath2 = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano-con-coord"
 	printMultipleGraphs.printRomanelliComparison(contentionWindows[1], 25, allProtocols, allProtocols, allProtocols,
 												"rom", "", "coord/romanelliComparison", basePath2, False)
+	'''
 
 if __name__ == "__main__":
 	main()
