@@ -339,7 +339,7 @@ void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHead
 				<< node->GetId() << " defers because of getSent");
 		return;
 	}
-	cout << "id= " << node->GetId() << " nodePhase= " << node->GetPhase() << " headerPhase= "
+//	cout << "id= " << node->GetId() << " nodePhase= " << node->GetPhase() << " headerPhase= "
 			<< phase << endl;
 	uint32_t headerType = ALERT_MESSAGE;
 	uint32_t forwarderId = node->GetId();

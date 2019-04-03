@@ -639,21 +639,23 @@ ROFFVanetExperiment::SetupAdhocDevices() {
 	NS_LOG_INFO("Configure channels.");
 
 	double freq = 2.4e9;	// 802.11b 2.4 GHz
-
+	cout << "1 " << endl;
 	WifiHelper wifi;
 	wifi.SetStandard(WIFI_PHY_STANDARD_80211b);
 
 	YansWifiPhyHelper wifiPhy =  YansWifiPhyHelper::Default();
-//	wifiPhy.
 	YansWifiChannelHelper wifiChannel;
+	wifiChannel.SetPropagationDelay ("ns3::ConstantSpeedPropagationDelayModel");
+//	wifiChannel.AddPropagationLoss("ns3::RangePropagationLossModel", "MaxRange", DoubleValue(m_actualRange));
 	if (m_propagationLoss == 0) {
+		cout << "11 " << endl;
 		wifiChannel.AddPropagationLoss("ns3::RangePropagationLossModel", "MaxRange", DoubleValue(m_actualRange));
 	} else if (m_propagationLoss == 1) {
+		cout << "2 " << endl;
 		wifiChannel.AddPropagationLoss("ns3::TwoRayGroundPropagationLossModel", "Frequency", DoubleValue(freq), "HeightAboveZ", DoubleValue(1.5));
 	} else {
 		NS_LOG_ERROR("m_propagationLoss not recognized");
 	}
-
 	if (m_loadBuildings != 0)
 	{
 		wifiChannel.AddPropagationLoss ("ns3::ObstacleShadowingPropagationLossModel",
@@ -664,7 +666,6 @@ ROFFVanetExperiment::SetupAdhocDevices() {
 	}
 	wifiPhy.SetChannel(wifiChannel.Create());
 	wifiPhy.SetPcapDataLinkType(YansWifiPhyHelper::DLT_IEEE802_11);
-
 	if (m_actualRange == 100) {
 		m_txp = -7.0;
 	}
@@ -685,6 +686,7 @@ ROFFVanetExperiment::SetupAdhocDevices() {
 	wifiMac.SetType("ns3::AdhocWifiMac");
 
 	m_adhocDevices = wifi.Install(wifiPhy, wifiMac, m_adhocNodes);
+	cout << "end conf chan " << endl;
 
 }
 
@@ -868,7 +870,7 @@ void ROFFVanetExperiment::SetupScenario () {
 	if (m_loadBuildings != 0)
 	{
 		NS_LOG_INFO ("Loading buildings file \"" << m_bldgFile << "\".");
-//		Topology::LoadBuildings(m_bldgFile); //todo riabilitare
+		Topology::LoadBuildings(m_bldgFile); //todo riabilitare
 	}
 }
 
