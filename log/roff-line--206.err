@@ -1,0 +1,2 @@
+/home/jgottard/.profile: line 8: :/home/jgottard/ns-3/ns-3.26/build:/home/jgottard/ns-3/libs:/usr/local/cuda/lib64:/usr/local/cula/lib64:/usr/local/culasparse/lib64: No such file or directory
+/export/alt/pbs/spool_torque/mom_priv/jobs/2148888.grid0.math.unipd.it.SC: 58: /export/alt/pbs/spool_torque/mom_priv/jobs/2148888.grid0.math.unipd.it.SC: Syntax error: Unterminated quoted string
