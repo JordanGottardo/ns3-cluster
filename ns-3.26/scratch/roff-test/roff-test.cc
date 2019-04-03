@@ -993,7 +993,7 @@ int main (int argc, char *argv[])
 				"\"Slots\",\"Messages sent\",\"Messages received\", \"Starting x\", \"Starting y\","
 				"\"Starting node\", \"Vehicle distance\", \"Received node ids\", "
 				"\"Node ids\", \"Transmission map\", \"Received on circ nodes\", \"Transmission vector\"";
-		additionalPath += "/out/scenario-urbano/roff/roff";
+		additionalPath += "/out/scenario-urbano-con-coord/roff/roff";
 		boost::filesystem::path path = boost::filesystem::current_path() /= additionalPath;
 		path /= filePath;
 		g_csvData.EnableAlternativeFilename(path);

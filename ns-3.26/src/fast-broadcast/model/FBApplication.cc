@@ -219,6 +219,10 @@ void FBApplication::PrintStats(std::stringstream &dataStream) {
 			<< cover << ","
 			<< circ << ","
 			<< (time_sum / (double) circ) - timeref.GetMicroSeconds () << ","
+//			<< (hops_sum / (double) circ) << "," todo riabilitare entrambe
+//			<< (slots_sum / (double) circ) << ","
+			<< m_nodes[m_nodes.size() - 1]->GetHop() << ","
+			<< m_nodes[m_nodes.size() - 1]->GetSlot() << ","
 			<< (hops_sum / (double) circ) << ","
 			<< (slots_sum / (double) circ) << ","
 			<< m_sent << ","

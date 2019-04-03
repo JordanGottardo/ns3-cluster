@@ -124,8 +124,10 @@ void ROFFApplication::PrintStats(std::stringstream& dataStream) {
 			<< cover << ","
 			<< circ << ","
 			<< (time_sum / (double) circ) - timeref.GetMicroSeconds () << ","
-			<< (hops_sum / (double) circ) << ","
-			<< (slots_sum / (double) circ) << ","
+//			<< (hops_sum / (double) circ) << "," todo riabilitare entrambe
+//			<< (slots_sum / (double) circ) << ","
+			<< m_nodes[m_nodes.size() - 1]->GetHop() << ","
+			<< m_nodes[m_nodes.size() - 1]->GetSlot() << ","
 			<< m_sent << ","
 			<< m_received;
 
@@ -340,7 +342,7 @@ void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHead
 		return;
 	}
 //	cout << "id= " << node->GetId() << " nodePhase= " << node->GetPhase() << " headerPhase= "
-			<< phase << endl;
+//			<< phase << endl;
 	uint32_t headerType = ALERT_MESSAGE;
 	uint32_t forwarderId = node->GetId();
 	uint32_t slot = oldHeader.GetSlot();
