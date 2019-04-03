@@ -494,11 +494,11 @@ ROFFVanetExperiment::ROFFVanetExperiment():
 		m_TotalSimTime(30),
 		m_printToFile(1),
 		m_printCoords(0),
+		m_createObstacleShadowingLossFile(0),
+		m_useObstacleShadowingLossFile(0),
 		m_beaconInterval(100),
 		m_distanceRange(1),
-		m_propagationLoss(1),
-		m_createObstacleShadowingLossFile(0),
-		m_useObstacleShadowingLossFile(0) {
+		m_propagationLoss(1) {
 	srand(time(0));
 
 	RngSeedManager::SetSeed(time(0));
