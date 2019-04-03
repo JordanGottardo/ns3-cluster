@@ -1,0 +1,1204 @@
+$node_(0) set X_ 0
+$node_(0) set Y_ 0
+$node_(0) set Z_ 0
+$ns_ at 0.0 "$node_(0) setdest 0 0 0.00"
+$node_(1) set X_ 1
+$node_(1) set Y_ 0
+$node_(1) set Z_ 0
+$ns_ at 0.0 "$node_(1) setdest 0 0 0.00"
+$node_(2) set X_ 2
+$node_(2) set Y_ 0
+$node_(2) set Z_ 0
+$ns_ at 0.0 "$node_(2) setdest 0 0 0.00"
+$node_(3) set X_ 3
+$node_(3) set Y_ 0
+$node_(3) set Z_ 0
+$ns_ at 0.0 "$node_(3) setdest 0 0 0.00"
+$node_(4) set X_ 4
+$node_(4) set Y_ 0
+$node_(4) set Z_ 0
+$ns_ at 0.0 "$node_(4) setdest 0 0 0.00"
+$node_(5) set X_ 5
+$node_(5) set Y_ 0
+$node_(5) set Z_ 0
+$ns_ at 0.0 "$node_(5) setdest 0 0 0.00"
+$node_(6) set X_ 6
+$node_(6) set Y_ 0
+$node_(6) set Z_ 0
+$ns_ at 0.0 "$node_(6) setdest 0 0 0.00"
+$node_(7) set X_ 7
+$node_(7) set Y_ 0
+$node_(7) set Z_ 0
+$ns_ at 0.0 "$node_(7) setdest 0 0 0.00"
+$node_(8) set X_ 8
+$node_(8) set Y_ 0
+$node_(8) set Z_ 0
+$ns_ at 0.0 "$node_(8) setdest 0 0 0.00"
+$node_(9) set X_ 9
+$node_(9) set Y_ 0
+$node_(9) set Z_ 0
+$ns_ at 0.0 "$node_(9) setdest 0 0 0.00"
+$node_(10) set X_ 10
+$node_(10) set Y_ 0
+$node_(10) set Z_ 0
+$ns_ at 0.0 "$node_(10) setdest 0 0 0.00"
+$node_(11) set X_ 11
+$node_(11) set Y_ 0
+$node_(11) set Z_ 0
+$ns_ at 0.0 "$node_(11) setdest 0 0 0.00"
+$node_(12) set X_ 12
+$node_(12) set Y_ 0
+$node_(12) set Z_ 0
+$ns_ at 0.0 "$node_(12) setdest 0 0 0.00"
+$node_(13) set X_ 13
+$node_(13) set Y_ 0
+$node_(13) set Z_ 0
+$ns_ at 0.0 "$node_(13) setdest 0 0 0.00"
+$node_(14) set X_ 14
+$node_(14) set Y_ 0
+$node_(14) set Z_ 0
+$ns_ at 0.0 "$node_(14) setdest 0 0 0.00"
+$node_(15) set X_ 15
+$node_(15) set Y_ 0
+$node_(15) set Z_ 0
+$ns_ at 0.0 "$node_(15) setdest 0 0 0.00"
+$node_(16) set X_ 16
+$node_(16) set Y_ 0
+$node_(16) set Z_ 0
+$ns_ at 0.0 "$node_(16) setdest 0 0 0.00"
+$node_(17) set X_ 17
+$node_(17) set Y_ 0
+$node_(17) set Z_ 0
+$ns_ at 0.0 "$node_(17) setdest 0 0 0.00"
+$node_(18) set X_ 18
+$node_(18) set Y_ 0
+$node_(18) set Z_ 0
+$ns_ at 0.0 "$node_(18) setdest 0 0 0.00"
+$node_(19) set X_ 19
+$node_(19) set Y_ 0
+$node_(19) set Z_ 0
+$ns_ at 0.0 "$node_(19) setdest 0 0 0.00"
+$node_(20) set X_ 20
+$node_(20) set Y_ 0
+$node_(20) set Z_ 0
+$ns_ at 0.0 "$node_(20) setdest 0 0 0.00"
+$node_(21) set X_ 21
+$node_(21) set Y_ 0
+$node_(21) set Z_ 0
+$ns_ at 0.0 "$node_(21) setdest 0 0 0.00"
+$node_(22) set X_ 22
+$node_(22) set Y_ 0
+$node_(22) set Z_ 0
+$ns_ at 0.0 "$node_(22) setdest 0 0 0.00"
+$node_(23) set X_ 23
+$node_(23) set Y_ 0
+$node_(23) set Z_ 0
+$ns_ at 0.0 "$node_(23) setdest 0 0 0.00"
+$node_(24) set X_ 24
+$node_(24) set Y_ 0
+$node_(24) set Z_ 0
+$ns_ at 0.0 "$node_(24) setdest 0 0 0.00"
+$node_(25) set X_ 25
+$node_(25) set Y_ 0
+$node_(25) set Z_ 0
+$ns_ at 0.0 "$node_(25) setdest 0 0 0.00"
+$node_(26) set X_ 26
+$node_(26) set Y_ 0
+$node_(26) set Z_ 0
+$ns_ at 0.0 "$node_(26) setdest 0 0 0.00"
+$node_(27) set X_ 27
+$node_(27) set Y_ 0
+$node_(27) set Z_ 0
+$ns_ at 0.0 "$node_(27) setdest 0 0 0.00"
+$node_(28) set X_ 28
+$node_(28) set Y_ 0
+$node_(28) set Z_ 0
+$ns_ at 0.0 "$node_(28) setdest 0 0 0.00"
+$node_(29) set X_ 29
+$node_(29) set Y_ 0
+$node_(29) set Z_ 0
+$ns_ at 0.0 "$node_(29) setdest 0 0 0.00"
+$node_(30) set X_ 30
+$node_(30) set Y_ 0
+$node_(30) set Z_ 0
+$ns_ at 0.0 "$node_(30) setdest 0 0 0.00"
+$node_(31) set X_ 31
+$node_(31) set Y_ 0
+$node_(31) set Z_ 0
+$ns_ at 0.0 "$node_(31) setdest 0 0 0.00"
+$node_(32) set X_ 32
+$node_(32) set Y_ 0
+$node_(32) set Z_ 0
+$ns_ at 0.0 "$node_(32) setdest 0 0 0.00"
+$node_(33) set X_ 33
+$node_(33) set Y_ 0
+$node_(33) set Z_ 0
+$ns_ at 0.0 "$node_(33) setdest 0 0 0.00"
+$node_(34) set X_ 34
+$node_(34) set Y_ 0
+$node_(34) set Z_ 0
+$ns_ at 0.0 "$node_(34) setdest 0 0 0.00"
+$node_(35) set X_ 35
+$node_(35) set Y_ 0
+$node_(35) set Z_ 0
+$ns_ at 0.0 "$node_(35) setdest 0 0 0.00"
+$node_(36) set X_ 36
+$node_(36) set Y_ 0
+$node_(36) set Z_ 0
+$ns_ at 0.0 "$node_(36) setdest 0 0 0.00"
+$node_(37) set X_ 37
+$node_(37) set Y_ 0
+$node_(37) set Z_ 0
+$ns_ at 0.0 "$node_(37) setdest 0 0 0.00"
+$node_(38) set X_ 38
+$node_(38) set Y_ 0
+$node_(38) set Z_ 0
+$ns_ at 0.0 "$node_(38) setdest 0 0 0.00"
+$node_(39) set X_ 39
+$node_(39) set Y_ 0
+$node_(39) set Z_ 0
+$ns_ at 0.0 "$node_(39) setdest 0 0 0.00"
+$node_(40) set X_ 40
+$node_(40) set Y_ 0
+$node_(40) set Z_ 0
+$ns_ at 0.0 "$node_(40) setdest 0 0 0.00"
+$node_(41) set X_ 41
+$node_(41) set Y_ 0
+$node_(41) set Z_ 0
+$ns_ at 0.0 "$node_(41) setdest 0 0 0.00"
+$node_(42) set X_ 42
+$node_(42) set Y_ 0
+$node_(42) set Z_ 0
+$ns_ at 0.0 "$node_(42) setdest 0 0 0.00"
+$node_(43) set X_ 43
+$node_(43) set Y_ 0
+$node_(43) set Z_ 0
+$ns_ at 0.0 "$node_(43) setdest 0 0 0.00"
+$node_(44) set X_ 44
+$node_(44) set Y_ 0
+$node_(44) set Z_ 0
+$ns_ at 0.0 "$node_(44) setdest 0 0 0.00"
+$node_(45) set X_ 45
+$node_(45) set Y_ 0
+$node_(45) set Z_ 0
+$ns_ at 0.0 "$node_(45) setdest 0 0 0.00"
+$node_(46) set X_ 46
+$node_(46) set Y_ 0
+$node_(46) set Z_ 0
+$ns_ at 0.0 "$node_(46) setdest 0 0 0.00"
+$node_(47) set X_ 47
+$node_(47) set Y_ 0
+$node_(47) set Z_ 0
+$ns_ at 0.0 "$node_(47) setdest 0 0 0.00"
+$node_(48) set X_ 48
+$node_(48) set Y_ 0
+$node_(48) set Z_ 0
+$ns_ at 0.0 "$node_(48) setdest 0 0 0.00"
+$node_(49) set X_ 49
+$node_(49) set Y_ 0
+$node_(49) set Z_ 0
+$ns_ at 0.0 "$node_(49) setdest 0 0 0.00"
+$node_(50) set X_ 50
+$node_(50) set Y_ 0
+$node_(50) set Z_ 0
+$ns_ at 0.0 "$node_(50) setdest 0 0 0.00"
+$node_(51) set X_ 51
+$node_(51) set Y_ 0
+$node_(51) set Z_ 0
+$ns_ at 0.0 "$node_(51) setdest 0 0 0.00"
+$node_(52) set X_ 52
+$node_(52) set Y_ 0
+$node_(52) set Z_ 0
+$ns_ at 0.0 "$node_(52) setdest 0 0 0.00"
+$node_(53) set X_ 53
+$node_(53) set Y_ 0
+$node_(53) set Z_ 0
+$ns_ at 0.0 "$node_(53) setdest 0 0 0.00"
+$node_(54) set X_ 54
+$node_(54) set Y_ 0
+$node_(54) set Z_ 0
+$ns_ at 0.0 "$node_(54) setdest 0 0 0.00"
+$node_(55) set X_ 55
+$node_(55) set Y_ 0
+$node_(55) set Z_ 0
+$ns_ at 0.0 "$node_(55) setdest 0 0 0.00"
+$node_(56) set X_ 56
+$node_(56) set Y_ 0
+$node_(56) set Z_ 0
+$ns_ at 0.0 "$node_(56) setdest 0 0 0.00"
+$node_(57) set X_ 57
+$node_(57) set Y_ 0
+$node_(57) set Z_ 0
+$ns_ at 0.0 "$node_(57) setdest 0 0 0.00"
+$node_(58) set X_ 58
+$node_(58) set Y_ 0
+$node_(58) set Z_ 0
+$ns_ at 0.0 "$node_(58) setdest 0 0 0.00"
+$node_(59) set X_ 59
+$node_(59) set Y_ 0
+$node_(59) set Z_ 0
+$ns_ at 0.0 "$node_(59) setdest 0 0 0.00"
+$node_(60) set X_ 60
+$node_(60) set Y_ 0
+$node_(60) set Z_ 0
+$ns_ at 0.0 "$node_(60) setdest 0 0 0.00"
+$node_(61) set X_ 61
+$node_(61) set Y_ 0
+$node_(61) set Z_ 0
+$ns_ at 0.0 "$node_(61) setdest 0 0 0.00"
+$node_(62) set X_ 62
+$node_(62) set Y_ 0
+$node_(62) set Z_ 0
+$ns_ at 0.0 "$node_(62) setdest 0 0 0.00"
+$node_(63) set X_ 63
+$node_(63) set Y_ 0
+$node_(63) set Z_ 0
+$ns_ at 0.0 "$node_(63) setdest 0 0 0.00"
+$node_(64) set X_ 64
+$node_(64) set Y_ 0
+$node_(64) set Z_ 0
+$ns_ at 0.0 "$node_(64) setdest 0 0 0.00"
+$node_(65) set X_ 65
+$node_(65) set Y_ 0
+$node_(65) set Z_ 0
+$ns_ at 0.0 "$node_(65) setdest 0 0 0.00"
+$node_(66) set X_ 66
+$node_(66) set Y_ 0
+$node_(66) set Z_ 0
+$ns_ at 0.0 "$node_(66) setdest 0 0 0.00"
+$node_(67) set X_ 67
+$node_(67) set Y_ 0
+$node_(67) set Z_ 0
+$ns_ at 0.0 "$node_(67) setdest 0 0 0.00"
+$node_(68) set X_ 68
+$node_(68) set Y_ 0
+$node_(68) set Z_ 0
+$ns_ at 0.0 "$node_(68) setdest 0 0 0.00"
+$node_(69) set X_ 69
+$node_(69) set Y_ 0
+$node_(69) set Z_ 0
+$ns_ at 0.0 "$node_(69) setdest 0 0 0.00"
+$node_(70) set X_ 70
+$node_(70) set Y_ 0
+$node_(70) set Z_ 0
+$ns_ at 0.0 "$node_(70) setdest 0 0 0.00"
+$node_(71) set X_ 71
+$node_(71) set Y_ 0
+$node_(71) set Z_ 0
+$ns_ at 0.0 "$node_(71) setdest 0 0 0.00"
+$node_(72) set X_ 72
+$node_(72) set Y_ 0
+$node_(72) set Z_ 0
+$ns_ at 0.0 "$node_(72) setdest 0 0 0.00"
+$node_(73) set X_ 73
+$node_(73) set Y_ 0
+$node_(73) set Z_ 0
+$ns_ at 0.0 "$node_(73) setdest 0 0 0.00"
+$node_(74) set X_ 74
+$node_(74) set Y_ 0
+$node_(74) set Z_ 0
+$ns_ at 0.0 "$node_(74) setdest 0 0 0.00"
+$node_(75) set X_ 75
+$node_(75) set Y_ 0
+$node_(75) set Z_ 0
+$ns_ at 0.0 "$node_(75) setdest 0 0 0.00"
+$node_(76) set X_ 76
+$node_(76) set Y_ 0
+$node_(76) set Z_ 0
+$ns_ at 0.0 "$node_(76) setdest 0 0 0.00"
+$node_(77) set X_ 77
+$node_(77) set Y_ 0
+$node_(77) set Z_ 0
+$ns_ at 0.0 "$node_(77) setdest 0 0 0.00"
+$node_(78) set X_ 78
+$node_(78) set Y_ 0
+$node_(78) set Z_ 0
+$ns_ at 0.0 "$node_(78) setdest 0 0 0.00"
+$node_(79) set X_ 79
+$node_(79) set Y_ 0
+$node_(79) set Z_ 0
+$ns_ at 0.0 "$node_(79) setdest 0 0 0.00"
+$node_(80) set X_ 80
+$node_(80) set Y_ 0
+$node_(80) set Z_ 0
+$ns_ at 0.0 "$node_(80) setdest 0 0 0.00"
+$node_(81) set X_ 81
+$node_(81) set Y_ 0
+$node_(81) set Z_ 0
+$ns_ at 0.0 "$node_(81) setdest 0 0 0.00"
+$node_(82) set X_ 82
+$node_(82) set Y_ 0
+$node_(82) set Z_ 0
+$ns_ at 0.0 "$node_(82) setdest 0 0 0.00"
+$node_(83) set X_ 83
+$node_(83) set Y_ 0
+$node_(83) set Z_ 0
+$ns_ at 0.0 "$node_(83) setdest 0 0 0.00"
+$node_(84) set X_ 84
+$node_(84) set Y_ 0
+$node_(84) set Z_ 0
+$ns_ at 0.0 "$node_(84) setdest 0 0 0.00"
+$node_(85) set X_ 85
+$node_(85) set Y_ 0
+$node_(85) set Z_ 0
+$ns_ at 0.0 "$node_(85) setdest 0 0 0.00"
+$node_(86) set X_ 86
+$node_(86) set Y_ 0
+$node_(86) set Z_ 0
+$ns_ at 0.0 "$node_(86) setdest 0 0 0.00"
+$node_(87) set X_ 87
+$node_(87) set Y_ 0
+$node_(87) set Z_ 0
+$ns_ at 0.0 "$node_(87) setdest 0 0 0.00"
+$node_(88) set X_ 88
+$node_(88) set Y_ 0
+$node_(88) set Z_ 0
+$ns_ at 0.0 "$node_(88) setdest 0 0 0.00"
+$node_(89) set X_ 89
+$node_(89) set Y_ 0
+$node_(89) set Z_ 0
+$ns_ at 0.0 "$node_(89) setdest 0 0 0.00"
+$node_(90) set X_ 90
+$node_(90) set Y_ 0
+$node_(90) set Z_ 0
+$ns_ at 0.0 "$node_(90) setdest 0 0 0.00"
+$node_(91) set X_ 91
+$node_(91) set Y_ 0
+$node_(91) set Z_ 0
+$ns_ at 0.0 "$node_(91) setdest 0 0 0.00"
+$node_(92) set X_ 92
+$node_(92) set Y_ 0
+$node_(92) set Z_ 0
+$ns_ at 0.0 "$node_(92) setdest 0 0 0.00"
+$node_(93) set X_ 93
+$node_(93) set Y_ 0
+$node_(93) set Z_ 0
+$ns_ at 0.0 "$node_(93) setdest 0 0 0.00"
+$node_(94) set X_ 94
+$node_(94) set Y_ 0
+$node_(94) set Z_ 0
+$ns_ at 0.0 "$node_(94) setdest 0 0 0.00"
+$node_(95) set X_ 95
+$node_(95) set Y_ 0
+$node_(95) set Z_ 0
+$ns_ at 0.0 "$node_(95) setdest 0 0 0.00"
+$node_(96) set X_ 96
+$node_(96) set Y_ 0
+$node_(96) set Z_ 0
+$ns_ at 0.0 "$node_(96) setdest 0 0 0.00"
+$node_(97) set X_ 97
+$node_(97) set Y_ 0
+$node_(97) set Z_ 0
+$ns_ at 0.0 "$node_(97) setdest 0 0 0.00"
+$node_(98) set X_ 98
+$node_(98) set Y_ 0
+$node_(98) set Z_ 0
+$ns_ at 0.0 "$node_(98) setdest 0 0 0.00"
+$node_(99) set X_ 99
+$node_(99) set Y_ 0
+$node_(99) set Z_ 0
+$ns_ at 0.0 "$node_(99) setdest 0 0 0.00"
+$node_(100) set X_ 100
+$node_(100) set Y_ 0
+$node_(100) set Z_ 0
+$ns_ at 0.0 "$node_(100) setdest 0 0 0.00"
+$node_(101) set X_ 101
+$node_(101) set Y_ 0
+$node_(101) set Z_ 0
+$ns_ at 0.0 "$node_(101) setdest 0 0 0.00"
+$node_(102) set X_ 102
+$node_(102) set Y_ 0
+$node_(102) set Z_ 0
+$ns_ at 0.0 "$node_(102) setdest 0 0 0.00"
+$node_(103) set X_ 103
+$node_(103) set Y_ 0
+$node_(103) set Z_ 0
+$ns_ at 0.0 "$node_(103) setdest 0 0 0.00"
+$node_(104) set X_ 104
+$node_(104) set Y_ 0
+$node_(104) set Z_ 0
+$ns_ at 0.0 "$node_(104) setdest 0 0 0.00"
+$node_(105) set X_ 105
+$node_(105) set Y_ 0
+$node_(105) set Z_ 0
+$ns_ at 0.0 "$node_(105) setdest 0 0 0.00"
+$node_(106) set X_ 106
+$node_(106) set Y_ 0
+$node_(106) set Z_ 0
+$ns_ at 0.0 "$node_(106) setdest 0 0 0.00"
+$node_(107) set X_ 107
+$node_(107) set Y_ 0
+$node_(107) set Z_ 0
+$ns_ at 0.0 "$node_(107) setdest 0 0 0.00"
+$node_(108) set X_ 108
+$node_(108) set Y_ 0
+$node_(108) set Z_ 0
+$ns_ at 0.0 "$node_(108) setdest 0 0 0.00"
+$node_(109) set X_ 109
+$node_(109) set Y_ 0
+$node_(109) set Z_ 0
+$ns_ at 0.0 "$node_(109) setdest 0 0 0.00"
+$node_(110) set X_ 110
+$node_(110) set Y_ 0
+$node_(110) set Z_ 0
+$ns_ at 0.0 "$node_(110) setdest 0 0 0.00"
+$node_(111) set X_ 111
+$node_(111) set Y_ 0
+$node_(111) set Z_ 0
+$ns_ at 0.0 "$node_(111) setdest 0 0 0.00"
+$node_(112) set X_ 112
+$node_(112) set Y_ 0
+$node_(112) set Z_ 0
+$ns_ at 0.0 "$node_(112) setdest 0 0 0.00"
+$node_(113) set X_ 113
+$node_(113) set Y_ 0
+$node_(113) set Z_ 0
+$ns_ at 0.0 "$node_(113) setdest 0 0 0.00"
+$node_(114) set X_ 114
+$node_(114) set Y_ 0
+$node_(114) set Z_ 0
+$ns_ at 0.0 "$node_(114) setdest 0 0 0.00"
+$node_(115) set X_ 115
+$node_(115) set Y_ 0
+$node_(115) set Z_ 0
+$ns_ at 0.0 "$node_(115) setdest 0 0 0.00"
+$node_(116) set X_ 116
+$node_(116) set Y_ 0
+$node_(116) set Z_ 0
+$ns_ at 0.0 "$node_(116) setdest 0 0 0.00"
+$node_(117) set X_ 117
+$node_(117) set Y_ 0
+$node_(117) set Z_ 0
+$ns_ at 0.0 "$node_(117) setdest 0 0 0.00"
+$node_(118) set X_ 118
+$node_(118) set Y_ 0
+$node_(118) set Z_ 0
+$ns_ at 0.0 "$node_(118) setdest 0 0 0.00"
+$node_(119) set X_ 119
+$node_(119) set Y_ 0
+$node_(119) set Z_ 0
+$ns_ at 0.0 "$node_(119) setdest 0 0 0.00"
+$node_(120) set X_ 120
+$node_(120) set Y_ 0
+$node_(120) set Z_ 0
+$ns_ at 0.0 "$node_(120) setdest 0 0 0.00"
+$node_(121) set X_ 121
+$node_(121) set Y_ 0
+$node_(121) set Z_ 0
+$ns_ at 0.0 "$node_(121) setdest 0 0 0.00"
+$node_(122) set X_ 122
+$node_(122) set Y_ 0
+$node_(122) set Z_ 0
+$ns_ at 0.0 "$node_(122) setdest 0 0 0.00"
+$node_(123) set X_ 123
+$node_(123) set Y_ 0
+$node_(123) set Z_ 0
+$ns_ at 0.0 "$node_(123) setdest 0 0 0.00"
+$node_(124) set X_ 124
+$node_(124) set Y_ 0
+$node_(124) set Z_ 0
+$ns_ at 0.0 "$node_(124) setdest 0 0 0.00"
+$node_(125) set X_ 125
+$node_(125) set Y_ 0
+$node_(125) set Z_ 0
+$ns_ at 0.0 "$node_(125) setdest 0 0 0.00"
+$node_(126) set X_ 126
+$node_(126) set Y_ 0
+$node_(126) set Z_ 0
+$ns_ at 0.0 "$node_(126) setdest 0 0 0.00"
+$node_(127) set X_ 127
+$node_(127) set Y_ 0
+$node_(127) set Z_ 0
+$ns_ at 0.0 "$node_(127) setdest 0 0 0.00"
+$node_(128) set X_ 128
+$node_(128) set Y_ 0
+$node_(128) set Z_ 0
+$ns_ at 0.0 "$node_(128) setdest 0 0 0.00"
+$node_(129) set X_ 129
+$node_(129) set Y_ 0
+$node_(129) set Z_ 0
+$ns_ at 0.0 "$node_(129) setdest 0 0 0.00"
+$node_(130) set X_ 130
+$node_(130) set Y_ 0
+$node_(130) set Z_ 0
+$ns_ at 0.0 "$node_(130) setdest 0 0 0.00"
+$node_(131) set X_ 131
+$node_(131) set Y_ 0
+$node_(131) set Z_ 0
+$ns_ at 0.0 "$node_(131) setdest 0 0 0.00"
+$node_(132) set X_ 132
+$node_(132) set Y_ 0
+$node_(132) set Z_ 0
+$ns_ at 0.0 "$node_(132) setdest 0 0 0.00"
+$node_(133) set X_ 133
+$node_(133) set Y_ 0
+$node_(133) set Z_ 0
+$ns_ at 0.0 "$node_(133) setdest 0 0 0.00"
+$node_(134) set X_ 134
+$node_(134) set Y_ 0
+$node_(134) set Z_ 0
+$ns_ at 0.0 "$node_(134) setdest 0 0 0.00"
+$node_(135) set X_ 135
+$node_(135) set Y_ 0
+$node_(135) set Z_ 0
+$ns_ at 0.0 "$node_(135) setdest 0 0 0.00"
+$node_(136) set X_ 136
+$node_(136) set Y_ 0
+$node_(136) set Z_ 0
+$ns_ at 0.0 "$node_(136) setdest 0 0 0.00"
+$node_(137) set X_ 137
+$node_(137) set Y_ 0
+$node_(137) set Z_ 0
+$ns_ at 0.0 "$node_(137) setdest 0 0 0.00"
+$node_(138) set X_ 138
+$node_(138) set Y_ 0
+$node_(138) set Z_ 0
+$ns_ at 0.0 "$node_(138) setdest 0 0 0.00"
+$node_(139) set X_ 139
+$node_(139) set Y_ 0
+$node_(139) set Z_ 0
+$ns_ at 0.0 "$node_(139) setdest 0 0 0.00"
+$node_(140) set X_ 140
+$node_(140) set Y_ 0
+$node_(140) set Z_ 0
+$ns_ at 0.0 "$node_(140) setdest 0 0 0.00"
+$node_(141) set X_ 141
+$node_(141) set Y_ 0
+$node_(141) set Z_ 0
+$ns_ at 0.0 "$node_(141) setdest 0 0 0.00"
+$node_(142) set X_ 142
+$node_(142) set Y_ 0
+$node_(142) set Z_ 0
+$ns_ at 0.0 "$node_(142) setdest 0 0 0.00"
+$node_(143) set X_ 143
+$node_(143) set Y_ 0
+$node_(143) set Z_ 0
+$ns_ at 0.0 "$node_(143) setdest 0 0 0.00"
+$node_(144) set X_ 144
+$node_(144) set Y_ 0
+$node_(144) set Z_ 0
+$ns_ at 0.0 "$node_(144) setdest 0 0 0.00"
+$node_(145) set X_ 145
+$node_(145) set Y_ 0
+$node_(145) set Z_ 0
+$ns_ at 0.0 "$node_(145) setdest 0 0 0.00"
+$node_(146) set X_ 146
+$node_(146) set Y_ 0
+$node_(146) set Z_ 0
+$ns_ at 0.0 "$node_(146) setdest 0 0 0.00"
+$node_(147) set X_ 147
+$node_(147) set Y_ 0
+$node_(147) set Z_ 0
+$ns_ at 0.0 "$node_(147) setdest 0 0 0.00"
+$node_(148) set X_ 148
+$node_(148) set Y_ 0
+$node_(148) set Z_ 0
+$ns_ at 0.0 "$node_(148) setdest 0 0 0.00"
+$node_(149) set X_ 149
+$node_(149) set Y_ 0
+$node_(149) set Z_ 0
+$ns_ at 0.0 "$node_(149) setdest 0 0 0.00"
+$node_(150) set X_ 150
+$node_(150) set Y_ 0
+$node_(150) set Z_ 0
+$ns_ at 0.0 "$node_(150) setdest 0 0 0.00"
+$node_(151) set X_ 151
+$node_(151) set Y_ 0
+$node_(151) set Z_ 0
+$ns_ at 0.0 "$node_(151) setdest 0 0 0.00"
+$node_(152) set X_ 152
+$node_(152) set Y_ 0
+$node_(152) set Z_ 0
+$ns_ at 0.0 "$node_(152) setdest 0 0 0.00"
+$node_(153) set X_ 153
+$node_(153) set Y_ 0
+$node_(153) set Z_ 0
+$ns_ at 0.0 "$node_(153) setdest 0 0 0.00"
+$node_(154) set X_ 154
+$node_(154) set Y_ 0
+$node_(154) set Z_ 0
+$ns_ at 0.0 "$node_(154) setdest 0 0 0.00"
+$node_(155) set X_ 155
+$node_(155) set Y_ 0
+$node_(155) set Z_ 0
+$ns_ at 0.0 "$node_(155) setdest 0 0 0.00"
+$node_(156) set X_ 156
+$node_(156) set Y_ 0
+$node_(156) set Z_ 0
+$ns_ at 0.0 "$node_(156) setdest 0 0 0.00"
+$node_(157) set X_ 157
+$node_(157) set Y_ 0
+$node_(157) set Z_ 0
+$ns_ at 0.0 "$node_(157) setdest 0 0 0.00"
+$node_(158) set X_ 158
+$node_(158) set Y_ 0
+$node_(158) set Z_ 0
+$ns_ at 0.0 "$node_(158) setdest 0 0 0.00"
+$node_(159) set X_ 159
+$node_(159) set Y_ 0
+$node_(159) set Z_ 0
+$ns_ at 0.0 "$node_(159) setdest 0 0 0.00"
+$node_(160) set X_ 160
+$node_(160) set Y_ 0
+$node_(160) set Z_ 0
+$ns_ at 0.0 "$node_(160) setdest 0 0 0.00"
+$node_(161) set X_ 161
+$node_(161) set Y_ 0
+$node_(161) set Z_ 0
+$ns_ at 0.0 "$node_(161) setdest 0 0 0.00"
+$node_(162) set X_ 162
+$node_(162) set Y_ 0
+$node_(162) set Z_ 0
+$ns_ at 0.0 "$node_(162) setdest 0 0 0.00"
+$node_(163) set X_ 163
+$node_(163) set Y_ 0
+$node_(163) set Z_ 0
+$ns_ at 0.0 "$node_(163) setdest 0 0 0.00"
+$node_(164) set X_ 164
+$node_(164) set Y_ 0
+$node_(164) set Z_ 0
+$ns_ at 0.0 "$node_(164) setdest 0 0 0.00"
+$node_(165) set X_ 165
+$node_(165) set Y_ 0
+$node_(165) set Z_ 0
+$ns_ at 0.0 "$node_(165) setdest 0 0 0.00"
+$node_(166) set X_ 166
+$node_(166) set Y_ 0
+$node_(166) set Z_ 0
+$ns_ at 0.0 "$node_(166) setdest 0 0 0.00"
+$node_(167) set X_ 167
+$node_(167) set Y_ 0
+$node_(167) set Z_ 0
+$ns_ at 0.0 "$node_(167) setdest 0 0 0.00"
+$node_(168) set X_ 168
+$node_(168) set Y_ 0
+$node_(168) set Z_ 0
+$ns_ at 0.0 "$node_(168) setdest 0 0 0.00"
+$node_(169) set X_ 169
+$node_(169) set Y_ 0
+$node_(169) set Z_ 0
+$ns_ at 0.0 "$node_(169) setdest 0 0 0.00"
+$node_(170) set X_ 170
+$node_(170) set Y_ 0
+$node_(170) set Z_ 0
+$ns_ at 0.0 "$node_(170) setdest 0 0 0.00"
+$node_(171) set X_ 171
+$node_(171) set Y_ 0
+$node_(171) set Z_ 0
+$ns_ at 0.0 "$node_(171) setdest 0 0 0.00"
+$node_(172) set X_ 172
+$node_(172) set Y_ 0
+$node_(172) set Z_ 0
+$ns_ at 0.0 "$node_(172) setdest 0 0 0.00"
+$node_(173) set X_ 173
+$node_(173) set Y_ 0
+$node_(173) set Z_ 0
+$ns_ at 0.0 "$node_(173) setdest 0 0 0.00"
+$node_(174) set X_ 174
+$node_(174) set Y_ 0
+$node_(174) set Z_ 0
+$ns_ at 0.0 "$node_(174) setdest 0 0 0.00"
+$node_(175) set X_ 175
+$node_(175) set Y_ 0
+$node_(175) set Z_ 0
+$ns_ at 0.0 "$node_(175) setdest 0 0 0.00"
+$node_(176) set X_ 176
+$node_(176) set Y_ 0
+$node_(176) set Z_ 0
+$ns_ at 0.0 "$node_(176) setdest 0 0 0.00"
+$node_(177) set X_ 177
+$node_(177) set Y_ 0
+$node_(177) set Z_ 0
+$ns_ at 0.0 "$node_(177) setdest 0 0 0.00"
+$node_(178) set X_ 178
+$node_(178) set Y_ 0
+$node_(178) set Z_ 0
+$ns_ at 0.0 "$node_(178) setdest 0 0 0.00"
+$node_(179) set X_ 179
+$node_(179) set Y_ 0
+$node_(179) set Z_ 0
+$ns_ at 0.0 "$node_(179) setdest 0 0 0.00"
+$node_(180) set X_ 180
+$node_(180) set Y_ 0
+$node_(180) set Z_ 0
+$ns_ at 0.0 "$node_(180) setdest 0 0 0.00"
+$node_(181) set X_ 181
+$node_(181) set Y_ 0
+$node_(181) set Z_ 0
+$ns_ at 0.0 "$node_(181) setdest 0 0 0.00"
+$node_(182) set X_ 182
+$node_(182) set Y_ 0
+$node_(182) set Z_ 0
+$ns_ at 0.0 "$node_(182) setdest 0 0 0.00"
+$node_(183) set X_ 183
+$node_(183) set Y_ 0
+$node_(183) set Z_ 0
+$ns_ at 0.0 "$node_(183) setdest 0 0 0.00"
+$node_(184) set X_ 184
+$node_(184) set Y_ 0
+$node_(184) set Z_ 0
+$ns_ at 0.0 "$node_(184) setdest 0 0 0.00"
+$node_(185) set X_ 185
+$node_(185) set Y_ 0
+$node_(185) set Z_ 0
+$ns_ at 0.0 "$node_(185) setdest 0 0 0.00"
+$node_(186) set X_ 186
+$node_(186) set Y_ 0
+$node_(186) set Z_ 0
+$ns_ at 0.0 "$node_(186) setdest 0 0 0.00"
+$node_(187) set X_ 187
+$node_(187) set Y_ 0
+$node_(187) set Z_ 0
+$ns_ at 0.0 "$node_(187) setdest 0 0 0.00"
+$node_(188) set X_ 188
+$node_(188) set Y_ 0
+$node_(188) set Z_ 0
+$ns_ at 0.0 "$node_(188) setdest 0 0 0.00"
+$node_(189) set X_ 189
+$node_(189) set Y_ 0
+$node_(189) set Z_ 0
+$ns_ at 0.0 "$node_(189) setdest 0 0 0.00"
+$node_(190) set X_ 190
+$node_(190) set Y_ 0
+$node_(190) set Z_ 0
+$ns_ at 0.0 "$node_(190) setdest 0 0 0.00"
+$node_(191) set X_ 191
+$node_(191) set Y_ 0
+$node_(191) set Z_ 0
+$ns_ at 0.0 "$node_(191) setdest 0 0 0.00"
+$node_(192) set X_ 192
+$node_(192) set Y_ 0
+$node_(192) set Z_ 0
+$ns_ at 0.0 "$node_(192) setdest 0 0 0.00"
+$node_(193) set X_ 193
+$node_(193) set Y_ 0
+$node_(193) set Z_ 0
+$ns_ at 0.0 "$node_(193) setdest 0 0 0.00"
+$node_(194) set X_ 194
+$node_(194) set Y_ 0
+$node_(194) set Z_ 0
+$ns_ at 0.0 "$node_(194) setdest 0 0 0.00"
+$node_(195) set X_ 195
+$node_(195) set Y_ 0
+$node_(195) set Z_ 0
+$ns_ at 0.0 "$node_(195) setdest 0 0 0.00"
+$node_(196) set X_ 196
+$node_(196) set Y_ 0
+$node_(196) set Z_ 0
+$ns_ at 0.0 "$node_(196) setdest 0 0 0.00"
+$node_(197) set X_ 197
+$node_(197) set Y_ 0
+$node_(197) set Z_ 0
+$ns_ at 0.0 "$node_(197) setdest 0 0 0.00"
+$node_(198) set X_ 198
+$node_(198) set Y_ 0
+$node_(198) set Z_ 0
+$ns_ at 0.0 "$node_(198) setdest 0 0 0.00"
+$node_(199) set X_ 199
+$node_(199) set Y_ 0
+$node_(199) set Z_ 0
+$ns_ at 0.0 "$node_(199) setdest 0 0 0.00"
+$node_(200) set X_ 200
+$node_(200) set Y_ 0
+$node_(200) set Z_ 0
+$ns_ at 0.0 "$node_(200) setdest 0 0 0.00"
+$node_(201) set X_ 201
+$node_(201) set Y_ 0
+$node_(201) set Z_ 0
+$ns_ at 0.0 "$node_(201) setdest 0 0 0.00"
+$node_(202) set X_ 202
+$node_(202) set Y_ 0
+$node_(202) set Z_ 0
+$ns_ at 0.0 "$node_(202) setdest 0 0 0.00"
+$node_(203) set X_ 203
+$node_(203) set Y_ 0
+$node_(203) set Z_ 0
+$ns_ at 0.0 "$node_(203) setdest 0 0 0.00"
+$node_(204) set X_ 204
+$node_(204) set Y_ 0
+$node_(204) set Z_ 0
+$ns_ at 0.0 "$node_(204) setdest 0 0 0.00"
+$node_(205) set X_ 205
+$node_(205) set Y_ 0
+$node_(205) set Z_ 0
+$ns_ at 0.0 "$node_(205) setdest 0 0 0.00"
+$node_(206) set X_ 206
+$node_(206) set Y_ 0
+$node_(206) set Z_ 0
+$ns_ at 0.0 "$node_(206) setdest 0 0 0.00"
+$node_(207) set X_ 207
+$node_(207) set Y_ 0
+$node_(207) set Z_ 0
+$ns_ at 0.0 "$node_(207) setdest 0 0 0.00"
+$node_(208) set X_ 208
+$node_(208) set Y_ 0
+$node_(208) set Z_ 0
+$ns_ at 0.0 "$node_(208) setdest 0 0 0.00"
+$node_(209) set X_ 209
+$node_(209) set Y_ 0
+$node_(209) set Z_ 0
+$ns_ at 0.0 "$node_(209) setdest 0 0 0.00"
+$node_(210) set X_ 210
+$node_(210) set Y_ 0
+$node_(210) set Z_ 0
+$ns_ at 0.0 "$node_(210) setdest 0 0 0.00"
+$node_(211) set X_ 211
+$node_(211) set Y_ 0
+$node_(211) set Z_ 0
+$ns_ at 0.0 "$node_(211) setdest 0 0 0.00"
+$node_(212) set X_ 212
+$node_(212) set Y_ 0
+$node_(212) set Z_ 0
+$ns_ at 0.0 "$node_(212) setdest 0 0 0.00"
+$node_(213) set X_ 213
+$node_(213) set Y_ 0
+$node_(213) set Z_ 0
+$ns_ at 0.0 "$node_(213) setdest 0 0 0.00"
+$node_(214) set X_ 214
+$node_(214) set Y_ 0
+$node_(214) set Z_ 0
+$ns_ at 0.0 "$node_(214) setdest 0 0 0.00"
+$node_(215) set X_ 215
+$node_(215) set Y_ 0
+$node_(215) set Z_ 0
+$ns_ at 0.0 "$node_(215) setdest 0 0 0.00"
+$node_(216) set X_ 216
+$node_(216) set Y_ 0
+$node_(216) set Z_ 0
+$ns_ at 0.0 "$node_(216) setdest 0 0 0.00"
+$node_(217) set X_ 217
+$node_(217) set Y_ 0
+$node_(217) set Z_ 0
+$ns_ at 0.0 "$node_(217) setdest 0 0 0.00"
+$node_(218) set X_ 218
+$node_(218) set Y_ 0
+$node_(218) set Z_ 0
+$ns_ at 0.0 "$node_(218) setdest 0 0 0.00"
+$node_(219) set X_ 219
+$node_(219) set Y_ 0
+$node_(219) set Z_ 0
+$ns_ at 0.0 "$node_(219) setdest 0 0 0.00"
+$node_(220) set X_ 220
+$node_(220) set Y_ 0
+$node_(220) set Z_ 0
+$ns_ at 0.0 "$node_(220) setdest 0 0 0.00"
+$node_(221) set X_ 221
+$node_(221) set Y_ 0
+$node_(221) set Z_ 0
+$ns_ at 0.0 "$node_(221) setdest 0 0 0.00"
+$node_(222) set X_ 222
+$node_(222) set Y_ 0
+$node_(222) set Z_ 0
+$ns_ at 0.0 "$node_(222) setdest 0 0 0.00"
+$node_(223) set X_ 223
+$node_(223) set Y_ 0
+$node_(223) set Z_ 0
+$ns_ at 0.0 "$node_(223) setdest 0 0 0.00"
+$node_(224) set X_ 224
+$node_(224) set Y_ 0
+$node_(224) set Z_ 0
+$ns_ at 0.0 "$node_(224) setdest 0 0 0.00"
+$node_(225) set X_ 225
+$node_(225) set Y_ 0
+$node_(225) set Z_ 0
+$ns_ at 0.0 "$node_(225) setdest 0 0 0.00"
+$node_(226) set X_ 226
+$node_(226) set Y_ 0
+$node_(226) set Z_ 0
+$ns_ at 0.0 "$node_(226) setdest 0 0 0.00"
+$node_(227) set X_ 227
+$node_(227) set Y_ 0
+$node_(227) set Z_ 0
+$ns_ at 0.0 "$node_(227) setdest 0 0 0.00"
+$node_(228) set X_ 228
+$node_(228) set Y_ 0
+$node_(228) set Z_ 0
+$ns_ at 0.0 "$node_(228) setdest 0 0 0.00"
+$node_(229) set X_ 229
+$node_(229) set Y_ 0
+$node_(229) set Z_ 0
+$ns_ at 0.0 "$node_(229) setdest 0 0 0.00"
+$node_(230) set X_ 230
+$node_(230) set Y_ 0
+$node_(230) set Z_ 0
+$ns_ at 0.0 "$node_(230) setdest 0 0 0.00"
+$node_(231) set X_ 231
+$node_(231) set Y_ 0
+$node_(231) set Z_ 0
+$ns_ at 0.0 "$node_(231) setdest 0 0 0.00"
+$node_(232) set X_ 232
+$node_(232) set Y_ 0
+$node_(232) set Z_ 0
+$ns_ at 0.0 "$node_(232) setdest 0 0 0.00"
+$node_(233) set X_ 233
+$node_(233) set Y_ 0
+$node_(233) set Z_ 0
+$ns_ at 0.0 "$node_(233) setdest 0 0 0.00"
+$node_(234) set X_ 234
+$node_(234) set Y_ 0
+$node_(234) set Z_ 0
+$ns_ at 0.0 "$node_(234) setdest 0 0 0.00"
+$node_(235) set X_ 235
+$node_(235) set Y_ 0
+$node_(235) set Z_ 0
+$ns_ at 0.0 "$node_(235) setdest 0 0 0.00"
+$node_(236) set X_ 236
+$node_(236) set Y_ 0
+$node_(236) set Z_ 0
+$ns_ at 0.0 "$node_(236) setdest 0 0 0.00"
+$node_(237) set X_ 237
+$node_(237) set Y_ 0
+$node_(237) set Z_ 0
+$ns_ at 0.0 "$node_(237) setdest 0 0 0.00"
+$node_(238) set X_ 238
+$node_(238) set Y_ 0
+$node_(238) set Z_ 0
+$ns_ at 0.0 "$node_(238) setdest 0 0 0.00"
+$node_(239) set X_ 239
+$node_(239) set Y_ 0
+$node_(239) set Z_ 0
+$ns_ at 0.0 "$node_(239) setdest 0 0 0.00"
+$node_(240) set X_ 240
+$node_(240) set Y_ 0
+$node_(240) set Z_ 0
+$ns_ at 0.0 "$node_(240) setdest 0 0 0.00"
+$node_(241) set X_ 241
+$node_(241) set Y_ 0
+$node_(241) set Z_ 0
+$ns_ at 0.0 "$node_(241) setdest 0 0 0.00"
+$node_(242) set X_ 242
+$node_(242) set Y_ 0
+$node_(242) set Z_ 0
+$ns_ at 0.0 "$node_(242) setdest 0 0 0.00"
+$node_(243) set X_ 243
+$node_(243) set Y_ 0
+$node_(243) set Z_ 0
+$ns_ at 0.0 "$node_(243) setdest 0 0 0.00"
+$node_(244) set X_ 244
+$node_(244) set Y_ 0
+$node_(244) set Z_ 0
+$ns_ at 0.0 "$node_(244) setdest 0 0 0.00"
+$node_(245) set X_ 245
+$node_(245) set Y_ 0
+$node_(245) set Z_ 0
+$ns_ at 0.0 "$node_(245) setdest 0 0 0.00"
+$node_(246) set X_ 246
+$node_(246) set Y_ 0
+$node_(246) set Z_ 0
+$ns_ at 0.0 "$node_(246) setdest 0 0 0.00"
+$node_(247) set X_ 247
+$node_(247) set Y_ 0
+$node_(247) set Z_ 0
+$ns_ at 0.0 "$node_(247) setdest 0 0 0.00"
+$node_(248) set X_ 248
+$node_(248) set Y_ 0
+$node_(248) set Z_ 0
+$ns_ at 0.0 "$node_(248) setdest 0 0 0.00"
+$node_(249) set X_ 249
+$node_(249) set Y_ 0
+$node_(249) set Z_ 0
+$ns_ at 0.0 "$node_(249) setdest 0 0 0.00"
+$node_(250) set X_ 250
+$node_(250) set Y_ 0
+$node_(250) set Z_ 0
+$ns_ at 0.0 "$node_(250) setdest 0 0 0.00"
+$node_(251) set X_ 251
+$node_(251) set Y_ 0
+$node_(251) set Z_ 0
+$ns_ at 0.0 "$node_(251) setdest 0 0 0.00"
+$node_(252) set X_ 252
+$node_(252) set Y_ 0
+$node_(252) set Z_ 0
+$ns_ at 0.0 "$node_(252) setdest 0 0 0.00"
+$node_(253) set X_ 253
+$node_(253) set Y_ 0
+$node_(253) set Z_ 0
+$ns_ at 0.0 "$node_(253) setdest 0 0 0.00"
+$node_(254) set X_ 254
+$node_(254) set Y_ 0
+$node_(254) set Z_ 0
+$ns_ at 0.0 "$node_(254) setdest 0 0 0.00"
+$node_(255) set X_ 255
+$node_(255) set Y_ 0
+$node_(255) set Z_ 0
+$ns_ at 0.0 "$node_(255) setdest 0 0 0.00"
+$node_(256) set X_ 256
+$node_(256) set Y_ 0
+$node_(256) set Z_ 0
+$ns_ at 0.0 "$node_(256) setdest 0 0 0.00"
+$node_(257) set X_ 257
+$node_(257) set Y_ 0
+$node_(257) set Z_ 0
+$ns_ at 0.0 "$node_(257) setdest 0 0 0.00"
+$node_(258) set X_ 258
+$node_(258) set Y_ 0
+$node_(258) set Z_ 0
+$ns_ at 0.0 "$node_(258) setdest 0 0 0.00"
+$node_(259) set X_ 259
+$node_(259) set Y_ 0
+$node_(259) set Z_ 0
+$ns_ at 0.0 "$node_(259) setdest 0 0 0.00"
+$node_(260) set X_ 260
+$node_(260) set Y_ 0
+$node_(260) set Z_ 0
+$ns_ at 0.0 "$node_(260) setdest 0 0 0.00"
+$node_(261) set X_ 261
+$node_(261) set Y_ 0
+$node_(261) set Z_ 0
+$ns_ at 0.0 "$node_(261) setdest 0 0 0.00"
+$node_(262) set X_ 262
+$node_(262) set Y_ 0
+$node_(262) set Z_ 0
+$ns_ at 0.0 "$node_(262) setdest 0 0 0.00"
+$node_(263) set X_ 263
+$node_(263) set Y_ 0
+$node_(263) set Z_ 0
+$ns_ at 0.0 "$node_(263) setdest 0 0 0.00"
+$node_(264) set X_ 264
+$node_(264) set Y_ 0
+$node_(264) set Z_ 0
+$ns_ at 0.0 "$node_(264) setdest 0 0 0.00"
+$node_(265) set X_ 265
+$node_(265) set Y_ 0
+$node_(265) set Z_ 0
+$ns_ at 0.0 "$node_(265) setdest 0 0 0.00"
+$node_(266) set X_ 266
+$node_(266) set Y_ 0
+$node_(266) set Z_ 0
+$ns_ at 0.0 "$node_(266) setdest 0 0 0.00"
+$node_(267) set X_ 267
+$node_(267) set Y_ 0
+$node_(267) set Z_ 0
+$ns_ at 0.0 "$node_(267) setdest 0 0 0.00"
+$node_(268) set X_ 268
+$node_(268) set Y_ 0
+$node_(268) set Z_ 0
+$ns_ at 0.0 "$node_(268) setdest 0 0 0.00"
+$node_(269) set X_ 269
+$node_(269) set Y_ 0
+$node_(269) set Z_ 0
+$ns_ at 0.0 "$node_(269) setdest 0 0 0.00"
+$node_(270) set X_ 270
+$node_(270) set Y_ 0
+$node_(270) set Z_ 0
+$ns_ at 0.0 "$node_(270) setdest 0 0 0.00"
+$node_(271) set X_ 271
+$node_(271) set Y_ 0
+$node_(271) set Z_ 0
+$ns_ at 0.0 "$node_(271) setdest 0 0 0.00"
+$node_(272) set X_ 272
+$node_(272) set Y_ 0
+$node_(272) set Z_ 0
+$ns_ at 0.0 "$node_(272) setdest 0 0 0.00"
+$node_(273) set X_ 273
+$node_(273) set Y_ 0
+$node_(273) set Z_ 0
+$ns_ at 0.0 "$node_(273) setdest 0 0 0.00"
+$node_(274) set X_ 274
+$node_(274) set Y_ 0
+$node_(274) set Z_ 0
+$ns_ at 0.0 "$node_(274) setdest 0 0 0.00"
+$node_(275) set X_ 275
+$node_(275) set Y_ 0
+$node_(275) set Z_ 0
+$ns_ at 0.0 "$node_(275) setdest 0 0 0.00"
+$node_(276) set X_ 276
+$node_(276) set Y_ 0
+$node_(276) set Z_ 0
+$ns_ at 0.0 "$node_(276) setdest 0 0 0.00"
+$node_(277) set X_ 277
+$node_(277) set Y_ 0
+$node_(277) set Z_ 0
+$ns_ at 0.0 "$node_(277) setdest 0 0 0.00"
+$node_(278) set X_ 278
+$node_(278) set Y_ 0
+$node_(278) set Z_ 0
+$ns_ at 0.0 "$node_(278) setdest 0 0 0.00"
+$node_(279) set X_ 279
+$node_(279) set Y_ 0
+$node_(279) set Z_ 0
+$ns_ at 0.0 "$node_(279) setdest 0 0 0.00"
+$node_(280) set X_ 280
+$node_(280) set Y_ 0
+$node_(280) set Z_ 0
+$ns_ at 0.0 "$node_(280) setdest 0 0 0.00"
+$node_(281) set X_ 281
+$node_(281) set Y_ 0
+$node_(281) set Z_ 0
+$ns_ at 0.0 "$node_(281) setdest 0 0 0.00"
+$node_(282) set X_ 282
+$node_(282) set Y_ 0
+$node_(282) set Z_ 0
+$ns_ at 0.0 "$node_(282) setdest 0 0 0.00"
+$node_(283) set X_ 283
+$node_(283) set Y_ 0
+$node_(283) set Z_ 0
+$ns_ at 0.0 "$node_(283) setdest 0 0 0.00"
+$node_(284) set X_ 284
+$node_(284) set Y_ 0
+$node_(284) set Z_ 0
+$ns_ at 0.0 "$node_(284) setdest 0 0 0.00"
+$node_(285) set X_ 285
+$node_(285) set Y_ 0
+$node_(285) set Z_ 0
+$ns_ at 0.0 "$node_(285) setdest 0 0 0.00"
+$node_(286) set X_ 286
+$node_(286) set Y_ 0
+$node_(286) set Z_ 0
+$ns_ at 0.0 "$node_(286) setdest 0 0 0.00"
+$node_(287) set X_ 287
+$node_(287) set Y_ 0
+$node_(287) set Z_ 0
+$ns_ at 0.0 "$node_(287) setdest 0 0 0.00"
+$node_(288) set X_ 288
+$node_(288) set Y_ 0
+$node_(288) set Z_ 0
+$ns_ at 0.0 "$node_(288) setdest 0 0 0.00"
+$node_(289) set X_ 289
+$node_(289) set Y_ 0
+$node_(289) set Z_ 0
+$ns_ at 0.0 "$node_(289) setdest 0 0 0.00"
+$node_(290) set X_ 290
+$node_(290) set Y_ 0
+$node_(290) set Z_ 0
+$ns_ at 0.0 "$node_(290) setdest 0 0 0.00"
+$node_(291) set X_ 291
+$node_(291) set Y_ 0
+$node_(291) set Z_ 0
+$ns_ at 0.0 "$node_(291) setdest 0 0 0.00"
+$node_(292) set X_ 292
+$node_(292) set Y_ 0
+$node_(292) set Z_ 0
+$ns_ at 0.0 "$node_(292) setdest 0 0 0.00"
+$node_(293) set X_ 293
+$node_(293) set Y_ 0
+$node_(293) set Z_ 0
+$ns_ at 0.0 "$node_(293) setdest 0 0 0.00"
+$node_(294) set X_ 294
+$node_(294) set Y_ 0
+$node_(294) set Z_ 0
+$ns_ at 0.0 "$node_(294) setdest 0 0 0.00"
+$node_(295) set X_ 295
+$node_(295) set Y_ 0
+$node_(295) set Z_ 0
+$ns_ at 0.0 "$node_(295) setdest 0 0 0.00"
+$node_(296) set X_ 296
+$node_(296) set Y_ 0
+$node_(296) set Z_ 0
+$ns_ at 0.0 "$node_(296) setdest 0 0 0.00"
+$node_(297) set X_ 297
+$node_(297) set Y_ 0
+$node_(297) set Z_ 0
+$ns_ at 0.0 "$node_(297) setdest 0 0 0.00"
+$node_(298) set X_ 298
+$node_(298) set Y_ 0
+$node_(298) set Z_ 0
+$ns_ at 0.0 "$node_(298) setdest 0 0 0.00"
+$node_(299) set X_ 299
+$node_(299) set Y_ 0
+$node_(299) set Z_ 0
+$ns_ at 0.0 "$node_(299) setdest 0 0 0.00"
+$node_(300) set X_ 300
+$node_(300) set Y_ 0
+$node_(300) set Z_ 0
+$ns_ at 0.0 "$node_(300) setdest 0 0 0.00"

@@ -173,9 +173,9 @@ CSVManager::WriteHeader (std::string header)
 
 	boost::filesystem::path parentPath = m_csvFilePath.parent_path();
 	boost::filesystem::create_directories(parentPath);
-	std::ofstream out (m_csvFilePath.string());
+	std::ofstream out(m_csvFilePath.string());
 	out << header.c_str() << std::endl;
-	out.close ();
+	out.close();
 }
 
 void
@@ -190,12 +190,9 @@ CSVManager::EnableAlternativeFilename(boost::filesystem::path path)
 	gettimeofday(&tp, NULL);
 	long int ms = tp.tv_sec * 1000 + tp.tv_usec / 1000;
 
-	// Create the new filename
-//	new_filename.append(base);
-//	new_filename.append(separators, 1, 1);	// only '_'
-//	new_filename.append(std::to_string(ms));
 	std::string finalPartOfPath = "-" + to_string(ms) + extension;
 	m_csvFilePath = path += finalPartOfPath;
+	cout << "roffTest= " << m_csvFilePath << endl;
 }
 
 
@@ -461,8 +458,11 @@ private:
 	double									m_TotalSimTime;
 	uint32_t								m_printToFile;
 	uint32_t								m_printCoords;
+	uint32_t								m_createObstacleShadowingLossFile;
+	uint32_t								m_useObstacleShadowingLossFile;
 	uint32_t								m_beaconInterval;
 	uint32_t								m_distanceRange;
+	uint32_t								m_propagationLoss;
 
 };
 
@@ -495,7 +495,10 @@ ROFFVanetExperiment::ROFFVanetExperiment():
 		m_printToFile(1),
 		m_printCoords(0),
 		m_beaconInterval(100),
-		m_distanceRange(1) {
+		m_distanceRange(1),
+		m_propagationLoss(1),
+		m_createObstacleShadowingLossFile(0),
+		m_useObstacleShadowingLossFile(0) {
 	srand(time(0));
 
 	RngSeedManager::SetSeed(time(0));
@@ -532,13 +535,13 @@ void ROFFVanetExperiment::ProcessOutputs() {
 	std::stringstream dataStream;
 	m_roffApplication->PrintStats (dataStream);
 	if (m_printToFile) {
-//		g_csvData.AddValue((int) m_scenario);
+		g_csvData.AddValue((int) 0); //scenario
 		g_csvData.AddValue((int) m_actualRange);
-//		g_csvData.AddValue((int) m_staticProtocol);
+		g_csvData.AddValue((int) 0); //staticProtocol
 		g_csvData.AddValue((int) m_loadBuildings);
 		g_csvData.AddValue((int) m_nNodes);
 		g_csvData.AddMultipleValues(dataStream);
-		g_csvData.CloseRow ();
+		g_csvData.CloseRow();
 	}
 }
 
@@ -643,11 +646,21 @@ ROFFVanetExperiment::SetupAdhocDevices() {
 	YansWifiPhyHelper wifiPhy =  YansWifiPhyHelper::Default();
 //	wifiPhy.
 	YansWifiChannelHelper wifiChannel;
-	wifiChannel.SetPropagationDelay("ns3::ConstantSpeedPropagationDelayModel");
-//	wifiChannel.AddPropagationLoss("ns3::TwoRayGroundPropagationLossModel", "Frequency", DoubleValue(freq), "HeightAboveZ", DoubleValue(1.5));
+	if (m_propagationLoss == 0) {
 		wifiChannel.AddPropagationLoss("ns3::RangePropagationLossModel", "MaxRange", DoubleValue(m_actualRange));
-	if (m_loadBuildings != 0) {
-		wifiChannel.AddPropagationLoss ("ns3::ObstacleShadowingPropagationLossModel", "Radius", DoubleValue(750));
+	} else if (m_propagationLoss == 1) {
+		wifiChannel.AddPropagationLoss("ns3::TwoRayGroundPropagationLossModel", "Frequency", DoubleValue(freq), "HeightAboveZ", DoubleValue(1.5));
+	} else {
+		NS_LOG_ERROR("m_propagationLoss not recognized");
+	}
+
+	if (m_loadBuildings != 0)
+	{
+		wifiChannel.AddPropagationLoss ("ns3::ObstacleShadowingPropagationLossModel",
+										"Radius", DoubleValue(500),
+										"CreateFile", IntegerValue(m_createObstacleShadowingLossFile),
+										"UseFile", IntegerValue(m_useObstacleShadowingLossFile),
+										"MapBasePath", StringValue(m_mapBasePath));
 	}
 	wifiPhy.SetChannel(wifiChannel.Create());
 	wifiPhy.SetPcapDataLinkType(YansWifiPhyHelper::DLT_IEEE802_11);
@@ -686,7 +699,6 @@ void ROFFVanetExperiment::ConfigureConnections() {
 	ipv4.SetBase("10.1.0.0", "255.255.0.0");
 	m_adhocInterfaces = ipv4.Assign(m_adhocDevices);
 
-	// TODO
 	OnOffHelper onoff1 ("ns3::UdpSocketFactory", Address());
 	onoff1.SetAttribute("OnTime", StringValue("ns3::ConstantRandomVariable[Constant=1.0]"));
 	onoff1.SetAttribute("OffTime", StringValue("ns3::ConstantRandomVariable[Constant=0.0]"));
@@ -729,7 +741,9 @@ void ROFFVanetExperiment::ConfigureROFFApplication () {
 							   m_vehicleDistance,
 							   m_vehicleDistance,
 							   m_beaconInterval,
-							   m_distanceRange
+							   m_distanceRange,
+							   m_startingNode,
+							   m_printCoords
 							  );
 //	NS_LOG_UNCOND("POST INSTALL");
 	m_roffApplication->SetStartTime(Seconds(1));
@@ -779,8 +793,13 @@ void ROFFVanetExperiment::CommandSetup (int argc, char *argv[]) {
 			"(e.g. ../maps/Padova-25.osm.xml. The dash '-' in the name is mandatory)", m_mapBasePath);
 	cmd.AddValue("printToFile", "Print data to file or not: 0 not print, 1 print ", m_printToFile);
 	cmd.AddValue("printCoords", "Print coords to file or not: 0 not print, 1 print ", m_printCoords);
+	cmd.AddValue ("createObstacleShadowingLossFile", "Create file which saves obstacle losses (dBm) keyed by "
+			"senderCoord, receiverCoord : 0 not create, 1 create ", m_createObstacleShadowingLossFile);
+	cmd.AddValue ("useObstacleShadowingLossFile", "Use optimization based on file which saves obstacle losses *dBm) "
+			"keyed by senderCoord, receiverCoord:  0 don't use it, 1 use it ", m_useObstacleShadowingLossFile);
 	cmd.AddValue("beaconInterval", "Time between beacons (hello messages) in milliseconds ", m_beaconInterval);
 	cmd.AddValue("distanceRange", "Distance range used to create ESD bitmap (called 'k' in ROFF article", m_distanceRange);
+	cmd.AddValue("propagationLoss", "Type of propagation loss model: 0=RangePropagation, 1=TwoRayGround", m_propagationLoss);
 
 	cmd.Parse(argc, argv);
 }
@@ -941,36 +960,43 @@ Ptr<Socket> ROFFVanetExperiment::SetupPacketSend (Ipv4Address addr, Ptr<Node> no
 int main (int argc, char *argv[])
 {
     cout << "Start main urban" << endl;
-	NS_LOG_UNCOND ("FB Vanet Experiment URBAN");
+	NS_LOG_UNCOND ("ROFF Vanet Experiment URBAN");
 	unsigned int maxRun = RngSeedManager::GetRun();
 
 //	Before launching experiments, calculate output file path
 	ROFFVanetExperiment experiment;
 	experiment.Configure(argc, argv);
-//	if (experiment.GetPrintToFile()) {
-//		string filePath = experiment.CalculateOutFilePath();
-//		string additionalPath;
-//		string header;
+	if (experiment.GetPrintToFile()) {
+		string filePath = experiment.CalculateOutFilePath();
+		string additionalPath;
+		string header;
 //
 //		if(experiment.GetPrintCoords()) {
-//			additionalPath = "/out/scenario-urbano-con-coord/";
+//			additionalPath = "/out/scenario-urbano-con-coord/roff";
 //			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
 //					"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
 //					"\"Slots\",\"Messages sent\",\"Messages received\", \"Starting x\", \"Starting y\","
 //					"\"Starting node\", \"Vehicle distance\", \"Received node ids\", "
-//					"\"Node ids\", \"Transmission map\", \"Received on circ nodes\", \"Version\", \"Transmission vector\"";
+//					"\"Node ids\", \"Transmission map\", \"Received on circ nodes\", \"Transmission vector\"";
 //		}
 //		else {
-//			additionalPath = "/out/scenario-urbano/";
+//			additionalPath = "/out/scenario-urbano/roff";
 //			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
 //								"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
-//								"\"Slots\",\"Messages sent\",\"Messages received\", \"Version\"";
+//								"\"Slots\",\"Messages sent\",\"Messages received\"";
 //		}
-//		boost::filesystem::path path = boost::filesystem::current_path() /= additionalPath;
-//		path /= filePath;
-//		g_csvData.EnableAlternativeFilename(path);
-//		g_csvData.WriteHeader(header);
-//	}
+
+		header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
+				"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
+				"\"Slots\",\"Messages sent\",\"Messages received\", \"Starting x\", \"Starting y\","
+				"\"Starting node\", \"Vehicle distance\", \"Received node ids\", "
+				"\"Node ids\", \"Transmission map\", \"Received on circ nodes\", \"Transmission vector\"";
+		additionalPath += "/out/scenario-urbano/roff/roff";
+		boost::filesystem::path path = boost::filesystem::current_path() /= additionalPath;
+		path /= filePath;
+		g_csvData.EnableAlternativeFilename(path);
+		g_csvData.WriteHeader(header);
+	}
 	for(unsigned int i = 0; i < maxRun; i++) {
 		cout << "run = " << i << endl;
 		ROFFVanetExperiment experiment;

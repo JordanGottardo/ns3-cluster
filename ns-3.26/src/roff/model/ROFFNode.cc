@@ -12,12 +12,12 @@ namespace ns3 {
 
 	NS_OBJECT_ENSURE_REGISTERED(ROFFNode);
 
-	ROFFNode::ROFFNode(): m_received(false), m_sent(false), m_phase(0) {
+	ROFFNode::ROFFNode(): m_received(false), m_sent(false), m_phase(0), m_slot(0), m_hop(0) {
 		NS_LOG_FUNCTION(this);
 	}
 
 	ROFFNode::ROFFNode(Ptr<Node> node, Ptr<Socket> socket): m_node(node), m_socket(socket), m_neighborTable(),
-			m_received(false), m_sent(false), m_phase(-1) {
+			m_received(false), m_sent(false), m_phase(-1), m_slot(0), m_hop(0) {
 		NS_LOG_FUNCTION(this);
 	}
 
@@ -43,11 +43,23 @@ namespace ns3 {
 	}
 
 	const Vector ROFFNode::GetPosition() const {
-		return m_node->GetObject<MobilityModel>()->GetPosition();
+		return m_position;
 	}
 
 	int32_t ROFFNode::GetPhase() const {
 		return m_phase;
+	}
+
+	uint32_t ROFFNode::GetSlot() const {
+		return m_slot;
+	}
+
+	uint32_t ROFFNode::GetHop() const {
+		return m_hop;
+	}
+
+	Time ROFFNode::GetTimestamp() const {
+		return m_timestamp;
 	}
 
 //	void ROFFNode::SetPosition(const Vector& position) {
@@ -75,6 +87,20 @@ namespace ns3 {
 	void ROFFNode::SetPhase(int32_t phase) {
 		m_phase = phase;
 	}
+
+	void ROFFNode::SetSlot(uint32_t slot) {
+		m_slot = slot;
+	}
+
+	void ROFFNode::SetHop(uint32_t hop) {
+		m_hop = hop;
+	}
+
+	void ROFFNode::SetTimestamp(Time timestamp) {
+		m_timestamp = timestamp;
+	}
+
+
 
 //	Methods
 
@@ -104,6 +130,16 @@ namespace ns3 {
 
 	bool ROFFNode::IsNodeWinnerInContention(uint32_t dist, Vector pos) const {
 		return m_neighborTable.IsNodeWinnerInContention(GetId(), dist, pos);
+	}
+
+	const Vector ROFFNode::UpdatePosition() {
+		NS_LOG_FUNCTION(this);
+//		cout << "ROFFNode::GetPosition" << endl;
+//		m_node->GetObject<MobilityModel>();
+//		cout << "ROFFNode::GetPosition 2" << endl;
+		Vector pos = m_node->GetObject<MobilityModel>()->GetPosition();
+		m_position = pos;
+		return pos;
 	}
 
 }

@@ -182,7 +182,7 @@ def parseFile(filePath, ns2MobilityFile):
         xNodeCoords, yNodeCoords = retrieveCoords(rawNodeIds, ns2MobilityFile)
         rawTransmissionMap = line[20]
         receivedOnCircIds = line[21]
-        rawTransmissionVector = line[23]
+        rawTransmissionVector = line[22]
         receivedCoordsOnCirc = retrieveCoordsAsVector(receivedOnCircIds, ns2MobilityFile)
         receivedOnCircIds = filter(None, receivedOnCircIds.split("_"))
         transmissionMap = parseTransmissionMap(rawTransmissionMap)
@@ -190,6 +190,8 @@ def parseFile(filePath, ns2MobilityFile):
     return txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds, transmissionVector, nodeIds
 
 def plotBuildings(polyFilePath, plotBuildingIds=False, ax=None):
+    if (polyFilePath is None):
+        return
     tree = ET.parse(polyFilePath)
     root = tree.getroot()
     polyList = list(root.iter("poly"))

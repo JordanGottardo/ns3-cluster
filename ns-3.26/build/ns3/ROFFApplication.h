@@ -10,6 +10,7 @@
 
 #include "ROFFHeader.h"
 #include "ROFFNode.h"
+#include "Edge.h"
 #include "ns3/application.h"
 #include "ns3/network-module.h"
 #include "ns3/simulator.h"
@@ -53,7 +54,7 @@ public:
 	*/
 	void Install(uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi,
 			uint32_t aoi_error, uint32_t m_vehicleDistance, uint32_t beaconInterval,
-			uint32_t m_distanceRange);
+			uint32_t m_distanceRange, uint32_t startingNode, uint32_t printCoords);
 
 	/**
 	* \brief Add a new node to the application and set up protocol parameters
@@ -177,25 +178,42 @@ private:
 
 	double ComputePropagationDelay(Vector coord1, Vector coord2);
 
-//	Application data
-	uint32_t 						m_nNodes; // number of nodes
-	uint32_t						m_startingNode; // index of the node that will generate the Alert Message
-	uint32_t						m_broadcastPhaseStart; // broadcast phase start time (seconds)
-	uint32_t						m_actualRange; // real transmission range
-	uint32_t						m_aoi; // radius of the area of interest (meters)
-	uint32_t						m_aoi_error;	// meters +/- with respect to the radius
-	uint32_t						m_packetPayload; // size of the packet payload
-	uint32_t						m_vehicleDistance; //distance between vehicles
-	uint32_t 						m_beaconInterval;
-	uint32_t						m_distanceRange;
-	Ptr<UniformRandomVariable> 		m_randomVariable;
+	/**
+	* \brief Returns a string from a vector
+	* \return the string with the content of the vector
+	 */
+	template <typename T>
+	string StringifyVector(const vector<T>& v);
 
-	map<uint32_t, Ptr<ROFFNode>>	m_nodes; // nodes that run this application
+	/**
+	* \brief Returns a string representation of m_transmissionMap
+	* \return  a string representation of m_transmissionMap	 */
+	string StringifyTransmissionMap() const;
+
+
+//	Application data
+uint32_t 								m_nNodes; // number of nodes
+	uint32_t							m_startingNode; // index of the node that will generate the Alert Message
+	uint32_t							m_broadcastPhaseStart; // broadcast phase start time (seconds)
+	uint32_t							m_actualRange; // real transmission range
+	uint32_t							m_aoi; // radius of the area of interest (meters)
+	uint32_t							m_aoi_error;	// meters +/- with respect to the radius
+	uint32_t							m_packetPayload; // size of the packet payload
+	uint32_t							m_vehicleDistance; //distance between vehicles
+	uint32_t 							m_beaconInterval;
+	uint32_t							m_distanceRange;
+	Ptr<UniformRandomVariable> 			m_randomVariable;
+
+	map<uint32_t, Ptr<ROFFNode>>		m_nodes; // nodes that run this application
 
 //	Output data
-	uint32_t						m_received;	// number of hello messages sent
-	uint32_t						m_sent; // // number of alert messages sent
-
+	uint32_t							m_received;	// number of hello messages sent
+	uint32_t							m_sent; // // number of alert messages sent
+uint32_t								m_collisions; // number of collisions
+	vector<uint32_t>					m_receivedNodes; // ids of nodes which have received alert messages, duplicates allowed
+	uint32_t							m_printCoords; // 1 to print coordinates, 0 otherwise
+	map<uint32_t, vector<uint32_t>>		m_transmissionList; //list to discover path of alert messages
+	vector<Edge>						m_transmissionVector; //vector to discover paths of alert messages (single broadcasts ordered by time of reception)
 
 };
 

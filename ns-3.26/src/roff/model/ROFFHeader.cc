@@ -20,16 +20,18 @@ namespace ns3 {
 	ROFFHeader::ROFFHeader(): m_type(HELLO_MESSAGE),
 							  m_senderId(0),
 							  m_position(Vector(0, 0, 0)),
-							  m_phase(0)
-							  	{
+							  m_phase(0),
+							  m_slot(0) {
 	}
 
 	ROFFHeader::ROFFHeader(uint32_t type, uint32_t sender, Vector position,
-						   boost::dynamic_bitset<> esdBitmap, uint32_t phase): m_type(type),
+						   boost::dynamic_bitset<> esdBitmap, uint32_t phase, uint32_t slot):
+																			    m_type(type),
 																 	 	 	 	m_senderId(sender),
 																				m_position(position),
 																				m_esdBitmap(esdBitmap),
-																				m_phase(phase) {
+																				m_phase(phase),
+																				m_slot(slot) {
 	}
 
 //	Getters
@@ -54,6 +56,10 @@ namespace ns3 {
 		return m_phase;
 	}
 
+	uint32_t ROFFHeader::GetSlot() const {
+		return m_slot;
+	}
+
 //	Setters
 
 	void ROFFHeader::SetType(uint32_t type) {
@@ -76,6 +82,10 @@ namespace ns3 {
 		m_phase = phase;
 	}
 
+	void ROFFHeader::SetSlot(uint32_t slot) {
+		m_slot = slot;
+	}
+
 //	Methods
 
 	TypeId ROFFHeader::GetInstanceTypeId() const {
@@ -93,7 +103,7 @@ namespace ns3 {
 	uint32_t ROFFHeader::GetSerializedSize() const {
 		uint32_t bitmapSize = GetESDBitmapRoundedSizeInBytes(m_esdBitmap.size());
 //		cout << "ROFFHeader::GetSerializedSize bitmapSize = " << bitmapSize << endl;
-		uint32_t serializedSize =  4 * 3 //m_type, m_senderId and m_phase
+		uint32_t serializedSize =  4 * 4 //m_type, m_senderId, m_phase, m_slot
 								   + 8 * 3 // m_position
 								   + 4 // m_esdBitmap.size
 								   + bitmapSize;
@@ -182,6 +192,7 @@ namespace ns3 {
 		WriteDouble(&start, m_position.y);
 		WriteDouble(&start, m_position.z);
 		start.WriteU32(m_phase);
+		start.WriteU32(m_slot);
 		start.WriteU32(m_esdBitmap.size());
 		WriteESDBitmap(&start);
 //		WriteDouble(&start, 5);
@@ -257,6 +268,7 @@ namespace ns3 {
 		double z = ReadDouble(&start);
 		m_position = Vector(x, y, z);
 		m_phase = start.ReadU32();
+		m_slot = start.ReadU32();
 		uint32_t esdBitmapSize = start.ReadU32();
 		ReadESDBitmap(&start, esdBitmapSize);
 //		cout << "Deserialize m_type = " << m_type << " m_senderId " << m_senderId << "coord= "
@@ -266,6 +278,7 @@ namespace ns3 {
 	}
 
 	void ROFFHeader::Print(ostream& os) const {
+		// todo complete this
 		NS_LOG_FUNCTION (this);
 		os << "m_type (" << m_type << ") "
 		   << "m_senderId (" << m_senderId << ") "

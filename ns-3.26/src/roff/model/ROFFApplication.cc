@@ -21,7 +21,8 @@ TypeId ROFFApplication::GetTypeId() {
 
 
 void ROFFApplication::Install(uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi,
-	uint32_t aoi_error, uint32_t vehicleDistance, uint32_t beaconInterval, uint32_t distanceRange) {
+	uint32_t aoi_error, uint32_t vehicleDistance, uint32_t beaconInterval, uint32_t distanceRange,
+	uint32_t startingNode, uint32_t printCoords) {
 	NS_LOG_FUNCTION(this);
 	m_broadcastPhaseStart = broadcastPhaseStart;
 	m_aoi = aoi;
@@ -30,6 +31,8 @@ void ROFFApplication::Install(uint32_t broadcastPhaseStart, uint32_t actualRange
 	m_vehicleDistance = vehicleDistance;
 	m_beaconInterval = beaconInterval;
 	m_distanceRange = distanceRange;
+	m_startingNode = startingNode;
+	m_printCoords = printCoords;
 	m_randomVariable = CreateObject<UniformRandomVariable>();
 //	NS_LOG_UNCOND("END INSTALL");
 }
@@ -41,12 +44,98 @@ void ROFFApplication::AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> si
 	sink->SetRecvCallback(MakeCallback(&ROFFApplication::ReceivePacket, this));
 //	NS_LOG_UNCOND("post cback");
 	m_nodes[roffNode->GetId()] = roffNode;
+//	cout << roffNode->GetId() << endl;
 //	cout << "ROFFAPP AddNode " << roffNode->GetId() << endl;
 //	NS_LOG_UNCOND("end add node");
 }
 
 void ROFFApplication::PrintStats(std::stringstream& dataStream) {
-//	TODO
+	NS_LOG_FUNCTION (this);
+//	NS_LOG_INFO("ROFFApplication::PrintStats " << m_received << " nodes have received the message");
+	uint32_t cover = 1;	// 'cause we count m_startingNode
+	uint32_t circ = 0, circCont = 0;
+
+	double radiusMin = m_aoi - m_aoi_error;
+	double radiusMax = m_aoi + m_aoi_error;
+
+	long double time_sum = 0;
+	long double hops_sum = 0;
+	long double slots_sum = 0;
+
+	stringstream receivedOnCircIds;
+
+	for (uint32_t i = 0; i < m_nNodes; i++)	{
+		Ptr<ROFFNode> current = m_nodes.at (i);
+		uint32_t nodeId = current->GetId ();
+
+		// Skip the starting node
+		if (nodeId == m_startingNode)
+			continue;
+
+		// If this isn't a vehciles, skip
+//			if (!current->AmIaVehicle())
+//				continue;
+
+		// Update the total cover value
+		if (current->GetReceived())
+			cover++;
+
+		// Compute cover on circumference of radius m_aoi
+
+		Ptr<ROFFNode> startingNode = m_nodes.at(m_startingNode);
+
+		Vector currentPosition = current->GetPosition();
+		Vector startingNodePosition = startingNode->GetPosition();
+
+		double distance = ns3::CalculateDistance (currentPosition, startingNodePosition);
+
+		// Check if the current vehicle is in the circumference and within the range
+		if ((distance >= radiusMin) && (distance <= radiusMax))	{
+			// Update the number of vehicles in the circumference
+			circCont++;
+
+			// Update the cover value
+			if (current->GetReceived()) {
+				circ++;
+				receivedOnCircIds << current->GetId() << "_";
+				// Update mean time, nums and slots
+					hops_sum += current->GetHop();
+					slots_sum += current->GetSlot();
+					time_sum += current->GetTimestamp().GetMicroSeconds ();
+			}
+		}
+	}
+//	Time when the first alert message was sent
+//		Time timeref = this->GetFBNode(m_startingNode)->GetTimestamp(); //todo fix
+	Time timeref;
+	string receivedNodes = StringifyVector(m_receivedNodes);
+	stringstream nodeIds;
+
+	for (auto i = m_nodes.begin(); i != m_nodes.end(); ++i) {
+		uint32_t id = (*i).second->GetId();
+		nodeIds << id << "_";
+//		Vector pos = (*i)->GetPosition();
+//		if ( pos.x > 1050.0 && pos.x < 1250.0 && pos.y > 1800.0 && pos.y < 1900.0) {
+//			cout << id << endl;
+//		}
+	}
+
+	dataStream << circCont << ","
+			<< cover << ","
+			<< circ << ","
+			<< (time_sum / (double) circ) - timeref.GetMicroSeconds () << ","
+			<< (hops_sum / (double) circ) << ","
+			<< (slots_sum / (double) circ) << ","
+			<< m_sent << ","
+			<< m_received;
+
+	if (m_printCoords) {
+		 Ptr<ROFFNode> startingNode = m_nodes.at(m_startingNode);
+		 string transmissionVector = StringifyVector(m_transmissionVector);
+		 dataStream << "," << startingNode->GetPosition().x << "," << startingNode->GetPosition().y << "," << m_startingNode << "," <<
+				m_vehicleDistance << "," << receivedNodes << "," << nodeIds.str() << "," << StringifyTransmissionMap() <<
+				"," << receivedOnCircIds.str() << "," << transmissionVector;
+	}
 }
 
 void ROFFApplication::StartApplication(void) {
@@ -65,7 +154,8 @@ void ROFFApplication::GenerateHelloTraffic() {
 	NS_LOG_FUNCTION(this);
 	Ptr<ROFFNode> roffNode = m_nodes.at(0);
 //
-	for (int i = 0; i < 100; i++) {
+	for (int i = 0; i < 5; i++) {
+		NS_LOG_DEBUG("ROFFApplication::GenerateHelloTraffic step= " << i);
 		for (auto entry: m_nodes) {
 			Ptr<ROFFNode> roffNode = entry.second;
 			// Generate random waiting time between [0, beaconInterval*2]. Average is beaconInterval
@@ -87,9 +177,9 @@ void ROFFApplication::StartBroadcastPhase(void) {
 void ROFFApplication::GenerateHelloMessage(Ptr<ROFFNode> node) {
 	uint32_t headerType = HELLO_MESSAGE;
 	uint32_t nodeId = node->GetId();
-	Vector position = node->GetPosition();
+	Vector position = node->UpdatePosition();
 
-	ROFFHeader header(headerType, nodeId, position, boost::dynamic_bitset<>());
+	ROFFHeader header(headerType, nodeId, position, boost::dynamic_bitset<>(), 0, 0);
 
 	Ptr<Packet> packet = Create<Packet>(m_packetPayload);
 	packet->AddHeader(header);
@@ -100,14 +190,18 @@ void ROFFApplication::GenerateHelloMessage(Ptr<ROFFNode> node) {
 void ROFFApplication::GenerateAlertMessage(Ptr<ROFFNode> node) {
 	NS_LOG_FUNCTION (this << node);
 	NS_LOG_DEBUG("ROFFApplication::Generate Alert message");
+	m_nodes.at(m_startingNode)->UpdatePosition();
+//	for (auto it = m_nodes.begin(); it != m_nodes.end(); it++) {
+//		cout << "ROFFApplication::GenerateAlertMessage" << it->second->GetPosition() << endl;
+//	}
 
 	uint32_t headerType = ALERT_MESSAGE;
 	uint32_t nodeId = node->GetId();
-	Vector position = node->GetPosition();
+	Vector position = node->UpdatePosition();
 	boost::dynamic_bitset<> esdBitmap = node->GetESDBitmap(m_distanceRange);
 //	cout << "ROFFApplication::GenerateAlertMessage esdBitmap = " << esdBitmap << " size= " <<
 //			esdBitmap.size() << endl;
-	ROFFHeader header(headerType, nodeId, position, esdBitmap, 0);
+	ROFFHeader header(headerType, nodeId, position, esdBitmap, 0, 0);
 
 	Ptr<Packet> packet = Create<Packet>(m_packetPayload);
 //	cout << "add " << node->GetPosition() << endl;
@@ -124,11 +218,12 @@ void ROFFApplication::ReceivePacket(Ptr<Socket> socket) {
 	NS_LOG_FUNCTION(this << socket);
 	Ptr<Node> node = socket->GetNode();
 	Ptr<ROFFNode> roffNode = m_nodes.at(node->GetId());
-//	cout << "received packet by node " << node->GetId() << " at time=" << Simulator::Now().GetSeconds() << endl;
+//	NS_LOG_INFO("ROFFApplication::ReceivePacket received packet by node " << node->GetId() << " at time=" <<
+//			Simulator::Now().GetSeconds());
 	Address senderAddress;
 	Ptr<Packet> packet;
 
-	Vector currentPosition = node->GetObject<MobilityModel>()->GetPosition();
+	Vector currentPosition = roffNode->UpdatePosition();
 
 	while ((packet = socket->RecvFrom(senderAddress))) {
 		ROFFHeader header;
@@ -165,22 +260,47 @@ void ROFFApplication::HandleHelloMessage(Ptr<ROFFNode> node,
 void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 		ROFFHeader header, uint32_t distance) {
 	NS_LOG_FUNCTION(this << node << header << distance);
-	NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage Node " << node->GetId() << " received alert message from node " << header.GetSenderId());
+//	NS_LOG_INFO("ROFFApplication::HandleAlertMessage Node " << node->GetId() << " received alert message from node " << header.GetSenderId());
+
 	int32_t phase = header.GetPhase();
 	node->SetPhase(phase);
 	if (node->GetReceived()) {
 		return;
 	}
+	NS_LOG_INFO("ROFFApplication::HandleAlertMessage Node " << node->GetId() << " "
+			"received alert message from node " << header.GetSenderId() <<
+			" with phase= " << phase);
+
+
+	uint32_t senderId = header.GetSenderId();
+	uint32_t receiverId = node->GetId();
+
 	node->SetReceived(true);
+	node->SetTimestamp(Simulator::Now());
+	node->SetSlot(header.GetSlot());
+	node->SetHop(phase + 1);
+	m_received++;
+	// save transmission for stats and metrics
+	m_receivedNodes.push_back(receiverId);
+	auto it = m_transmissionList.find(senderId);
+	if (it == m_transmissionList.end()) {
+		m_transmissionList[senderId] = vector<uint32_t>();
+	}
+	m_transmissionList[senderId].push_back(receiverId);
+	m_transmissionVector.push_back(Edge(senderId, receiverId, phase));
+
+
 	boost::dynamic_bitset<> esdBitmap =  header.GetESDBitmap();
 	uint32_t esdBitmapSize = esdBitmap.size();
 //	NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage Received bitmap in alert= " << esdBitmap);
+	Vector currentPosition = node->UpdatePosition();
+	// Get the position of the sender node
 	Vector senderPosition = header.GetPosition();
-	Vector nodePosition = node->GetPosition();
-	uint32_t dist = rint(ns3::CalculateDistance(senderPosition, nodePosition));
+	uint32_t dist = rint(ns3::CalculateDistance(senderPosition, currentPosition));
 //	NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage dist= " << dist);
-	uint32_t posOfDist = dist / m_distanceRange; //todo controllare se funziona anche con distanceRange > 1
+	uint32_t posOfDist = dist / m_distanceRange;
 	uint32_t posToCheck = esdBitmapSize - posOfDist - 1;
+
 //	cout << "ROFFHeader::HandleAlertMessage dist= " << dist << " posOfDist= " << posOfDist <<
 //				" posToCheck= " << posToCheck << endl;
 //	cout << esdBitmapSize << " " << posOfDist << " " << posToCheck << endl;;
@@ -202,8 +322,8 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 
 	uint32_t waitingTime = ComputeWaitingTimeArmir(node, senderPosition, rankingOfPositions, priority);
 //	cout << "ROFFApplication::HandleAlertMessage waitingTime= " << waitingTime << endl << endl << endl;
-//	Simulator::Schedule(MilliSeconds(waitingTime), &ROFFApplication::ForwardAlertMessage,
-//			this, node, header, waitingTime); //todo riabilitare
+	Simulator::Schedule(MilliSeconds(waitingTime), &ROFFApplication::ForwardAlertMessage,
+			this, node, header, waitingTime);
 }
 
 void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHeader, uint32_t waitingTime) {
@@ -217,13 +337,17 @@ void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHead
 	if (node->GetSent()) {
 		NS_LOG_DEBUG("ROFFApplication::ForwardAlertMessage node "
 				<< node->GetId() << " defers because of getSent");
+		return;
 	}
+	cout << "id= " << node->GetId() << " nodePhase= " << node->GetPhase() << " headerPhase= "
+			<< phase << endl;
 	uint32_t headerType = ALERT_MESSAGE;
 	uint32_t forwarderId = node->GetId();
-	Vector forwarderPosition = node->GetPosition();
+	uint32_t slot = oldHeader.GetSlot();
+	Vector forwarderPosition = node->UpdatePosition();
 	boost::dynamic_bitset<> esdBitmap = node->GetESDBitmap(m_distanceRange);
 
-	ROFFHeader header(headerType, forwarderId, forwarderPosition, esdBitmap, phase + 1);
+	ROFFHeader header(headerType, forwarderId, forwarderPosition, esdBitmap, phase + 1, slot + waitingTime);
 
 	Ptr<Packet> packet = Create<Packet>(m_packetPayload);
 	packet->AddHeader(header);
@@ -231,6 +355,7 @@ void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHead
 			<< " forwards after waitingTime= " << waitingTime << " at time= " << Simulator::Now());
 	node->Send(packet);
 	node->SetSent(true);
+	m_sent++;
 }
 
 void ROFFApplication::StopNode(Ptr<ROFFNode> fbNode) {
@@ -275,32 +400,34 @@ uint32_t ROFFApplication::ComputeWaitingTimeArmir(Ptr<ROFFNode> node, Vector sen
 //		return ComputeMinDiffArmir(senderCoords, lowerPriorityNodeCoords, higherPriorityNodeCoords);
 //	}
 	// priority >= 3
-	double waitingTime = 0;
-	uint32_t pr = priority - 1;
-	PositionRankingKey range = rankingMap.GetRange(pr);
-	Vector higherPriorityNodeCoords = node->GetCoordsOfVehicleInRange(range, senderCoords, dist);
-	if (dist != -1) {
-		waitingTime += ComputeMinDiffArmir(senderCoords, node->GetPosition(), higherPriorityNodeCoords);
-	}
 
-	for (; pr > 1; pr--) {
-		PositionRankingKey lowerPriorityRange = rankingMap.GetRange(pr);
-		PositionRankingKey higherPriorityRange = rankingMap.GetRange(pr - 1);
-		int32_t lowerPriorityDist;
-		int32_t higherPriorityDist;
-
-		Vector higherPriorityNodeCoords =
-				node->GetCoordsOfVehicleInRange(higherPriorityRange, senderCoords, lowerPriorityDist);
-		Vector lowerPriorityNodeCoords =
-						node->GetCoordsOfVehicleInRange(higherPriorityRange, senderCoords, higherPriorityDist);
-//		cout << "ROFFApplication::ComputeWaitingTimeArmir higherPriorityNodeCoords= " <<
-//				higherPriorityNodeCoords << endl;
-		if (lowerPriorityDist != -1 && higherPriorityDist != -1) {
-			waitingTime += ComputeMinDiffArmir(senderCoords,
-					lowerPriorityNodeCoords, higherPriorityNodeCoords);
-		}
-	}
-	return ceil(waitingTime);
+	return priority - 1;
+//	double waitingTime = 0;
+//	uint32_t pr = priority - 1;
+//	PositionRankingKey range = rankingMap.GetRange(pr);
+//	Vector higherPriorityNodeCoords = node->GetCoordsOfVehicleInRange(range, senderCoords, dist);
+//	if (dist != -1) {
+//		waitingTime += ComputeMinDiffArmir(senderCoords, node->UpdatePosition(), higherPriorityNodeCoords);
+//	}
+//
+//	for (; pr > 1; pr--) {
+//		PositionRankingKey lowerPriorityRange = rankingMap.GetRange(pr);
+//		PositionRankingKey higherPriorityRange = rankingMap.GetRange(pr - 1);
+//		int32_t lowerPriorityDist;
+//		int32_t higherPriorityDist;
+//
+//		Vector higherPriorityNodeCoords =
+//				node->GetCoordsOfVehicleInRange(higherPriorityRange, senderCoords, lowerPriorityDist);
+//		Vector lowerPriorityNodeCoords =
+//						node->GetCoordsOfVehicleInRange(higherPriorityRange, senderCoords, higherPriorityDist);
+////		cout << "ROFFApplication::ComputeWaitingTimeArmir higherPriorityNodeCoords= " <<
+////				higherPriorityNodeCoords << endl;
+//		if (lowerPriorityDist != -1 && higherPriorityDist != -1) {
+//			waitingTime += ComputeMinDiffArmir(senderCoords,
+//					lowerPriorityNodeCoords, higherPriorityNodeCoords);
+//		}
+//	}
+//	return ceil(waitingTime);
 }
 
 uint32_t ROFFApplication::ComputeMinDiffArmir(Vector fwdCoords, Vector lowerPriorityNodeCoords,
@@ -327,7 +454,31 @@ double ROFFApplication::ComputePropagationDelay(Vector coord1, Vector coord2) {
 //	cout << "ROFFApplication::ComputePropagationDelay tra " << coord1 << " e " <<
 //			coord2 << " pd= " << pd << endl;
 	return pd;
+}
 
+
+template <typename T>
+string ROFFApplication::StringifyVector(const vector<T>& v) {
+	NS_LOG_FUNCTION(this);
+	stringstream ss;
+//	cout << "ROFFApplication::PrintStuff" << m_receivedCoords.size() << " " << m_received << endl;
+	for (auto i = v.begin(); i != v.end(); ++i) {
+		ss << *i <<"_";
+	}
+	return ss.str();
+}
+
+string ROFFApplication::StringifyTransmissionMap() const {
+	NS_LOG_FUNCTION(this);
+	stringstream ss;
+	for (auto it = m_transmissionList.begin(); it != m_transmissionList.end(); ++it) {
+		ss << it->first << ":{";
+		for (auto el: it->second) {
+			ss << el << ";";
+		}
+		ss << "}";
+	}
+	return ss.str();
 }
 
 }

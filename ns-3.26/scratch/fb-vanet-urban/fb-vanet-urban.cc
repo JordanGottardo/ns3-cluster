@@ -465,6 +465,7 @@ private:
 	uint32_t								m_printCoords;
 	uint32_t								m_createObstacleShadowingLossFile;
 	uint32_t								m_useObstacleShadowingLossFile;
+	uint32_t								m_propagationLoss;
 
 
 };
@@ -498,7 +499,8 @@ FBVanetExperiment::FBVanetExperiment ()
 		m_printToFile(1),
 		m_printCoords(0),
 		m_createObstacleShadowingLossFile(0),
-		m_useObstacleShadowingLossFile(0) {
+		m_useObstacleShadowingLossFile(0),
+		m_propagationLoss(1) {
 	srand (time (0));
 
 	RngSeedManager::SetSeed (time (0));
@@ -664,8 +666,14 @@ FBVanetExperiment::SetupAdhocDevices ()
 
 	YansWifiPhyHelper wifiPhy =  YansWifiPhyHelper::Default ();
 	YansWifiChannelHelper wifiChannel;
-  wifiChannel.SetPropagationDelay ("ns3::ConstantSpeedPropagationDelayModel");
-	wifiChannel.AddPropagationLoss ("ns3::TwoRayGroundPropagationLossModel", "Frequency", DoubleValue (freq), "HeightAboveZ", DoubleValue (1.5));
+	wifiChannel.SetPropagationDelay ("ns3::ConstantSpeedPropagationDelayModel");
+	if (m_propagationLoss == 0) {
+		wifiChannel.AddPropagationLoss("ns3::RangePropagationLossModel", "MaxRange", DoubleValue(m_actualRange));
+	} else if (m_propagationLoss == 1) {
+		wifiChannel.AddPropagationLoss("ns3::TwoRayGroundPropagationLossModel", "Frequency", DoubleValue(freq), "HeightAboveZ", DoubleValue(1.5));
+	} else {
+		NS_LOG_ERROR("m_propagationLoss not recognized");
+	}
 	if (m_loadBuildings != 0)
 	{
 		wifiChannel.AddPropagationLoss ("ns3::ObstacleShadowingPropagationLossModel",
@@ -713,7 +721,6 @@ FBVanetExperiment::ConfigureConnections ()
 	ipv4.SetBase ("10.1.0.0", "255.255.0.0");
 	m_adhocInterfaces = ipv4.Assign (m_adhocDevices);
 
-	// TODO
 	OnOffHelper onoff1 ("ns3::UdpSocketFactory", Address ());
 	onoff1.SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=1.0]"));
 	onoff1.SetAttribute ("OffTime", StringValue ("ns3::ConstantRandomVariable[Constant=0.0]"));
@@ -808,6 +815,8 @@ void FBVanetExperiment::CommandSetup (int argc, char *argv[]) {
 			"senderCoord, receiverCoord : 0 not create, 1 create ", m_createObstacleShadowingLossFile);
 	cmd.AddValue ("useObstacleShadowingLossFile", "Use optimization based on file which saves obstacle losses *dBm) "
 			"keyed by senderCoord, receiverCoord:  0 don't use it, 1 use it ", m_useObstacleShadowingLossFile);
+	cmd.AddValue("propagationLoss", "Type of propagation loss model: 0=RangePropagation, 1=TwoRayGround", m_propagationLoss);
+
 
 	cmd.Parse (argc, argv);
 }
@@ -829,7 +838,9 @@ void FBVanetExperiment::SetupScenario () {
 	m_vehicleDistance = std::stoi(m_mapBasePath.substr(foundDash + 1));
 
 	m_bldgFile = m_mapBasePath + ".poly.xml";
-	m_traceFile = m_mapBasePath + ".ns2mobility.xml";
+	if (m_traceFile.empty()) {
+		m_traceFile = m_mapBasePath + ".ns2mobility.xml";
+	}
 	m_nNodes = CalculateNumNodes();
 	cout << "numNodes = " << m_nNodes << endl;
 	if (m_startingNode == -1) {
@@ -837,37 +848,6 @@ void FBVanetExperiment::SetupScenario () {
 	}
 	cout << "numNodes = " << m_nNodes << endl;
 	cout << "startingNode = " << m_startingNode << endl;
-//
-//	if (m_scenario == 0)
-//	{
-//		// DEBUG, TODO: delete this scenario
-//		m_bldgFile = "Griglia.poly.xml";
-//		m_traceFile = "Griglia.ns2mobility.xml";
-//
-//		m_nNodes = 96;
-//		m_startingNode = 23;
-//
-//		m_areaOfInterest = 500;
-//	} else if (m_scenario == 1)
-//	{
-//		// Padova (2x2 km)
-//		m_bldgFile = "Padova.poly.xml";
-//		m_traceFile = "Padova.ns2mobility.xml";
-//
-//		m_nNodes = 2224;
-//		m_startingNode = 313;
-//	}
-//	else if (m_scenario == 2)
-//	{
-//		// L.A.  (2x2 km)
-//		m_bldgFile = "LA.poly.xml";
-//		m_traceFile = "LA.ns2mobility.xml";
-//
-//		m_nNodes = 1905;
-//		m_startingNode = 365;
-//	}
-//	else
-//		NS_LOG_ERROR ("Invalid scenario specified. Values must be [1-2].");
 
 	if (m_loadBuildings != 0)
 	{
@@ -978,18 +958,18 @@ int main (int argc, char *argv[])
 		string header;
 
 		if(experiment.GetPrintCoords()) {
-			additionalPath = "/out/scenario-urbano-con-coord/";
+			additionalPath = "/out/scenario-urbano-con-coord/fast-broadcast";
 			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
 					"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
 					"\"Slots\",\"Messages sent\",\"Messages received\", \"Starting x\", \"Starting y\","
 					"\"Starting node\", \"Vehicle distance\", \"Received node ids\", "
-					"\"Node ids\", \"Transmission map\", \"Received on circ nodes\", \"Version\", \"Transmission vector\"";
+					"\"Node ids\", \"Transmission map\", \"Received on circ nodes\", \"Transmission vector\"";
 		}
 		else {
-			additionalPath = "/out/scenario-urbano/";
+			additionalPath = "/out/scenario-urbano/fast-broadcast";
 			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
 								"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
-								"\"Slots\",\"Messages sent\",\"Messages received\", \"Version\"";
+								"\"Slots\",\"Messages sent\",\"Messages received\"";
 		}
 		boost::filesystem::path path = boost::filesystem::current_path() /= additionalPath;
 		path /= filePath;

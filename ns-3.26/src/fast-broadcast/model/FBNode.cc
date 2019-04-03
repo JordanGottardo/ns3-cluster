@@ -46,14 +46,14 @@
 	  return tid;
 	}
 
-	FBNode::FBNode()
-	  : m_id (0),
+	FBNode::FBNode():
+	  	    m_id (0),
 			m_CMFR (0),
 			m_LMFR (0),
 			m_CMBR (0),
 			m_LMBR (0),
 			m_position (Vector (0, 0, 0)),
-			m_num (0),
+			m_hop (0),
 			m_phase (0),
 			m_slot (0),
 			m_received (false),
@@ -119,10 +119,10 @@
 	}
 
 	uint32_t
-	FBNode::GetNum (void) const
+	FBNode::GetHop (void) const
 	{
 		NS_LOG_FUNCTION (this);
-		return m_num;
+		return m_hop;
 	}
 
 	int32_t
@@ -232,10 +232,10 @@
 	}
 
 	void
-	FBNode::SetNum(uint32_t value)
+	FBNode::SetHop(uint32_t value)
 	{
 		NS_LOG_FUNCTION(this << value);
-		m_num = value;
+		m_hop = value;
 	}
 
 	void

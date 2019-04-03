@@ -16,14 +16,13 @@ import csv
 import xml.etree.ElementTree as ET
 import coordUtils as coordUtils
 
-ns2MobilityFile = "../../maps/Padova/Padova-25.ns2mobility.xml"
-polyFilePath = "../../maps/Padova/Padova-25.poly.xml"
+
 plt.rcParams["figure.figsize"] = [10, 10]
 circRadius = 1000
 baseFolder = "../../ns-3.26/out/scenario-urbano-con-coord/cw-32-1024/Padova/d25/"
 
 
-def plotSingleTransmission(relativeFileName, outFileBasePath, numTransmissionToPlot=None):
+def plotSingleTransmission(relativeFileName, outFileBasePath, numTransmissionToPlot=None, ns2MobilityFile, polyFilePath):
     print("Plotting single transmission " + relativeFileName)
     startingVehicle = 0
     vehicleDistance = 0
@@ -100,10 +99,14 @@ def plotSingleTransmission(relativeFileName, outFileBasePath, numTransmissionToP
 def main():
     print("Draw single transmissions")
     relativeFileName = sys.argv[1]
+    ns2MobilityFile = sys.argv[2]
+    polyFilePath = None
     numTransmissionToPlot = None
-    if (len(sys.argv) > 2):
+    if (len(sys.argv) > 3):
+        polyFilePath = sys.argv[3]
+    if (len(sys.argv) > 4):
         numTransmissionToPlot = int(sys.argv[2])
-    plotSingleTransmission(relativeFileName, "./out/singlefileSingleTransmission/singleTransmission", numTransmissionToPlot)
+    plotSingleTransmission(relativeFileName, "./out/singlefileSingleTransmission/singleTransmission", numTransmissionToPlot, ns2MobilityFile, polyFilePath)
 
 if __name__ == "__main__":
     main()

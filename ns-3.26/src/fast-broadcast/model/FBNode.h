@@ -81,7 +81,7 @@ public:
 	/**
 	 * \returns the num of the node
 	 */
-	uint32_t GetNum (void) const;
+	uint32_t GetHop (void) const;
 
 	/**
 	 * \returns the phase of the node
@@ -165,7 +165,7 @@ public:
 	 * \brief set the num
 	 * \param value new value of num
 	 */
-	void SetNum (uint32_t n);
+	void SetHop (uint32_t n);
 
 	/**
 	 * \brief set the phase
@@ -217,7 +217,7 @@ public:
 	uint32_t 	  							m_CMBR;	// Current Maximum Back Range
 	uint32_t 	  							m_LMBR; // Last Maximum Back Range
 	Vector 									m_position;	// node current position
-	uint32_t								m_num;	// legacy with barichello's code
+	uint32_t								m_hop;	// number of hops before the alert message reached this node
 	int32_t									m_phase;	// legacy with barichello's code
 	uint32_t								m_slot;	// legacy with barichello's code
 	bool 									m_received;	// legacy with barichello's code

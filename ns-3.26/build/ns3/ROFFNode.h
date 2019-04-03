@@ -53,6 +53,12 @@ public:
 
 	int32_t GetPhase() const;
 
+	uint32_t GetSlot() const;
+
+	uint32_t GetHop() const;
+
+	Time GetTimestamp() const;
+
 //	Setters
 	void SetNode(Ptr<Node> node);
 
@@ -63,6 +69,12 @@ public:
 	void SetSent(bool sent);
 
 	void SetPhase(int32_t phase);
+
+	void SetSlot(uint32_t m_slot);
+
+	void SetHop(uint32_t m_hop);
+
+	void SetTimestamp(Time timestamp);
 
 //	Methods
 	void Send(Ptr<Packet> packet);
@@ -77,6 +89,9 @@ public:
 
 	bool IsNodeWinnerInContention(uint32_t dist, Vector pos) const;
 
+	const Vector UpdatePosition();
+
+
 private:
 
 	Ptr<Node>			m_node; // ns-3 node
@@ -84,7 +99,11 @@ private:
 	NeighborTable		m_neighborTable;
 	bool				m_received; // whether the node has received an alert message
 	bool				m_sent; // whether the node has sent an alert message
-	int32_t				m_phase; // number of hops before the node received the alert message
+	int32_t				m_phase; // latest phase heard by the node
+	Vector				m_position; // position of node
+	uint32_t			m_slot; // number of slots waited before the node has received the alert message
+	uint32_t			m_hop; // number of hops before the alert message reached this node
+	Time				m_timestamp; // time of reception of alert message
 
 };
 

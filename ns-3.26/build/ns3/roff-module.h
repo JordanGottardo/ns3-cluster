@@ -7,6 +7,7 @@
     
 
 // Module headers:
+#include "Edge.h"
 #include "NBTEntry.h"
 #include "NeighborTable.h"
 #include "PositionRankingKey.h"

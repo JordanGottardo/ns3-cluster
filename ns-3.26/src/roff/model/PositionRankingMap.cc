@@ -20,16 +20,16 @@ PositionRankingMap::PositionRankingMap(uint32_t distRange): m_distanceRange(dist
 PositionRankingMap::PositionRankingMap(uint32_t distRange, boost::dynamic_bitset<> esdBitmap):
 		m_distanceRange(distRange) {
 	uint32_t priority = 1;
-		for (uint32_t i = 0; i < esdBitmap.size(); i++) {
+	for (uint32_t i = 0; i < esdBitmap.size(); i++) {
 //			cout << "PositionRankingMap::PositionRankingMap bmpSize= " << esdBitmap.size() <<
 //					" i= " << i << endl;
-			if (esdBitmap[i] == 1) {
-				uint32_t index = esdBitmap.size() - i - 1;
+		if (esdBitmap[i] == 1) {
+			uint32_t index = esdBitmap.size() - i - 1;
 //				cout << "PositionRankingMap::PositionRankingMap index= " << index << endl;
-				AddEntry(index, priority);
-				priority++;
-			}
+			AddEntry(index, priority);
+			priority++;
 		}
+	}
 }
 
 void PositionRankingMap::AddEntry(uint32_t index, uint32_t priority) {

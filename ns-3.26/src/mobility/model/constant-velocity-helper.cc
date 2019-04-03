@@ -81,6 +81,7 @@ ConstantVelocityHelper::Update (void) const
 {
   NS_LOG_FUNCTION (this);
   Time now = Simulator::Now ();
+//  std::cout << "ConstantVelocityHelper::Update now = " << now << " m_lastUpdate= " << m_lastUpdate << std::endl;
   NS_ASSERT (m_lastUpdate <= now);
   Time deltaTime = now - m_lastUpdate;
   m_lastUpdate = now;

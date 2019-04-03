@@ -29,3 +29,13 @@ NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'roff-test --buildings=0 --actualRange=50
 
 ROFF WITH LOGGING WITH STARTING NODE 0
 NS_LOG="ROFFApplication=debug" NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'roff-test --buildings=0 --actualRange=500 --area=1000 --mapBasePath=../maps/Padova/Padova-25 --trace=../maps/testRoff/testRoffAdhoc.ns2mobility.xml --printToFile=0 --printCoords=1 --startingNode=0 --beaconInterval=100 --distanceRange=1'
+
+
+
+
+PLATOON FB 16-128
+NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'fb-vanet-urban --buildings=0 --actualRange=300 --protocol=1 --flooding=0 --area=1000 --mapBasePath=../maps/Padova/Padova-25 --cwMin=16 --cwMax=128 --printToFile=1 --printCoords=1 -startingNode=0 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=0 --propagationLoss=0 --trace=../maps/testRoff/333n-4000m.ns2mobility.xml
+
+PLATOON ROFF
+NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'roff-test --buildings=0 --actualRange=300 --area=1000 --mapBasePath=../maps/Padova/Padova-25 --printToFile=1 --printCoords=1 --startingNode=0 --beaconInterval=100 --distanceRange=1 --trace=../maps/testRoff/333n-4000m.ns2mobility.xml'
+

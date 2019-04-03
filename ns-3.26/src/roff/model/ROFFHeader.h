@@ -33,7 +33,7 @@ public:
 	ROFFHeader();
 
 	ROFFHeader(uint32_t type, uint32_t sender, Vector position,
-			   boost::dynamic_bitset<> esdBitmap, uint32_t phase = 0);
+			   boost::dynamic_bitset<> esdBitmap, uint32_t phase = 0, uint32_t slot = 0);
 
 //	Getters
 	const Vector& GetPosition() const;
@@ -46,6 +46,8 @@ public:
 
 	uint32_t GetPhase() const;
 
+	uint32_t GetSlot() const;
+
 
 //	Setters
 	void SetType(uint32_t type);
@@ -57,6 +59,8 @@ public:
 	void SetESDBitmap(const boost::dynamic_bitset<>& esdBitmap);
 
 	void SetPhase(uint32_t phase);
+
+	void SetSlot(uint32_t slot);
 
 
 	virtual TypeId GetInstanceTypeId() const;
@@ -87,13 +91,12 @@ private:
 	uint32_t							m_type;
 
 	//	============== Hello message data ================
-//	Position of vehicle sending Hello Message
 	uint32_t							m_senderId;
 	Vector								m_position;
 
 	//	============== Alert message data ================
-// TODO check size of esdBitmap
 	uint32_t							m_phase;
+	uint32_t							m_slot;
 	boost::dynamic_bitset<>				m_esdBitmap;
 
 

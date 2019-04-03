@@ -12,8 +12,6 @@ import csv
 import scipy.stats as st
 import math
 
-currentVersion = 1
-
 def countLinesInCsv(csv):
 	return sum(1 for row in csv)
 		
@@ -60,7 +58,6 @@ def readCsvFromDirectory(path, decreaseConfInts=False):
 					covOnCirc.append(int(row[8]))
 					if (not math.isnan(float(row[10]))):
 						hops.append(float(row[10]))
-					version = 0
 					#if ((len(firstLineRef)) >= 15 and len(firstLineRef) < 18):
 					#	print(fullPath)
 					#	print(firstLineRef[14])
@@ -71,14 +68,6 @@ def readCsvFromDirectory(path, decreaseConfInts=False):
 					#	print(firstLineRef[14] == ' "Version"')
 					#	print(firstLineRef[15])
 						#print(firstLineRef[16])
-					if ((len(firstLineRef) >= 15) and firstLineRef[14] == ' "Version"' and len(row) >= 15 ): #version of output without coords 
-						#print("version without coords")
-						print(fullPath)
-						version = int(row[14])
-					if ((len(firstLineRef) >= 23) and firstLineRef[22] == ' "Version"'): #version of output with coords
-						#print("version with coords")
-						version = int(row[22])
-					if (version == currentVersion):
 						#print("yasss versions match")
 						if (not math.isnan(float(row[11]))):
 							#print("yasss not nan")
