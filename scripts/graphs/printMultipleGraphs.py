@@ -448,9 +448,23 @@ def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, fig
 						0,
 						1500)
 
-def printFbVsRoff()
+def printLineComparison():
 	protocols = ["fast-broadcast", "roff"]
 	compoundData = initCompoundData(protocols)
+	basePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/line"
+	appendCompoundData(basePath, protocols, compoundData)
+	printSingleGraph("cw-16-128",
+					"lineComparison",
+					"Platoon comparison number of slots waited",
+					protocols,
+					protocols, 
+					"xlabel", 
+					"Number of slots waited",
+					"figurePrefix" + "NumberOfSlotsWaited", 
+					compoundData["slotsWaitedMeans"],
+					compoundData["slotsWaitedConfInts"],
+					protocols)
+
 
 if __name__ == "__main__":
 	main()
