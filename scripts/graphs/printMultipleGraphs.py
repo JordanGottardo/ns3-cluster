@@ -453,6 +453,7 @@ def printLineComparison():
 	compoundData = initCompoundData(protocols)
 	basePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/line"
 	appendCompoundData(basePath, protocols, compoundData)
+	print(compoundData)
 	printSingleGraph("cw-16-128",
 					"lineComparison",
 					"Platoon comparison number of slots waited",
