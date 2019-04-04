@@ -24,13 +24,21 @@ def listsToList(listOfLists, protocols):
 		toReturn.append(listOfLists[protocol][0])
 	return toReturn
 
+def printSingleGraphLineComparison():
+	fig, ax = plt.subplots()
+	rects = []
+	count = 0
+	colors = ["0.3", "0.5"]
+	rects.append((ax.bar([10, 20])))
+	plt.show()
+
 
 def printSingleGraphRomanelliComparison(cw, folder, graphTitle, xList, xLabels, xLabel, yLabel, figureTitle, yDataDictionary, 
 					confIntDictionary, romData, protocols, autoscale=False, yBottomLim=0, yTopLim=100):
 	
 	yDataDictionary = listsToList(yDataDictionary, protocols)
 	confIntDictionary = listsToList(confIntDictionary, protocols)
-
+	
 	ind = np.arange(len(xLabels))
 	n = len(xLabels)
 	#barWidth = float((float(1)/float(n)) * float(0.90))
@@ -103,8 +111,10 @@ def printSingleGraph(cw, folder, graphTitle, xList, xLabels, xLabel, yLabel, fig
 
 	rects = []
 	count = 0
-	colors = ["0.3", "0.5", "0.7"]
-	widthDistance = [-1, 0, 1]
+	#colors = ["0.3", "0.5", "0.7"]
+	colors = ["0.3", "0.7"]
+	#widthDistance = [-1, 0, 1]
+	widthDistance = [-1, 1]
 	#widthDistance = [-1.5, -0.5, 0.5, 1.5]
 	for protocol in protocols:
 		rects.append((ax.bar(ind + widthDistance[count] * barWidth, yDataDictionary[protocol], barWidth, color=colors[count], label=protocol, yerr=confIntDictionary[protocol], capsize=4)))
@@ -454,17 +464,7 @@ def printLineComparison():
 	basePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/line"
 	appendCompoundData(basePath, protocols, compoundData)
 	print(compoundData)
-	printSingleGraph("cw-16-128",
-					"lineComparison",
-					"Platoon comparison number of slots waited",
-					protocols,
-					protocols, 
-					"xlabel", 
-					"Number of slots waited",
-					"figurePrefix" + "NumberOfSlotsWaited", 
-					compoundData["slotsWaitedMeans"],
-					compoundData["slotsWaitedConfInts"],
-					protocols)
+	printSingleGraphLineComparison()
 
 
 if __name__ == "__main__":

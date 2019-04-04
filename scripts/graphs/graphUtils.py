@@ -58,7 +58,7 @@ def readCsvFromDirectory(path, decreaseConfInts=False):
 					covOnCirc.append(int(row[8]))
 					if (not math.isnan(float(row[10]))):
 						hops.append(float(row[10]))
-						print("hops= " + str(row[10]))
+						#print("hops= " + str(row[10]))
 					#if ((len(firstLineRef)) >= 15 and len(firstLineRef) < 18):
 					#	print(fullPath)
 					#	print(firstLineRef[14])
@@ -73,11 +73,12 @@ def readCsvFromDirectory(path, decreaseConfInts=False):
 						if (not math.isnan(float(row[11]))):
 							#print("yasss not nan")
 							slots.append(float(row[11]))
+							print("slots= " + str(row[11]))
 					
 					#if (len(hops) > 0 and math.isnan(hops[-1])):
 					#	print("found nan in hops")
 					#	print(file)
-					messageSent.append(int(row[12]))
+					# messageSent.append(int(row[12])) todo riabilita
 					totalCoveragePercent.append(((float(totalCoverage[-1]) / float(totalNodes[-1])) * 100))	
 					#covOnCircPercent.append(((float(covOnCirc[-1]) / float(nodesOnCirc[-1])) * 100)) todo riabilita
 		#if (deleteBecauseEmpty == True):
