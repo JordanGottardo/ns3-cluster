@@ -1,15 +1,15 @@
-Host di esecuzione: hpblade12
-Data: Wed Apr 3 22:58:33 CEST 2019
+Host di esecuzione: dellsrv4
+Data: Thu Apr 4 11:25:05 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-hpblade12
+dellsrv4
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
 Start main urban
 numNodes = 333
 startingNode = 0
-roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/roff/roff-1554325113166.csv"
+roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/roff/roff-1554369906083.csv"
 run = 0
 numNodes = 333
 startingNode = 0
