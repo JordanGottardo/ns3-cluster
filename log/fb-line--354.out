@@ -1,8 +1,8 @@
-Host di esecuzione: dellsrv2
-Data: Wed Apr 3 22:52:06 CEST 2019
+Host di esecuzione: hpblade07
+Data: Thu Apr 4 12:08:20 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-dellsrv2
+hpblade07
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
