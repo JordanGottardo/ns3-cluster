@@ -1,5 +1,5 @@
 Host di esecuzione: hpblade16
-Data: Wed Apr 3 16:53:02 CEST 2019
+Data: Wed Apr 3 23:04:03 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
 hpblade16
@@ -9,28 +9,10 @@ after set
 Start main urban
 numNodes = 333
 startingNode = 0
-roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano/roff/roff-1554303182982.csv"
+roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/roff/roff-1554325443252.csv"
 run = 0
 numNodes = 333
 startingNode = 0
 1 
 11 
-15 
-2.9 
-2.99 
-3 
 end conf chan 
-id= 25 nodePhase= 0 headerPhase= 0
-id= 50 nodePhase= 1 headerPhase= 1
-id= 75 nodePhase= 2 headerPhase= 2
-id= 100 nodePhase= 3 headerPhase= 3
-id= 125 nodePhase= 4 headerPhase= 4
-id= 150 nodePhase= 5 headerPhase= 5
-id= 175 nodePhase= 6 headerPhase= 6
-id= 200 nodePhase= 7 headerPhase= 7
-id= 225 nodePhase= 8 headerPhase= 8
-id= 250 nodePhase= 9 headerPhase= 9
-id= 275 nodePhase= 10 headerPhase= 10
-id= 300 nodePhase= 11 headerPhase= 11
-id= 325 nodePhase= 12 headerPhase= 12
-id= 332 nodePhase= 13 headerPhase= 13
