@@ -1,5 +1,5 @@
 Host di esecuzione: dellsrv6
-Data: Thu Apr 4 11:25:04 CEST 2019
+Data: Thu Apr 4 12:32:19 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
 dellsrv6
@@ -9,7 +9,7 @@ after set
 Start main urban
 numNodes = 333
 startingNode = 0
-roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/roff/roff-1554369904328.csv"
+roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/roff/roff-1554373939513.csv"
 run = 0
 numNodes = 333
 startingNode = 0
