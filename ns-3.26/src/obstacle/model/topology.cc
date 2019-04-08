@@ -634,6 +634,7 @@ Topology::GetObstructedLossBetween(const Point_3 &p1, const Point_3 &p2, double 
 	  if (m_obstructedDistanceMapFromFile.count(key) == 0 && m_obstructedDistanceMapFromFile.count(key2) == 0) {
 		  m_obstructedDistanceMapFromFile.insert(TStrDblPair(key, obstructedLoss));
 		  std::string fileName = m_mapBasePath + ".losses";
+//		  std::cout << "filename=" << fileName << std::endl;
 		  std::ofstream file (fileName.c_str (), std::ios::app);
 		  file << key <<";" << obstructedLoss << std::endl;
 //		  std::cout << "scrivo" << key <<";" << obstructedLoss << std::endl;

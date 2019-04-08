@@ -454,7 +454,6 @@ private:
 	string									m_bldgFile;
 	string									m_mapBasePath;
 	string									m_mapBaseName;
-	string									m_mapBaseNameWithoutDistance;
 	double									m_TotalSimTime;
 	uint32_t								m_printToFile;
 	uint32_t								m_printCoords;
@@ -822,21 +821,13 @@ void ROFFVanetExperiment::SetupScenario () {
 	m_TotalSimTime = 990000.0;
 	m_areaOfInterest = 1000;	// meters
 
-	// Calculates file base name and vehicle distance from file base path
-	size_t foundSlash = m_mapBasePath.find_last_of("/\\");
-	size_t foundDash = m_mapBasePath.find_last_of("-");
-
-	m_mapBaseName = m_mapBasePath.substr(foundSlash + 1);
-	m_mapBaseNameWithoutDistance = m_mapBaseName.substr(0, m_mapBaseName.find_last_of("-"));
-	m_vehicleDistance = std::stoi(m_mapBasePath.substr(foundDash + 1));
-
-	if (m_bldgFile.empty()) {
-		m_bldgFile = m_mapBasePath + ".poly.xml";
-	}
-
-	if (m_traceFile.empty()) {
-		m_traceFile = m_mapBasePath + ".ns2mobility.xml";
-	}
+//	if (m_bldgFile.empty()) {
+//		m_bldgFile = m_mapBasePath + ".poly.xml";
+//	}
+//
+//	if (m_traceFile.empty()) {
+//		m_traceFile = m_mapBasePath + ".ns2mobility.xml";
+//	}
 
 	m_nNodes = CalculateNumNodes();
 	if (m_startingNode == -1) {

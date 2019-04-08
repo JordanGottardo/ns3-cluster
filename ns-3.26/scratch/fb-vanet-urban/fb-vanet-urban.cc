@@ -459,7 +459,6 @@ private:
 	string									m_bldgFile;
 	string									m_mapBasePath;
 	string									m_mapBaseName;
-	string									m_mapBaseNameWithoutDistance;
 	double									m_TotalSimTime;
 	uint32_t								m_printToFile;
 	uint32_t								m_printCoords;
@@ -488,7 +487,7 @@ FBVanetExperiment::FBVanetExperiment ()
 		m_flooding(0),
 		m_alertGeneration(20),
 		m_areaOfInterest(1000),
-		m_vehicleDistance(250),
+		m_vehicleDistance(25),
 		m_scenario(1),
 		m_loadBuildings(1),
 		m_cwMin(32),
@@ -809,6 +808,7 @@ void FBVanetExperiment::CommandSetup (int argc, char *argv[]) {
 	cmd.AddValue ("flooding", "Enable flooding", m_flooding);
 	cmd.AddValue ("alertGeneration", "Time at which the first Alert Message should be generated.", m_alertGeneration);
 	cmd.AddValue ("area", "Radius of the area of interest", m_areaOfInterest);
+	cmd.AddValue("vehicleDistance", "Distance between vehicles", m_vehicleDistance);
 //	cmd.AddValue ("scenario", "1=Padova, 2=Los Angeles", m_scenario);
 	cmd.AddValue ("buildings", "Load building (obstacles)", m_loadBuildings);
 	cmd.AddValue ("poly", "Buildings trace file (poly format)", m_bldgFile);
@@ -818,7 +818,7 @@ void FBVanetExperiment::CommandSetup (int argc, char *argv[]) {
 	cmd.AddValue ("cwMax", "Maximum contention window", m_cwMax);
 
 	cmd.AddValue ("mapBasePath", "Base path of map required for simulation "
-			"(e.g. ../maps/Padova-25.osm.xml. The dash '-' in the name is mandatory)", m_mapBasePath);
+			"(e.g. ../maps/Padova", m_mapBasePath);
 	cmd.AddValue ("printToFile", "Print data to file or not: 0 not print, 1 print ", m_printToFile);
 	cmd.AddValue ("printCoords", "Print coords to file or not: 0 not print, 1 print ", m_printCoords);
 	cmd.AddValue ("createObstacleShadowingLossFile", "Create file which saves obstacle losses (dBm) keyed by "
@@ -837,20 +837,16 @@ void FBVanetExperiment::SetupScenario () {
 
 	m_alertGeneration = 9;	// 10 -1 (start time of the application)
 	m_TotalSimTime = 990000.0;
-	m_areaOfInterest = 1000;	// meters
+//	m_areaOfInterest = 1000;	// meters
 
-	// Calculates file base name and vehicle distance from file base path
-	size_t foundSlash = m_mapBasePath.find_last_of("/\\");
-	size_t foundDash = m_mapBasePath.find_last_of("-");
+	//	if (m_bldgFile.empty()) {
+	//		m_bldgFile = m_mapBasePath + ".poly.xml";
+	//	}
+	//
+	//	if (m_traceFile.empty()) {
+	//		m_traceFile = m_mapBasePath + ".ns2mobility.xml";
+	//	}
 
-	m_mapBaseName = m_mapBasePath.substr(foundSlash + 1);
-	m_mapBaseNameWithoutDistance = m_mapBaseName.substr(0, m_mapBaseName.find_last_of("-"));
-	m_vehicleDistance = std::stoi(m_mapBasePath.substr(foundDash + 1));
-
-	m_bldgFile = m_mapBasePath + ".poly.xml";
-	if (m_traceFile.empty()) {
-		m_traceFile = m_mapBasePath + ".ns2mobility.xml";
-	}
 	m_nNodes = CalculateNumNodes();
 	cout << "numNodes = " << m_nNodes << endl;
 	if (m_startingNode == -1) {

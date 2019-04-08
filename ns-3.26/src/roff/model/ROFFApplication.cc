@@ -77,8 +77,10 @@ void ROFFApplication::PrintStats(std::stringstream& dataStream) {
 //				continue;
 
 		// Update the total cover value
-		if (current->GetReceived())
+		if (current->GetReceived()) {
+			cout << "cover++" << endl;
 			cover++;
+		}
 
 		// Compute cover on circumference of radius m_aoi
 
