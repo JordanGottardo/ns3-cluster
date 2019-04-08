@@ -483,7 +483,7 @@ ROFFVanetExperiment::ROFFVanetExperiment():
 //		m_flooding(0),
 		m_alertGeneration(20),
 		m_areaOfInterest(1000),
-		m_vehicleDistance(250),
+		m_vehicleDistance(25),
 //		m_scenario(1),
 		m_loadBuildings(1),
 //		m_cwMin(32),
@@ -790,6 +790,7 @@ void ROFFVanetExperiment::CommandSetup (int argc, char *argv[]) {
 //	cmd.AddValue ("flooding", "Enable flooding", m_flooding);
 //	cmd.AddValue("alertGeneration", "Time at which the first Alert Message should be generated.", m_alertGeneration);
 	cmd.AddValue("area", "Radius of the area of interest", m_areaOfInterest);
+	cmd.AddValue("vehicleDistance", "Distance between vehicles", m_vehicleDistance);
 //	cmd.AddValue ("scenario", "1=Padova, 2=Los Angeles", m_scenario);
 	cmd.AddValue("buildings", "Load building (obstacles)", m_loadBuildings);
 	cmd.AddValue ("poly", "Buildings trace file (poly format)", m_bldgFile);
