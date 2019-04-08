@@ -551,7 +551,7 @@ const std::string ROFFVanetExperiment::CalculateOutFilePath() const {
 //	std::string cwMax = std::to_string(m_cwMax);
 	std::string vehicleDistance = std::to_string(m_vehicleDistance);
 	std::string buildings = std::to_string(m_loadBuildings);
-	std::string protocol = "";
+	std::string protocol = "roff" + std::to_string(m_actualRange);
 	std::string actualRange = std::to_string(m_actualRange);
 
 //	if (m_staticProtocol == PROTOCOL_FB) {
@@ -566,7 +566,15 @@ const std::string ROFFVanetExperiment::CalculateOutFilePath() const {
 //	else if (m_staticProtocol == PROTOCOL_STATIC_500) {
 //		protocol = "st500";
 //	}
+	vector<string> strings;
+	boost::split(strings, m_traceFile, boost::is_any_of("/"));
+	std::string scenarioName = strings[strings.size() - 1];
+	int dotPos =scenarioName.find(".");
+	scenarioName = scenarioName.substr(0, dotPos);
 
+
+	fileName.append(scenarioName + "/" + "b" + buildings + "/" + scenarioName + "-" + "b" + buildings);
+	cout << fileName << endl;
 //	fileName.append("cw-" + cwMin + "-" + cwMax + "/" + m_mapBaseNameWithoutDistance + "/d" + vehicleDistance + "/b" + buildings
 //			+ "/" + protocol + "-" + actualRange + "/" + m_mapBaseName + "-cw-" + cwMin + "-" + cwMax + "-b"
 //			+ buildings + "-" + protocol + "-" + actualRange);
@@ -686,7 +694,6 @@ ROFFVanetExperiment::SetupAdhocDevices() {
 	wifiMac.SetType("ns3::AdhocWifiMac");
 
 	m_adhocDevices = wifi.Install(wifiPhy, wifiMac, m_adhocNodes);
-	cout << "end conf chan " << endl;
 
 }
 
@@ -786,6 +793,7 @@ void ROFFVanetExperiment::CommandSetup (int argc, char *argv[]) {
 	cmd.AddValue("area", "Radius of the area of interest", m_areaOfInterest);
 //	cmd.AddValue ("scenario", "1=Padova, 2=Los Angeles", m_scenario);
 	cmd.AddValue("buildings", "Load building (obstacles)", m_loadBuildings);
+	cmd.AddValue ("poly", "Buildings trace file (poly format)", m_bldgFile);
 	cmd.AddValue("trace", "Vehicles trace file (ns2mobility format)", m_traceFile);
 //	cmd.AddValue("totalTime", "Simulation end time", m_TotalSimTime);
 //	cmd.AddValue ("cwMin", "Minimum contention window", m_cwMin);
@@ -822,13 +830,14 @@ void ROFFVanetExperiment::SetupScenario () {
 	m_mapBaseNameWithoutDistance = m_mapBaseName.substr(0, m_mapBaseName.find_last_of("-"));
 	m_vehicleDistance = std::stoi(m_mapBasePath.substr(foundDash + 1));
 
-	m_bldgFile = m_mapBasePath + ".poly.xml";
+	if (m_bldgFile.empty()) {
+		m_bldgFile = m_mapBasePath + ".poly.xml";
+	}
 
+	if (m_traceFile.empty()) {
+		m_traceFile = m_mapBasePath + ".ns2mobility.xml";
+	}
 
-
-
-
-//	m_traceFile = m_mapBasePath + ".ns2mobility.xml";
 	m_nNodes = CalculateNumNodes();
 	if (m_startingNode == -1) {
 		m_startingNode = rand() % m_nNodes;
@@ -870,7 +879,7 @@ void ROFFVanetExperiment::SetupScenario () {
 	if (m_loadBuildings != 0)
 	{
 		NS_LOG_INFO ("Loading buildings file \"" << m_bldgFile << "\".");
-		Topology::LoadBuildings(m_bldgFile); //todo riabilitare
+		Topology::LoadBuildings(m_bldgFile);
 	}
 }
 
@@ -972,28 +981,28 @@ int main (int argc, char *argv[])
 		string filePath = experiment.CalculateOutFilePath();
 		string additionalPath;
 		string header;
-//
-//		if(experiment.GetPrintCoords()) {
-//			additionalPath = "/out/scenario-urbano-con-coord/roff";
-//			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
-//					"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
-//					"\"Slots\",\"Messages sent\",\"Messages received\", \"Starting x\", \"Starting y\","
-//					"\"Starting node\", \"Vehicle distance\", \"Received node ids\", "
-//					"\"Node ids\", \"Transmission map\", \"Received on circ nodes\", \"Transmission vector\"";
-//		}
-//		else {
-//			additionalPath = "/out/scenario-urbano/roff";
-//			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
-//								"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
-//								"\"Slots\",\"Messages sent\",\"Messages received\"";
-//		}
 
-		header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
-				"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
-				"\"Slots\",\"Messages sent\",\"Messages received\", \"Starting x\", \"Starting y\","
-				"\"Starting node\", \"Vehicle distance\", \"Received node ids\", "
-				"\"Node ids\", \"Transmission map\", \"Received on circ nodes\", \"Transmission vector\"";
-		additionalPath += "/out/scenario-urbano-con-coord/roff/roff";
+		if(experiment.GetPrintCoords()) {
+			additionalPath = "/out/scenario-urbano-con-coord/roff";
+			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
+					"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
+					"\"Slots\",\"Messages sent\",\"Messages received\", \"Starting x\", \"Starting y\","
+					"\"Starting node\", \"Vehicle distance\", \"Received node ids\", "
+					"\"Node ids\", \"Transmission map\", \"Received on circ nodes\", \"Transmission vector\"";
+		}
+		else {
+			additionalPath = "/out/scenario-urbano/roff";
+			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
+								"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
+								"\"Slots\",\"Messages sent\",\"Messages received\"";
+		}
+
+//		header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
+//				"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
+//				"\"Slots\",\"Messages sent\",\"Messages received\", \"Starting x\", \"Starting y\","
+//				"\"Starting node\", \"Vehicle distance\", \"Received node ids\", "
+//				"\"Node ids\", \"Transmission map\", \"Received on circ nodes\", \"Transmission vector\"";
+//		additionalPath += "/out/scenario-urbano-con-coord/roff/";
 		boost::filesystem::path path = boost::filesystem::current_path() /= additionalPath;
 		path /= filePath;
 		g_csvData.EnableAlternativeFilename(path);

@@ -32,7 +32,7 @@ def main():
 
     argList = pathToDraw + " " + ns2MobilityFile
     if (polyFilePath is not None):
-        argList = argList + polyFilePath
+        argList = argList + " " + polyFilePath
 
 
     processes = ("./drawCoverage.py " + argList, "./drawAlertPaths.py " + argList, "./drawSingleHops.py " + argList, "./drawMultipleTransmissions.py " + argList)

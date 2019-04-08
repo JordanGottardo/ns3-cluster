@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd"><poly id="b0" type="building" color="90,102,171" fill="1" layer="-1.00" shape="105,105 395,105 395,395 105,395 105,105"/>
+<poly id="b1" type="building" color="90,102,171" fill="1" layer="-1.00" shape="405,105 695,105 695,395 405,395 405,105"/>
+<poly id="b2" type="building" color="90,102,171" fill="1" layer="-1.00" shape="705,105 995,105 995,395 705,395 705,105"/>
+<poly id="b3" type="building" color="90,102,171" fill="1" layer="-1.00" shape="1005,105 1295,105 1295,395 1005,395 1005,105"/>
+<poly id="b4" type="building" color="90,102,171" fill="1" layer="-1.00" shape="105,405 395,405 395,695 105,695 105,405"/>
+<poly id="b5" type="building" color="90,102,171" fill="1" layer="-1.00" shape="405,405 695,405 695,695 405,695 405,405"/>
+<poly id="b6" type="building" color="90,102,171" fill="1" layer="-1.00" shape="705,405 995,405 995,695 705,695 705,405"/>
+<poly id="b7" type="building" color="90,102,171" fill="1" layer="-1.00" shape="1005,405 1295,405 1295,695 1005,695 1005,405"/>
+<poly id="b8" type="building" color="90,102,171" fill="1" layer="-1.00" shape="105,705 395,705 395,995 105,995 105,705"/>
+<poly id="b9" type="building" color="90,102,171" fill="1" layer="-1.00" shape="405,705 695,705 695,995 405,995 405,705"/>
+<poly id="b10" type="building" color="90,102,171" fill="1" layer="-1.00" shape="705,705 995,705 995,995 705,995 705,705"/>
+<poly id="b11" type="building" color="90,102,171" fill="1" layer="-1.00" shape="1005,705 1295,705 1295,995 1005,995 1005,705"/>
+<poly id="b12" type="building" color="90,102,171" fill="1" layer="-1.00" shape="105,1005 395,1005 395,1295 105,1295 105,1005"/>
+<poly id="b13" type="building" color="90,102,171" fill="1" layer="-1.00" shape="405,1005 695,1005 695,1295 405,1295 405,1005"/>
+<poly id="b14" type="building" color="90,102,171" fill="1" layer="-1.00" shape="705,1005 995,1005 995,1295 705,1295 705,1005"/>
+<poly id="b15" type="building" color="90,102,171" fill="1" layer="-1.00" shape="1005,1005 1295,1005 1295,1295 1005,1295 1005,1005"/>
+</additional>

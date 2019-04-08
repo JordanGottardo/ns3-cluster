@@ -231,7 +231,7 @@ void
 Topology::LoadBuildings(std::string bldgFilename, uint32_t createFile, uint32_t useFile, std::string mapBasePath)
 {
   NS_LOG_INFO ("Load buildings.");
-//  std::cout << "loadbuildings usefile = " << useFile << std::endl;
+//  std::cout << "Topology::loadbuildings usefile = " << useFile << std::endl;
 	uint32_t nBuildings = 0;
 
   std::ifstream file (bldgFilename.c_str (), std::ios::in);

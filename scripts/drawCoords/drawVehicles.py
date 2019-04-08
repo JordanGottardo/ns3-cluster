@@ -1,7 +1,10 @@
 #!/usr/bin/python
 
 #Invocation:
-#   ./drawVehicles.py graphTitle ../../maps/Padova/Padova-25.ns2mobility.xml
+#   ./drawVehicles.py graphTitle ns2mobilityFilePath polyFilePath
+#example /drawVehicles.py graphTitle ../../maps/Padova/Padova-25.ns2mobility.xml  ../../maps/Padova/Padova-25.poly.xml 
+
+
 
 import os
 import sys
@@ -9,11 +12,15 @@ import getopt
 import numpy as np  
 import matplotlib
 import matplotlib.pyplot as plt
+import coordUtils
 
 
 def main():
     graphTitle = sys.argv[1]
     ns2MobilityRelativePath = sys.argv[2]
+    polyFilePath = None
+    if (len(sys.argv) > 3):
+        polyFilePath = sys.argv[3]
     print(graphTitle)
 
     print("Main!!")
@@ -28,8 +35,6 @@ def main():
     thisScriptPath = os.path.dirname(os.path.realpath(__file__))
     ns2MobilityPath = os.path.join(thisScriptPath, ns2MobilityRelativePath)
     print("ns2mobility = " + ns2MobilityPath)
-    print(thisScriptPath)
-    print(os.getcwd())
     ns2MobilityFile = open(ns2MobilityPath, "r")
     line = ns2MobilityFile.readline()
     xPos = []
@@ -43,7 +48,6 @@ def main():
         vehicleNumber = string[string.find("(")+1:string.find(")")]
         coord = float(strings[3].rstrip())
         if (vehicleNumber == startingVehicle):
-            print("trovatoooooooooooo")
             found = True
             starterCoordX = coord
         xPos.append(coord)
@@ -58,26 +62,23 @@ def main():
         ns2MobilityFile.readline()
         line = ns2MobilityFile.readline()
         found = False
-    
+
+    if (polyFilePath is not None):
+        coordUtils.plotBuildings(polyFilePath)
 
     plt.xlabel("x")
     plt.ylabel("y")
     plt.title(graphTitle)
     
     plt.plot(xPos, yPos, ".")
-    print starterCoordX
-    print starterCoordY
     plt.plot(starterCoordX, starterCoordY, "ro")
 
-    print starterCoordX
-    print starterCoordY
     plotTxRange(minTxRange, starterCoordX, starterCoordY, vehicleDistance, color1, False)
     plotTxRange(maxTxRange, starterCoordX, starterCoordY, vehicleDistance, color2, False)
     plotTxRange(1000, starterCoordX, starterCoordY, vehicleDistance, color3, True)
     plt.legend(loc = "upper left")
    
     plt.show()
-    print(str(starterCoordX) + " " + str(starterCoordY))
     print("dopo plot")
     
     
@@ -86,8 +87,6 @@ def plotTxRange(txRange, starterCoordX, starterCoordY, vehicleDistance, color, p
     x = np.linspace(-500, 3500, 100)
     y = np.linspace(-500, 3500, 100)
     X, Y = np.meshgrid(x, y)
-    print starterCoordX
-    print starterCoordY
     realTxRange = (X - starterCoordX) ** 2 + (Y - starterCoordY) ** 2 - txRange ** 2
     CS = plt.contour(X, Y, realTxRange, [0], colors = color)
 

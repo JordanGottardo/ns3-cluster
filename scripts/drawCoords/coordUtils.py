@@ -192,10 +192,12 @@ def parseFile(filePath, ns2MobilityFile):
 def plotBuildings(polyFilePath, plotBuildingIds=False, ax=None):
     if (polyFilePath is None):
         return
+    print("coordUtils::plotBuildings")
     tree = ET.parse(polyFilePath)
     root = tree.getroot()
     polyList = list(root.iter("poly"))
     count = 0
+    print("coordUtils::plotBuildings found " + str(len(polyList)) + " buildings")
     for poly in polyList:
         polyId = poly.get("id")
         polyType = poly.get("type")
@@ -224,4 +226,3 @@ def plotBuildings(polyFilePath, plotBuildingIds=False, ax=None):
             xCenter = sumX / len(xShapeCoords)
             yCenter = sumY / len(yShapeCoords)
             ax.annotate(polyId, xy=(xCenter, yCenter), size=8)
-    print(str(count))

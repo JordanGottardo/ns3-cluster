@@ -106,8 +106,7 @@ void ROFFApplication::PrintStats(std::stringstream& dataStream) {
 		}
 	}
 //	Time when the first alert message was sent
-//		Time timeref = this->GetFBNode(m_startingNode)->GetTimestamp(); //todo fix
-	Time timeref;
+	Time timeref = m_nodes[m_startingNode]->GetTimestamp();
 	string receivedNodes = StringifyVector(m_receivedNodes);
 	stringstream nodeIds;
 
@@ -124,10 +123,10 @@ void ROFFApplication::PrintStats(std::stringstream& dataStream) {
 			<< cover << ","
 			<< circ << ","
 			<< (time_sum / (double) circ) - timeref.GetMicroSeconds () << ","
-//			<< (hops_sum / (double) circ) << "," todo riabilitare entrambe
-//			<< (slots_sum / (double) circ) << ","
-			<< m_nodes[m_nodes.size() - 1]->GetHop() << ","
-			<< m_nodes[m_nodes.size() - 1]->GetSlot() << ","
+			<< (hops_sum / (double) circ) << ","
+			<< (slots_sum / (double) circ) << ","
+//			<< m_nodes[m_nodes.size() - 1]->GetHop() << ","
+//			<< m_nodes[m_nodes.size() - 1]->GetSlot() << ","
 			<< m_sent << ","
 			<< m_received;
 
@@ -392,10 +391,8 @@ uint32_t ROFFApplication::ComputeWaitingTimeArmir(Ptr<ROFFNode> node, Vector sen
 				PositionRankingMap rankingMap, uint32_t priority) {
 //	cout << "ROFFApplication::ComputeWaitingTimeArmir node= " << node->GetId() <<
 //				" senderCoords= " << senderCoords << " priority= " << priority << endl;
-	if (priority <= 1) {
-		return 0;
-	}
-	int32_t dist = 0;
+	return priority + 1;
+//	int32_t dist = 0;
 //	if (priority == 2) {
 //		PositionRankingKey range = rankingMap.GetRange(priority - 1);
 //		Vector higherPriorityNodeCoords = node->GetCoordsOfVehicleInRange(range, senderCoords, dist);
@@ -403,7 +400,7 @@ uint32_t ROFFApplication::ComputeWaitingTimeArmir(Ptr<ROFFNode> node, Vector sen
 //	}
 	// priority >= 3
 
-	return priority - 1;
+
 //	double waitingTime = 0;
 //	uint32_t pr = priority - 1;
 //	PositionRankingKey range = rankingMap.GetRange(pr);

@@ -562,7 +562,7 @@ const std::string FBVanetExperiment::CalculateOutFilePath() const {
 	std::string actualRange = std::to_string(m_actualRange);
 
 	if (m_staticProtocol == PROTOCOL_FB) {
-		protocol = "fb";
+		protocol = "fb" + std::to_string(m_actualRange);
 	}
 	else if (m_staticProtocol == PROTOCOL_STATIC_100) {
 		protocol = "st100";
@@ -574,9 +574,18 @@ const std::string FBVanetExperiment::CalculateOutFilePath() const {
 		protocol = "st500";
 	}
 
-	fileName.append("cw-" + cwMin + "-" + cwMax + "/" + m_mapBaseNameWithoutDistance + "/d" + vehicleDistance + "/b" + buildings
-			+ "/" + protocol + "-" + actualRange + "/" + m_mapBaseName + "-cw-" + cwMin + "-" + cwMax + "-b"
-			+ buildings + "-" + protocol + "-" + actualRange);
+	vector<string> strings;
+	boost::split(strings, m_traceFile, boost::is_any_of("/"));
+	std::string scenarioName = strings[strings.size() - 1];
+	int dotPos =scenarioName.find(".");
+	scenarioName = scenarioName.substr(0, dotPos);
+
+	fileName.append(scenarioName + "/" + "b" + buildings + "/" +  protocol + "/" + scenarioName + "-" + "b" + buildings +
+			"-" + protocol);
+	cout << fileName << endl;
+//	fileName.append("cw-" + cwMin + "-" + cwMax + "/" + m_mapBaseNameWithoutDistance + "/d" + vehicleDistance + "/b" + buildings
+//			+ "/" + protocol + "-" + actualRange + "/" + m_mapBaseName + "-cw-" + cwMin + "-" + cwMax + "-b"
+//			+ buildings + "-" + protocol + "-" + actualRange);
 
 	return fileName;
 }
@@ -802,6 +811,7 @@ void FBVanetExperiment::CommandSetup (int argc, char *argv[]) {
 	cmd.AddValue ("area", "Radius of the area of interest", m_areaOfInterest);
 //	cmd.AddValue ("scenario", "1=Padova, 2=Los Angeles", m_scenario);
 	cmd.AddValue ("buildings", "Load building (obstacles)", m_loadBuildings);
+	cmd.AddValue ("poly", "Buildings trace file (poly format)", m_bldgFile);
 	cmd.AddValue ("trace", "Vehicles trace file (ns2mobility format)", m_traceFile);
 	cmd.AddValue ("totalTime", "Simulation end time", m_TotalSimTime);
 	cmd.AddValue ("cwMin", "Minimum contention window", m_cwMin);

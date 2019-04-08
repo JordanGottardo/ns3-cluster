@@ -219,18 +219,29 @@ void FBApplication::PrintStats(std::stringstream &dataStream) {
 			<< cover << ","
 			<< circ << ","
 			<< (time_sum / (double) circ) - timeref.GetMicroSeconds () << ","
-//			<< (hops_sum / (double) circ) << "," todo riabilitare entrambe
-//			<< (slots_sum / (double) circ) << ","
-			<< m_nodes[m_nodes.size() - 1]->GetHop() << ","
-			<< m_nodes[m_nodes.size() - 1]->GetSlot() << ","
 			<< (hops_sum / (double) circ) << ","
 			<< (slots_sum / (double) circ) << ","
+//			<< m_nodes[m_nodes.size() - 1]->GetHop() << ","
+//			<< m_nodes[m_nodes.size() - 1]->GetSlot() << ","
+//			<< (hops_sum / (double) circ) << ","
+//			<< (slots_sum / (double) circ) << ","
 			<< m_sent << ","
 			<< m_received;
 
 	if (m_printCoords) {
 		 Ptr<FBNode> startingNode = GetFBNode(m_startingNode);
 		 string transmissionVector = StringifyVector(m_transmissionVector);
+//		 cout << "FBApplication::PrintStats coords" << endl;
+//		 cout << "receivedNodes" << endl;
+//		 cout << receivedNodes << endl;
+//		 cout << "nodeIds" << endl;
+//		 cout << nodeIds.str() << endl;
+//		 cout << "transmissionMap" << endl;
+//		 cout << StringifyTransmissionMap() << endl;
+//		 cout << "receivedOnCircIds" << endl;
+//		 cout << receivedOnCircIds.str() << endl;
+//		 cout << "transmissionVector" << endl;
+//		 cout << transmissionVector << endl;
 
 		 dataStream << "," << startingNode->GetPosition().x << "," << startingNode->GetPosition().y << "," << m_startingNode << "," <<
 				m_vehicleDistance << "," << receivedNodes << "," << nodeIds.str() << "," << StringifyTransmissionMap() <<
@@ -272,8 +283,8 @@ void FBApplication::GenerateHelloTraffic(uint32_t count) {
 	NS_LOG_INFO(count);
 	NS_LOG_DEBUG("GenerateHelloTraffic " << count);
 	std::vector<int> he;
-	uint32_t hel = (int) m_nNodes / 100 * 50;		// 40% of total nodes
-//	uint32_t hel = (int) m_nNodes;		// 100% of total nodes
+//	uint32_t hel = (int) m_nNodes / 100 * 50;		// 40% of total nodes
+	uint32_t hel = (int) m_nNodes;		// 100% of total nodes
 	uint32_t time_factor = 10;
 //	cout << "hel= " << hel << endl;
 	if (count > 0)
@@ -664,6 +675,7 @@ string FBApplication::StringifyVector(const vector<T>& v) {
 	for (auto i = v.begin(); i != v.end(); ++i) {
 		ss << *i <<"_";
 	}
+//	cout << "FBApplication::StringifyVector" + ss.str() << endl;
 	return ss.str();
 }
 
@@ -676,6 +688,7 @@ string FBApplication::StringifyTransmissionMap() const {
 		}
 		ss << "}";
 	}
+//	cout << "FBApplication::StringifyTransmissionMap" + ss.str() << endl;
 	return ss.str();
 }
 } // namespace ns3
