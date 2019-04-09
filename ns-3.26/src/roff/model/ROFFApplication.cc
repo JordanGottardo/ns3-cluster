@@ -64,7 +64,7 @@ void ROFFApplication::PrintStats(std::stringstream& dataStream) {
 
 	stringstream receivedOnCircIds;
 
-	for (uint32_t i = 0; i < m_nNodes; i++)	{
+	for (uint32_t i = 0; i < m_nodes.size(); i++)	{
 		Ptr<ROFFNode> current = m_nodes.at (i);
 		uint32_t nodeId = current->GetId ();
 
@@ -78,7 +78,7 @@ void ROFFApplication::PrintStats(std::stringstream& dataStream) {
 
 		// Update the total cover value
 		if (current->GetReceived()) {
-			cout << "cover++" << endl;
+//			cout << "cover++" << endl;
 			cover++;
 		}
 

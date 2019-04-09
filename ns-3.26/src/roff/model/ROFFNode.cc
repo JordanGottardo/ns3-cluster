@@ -77,6 +77,7 @@ namespace ns3 {
 	}
 
 	void ROFFNode::SetReceived(bool received) {
+//		cout << "ROFFNode::SetReceived" << received << endl;
 		m_received = received;
 	}
 
