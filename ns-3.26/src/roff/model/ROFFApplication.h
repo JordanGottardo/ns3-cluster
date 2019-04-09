@@ -97,7 +97,7 @@ private:
 	* \param count count
 	* \return none
 	*/
-	void GenerateHelloTraffic();
+	void GenerateHelloTraffic(uint32_t count);
 
 	/**
 	* \brief Start the broadcast phase

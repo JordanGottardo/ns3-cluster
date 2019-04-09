@@ -466,6 +466,22 @@ def printLineComparison():
 	print(compoundData)
 	printSingleGraphLineComparison()
 
+def printGridComparison():
+	print("PrintGridComparison")
+	protocols = ["fast-broadcast", "roff"]
+	compoundDatab0 = initCompoundData(protocols)
+	compoundDatab1 = initCompoundData(protocols)
+	basePathb0 = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/Grid/b0"
+	basePathb1 = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/Grid/b1"
+	appendCompoundData(basePathb0, protocols, compoundDatab0)
+	appendCompoundData(basePathb1, protocols, compoundDatab1)
+
+	print("compoundDatab0")
+	print(compoundDatab0)
+	print("compoundDatab1")
+	print(compoundDatab1)
+	#printSingleGraphLineComparison()
+
 
 if __name__ == "__main__":
 	main()

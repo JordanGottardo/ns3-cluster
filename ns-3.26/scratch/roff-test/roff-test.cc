@@ -820,7 +820,7 @@ void ROFFVanetExperiment::SetupScenario () {
 
 	m_alertGeneration = 9;	// 10 -1 (start time of the application)
 	m_TotalSimTime = 990000.0;
-	m_areaOfInterest = 1000;	// meters
+//	m_areaOfInterest = 1000;	// meters
 
 //	if (m_bldgFile.empty()) {
 //		m_bldgFile = m_mapBasePath + ".poly.xml";

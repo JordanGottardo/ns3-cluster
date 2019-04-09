@@ -145,7 +145,7 @@ void ROFFApplication::StartApplication(void) {
 	NS_LOG_FUNCTION(this);
 
 	m_startingNode = this->GetNode()->GetId();
-	GenerateHelloTraffic();
+	GenerateHelloTraffic(7);
 	Simulator::Schedule(Seconds(m_broadcastPhaseStart), &ROFFApplication::StartBroadcastPhase, this);
 }
 
@@ -153,19 +153,22 @@ void ROFFApplication::StopApplication(void) {
 	NS_LOG_FUNCTION(this);
 }
 
-void ROFFApplication::GenerateHelloTraffic() {
+void ROFFApplication::GenerateHelloTraffic(uint32_t count) {
 	NS_LOG_FUNCTION(this);
-	Ptr<ROFFNode> roffNode = m_nodes.at(0);
-//
-	for (int i = 0; i < 5; i++) {
-		NS_LOG_DEBUG("ROFFApplication::GenerateHelloTraffic step= " << i);
-		for (auto entry: m_nodes) {
-			Ptr<ROFFNode> roffNode = entry.second;
-			// Generate random waiting time between [0, beaconInterval*2]. Average is beaconInterval
-			uint32_t waitingTime = m_randomVariable->GetInteger(0, m_beaconInterval * 2);
-			Simulator::Schedule(MilliSeconds(waitingTime), &ROFFApplication::GenerateHelloMessage, this, roffNode);
-		}
+	if (count == 0) {
+		return;
 	}
+	Ptr<ROFFNode> roffNode = m_nodes.at(0);
+
+
+	for (auto entry: m_nodes) {
+		Ptr<ROFFNode> roffNode = entry.second;
+		// Generate random waiting time between [0, beaconInterval*2]. Average is beaconInterval
+		uint32_t waitingTime = m_randomVariable->GetInteger(0, m_beaconInterval * 2);
+		Simulator::Schedule(MilliSeconds(waitingTime), &ROFFApplication::GenerateHelloMessage, this, roffNode);
+	}
+	Simulator::Schedule (Seconds(1), &ROFFApplication::GenerateHelloTraffic, this, count - 1);
+
 }
 
 void ROFFApplication::StartBroadcastPhase(void) {
