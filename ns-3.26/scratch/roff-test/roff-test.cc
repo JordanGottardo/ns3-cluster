@@ -822,13 +822,13 @@ void ROFFVanetExperiment::SetupScenario () {
 	m_TotalSimTime = 990000.0;
 //	m_areaOfInterest = 1000;	// meters
 
-//	if (m_bldgFile.empty()) {
-//		m_bldgFile = m_mapBasePath + ".poly.xml";
-//	}
-//
-//	if (m_traceFile.empty()) {
-//		m_traceFile = m_mapBasePath + ".ns2mobility.xml";
-//	}
+	if (m_bldgFile.empty()) {
+		m_bldgFile = m_mapBasePath + ".poly.xml";
+	}
+
+	if (m_traceFile.empty()) {
+		m_traceFile = m_mapBasePath + ".ns2mobility.xml";
+	}
 
 	m_nNodes = CalculateNumNodes();
 	if (m_startingNode == -1) {

@@ -22,19 +22,19 @@ def findNumNodes(mobilityFilePath):
 				maxId = id
 	return maxId + 1
 
-def runScenario(cw, scenario, distance):
+def runScenario(cw, scenario, distance, startingNode):
 	# Protocols and transmission ranges
-	#buildings = ["0", "1"]
-	buildings = ["1"]
-	#protocols = ["1", "2", "3", "4"]
-	protocols = ["1"]
-	#txRanges = ["100", "300", "500"]
-	txRanges = ["300", "500"]
+	buildings = ["0", "1"]
+	#buildings = ["1"]
+	protocols = ["1", "2", "3", "4"]
+	txRanges = ["100", "300", "500"]
+	#txRanges = ["300", "500"]
 	protocolsMap = {
-		"1": "fb",
-		"2": "st100",
-		"3": "st300",
-		"4": "st500" 
+		"1": "Fast-Broadcast",
+		"2": "STATIC-100",
+		"3": "STATIC-300",
+		"4": "STATIC-500",
+		"5": "ROFF"
 	}
 	cwMin = cw["cwMin"]
 	cwMax = cw["cwMax"]
@@ -60,7 +60,7 @@ def runScenario(cw, scenario, distance):
 	absMapPath = os.path.abspath(mapPath)
 	absMapParentPath = os.path.dirname(absMapPath)
 	mapBaseName = os.path.basename(mapPath).split(".")[0]
-	mapBaseNameWithDistance = mapBaseName + "-" + vehicleDistance
+	mapBaseNameWithDistance = mapBaseName
 	mapPathWithoutExtension = os.path.join(os.path.dirname(mapPath), mapBaseNameWithDistance)
 
 	
@@ -82,15 +82,21 @@ def runScenario(cw, scenario, distance):
 			for protocol in protocols:
 				protocolName = protocolsMap[protocol]
 				#Removes creation of jobs where static protocol and txRange are different (e.g. STATIC100 with 500 tx range) only for distance != 25
-				if ( (distance != "25" and len(protocolName) > 3 and protocolName[-3:] != txRange)
-					or
-					(cwMin == 16 and len(protocolName) > 3 and protocolName[-3:] != txRange)
-				   ):
+				#if ( (distance != "25" and len(protocolName) > 3 and protocolName[-3:] != txRange)
+				#	or
+				#	(cwMin == 16 and len(protocolName) > 3 and protocolName[-3:] != txRange)
+				#   ):
 					#print(protocolName)
 					#print(protocolName[-3:])
 					#print(txRange)
-					continue
-				command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --protocol={2} --flooding=0 --area=1000 --mapBasePath={3} --cwMin={4} --cwMax={5} --printToFile=1 --printCoords=1 --startingNode=310 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1".format(b, txRange, protocol, mapPathWithoutExtension, cwMin, cwMax)
+				#	continue
+				executablePath = None
+				propagationLoss = "GRID" in scenario
+				if (protocol == "5"): #ROFF
+					command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings={0} --actualRange={1} --protocol={2} --mapBasePath={3} --cwMin={4} --cwMax={5} --vehicleDistance={6} --startingNode={7} --propagationLoss={8} --area=1000 --printToFile=1 --printCoords=1  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1".format(b, txRange, protocol, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss)
+				else: 
+					executablePath = "/home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban"
+					command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --protocol={2} --mapBasePath={3} --cwMin={4} --cwMax={5} --vehicleDistance={6} --startingNode={7} --propagationLoss={8} --flooding=0 --area=1000 --printToFile=1 --printCoords=1 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1".format(b, txRange, protocol, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss)
 				newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-" + protocolsMap[protocol] + "-" + txRange
 				newJobFilename = newJobName + "-.job"
 				newJobPath = os.path.join(jobsPath, newJobFilename)
@@ -116,13 +122,19 @@ def runScenario(cw, scenario, distance):
 
 def main():
 	#Edit these to launch automatically 
-	#scenarios = ["Padova", "LA"]
-	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
-	contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
+	scenarios = ["Padova", "LA", "Grid-200", "Grid-400"]
+	contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
 	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
-	#distances = ["15", "25", "35", "45"]
+	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
+	distances = ["15", "25", "35", "45"]
 	scenarios = ["Padova"]
 	distances = ["25"]
+	startingNodeMap = {
+		"Padova":0,
+		"LA":0,
+		"Grid-200":0,
+		"Grid-400":0
+	}
 	
 	# Removes all previous job templates in output directory
 	thisScriptPath = os.path.realpath(__file__)
@@ -134,7 +146,7 @@ def main():
 		for cw in contentionWindows:
 			for scenario in scenarios:
 				for distance in distances:
-					runScenario(cw, scenario, distance)
+					runScenario(cw, scenario, distance, startingNodeMap[scenario])
 	else:
 		runScenario(None, None)
 if __name__ == "__main__":

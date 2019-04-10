@@ -561,16 +561,16 @@ const std::string FBVanetExperiment::CalculateOutFilePath() const {
 	std::string actualRange = std::to_string(m_actualRange);
 
 	if (m_staticProtocol == PROTOCOL_FB) {
-		protocol = "fb" + std::to_string(m_actualRange);
+		protocol = "Fast-Broadcast";
 	}
 	else if (m_staticProtocol == PROTOCOL_STATIC_100) {
-		protocol = "st100";
+		protocol = "STATIC-100";
 	}
 	else if (m_staticProtocol == PROTOCOL_STATIC_300) {
-		protocol = "st300";
+		protocol = "STATIC-300";
 	}
 	else if (m_staticProtocol == PROTOCOL_STATIC_500) {
-		protocol = "st500";
+		protocol = "STATIC-500";
 	}
 
 	vector<string> strings;
@@ -579,9 +579,9 @@ const std::string FBVanetExperiment::CalculateOutFilePath() const {
 	int dotPos =scenarioName.find(".");
 	scenarioName = scenarioName.substr(0, dotPos);
 
-	fileName.append(scenarioName + "/" + "b" + buildings + "/" +  protocol + "/" + scenarioName + "-" + "b" + buildings +
-			"-" + protocol);
-	cout << fileName << endl;
+	fileName.append(scenarioName + "/" + "b" + buildings + "/r" + actualRange + "/" + protocol + "/" +
+			scenarioName + "-b" + buildings + "-r" + actualRange + "-" + protocol);
+	cout << "fileName=" << fileName << endl;
 //	fileName.append("cw-" + cwMin + "-" + cwMax + "/" + m_mapBaseNameWithoutDistance + "/d" + vehicleDistance + "/b" + buildings
 //			+ "/" + protocol + "-" + actualRange + "/" + m_mapBaseName + "-cw-" + cwMin + "-" + cwMax + "-b"
 //			+ buildings + "-" + protocol + "-" + actualRange);
@@ -839,13 +839,13 @@ void FBVanetExperiment::SetupScenario () {
 	m_TotalSimTime = 990000.0;
 //	m_areaOfInterest = 1000;	// meters
 
-	//	if (m_bldgFile.empty()) {
-	//		m_bldgFile = m_mapBasePath + ".poly.xml";
-	//	}
-	//
-	//	if (m_traceFile.empty()) {
-	//		m_traceFile = m_mapBasePath + ".ns2mobility.xml";
-	//	}
+	if (m_bldgFile.empty()) {
+		m_bldgFile = m_mapBasePath + ".poly.xml";
+	}
+
+	if (m_traceFile.empty()) {
+		m_traceFile = m_mapBasePath + ".ns2mobility.xml";
+	}
 
 	m_nNodes = CalculateNumNodes();
 	cout << "numNodes = " << m_nNodes << endl;
@@ -964,7 +964,7 @@ int main (int argc, char *argv[])
 		string header;
 
 		if(experiment.GetPrintCoords()) {
-			additionalPath = "/out/scenario-urbano-con-coord/fast-broadcast";
+			additionalPath = "/out/scenario-urbano-con-coord/";
 			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
 					"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
 					"\"Slots\",\"Messages sent\",\"Messages received\", \"Starting x\", \"Starting y\","
@@ -972,7 +972,7 @@ int main (int argc, char *argv[])
 					"\"Node ids\", \"Transmission map\", \"Received on circ nodes\", \"Transmission vector\"";
 		}
 		else {
-			additionalPath = "/out/scenario-urbano/fast-broadcast";
+			additionalPath = "/out/scenario-urbano/";
 			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
 								"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
 								"\"Slots\",\"Messages sent\",\"Messages received\"";
