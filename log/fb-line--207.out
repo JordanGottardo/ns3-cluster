@@ -1,5 +1,5 @@
 Host di esecuzione: dellsrv4
-Data: Thu Apr 4 12:02:27 CEST 2019
+Data: Wed Apr 10 00:16:07 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
 dellsrv4
@@ -7,11 +7,12 @@ PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
 Start main urban
-numNodes = 333
-numNodes = 333
-startingNode = 0
+numNodes = 3744
+numNodes = 3744
+startingNode = 936
+Grid/b0/fb300/Grid-b0-fb300
 run = 0
-numNodes = 333
-numNodes = 333
-startingNode = 0
+numNodes = 3744
+numNodes = 3744
+startingNode = 936
 +0.0ns
