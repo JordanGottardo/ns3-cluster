@@ -63,6 +63,8 @@ def runScenario(cw, scenario, distance, startingNode):
 	mapBaseName = os.path.basename(mapPath).split(".")[0]
 	mapBaseNameWithDistance = mapBaseName
 	mapPathWithoutExtension = os.path.join(os.path.dirname(mapPath), mapBaseNameWithDistance)
+	print(mapBaseNameWithDistance)
+	print(mapPathWithoutExtension)
 
 	
 
@@ -95,7 +97,6 @@ def runScenario(cw, scenario, distance, startingNode):
 				propagationLossBool = "Grid" in scenario
 				propagationLoss = None
 				if (propagationLossBool is True):
-					print("yaa")
 					propagationLoss = 0
 				else:
 					propagationLoss = 1
@@ -152,8 +153,12 @@ def main():
 	if (len(sys.argv) < 3):
 		for cw in contentionWindows:
 			for scenario in scenarios:
-				for distance in distances:
+				if ("Grid" in scenario):
 					runScenario(cw, scenario, distance, startingNodeMap[scenario])
+				else:
+					for distance in distances:
+						scenarioName = scenario + "-" + str(distance)
+						runScenario(cw, scenarioName, distance, startingNodeMap[scenario])
 	else:
 		runScenario(None, None)
 if __name__ == "__main__":
