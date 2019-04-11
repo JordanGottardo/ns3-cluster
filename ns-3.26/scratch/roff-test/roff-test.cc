@@ -975,7 +975,7 @@ int main (int argc, char *argv[])
 		string header;
 
 		if(experiment.GetPrintCoords()) {
-			additionalPath = "/out/scenario-urbano-con-coord/roff";
+			additionalPath = "/out/scenario-urbano-con-coord/";
 			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
 					"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
 					"\"Slots\",\"Messages sent\",\"Messages received\", \"Starting x\", \"Starting y\","
@@ -983,7 +983,7 @@ int main (int argc, char *argv[])
 					"\"Node ids\", \"Transmission map\", \"Received on circ nodes\", \"Transmission vector\"";
 		}
 		else {
-			additionalPath = "/out/scenario-urbano/roff";
+			additionalPath = "/out/scenario-urbano/";
 			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
 								"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
 								"\"Slots\",\"Messages sent\",\"Messages received\"";

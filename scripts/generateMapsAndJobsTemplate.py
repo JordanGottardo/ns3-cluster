@@ -136,7 +136,6 @@ def main():
 	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
 	distances = ["15", "25", "35", "45"]
 	#scenarios = ["Padova"]
-	distances = ["25"]
 	startingNodeMap = {
 		"Padova":0,
 		"LA":0,
