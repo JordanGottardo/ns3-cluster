@@ -1,8 +1,8 @@
-Host di esecuzione: hpblade13
-Data: Thu Apr 11 18:08:05 CEST 2019
+Host di esecuzione: dellsrv3
+Data: Thu Apr 11 18:34:05 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-hpblade13
+dellsrv3
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
@@ -16,4 +16,4 @@ numNodes = 1344
 numNodes = 1344
 startingNode = 0
 connect drop
-collisions= 4774387
+collisions= 4735640

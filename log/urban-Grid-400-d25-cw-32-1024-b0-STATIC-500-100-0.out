@@ -1,5 +1,5 @@
 Host di esecuzione: dellsrv2
-Data: Thu Apr 11 18:08:10 CEST 2019
+Data: Thu Apr 11 18:34:08 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
 dellsrv2
@@ -16,4 +16,4 @@ numNodes = 1344
 numNodes = 1344
 startingNode = 0
 connect drop
-collisions= 361286
+collisions= 394566

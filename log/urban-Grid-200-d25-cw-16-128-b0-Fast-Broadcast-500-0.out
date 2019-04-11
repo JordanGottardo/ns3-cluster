@@ -1,5 +1,5 @@
 Host di esecuzione: hpblade13
-Data: Thu Apr 11 18:08:02 CEST 2019
+Data: Thu Apr 11 18:34:01 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
 hpblade13
@@ -16,4 +16,4 @@ numNodes = 2112
 numNodes = 2112
 startingNode = 0
 connect drop
-collisions= 11069219
+collisions= 11180011
