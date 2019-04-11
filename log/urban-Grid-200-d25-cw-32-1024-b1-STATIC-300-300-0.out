@@ -1,0 +1,19 @@
+Host di esecuzione: dellsrv3
+Data: Thu Apr 11 18:08:05 CEST 2019
+Directory: /home/jgottard/ns-3/ns-3.26
+Questo job viene eseguito sui seguenti nodi:
+dellsrv3
+PBS_WORKDIR=/home/jgottard
+Launching job for execution
+after set
+Start main urban
+numNodes = 2112
+numNodes = 2112
+startingNode = 0
+fileName=Grid-200/b1/r300/STATIC-300/Grid-200-b1-r300-STATIC-300
+run = 0
+numNodes = 2112
+numNodes = 2112
+startingNode = 0
+connect drop
+collisions= 384493
