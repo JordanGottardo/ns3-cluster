@@ -116,6 +116,15 @@ void FBApplication::Install(uint32_t protocol, uint32_t broadcastPhaseStart, uin
 	m_cwMax	= cwMax;
 	m_printCoords = printCoords;
 	m_vehicleDistance = vehicleDistance;
+//	cout << "connect drop" << endl;
+//	Config::Connect("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Mac/MacRxDrop", MakeCallback(&FBApplication::LogCollision, this));
+	Config::Connect("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Phy/PhyRxDrop", MakeCallback(&FBApplication::LogCollision, this));
+//	Config::Connect("/NodeList/*/DeviceList/*/$ns3::WifiMac/MacRxDrop", MakeCallback(&FBApplication::LogCollision, this));
+//	Config::Connect("/NodeList/*/DeviceList/*/$ns3::WifiPhy/PhyRxDrop", MakeCallback(&FBApplication::LogCollision, this));
+}
+
+void FBApplication::LogCollision(std::string context, Ptr<const Packet> p) {
+		m_collisions++;
 }
 
 void FBApplication::AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink, bool onstats) {
@@ -148,7 +157,7 @@ void FBApplication::AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink
 void FBApplication::PrintStats(std::stringstream &dataStream) {
 
 	NS_LOG_FUNCTION (this);
-	cout << Simulator::Now() << endl;
+//	cout << "collisions= " << m_collisions << endl;
 	uint32_t cover = 1;	// 'cause we count m_startingNode
 	uint32_t circ = 0, circCont = 0;
 

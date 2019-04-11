@@ -23,10 +23,11 @@ def findNumNodes(mobilityFilePath):
 	return maxId + 1
 
 def runScenario(cw, scenario, distance, startingNode):
+	print(scenario)
 	# Protocols and transmission ranges
 	buildings = ["0", "1"]
 	#buildings = ["1"]
-	protocols = ["1", "2", "3", "4"]
+	protocols = ["1", "2", "3", "4", "5"]
 	txRanges = ["100", "300", "500"]
 	#txRanges = ["300", "500"]
 	protocolsMap = {
@@ -91,12 +92,18 @@ def runScenario(cw, scenario, distance, startingNode):
 					#print(txRange)
 				#	continue
 				executablePath = None
-				propagationLoss = "GRID" in scenario
+				propagationLossBool = "Grid" in scenario
+				propagationLoss = None
+				if (propagationLossBool is True):
+					print("yaa")
+					propagationLoss = 0
+				else:
+					propagationLoss = 1
 				if (protocol == "5"): #ROFF
-					command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings={0} --actualRange={1} --protocol={2} --mapBasePath={3} --cwMin={4} --cwMax={5} --vehicleDistance={6} --startingNode={7} --propagationLoss={8} --area=1000 --printToFile=1 --printCoords=1  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1".format(b, txRange, protocol, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss)
+					command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings={0} --actualRange={1} --mapBasePath={2} --cwMin={3} --cwMax={4} --vehicleDistance={5} --startingNode={6} --propagationLoss={7} --protocol=0 --area=1000 --printToFile=1 --printCoords=1  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1".format(b, txRange, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss)
 				else: 
 					executablePath = "/home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban"
-					command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --protocol={2} --mapBasePath={3} --cwMin={4} --cwMax={5} --vehicleDistance={6} --startingNode={7} --propagationLoss={8} --flooding=0 --area=1000 --printToFile=1 --printCoords=1 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1".format(b, txRange, protocol, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss)
+					command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --mapBasePath={2} --cwMin={3} --cwMax={4} --vehicleDistance={5} --startingNode={6} --propagationLoss={7} --protocol={8} --flooding=0 --area=1000 --printToFile=1 --printCoords=1 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1".format(b, txRange, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss, protocol)
 				newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-" + protocolsMap[protocol] + "-" + txRange
 				newJobFilename = newJobName + "-.job"
 				newJobPath = os.path.join(jobsPath, newJobFilename)
@@ -127,7 +134,7 @@ def main():
 	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
 	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
 	distances = ["15", "25", "35", "45"]
-	scenarios = ["Padova"]
+	#scenarios = ["Padova"]
 	distances = ["25"]
 	startingNodeMap = {
 		"Padova":0,
