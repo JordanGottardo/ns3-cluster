@@ -1,8 +1,8 @@
-Host di esecuzione: dellsrv4
-Data: Thu Apr 11 18:46:04 CEST 2019
+Host di esecuzione: dellsrv1
+Data: Thu Apr 11 19:06:04 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-dellsrv4
+dellsrv1
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
@@ -15,5 +15,3 @@ run = 0
 numNodes = 2112
 numNodes = 2112
 startingNode = 0
-connect drop
-collisions= 986112
