@@ -1,5 +1,5 @@
 Host di esecuzione: hpblade08
-Data: Fri Apr 12 10:18:22 CEST 2019
+Data: Fri Apr 12 11:59:10 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
 hpblade08
@@ -11,16 +11,18 @@ numNodes = 1465
 startingNode = 0
 Topology::LoadTableFromFile filename= ../maps/LA-25/LA-25.losses
 LA-25/b1/r100/ROFF/LA-25-b1-r100-ROFF
-roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/LA-25/b1/r100/ROFF/LA-25-b1-r100-ROFF-1555057114646.csv"
+roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/LA-25/b1/r100/ROFF/LA-25-b1-r100-ROFF-1555063161396.csv"
 run = 0
 numNodes = 1465
 startingNode = 0
 Topology::LoadTableFromFile filename= ../maps/LA-25/LA-25.losses
 1 
 2 
-not found in file key= 00002085.3 00001422.7 00000000.0 00001182.2 00001206.9 00000000.0
-not found in file key= 00002085.3 00001422.7 00000000.0 00001423.3 00001128.4 00000000.0
-not found in file key= 00001182.2 00001206.9 00000000.0 00002085.3 00001422.7 00000000.0
-not found in file key= 00001182.2 00001206.9 00000000.0 00001423.3 00001128.4 00000000.0
-not found in file key= 00001423.3 00001128.4 00000000.0 00002085.3 00001422.7 00000000.0
-not found in file key= 00001423.3 00001128.4 00000000.0 00001182.2 00001206.9 00000000.0
+generateHelloTraffic7
+generateHelloTraffic6
+generateHelloTraffic5
+generateHelloTraffic4
+generateHelloTraffic3
+generateHelloTraffic2
+generateHelloTraffic1
+generateHelloTraffic0

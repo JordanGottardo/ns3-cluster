@@ -1,5 +1,5 @@
 Host di esecuzione: hpblade01
-Data: Fri Apr 12 10:18:17 CEST 2019
+Data: Fri Apr 12 11:59:09 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
 hpblade01
@@ -10,9 +10,17 @@ Start main urban
 numNodes = 2396
 startingNode = 0
 LA-15/b0/r300/ROFF/LA-15-b0-r300-ROFF
-roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/LA-15/b0/r300/ROFF/LA-15-b0-r300-ROFF-1555057098698.csv"
+roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/LA-15/b0/r300/ROFF/LA-15-b0-r300-ROFF-1555063150113.csv"
 run = 0
 numNodes = 2396
 startingNode = 0
 1 
 2 
+generateHelloTraffic7
+generateHelloTraffic6
+generateHelloTraffic5
+generateHelloTraffic4
+generateHelloTraffic3
+generateHelloTraffic2
+generateHelloTraffic1
+generateHelloTraffic0

@@ -1,8 +1,8 @@
-Host di esecuzione: dellsrv0
-Data: Fri Apr 12 10:22:20 CEST 2019
+Host di esecuzione: hpblade16
+Data: Fri Apr 12 12:00:04 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-dellsrv0
+hpblade16
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
@@ -11,22 +11,18 @@ numNodes = 1776
 startingNode = 0
 Topology::LoadTableFromFile filename= ../maps/Padova-25/Padova-25.losses
 Padova-25/b1/r300/ROFF/Padova-25-b1-r300-ROFF
-roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/Padova-25/b1/r300/ROFF/Padova-25-b1-r300-ROFF-1555057358398.csv"
+roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/Padova-25/b1/r300/ROFF/Padova-25-b1-r300-ROFF-1555063213826.csv"
 run = 0
 numNodes = 1776
 startingNode = 0
 Topology::LoadTableFromFile filename= ../maps/Padova-25/Padova-25.losses
 1 
 2 
-not found in file key= 00000748.0 00000946.8 00000000.0 00001511.5 00002382.2 00000000.0
-not found in file key= 00000748.0 00000946.8 00000000.0 00001517.0 00002723.8 00000000.0
-not found in file key= 00000748.0 00000946.8 00000000.0 00000714.6 00002043.1 00000000.0
-not found in file key= 00000714.6 00002043.1 00000000.0 00001511.5 00002382.2 00000000.0
-not found in file key= 00000714.6 00002043.1 00000000.0 00001517.0 00002723.8 00000000.0
-not found in file key= 00000714.6 00002043.1 00000000.0 00000748.0 00000946.8 00000000.0
-not found in file key= 00001517.0 00002723.8 00000000.0 00001511.5 00002382.2 00000000.0
-not found in file key= 00001517.0 00002723.8 00000000.0 00000714.6 00002043.1 00000000.0
-not found in file key= 00001517.0 00002723.8 00000000.0 00000748.0 00000946.8 00000000.0
-not found in file key= 00001511.5 00002382.2 00000000.0 00001517.0 00002723.8 00000000.0
-not found in file key= 00001511.5 00002382.2 00000000.0 00000714.6 00002043.1 00000000.0
-not found in file key= 00001511.5 00002382.2 00000000.0 00000748.0 00000946.8 00000000.0
+generateHelloTraffic7
+generateHelloTraffic6
+generateHelloTraffic5
+generateHelloTraffic4
+generateHelloTraffic3
+generateHelloTraffic2
+generateHelloTraffic1
+generateHelloTraffic0

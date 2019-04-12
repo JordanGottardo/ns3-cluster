@@ -1,8 +1,8 @@
-Host di esecuzione: hpblade01
-Data: Thu Apr 11 19:28:30 CEST 2019
+Host di esecuzione: dellsrv3
+Data: Fri Apr 12 12:00:21 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-hpblade01
+dellsrv3
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
@@ -10,8 +10,10 @@ Start main urban
 numNodes = 1776
 numNodes = 1776
 startingNode = 0
+Topology::LoadTableFromFile filename= ../maps/Padova-25/Padova-25.losses
 fileName=Padova-25/b1/r300/STATIC-300/Padova-25-b1-r300-STATIC-300
 run = 0
 numNodes = 1776
 numNodes = 1776
 startingNode = 0
+Topology::LoadTableFromFile filename= ../maps/Padova-25/Padova-25.losses

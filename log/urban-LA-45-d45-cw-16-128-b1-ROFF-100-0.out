@@ -1,8 +1,8 @@
-Host di esecuzione: hpblade13
-Data: Fri Apr 12 10:22:02 CEST 2019
+Host di esecuzione: hpblade16
+Data: Fri Apr 12 11:59:36 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-hpblade13
+hpblade16
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
@@ -11,22 +11,18 @@ numNodes = 861
 startingNode = 0
 Topology::LoadTableFromFile filename= ../maps/LA-45/LA-45.losses
 LA-45/b1/r100/ROFF/LA-45-b1-r100-ROFF
-roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/LA-45/b1/r100/ROFF/LA-45-b1-r100-ROFF-1555057327919.csv"
+roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/LA-45/b1/r100/ROFF/LA-45-b1-r100-ROFF-1555063179415.csv"
 run = 0
 numNodes = 861
 startingNode = 0
 Topology::LoadTableFromFile filename= ../maps/LA-45/LA-45.losses
 1 
 2 
-not found in file key= 00001143.5 00002121.1 00000000.0 00000682.0 00001999.4 00000000.0
-not found in file key= 00001143.5 00002121.1 00000000.0 00001989.2 00000844.6 00000000.0
-not found in file key= 00001143.5 00002121.1 00000000.0 00001955.1 00002315.6 00000000.0
-not found in file key= 00001989.2 00000844.6 00000000.0 00000682.0 00001999.4 00000000.0
-not found in file key= 00001989.2 00000844.6 00000000.0 00001143.5 00002121.1 00000000.0
-not found in file key= 00001989.2 00000844.6 00000000.0 00001955.1 00002315.6 00000000.0
-not found in file key= 00000682.0 00001999.4 00000000.0 00001143.5 00002121.1 00000000.0
-not found in file key= 00000682.0 00001999.4 00000000.0 00001989.2 00000844.6 00000000.0
-not found in file key= 00000682.0 00001999.4 00000000.0 00001955.1 00002315.6 00000000.0
-not found in file key= 00001955.1 00002315.6 00000000.0 00000682.0 00001999.4 00000000.0
-not found in file key= 00001955.1 00002315.6 00000000.0 00001143.5 00002121.1 00000000.0
-not found in file key= 00001955.1 00002315.6 00000000.0 00001989.2 00000844.6 00000000.0
+generateHelloTraffic7
+generateHelloTraffic6
+generateHelloTraffic5
+generateHelloTraffic4
+generateHelloTraffic3
+generateHelloTraffic2
+generateHelloTraffic1
+generateHelloTraffic0
