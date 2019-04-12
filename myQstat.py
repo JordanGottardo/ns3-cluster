@@ -1,4 +1,4 @@
-#!/usr/bin python
+#!/usr/bin/python
 
 from subprocess import check_output
 from re import search
