@@ -155,6 +155,7 @@ void ROFFApplication::StopApplication(void) {
 
 void ROFFApplication::GenerateHelloTraffic(uint32_t count) {
 	NS_LOG_FUNCTION(this);
+	cout << "generateHelloTraffic" << count << endl;
 	if (count == 0) {
 		return;
 	}
@@ -359,6 +360,8 @@ void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHead
 	packet->AddHeader(header);
 	NS_LOG_DEBUG("ROFFApplication::ForwardAlertMessage node " << node->GetId()
 			<< " forwards after waitingTime= " << waitingTime << " at time= " << Simulator::Now());
+	NS_LOG_UNCOND("ROFFApplication::ForwardAlertMessage node " << node->GetId()
+				<< " forwards after waitingTime= " << waitingTime << " at time= " << Simulator::Now());
 	node->Send(packet);
 	node->SetSent(true);
 	m_sent++;
