@@ -1,8 +1,8 @@
-Host di esecuzione: dellsrv4
-Data: Thu Apr 11 19:23:57 CEST 2019
+Host di esecuzione: hpblade16
+Data: Fri Apr 12 10:22:04 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-dellsrv4
+hpblade16
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
@@ -10,8 +10,13 @@ Start main urban
 numNodes = 861
 numNodes = 861
 startingNode = 0
+Topology::LoadTableFromFile filename= ../maps/LA-45/LA-45.losses
 fileName=LA-45/b1/r500/STATIC-500/LA-45-b1-r500-STATIC-500
 run = 0
 numNodes = 861
 numNodes = 861
 startingNode = 0
+Topology::LoadTableFromFile filename= ../maps/LA-45/LA-45.losses
+not found in file key= 00001989.2 00000844.6 00000000.0 00000682.0 00001999.4 00000000.0
+not found in file key= 00001989.2 00000844.6 00000000.0 00001143.5 00002121.1 00000000.0
+not found in file key= 00001989.2 00000844.6 00000000.0 00001955.1 00002315.6 00000000.0

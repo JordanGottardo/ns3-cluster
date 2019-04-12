@@ -1,18 +1,26 @@
-Host di esecuzione: hpblade16
-Data: Thu Apr 11 19:35:59 CEST 2019
+Host di esecuzione: dellsrv3
+Data: Fri Apr 12 10:23:11 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-hpblade16
+dellsrv3
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
 Start main urban
 numNodes = 1072
 startingNode = 0
-Padova-45/b1/Padova-45-b1
-roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/Padova-45/b1/Padova-45-b1-1555004160734.csv"
+Topology::LoadTableFromFile filename= ../maps/Padova-45/Padova-45.losses
+Padova-45/b1/r100/ROFF/Padova-45-b1-r100-ROFF
+roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/Padova-45/b1/r100/ROFF/Padova-45-b1-r100-ROFF-1555057396402.csv"
 run = 0
 numNodes = 1072
 startingNode = 0
+Topology::LoadTableFromFile filename= ../maps/Padova-45/Padova-45.losses
 1 
 2 
+not found in file key= 00001132.4 00002309.6 00000000.0 00001312.6 00001126.6 00000000.0
+not found in file key= 00001132.4 00002309.6 00000000.0 00001070.4 00002657.1 00000000.0
+not found in file key= 00001312.6 00001126.6 00000000.0 00001132.4 00002309.6 00000000.0
+not found in file key= 00001312.6 00001126.6 00000000.0 00001070.4 00002657.1 00000000.0
+not found in file key= 00001070.4 00002657.1 00000000.0 00001312.6 00001126.6 00000000.0
+not found in file key= 00001070.4 00002657.1 00000000.0 00001132.4 00002309.6 00000000.0

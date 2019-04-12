@@ -1,5 +1,5 @@
 Host di esecuzione: dellsrv1
-Data: Thu Apr 11 19:36:28 CEST 2019
+Data: Fri Apr 12 10:23:17 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
 dellsrv1
@@ -10,8 +10,10 @@ Start main urban
 numNodes = 1072
 numNodes = 1072
 startingNode = 0
+Topology::LoadTableFromFile filename= ../maps/Padova-45/Padova-45.losses
 fileName=Padova-45/b1/r500/STATIC-500/Padova-45-b1-r500-STATIC-500
 run = 0
 numNodes = 1072
 numNodes = 1072
 startingNode = 0
+Topology::LoadTableFromFile filename= ../maps/Padova-45/Padova-45.losses
