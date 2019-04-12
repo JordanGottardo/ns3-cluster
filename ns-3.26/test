@@ -48,11 +48,11 @@ PLATOON ROFF
 NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'roff-test --buildings=0 --actualRange=300 --vehicleDistance=25 --area=1000 --mapBasePath=../maps/Padova/Padova --printToFile=1 --printCoords=1 --startingNode=0 --beaconInterval=100 --distanceRange=1 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=0 --propagationLoss=0 --trace=../maps/Platoon/Platoon-333n-4000m.ns2mobility.xml'
 
 
-GRID FB 16-128
-NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'fb-vanet-urban --buildings=0 --actualRange=300 --vehicleDistance=25 --protocol=1 --flooding=0 --area=1000 --mapBasePath=../maps/Grid/Grid --cwMin=16 --cwMax=128 --printToFile=1 --printCoords=1 -startingNode=936 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=0 --propagationLoss=0 --trace=../maps/Grid/Grid.ns2mobility.xml --poly=../maps/Grid/Grid.poly.xml'
+GRID-200 FB 16-128
+NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'fb-vanet-urban --buildings=0 --actualRange=300 --vehicleDistance=25 --protocol=1 --flooding=0 --area=1000 --mapBasePath=../maps/Grid-200/Grid-200 --cwMin=16 --cwMax=128 --printToFile=1 --printCoords=1 -startingNode=936 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=0 --propagationLoss=0'
 
-GRID ROFF
-NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'roff-test --buildings=0 --actualRange=300 --vehicleDistance=25 --area=1000 --mapBasePath=../maps/Grid/Grid --printToFile=1 --printCoords=1 --startingNode=936 --beaconInterval=100 --distanceRange=1 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=0 --propagationLoss=0 --trace=../maps/Grid/Grid.ns2mobility.xml --poly=../maps/Grid/Grid.poly.xml'
+GRID-200 ROFF
+NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'roff-test --buildings=0 --actualRange=300 --vehicleDistance=25 --area=1000 --mapBasePath=../maps/Grid-200/Grid-200 --printToFile=1 --printCoords=1 --startingNode=936 --beaconInterval=100 --distanceRange=1 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=0 --propagationLoss=0'
 
 
 GRID SMALL FB 16-128
