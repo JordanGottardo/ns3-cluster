@@ -1,0 +1,17 @@
+Host di esecuzione: hpblade01
+Data: Thu Apr 11 19:21:36 CEST 2019
+Directory: /home/jgottard/ns-3/ns-3.26
+Questo job viene eseguito sui seguenti nodi:
+hpblade01
+PBS_WORKDIR=/home/jgottard
+Launching job for execution
+after set
+Start main urban
+numNodes = 1083
+numNodes = 1083
+startingNode = 0
+fileName=LA-35/b0/r500/STATIC-300/LA-35-b0-r500-STATIC-300
+run = 0
+numNodes = 1083
+numNodes = 1083
+startingNode = 0
