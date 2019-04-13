@@ -93,7 +93,7 @@ Topology::LoadTableFromFile() {
 
 	std::string fileName = m_mapBasePath + ".losses";
 	std::ifstream file (fileName.c_str (), std::ios::in);
-	std::cout << "Topology::LoadTableFromFile filename= " << fileName << std::endl;
+//	std::cout << "Topology::LoadTableFromFile filename= " << fileName << std::endl;
 	if (!(file.is_open())){
 		NS_FATAL_ERROR("Could not open buildings file " << fileName.c_str() << " for reading, aborting here \n");
 	}

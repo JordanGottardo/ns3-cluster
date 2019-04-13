@@ -155,7 +155,7 @@ void ROFFApplication::StopApplication(void) {
 
 void ROFFApplication::GenerateHelloTraffic(uint32_t count) {
 	NS_LOG_FUNCTION(this);
-	cout << "generateHelloTraffic" << count << endl;
+//	cout << "generateHelloTraffic" << count << endl;
 	if (count == 0) {
 		return;
 	}
