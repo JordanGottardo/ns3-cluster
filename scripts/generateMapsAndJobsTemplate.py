@@ -137,10 +137,10 @@ def main():
 	distances = ["15", "25", "35", "45"]
 	#scenarios = ["Padova"]
 	startingNodeMap = {
-		"Padova":0,
-		"LA":0,
-		"Grid-200":0,
-		"Grid-400":0
+		"Padova":-1,
+		"LA":-1,
+		"Grid-200":-1,
+		"Grid-400":-1
 	}
 	
 	# Removes all previous job templates in output directory
