@@ -130,11 +130,9 @@ def runScenario(cw, scenario, distance, startingNode):
 
 def main():
 	#Edit these to launch automatically 
-	#scenarios = ["Padova", "LA", "Grid-200", "Grid-300" "Grid-400"]
-	scenarios = ["Grid-300" "Grid-400"]
+	scenarios = ["Padova", "LA", "Grid-200", "Grid-300", "Grid-400"]
+	#scenarios = ["Grid-300" "Grid-400"]
 	contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
-	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
-	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
 	distances = ["15", "25", "35", "45"]
 	#scenarios = ["Padova"]
 	startingNodeMap = {
