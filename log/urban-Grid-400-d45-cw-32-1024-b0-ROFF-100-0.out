@@ -1,26 +1,18 @@
-Host di esecuzione: dellsrv1
-Data: Fri Apr 12 11:59:06 CEST 2019
+Host di esecuzione: dellsrv0
+Data: Sun Apr 14 01:20:06 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-dellsrv1
+dellsrv0
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
 Start main urban
 numNodes = 1344
-startingNode = 0
+startingNode = 409
 Grid-400/b0/r100/ROFF/Grid-400-b0-r100-ROFF
-roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/Grid-400/b0/r100/ROFF/Grid-400-b0-r100-ROFF-1555063147376.csv"
+roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/Grid-400/b0/r100/ROFF/Grid-400-b0-r100-ROFF-1555197606973.csv"
 run = 0
 numNodes = 1344
-startingNode = 0
+startingNode = 409
 1 
 11 
-generateHelloTraffic7
-generateHelloTraffic6
-generateHelloTraffic5
-generateHelloTraffic4
-generateHelloTraffic3
-generateHelloTraffic2
-generateHelloTraffic1
-generateHelloTraffic0

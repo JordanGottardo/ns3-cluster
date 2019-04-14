@@ -1,28 +1,18 @@
-Host di esecuzione: dellsrv1
-Data: Fri Apr 12 12:01:23 CEST 2019
+Host di esecuzione: hpblade01
+Data: Sun Apr 14 06:52:48 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-dellsrv1
+hpblade01
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
 Start main urban
 numNodes = 1072
-startingNode = 0
-Topology::LoadTableFromFile filename= ../maps/Padova-45/Padova-45.losses
+startingNode = 42
 Padova-45/b1/r300/ROFF/Padova-45-b1-r300-ROFF
-roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/Padova-45/b1/r300/ROFF/Padova-45-b1-r300-ROFF-1555063287643.csv"
+roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/Padova-45/b1/r300/ROFF/Padova-45-b1-r300-ROFF-1555217575018.csv"
 run = 0
 numNodes = 1072
-startingNode = 0
-Topology::LoadTableFromFile filename= ../maps/Padova-45/Padova-45.losses
+startingNode = 353
 1 
 2 
-generateHelloTraffic7
-generateHelloTraffic6
-generateHelloTraffic5
-generateHelloTraffic4
-generateHelloTraffic3
-generateHelloTraffic2
-generateHelloTraffic1
-generateHelloTraffic0

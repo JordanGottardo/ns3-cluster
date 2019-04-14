@@ -1,5 +1,5 @@
 Host di esecuzione: dellsrv1
-Data: Fri Apr 12 11:59:06 CEST 2019
+Data: Sun Apr 14 01:16:07 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
 dellsrv1
@@ -9,11 +9,9 @@ after set
 Start main urban
 numNodes = 1344
 numNodes = 1344
-startingNode = 0
-Topology::LoadTableFromFile filename= ../maps/Grid-400/Grid-400.losses
+startingNode = 1264
 fileName=Grid-400/b1/r100/STATIC-500/Grid-400-b1-r100-STATIC-500
 run = 0
 numNodes = 1344
 numNodes = 1344
-startingNode = 0
-Topology::LoadTableFromFile filename= ../maps/Grid-400/Grid-400.losses
+startingNode = 942

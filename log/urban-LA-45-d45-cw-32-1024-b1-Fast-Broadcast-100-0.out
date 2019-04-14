@@ -1,31 +1,17 @@
-Host di esecuzione: dellsrv1
-Data: Fri Apr 12 10:22:03 CEST 2019
+Host di esecuzione: dellsrv5
+Data: Sun Apr 14 04:06:36 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-dellsrv1
+dellsrv5
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
 Start main urban
 numNodes = 861
 numNodes = 861
-startingNode = 0
-Topology::LoadTableFromFile filename= ../maps/LA-45/LA-45.losses
+startingNode = 623
 fileName=LA-45/b1/r100/Fast-Broadcast/LA-45-b1-r100-Fast-Broadcast
 run = 0
 numNodes = 861
 numNodes = 861
-startingNode = 0
-Topology::LoadTableFromFile filename= ../maps/LA-45/LA-45.losses
-not found in file key= 00001989.2 00000844.6 00000000.0 00000682.0 00001999.4 00000000.0
-not found in file key= 00001989.2 00000844.6 00000000.0 00001143.5 00002121.1 00000000.0
-not found in file key= 00001989.2 00000844.6 00000000.0 00001955.1 00002315.6 00000000.0
-not found in file key= 00001143.5 00002121.1 00000000.0 00000682.0 00001999.4 00000000.0
-not found in file key= 00001143.5 00002121.1 00000000.0 00001989.2 00000844.6 00000000.0
-not found in file key= 00001143.5 00002121.1 00000000.0 00001955.1 00002315.6 00000000.0
-not found in file key= 00001955.1 00002315.6 00000000.0 00000682.0 00001999.4 00000000.0
-not found in file key= 00001955.1 00002315.6 00000000.0 00001143.5 00002121.1 00000000.0
-not found in file key= 00001955.1 00002315.6 00000000.0 00001989.2 00000844.6 00000000.0
-not found in file key= 00000682.0 00001999.4 00000000.0 00001143.5 00002121.1 00000000.0
-not found in file key= 00000682.0 00001999.4 00000000.0 00001989.2 00000844.6 00000000.0
-not found in file key= 00000682.0 00001999.4 00000000.0 00001955.1 00002315.6 00000000.0
+startingNode = 289

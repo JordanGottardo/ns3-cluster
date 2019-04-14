@@ -1,0 +1,17 @@
+Host di esecuzione: hpblade16
+Data: Sun Apr 14 00:39:21 CEST 2019
+Directory: /home/jgottard/ns-3/ns-3.26
+Questo job viene eseguito sui seguenti nodi:
+hpblade16
+PBS_WORKDIR=/home/jgottard
+Launching job for execution
+after set
+Start main urban
+numNodes = 2112
+numNodes = 2112
+startingNode = 60
+fileName=Grid-200/b0/r300/Fast-Broadcast/Grid-200-b0-r300-Fast-Broadcast
+run = 0
+numNodes = 2112
+numNodes = 2112
+startingNode = 60

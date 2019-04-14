@@ -1,0 +1,17 @@
+Host di esecuzione: dellsrv5
+Data: Sun Apr 14 05:08:50 CEST 2019
+Directory: /home/jgottard/ns-3/ns-3.26
+Questo job viene eseguito sui seguenti nodi:
+dellsrv5
+PBS_WORKDIR=/home/jgottard
+Launching job for execution
+after set
+Start main urban
+numNodes = 1776
+numNodes = 1776
+startingNode = 1410
+fileName=Padova-25/b1/r100/Fast-Broadcast/Padova-25-b1-r100-Fast-Broadcast
+run = 0
+numNodes = 1776
+numNodes = 1776
+startingNode = 606

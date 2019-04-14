@@ -1,28 +1,18 @@
-Host di esecuzione: dellsrv5
-Data: Fri Apr 12 11:59:37 CEST 2019
+Host di esecuzione: dellsrv6
+Data: Sun Apr 14 03:50:03 CEST 2019
 Directory: /home/jgottard/ns-3/ns-3.26
 Questo job viene eseguito sui seguenti nodi:
-dellsrv5
+dellsrv6
 PBS_WORKDIR=/home/jgottard
 Launching job for execution
 after set
 Start main urban
 numNodes = 861
-startingNode = 0
-Topology::LoadTableFromFile filename= ../maps/LA-45/LA-45.losses
+startingNode = 611
 LA-45/b1/r300/ROFF/LA-45-b1-r300-ROFF
-roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/LA-45/b1/r300/ROFF/LA-45-b1-r300-ROFF-1555063186297.csv"
+roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/LA-45/b1/r300/ROFF/LA-45-b1-r300-ROFF-1555206607888.csv"
 run = 0
 numNodes = 861
-startingNode = 0
-Topology::LoadTableFromFile filename= ../maps/LA-45/LA-45.losses
+startingNode = 524
 1 
 2 
-generateHelloTraffic7
-generateHelloTraffic6
-generateHelloTraffic5
-generateHelloTraffic4
-generateHelloTraffic3
-generateHelloTraffic2
-generateHelloTraffic1
-generateHelloTraffic0

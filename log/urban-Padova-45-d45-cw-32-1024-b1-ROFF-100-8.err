@@ -1,0 +1,14 @@
+/home/jgottard/.profile: line 8: :/home/jgottard/ns-3/ns-3.26/build:/home/jgottard/ns-3/libs:/usr/local/cuda/lib64:/usr/local/cula/lib64:/usr/local/culasparse/lib64: No such file or directory
+ROFF Vanet Experiment URBAN
+ROFFApplication::ForwardAlertMessage node 211 forwards after waitingTime= 2 at time= +10002275149.0ns
+ROFFApplication::ForwardAlertMessage node 562 forwards after waitingTime= 2 at time= +10004554422.0ns
+ROFFApplication::ForwardAlertMessage node 114 forwards after waitingTime= 2 at time= +10006834763.0ns
+ROFFApplication::ForwardAlertMessage node 112 forwards after waitingTime= 5 at time= +10012117081.0ns
+ROFFApplication::ForwardAlertMessage node 33 forwards after waitingTime= 9 at time= +10016116925.0ns
+ROFFApplication::ForwardAlertMessage node 617 forwards after waitingTime= 6 at time= +10018399268.0ns
+ROFFApplication::ForwardAlertMessage node 34 forwards after waitingTime= 7 at time= +10023397081.0ns
+ROFFApplication::ForwardAlertMessage node 629 forwards after waitingTime= 6 at time= +10024679418.0ns
+ROFFApplication::ForwardAlertMessage node 651 forwards after waitingTime= 4 at time= +10028963717.0ns
+ROFFApplication::ForwardAlertMessage node 12 forwards after waitingTime= 3 at time= +10032243969.0ns
+ROFFApplication::ForwardAlertMessage node 11 forwards after waitingTime= 5 at time= +10037524117.0ns
+ROFFApplication::ForwardAlertMessage node 10 forwards after waitingTime= 3 at time= +10040799264.0ns

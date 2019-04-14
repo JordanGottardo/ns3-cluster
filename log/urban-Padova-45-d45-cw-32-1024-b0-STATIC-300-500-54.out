@@ -1,0 +1,17 @@
+Host di esecuzione: dellsrv1
+Data: Sun Apr 14 06:47:16 CEST 2019
+Directory: /home/jgottard/ns-3/ns-3.26
+Questo job viene eseguito sui seguenti nodi:
+dellsrv1
+PBS_WORKDIR=/home/jgottard
+Launching job for execution
+after set
+Start main urban
+numNodes = 1072
+numNodes = 1072
+startingNode = 459
+fileName=Padova-45/b0/r500/STATIC-300/Padova-45-b0-r500-STATIC-300
+run = 0
+numNodes = 1072
+numNodes = 1072
+startingNode = 459

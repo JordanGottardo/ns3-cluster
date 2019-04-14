@@ -1,0 +1,17 @@
+Host di esecuzione: hpblade01
+Data: Sun Apr 14 05:37:18 CEST 2019
+Directory: /home/jgottard/ns-3/ns-3.26
+Questo job viene eseguito sui seguenti nodi:
+hpblade01
+PBS_WORKDIR=/home/jgottard
+Launching job for execution
+after set
+Start main urban
+numNodes = 1776
+numNodes = 1776
+startingNode = 1371
+fileName=Padova-25/b1/r300/STATIC-500/Padova-25-b1-r300-STATIC-500
+run = 0
+numNodes = 1776
+numNodes = 1776
+startingNode = 1592

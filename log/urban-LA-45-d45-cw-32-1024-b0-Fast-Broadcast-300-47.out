@@ -1,0 +1,17 @@
+Host di esecuzione: dellsrv2
+Data: Sun Apr 14 03:57:08 CEST 2019
+Directory: /home/jgottard/ns-3/ns-3.26
+Questo job viene eseguito sui seguenti nodi:
+dellsrv2
+PBS_WORKDIR=/home/jgottard
+Launching job for execution
+after set
+Start main urban
+numNodes = 861
+numNodes = 861
+startingNode = 420
+fileName=LA-45/b0/r300/Fast-Broadcast/LA-45-b0-r300-Fast-Broadcast
+run = 0
+numNodes = 861
+numNodes = 861
+startingNode = 420

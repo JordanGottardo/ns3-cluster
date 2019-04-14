@@ -1,0 +1,18 @@
+Host di esecuzione: hpblade13
+Data: Sun Apr 14 04:41:18 CEST 2019
+Directory: /home/jgottard/ns-3/ns-3.26
+Questo job viene eseguito sui seguenti nodi:
+hpblade13
+PBS_WORKDIR=/home/jgottard
+Launching job for execution
+after set
+Start main urban
+numNodes = 2856
+startingNode = 1651
+Padova-15/b0/r100/ROFF/Padova-15-b0-r100-ROFF
+roffTest= "/home/jgottard/ns-3/ns-3.26/out/scenario-urbano-con-coord/Padova-15/b0/r100/ROFF/Padova-15-b0-r100-ROFF-1555209678927.csv"
+run = 0
+numNodes = 2856
+startingNode = 1651
+1 
+2 

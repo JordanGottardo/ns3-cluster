@@ -1,0 +1,29 @@
+/home/jgottard/.profile: line 8: :/home/jgottard/ns-3/ns-3.26/build:/home/jgottard/ns-3/libs:/usr/local/cuda/lib64:/usr/local/cula/lib64:/usr/local/culasparse/lib64: No such file or directory
+ROFF Vanet Experiment URBAN
+ROFFApplication::ForwardAlertMessage node 525 forwards after waitingTime= 5 at time= +10005321620.0ns
+ROFFApplication::ForwardAlertMessage node 439 forwards after waitingTime= 7 at time= +10007321579.0ns
+ROFFApplication::ForwardAlertMessage node 460 forwards after waitingTime= 2 at time= +10007640287.0ns
+ROFFApplication::ForwardAlertMessage node 641 forwards after waitingTime= 3 at time= +10008640217.0ns
+ROFFApplication::ForwardAlertMessage node 358 forwards after waitingTime= 4 at time= +10011640129.0ns
+ROFFApplication::ForwardAlertMessage node 590 forwards after waitingTime= 4 at time= +10012956757.0ns
+ROFFApplication::ForwardAlertMessage node 740 forwards after waitingTime= 5 at time= +10013124011.0ns
+ROFFApplication::ForwardAlertMessage node 690 forwards after waitingTime= 6 at time= +10014124006.0ns
+ROFFApplication::ForwardAlertMessage node 398 forwards after waitingTime= 3 at time= +10014956697.0ns
+ROFFApplication::ForwardAlertMessage node 823 forwards after waitingTime= 4 at time= +10017276389.0ns
+ROFFApplication::ForwardAlertMessage node 218 forwards after waitingTime= 3 at time= +10017440575.0ns
+ROFFApplication::ForwardAlertMessage node 51 forwards after waitingTime= 10 at time= +10017640024.0ns
+ROFFApplication::ForwardAlertMessage node 1015 forwards after waitingTime= 6 at time= +10020440477.0ns
+ROFFApplication::ForwardAlertMessage node 189 forwards after waitingTime= 7 at time= +10022656503.0ns
+ROFFApplication::ForwardAlertMessage node 259 forwards after waitingTime= 7 at time= +10024757068.0ns
+ROFFApplication::ForwardAlertMessage node 260 forwards after waitingTime= 2 at time= +10024974146.0ns
+ROFFApplication::ForwardAlertMessage node 1080 forwards after waitingTime= 14 at time= +10025956510.0ns
+ROFFApplication::ForwardAlertMessage node 792 forwards after waitingTime= 10 at time= +10027595805.0ns
+ROFFApplication::ForwardAlertMessage node 1001 forwards after waitingTime= 7 at time= +10027758970.0ns
+ROFFApplication::ForwardAlertMessage node 438 forwards after waitingTime= 23 at time= +10030639872.0ns
+ROFFApplication::ForwardAlertMessage node 1007 forwards after waitingTime= 5 at time= +10032915416.0ns
+ROFFApplication::ForwardAlertMessage node 5 forwards after waitingTime= 28 at time= +10043656229.0ns
+ROFFApplication::ForwardAlertMessage node 861 forwards after waitingTime= 43 at time= +10060756619.0ns
+ROFFApplication::ForwardAlertMessage node 865 forwards after waitingTime= 52 at time= +10065275797.0ns
+ROFFApplication::ForwardAlertMessage node 949 forwards after waitingTime= 66 at time= +10066320654.0ns
+ROFFApplication::ForwardAlertMessage node 706 forwards after waitingTime= 38 at time= +10066324139.0ns
+ROFFApplication::ForwardAlertMessage node 220 forwards after waitingTime= 76 at time= +10101075606.0ns
