@@ -500,30 +500,29 @@ void FBApplication::HandleHelloMessage (Ptr<FBNode> fbNode, FBHeader fbHeader) {
 
 void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 	int32_t phase = fbHeader.GetPhase();
-	fbNode->SetPhase(phase);
-	if (fbNode->GetReceived()) {
-		return;
-	}
 	Vector currentPosition = fbNode->UpdatePosition();
 	// Get the position of the sender node
 	Vector senderPosition = fbHeader.GetPosition();
-
 	uint32_t senderId = fbHeader.GetSenderId();
 	uint32_t receiverId = fbNode->GetId();
+	NS_LOG_DEBUG ("Packet received by node " << fbNode->GetId() << " from node " << fbHeader.GetSenderId() << ".");
+	fbNode->SetPhase(phase);
 
-	fbNode->SetReceived(true);
-	fbNode->SetTimestamp(Simulator::Now());
-	fbNode->SetSlot(fbHeader.GetSlot());
-	fbNode->SetHop(phase + 1);
-	m_received++;
-	// save transmission for stats and metrics
-	m_receivedNodes.push_back(receiverId);
-	auto it = m_transmissionList.find(senderId);
-	if (it == m_transmissionList.end()) {
-		m_transmissionList[senderId] = vector<uint32_t>();
+	if (!fbNode->GetReceived()) {
+		fbNode->SetReceived(true);
+		fbNode->SetTimestamp(Simulator::Now());
+		fbNode->SetSlot(fbHeader.GetSlot());
+		fbNode->SetHop(phase + 1);
+		m_received++;
+		// save transmission for stats and metrics
+		m_receivedNodes.push_back(receiverId);
+		auto it = m_transmissionList.find(senderId);
+		if (it == m_transmissionList.end()) {
+			m_transmissionList[senderId] = vector<uint32_t>();
+		}
+		m_transmissionList[senderId].push_back(receiverId);
+		m_transmissionVector.push_back(Edge(senderId, receiverId, phase));
 	}
-	m_transmissionList[senderId].push_back(receiverId);
-	m_transmissionVector.push_back(Edge(senderId, receiverId, phase));
 
 	// Compute the distance between the sender and me (the node who received the message)
 	double distanceSenderToCurrent = ns3::CalculateDistance(senderPosition, currentPosition);
@@ -540,7 +539,9 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 	// then the message is coming from the front and it needs to be menaged,
 	// otherwise do nothing
 	if (distanceCurrentToStarter > distanceSenderToStarter) {
-
+		NS_LOG_DEBUG("Alert message received by " << fbNode->GetId() << " from node " << fbHeader.GetSenderId() <<
+				" is being considered for forwarding since distanceCurrentToStarter > distanceSenderToStarter " <<
+				distanceCurrentToStarter << " > " << distanceSenderToStarter);
 		// Compute the size of the contention window
 		uint32_t bmr = fbNode->GetCMBR();
 		uint32_t cwnd = ComputeContetionWindow(bmr, distanceSenderToCurrent_uint);
@@ -582,9 +583,12 @@ void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader
 	Vector oldPos = oldFBHeader.GetPosition();
 	Vector position = fbNode->UpdatePosition();
 	double distance = ns3::CalculateDistance(position, oldPos);
-
+	if (fbNode->GetSent()) {
+		NS_LOG_DEBUG("node " << fbNode->GetId() << " defers because of GetSent");
+		return;
+	}
 	// If I'm the first to wake up, I must forward the message
-	if ((!m_flooding && phase >= fbNode->GetPhase()) || (m_flooding && !fbNode->GetSent())) {
+	if ((!m_flooding && phase >= fbNode->GetPhase()) || (m_flooding)) {
 		NS_LOG_DEBUG ("Forwarding Alert Message (" << fbNode->GetNode()->GetId() << ") after " << waitingTime << ".");
 
 		// Create a packet with the correct parameters taken from the node

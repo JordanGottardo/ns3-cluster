@@ -1,12 +1,28 @@
 $node_(0) set X_ 0
-$node_(0) set Y_ 0
+$node_(0) set Y_ 100
 $node_(0) set Z_ 0
 $ns_ at 0.0 "$node_(0) setdest 0 0 0.00"
-$node_(1) set X_ 100
-$node_(1) set Y_ 0
+$node_(1) set X_ 75
+$node_(1) set Y_ 100
 $node_(1) set Z_ 0
 $ns_ at 0.0 "$node_(1) setdest 1090.49 1940.35 0.00"
-$node_(2) set X_ 200
-$node_(2) set Y_ 0
+$node_(2) set X_ 125
+$node_(2) set Y_ 100
 $node_(2) set Z_ 0
 $ns_ at 0.0 "$node_(2) setdest 1090.49 1940.35 0.00"
+$node_(3) set X_ 100
+$node_(3) set Y_ 75
+$node_(3) set Z_ 0
+$ns_ at 0.0 "$node_(3) setdest 1090.49 1940.35 0.00"
+$node_(4) set X_ 15
+$node_(4) set Y_ 100
+$node_(4) set Z_ 0
+$ns_ at 0.0 "$node_(4) setdest 1090.49 1940.35 0.00"
+$node_(5) set X_ 25
+$node_(5) set Y_ 100
+$node_(5) set Z_ 0
+$ns_ at 0.0 "$node_(5) setdest 1090.49 1940.35 0.00"
+$node_(6) set X_ 50
+$node_(6) set Y_ 100
+$node_(6) set Z_ 0
+$ns_ at 0.0 "$node_(6) setdest 1090.49 1940.35 0.00"

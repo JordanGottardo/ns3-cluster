@@ -270,31 +270,28 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 //	NS_LOG_INFO("ROFFApplication::HandleAlertMessage Node " << node->GetId() << " received alert message from node " << header.GetSenderId());
 
 	int32_t phase = header.GetPhase();
+	uint32_t senderId = header.GetSenderId();
+	uint32_t receiverId = node->GetId();
+
 	node->SetPhase(phase);
-	if (node->GetReceived()) {
-		return;
+	if (!node->GetReceived()) {
+		node->SetReceived(true);
+		node->SetTimestamp(Simulator::Now());
+		node->SetSlot(header.GetSlot());
+		node->SetHop(phase + 1);
+		m_received++;
+			// save transmission for stats and metrics
+		m_receivedNodes.push_back(receiverId);
+		auto it = m_transmissionList.find(senderId);
+		if (it == m_transmissionList.end()) {
+			m_transmissionList[senderId] = vector<uint32_t>();
+		}
+		m_transmissionList[senderId].push_back(receiverId);
+		m_transmissionVector.push_back(Edge(senderId, receiverId, phase));
 	}
 	NS_LOG_INFO("ROFFApplication::HandleAlertMessage Node " << node->GetId() << " "
 			"received alert message from node " << header.GetSenderId() <<
 			" with phase= " << phase);
-
-
-	uint32_t senderId = header.GetSenderId();
-	uint32_t receiverId = node->GetId();
-
-	node->SetReceived(true);
-	node->SetTimestamp(Simulator::Now());
-	node->SetSlot(header.GetSlot());
-	node->SetHop(phase + 1);
-	m_received++;
-	// save transmission for stats and metrics
-	m_receivedNodes.push_back(receiverId);
-	auto it = m_transmissionList.find(senderId);
-	if (it == m_transmissionList.end()) {
-		m_transmissionList[senderId] = vector<uint32_t>();
-	}
-	m_transmissionList[senderId].push_back(receiverId);
-	m_transmissionVector.push_back(Edge(senderId, receiverId, phase));
 
 
 	boost::dynamic_bitset<> esdBitmap =  header.GetESDBitmap();

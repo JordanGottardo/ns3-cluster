@@ -561,6 +561,7 @@ const std::string FBVanetExperiment::CalculateOutFilePath() const {
 	std::string actualRange = std::to_string(m_actualRange);
 
 	if (m_staticProtocol == PROTOCOL_FB) {
+//		protocol = "Fast-Broadcast[" + std::to_string(m_cwMin) + "-" + std::to_string(m_cwMax) + "]";
 		protocol = "Fast-Broadcast";
 	}
 	else if (m_staticProtocol == PROTOCOL_STATIC_100) {
@@ -579,7 +580,8 @@ const std::string FBVanetExperiment::CalculateOutFilePath() const {
 	int dotPos =scenarioName.find(".");
 	scenarioName = scenarioName.substr(0, dotPos);
 
-	fileName.append(scenarioName + "/" + "b" + buildings + "/r" + actualRange + "/" + protocol + "/" +
+	fileName.append(scenarioName + "/" + "b" + buildings + "/r" + actualRange + "/" + "cw[" + std::to_string(m_cwMin) +
+			"-" + std::to_string(m_cwMax) + "]/" + protocol + "/" +
 			scenarioName + "-b" + buildings + "-r" + actualRange + "-" + protocol);
 	cout << "fileName=" << fileName << endl;
 //	fileName.append("cw-" + cwMin + "-" + cwMax + "/" + m_mapBaseNameWithoutDistance + "/d" + vehicleDistance + "/b" + buildings

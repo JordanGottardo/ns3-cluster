@@ -13,11 +13,6 @@ import scipy.stats as st
 import graphUtils
 
 
-
-scenarios = ["LA", "Padova"]
-buildings = [0, 1]
-txRanges = [100, 300, 500]
-
 def listsToList(listOfLists, protocols):
 	toReturn = []
 	for protocol in protocols:
@@ -33,100 +28,43 @@ def printSingleGraphLineComparison():
 	plt.show()
 
 
-def printSingleGraphRomanelliComparison(cw, folder, graphTitle, xList, xLabels, xLabel, yLabel, figureTitle, yDataDictionary, 
-					confIntDictionary, romData, protocols, autoscale=False, yBottomLim=0, yTopLim=100):
+def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, cw, metric, yLabel):
+	autoscale = True #todo fix
+ #xList, xLabels, xLabel, yLabel, figureTitle, yDataDictionary, 
+#					confIntDictionary, protocols, autoscale=False, yBottomLim=0, yTopLim=100):
+	n = len(protocols)
+	ind = np.arange(n)
 	
-	yDataDictionary = listsToList(yDataDictionary, protocols)
-	confIntDictionary = listsToList(confIntDictionary, protocols)
-	
-	ind = np.arange(len(xLabels))
-	n = len(xLabels)
-	#barWidth = float((float(1)/float(n)) * float(0.90))
-	barWidth = 0.35
-	fig, ax = plt.subplots()
-	rects = []
-	count = 0
-	colors = ["0.3", "0.5"]
-	#widthDistance = [0, 1]
-	#widthDistance = [-1, 0, 1]
-	#widthDistance = [-1.5, -0.5, 0.5, 1.5]
-	#for protocol in protocols:
-		#rects.append((ax.bar(ind + widthDistance[count] * barWidth, yDataDictionary[protocol], barWidth, color=colors[count], label=protocol, yerr=confIntDictionary[protocol], capsize=4)))
-	rects.append((ax.bar(ind, yDataDictionary, barWidth, color=colors[0], yerr=confIntDictionary, capsize=4)))
-	#rects.append((ax.bar(ind + barWidth / 2, romData, barWidth, color=colors[1], label="Romanelli")))
-
-	ax.set_xlabel(xLabel, fontsize=15)
-	ax.set_ylabel(yLabel, fontsize=15)
-	if not autoscale:
-		ax.set_ylim(yBottomLim, yTopLim)
-	#ax.set_title(graphTitle, fontsize=20)
-	ax.set_xticks(ind)
-	ax.set_xticklabels(xLabels)
-	#ax.set_xticklabels(["15m", "25m", "35m", "45m"])
-
-	box = ax.get_position()
-	ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
-	ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-
-	#ax.legend(loc="upper center")
-
-	def autolabel(rects, xpos='center'):
-		"""
-		Attach a text label above each bar in *rects*, displaying its height.
-
-		*xpos* indicates which side to place the text w.r.t. the center of
-		the bar. It can be one of the following {'center', 'right', 'left'}.
-		"""
-
-		xpos = xpos.lower()  # normalize the case of the parameter
-		ha = {'center': 'center', 'right': 'left', 'left': 'right'}
-		offset = {'center': 0.5, 'right': 0.57, 'left': 0.43}  # x_txt = x + w*off
-
-		for rect in rects:
-			height = rect.get_height()
-			ax.text(rect.get_x() + rect.get_width()*offset[xpos], 1.01*height,
-					'{}'.format(height), ha=ha[xpos], va='bottom') 
-
-	for rect in rects:
-		autolabel(rect)
-	#plt.savefig('a1.png')
-	#plt.savefig('a2.png', bbox_inches='tight')
-	
-	outPathDirectory = os.path.join("out", folder)
-	outPath = os.path.join(outPathDirectory , figureTitle)
-	if (not os.path.exists(outPathDirectory)):
-		os.makedirs(outPathDirectory)
-	
-	plt.savefig(outPath + ".pdf")
-	plt.clf()
-	#plt.savefig('b2.pdf', bbox_inches='tight')
-	#plt.show()
-
-def printSingleGraph(cw, folder, graphTitle, xList, xLabels, xLabel, yLabel, figureTitle, yDataDictionary, 
-					confIntDictionary, protocols, autoscale=False, yBottomLim=0, yTopLim=100):
-	ind = np.arange(len(xList))
-	n = len(xList)
 	barWidth = float((float(1)/float(4)) * float(0.90))
 	fig, ax = plt.subplots()
 
 	rects = []
 	count = 0
-	#colors = ["0.3", "0.5", "0.7"]
-	colors = ["0.3", "0.7"]
-	#widthDistance = [-1, 0, 1]
-	widthDistance = [-1, 1]
+	colors = ["0.3", "0.5", "0.7"]
+	#colors = ["0.3", "0.7"]
+	
+	#widthDistance = [-1, 1]
 	#widthDistance = [-1.5, -0.5, 0.5, 1.5]
-	for protocol in protocols:
-		rects.append((ax.bar(ind + widthDistance[count] * barWidth, yDataDictionary[protocol], barWidth, color=colors[count], label=protocol, yerr=confIntDictionary[protocol], capsize=4)))
-		count = count + 1
+	widthDistance = [-1, 0, 1]
 
-	ax.set_xlabel(xLabel, fontsize=15)
-	ax.set_ylabel(yLabel, fontsize=15)
+	for txRange in txRanges:
+		metricMeanList = []
+		metricConfIntList = []
+		for protocol in protocols:
+			metricMean = metric + "Mean"
+			metricConfInt = metric + "ConfInt"
+			metricMeanList.append(compoundData[txRange][protocol][metricMean])
+			metricConfIntList.append(compoundData[txRange][protocol][metricConfInt])
+		rects.append((ax.bar(ind + widthDistance[count] * barWidth, metricMeanList, barWidth, color=colors[count], label=txRange + "m", yerr=metricConfIntList, capsize=4)))
+		count = count + 1
+	
+	ax.set_xlabel("Protocols", fontsize=11)
+	ax.set_ylabel(yLabel, fontsize=11)
 	if not autoscale:
 		ax.set_ylim(yBottomLim, yTopLim)
 	#ax.set_title(graphTitle, fontsize=20)
 	ax.set_xticks(ind)
-	ax.set_xticklabels(xLabels)
+	ax.set_xticklabels(protocols)
 	#ax.set_xticklabels(["15m", "25m", "35m", "45m"])
 
 	ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
@@ -154,8 +92,8 @@ def printSingleGraph(cw, folder, graphTitle, xList, xLabels, xLabel, yLabel, fig
 	#plt.savefig('a1.png')
 	#plt.savefig('a2.png', bbox_inches='tight')
 	
-	outPathDirectory = os.path.join("out", folder)
-	outPath = os.path.join(outPathDirectory , figureTitle)
+	outPathDirectory = os.path.join("out", outFolder + cw)
+	outPath = os.path.join(outPathDirectory , metric) #todo fix
 	if (not os.path.exists(outPathDirectory)):
 		os.makedirs(outPathDirectory)
 	
@@ -164,59 +102,101 @@ def printSingleGraph(cw, folder, graphTitle, xList, xLabels, xLabel, yLabel, fig
 	#plt.savefig('b2.pdf', bbox_inches='tight')
 	#plt.show()
 
-def initCompoundData(protocols): 
-	totCoverageMeans = {}
-	totCoverageConfInts = {}
-	covOnCircMeans = {}
-	covOnCircConfInts = {}
-	hopsMeans = {}
-	hopsConfInts = {}
-	messageSentMeans = {}
-	messageSentConfInts = {}
-	slotsWaitedMeans = {}
-	slotsWaitedConfInts = {}
-
+# inits an object like this: compoundData["txRange"]["protocol"]["metric"]
+def initCompoundData(txRanges, protocols, metrics): 
 	compoundData = {}
-	compoundData["totCoverageMeans"] = totCoverageMeans
-	compoundData["totCoverageConfInts"] = totCoverageConfInts
-	compoundData["covOnCircMeans"] = covOnCircMeans
-	compoundData["covOnCircConfInts"] = covOnCircConfInts
-	compoundData["hopsMeans"] = hopsMeans
-	compoundData["hopsConfInts"] = hopsConfInts
-	compoundData["messageSentMeans"] = messageSentMeans
-	compoundData["messageSentConfInts"] = messageSentConfInts
-	compoundData["slotsWaitedMeans"] = slotsWaitedMeans
-	compoundData["slotsWaitedConfInts"] = slotsWaitedConfInts
-
-	for protocol in protocols:
-		totCoverageMeans[protocol] = []
-		totCoverageConfInts[protocol] = []
-		covOnCircMeans[protocol] = []
-		covOnCircConfInts[protocol] = []
-		hopsMeans[protocol] = []
-		hopsConfInts[protocol] = []
-		messageSentMeans[protocol] = []
-		messageSentConfInts[protocol] = []
-		slotsWaitedMeans[protocol] = []
-		slotsWaitedConfInts[protocol] = []
+	for txRange in txRanges:
+		compoundData[txRange] = {}
+		for protocol in protocols:
+			for metric in metrics:
+				metricMean = metric + "Mean"
+				metricConfInt = metric + "ConfInt"
+				compoundData[txRange][protocol] = {}
+				compoundData[txRange][protocol][metricMean] = 0
+				compoundData[txRange][protocol][metricConfInt] = 0
 	return compoundData
 
-def appendCompoundData(basePath, protocols, compoundData, decreaseConfInts=False):
-	for protocol in protocols:
-		path = os.path.join(basePath, protocol)
-		data = graphUtils.readCsvFromDirectory(path, decreaseConfInts)
-		compoundData["totCoverageMeans"][protocol].append(data["totalCoverageMean"])
-		compoundData["totCoverageConfInts"][protocol].append(data["totalCovConfInt"])
-		compoundData["covOnCircMeans"][protocol].append(data["covOnCircMean"])
-		compoundData["covOnCircConfInts"][protocol].append(data["covOnCircConfInt"])
-		compoundData["hopsMeans"][protocol].append(data["hopsMean"])
-		compoundData["hopsConfInts"][protocol].append(data["hopsConfInt"])
-		compoundData["messageSentMeans"][protocol].append(data["messageSentMean"])
-		compoundData["messageSentConfInts"][protocol].append(data["messageSentConfInt"])
-		compoundData["slotsWaitedMeans"][protocol].append(data["slotsWaitedMean"])
-		compoundData["slotsWaitedConfInts"][protocol].append(data["slotsWaitedConfInt"])
+def appendCompoundData(basePath, txRanges, protocols, cw, compoundData, metrics):
+	for txRange in txRanges:
+		for protocol in protocols:
+			path = None
+			if (protocol != "ROFF"):
+				path = os.path.join(basePath, "r" + txRange, cw, protocol)
+			else: 
+				path = os.path.join(basePath, "r" + txRange, protocol)
+			data = graphUtils.readCsvFromDirectory(path)
+			entry = compoundData[txRange][protocol]
+			for metric in metrics:
+				metricMean = metric + "Mean"
+				metricConfInt = metric + "ConfInt"
+				compoundData[txRange][protocol][metricMean] =  data[metricMean]
+				compoundData[txRange][protocol][metricConfInt] =  data[metricConfInt]
 	return None
 
+
+def printLineComparison():
+	protocols = ["fast-broadcast", "roff"]
+	compoundData = initCompoundData(protocols)
+	basePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/line"
+	appendCompoundData(basePath, protocols, compoundData)
+	print(compoundData)
+	printSingleGraphLineComparison()
+
+def printGridComparison():
+	print("PrintGridComparison")
+	protocols = ["fast-broadcast", "roff"]
+	compoundDatab0 = initCompoundData(protocols)
+	compoundDatab1 = initCompoundData(protocols)
+	basePathb0 = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/Grid/b0"
+	basePathb1 = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/Grid/b1"
+	appendCompoundData(basePathb0, protocols, compoundDatab0)
+	appendCompoundData(basePathb1, protocols, compoundDatab1)
+
+	print("compoundDatab0")
+	print(compoundDatab0)
+	print("compoundDatab1")
+	print(compoundDatab1)
+	#printSingleGraphLineComparison()
+
+#Given a scenario path and buildings/nobuildings, prints graphs for all txRanges and protocols
+def printAllComparison():
+	print("PrintAllComparison")
+	plt.rcParams["figure.figsize"] = [18, 10]
+	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano-con-coord"
+	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
+	scenarios = ["Grid-200", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
+	buildings = ["0", "1"]
+	txRanges = ["100", "300", "500"]
+	protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300", "STATIC-500", "ROFF"]
+	#cws = ["cw[16-128]", "cw[32-1024]"]
+	cws = ["cw[16-128]"]
+	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
+	metricYLabels = {}
+	metricYLabels["totCoverage"] = "Total Coverage (%)"
+	metricYLabels["covOnCirc"] = "Coverage on circumference (%)"
+	metricYLabels["hops"] = "Number of hops to reach circumference"
+	metricYLabels["slotsWaited"] = "Number of slots waited to reach circumference"
+	metricYLabels["messageSent"] = "Number of alert message sent"
+	
+
+	for scenario in scenarios:
+		for building in buildings:
+			for cw in cws:
+				basePath = os.path.join(initialBasePath, scenario, "b" + building)
+				#print("basePath= " + basePath)
+				compoundData = initCompoundData(txRanges, protocols, metrics)
+				appendCompoundData(basePath, txRanges, protocols, cw, compoundData, metrics)
+				graphOutFolder = os.path.join(scenario, "b" + building)
+				#print(compoundData)
+				for metric in metrics:
+					yLabel = metricYLabels[metric]
+					printSingleGraph(graphOutFolder, "graphTitle", compoundData, txRanges, protocols, cw, metric, yLabel)
+
+if __name__ == "__main__":
+	main()
+
+
+'''
 def printDistanceComparison(cw, vehicleDistances, protocols, xList, xLabels, figurePrefix, graphTitleExtension, folder, decreaseConfInts=False):	
 	plt.rcParams["figure.figsize"] = [18, 10]
 	basePath = os.path.join("/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano", cw, "Padova")
@@ -457,31 +437,76 @@ def printRomanelliComparison(cw, vehicleDistance, protocols, xList, xLabels, fig
 						True,
 						0,
 						1500)
+'''
 
-def printLineComparison():
-	protocols = ["fast-broadcast", "roff"]
-	compoundData = initCompoundData(protocols)
-	basePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/line"
-	appendCompoundData(basePath, protocols, compoundData)
-	print(compoundData)
-	printSingleGraphLineComparison()
+'''
+def printSingleGraphRomanelliComparison(cw, folder, graphTitle, xList, xLabels, xLabel, yLabel, figureTitle, yDataDictionary, 
+					confIntDictionary, romData, protocols, autoscale=False, yBottomLim=0, yTopLim=100):
+	
+	yDataDictionary = listsToList(yDataDictionary, protocols)
+	confIntDictionary = listsToList(confIntDictionary, protocols)
+	
+	ind = np.arange(len(xLabels))
+	n = len(xLabels)
+	#barWidth = float((float(1)/float(n)) * float(0.90))
+	barWidth = 0.35
+	fig, ax = plt.subplots()
+	rects = []
+	count = 0
+	colors = ["0.3", "0.5"]
+	#widthDistance = [0, 1]
+	#widthDistance = [-1, 0, 1]
+	#widthDistance = [-1.5, -0.5, 0.5, 1.5]
+	#for protocol in protocols:
+		#rects.append((ax.bar(ind + widthDistance[count] * barWidth, yDataDictionary[protocol], barWidth, color=colors[count], label=protocol, yerr=confIntDictionary[protocol], capsize=4)))
+	rects.append((ax.bar(ind, yDataDictionary, barWidth, color=colors[0], yerr=confIntDictionary, capsize=4)))
+	#rects.append((ax.bar(ind + barWidth / 2, romData, barWidth, color=colors[1], label="Romanelli")))
 
-def printGridComparison():
-	print("PrintGridComparison")
-	protocols = ["fast-broadcast", "roff"]
-	compoundDatab0 = initCompoundData(protocols)
-	compoundDatab1 = initCompoundData(protocols)
-	basePathb0 = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/Grid/b0"
-	basePathb1 = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/Grid/b1"
-	appendCompoundData(basePathb0, protocols, compoundDatab0)
-	appendCompoundData(basePathb1, protocols, compoundDatab1)
+	ax.set_xlabel(xLabel, fontsize=15)
+	ax.set_ylabel(yLabel, fontsize=15)
+	if not autoscale:
+		ax.set_ylim(yBottomLim, yTopLim)
+	#ax.set_title(graphTitle, fontsize=20)
+	ax.set_xticks(ind)
+	ax.set_xticklabels(xLabels)
+	#ax.set_xticklabels(["15m", "25m", "35m", "45m"])
 
-	print("compoundDatab0")
-	print(compoundDatab0)
-	print("compoundDatab1")
-	print(compoundDatab1)
-	#printSingleGraphLineComparison()
+	box = ax.get_position()
+	ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+	ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 
+	#ax.legend(loc="upper center")
 
-if __name__ == "__main__":
-	main()
+	def autolabel(rects, xpos='center'):
+		"""
+		Attach a text label above each bar in *rects*, displaying its height.
+
+		*xpos* indicates which side to place the text w.r.t. the center of
+		the bar. It can be one of the following {'center', 'right', 'left'}.
+		"""
+
+		xpos = xpos.lower()  # normalize the case of the parameter
+		ha = {'center': 'center', 'right': 'left', 'left': 'right'}
+		offset = {'center': 0.5, 'right': 0.57, 'left': 0.43}  # x_txt = x + w*off
+
+		for rect in rects:
+			height = rect.get_height()
+			ax.text(rect.get_x() + rect.get_width()*offset[xpos], 1.01*height,
+					'{}'.format(height), ha=ha[xpos], va='bottom') 
+
+	for rect in rects:
+		autolabel(rect)
+	#plt.savefig('a1.png')
+	#plt.savefig('a2.png', bbox_inches='tight')
+	
+	outPathDirectory = os.path.join("out", folder)
+	outPath = os.path.join(outPathDirectory , figureTitle)
+	if (not os.path.exists(outPathDirectory)):
+		os.makedirs(outPathDirectory)
+	
+	plt.savefig(outPath + ".pdf")
+	plt.clf()
+	#plt.savefig('b2.pdf', bbox_inches='tight')
+	#plt.show()
+
+'''
