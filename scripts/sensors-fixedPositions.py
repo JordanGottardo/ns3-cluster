@@ -1,4 +1,4 @@
-#!/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7
+#!/usr/bin/python
 """
 @file    sensors-fixedPositions.py
 @author  Marco Romanelli [marco.romanelli.1@studenti.unipd.it]
