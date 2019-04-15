@@ -1,1 +1,3 @@
 maps/*/*.losses
+scheduler/scheduledJobs
+log/
