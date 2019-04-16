@@ -189,6 +189,16 @@ def parseFile(filePath, ns2MobilityFile):
         transmissionVector = parseTransmissionVector(rawTransmissionVector)
     return txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds, transmissionVector, nodeIds
 
+def plotShape(shape, pColor="red", pAlpha=0.15):
+    splitCoords = shape.split( )
+    xShapeCoords = []
+    yShapeCoords = []
+    for coord in splitCoords:
+        splitCoords2 = coord.split(",")
+        xShapeCoords.append(float(splitCoords2[0]))
+        yShapeCoords.append(float(splitCoords2[1]))
+        plt.fill(xShapeCoords, yShapeCoords, color=pColor, alpha=pAlpha)
+
 def plotBuildings(polyFilePath, plotBuildingIds=False, ax=None):
     if (polyFilePath is None):
         return
@@ -226,3 +236,22 @@ def plotBuildings(polyFilePath, plotBuildingIds=False, ax=None):
             xCenter = sumX / len(xShapeCoords)
             yCenter = sumY / len(yShapeCoords)
             ax.annotate(polyId, xy=(xCenter, yCenter), size=8)
+
+def plotJunctions(netFilePath):
+    print("coordUtils::plotJunctions")
+    count = 0
+    tree = ET.parse(netFilePath)
+    root = tree.getroot()
+    junctionList = list(root.iter("junction"))
+    shapes = []
+    for junction in junctionList:
+        count += 1
+        shape = junction.get("shape")
+        if (shape is None or shape == ""):
+            continue
+        shapes.append(shape)
+        #print(shape)
+        #if (count % 10 == 1):
+        plotShape(shape)
+    print("Plotted " + str(count) + " junctions")
+         
