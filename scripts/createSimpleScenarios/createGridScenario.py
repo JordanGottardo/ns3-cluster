@@ -3,9 +3,9 @@
 # Invocation: 
 #	./createGridScenario.py roadLength roadNumber roadDistance roadSize nodeDistance
 # e.g.
-#  ./createGridScenario.py 2100 8 200 10 25 Grid-200
-#  ./createGridScenario.py 2100 8 300 10 25 Grid-300
-#  ./createGridScenario.py 2100 8 400 10 25 Grid-400
+#  ./createGridScenario.py 2400 13 200 10 25 Grid-200
+#  ./createGridScenario.py 2400 9 300 10 25 Grid-300
+#  ./createGridScenario.py 2400 7 400 10 25 Grid-400
 # or (gridSmall)
 #  ./createGridScenario.py 1200 5 300 10 25
 
