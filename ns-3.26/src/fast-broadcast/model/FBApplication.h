@@ -240,6 +240,8 @@ private:
 	uint32_t													 			m_packetPayload; // size of the packet payload
 	uint32_t													 			m_received;	// number of hello messages sent
 	uint32_t																m_sent; // // number of alert messages sent
+	uint32_t																m_cwndSum;
+	uint32_t																m_cwndCount;
 
 	uint32_t																m_collisions; // number of collisions
 	vector<uint32_t>														m_receivedNodes; // ids of nodes which have received alert messages, duplicates allowed

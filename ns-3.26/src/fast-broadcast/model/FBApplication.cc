@@ -69,6 +69,8 @@ FBApplication::FBApplication ()
 		m_packetPayload (100),
 		m_received (0),
 		m_sent (0),
+		m_cwndSum(0),
+		m_cwndCount(0),
 		m_collisions (0),
 		m_printCoords(0),
 		m_vehicleDistance(25),
@@ -157,6 +159,7 @@ void FBApplication::AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink
 void FBApplication::PrintStats(std::stringstream &dataStream) {
 
 	NS_LOG_FUNCTION (this);
+//	cout << "cwndAvg " << (m_cwndSum / m_cwndCount) << endl;
 //	cout << "collisions= " << m_collisions << endl;
 	uint32_t cover = 1;	// 'cause we count m_startingNode
 	uint32_t circ = 0, circCont = 0;
@@ -239,6 +242,8 @@ void FBApplication::PrintStats(std::stringstream &dataStream) {
 			<< m_sent << ","
 			<< m_received;
 
+//	cout << "hops= " << (hops_sum / (double) circ) << endl;
+
 	if (m_printCoords) {
 		 Ptr<FBNode> startingNode = GetFBNode(m_startingNode);
 		 string transmissionVector = StringifyVector(m_transmissionVector);
@@ -294,8 +299,8 @@ void FBApplication::GenerateHelloTraffic(uint32_t count) {
 	NS_LOG_INFO(count);
 	NS_LOG_DEBUG("GenerateHelloTraffic " << count);
 	std::vector<int> he;
-//	uint32_t hel = (int) m_nNodes / 100 * 50;		// 50% of total nodes todo cambia
-	uint32_t hel = (int) m_nNodes;		// 100% of total nodes
+	uint32_t hel = (int) m_nNodes / 100 * 50;		// 50% of total nodes
+//	uint32_t hel = (int) m_nNodes;		// 100% of total nodes
 	uint32_t time_factor = 10;
 //	cout << "hel= " << hel << endl;
 	if (count > 0)
@@ -548,6 +553,10 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 		// Compute the size of the contention window
 		uint32_t bmr = fbNode->GetCMBR();
 		uint32_t cwnd = ComputeContetionWindow(bmr, distanceSenderToCurrent_uint);
+
+//		cout << "cwnd = " << cwnd << endl;
+//		m_cwndSum += cwnd;
+//		m_cwndCount++;
 		// Compute a random waiting time (1 <= waitingTime <= cwnd)
 		uint32_t waitingTime = (rand() % cwnd) + 1;
 		// Wait and then forward the message

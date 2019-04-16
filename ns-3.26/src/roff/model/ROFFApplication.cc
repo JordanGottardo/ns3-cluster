@@ -402,7 +402,7 @@ uint32_t ROFFApplication::ComputeWaitingTimeArmir(Ptr<ROFFNode> node, Vector sen
 				PositionRankingMap rankingMap, uint32_t priority) {
 //	cout << "ROFFApplication::ComputeWaitingTimeArmir node= " << node->GetId() <<
 //				" senderCoords= " << senderCoords << " priority= " << priority << endl;
-	return priority + 1;
+	return priority;
 //	int32_t dist = 0;
 //	if (priority == 2) {
 //		PositionRankingKey range = rankingMap.GetRange(priority - 1);
