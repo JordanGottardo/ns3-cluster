@@ -508,6 +508,9 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 	NS_LOG_DEBUG ("Packet received by node " << fbNode->GetId() << " from node " << fbHeader.GetSenderId() << ".");
 	fbNode->SetPhase(phase);
 
+	if (fbNode->GetReceived()) {
+		return;
+	}
 	if (!fbNode->GetReceived()) {
 		fbNode->SetReceived(true);
 		fbNode->SetTimestamp(Simulator::Now());

@@ -106,11 +106,6 @@
   }, 
   {
     "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 
-    "command": "/usr/bin/g++ -Wall -std=c++11 -Wall -std=c++0x -frounding-math -fPIC -pthread -I. -I.. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_IF_TUN_H=1 ../src/core/model/rng-seed-manager.cc -c -o /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/src/core/model/rng-seed-manager.cc.1.o", 
-    "file": "../src/core/model/rng-seed-manager.cc"
-  }, 
-  {
-    "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 
     "command": "/usr/bin/g++ -Wall -std=c++11 -Wall -std=c++0x -frounding-math -fPIC -pthread -I. -I.. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_IF_TUN_H=1 -DHAVE_SQLITE3=1 ../src/lr-wpan/helper/lr-wpan-helper.cc -c -o /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/src/lr-wpan/helper/lr-wpan-helper.cc.1.o", 
     "file": "../src/lr-wpan/helper/lr-wpan-helper.cc"
   }, 
@@ -801,6 +796,11 @@
   }, 
   {
     "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 
+    "command": "/usr/bin/g++ -Wall -std=c++11 -Wall -std=c++0x -frounding-math -fPIC -pthread -I. -I.. -I/usr/include/libxml2 -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_IF_TUN_H=1 -DHAVE_SQLITE3=1 -DHAVE_LIBXML2=1 ../src/obstacle/helper/obstacle-helper.cc -c -o /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/src/obstacle/helper/obstacle-helper.cc.1.o", 
+    "file": "../src/obstacle/helper/obstacle-helper.cc"
+  }, 
+  {
+    "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 
     "command": "/usr/bin/g++ -Wall -std=c++11 -Wall -std=c++0x -frounding-math -fPIC -pthread -I. -I.. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_IF_TUN_H=1 -DHAVE_SQLITE3=1 ../src/internet/model/ipv6-packet-filter.cc -c -o /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/src/internet/model/ipv6-packet-filter.cc.1.o", 
     "file": "../src/internet/model/ipv6-packet-filter.cc"
   }, 
@@ -846,8 +846,8 @@
   }, 
   {
     "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 
-    "command": "/usr/bin/g++ -Wall -std=c++11 -Wall -std=c++0x -frounding-math -fPIC -pthread -I. -I.. -I/usr/include/libxml2 -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_IF_TUN_H=1 -DHAVE_SQLITE3=1 -DHAVE_LIBXML2=1 ../src/obstacle/helper/obstacle-helper.cc -c -o /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/src/obstacle/helper/obstacle-helper.cc.1.o", 
-    "file": "../src/obstacle/helper/obstacle-helper.cc"
+    "command": "/usr/bin/g++ -Wall -std=c++11 -Wall -std=c++0x -frounding-math -fPIC -fno-strict-aliasing '-fdebug-prefix-map=/build/python2.7-3hk45v/python2.7-2.7.15~rc1=.' -fstack-protector-strong -fwrapv -fvisibility=hidden -Wno-array-bounds -pthread -I. -I.. -Isrc/core/bindings -I../src/core/bindings -I/usr/include/python2.7 -I/usr/include/x86_64-linux-gnu/python2.7 -I/usr/include/libxml2 -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_IF_TUN_H=1 -DNS_DEPRECATED= -DNS3_DEPRECATED_H -DHAVE_PYEXT=1 -D_FORTIFY_SOURCE=2 -DNDEBUG -DHAVE_SQLITE3=1 -DHAVE_LIBXML2=1 src/core/bindings/ns3module.cc -c -o /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/src/core/bindings/ns3module.cc.8.o", 
+    "file": "src/core/bindings/ns3module.cc"
   }, 
   {
     "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 
@@ -861,8 +861,8 @@
   }, 
   {
     "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 
-    "command": "/usr/bin/g++ -Wall -std=c++11 -Wall -std=c++0x -frounding-math -fPIC -fno-strict-aliasing '-fdebug-prefix-map=/build/python2.7-3hk45v/python2.7-2.7.15~rc1=.' -fstack-protector-strong -fwrapv -fvisibility=hidden -Wno-array-bounds -pthread -I. -I.. -Isrc/core/bindings -I../src/core/bindings -I/usr/include/python2.7 -I/usr/include/x86_64-linux-gnu/python2.7 -I/usr/include/libxml2 -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_IF_TUN_H=1 -DNS_DEPRECATED= -DNS3_DEPRECATED_H -DHAVE_PYEXT=1 -D_FORTIFY_SOURCE=2 -DNDEBUG -DHAVE_SQLITE3=1 -DHAVE_LIBXML2=1 src/core/bindings/ns3module.cc -c -o /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/src/core/bindings/ns3module.cc.8.o", 
-    "file": "src/core/bindings/ns3module.cc"
+    "command": "/usr/bin/g++ -Wall -std=c++11 -Wall -std=c++0x -frounding-math -fPIC -pthread -I. -I.. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_IF_TUN_H=1 -DHAVE_SQLITE3=1 ../src/network/model/tag.cc -c -o /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/src/network/model/tag.cc.1.o", 
+    "file": "../src/network/model/tag.cc"
   }, 
   {
     "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 
@@ -931,8 +931,8 @@
   }, 
   {
     "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 
-    "command": "/usr/bin/g++ -Wall -std=c++11 -Wall -std=c++0x -frounding-math -pthread -I. -I.. -I/usr/include/libxml2 -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_IF_TUN_H=1 -DHAVE_SQLITE3=1 -DHAVE_LIBXML2=1 ../src/csma/examples/csma-raw-ip-socket.cc -c -o /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/src/csma/examples/csma-raw-ip-socket.cc.5.o", 
-    "file": "../src/csma/examples/csma-raw-ip-socket.cc"
+    "command": "/usr/bin/g++ -Wall -std=c++11 -Wall -std=c++0x -frounding-math -pthread -I. -I.. -I/usr/include/libxml2 -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_IF_TUN_H=1 -DHAVE_SQLITE3=1 -DHAVE_LIBXML2=1 ../examples/naming/object-names.cc -c -o /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/examples/naming/object-names.cc.1.o", 
+    "file": "../examples/naming/object-names.cc"
   }, 
   {
     "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 
@@ -1111,8 +1111,8 @@
   }, 
   {
     "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 
-    "command": "/usr/bin/g++ -Wall -std=c++11 -Wall -std=c++0x -frounding-math -fPIC -pthread -I. -I.. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_IF_TUN_H=1 -DHAVE_SQLITE3=1 ../src/network/model/tag.cc -c -o /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/src/network/model/tag.cc.1.o", 
-    "file": "../src/network/model/tag.cc"
+    "command": "/usr/bin/g++ -Wall -std=c++11 -Wall -std=c++0x -frounding-math -fPIC -pthread -I. -I.. -I/usr/include/libxml2 -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_IF_TUN_H=1 -DHAVE_SQLITE3=1 -DHAVE_LIBXML2=1 ../src/lte/model/lte-handover-algorithm.cc -c -o /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/src/lte/model/lte-handover-algorithm.cc.1.o", 
+    "file": "../src/lte/model/lte-handover-algorithm.cc"
   }, 
   {
     "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 
@@ -1286,8 +1286,8 @@
   }, 
   {
     "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 
-    "command": "/usr/bin/g++ -Wall -std=c++11 -Wall -std=c++0x -frounding-math -fPIC -pthread -I. -I.. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_IF_TUN_H=1 -DHAVE_SQLITE3=1 ../src/energy/model/rv-battery-model.cc -c -o /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/src/energy/model/rv-battery-model.cc.1.o", 
-    "file": "../src/energy/model/rv-battery-model.cc"
+    "command": "/usr/bin/g++ -Wall -std=c++11 -Wall -std=c++0x -frounding-math -fPIC -pthread -I. -I.. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_IF_TUN_H=1 ../src/core/model/rng-seed-manager.cc -c -o /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/src/core/model/rng-seed-manager.cc.1.o", 
+    "file": "../src/core/model/rng-seed-manager.cc"
   }, 
   {
     "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 
@@ -1301,8 +1301,8 @@
   }, 
   {
     "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 
-    "command": "/usr/bin/g++ -Wall -std=c++11 -Wall -std=c++0x -frounding-math -pthread -I. -I.. -I/usr/include/libxml2 -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_IF_TUN_H=1 -DHAVE_SQLITE3=1 -DHAVE_LIBXML2=1 ../examples/naming/object-names.cc -c -o /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/examples/naming/object-names.cc.1.o", 
-    "file": "../examples/naming/object-names.cc"
+    "command": "/usr/bin/g++ -Wall -std=c++11 -Wall -std=c++0x -frounding-math -pthread -I. -I.. -I/usr/include/libxml2 -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_IF_TUN_H=1 -DHAVE_SQLITE3=1 -DHAVE_LIBXML2=1 ../src/csma/examples/csma-raw-ip-socket.cc -c -o /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/src/csma/examples/csma-raw-ip-socket.cc.5.o", 
+    "file": "../src/csma/examples/csma-raw-ip-socket.cc"
   }, 
   {
     "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 
@@ -1333,6 +1333,11 @@
     "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 
     "command": "/usr/bin/g++ -Wall -std=c++11 -Wall -std=c++0x -frounding-math -fPIC -pthread -I. -I.. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_IF_TUN_H=1 -DHAVE_SQLITE3=1 ../src/traffic-control/model/fq-codel-queue-disc.cc -c -o /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/src/traffic-control/model/fq-codel-queue-disc.cc.1.o", 
     "file": "../src/traffic-control/model/fq-codel-queue-disc.cc"
+  }, 
+  {
+    "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 
+    "command": "/usr/bin/g++ -Wall -std=c++11 -Wall -std=c++0x -frounding-math -fPIC -pthread -I. -I.. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_IF_TUN_H=1 ../src/roff/model/ROFFNode.cc -c -o /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/src/roff/model/ROFFNode.cc.1.o", 
+    "file": "../src/roff/model/ROFFNode.cc"
   }, 
   {
     "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 
@@ -1456,8 +1461,8 @@
   }, 
   {
     "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 
-    "command": "/usr/bin/g++ -Wall -std=c++11 -Wall -std=c++0x -frounding-math -fPIC -pthread -I. -I.. -I/usr/include/libxml2 -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_IF_TUN_H=1 -DHAVE_SQLITE3=1 -DHAVE_LIBXML2=1 ../src/lte/model/lte-handover-algorithm.cc -c -o /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/src/lte/model/lte-handover-algorithm.cc.1.o", 
-    "file": "../src/lte/model/lte-handover-algorithm.cc"
+    "command": "/usr/bin/g++ -Wall -std=c++11 -Wall -std=c++0x -frounding-math -fPIC -pthread -I. -I.. -DNS3_BUILD_PROFILE_DEBUG -DNS3_ASSERT_ENABLE -DNS3_LOG_ENABLE -DHAVE_SYS_IOCTL_H=1 -DHAVE_IF_NETS_H=1 -DHAVE_NET_ETHERNET_H=1 -DHAVE_PACKET_H=1 -DHAVE_IF_TUN_H=1 -DHAVE_SQLITE3=1 ../src/energy/model/rv-battery-model.cc -c -o /home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build/src/energy/model/rv-battery-model.cc.1.o", 
+    "file": "../src/energy/model/rv-battery-model.cc"
   }, 
   {
     "directory": "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/build", 

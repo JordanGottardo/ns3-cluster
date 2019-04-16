@@ -12,12 +12,12 @@ namespace ns3 {
 
 	NS_OBJECT_ENSURE_REGISTERED(ROFFNode);
 
-	ROFFNode::ROFFNode(): m_received(false), m_sent(false), m_phase(0), m_slot(0), m_hop(0) {
+	ROFFNode::ROFFNode(): m_received(false), m_sent(false), m_scheduled(false), m_phase(0), m_slot(0), m_hop(0) {
 		NS_LOG_FUNCTION(this);
 	}
 
 	ROFFNode::ROFFNode(Ptr<Node> node, Ptr<Socket> socket): m_node(node), m_socket(socket), m_neighborTable(),
-			m_received(false), m_sent(false), m_phase(-1), m_slot(0), m_hop(0) {
+			m_received(false), m_sent(false), m_scheduled(false), m_phase(-1), m_slot(0), m_hop(0) {
 		NS_LOG_FUNCTION(this);
 	}
 
@@ -36,6 +36,10 @@ namespace ns3 {
 
 	bool ROFFNode::GetSent() const {
 		return m_sent;
+	}
+
+	bool ROFFNode::GetScheduled() const {
+		return m_scheduled;
 	}
 
 	uint32_t ROFFNode::GetId() const {
@@ -83,6 +87,10 @@ namespace ns3 {
 
 	void ROFFNode::SetSent(bool sent) {
 		m_sent = sent;
+	}
+
+	void ROFFNode::SetScheduled(bool scheduled) {
+		m_scheduled = scheduled;
 	}
 
 	void ROFFNode::SetPhase(int32_t phase) {

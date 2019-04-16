@@ -1,3 +1,5 @@
 maps/*/*.losses
 scheduler/scheduledJobs
 log/
+scheduler/schedule.err
+scheduler/schedule.out

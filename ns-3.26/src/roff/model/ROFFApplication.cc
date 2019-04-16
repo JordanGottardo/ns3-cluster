@@ -131,7 +131,7 @@ void ROFFApplication::PrintStats(std::stringstream& dataStream) {
 //			<< m_nodes[m_nodes.size() - 1]->GetSlot() << ","
 			<< m_sent << ","
 			<< m_received;
-
+	cout << "m_sent=" << m_sent << endl;
 	if (m_printCoords) {
 		 Ptr<ROFFNode> startingNode = m_nodes.at(m_startingNode);
 		 string transmissionVector = StringifyVector(m_transmissionVector);
@@ -269,11 +269,17 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 	NS_LOG_FUNCTION(this << node << header << distance);
 //	NS_LOG_INFO("ROFFApplication::HandleAlertMessage Node " << node->GetId() << " received alert message from node " << header.GetSenderId());
 
+//	if (node->GetScheduled()) {
+//		return;
+//	}
+
 	int32_t phase = header.GetPhase();
 	uint32_t senderId = header.GetSenderId();
 	uint32_t receiverId = node->GetId();
-
 	node->SetPhase(phase);
+	if (node->GetReceived()) {
+		return;
+	}
 	if (!node->GetReceived()) {
 		node->SetReceived(true);
 		node->SetTimestamp(Simulator::Now());
@@ -328,6 +334,7 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 //	cout << "ROFFApplication::HandleAlertMessage waitingTime= " << waitingTime << endl << endl << endl;
 	Simulator::Schedule(MilliSeconds(waitingTime), &ROFFApplication::ForwardAlertMessage,
 			this, node, header, waitingTime);
+//	node->SetScheduled(true);
 }
 
 void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHeader, uint32_t waitingTime) {
@@ -343,6 +350,7 @@ void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHead
 				<< node->GetId() << " defers because of getSent");
 		return;
 	}
+
 //	cout << "id= " << node->GetId() << " nodePhase= " << node->GetPhase() << " headerPhase= "
 //			<< phase << endl;
 	uint32_t headerType = ALERT_MESSAGE;
@@ -357,8 +365,6 @@ void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHead
 	packet->AddHeader(header);
 	NS_LOG_DEBUG("ROFFApplication::ForwardAlertMessage node " << node->GetId()
 			<< " forwards after waitingTime= " << waitingTime << " at time= " << Simulator::Now());
-	NS_LOG_UNCOND("ROFFApplication::ForwardAlertMessage node " << node->GetId()
-				<< " forwards after waitingTime= " << waitingTime << " at time= " << Simulator::Now());
 	node->Send(packet);
 	node->SetSent(true);
 	m_sent++;

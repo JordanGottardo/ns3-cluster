@@ -47,6 +47,8 @@ public:
 
 	bool GetSent() const;
 
+	bool GetScheduled() const;
+
 	uint32_t GetId() const;
 
 	const Vector GetPosition() const;
@@ -67,6 +69,8 @@ public:
 	void SetReceived(bool received);
 
 	void SetSent(bool sent);
+
+	void SetScheduled(bool scheduled);
 
 	void SetPhase(int32_t phase);
 
@@ -99,11 +103,13 @@ private:
 	NeighborTable		m_neighborTable;
 	bool				m_received; // whether the node has received an alert message
 	bool				m_sent; // whether the node has sent an alert message
+	bool				m_scheduled; // whether the node has already scheduled a forward of an alert message
 	int32_t				m_phase; // latest phase heard by the node
 	Vector				m_position; // position of node
 	uint32_t			m_slot; // number of slots waited before the node has received the alert message
 	uint32_t			m_hop; // number of hops before the alert message reached this node
 	Time				m_timestamp; // time of reception of alert message
+
 
 };
 
