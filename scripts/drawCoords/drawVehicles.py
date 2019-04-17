@@ -1,8 +1,9 @@
 #!/usr/bin/python
 
 #Invocation:
-#   ./drawVehicles.py graphTitle ns2mobilityFilePath polyFilePath
-#example /drawVehicles.py graphTitle ../../maps/Padova/Padova-25.ns2mobility.xml  ../../maps/Padova/Padova-25.poly.xml 
+#   ./drawVehicles.py graphTitle ns2mobilityFilePath polyFilePath netFilePath
+#example /drawVehicles.py graphTitle ../../maps/Padova/Padova-25.ns2mobility.xml  [../../maps/Padova/Padova-25.poly.xml] [../../maps/Padova/Padova-25.net.xml] 
+
 
 
 
@@ -19,8 +20,12 @@ def main():
     graphTitle = sys.argv[1]
     ns2MobilityRelativePath = sys.argv[2]
     polyFilePath = None
+    netFilePath = None
+    print(len(sys.argv))
     if (len(sys.argv) > 3):
         polyFilePath = sys.argv[3]
+    if (len(sys.argv) > 4):
+        polyFilePath = sys.argv[4]
     print(graphTitle)
 
     print("Main!!")
@@ -64,6 +69,7 @@ def main():
         found = False
 
     if (polyFilePath is not None):
+        print("DrawVehicles plot buildings")
         coordUtils.plotBuildings(polyFilePath)
 
     plt.xlabel("x")
@@ -78,6 +84,11 @@ def main():
     plotTxRange(1000, starterCoordX, starterCoordY, vehicleDistance, color3, True)
     plt.legend(loc = "upper left")
    
+
+    #Plot junctions
+    if (netFilePath is not None):
+        print("Draw vehicles plot junctions")
+        coordUtils.plotJunctions(netFilePath)
     plt.show()
     print("dopo plot")
     

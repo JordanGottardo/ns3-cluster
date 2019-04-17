@@ -163,7 +163,7 @@ void FBApplication::PrintStats(std::stringstream &dataStream) {
 //	cout << "collisions= " << m_collisions << endl;
 	uint32_t cover = 1;	// 'cause we count m_startingNode
 	uint32_t circ = 0, circCont = 0;
-
+	cout << "PrintStats area " << m_aoi << endl;
 	double radiusMin = m_aoi - m_aoi_error;
 	double radiusMax = m_aoi + m_aoi_error;
 

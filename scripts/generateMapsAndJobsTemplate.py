@@ -131,7 +131,7 @@ def runScenario(cw, scenario, distance, startingNode, area=1000):
 def main():
 	#Edit these to launch automatically 
 	#scenarios = ["Padova", "LA", "Grid-200", "Grid-300", "Grid-400"]
-	scenarios = ["Platoon"]
+	scenarios = ["Platoon-15km"]
 	contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
 	distances = ["15", "25", "35", "45"]
 	#scenarios = ["Padova"]
@@ -141,7 +141,8 @@ def main():
 		"Grid-200":-1,
 		"Grid-300": -1,
 		"Grid-400":-1,
-		"Platoon": 0
+		"Platoon": 0,
+		"Platoon-15km": 0,
 	}
 	area = 1000
 
@@ -155,7 +156,7 @@ def main():
 		for cw in contentionWindows:
 			for scenario in scenarios:
 				if ("Platoon" in scenario):
-					area = 3000
+					area = 14000
 				if ("Grid" in scenario or "Platoon" in scenario):
 					runScenario(cw, scenario, "25", startingNodeMap[scenario], area)
 				else:
