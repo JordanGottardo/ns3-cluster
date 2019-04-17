@@ -22,7 +22,7 @@ def findNumNodes(mobilityFilePath):
 				maxId = id
 	return maxId + 1
 
-def runScenario(cw, scenario, distance, startingNode):
+def runScenario(cw, scenario, distance, startingNode, area=1000):
 	print(scenario)
 	# Protocols and transmission ranges
 	buildings = ["0", "1"]
@@ -101,10 +101,10 @@ def runScenario(cw, scenario, distance, startingNode):
 				else:
 					propagationLoss = 1
 				if (protocol == "5"): #ROFF
-					command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings={0} --actualRange={1} --mapBasePath={2} --vehicleDistance={3} --startingNode={4} --propagationLoss={5} --area=1000 --printToFile=1 --printCoords=1  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1".format(b, txRange, mapPathWithoutExtension, distance, startingNode, propagationLoss)
+					command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings={0} --actualRange={1} --mapBasePath={2} --vehicleDistance={3} --startingNode={4} --propagationLoss={5} --area={6} --printToFile=1 --printCoords=1  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1".format(b, txRange, mapPathWithoutExtension, distance, startingNode, propagationLoss, area)
 				else: 
 					executablePath = "/home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban"
-					command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --mapBasePath={2} --cwMin={3} --cwMax={4} --vehicleDistance={5} --startingNode={6} --propagationLoss={7} --protocol={8} --flooding=0 --area=1000 --printToFile=1 --printCoords=1 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1".format(b, txRange, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss, protocol)
+					command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --mapBasePath={2} --cwMin={3} --cwMax={4} --vehicleDistance={5} --startingNode={6} --propagationLoss={7} --protocol={8} --area={9} --flooding=0  --printToFile=1 --printCoords=1 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1".format(b, txRange, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss, protocol, area)
 				newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-" + protocolsMap[protocol] + "-" + txRange
 				newJobFilename = newJobName + "-.job"
 				newJobPath = os.path.join(jobsPath, newJobFilename)
@@ -131,7 +131,7 @@ def runScenario(cw, scenario, distance, startingNode):
 def main():
 	#Edit these to launch automatically 
 	#scenarios = ["Padova", "LA", "Grid-200", "Grid-300", "Grid-400"]
-	scenarios = ["Grid-200"]
+	scenarios = ["Platoon"]
 	contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
 	distances = ["15", "25", "35", "45"]
 	#scenarios = ["Padova"]
@@ -140,9 +140,11 @@ def main():
 		"LA":-1,
 		"Grid-200":-1,
 		"Grid-300": -1,
-		"Grid-400":-1
+		"Grid-400":-1,
+		"Platoon": 0
 	}
-	
+	area = 1000
+
 	# Removes all previous job templates in output directory
 	thisScriptPath = os.path.realpath(__file__)
 	thisScriptParentPath = os.path.dirname(thisScriptPath)
@@ -152,12 +154,14 @@ def main():
 	if (len(sys.argv) < 3):
 		for cw in contentionWindows:
 			for scenario in scenarios:
-				if ("Grid" in scenario):
-					runScenario(cw, scenario, "25", startingNodeMap[scenario])
+				if ("Platoon" in scenario):
+					area = 3000
+				if ("Grid" in scenario or "Platoon" in scenario):
+					runScenario(cw, scenario, "25", startingNodeMap[scenario], area)
 				else:
 					for distance in distances:
 						scenarioName = scenario + "-" + str(distance)
-						runScenario(cw, scenarioName, distance, startingNodeMap[scenario])
+						runScenario(cw, scenarioName, distance, startingNodeMap[scenario], area)
 	else:
 		runScenario(None, None)
 if __name__ == "__main__":
