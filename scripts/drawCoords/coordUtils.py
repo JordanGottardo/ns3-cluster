@@ -199,6 +199,20 @@ def plotShape(shape, pColor="red", pAlpha=0.15):
         yShapeCoords.append(float(splitCoords2[1]))
         plt.fill(xShapeCoords, yShapeCoords, color=pColor, alpha=pAlpha)
 
+def plotBoundingBox(shape, extension=10, pColor="yellow", pAlpha=0.45):
+    splitCoords = shape.split( )
+    xShapeCoords = []
+    yShapeCoords = []
+    for coord in splitCoords:
+        splitCoords2 = coord.split(",")
+        xShapeCoords.append(float(splitCoords2[0]))
+        yShapeCoords.append(float(splitCoords2[1]))
+    xMin, xMax = min(xShapeCoords) - extension, max(xShapeCoords) + extension
+    yMin, yMax = min(yShapeCoords) - extension, max(yShapeCoords) + extension
+    boundingBoxX = [xMin, xMax, xMax, xMin]
+    bounbingBoxY = [yMax, yMax, yMin, yMin]
+    plt.fill(boundingBoxX, bounbingBoxY, color=pColor, alpha=pAlpha)
+
 def plotBuildings(polyFilePath, plotBuildingIds=False, ax=None):
     if (polyFilePath is None):
         return
@@ -253,5 +267,6 @@ def plotJunctions(netFilePath):
         #print(shape)
         #if (count % 10 == 1):
         plotShape(shape)
+        plotBoundingBox(shape)
     print("Plotted " + str(count) + " junctions")
          

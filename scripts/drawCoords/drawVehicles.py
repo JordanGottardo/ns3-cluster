@@ -88,7 +88,7 @@ def main():
     #Plot junctions
     if (netFilePath is not None):
         print("Draw vehicles plot junctions")
-        coordUtils.plotJunctions(netFilePath)
+       # coordUtils.plotJunctions(netFilePath)
     plt.show()
     print("dopo plot")
     

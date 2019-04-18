@@ -4,7 +4,7 @@
 #	./createGridScenario.py roadLength roadNumber roadDistance roadSize nodeDistance
 # e.g.
 
-#./createGridScenario.py 6000 31 200 10 25 Grid-200
+#./createGridScenario.py 4800 25 200 10 25 Grid-200
 
 
 

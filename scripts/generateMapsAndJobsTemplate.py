@@ -25,7 +25,7 @@ def findNumNodes(mobilityFilePath):
 def runScenario(cw, scenario, distance, startingNode, area=1000):
 	print(scenario)
 	# Protocols and transmission ranges
-	buildings = ["0", "1"]
+	buildings = ["0"]
 	#buildings = ["1"]
 	protocols = ["1", "2", "3", "4", "5"]
 	txRanges = ["100", "300", "500"]
@@ -158,7 +158,7 @@ def main():
 				if ("Platoon" in scenario):
 					area = 14000
 				if ("Grid" in scenario):
-					area = 3000
+					area = 2000
 				if ("Grid" in scenario or "Platoon" in scenario):
 					runScenario(cw, scenario, "25", startingNodeMap[scenario], area)
 				else:
