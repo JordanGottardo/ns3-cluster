@@ -512,27 +512,6 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 	uint32_t senderId = fbHeader.GetSenderId();
 	uint32_t receiverId = fbNode->GetId();
 	NS_LOG_DEBUG ("Packet received by node " << fbNode->GetId() << " from node " << fbHeader.GetSenderId() << ".");
-	fbNode->SetPhase(phase);
-
-	if (fbNode->GetReceived()) {
-		return;
-	}
-	if (!fbNode->GetReceived()) {
-		fbNode->SetReceived(true);
-		fbNode->SetTimestamp(Simulator::Now());
-		fbNode->SetSlot(fbHeader.GetSlot());
-		fbNode->SetHop(phase + 1);
-//		cout <<  "phase= " << phase << " fbNode after setHop= " << fbNode->GetHop() << endl;
-		m_received++;
-		// save transmission for stats and metrics
-		m_receivedNodes.push_back(receiverId);
-		auto it = m_transmissionList.find(senderId);
-		if (it == m_transmissionList.end()) {
-			m_transmissionList[senderId] = vector<uint32_t>();
-		}
-		m_transmissionList[senderId].push_back(receiverId);
-		m_transmissionVector.push_back(Edge(senderId, receiverId, phase));
-	}
 
 	// Compute the distance between the sender and me (the node who received the message)
 	double distanceSenderToCurrent = ns3::CalculateDistance(senderPosition, currentPosition);
@@ -544,6 +523,35 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 	// Compute the two distances
 	double distanceSenderToStarter = ns3::CalculateDistance(senderPosition, starterPosition);
 	double distanceCurrentToStarter = ns3::CalculateDistance(currentPosition, starterPosition);
+
+	if (fbNode->GetPhase() < phase && (distanceSenderToStarter > distanceCurrentToStarter)) {
+//		cout << "già ricevuto e aggiorno phase da " << fbNode->GetPhase() << " a " << phase << endl;
+		fbNode->SetPhase(phase);
+	}
+//
+//	// message coming from the front
+//	if ((distanceCurrentToStarter < distanceSenderToStarter) && (fbNode->GetPhase() < phase)) {
+//
+//	}
+
+	if (!fbNode->GetReceived() ) {
+
+		fbNode->SetReceived(true);
+		fbNode->SetTimestamp(Simulator::Now());
+		fbNode->SetSlot(fbHeader.GetSlot());
+		fbNode->SetHop(phase + 1);
+		fbNode->SetPhase(phase);
+	//		cout <<  "phase= " << phase << " fbNode after setHop= " << fbNode->GetHop() << endl;
+		m_received++;
+		// save transmission for stats and metrics
+		m_receivedNodes.push_back(receiverId);
+		auto it = m_transmissionList.find(senderId);
+		if (it == m_transmissionList.end()) {
+			m_transmissionList[senderId] = vector<uint32_t>();
+		}
+		m_transmissionList[senderId].push_back(receiverId);
+		m_transmissionVector.push_back(Edge(senderId, receiverId, phase));
+	}
 
 	// If starter-to-sender distance is less than starter-to-current distance,
 	// then the message is coming from the front and it needs to be menaged,
@@ -602,44 +610,47 @@ void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader
 		return;
 	}
 	// If I'm the first to wake up, I must forward the message
-	if ((!m_flooding && phase >= fbNode->GetPhase()) || (m_flooding)) {
-		NS_LOG_DEBUG ("Forwarding Alert Message (" << fbNode->GetNode()->GetId() << ") after " << waitingTime << ".");
+	if (!m_flooding && fbNode->GetPhase() > phase) {
+		NS_LOG_DEBUG("node " << fbNode->GetId() << " defers because of phase");
+		return;
+	}
+
+	NS_LOG_DEBUG ("Forwarding Alert Message (" << fbNode->GetNode()->GetId() << ") after " << waitingTime << ".");
 //		NS_LOG_UNCOND ("Forwarding Alert Message (" << fbNode->GetNode()->GetId() <<
 //				"at pos " << fbNode->GetPosition() << ") after " << waitingTime << ".");
-		// Create a packet with the correct parameters taken from the node
-		uint32_t LMBR, CMBR, maxi;
-		LMBR = fbNode->GetLMBR();
-		CMBR = fbNode->GetCMBR();
-		maxi = std::max(LMBR, CMBR);
+	// Create a packet with the correct parameters taken from the node
+	uint32_t LMBR, CMBR, maxi;
+	LMBR = fbNode->GetLMBR();
+	CMBR = fbNode->GetCMBR();
+	maxi = std::max(LMBR, CMBR);
 
 //		Vector position = fbNode->UpdatePosition();
-		Vector starterPosition = oldFBHeader.GetStarterPosition();
+	Vector starterPosition = oldFBHeader.GetStarterPosition();
 
-		FBHeader fbHeader;
-		fbHeader.SetType(ALERT_MESSAGE);
-		fbHeader.SetMaxRange(maxi);
-		fbHeader.SetStarterPosition(starterPosition);
-		fbHeader.SetPosition(position);
-		fbHeader.SetPhase(phase + 1);
-		fbHeader.SetSlot(fbNode->GetSlot() + waitingTime);
-		fbHeader.SetSenderId(fbNode->GetId());
+	FBHeader fbHeader;
+	fbHeader.SetType(ALERT_MESSAGE);
+	fbHeader.SetMaxRange(maxi);
+	fbHeader.SetStarterPosition(starterPosition);
+	fbHeader.SetPosition(position);
+	fbHeader.SetPhase(phase + 1);
+	fbHeader.SetSlot(fbNode->GetSlot() + waitingTime);
+	fbHeader.SetSenderId(fbNode->GetId());
 //		cout << "forward alert message senderId = " << fbNode->GetId() << endl;
 
-		Ptr<Packet> packet = Create<Packet>(m_packetPayload);
-		packet->AddHeader(fbHeader);
+	Ptr<Packet> packet = Create<Packet>(m_packetPayload);
+	packet->AddHeader(fbHeader);
 
-		//
-		//
-		//
+	//
+	//
+	//
 
 //		cout << "invio distance = " <<  distance << " time= " << waitingTime <<endl;
 
-		// Forward
-		fbNode->Send(packet);
-		fbNode->SetSent(true);
+	// Forward
+	fbNode->Send(packet);
+	fbNode->SetSent(true);
 
-		m_sent++;
-	}
+	m_sent++;
 //	else {
 //		cout << "deferro distance= " << distance << " waitingTime= "<< waitingTime << endl;
 //	}
