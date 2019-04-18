@@ -97,7 +97,7 @@ def runScenario(cw, scenario, distance, startingNode, area=1000):
 				propagationLossBool = "Grid" in scenario
 				propagationLoss = None
 				if (propagationLossBool is True):
-					propagationLoss = 0
+					propagationLoss = 1
 				else:
 					propagationLoss = 1
 				if (protocol == "5"): #ROFF
@@ -131,7 +131,7 @@ def runScenario(cw, scenario, distance, startingNode, area=1000):
 def main():
 	#Edit these to launch automatically 
 	#scenarios = ["Padova", "LA", "Grid-200", "Grid-300", "Grid-400"]
-	scenarios = ["Platoon-15km"]
+	scenarios = ["Grid-200"]
 	contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
 	distances = ["15", "25", "35", "45"]
 	#scenarios = ["Padova"]
@@ -157,6 +157,8 @@ def main():
 			for scenario in scenarios:
 				if ("Platoon" in scenario):
 					area = 14000
+				if ("Grid" in scenario):
+					area = 3000
 				if ("Grid" in scenario or "Platoon" in scenario):
 					runScenario(cw, scenario, "25", startingNodeMap[scenario], area)
 				else:

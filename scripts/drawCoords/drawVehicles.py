@@ -70,7 +70,7 @@ def main():
 
     if (polyFilePath is not None):
         print("DrawVehicles plot buildings")
-        #coordUtils.plotBuildings(polyFilePath)
+        coordUtils.plotBuildings(polyFilePath)
 
     plt.xlabel("x")
     plt.ylabel("y")
