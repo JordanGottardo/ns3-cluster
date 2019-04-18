@@ -80,7 +80,7 @@ namespace ns3 {
 	}
 
 	void
-	FBHeader::SetPhase (int8_t value)
+	FBHeader::SetPhase (uint32_t value)
 	{
 		NS_LOG_FUNCTION (this);
 		m_phase = value;
@@ -128,7 +128,7 @@ namespace ns3 {
 		return m_slot;
 	}
 
-	int32_t
+	uint32_t
 	FBHeader::GetPhase (void) const
 	{
 		NS_LOG_FUNCTION (this);

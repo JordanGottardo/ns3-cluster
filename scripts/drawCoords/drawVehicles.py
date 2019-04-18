@@ -25,7 +25,7 @@ def main():
     if (len(sys.argv) > 3):
         polyFilePath = sys.argv[3]
     if (len(sys.argv) > 4):
-        polyFilePath = sys.argv[4]
+        netFilePath = sys.argv[4]
     print(graphTitle)
 
     print("Main!!")
@@ -70,7 +70,7 @@ def main():
 
     if (polyFilePath is not None):
         print("DrawVehicles plot buildings")
-        coordUtils.plotBuildings(polyFilePath)
+        #coordUtils.plotBuildings(polyFilePath)
 
     plt.xlabel("x")
     plt.ylabel("y")

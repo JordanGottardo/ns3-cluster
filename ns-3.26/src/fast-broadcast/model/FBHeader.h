@@ -78,7 +78,7 @@ public:
 	 * \brief set the phase of the message
 	 * \param value phase of the message
 	 */
-	void SetPhase (int8_t value);
+	void SetPhase (uint32_t value);
 
 	/**
 	 * \brief set the senderId of the message
@@ -114,7 +114,7 @@ public:
 	/**
 	 * \returns the phase of the message
 	 */
-	int32_t GetPhase (void) const;
+	uint32_t GetPhase (void) const;
 
 	/**
 	 * \returns the senderId of the message
@@ -194,7 +194,7 @@ private:
 	uint32_t			m_maxRange;
 	uint32_t			m_type;
 	uint32_t			m_slot;
-	int32_t				m_phase;
+	uint32_t			m_phase;
 
 	uint32_t			m_senderId; //added
 };
