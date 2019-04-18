@@ -163,7 +163,7 @@ void FBApplication::PrintStats(std::stringstream &dataStream) {
 //	cout << "collisions= " << m_collisions << endl;
 	uint32_t cover = 1;	// 'cause we count m_startingNode
 	uint32_t circ = 0, circCont = 0;
-	cout << "PrintStats area " << m_aoi << endl;
+//	cout << "PrintStats area " << m_aoi << endl;
 	double radiusMin = m_aoi - m_aoi_error;
 	double radiusMax = m_aoi + m_aoi_error;
 
@@ -209,7 +209,7 @@ void FBApplication::PrintStats(std::stringstream &dataStream) {
 				circ++;
 				receivedOnCircIds << current->GetId() << "_";
 				// Update mean time, nums and slots
-				cout << "current get hop= "  << current->GetHop() << endl;
+//				cout << "current get hop= "  << current->GetHop() << endl;
 				hops_sum += current->GetHop();
 				slots_sum += current->GetSlot();
 				time_sum += current->GetTimestamp().GetMicroSeconds ();
@@ -243,7 +243,7 @@ void FBApplication::PrintStats(std::stringstream &dataStream) {
 			<< m_sent << ","
 			<< m_received;
 
-	cout << "hopssum= " << hops_sum << " circ= "  << circ << " hops= " << (hops_sum / (double) circ) << endl;
+//	cout << "hopssum= " << hops_sum << " circ= "  << circ << " hops= " << (hops_sum / (double) circ) << endl;
 
 	if (m_printCoords) {
 		 Ptr<FBNode> startingNode = GetFBNode(m_startingNode);
@@ -506,7 +506,6 @@ void FBApplication::HandleHelloMessage (Ptr<FBNode> fbNode, FBHeader fbHeader) {
 
 void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 	int32_t phase = fbHeader.GetPhase();
-	cout << "headerPhase= " << phase << endl;
 	Vector currentPosition = fbNode->UpdatePosition();
 	// Get the position of the sender node
 	Vector senderPosition = fbHeader.GetPosition();
@@ -523,7 +522,7 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 		fbNode->SetTimestamp(Simulator::Now());
 		fbNode->SetSlot(fbHeader.GetSlot());
 		fbNode->SetHop(phase + 1);
-		cout <<  "phase= " << phase << " fbNode after setHop= " << fbNode->GetHop() << endl;
+//		cout <<  "phase= " << phase << " fbNode after setHop= " << fbNode->GetHop() << endl;
 		m_received++;
 		// save transmission for stats and metrics
 		m_receivedNodes.push_back(receiverId);
@@ -605,8 +604,8 @@ void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader
 	// If I'm the first to wake up, I must forward the message
 	if ((!m_flooding && phase >= fbNode->GetPhase()) || (m_flooding)) {
 		NS_LOG_DEBUG ("Forwarding Alert Message (" << fbNode->GetNode()->GetId() << ") after " << waitingTime << ".");
-		NS_LOG_UNCOND ("Forwarding Alert Message (" << fbNode->GetNode()->GetId() <<
-				"at pos " << fbNode->GetPosition() << ") after " << waitingTime << ".");
+//		NS_LOG_UNCOND ("Forwarding Alert Message (" << fbNode->GetNode()->GetId() <<
+//				"at pos " << fbNode->GetPosition() << ") after " << waitingTime << ".");
 		// Create a packet with the correct parameters taken from the node
 		uint32_t LMBR, CMBR, maxi;
 		LMBR = fbNode->GetLMBR();
