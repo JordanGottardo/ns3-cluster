@@ -15,7 +15,7 @@
 #PBS -o localhost:${HOME}/ns-3/log/urban-Grid-200-d25-cw-16-128-b0-STATIC-500-500-4.out
 
 ### Scelta della coda "cluster_long"
-#PBS -q cluster_short
+#PBS -q cluster_long
 
 ### Numero di host (nodes) occupati dal Job e numero di processi da allocare per nodo (ppn)
 #PBS -l nodes=1:ppn=1:nocuda
