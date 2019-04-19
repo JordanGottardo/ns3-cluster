@@ -25,7 +25,7 @@ def findNumNodes(mobilityFilePath):
 def runScenario(cw, scenario, distance, startingNode, area=1000):
 	print(scenario)
 	# Protocols and transmission ranges
-	buildings = ["0"]
+	buildings = ["0", "1"]
 	#buildings = ["1"]
 	protocols = ["1", "2", "3", "4", "5"]
 	txRanges = ["100", "300", "500"]
@@ -131,9 +131,10 @@ def runScenario(cw, scenario, distance, startingNode, area=1000):
 def main():
 	#Edit these to launch automatically 
 	#scenarios = ["Padova", "LA", "Grid-200", "Grid-300", "Grid-400"]
-	scenarios = ["Grid-200"]
+	scenarios = ["Padova"]
 	contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
-	distances = ["15", "25", "35", "45"]
+	#distances = ["15", "25", "35", "45"]
+	distances = ["25"]
 	#scenarios = ["Padova"]
 	startingNodeMap = {
 		"Padova":-1,
