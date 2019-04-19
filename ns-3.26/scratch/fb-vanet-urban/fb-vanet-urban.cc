@@ -782,7 +782,7 @@ void FBVanetExperiment::ConfigureFBApplication () {
 	// Add nodes to the application
 	for (uint32_t i = 0; i < m_nNodes; i++)
 	{
-		m_fbApplication->AddNode (m_adhocNodes.Get (i), m_adhocSources.at (i), m_adhocSinks.at (i), true);
+		m_fbApplication->AddNode (m_adhocNodes.Get (i), m_adhocSources.at (i), m_adhocSinks.at (i), true); //todo aggiungere intersection
 	}
 
 	// Add the application to a node

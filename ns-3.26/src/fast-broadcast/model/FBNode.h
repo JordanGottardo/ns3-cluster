@@ -114,6 +114,16 @@ public:
 	bool AmIaVehicle (void) const;
 
 	/**
+	 * \returns true if the node is inside an intersection
+	 */
+	bool AmIInIntersection (void) const;
+
+	/**
+	 * \returns the id of the intersection the node is in
+	 */
+	uint32_t GetIntersectionId  (void) const;
+
+	/**
 	 * \brief set the node id
 	 * \param value id
 	 */
@@ -209,6 +219,18 @@ public:
 	 */
 	void SetMeAsVehicle (bool value);
 
+	/**
+	 * \brief set the node in intersection
+	 * \param value true if the node is in an intersection
+	 */
+	void SetMeInIntersection (bool value);
+
+	/**
+	 * \brief set the id of the intersection the node is in
+	 * \param intersectionId id of the intersection the node is in
+	 */
+	void SetIntersectionId (uint32_t intersectionId);
+
 	uint32_t								m_id;	// node id
 	Ptr<Node>								m_node;	// ns-3 node
 	Ptr<Socket> 							m_socket; // ns-3 socket
@@ -224,6 +246,8 @@ public:
 	bool 									m_sent;	// legacy with barichello's code
 	Time									m_timestamp;	// used for statistics
 	bool									m_amIaVehicle;	// used for statistics
+	bool									m_amIInIntersection; // whether the node is inside an intersection
+	uint32_t								m_intersectionId; // id of the intersection where the node is
 };
 
 } // namespace ns3

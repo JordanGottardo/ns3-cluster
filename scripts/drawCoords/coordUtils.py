@@ -199,7 +199,7 @@ def plotShape(shape, pColor="red", pAlpha=0.15):
         yShapeCoords.append(float(splitCoords2[1]))
         plt.fill(xShapeCoords, yShapeCoords, color=pColor, alpha=pAlpha)
 
-def plotBoundingBox(shape, extension=10, pColor="yellow", pAlpha=0.45):
+def getBoundingBox(shape, extension=10):
     splitCoords = shape.split( )
     xShapeCoords = []
     yShapeCoords = []
@@ -209,6 +209,10 @@ def plotBoundingBox(shape, extension=10, pColor="yellow", pAlpha=0.45):
         yShapeCoords.append(float(splitCoords2[1]))
     xMin, xMax = min(xShapeCoords) - extension, max(xShapeCoords) + extension
     yMin, yMax = min(yShapeCoords) - extension, max(yShapeCoords) + extension
+    return xMin, xMax, yMin, yMax
+
+def plotBoundingBox(shape, extension=10, pColor="yellow", pAlpha=0.45):
+    xMin, xMax, yMin, yMax = getBoundingBox(shape, extension)
     boundingBoxX = [xMin, xMax, xMax, xMin]
     bounbingBoxY = [yMax, yMax, yMin, yMin]
     plt.fill(boundingBoxX, bounbingBoxY, color=pColor, alpha=pAlpha)
@@ -251,22 +255,49 @@ def plotBuildings(polyFilePath, plotBuildingIds=False, ax=None):
             yCenter = sumY / len(yShapeCoords)
             ax.annotate(polyId, xy=(xCenter, yCenter), size=8)
 
-def plotJunctions(netFilePath):
-    print("coordUtils::plotJunctions")
-    count = 0
+def parseNodeList(ns2MobilityFilePath):
+    coordDict = {}
+    with open(ns2MobilityFilePath) as f:
+        lines = f.readlines()
+        numLines = len(lines)
+        count = 0
+        while(count < numLines):
+            line = lines[count].strip()
+            splitLine = line.split(" ")
+            if (len(splitLine) != 4):
+                count = count + 1
+                continue
+            id = splitLine[0].split("_")
+            id = id[1].replace("(", "")
+            id = id.replace(")", "")
+            x = splitLine[3].strip()
+            y = lines[count + 1].split(" ")[3].strip()
+            z = lines[count + 2].split(" ")[3].strip()
+            coords = Vector(x, y, z)
+            count = count + 3
+            coordDict[id] = coords
+    return coordDict
+
+
+def parseJunctionList(netFilePath):
     tree = ET.parse(netFilePath)
     root = tree.getroot()
     junctionList = list(root.iter("junction"))
-    shapes = []
+    return junctionList
+
+def plotJunctions(netFilePath):
+    print("coordUtils::plotJunctions")
+    count = 0
+    junctionList = parseJunctionList(netFilePath)
     for junction in junctionList:
         count += 1
         shape = junction.get("shape")
         if (shape is None or shape == ""):
             continue
-        shapes.append(shape)
         #print(shape)
         #if (count % 10 == 1):
         plotShape(shape)
         plotBoundingBox(shape)
     print("Plotted " + str(count) + " junctions")
          
+

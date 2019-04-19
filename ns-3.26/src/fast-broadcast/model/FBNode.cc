@@ -59,7 +59,9 @@
 			m_received (false),
 			m_sent (false),
 			m_timestamp (0),
-			m_amIaVehicle (true)
+			m_amIaVehicle (true),
+			m_amIInIntersection(false),
+			m_intersectionId(0)
 	{
 	  NS_LOG_FUNCTION (this);
 	}
@@ -165,6 +167,20 @@
 	{
 		NS_LOG_FUNCTION (this);
 		return m_amIaVehicle;
+	}
+
+	bool
+	FBNode::AmIInIntersection (void) const
+	{
+		NS_LOG_FUNCTION (this);
+		return m_amIInIntersection;
+	}
+
+	uint32_t
+	FBNode::GetIntersectionId (void) const
+	{
+		NS_LOG_FUNCTION (this);
+		return m_intersectionId;
 	}
 
 	void
@@ -286,5 +302,19 @@
 	{
 		NS_LOG_FUNCTION (this << value);
 		m_amIaVehicle = value;
+	}
+
+	void
+	FBNode::SetMeInIntersection (bool value)
+	{
+		NS_LOG_FUNCTION (this << value);
+		m_amIInIntersection = value;
+	}
+
+	void
+	FBNode::SetIntersectionId (uint32_t intersectionId)
+	{
+		NS_LOG_FUNCTION (this << intersectionId);
+		m_intersectionId = intersectionId;
 	}
 } // namespace ns3

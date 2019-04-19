@@ -129,7 +129,8 @@ void FBApplication::LogCollision(std::string context, Ptr<const Packet> p) {
 		m_collisions++;
 }
 
-void FBApplication::AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink, bool onstats) {
+void FBApplication::AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink, bool onstats,
+		bool isNodeinIntersection, uint32_t intersectionId) {
 	NS_LOG_FUNCTION(this << node);
 
 	Ptr<FBNode> fbNode = CreateObject<FBNode>();
@@ -148,6 +149,10 @@ void FBApplication::AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink
 	fbNode->SetReceived(false);
 	fbNode->SetSent(false);
 	fbNode->SetMeAsVehicle(onstats);
+
+
+	fbNode->SetMeInIntersection(isNodeinIntersection);
+	fbNode->SetIntersectionId(intersectionId);
 
 	// misc stuff
 	m_nodes.push_back (fbNode);
