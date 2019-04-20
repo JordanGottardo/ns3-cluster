@@ -120,11 +120,13 @@ def appendCompoundData(basePath, txRanges, protocols, cw, compoundData, metrics)
 	for txRange in txRanges:
 		for protocol in protocols:
 			path = None
+			roff = False
 			if (protocol != "ROFF"):
 				path = os.path.join(basePath, "r" + txRange, cw, protocol)
 			else: 
+				roff = True
 				path = os.path.join(basePath, "r" + txRange, protocol)
-			data = graphUtils.readCsvFromDirectory(path)
+			data = graphUtils.readCsvFromDirectory(path, roff)
 			entry = compoundData[txRange][protocol]
 			for metric in metrics:
 				metricMean = metric + "Mean"
@@ -164,8 +166,8 @@ def printAllComparison():
 	plt.rcParams["figure.figsize"] = [18, 10]
 	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano-con-coord"
 	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
-	scenarios = ["Grid-200"]
-	buildings = ["0"]
+	scenarios = ["Padova-25"]
+	buildings = ["0" , "1"]
 	txRanges = ["100", "300", "500"]
 	protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300", "STATIC-500", "ROFF"]
 	#cws = ["cw[16-128]", "cw[32-1024]"]

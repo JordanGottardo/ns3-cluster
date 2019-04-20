@@ -29,7 +29,7 @@ def main():
     print(graphTitle)
 
     print("Main!!")
-    startingVehicle = "936"
+    startingVehicle = "2024"
     vehicleDistance = 25
     minTxRange = 300
     maxTxRange = 900

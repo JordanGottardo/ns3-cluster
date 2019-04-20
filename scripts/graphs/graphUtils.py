@@ -22,7 +22,7 @@ def calculateMeanAndConfInt(list):
 	confIntAmplitude = confInt[1] - confInt[0]
 	return mean, confIntAmplitude;
 
-def readCsvFromDirectory(path):
+def readCsvFromDirectory(path, roff=False):
 	#print("graphUtils::readCsvFromDirectory path= " + path)
 	totalNodes = []
 	nodesOnCirc = []
@@ -68,6 +68,8 @@ def readCsvFromDirectory(path):
 	hopsMean, hopsConfInt = calculateMeanAndConfInt(hops)
 	messageSentMean, messageSentConfInt = calculateMeanAndConfInt(messageSent)
 	slotsWaitedMean, slotsWaitedConfInt = calculateMeanAndConfInt(slots)
+	if (roff is True):
+		slotsWaitedMean -= hopsMean
 	return {"totCoverageMean": totalCovMean, 
 			"totCoverageConfInt": totalCovConfInt,
 			"covOnCircMean": covOnCircMean,
