@@ -87,7 +87,7 @@ public:
 	 * \return none
 	 */
 	void AddNode (Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink, bool onstats,
-			bool isNodeinIntersection, uint32_t intersectionId = 0);
+			bool isNodeInJunction, uint64_t junctionId = 0);
 
 	/**
 	 * \brief Print value of some useful field

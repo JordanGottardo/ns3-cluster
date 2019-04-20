@@ -60,8 +60,8 @@
 			m_sent (false),
 			m_timestamp (0),
 			m_amIaVehicle (true),
-			m_amIInIntersection(false),
-			m_intersectionId(0)
+			m_amIInJunction(false),
+			m_junctionId(0)
 	{
 	  NS_LOG_FUNCTION (this);
 	}
@@ -170,17 +170,17 @@
 	}
 
 	bool
-	FBNode::AmIInIntersection (void) const
+	FBNode::AmIInJunction (void) const
 	{
 		NS_LOG_FUNCTION (this);
-		return m_amIInIntersection;
+		return m_amIInJunction;
 	}
 
-	uint32_t
-	FBNode::GetIntersectionId (void) const
+	uint64_t
+	FBNode::GetJunctionId (void) const
 	{
 		NS_LOG_FUNCTION (this);
-		return m_intersectionId;
+		return m_junctionId;
 	}
 
 	void
@@ -305,16 +305,16 @@
 	}
 
 	void
-	FBNode::SetMeInIntersection (bool value)
+	FBNode::SetMeInJunction (bool value)
 	{
 		NS_LOG_FUNCTION (this << value);
-		m_amIInIntersection = value;
+		m_amIInJunction = value;
 	}
 
 	void
-	FBNode::SetIntersectionId (uint32_t intersectionId)
+	FBNode::SetJunctionId (uint64_t junctionId)
 	{
-		NS_LOG_FUNCTION (this << intersectionId);
-		m_intersectionId = intersectionId;
+		NS_LOG_FUNCTION (this << junctionId);
+		m_junctionId = junctionId;
 	}
 } // namespace ns3

@@ -93,6 +93,20 @@ namespace ns3 {
 		m_senderId = value;
 	}
 
+	void
+	FBHeader::SetSenderInJunction (uint8_t value)
+	{
+		NS_LOG_FUNCTION (this);
+		m_senderInJunction = value;
+	}
+
+	void
+	FBHeader::SetJunctionId (uint64_t junctionId)
+	{
+		NS_LOG_FUNCTION (this);
+		m_junctionId = junctionId;
+	}
+
 	Vector
 	FBHeader::GetPosition (void) const
 	{
@@ -142,6 +156,20 @@ namespace ns3 {
 		return m_senderId;
 	}
 
+	uint8_t
+	FBHeader::IsSenderInJunction (void) const
+	{
+		NS_LOG_FUNCTION (this);
+		return m_senderInJunction;
+	}
+
+	uint64_t
+	FBHeader::GetJunctionId (void) const
+	{
+		NS_LOG_FUNCTION (this);
+		return m_junctionId;
+	}
+
 	TypeId
 	FBHeader::GetInstanceTypeId (void) const
 	{
@@ -152,12 +180,13 @@ namespace ns3 {
 	FBHeader::GetSerializedSize (void) const
 	{
 		// Vector3D = 24  * 2
-		// uint32_t = 4		* 4
-		// added one uint32_t (node id) = 4
+		// uint32_t = 5	* 4
+		// uint8_t = 1 * 1
+		// uint64_t = 1 * 8
 
 		NS_LOG_FUNCTION (this);
 
-		uint32_t length = 68;
+		uint32_t length = 77;
 		return length;
 	}
 
@@ -178,6 +207,8 @@ namespace ns3 {
 		i.WriteU32(m_phase);
 
 		i.WriteU32(m_senderId);
+		i.WriteU8(m_senderInJunction);
+		i.WriteU64(m_junctionId);
 	}
 
 	uint32_t
@@ -201,6 +232,8 @@ namespace ns3 {
 		m_phase = i.ReadU32 ();
 
 		m_senderId = i.ReadU32();
+		m_senderInJunction = i.ReadU8();
+		m_junctionId = i.ReadU64();
 
 		return  GetSerializedSize  ();
 	}
@@ -215,7 +248,9 @@ namespace ns3 {
 			<< "m_type " << m_maxRange << " "
 			<< "m_slot " << m_slot << " "
 			<< "m_phase " << m_phase << " "
-			<< "m senderId " << m_senderId << std::endl;
+			<< "m senderId " << m_senderId <<  " "
+			<< "m_senderInJunction " << m_senderInJunction << " "
+			<< "m_junctionId " << m_junctionId << std::endl;
 	}
 
 } // namespace ns3

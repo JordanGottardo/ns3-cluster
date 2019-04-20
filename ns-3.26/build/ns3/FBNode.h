@@ -114,6 +114,16 @@ public:
 	bool AmIaVehicle (void) const;
 
 	/**
+	 * \returns true if the node is inside an junction
+	 */
+	bool AmIInJunction (void) const;
+
+	/**
+	 * \returns the id of the junction the node is in
+	 */
+	uint64_t GetJunctionId  (void) const;
+
+	/**
 	 * \brief set the node id
 	 * \param value id
 	 */
@@ -209,6 +219,18 @@ public:
 	 */
 	void SetMeAsVehicle (bool value);
 
+	/**
+	 * \brief set the node in junction
+	 * \param value true if the node is in an junction
+	 */
+	void SetMeInJunction (bool value);
+
+	/**
+	 * \brief set the id of the junction the node is in
+	 * \param JunctionId id of the junction the node is in
+	 */
+	void SetJunctionId (uint64_t junctionId);
+
 	uint32_t								m_id;	// node id
 	Ptr<Node>								m_node;	// ns-3 node
 	Ptr<Socket> 							m_socket; // ns-3 socket
@@ -224,6 +246,8 @@ public:
 	bool 									m_sent;	// legacy with barichello's code
 	Time									m_timestamp;	// used for statistics
 	bool									m_amIaVehicle;	// used for statistics
+	bool									m_amIInJunction; // whether the node is inside a junction
+	uint64_t								m_junctionId; // id of the junction where the node is
 };
 
 } // namespace ns3

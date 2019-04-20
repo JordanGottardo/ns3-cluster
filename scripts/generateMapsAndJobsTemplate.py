@@ -27,6 +27,7 @@ def runScenario(cw, scenario, distance, startingNode, area=1000):
 	# Protocols and transmission ranges
 	buildings = ["0", "1"]
 	#buildings = ["1"]
+	junctions = ["0", "1"]
 	protocols = ["1", "2", "3", "4", "5"]
 	txRanges = ["100", "300", "500"]
 	#txRanges = ["300", "500"]
@@ -83,41 +84,33 @@ def runScenario(cw, scenario, distance, startingNode, area=1000):
 	for b in buildings:
 		for txRange in txRanges:
 			for protocol in protocols:
-				protocolName = protocolsMap[protocol]
-				#Removes creation of jobs where static protocol and txRange are different (e.g. STATIC100 with 500 tx range) only for distance != 25
-				#if ( (distance != "25" and len(protocolName) > 3 and protocolName[-3:] != txRange)
-				#	or
-				#	(cwMin == 16 and len(protocolName) > 3 and protocolName[-3:] != txRange)
-				#   ):
-					#print(protocolName)
-					#print(protocolName[-3:])
-					#print(txRange)
-				#	continue
-				executablePath = None
-				propagationLossBool = "Grid" in scenario
-				propagationLoss = None
-				if (propagationLossBool is True):
-					propagationLoss = 1
-				else:
-					propagationLoss = 1
-				if (protocol == "5"): #ROFF
-					command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings={0} --actualRange={1} --mapBasePath={2} --vehicleDistance={3} --startingNode={4} --propagationLoss={5} --area={6} --printToFile=1 --printCoords=1  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1".format(b, txRange, mapPathWithoutExtension, distance, startingNode, propagationLoss, area)
-				else: 
-					executablePath = "/home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban"
-					command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --mapBasePath={2} --cwMin={3} --cwMax={4} --vehicleDistance={5} --startingNode={6} --propagationLoss={7} --protocol={8} --area={9} --flooding=0  --printToFile=1 --printCoords=1 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1".format(b, txRange, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss, protocol, area)
-				newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-" + protocolsMap[protocol] + "-" + txRange
-				newJobFilename = newJobName + "-.job"
-				newJobPath = os.path.join(jobsPath, newJobFilename)
-				#print(command)
-				#print(fileName)
-				shutil.copy(jobTemplatePath, jobsPath)
-				os.rename(tempNewJobPath, newJobPath)
-				s = open(newJobPath).read()
-				s = s.replace("{**jobName}", newJobName)
-				s = s.replace("{**command}", command)
-				f = open(newJobPath, "w")
-				f.write(s)
-				f.close()
+				for junction in junctions:
+					protocolName = protocolsMap[protocol]
+					executablePath = None
+					propagationLossBool = "Grid" in scenario
+					propagationLoss = None
+					if (propagationLossBool is True):
+						propagationLoss = 1
+					else:
+						propagationLoss = 1
+					if (protocol == "5"): #ROFF
+						command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings={0} --actualRange={1} --mapBasePath={2} --vehicleDistance={3} --startingNode={4} --propagationLoss={5} --area={6} --printToFile=1 --printCoords=1  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1".format(b, txRange, mapPathWithoutExtension, distance, startingNode, propagationLoss, area)
+					else: 
+						executablePath = "/home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban"
+						command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --mapBasePath={2} --cwMin={3} --cwMax={4} --vehicleDistance={5} --startingNode={6} --propagationLoss={7} --protocol={8} --area={9} --smartJunctionMode={10} --flooding=0  --printToFile=1 --printCoords=1 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1".format(b, txRange, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss, protocol, area, junction)
+					newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-" + junction + "-" + protocolsMap[protocol] + "-" + txRange
+					newJobFilename = newJobName + "-.job"
+					newJobPath = os.path.join(jobsPath, newJobFilename)
+					#print(command)
+					#print(fileName)
+					shutil.copy(jobTemplatePath, jobsPath)
+					os.rename(tempNewJobPath, newJobPath)
+					s = open(newJobPath).read()
+					s = s.replace("{**jobName}", newJobName)
+					s = s.replace("{**command}", command)
+					f = open(newJobPath, "w")
+					f.write(s)
+					f.close()
 
 					#print(command)
 
@@ -131,7 +124,7 @@ def runScenario(cw, scenario, distance, startingNode, area=1000):
 def main():
 	#Edit these to launch automatically 
 	#scenarios = ["Padova", "LA", "Grid-200", "Grid-300", "Grid-400"]
-	scenarios = ["Grid-200"]
+	scenarios = ["Padova"]
 	contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
 	#distances = ["15", "25", "35", "45"]
 	distances = ["25"]

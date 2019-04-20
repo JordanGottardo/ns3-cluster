@@ -82,9 +82,12 @@ public:
 	 * \param source source socket of the node
 	 * \param sink sink socket of the node
 	 * \param onstats if this node is a vehicle
+	 * \param isNodeinIntersection if this node is inside an intersection
+	 * \param intersectionId id of the intersection the node is inside, 0 if none
 	 * \return none
 	 */
-	void AddNode (Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink, bool onstats);
+	void AddNode (Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink, bool onstats,
+			bool isNodeInJunction, uint64_t junctionId = 0);
 
 	/**
 	 * \brief Print value of some useful field

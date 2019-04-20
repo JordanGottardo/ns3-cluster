@@ -130,7 +130,7 @@ void FBApplication::LogCollision(std::string context, Ptr<const Packet> p) {
 }
 
 void FBApplication::AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink, bool onstats,
-		bool isNodeinIntersection, uint32_t intersectionId) {
+		bool isNodeInJunction, uint64_t junctionId) {
 	NS_LOG_FUNCTION(this << node);
 
 	Ptr<FBNode> fbNode = CreateObject<FBNode>();
@@ -151,8 +151,11 @@ void FBApplication::AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink
 	fbNode->SetMeAsVehicle(onstats);
 
 
-	fbNode->SetMeInIntersection(isNodeinIntersection);
-	fbNode->SetIntersectionId(intersectionId);
+	fbNode->SetMeInJunction(isNodeInJunction);
+	fbNode->SetJunctionId(junctionId);
+//	if (fbNode->AmIInIntersection()) {
+//		cout << "node " << fbNode->GetId() << " is inside intersection " << fbNode->GetIntersectionId() << endl;
+//	}
 
 	// misc stuff
 	m_nodes.push_back (fbNode);
@@ -247,7 +250,10 @@ void FBApplication::PrintStats(std::stringstream &dataStream) {
 //			<< (slots_sum / (double) circ) << ","
 			<< m_sent << ","
 			<< m_received;
-	NS_LOG_DEBUG("totalCoverage= " << cover);
+	NS_LOG_DEBUG("totalCoverage= " << cover << "/" << m_nNodes);
+	cout << "totalCoverage= " << cover << "/" << m_nNodes << endl;
+	cout << "m_sent=" << m_sent << endl;
+
 //	cout << "hopssum= " << hops_sum << " circ= "  << circ << " hops= " << (hops_sum / (double) circ) << endl;
 
 	if (m_printCoords) {
@@ -360,6 +366,9 @@ void FBApplication::GenerateHelloMessage (Ptr<FBNode> fbNode) {
 
 	fbHeader.SetSenderId(fbNode->GetId()); // added
 
+	fbHeader.SetSenderInJunction(false);
+	fbHeader.SetJunctionId(0);
+
 
 	Ptr<Packet> packet = Create<Packet> (m_packetPayload);
 	packet->AddHeader(fbHeader);
@@ -387,7 +396,9 @@ void FBApplication::GenerateAlertMessage(Ptr<FBNode> fbNode) {
 	fbHeader.SetPhase(0);
 	fbHeader.SetSlot(0);
 
-	fbHeader.SetSenderId(fbNode->GetId()); // added
+	fbHeader.SetSenderId(fbNode->GetId());
+	fbHeader.SetSenderInJunction(fbNode->AmIInJunction());
+	fbHeader.SetJunctionId(fbNode->GetJunctionId());
 
 	Ptr<Packet> packet = Create<Packet>(m_packetPayload);
 	packet->AddHeader(fbHeader);
@@ -529,24 +540,32 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 	double distanceSenderToStarter = ns3::CalculateDistance(senderPosition, starterPosition);
 	double distanceCurrentToStarter = ns3::CalculateDistance(currentPosition, starterPosition);
 
-	if (fbNode->GetPhase() < phase && (distanceSenderToStarter > distanceCurrentToStarter)) {
-//		cout << "già ricevuto e aggiorno phase da " << fbNode->GetPhase() << " a " << phase << endl;
-		fbNode->SetPhase(phase);
+	// Message coming from the back
+
+	if (fbNode->AmIInJunction()) {
+		//I am in a junction and I receive a message from the same junction -> I have to defer transmission
+		if (fbHeader.IsSenderInJunction() && fbNode->GetJunctionId() == fbHeader.GetJunctionId()) {
+			if (phase > fbNode->GetPhase()) {
+				fbNode->SetPhase(phase);
+			}
+		}
 	}
-//
-//	// message coming from the front
-//	if ((distanceCurrentToStarter < distanceSenderToStarter) && (fbNode->GetPhase() < phase)) {
-//
-//	}
+	else {
+		// I am not in a junction and I receive a message from a node farther than me -> I have to defer tranmission
+		if ((phase > fbNode->GetPhase()) && (distanceSenderToStarter > distanceCurrentToStarter)) {
+			fbNode->SetPhase(phase);
+		}
+	}
+
+
+
 
 	if (!fbNode->GetReceived() ) {
-
 		fbNode->SetReceived(true);
 		fbNode->SetTimestamp(Simulator::Now());
 		fbNode->SetSlot(fbHeader.GetSlot());
 		fbNode->SetHop(phase + 1);
 		fbNode->SetPhase(phase);
-	//		cout <<  "phase= " << phase << " fbNode after setHop= " << fbNode->GetHop() << endl;
 		m_received++;
 		// save transmission for stats and metrics
 		m_receivedNodes.push_back(receiverId);
@@ -614,7 +633,7 @@ void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader
 		NS_LOG_DEBUG("node " << fbNode->GetId() << " defers because of GetSent");
 		return;
 	}
-	// If I'm the first to wake up, I must forward the message
+	// If I'm not the first to wake up, I must not forward the message
 	if (!m_flooding && fbNode->GetPhase() > phase) {
 		NS_LOG_DEBUG("node " << fbNode->GetId() << " defers because of phase");
 		return;
@@ -640,6 +659,9 @@ void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader
 	fbHeader.SetPhase(phase + 1);
 	fbHeader.SetSlot(fbNode->GetSlot() + waitingTime);
 	fbHeader.SetSenderId(fbNode->GetId());
+	fbHeader.SetSenderInJunction(fbNode->AmIInJunction());
+	fbHeader.SetJunctionId(fbNode->GetJunctionId());
+
 //		cout << "forward alert message senderId = " << fbNode->GetId() << endl;
 
 	Ptr<Packet> packet = Create<Packet>(m_packetPayload);

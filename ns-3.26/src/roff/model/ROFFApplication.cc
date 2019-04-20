@@ -131,6 +131,7 @@ void ROFFApplication::PrintStats(std::stringstream& dataStream) {
 //			<< m_nodes[m_nodes.size() - 1]->GetSlot() << ","
 			<< m_sent << ","
 			<< m_received;
+	cout << "totalCoverage= " << cover << "/" << m_nNodes << endl;
 	cout << "m_sent=" << m_sent << endl;
 	if (m_printCoords) {
 		 Ptr<ROFFNode> startingNode = m_nodes.at(m_startingNode);

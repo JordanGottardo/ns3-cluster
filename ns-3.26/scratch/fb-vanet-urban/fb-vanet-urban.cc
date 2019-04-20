@@ -425,6 +425,12 @@ private:
 	unsigned int CalculateNumNodes() const;
 
 	/**
+	* \brief Loads .junction file in m_nodeIdToJunctionIdMap
+	* \return none
+	*/
+	void LoadJunctionsMap();
+
+	/**
    * \brief Prints actual position and velocity when a course change event occurs
    * \return none
    */
@@ -457,6 +463,7 @@ private:
 	uint32_t								m_cwMax;
 	string									m_traceFile;
 	string									m_bldgFile;
+	string									m_junctionFile;
 	string									m_mapBasePath;
 	string									m_mapBaseName;
 	double									m_TotalSimTime;
@@ -465,6 +472,8 @@ private:
 	uint32_t								m_createObstacleShadowingLossFile;
 	uint32_t								m_useObstacleShadowingLossFile;
 	uint32_t								m_propagationLoss;
+	uint32_t								m_smartJunctionMode;
+	std::map<uint32_t, uint64_t>			m_nodeIdToJunctionIdMap;
 
 
 };
@@ -494,12 +503,14 @@ FBVanetExperiment::FBVanetExperiment ()
 		m_cwMax(1024),
 		m_traceFile(""),
 		m_bldgFile(""),
+		m_junctionFile(""),
 		m_TotalSimTime(30),
 		m_printToFile(1),
 		m_printCoords(0),
 		m_createObstacleShadowingLossFile(0),
 		m_useObstacleShadowingLossFile(0),
-		m_propagationLoss(1) {
+		m_propagationLoss(1),
+		m_smartJunctionMode(0) {
 	srand (time (0));
 
 	RngSeedManager::SetSeed (time (0));
@@ -559,6 +570,7 @@ const std::string FBVanetExperiment::CalculateOutFilePath() const {
 	std::string buildings = std::to_string(m_loadBuildings);
 	std::string protocol = "";
 	std::string actualRange = std::to_string(m_actualRange);
+	std::string junctions = std::to_string(m_smartJunctionMode);
 
 	if (m_staticProtocol == PROTOCOL_FB) {
 //		protocol = "Fast-Broadcast[" + std::to_string(m_cwMin) + "-" + std::to_string(m_cwMax) + "]";
@@ -580,9 +592,9 @@ const std::string FBVanetExperiment::CalculateOutFilePath() const {
 	int dotPos =scenarioName.find(".");
 	scenarioName = scenarioName.substr(0, dotPos);
 
-	fileName.append(scenarioName + "/" + "b" + buildings + "/r" + actualRange + "/" + "cw[" + std::to_string(m_cwMin) +
-			"-" + std::to_string(m_cwMax) + "]/" + protocol + "/" +
-			scenarioName + "-b" + buildings + "-r" + actualRange + "-" + protocol);
+	fileName.append(scenarioName + "/" + "b" + buildings + "/r" + actualRange +  "/j" + junctions
+			+ "/" + "cw[" + std::to_string(m_cwMin) + "-" + std::to_string(m_cwMax) + "]/" + protocol + "/" +
+			scenarioName + "-b" + buildings + "-r" + actualRange + "-" + junctions + "-" + protocol);
 	cout << "fileName=" << fileName << endl;
 //	fileName.append("cw-" + cwMin + "-" + cwMax + "/" + m_mapBaseNameWithoutDistance + "/d" + vehicleDistance + "/b" + buildings
 //			+ "/" + protocol + "-" + actualRange + "/" + m_mapBaseName + "-cw-" + cwMin + "-" + cwMax + "-b"
@@ -782,7 +794,19 @@ void FBVanetExperiment::ConfigureFBApplication () {
 	// Add nodes to the application
 	for (uint32_t i = 0; i < m_nNodes; i++)
 	{
-		m_fbApplication->AddNode (m_adhocNodes.Get (i), m_adhocSources.at (i), m_adhocSinks.at (i), true); //todo aggiungere intersection
+		uint64_t junctionId = 0;
+		bool nodeInsideJunction = false;
+
+		if (m_smartJunctionMode) {
+			if (m_nodeIdToJunctionIdMap.count(i) != 0) {
+				nodeInsideJunction = true;
+				junctionId = m_nodeIdToJunctionIdMap.at(i);
+			}
+		}
+
+//		bool nodeInsideJunction = isNodeInsideJunction(junctionId);
+		m_fbApplication->AddNode (m_adhocNodes.Get (i), m_adhocSources.at (i), m_adhocSinks.at (i), true,
+				nodeInsideJunction, junctionId);
 	}
 
 	// Add the application to a node
@@ -815,6 +839,7 @@ void FBVanetExperiment::CommandSetup (int argc, char *argv[]) {
 	cmd.AddValue ("buildings", "Load building (obstacles)", m_loadBuildings);
 	cmd.AddValue ("poly", "Buildings trace file (poly format)", m_bldgFile);
 	cmd.AddValue ("trace", "Vehicles trace file (ns2mobility format)", m_traceFile);
+	cmd.AddValue ("junctions", "Junction file", m_junctionFile);
 	cmd.AddValue ("totalTime", "Simulation end time", m_TotalSimTime);
 	cmd.AddValue ("cwMin", "Minimum contention window", m_cwMin);
 	cmd.AddValue ("cwMax", "Maximum contention window", m_cwMax);
@@ -828,7 +853,7 @@ void FBVanetExperiment::CommandSetup (int argc, char *argv[]) {
 	cmd.AddValue ("useObstacleShadowingLossFile", "Use optimization based on file which saves obstacle losses *dBm) "
 			"keyed by senderCoord, receiverCoord:  0 don't use it, 1 use it ", m_useObstacleShadowingLossFile);
 	cmd.AddValue("propagationLoss", "Type of propagation loss model: 0=RangePropagation, 1=TwoRayGround", m_propagationLoss);
-
+	cmd.AddValue("smartJunctionMode", "Whether to activate smart junction mode: 0=disabled, 1=enabled", m_smartJunctionMode);
 
 	cmd.Parse (argc, argv);
 }
@@ -849,6 +874,10 @@ void FBVanetExperiment::SetupScenario () {
 		m_traceFile = m_mapBasePath + ".ns2mobility.xml";
 	}
 
+	if (m_junctionFile.empty()) {
+		m_junctionFile = m_mapBasePath + ".junctions";
+	}
+
 	m_nNodes = CalculateNumNodes();
 	cout << "numNodes = " << m_nNodes << endl;
 	if (m_startingNode == -1) {
@@ -861,6 +890,10 @@ void FBVanetExperiment::SetupScenario () {
 	{
 		NS_LOG_INFO ("Loading buildings file \"" << m_bldgFile << "\".");
 		Topology::LoadBuildings(m_bldgFile, m_createObstacleShadowingLossFile, m_useObstacleShadowingLossFile, m_mapBasePath);
+	}
+
+	if (m_smartJunctionMode) {
+		LoadJunctionsMap();
 	}
 }
 
@@ -945,6 +978,30 @@ FBVanetExperiment::SetupPacketSend (Ipv4Address addr, Ptr<Node> node)
 	return sender;
 }
 
+void
+FBVanetExperiment::LoadJunctionsMap() {
+	NS_LOG_FUNCTION (this);
+	ifstream junctionFile;
+	cout << m_junctionFile << endl;
+	junctionFile.open(m_junctionFile, ios::in);
+	if (!junctionFile.is_open()) {
+		NS_LOG_ERROR("Could not open junctionFile");
+	}
+	string line;
+	while(getline(junctionFile, line)) {
+		vector<string> strings;
+		boost::split(strings, line, boost::is_any_of(" "));
+		if (strings.size() == 2) {
+			uint32_t nodeId = stoi(strings.at(0));
+			uint64_t junctionId = stol(strings.at(1));
+			m_nodeIdToJunctionIdMap[nodeId] = junctionId;
+		}
+	}
+//	cout << m_nodeIdToJunctionIdMap.size() << endl;
+//	for (auto pair: m_nodeIdToJunctionIdMap) {
+//		cout << "nodeId= " << pair.first << " intId= " << pair.second << endl;
+//	}
+}
 
 /* -----------------------------------------------------------------------------
 *			MAIN

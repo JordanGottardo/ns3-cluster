@@ -1,9 +1,12 @@
 #!/usr/bin/python
 """
-@file    fixedPositions.py
+@file    junctions.py
 @author  Jordan Gottardo [jordan.gottardo@studenti.unipd.it]
 @date    2019-04-19
 """
+
+#example
+# ./junctions.py ns2MobilityFilePath netFilePath
 
 from __future__ import print_function
 from __future__ import absolute_import

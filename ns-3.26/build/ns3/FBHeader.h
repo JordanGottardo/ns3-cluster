@@ -87,6 +87,20 @@ public:
 	void SetSenderId(uint32_t value);
 
 	/**
+	 * \brief set the sender inside a junction
+	 * \param value whether the sender is in a junction
+	 */
+	void SetSenderInJunction (uint8_t value);
+
+	/**
+	 * \brief set the id of the junction the sender is in
+	 * \param junctionId the id of the junction the sender is in
+	 */
+	void SetJunctionId (uint64_t junctionId);
+
+
+
+	/**
 	 * \returns the spatial location (gps) of the sender
 	 */
 	Vector GetPosition (void) const;
@@ -120,6 +134,16 @@ public:
 	 * \returns the senderId of the message
 	 */
 	uint32_t GetSenderId(void) const;
+
+	/**
+	 * \returns whether the header has been sent by a node inside a junction
+	 */
+	uint8_t IsSenderInJunction(void) const;
+
+	/**
+	 * \returns whether the id of the junction the sender is in
+	 */
+	uint64_t GetJunctionId(void) const;
 
 	/**
    * Get the most derived TypeId for this Object.
@@ -196,7 +220,9 @@ private:
 	uint32_t			m_slot;
 	uint32_t			m_phase;
 
-	uint32_t			m_senderId; //added
+	uint32_t			m_senderId;
+	uint8_t				m_senderInJunction;
+	uint64_t			m_junctionId;
 };
 
 } // namespace ns3
