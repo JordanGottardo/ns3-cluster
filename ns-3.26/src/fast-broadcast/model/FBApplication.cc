@@ -252,7 +252,10 @@ void FBApplication::PrintStats(std::stringstream &dataStream) {
 			<< m_received;
 	NS_LOG_DEBUG("totalCoverage= " << cover << "/" << m_nNodes);
 	cout << "totalCoverage= " << cover << "/" << m_nNodes << endl;
+	cout << "coverageOnCirc= " << circ << "/" << circCont << endl;
 	cout << "m_sent=" << m_sent << endl;
+	cout << "hops= " << (hops_sum / (double) circ) << endl;
+	cout << "slots= " << (slots_sum / (double) circ) << endl;
 
 //	cout << "hopssum= " << hops_sum << " circ= "  << circ << " hops= " << (hops_sum / (double) circ) << endl;
 

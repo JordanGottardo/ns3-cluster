@@ -133,7 +133,10 @@ void ROFFApplication::PrintStats(std::stringstream& dataStream) {
 			<< m_sent << ","
 			<< m_received;
 	cout << "totalCoverage= " << cover << "/" << m_nodes.size() << endl;
+	cout << "coverageOnCirc= " << circ << "/" << circCont << endl;
 	cout << "m_sent=" << m_sent << endl;
+	cout << "hops= " << (hops_sum / (double) circ) << endl;
+	cout << "slots= " << (slots_sum / (double) circ) << endl;
 	if (m_printCoords) {
 		 Ptr<ROFFNode> startingNode = m_nodes.at(m_startingNode);
 		 string transmissionVector = StringifyVector(m_transmissionVector);
@@ -188,7 +191,7 @@ void ROFFApplication::GenerateHelloMessage(Ptr<ROFFNode> node) {
 	uint32_t nodeId = node->GetId();
 	Vector position = node->UpdatePosition();
 
-	ROFFHeader header(headerType, nodeId, position, boost::dynamic_bitset<>(), 0, 0);
+	ROFFHeader header(headerType, position, nodeId, position, boost::dynamic_bitset<>(), 0, 0);
 
 	Ptr<Packet> packet = Create<Packet>(m_packetPayload);
 	packet->AddHeader(header);
@@ -210,7 +213,7 @@ void ROFFApplication::GenerateAlertMessage(Ptr<ROFFNode> node) {
 	boost::dynamic_bitset<> esdBitmap = node->GetESDBitmap(m_distanceRange);
 //	cout << "ROFFApplication::GenerateAlertMessage esdBitmap = " << esdBitmap << " size= " <<
 //			esdBitmap.size() << endl;
-	ROFFHeader header(headerType, nodeId, position, esdBitmap, 0, 0, node->AmIInJunction(), node->GetJunctionId());
+	ROFFHeader header(headerType, position, nodeId, position, esdBitmap, 0, 0, node->AmIInJunction(), node->GetJunctionId());
 
 	Ptr<Packet> packet = Create<Packet>(m_packetPayload);
 //	cout << "add " << node->GetPosition() << endl;
@@ -278,6 +281,14 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 	int32_t phase = header.GetPhase();
 	uint32_t senderId = header.GetSenderId();
 	uint32_t receiverId = node->GetId();
+	Vector currentPosition = node->UpdatePosition();
+	Vector senderPosition = header.GetPosition();
+	Vector starterPosition = header.GetStarterPosition();
+
+	double distanceSenderToStarter = ns3::CalculateDistance(senderPosition, starterPosition);
+	double distanceCurrentToStarter = ns3::CalculateDistance(currentPosition, starterPosition);
+
+
 	if (node->AmIInJunction()) {
 		NS_LOG_DEBUG("node " << node->GetId() << "is inside a junction and has received an alert message");
 		if (header.IsSenderInJunction() && node->GetJunctionId() == header.GetJunctionId()) {
@@ -288,15 +299,15 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 		}
 	}
 	else {
-		if (phase > node->GetPhase()) {
+		if (phase > node->GetPhase() && (distanceSenderToStarter > distanceCurrentToStarter)) {
 			NS_LOG_DEBUG("node " << node->GetId() << "is not inside a junction: updates phase from " << node->GetPhase() << " to " << phase);
 			node->SetPhase(phase);
 		}
 	}
 
-	if (node->GetReceived()) {
-		return;
-	}
+//	if (node->GetReceived()) {
+//		return;
+//	}
 	if (!node->GetReceived()) {
 		node->SetReceived(true);
 		node->SetTimestamp(Simulator::Now());
@@ -320,9 +331,7 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 	boost::dynamic_bitset<> esdBitmap =  header.GetESDBitmap();
 	uint32_t esdBitmapSize = esdBitmap.size();
 //	NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage Received bitmap in alert= " << esdBitmap);
-	Vector currentPosition = node->UpdatePosition();
-	// Get the position of the sender node
-	Vector senderPosition = header.GetPosition();
+
 	uint32_t dist = rint(ns3::CalculateDistance(senderPosition, currentPosition));
 //	NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage dist= " << dist);
 	uint32_t posOfDist = dist / m_distanceRange;
@@ -331,27 +340,31 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 //	cout << "ROFFHeader::HandleAlertMessage dist= " << dist << " posOfDist= " << posOfDist <<
 //				" posToCheck= " << posToCheck << endl;
 //	cout << esdBitmapSize << " " << posOfDist << " " << posToCheck << endl;;
-	if ( posToCheck >= esdBitmapSize || esdBitmap[posToCheck] == 0) {
-		NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage Node " << node->GetId()
-				<< " won't participate in contention: not present in esd bitmap");
-		return;
-	}
-	if (!node->IsNodeWinnerInContention(dist, senderPosition)) {
-		NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage Node " << node->GetId()
-				<< " won't participate in contention: it has lost the contention");
-		return;
-	}
-	PositionRankingMap rankingOfPositions = PositionRankingMap(m_distanceRange, esdBitmap);
-//	cout << "ROFFHeader::HandleAlertMessage " << rankingOfPositions << endl;
-	uint32_t priority = rankingOfPositions.GetPriority(dist);
-//	cout << "ROFFHeader::HandleAlertMessage priority= " << priority << endl;
-//	uint32_t waitingTime = ComputeWaitingTime(node, dist, rankingOfPositions, priority);
 
-	uint32_t waitingTime = ComputeWaitingTimeArmir(node, senderPosition, rankingOfPositions, priority);
-//	cout << "ROFFApplication::HandleAlertMessage waitingTime= " << waitingTime << endl << endl << endl;
-	Simulator::Schedule(MilliSeconds(waitingTime), &ROFFApplication::ForwardAlertMessage,
-			this, node, header, waitingTime);
-//	node->SetScheduled(true);
+	if (distanceCurrentToStarter > distanceSenderToStarter) {
+
+		if ( posToCheck >= esdBitmapSize || esdBitmap[posToCheck] == 0) {
+			NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage Node " << node->GetId()
+					<< " won't participate in contention: not present in esd bitmap");
+			return;
+		}
+		if (!node->IsNodeWinnerInContention(dist, senderPosition)) {
+			NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage Node " << node->GetId()
+					<< " won't participate in contention: it has lost the contention");
+			return;
+		}
+		PositionRankingMap rankingOfPositions = PositionRankingMap(m_distanceRange, esdBitmap);
+	//	cout << "ROFFHeader::HandleAlertMessage " << rankingOfPositions << endl;
+		uint32_t priority = rankingOfPositions.GetPriority(dist);
+	//	cout << "ROFFHeader::HandleAlertMessage priority= " << priority << endl;
+	//	uint32_t waitingTime = ComputeWaitingTime(node, dist, rankingOfPositions, priority);
+
+		uint32_t waitingTime = ComputeWaitingTimeArmir(node, senderPosition, rankingOfPositions, priority);
+	//	cout << "ROFFApplication::HandleAlertMessage waitingTime= " << waitingTime << endl << endl << endl;
+		Simulator::Schedule(MilliSeconds(waitingTime), &ROFFApplication::ForwardAlertMessage,
+				this, node, header, waitingTime);
+	//	node->SetScheduled(true);
+	}
 }
 
 void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHeader, uint32_t waitingTime) {
@@ -374,9 +387,10 @@ void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHead
 	uint32_t forwarderId = node->GetId();
 	uint32_t slot = oldHeader.GetSlot();
 	Vector forwarderPosition = node->UpdatePosition();
+	Vector starterPosition = oldHeader.GetStarterPosition();
 	boost::dynamic_bitset<> esdBitmap = node->GetESDBitmap(m_distanceRange);
 
-	ROFFHeader header(headerType, forwarderId, forwarderPosition, esdBitmap, phase + 1, slot + waitingTime);
+	ROFFHeader header(headerType, forwarderPosition, forwarderId, starterPosition, esdBitmap, phase + 1, slot + waitingTime);
 
 	Ptr<Packet> packet = Create<Packet>(m_packetPayload);
 	packet->AddHeader(header);

@@ -32,7 +32,7 @@ public:
 //	Constructor
 	ROFFHeader();
 
-	ROFFHeader(uint32_t type, uint32_t sender, Vector position,
+	ROFFHeader(uint32_t type,  Vector position, uint32_t sender,  Vector starterPosition,
 			   boost::dynamic_bitset<> esdBitmap, uint32_t phase = 0,
 			   uint32_t slot = 0, uint8_t senderInJunction = 0, uint64_t junctionId = 0);
 
@@ -40,6 +40,8 @@ public:
 	const Vector& GetPosition() const;
 
 	uint32_t GetType() const;
+
+	Vector GetStarterPosition() const;
 
 	uint32_t GetSenderId() const;
 
@@ -64,6 +66,8 @@ public:
 	void SetType(uint32_t type);
 
 	void SetSenderId(uint32_t senderId);
+
+	void SetStarterPosition(const Vector& position);
 
 	void SetPosition(const Vector& position);
 
@@ -112,12 +116,14 @@ private:
 
 	//	============== Generic data ================
 	uint32_t							m_type;
+	Vector								m_position;
 
 	//	============== Hello message data ================
 	uint32_t							m_senderId;
-	Vector								m_position;
+
 
 	//	============== Alert message data ================
+	Vector 								m_starterPosition;
 	uint32_t							m_phase;
 	uint32_t							m_slot;
 	uint8_t								m_senderInJunction;
