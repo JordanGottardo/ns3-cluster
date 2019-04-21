@@ -12,12 +12,14 @@ namespace ns3 {
 
 	NS_OBJECT_ENSURE_REGISTERED(ROFFNode);
 
-	ROFFNode::ROFFNode(): m_received(false), m_sent(false), m_scheduled(false), m_phase(0), m_slot(0), m_hop(0) {
+	ROFFNode::ROFFNode(): m_received(false), m_sent(false), m_scheduled(false),
+			m_phase(0), m_slot(0), m_hop(0), m_amIInJunction(false), m_junctionId(0) {
 		NS_LOG_FUNCTION(this);
 	}
 
-	ROFFNode::ROFFNode(Ptr<Node> node, Ptr<Socket> socket): m_node(node), m_socket(socket), m_neighborTable(),
-			m_received(false), m_sent(false), m_scheduled(false), m_phase(-1), m_slot(0), m_hop(0) {
+	ROFFNode::ROFFNode(Ptr<Node> node, Ptr<Socket> socket, bool isNodeInJunction, uint64_t junctionId):
+			m_node(node), m_socket(socket), m_amIInJunction(isNodeInJunction), m_junctionId(junctionId),
+			m_neighborTable(), m_received(false), m_sent(false), m_scheduled(false), m_phase(-1), m_slot(0), m_hop(0) {
 		NS_LOG_FUNCTION(this);
 	}
 
@@ -66,6 +68,16 @@ namespace ns3 {
 		return m_timestamp;
 	}
 
+	bool ROFFNode::AmIInJunction() const {
+		NS_LOG_FUNCTION (this);
+		return m_amIInJunction;
+	}
+
+	uint64_t ROFFNode::GetJunctionId() const {
+		NS_LOG_FUNCTION (this);
+		return m_junctionId;
+	}
+
 //	void ROFFNode::SetPosition(const Vector& position) {
 //		m_position = position;
 //	}
@@ -107,6 +119,16 @@ namespace ns3 {
 
 	void ROFFNode::SetTimestamp(Time timestamp) {
 		m_timestamp = timestamp;
+	}
+
+	void ROFFNode::SetMeInJunction (bool value) {
+		NS_LOG_FUNCTION (this << value);
+		m_amIInJunction = value;
+	}
+
+	void ROFFNode::SetJunctionId (uint64_t junctionId) {
+		NS_LOG_FUNCTION (this << junctionId);
+		m_junctionId = junctionId;
 	}
 
 

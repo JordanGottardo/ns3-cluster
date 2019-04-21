@@ -64,7 +64,8 @@ public:
 	* \param onstats if this node is a vehicle
 	* \return none
 	*/
-	void AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink);
+	void AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink,
+			bool isNodeInJunction, uint64_t junctionId = 0);
 
 	/**
 	* \brief Print value of some useful field

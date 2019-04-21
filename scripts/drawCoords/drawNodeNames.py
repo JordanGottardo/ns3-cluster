@@ -17,8 +17,8 @@ import xml.etree.ElementTree as ET
 import coordUtils as coordUtils
 
 
-ns2MobilityFile = "../../maps/Padova/Padova-25.ns2mobility.xml"
-polyFilePath = "../../maps/Padova/Padova-25.poly.xml"
+ns2MobilityFile = "../../maps/Padova-25/Padova-25.ns2mobility.xml"
+polyFilePath = "../../maps/Padova-25/Padova-25.poly.xml"
 plt.rcParams["figure.figsize"] = [10, 10]
 circRadius = 1000
 baseFolder = "../../ns-3.26/out/scenario-urbano-con-coord/cw-32-1024/Padova/d25/"

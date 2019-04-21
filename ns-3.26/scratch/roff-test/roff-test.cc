@@ -422,6 +422,12 @@ private:
 	unsigned int CalculateNumNodes() const;
 
 	/**
+	* \brief Loads .junction file in m_nodeIdToJunctionIdMap
+	* \return none
+	*/
+	void LoadJunctionsMap();
+
+	/**
    * \brief Prints actual position and velocity when a course change event occurs
    * \return none
    */
@@ -452,6 +458,7 @@ private:
 //	uint32_t								m_cwMax;
 	string									m_traceFile;
 	string									m_bldgFile;
+	string									m_junctionFile;
 	string									m_mapBasePath;
 	string									m_mapBaseName;
 	double									m_TotalSimTime;
@@ -462,6 +469,8 @@ private:
 	uint32_t								m_beaconInterval;
 	uint32_t								m_distanceRange;
 	uint32_t								m_propagationLoss;
+	uint32_t								m_smartJunctionMode;
+	std::map<uint32_t, uint64_t>			m_nodeIdToJunctionIdMap;
 
 };
 
@@ -490,6 +499,7 @@ ROFFVanetExperiment::ROFFVanetExperiment():
 //		m_cwMax(1024),
 		m_traceFile(""),
 		m_bldgFile(""),
+		m_junctionFile(""),
 		m_TotalSimTime(30),
 		m_printToFile(1),
 		m_printCoords(0),
@@ -497,7 +507,8 @@ ROFFVanetExperiment::ROFFVanetExperiment():
 		m_useObstacleShadowingLossFile(0),
 		m_beaconInterval(100),
 		m_distanceRange(1),
-		m_propagationLoss(1) {
+		m_propagationLoss(1),
+		m_smartJunctionMode(0) {
 	srand(time(0));
 
 	RngSeedManager::SetSeed(time(0));
@@ -552,6 +563,7 @@ const std::string ROFFVanetExperiment::CalculateOutFilePath() const {
 	std::string buildings = std::to_string(m_loadBuildings);
 	std::string protocol = "ROFF";
 	std::string actualRange = std::to_string(m_actualRange);
+	std::string junctions = std::to_string(m_smartJunctionMode);
 
 //	if (m_staticProtocol == PROTOCOL_FB) {
 //		protocol = "fb";
@@ -572,8 +584,8 @@ const std::string ROFFVanetExperiment::CalculateOutFilePath() const {
 	scenarioName = scenarioName.substr(0, dotPos);
 
 
-	fileName.append(scenarioName + "/" + "b" + buildings + "/r" + actualRange + "/" + protocol + "/" +
-			scenarioName + "-b" + buildings + "-r" + actualRange + "-" + protocol);
+	fileName.append(scenarioName + "/" + "b" + buildings + "/r" + actualRange +  "/j" + junctions + "/" + protocol + "/" +
+			scenarioName + "-b" + buildings + "-r" + actualRange + "-" + junctions + "-" + protocol);
 	cout << fileName << endl;
 //	fileName.append("cw-" + cwMin + "-" + cwMax + "/" + m_mapBaseNameWithoutDistance + "/d" + vehicleDistance + "/b" + buildings
 //			+ "/" + protocol + "-" + actualRange + "/" + m_mapBaseName + "-cw-" + cwMin + "-" + cwMax + "-b"
@@ -762,7 +774,16 @@ void ROFFVanetExperiment::ConfigureROFFApplication () {
 //	NS_LOG_UNCOND("PRE ADD NODE");
 	// Add nodes to the application
 	for (uint32_t i = 0; i < m_nNodes; i++) {
-		m_roffApplication->AddNode(m_adhocNodes.Get(i), m_adhocSources.at(i), m_adhocSinks.at(i));
+		uint64_t junctionId = 0;
+		bool nodeInsideJunction = false;
+
+		if (m_smartJunctionMode) {
+			if (m_nodeIdToJunctionIdMap.count(i) != 0) {
+				nodeInsideJunction = true;
+				junctionId = m_nodeIdToJunctionIdMap.at(i);
+			}
+		}
+		m_roffApplication->AddNode(m_adhocNodes.Get(i), m_adhocSources.at(i), m_adhocSinks.at(i), nodeInsideJunction, junctionId);
 	}
 
 	// Add the application to a node
@@ -796,6 +817,7 @@ void ROFFVanetExperiment::CommandSetup (int argc, char *argv[]) {
 	cmd.AddValue("buildings", "Load building (obstacles)", m_loadBuildings);
 	cmd.AddValue ("poly", "Buildings trace file (poly format)", m_bldgFile);
 	cmd.AddValue("trace", "Vehicles trace file (ns2mobility format)", m_traceFile);
+	cmd.AddValue ("junctions", "Junction file", m_junctionFile);
 //	cmd.AddValue("totalTime", "Simulation end time", m_TotalSimTime);
 //	cmd.AddValue ("cwMin", "Minimum contention window", m_cwMin);
 //	cmd.AddValue ("cwMax", "Maximum contention window", m_cwMax);
@@ -811,6 +833,7 @@ void ROFFVanetExperiment::CommandSetup (int argc, char *argv[]) {
 	cmd.AddValue("beaconInterval", "Time between beacons (hello messages) in milliseconds ", m_beaconInterval);
 	cmd.AddValue("distanceRange", "Distance range used to create ESD bitmap (called 'k' in ROFF article", m_distanceRange);
 	cmd.AddValue("propagationLoss", "Type of propagation loss model: 0=RangePropagation, 1=TwoRayGround", m_propagationLoss);
+	cmd.AddValue("smartJunctionMode", "Whether to activate smart junction mode: 0=disabled, 1=enabled", m_smartJunctionMode);
 
 	cmd.Parse(argc, argv);
 }
@@ -831,48 +854,24 @@ void ROFFVanetExperiment::SetupScenario () {
 		m_traceFile = m_mapBasePath + ".ns2mobility.xml";
 	}
 
+	if (m_junctionFile.empty()) {
+		m_junctionFile = m_mapBasePath + ".junctions";
+	}
+
 	m_nNodes = CalculateNumNodes();
 	if (m_startingNode == -1) {
 		m_startingNode = rand() % m_nNodes;
 	}
 	cout << "numNodes = " << m_nNodes << endl;
 	cout << "startingNode = " << m_startingNode << endl;
-//
-//	if (m_scenario == 0)
-//	{
-//		// DEBUG, TODO: delete this scenario
-//		m_bldgFile = "Griglia.poly.xml";
-//		m_traceFile = "Griglia.ns2mobility.xml";
-//
-//		m_nNodes = 96;
-//		m_startingNode = 23;
-//
-//		m_areaOfInterest = 500;
-//	} else if (m_scenario == 1)
-//	{
-//		// Padova (2x2 km)
-//		m_bldgFile = "Padova.poly.xml";
-//		m_traceFile = "Padova.ns2mobility.xml";
-//
-//		m_nNodes = 2224;
-//		m_startingNode = 313;
-//	}
-//	else if (m_scenario == 2)
-//	{
-//		// L.A.  (2x2 km)
-//		m_bldgFile = "LA.poly.xml";
-//		m_traceFile = "LA.ns2mobility.xml";
-//
-//		m_nNodes = 1905;
-//		m_startingNode = 365;
-//	}
-//	else
-//		NS_LOG_ERROR ("Invalid scenario specified. Values must be [1-2].");
 
-	if (m_loadBuildings != 0)
-	{
+	if (m_loadBuildings != 0) {
 		NS_LOG_INFO ("Loading buildings file \"" << m_bldgFile << "\".");
 		Topology::LoadBuildings(m_bldgFile, m_createObstacleShadowingLossFile, m_useObstacleShadowingLossFile, m_mapBasePath);
+	}
+
+	if (m_smartJunctionMode) {
+		LoadJunctionsMap();
 	}
 }
 
@@ -953,6 +952,30 @@ Ptr<Socket> ROFFVanetExperiment::SetupPacketSend (Ipv4Address addr, Ptr<Node> no
 	m_adhocSources.push_back (sender);
 
 	return sender;
+}
+
+void ROFFVanetExperiment::LoadJunctionsMap() {
+	NS_LOG_FUNCTION (this);
+	ifstream junctionFile;
+	cout << m_junctionFile << endl;
+	junctionFile.open(m_junctionFile, ios::in);
+	if (!junctionFile.is_open()) {
+		NS_LOG_ERROR("Could not open junctionFile");
+	}
+	string line;
+	while(getline(junctionFile, line)) {
+		vector<string> strings;
+		boost::split(strings, line, boost::is_any_of(" "));
+		if (strings.size() == 2) {
+			uint32_t nodeId = stoi(strings.at(0));
+			uint64_t junctionId = stol(strings.at(1));
+			m_nodeIdToJunctionIdMap[nodeId] = junctionId;
+		}
+	}
+//	cout << m_nodeIdToJunctionIdMap.size() << endl;
+//	for (auto pair: m_nodeIdToJunctionIdMap) {
+//		cout << "nodeId= " << pair.first << " intId= " << pair.second << endl;
+//	}
 }
 
 

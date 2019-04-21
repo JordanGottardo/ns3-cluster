@@ -21,17 +21,22 @@ namespace ns3 {
 							  m_senderId(0),
 							  m_position(Vector(0, 0, 0)),
 							  m_phase(0),
-							  m_slot(0) {
+							  m_slot(0),
+							  m_senderInJunction(0),
+							  m_junctionId(0){
 	}
 
 	ROFFHeader::ROFFHeader(uint32_t type, uint32_t sender, Vector position,
-						   boost::dynamic_bitset<> esdBitmap, uint32_t phase, uint32_t slot):
+						   boost::dynamic_bitset<> esdBitmap, uint32_t phase,
+						   uint32_t slot, uint8_t senderInJunction, uint64_t junctionId):
 																			    m_type(type),
 																 	 	 	 	m_senderId(sender),
 																				m_position(position),
 																				m_esdBitmap(esdBitmap),
 																				m_phase(phase),
-																				m_slot(slot) {
+																				m_slot(slot),
+																				m_senderInJunction(senderInJunction),
+																				m_junctionId(junctionId){
 	}
 
 //	Getters
@@ -60,6 +65,16 @@ namespace ns3 {
 		return m_slot;
 	}
 
+	uint8_t	ROFFHeader::IsSenderInJunction() const {
+		NS_LOG_FUNCTION (this);
+		return m_senderInJunction;
+	}
+
+	uint64_t ROFFHeader::GetJunctionId() const {
+		NS_LOG_FUNCTION (this);
+		return m_junctionId;
+	}
+
 //	Setters
 
 	void ROFFHeader::SetType(uint32_t type) {
@@ -86,6 +101,18 @@ namespace ns3 {
 		m_slot = slot;
 	}
 
+	void ROFFHeader::SetSenderInJunction (uint8_t value)
+	{
+		NS_LOG_FUNCTION (this);
+		m_senderInJunction = value;
+	}
+
+	void ROFFHeader::SetJunctionId (uint64_t junctionId)
+	{
+		NS_LOG_FUNCTION (this);
+		m_junctionId = junctionId;
+	}
+
 //	Methods
 
 	TypeId ROFFHeader::GetInstanceTypeId() const {
@@ -105,6 +132,8 @@ namespace ns3 {
 //		cout << "ROFFHeader::GetSerializedSize bitmapSize = " << bitmapSize << endl;
 		uint32_t serializedSize =  4 * 4 //m_type, m_senderId, m_phase, m_slot
 								   + 8 * 3 // m_position
+								   + 1 // m_senderInJunction
+								   + 8 // m_junctionId
 								   + 4 // m_esdBitmap.size
 								   + bitmapSize;
 //		cout << "ROFFHeader::GetSerializedSize serializedSize = " << serializedSize << endl;
@@ -193,6 +222,9 @@ namespace ns3 {
 		WriteDouble(&start, m_position.z);
 		start.WriteU32(m_phase);
 		start.WriteU32(m_slot);
+		start.WriteU8(m_senderInJunction);
+		start.WriteU64(m_junctionId);
+
 		start.WriteU32(m_esdBitmap.size());
 		WriteESDBitmap(&start);
 //		WriteDouble(&start, 5);
@@ -269,6 +301,8 @@ namespace ns3 {
 		m_position = Vector(x, y, z);
 		m_phase = start.ReadU32();
 		m_slot = start.ReadU32();
+		m_senderInJunction = start.ReadU8();
+		m_junctionId = start.ReadU64();
 		uint32_t esdBitmapSize = start.ReadU32();
 		ReadESDBitmap(&start, esdBitmapSize);
 //		cout << "Deserialize m_type = " << m_type << " m_senderId " << m_senderId << "coord= "

@@ -33,7 +33,8 @@ public:
 	ROFFHeader();
 
 	ROFFHeader(uint32_t type, uint32_t sender, Vector position,
-			   boost::dynamic_bitset<> esdBitmap, uint32_t phase = 0, uint32_t slot = 0);
+			   boost::dynamic_bitset<> esdBitmap, uint32_t phase = 0,
+			   uint32_t slot = 0, uint8_t senderInJunction = 0, uint64_t junctionId = 0);
 
 //	Getters
 	const Vector& GetPosition() const;
@@ -41,6 +42,16 @@ public:
 	uint32_t GetType() const;
 
 	uint32_t GetSenderId() const;
+
+	/**
+	 * \returns whether the header has been sent by a node inside a junction
+	 */
+	uint8_t IsSenderInJunction() const;
+
+	/**
+	 * \returns whether the id of the junction the sender is in
+	 */
+	uint64_t GetJunctionId() const;
 
 	boost::dynamic_bitset<> GetESDBitmap() const;
 
@@ -61,6 +72,18 @@ public:
 	void SetPhase(uint32_t phase);
 
 	void SetSlot(uint32_t slot);
+
+	/**
+	 * \brief set the sender inside a junction
+	 * \param value whether the sender is in a junction
+	 */
+	void SetSenderInJunction (uint8_t value);
+
+	/**
+	 * \brief set the id of the junction the sender is in
+	 * \param junctionId the id of the junction the sender is in
+	 */
+	void SetJunctionId (uint64_t junctionId);
 
 
 	virtual TypeId GetInstanceTypeId() const;
@@ -97,6 +120,8 @@ private:
 	//	============== Alert message data ================
 	uint32_t							m_phase;
 	uint32_t							m_slot;
+	uint8_t								m_senderInJunction;
+	uint64_t							m_junctionId;
 	boost::dynamic_bitset<>				m_esdBitmap;
 
 

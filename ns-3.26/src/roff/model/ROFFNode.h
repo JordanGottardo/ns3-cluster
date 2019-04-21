@@ -36,7 +36,7 @@ public:
 	ROFFNode();
 
 
-	ROFFNode(Ptr<Node> node, Ptr<Socket> socket);
+	ROFFNode(Ptr<Node> node, Ptr<Socket> socket, bool isNodeInJunction = false, uint64_t junctionId = 0);
 
 	//	Getters
 	Ptr<Node> GetNode() const;
@@ -61,6 +61,19 @@ public:
 
 	Time GetTimestamp() const;
 
+	/**
+	 * \returns true if the node is inside an junction
+	 */
+	bool AmIInJunction() const;
+
+	/**
+	 * \returns the id of the junction the node is in
+	 */
+	uint64_t GetJunctionId () const;
+
+
+
+
 //	Setters
 	void SetNode(Ptr<Node> node);
 
@@ -79,6 +92,18 @@ public:
 	void SetHop(uint32_t m_hop);
 
 	void SetTimestamp(Time timestamp);
+
+	/**
+	 * \brief set the node in junction
+	 * \param value true if the node is in an junction
+	 */
+	void SetMeInJunction (bool value);
+
+	/**
+	 * \brief set the id of the junction the node is in
+	 * \param JunctionId id of the junction the node is in
+	 */
+	void SetJunctionId (uint64_t junctionId);
 
 //	Methods
 	void Send(Ptr<Packet> packet);
@@ -109,7 +134,8 @@ private:
 	uint32_t			m_slot; // number of slots waited before the node has received the alert message
 	uint32_t			m_hop; // number of hops before the alert message reached this node
 	Time				m_timestamp; // time of reception of alert message
-
+	bool				m_amIInJunction; // whether the node is inside a junction
+	uint64_t			m_junctionId; // id of the junction where the node is
 
 };
 

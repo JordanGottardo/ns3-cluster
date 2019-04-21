@@ -37,9 +37,10 @@ void ROFFApplication::Install(uint32_t broadcastPhaseStart, uint32_t actualRange
 //	NS_LOG_UNCOND("END INSTALL");
 }
 
-void ROFFApplication::AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink) {
+void ROFFApplication::AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink,
+		bool isNodeInJunction, uint64_t junctionId) {
 	NS_LOG_FUNCTION(this);
-	Ptr<ROFFNode> roffNode = CreateObject<ROFFNode>(node, source);
+	Ptr<ROFFNode> roffNode = CreateObject<ROFFNode>(node, source, isNodeInJunction, junctionId);
 //	NS_LOG_UNCOND("post create node");
 	sink->SetRecvCallback(MakeCallback(&ROFFApplication::ReceivePacket, this));
 //	NS_LOG_UNCOND("post cback");
@@ -131,7 +132,7 @@ void ROFFApplication::PrintStats(std::stringstream& dataStream) {
 //			<< m_nodes[m_nodes.size() - 1]->GetSlot() << ","
 			<< m_sent << ","
 			<< m_received;
-	cout << "totalCoverage= " << cover << "/" << m_nNodes << endl;
+	cout << "totalCoverage= " << cover << "/" << m_nodes.size() << endl;
 	cout << "m_sent=" << m_sent << endl;
 	if (m_printCoords) {
 		 Ptr<ROFFNode> startingNode = m_nodes.at(m_startingNode);
@@ -209,7 +210,7 @@ void ROFFApplication::GenerateAlertMessage(Ptr<ROFFNode> node) {
 	boost::dynamic_bitset<> esdBitmap = node->GetESDBitmap(m_distanceRange);
 //	cout << "ROFFApplication::GenerateAlertMessage esdBitmap = " << esdBitmap << " size= " <<
 //			esdBitmap.size() << endl;
-	ROFFHeader header(headerType, nodeId, position, esdBitmap, 0, 0);
+	ROFFHeader header(headerType, nodeId, position, esdBitmap, 0, 0, node->AmIInJunction(), node->GetJunctionId());
 
 	Ptr<Packet> packet = Create<Packet>(m_packetPayload);
 //	cout << "add " << node->GetPosition() << endl;
@@ -277,7 +278,22 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 	int32_t phase = header.GetPhase();
 	uint32_t senderId = header.GetSenderId();
 	uint32_t receiverId = node->GetId();
-	node->SetPhase(phase);
+	if (node->AmIInJunction()) {
+		NS_LOG_DEBUG("node " << node->GetId() << "is inside a junction and has received an alert message");
+		if (header.IsSenderInJunction() && node->GetJunctionId() == header.GetJunctionId()) {
+			if (phase > node->GetPhase()) {
+				node->SetPhase(phase);
+				NS_LOG_DEBUG("node " << node->GetId() << "is inside a junction: updates phase from " << node->GetPhase() << " to " << phase);
+			}
+		}
+	}
+	else {
+		if (phase > node->GetPhase()) {
+			NS_LOG_DEBUG("node " << node->GetId() << "is not inside a junction: updates phase from " << node->GetPhase() << " to " << phase);
+			node->SetPhase(phase);
+		}
+	}
+
 	if (node->GetReceived()) {
 		return;
 	}
@@ -339,11 +355,11 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 }
 
 void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHeader, uint32_t waitingTime) {
-	uint32_t phase = oldHeader.GetPhase();
+	int32_t phase = oldHeader.GetPhase();
 	NS_LOG_FUNCTION(this << node << oldHeader << waitingTime);
 	if (node->GetPhase() > phase) {
 		NS_LOG_DEBUG("ROFFApplication::ForwardAlertMessage node "
-				<< node->GetId() << " defers because of phase");
+				<< node->GetId() << " defers because of phase (" << node->GetPhase() << " > " << phase << ")");
 		return;
 	}
 	if (node->GetSent()) {

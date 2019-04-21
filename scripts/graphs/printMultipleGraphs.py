@@ -28,7 +28,7 @@ def printSingleGraphLineComparison():
 	plt.show()
 
 
-def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, cw, metric, yLabel):
+def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, cw, junction, metric, yLabel):
 	autoscale = True #todo fix
  #xList, xLabels, xLabel, yLabel, figureTitle, yDataDictionary, 
 #					confIntDictionary, protocols, autoscale=False, yBottomLim=0, yTopLim=100):
@@ -116,13 +116,13 @@ def initCompoundData(txRanges, protocols, metrics):
 				compoundData[txRange][protocol][metricConfInt] = 0
 	return compoundData
 
-def appendCompoundData(basePath, txRanges, protocols, cw, compoundData, metrics):
+def appendCompoundData(basePath, txRanges, protocols, cw, junction, compoundData, metrics):
 	for txRange in txRanges:
 		for protocol in protocols:
 			path = None
 			roff = False
 			if (protocol != "ROFF"):
-				path = os.path.join(basePath, "r" + txRange, cw, protocol)
+				path = os.path.join(basePath, "r" + txRange, "j" + junction, cw, protocol)
 			else: 
 				roff = True
 				path = os.path.join(basePath, "r" + txRange, protocol)
@@ -172,6 +172,7 @@ def printAllComparison():
 	protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300", "STATIC-500", "ROFF"]
 	#cws = ["cw[16-128]", "cw[32-1024]"]
 	cws = ["cw[16-128]", "cw[32-1024]"]
+	junctions = ["0", "1"]
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
 	metricYLabels = {}
 	metricYLabels["totCoverage"] = "Total Coverage (%)"
@@ -184,15 +185,16 @@ def printAllComparison():
 	for scenario in scenarios:
 		for building in buildings:
 			for cw in cws:
-				basePath = os.path.join(initialBasePath, scenario, "b" + building)
-				#print("basePath= " + basePath)
-				compoundData = initCompoundData(txRanges, protocols, metrics)
-				appendCompoundData(basePath, txRanges, protocols, cw, compoundData, metrics)
-				graphOutFolder = os.path.join(scenario, "b" + building)
-				#print(compoundData)
-				for metric in metrics:
-					yLabel = metricYLabels[metric]
-					printSingleGraph(graphOutFolder, "graphTitle", compoundData, txRanges, protocols, cw, metric, yLabel)
+				for junction in junctions:
+					basePath = os.path.join(initialBasePath, scenario, "b" + building)
+					#print("basePath= " + basePath)
+					compoundData = initCompoundData(txRanges, protocols, metrics)
+					appendCompoundData(basePath, txRanges, protocols, cw, junction, compoundData, metrics)
+					graphOutFolder = os.path.join(scenario, "b" + building, "j" + junction)
+					#print(compoundData)
+					for metric in metrics:
+						yLabel = metricYLabels[metric]
+						printSingleGraph(graphOutFolder, "graphTitle", compoundData, txRanges, protocols, cw, junction, metric, yLabel)
 
 if __name__ == "__main__":
 	main()

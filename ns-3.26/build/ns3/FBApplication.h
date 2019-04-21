@@ -74,10 +74,8 @@ public:
 	virtual void Install (uint32_t protocol, uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi,
 				  uint32_t aoi_error, bool flooding, uint32_t cwMin, uint32_t cwMax, uint32_t printCoords, uint32_t vehicleDistance);
 
-
-
 	/**
-	 * \brief Add a new node to the applicatin and set up protocol parameters
+	 * \brief Add a new node to the application and set up protocol parameters
 	 * \param node node to add
 	 * \param source source socket of the node
 	 * \param sink sink socket of the node
