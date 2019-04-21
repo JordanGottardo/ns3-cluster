@@ -314,8 +314,8 @@ void FBApplication::GenerateHelloTraffic(uint32_t count) {
 	NS_LOG_INFO(count);
 	NS_LOG_DEBUG("GenerateHelloTraffic " << count);
 	std::vector<int> he;
-//	uint32_t hel = (int) m_nNodes / 100 * 50;		// 50% of total nodes
-	uint32_t hel = (int) m_nNodes;		// 100% of total nodes
+	uint32_t hel = (int) m_nNodes / 100 * 50;		// 50% of total nodes
+//	uint32_t hel = (int) m_nNodes;		// 100% of total nodes
 	uint32_t time_factor = 10;
 //	cout << "hel= " << hel << endl;
 	if (count > 0)

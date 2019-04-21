@@ -94,11 +94,11 @@ def runScenario(cw, scenario, distance, startingNode, area=1000):
 					else:
 						propagationLoss = 1
 					if (protocol == "5"): #ROFF
-						command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings={0} --actualRange={1} --mapBasePath={2} --vehicleDistance={3} --startingNode={4} --propagationLoss={5} --area={6} --printToFile=1 --printCoords=1  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1".format(b, txRange, mapPathWithoutExtension, distance, startingNode, propagationLoss, area)
+						command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings={0} --actualRange={1} --mapBasePath={2} --vehicleDistance={3} --startingNode={4} --propagationLoss={5} --area={6} --smartJunctionMode={7} --printToFile=1 --printCoords=1  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1".format(b, txRange, mapPathWithoutExtension, distance, startingNode, propagationLoss, area, junction)
 					else: 
 						executablePath = "/home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban"
 						command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --mapBasePath={2} --cwMin={3} --cwMax={4} --vehicleDistance={5} --startingNode={6} --propagationLoss={7} --protocol={8} --area={9} --smartJunctionMode={10} --flooding=0  --printToFile=1 --printCoords=1 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1".format(b, txRange, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss, protocol, area, junction)
-					newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-" + junction + "-" + protocolsMap[protocol] + "-" + txRange
+					newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-j" + junction + "-" + protocolsMap[protocol] + "-" + txRange
 					newJobFilename = newJobName + "-.job"
 					newJobPath = os.path.join(jobsPath, newJobFilename)
 					#print(command)
@@ -130,7 +130,7 @@ def main():
 	distances = ["25"]
 	#scenarios = ["Padova"]
 	startingNodeMap = {
-		"Padova":-1,
+		"Padova":310,
 		"LA":-1,
 		"Grid-200":2024,
 		"Grid-300": -1,

@@ -125,7 +125,7 @@ def appendCompoundData(basePath, txRanges, protocols, cw, junction, compoundData
 				path = os.path.join(basePath, "r" + txRange, "j" + junction, cw, protocol)
 			else: 
 				roff = True
-				path = os.path.join(basePath, "r" + txRange, protocol)
+				path = os.path.join(basePath, "r" + txRange, "j" + junction, protocol)
 			data = graphUtils.readCsvFromDirectory(path, roff)
 			entry = compoundData[txRange][protocol]
 			for metric in metrics:

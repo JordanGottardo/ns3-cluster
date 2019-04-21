@@ -33,7 +33,7 @@ fi
 for f in $left
 do
 	echo "Scheduling job $f"
-	sleep 0.001
+	sleep 0.5
 	## schedule job
 	qsub /home/jgottard/ns-3/scheduler/jobsToSchedule/$f	
 	## move job to scheduled directory
