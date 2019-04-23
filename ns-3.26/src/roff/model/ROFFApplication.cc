@@ -299,15 +299,16 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 		}
 	}
 	else {
-		if (phase > node->GetPhase() && (distanceSenderToStarter > distanceCurrentToStarter)) {
+//		if (phase > node->GetPhase() && (distanceSenderToStarter > distanceCurrentToStarter)) { todo riabilita
+		if (phase > node->GetPhase()) {
 			NS_LOG_DEBUG("node " << node->GetId() << "is not inside a junction: updates phase from " << node->GetPhase() << " to " << phase);
 			node->SetPhase(phase);
 		}
 	}
 
-//	if (node->GetReceived()) {
-//		return;
-//	}
+	if (node->GetReceived()) {
+		return;
+	}
 	if (!node->GetReceived()) {
 		node->SetReceived(true);
 		node->SetTimestamp(Simulator::Now());
@@ -341,7 +342,7 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 //				" posToCheck= " << posToCheck << endl;
 //	cout << esdBitmapSize << " " << posOfDist << " " << posToCheck << endl;;
 
-	if (distanceCurrentToStarter > distanceSenderToStarter) {
+//	if (distanceCurrentToStarter > distanceSenderToStarter) { todo riabilita
 
 		if ( posToCheck >= esdBitmapSize || esdBitmap[posToCheck] == 0) {
 			NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage Node " << node->GetId()
@@ -364,7 +365,7 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 		Simulator::Schedule(MilliSeconds(waitingTime), &ROFFApplication::ForwardAlertMessage,
 				this, node, header, waitingTime);
 	//	node->SetScheduled(true);
-	}
+//	}
 }
 
 void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHeader, uint32_t waitingTime) {
