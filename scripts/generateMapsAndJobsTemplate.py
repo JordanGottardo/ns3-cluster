@@ -26,6 +26,7 @@ def runScenario(cw, scenario, distance, startingNode, area=1000):
 	print(scenario)
 	# Protocols and transmission ranges
 	buildings = ["0", "1"]
+	errorRates = ["0", "10", "20", "30", "40", "50"]
 	#buildings = ["1"]
 	junctions = ["0", "1"]
 	protocols = ["1", "2", "3", "4", "5"]
@@ -85,32 +86,28 @@ def runScenario(cw, scenario, distance, startingNode, area=1000):
 		for txRange in txRanges:
 			for protocol in protocols:
 				for junction in junctions:
-					protocolName = protocolsMap[protocol]
-					executablePath = None
-					propagationLossBool = "Grid" in scenario
-					propagationLoss = None
-					if (propagationLossBool is True):
-						propagationLoss = 1
-					else:
-						propagationLoss = 1
-					if (protocol == "5"): #ROFF
-						command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings={0} --actualRange={1} --mapBasePath={2} --vehicleDistance={3} --startingNode={4} --propagationLoss={5} --area={6} --smartJunctionMode={7} --printToFile=1 --printCoords=1  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1".format(b, txRange, mapPathWithoutExtension, distance, startingNode, propagationLoss, area, junction)
-					else: 
-						executablePath = "/home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban"
-						command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --mapBasePath={2} --cwMin={3} --cwMax={4} --vehicleDistance={5} --startingNode={6} --propagationLoss={7} --protocol={8} --area={9} --smartJunctionMode={10} --flooding=0  --printToFile=1 --printCoords=1 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1".format(b, txRange, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss, protocol, area, junction)
-					newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-j" + junction + "-" + protocolsMap[protocol] + "-" + txRange
-					newJobFilename = newJobName + "-.job"
-					newJobPath = os.path.join(jobsPath, newJobFilename)
-					#print(command)
-					#print(fileName)
-					shutil.copy(jobTemplatePath, jobsPath)
-					os.rename(tempNewJobPath, newJobPath)
-					s = open(newJobPath).read()
-					s = s.replace("{**jobName}", newJobName)
-					s = s.replace("{**command}", command)
-					f = open(newJobPath, "w")
-					f.write(s)
-					f.close()
+					for errorRate in errorRates:
+						protocolName = protocolsMap[protocol]
+						executablePath = None
+						propagationLoss = "1"
+						if (protocol == "5"): #ROFF
+							command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings={0} --actualRange={1} --mapBasePath={2} --vehicleDistance={3} --startingNode={4} --propagationLoss={5} --area={6} --smartJunctionMode={7} --errorRate={8} --printToFile=1 --printCoords=1  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1".format(b, txRange, mapPathWithoutExtension, distance, startingNode, propagationLoss, area, junction, errorRate)
+						else: 
+							executablePath = "/home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban"
+							command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --mapBasePath={2} --cwMin={3} --cwMax={4} --vehicleDistance={5} --startingNode={6} --propagationLoss={7} --protocol={8} --area={9} --smartJunctionMode={10} --errorRate={11} --flooding=0  --printToFile=1 --printCoords=1 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1".format(b, txRange, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss, protocol, area, junction, errorRate)
+						newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-e" + errorRate + "-j" + junction + "-" + protocolsMap[protocol] + "-" + txRange
+						newJobFilename = newJobName + "-.job"
+						newJobPath = os.path.join(jobsPath, newJobFilename)
+						#print(command)
+						#print(fileName)
+						shutil.copy(jobTemplatePath, jobsPath)
+						os.rename(tempNewJobPath, newJobPath)
+						s = open(newJobPath).read()
+						s = s.replace("{**jobName}", newJobName)
+						s = s.replace("{**command}", command)
+						f = open(newJobPath, "w")
+						f.write(s)
+						f.close()
 
 					#print(command)
 

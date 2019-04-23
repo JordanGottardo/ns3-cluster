@@ -71,6 +71,7 @@ FBApplication::FBApplication ()
 		m_sent (0),
 		m_cwndSum(0),
 		m_cwndCount(0),
+		m_errorRate(0),
 		m_collisions (0),
 		m_printCoords(0),
 		m_vehicleDistance(25),
@@ -88,7 +89,8 @@ FBApplication::~FBApplication () {
 }
 
 void FBApplication::Install(uint32_t protocol, uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi,
-		uint32_t aoi_error, bool flooding, uint32_t cwMin, uint32_t cwMax, uint32_t printCoords, uint32_t vehicleDistance) {
+		uint32_t aoi_error, bool flooding, uint32_t cwMin, uint32_t cwMax, uint32_t printCoords,
+		uint32_t vehicleDistance, uint32_t errorRate) {
 
 	if (protocol == PROTOCOL_FB) {
 		m_estimatedRange = PROTOCOL_FB;
@@ -118,6 +120,8 @@ void FBApplication::Install(uint32_t protocol, uint32_t broadcastPhaseStart, uin
 	m_cwMax	= cwMax;
 	m_printCoords = printCoords;
 	m_vehicleDistance = vehicleDistance;
+	m_errorRate = errorRate;
+	m_randomVariable = CreateObject<UniformRandomVariable>();
 //	cout << "connect drop" << endl;
 //	Config::Connect("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Mac/MacRxDrop", MakeCallback(&FBApplication::LogCollision, this));
 	Config::Connect("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Phy/PhyRxDrop", MakeCallback(&FBApplication::LogCollision, this));
@@ -560,9 +564,6 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 		}
 	}
 
-
-
-
 	if (!fbNode->GetReceived() ) {
 		fbNode->SetReceived(true);
 		fbNode->SetTimestamp(Simulator::Now());
@@ -595,7 +596,10 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 //		m_cwndSum += cwnd;
 //		m_cwndCount++;
 		// Compute a random waiting time (1 <= waitingTime <= cwnd)
-		uint32_t waitingTime = (rand() % cwnd) + 1;
+		uint32_t waitingTime = m_randomVariable->GetInteger(1, cwnd);
+		int32_t errorDelay = ComputeErrorDelay();
+		waitingTime += errorDelay;
+
 		// Wait and then forward the message
 		if (m_flooding == false) {
 			Simulator::Schedule(MilliSeconds(waitingTime),
@@ -737,6 +741,23 @@ uint32_t FBApplication::ComputeContetionWindow (uint32_t maxRange, uint32_t dist
 //	cout << "FBApplication computeCW= " << std::floor (cwnd)<< endl << " con maxRange= " << maxRange << " e distance= " <<
 //			distance << endl;
 	return std::floor (cwnd);
+}
+
+int32_t FBApplication::ComputeErrorDelay() {
+	if (m_errorRate == 0) {
+		return 0;
+	}
+	int32_t delay = 0;
+	uint32_t percent = m_randomVariable->GetInteger(0, 100);
+	if (percent >= m_errorRate) {
+		uint32_t plusOrMinusOne = m_randomVariable->GetInteger(0, 1);
+		if (plusOrMinusOne == 0) {
+			delay = 1;
+		} else {
+			delay = -1;
+		}
+	}
+	return delay;
 }
 
 template <typename T>

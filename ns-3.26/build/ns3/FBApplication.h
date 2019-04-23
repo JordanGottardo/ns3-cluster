@@ -69,10 +69,12 @@ public:
 	 * \param cwMin maximum size of the contention window (slots)
 	 * \param printCoords whether to print coordinates on file (1=true, 0=false)
 	 * \param vehicleDistance distance between vehicles
+	 * \param errorRate Probability to incur in an error in transmission schedule (sending 1 slot earlier or later)
 	 * \return none
 	 */
 	virtual void Install (uint32_t protocol, uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi,
-				  uint32_t aoi_error, bool flooding, uint32_t cwMin, uint32_t cwMax, uint32_t printCoords, uint32_t vehicleDistance);
+				  uint32_t aoi_error, bool flooding, uint32_t cwMin, uint32_t cwMax, uint32_t printCoords,
+				  uint32_t vehicleDistance, uint32_t errorRate);
 
 	/**
 	 * \brief Add a new node to the application and set up protocol parameters
@@ -212,6 +214,8 @@ private:
 	 */
 	uint32_t ComputeContetionWindow (uint32_t maxRange, uint32_t distance);
 
+	int32_t ComputeErrorDelay();
+
 	/**
 	* \brief Returns a string from a vector
 	* \return the string with the content of the vector
@@ -243,6 +247,8 @@ private:
 	uint32_t																m_sent; // // number of alert messages sent
 	uint32_t																m_cwndSum;
 	uint32_t																m_cwndCount;
+	uint32_t																m_errorRate; //probability to incur in an error in transmission schedule (sending 1 slot earlier or later)
+	Ptr<UniformRandomVariable> 												m_randomVariable;
 
 	uint32_t																m_collisions; // number of collisions
 	vector<uint32_t>														m_receivedNodes; // ids of nodes which have received alert messages, duplicates allowed

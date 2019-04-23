@@ -22,7 +22,7 @@ TypeId ROFFApplication::GetTypeId() {
 
 void ROFFApplication::Install(uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi,
 	uint32_t aoi_error, uint32_t vehicleDistance, uint32_t beaconInterval, uint32_t distanceRange,
-	uint32_t startingNode, uint32_t printCoords) {
+	uint32_t startingNode, uint32_t printCoords, uint32_t errorRate) {
 	NS_LOG_FUNCTION(this);
 	m_broadcastPhaseStart = broadcastPhaseStart;
 	m_aoi = aoi;
@@ -33,6 +33,7 @@ void ROFFApplication::Install(uint32_t broadcastPhaseStart, uint32_t actualRange
 	m_distanceRange = distanceRange;
 	m_startingNode = startingNode;
 	m_printCoords = printCoords;
+	m_errorRate = errorRate;
 	m_randomVariable = CreateObject<UniformRandomVariable>();
 //	NS_LOG_UNCOND("END INSTALL");
 }
@@ -299,7 +300,7 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 		}
 	}
 	else {
-//		if (phase > node->GetPhase() && (distanceSenderToStarter > distanceCurrentToStarter)) { todo riabilita
+//		if (phase > node->GetPhase() && (distanceSenderToStarter > distanceCurrentToStarter)) {
 		if (phase > node->GetPhase()) {
 			NS_LOG_DEBUG("node " << node->GetId() << "is not inside a junction: updates phase from " << node->GetPhase() << " to " << phase);
 			node->SetPhase(phase);
@@ -342,28 +343,32 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 //				" posToCheck= " << posToCheck << endl;
 //	cout << esdBitmapSize << " " << posOfDist << " " << posToCheck << endl;;
 
-//	if (distanceCurrentToStarter > distanceSenderToStarter) { todo riabilita
+//	if (distanceCurrentToStarter > distanceSenderToStarter) {
 
-		if ( posToCheck >= esdBitmapSize || esdBitmap[posToCheck] == 0) {
-			NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage Node " << node->GetId()
-					<< " won't participate in contention: not present in esd bitmap");
-			return;
-		}
-		if (!node->IsNodeWinnerInContention(dist, senderPosition)) {
-			NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage Node " << node->GetId()
-					<< " won't participate in contention: it has lost the contention");
-			return;
-		}
-		PositionRankingMap rankingOfPositions = PositionRankingMap(m_distanceRange, esdBitmap);
-	//	cout << "ROFFHeader::HandleAlertMessage " << rankingOfPositions << endl;
-		uint32_t priority = rankingOfPositions.GetPriority(dist);
-	//	cout << "ROFFHeader::HandleAlertMessage priority= " << priority << endl;
-	//	uint32_t waitingTime = ComputeWaitingTime(node, dist, rankingOfPositions, priority);
+	if ( posToCheck >= esdBitmapSize || esdBitmap[posToCheck] == 0) {
+		NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage Node " << node->GetId()
+				<< " won't participate in contention: not present in esd bitmap");
+		return;
+	}
+	if (!node->IsNodeWinnerInContention(dist, senderPosition)) {
+		NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage Node " << node->GetId()
+				<< " won't participate in contention: it has lost the contention");
+		return;
+	}
+	PositionRankingMap rankingOfPositions = PositionRankingMap(m_distanceRange, esdBitmap);
+//	cout << "ROFFHeader::HandleAlertMessage " << rankingOfPositions << endl;
+	uint32_t priority = rankingOfPositions.GetPriority(dist);
+//	cout << "ROFFHeader::HandleAlertMessage priority= " << priority << endl;
+//	uint32_t waitingTime = ComputeWaitingTime(node, dist, rankingOfPositions, priority);
 
-		uint32_t waitingTime = ComputeWaitingTimeArmir(node, senderPosition, rankingOfPositions, priority);
-	//	cout << "ROFFApplication::HandleAlertMessage waitingTime= " << waitingTime << endl << endl << endl;
-		Simulator::Schedule(MilliSeconds(waitingTime), &ROFFApplication::ForwardAlertMessage,
-				this, node, header, waitingTime);
+	uint32_t waitingTime = ComputeWaitingTimeArmir(node, senderPosition, rankingOfPositions, priority);
+	int32_t errorDelay = ComputeErrorDelay();
+	waitingTime += errorDelay;
+
+//	cout << "ROFFApplication::HandleAlertMessage waitingTime= " << waitingTime << endl << endl << endl;
+
+	Simulator::Schedule(MilliSeconds(waitingTime), &ROFFApplication::ForwardAlertMessage,
+			this, node, header, waitingTime);
 	//	node->SetScheduled(true);
 //	}
 }
@@ -498,6 +503,22 @@ double ROFFApplication::ComputePropagationDelay(Vector coord1, Vector coord2) {
 	return pd;
 }
 
+int32_t ROFFApplication::ComputeErrorDelay() {
+	if (m_errorRate == 0) {
+		return 0;
+	}
+	int32_t delay = 0;
+	uint32_t percent = m_randomVariable->GetInteger(0, 100);
+	if (percent >= m_errorRate) {
+		uint32_t plusOrMinusOne = m_randomVariable->GetInteger(0, 1);
+		if (plusOrMinusOne == 0) {
+			delay = 1;
+		} else {
+			delay = -1;
+		}
+	}
+	return delay;
+}
 
 template <typename T>
 string ROFFApplication::StringifyVector(const vector<T>& v) {

@@ -470,6 +470,7 @@ private:
 	uint32_t								m_distanceRange;
 	uint32_t								m_propagationLoss;
 	uint32_t								m_smartJunctionMode;
+	uint32_t								m_errorRate;
 	std::map<uint32_t, uint64_t>			m_nodeIdToJunctionIdMap;
 
 };
@@ -508,7 +509,8 @@ ROFFVanetExperiment::ROFFVanetExperiment():
 		m_beaconInterval(100),
 		m_distanceRange(1),
 		m_propagationLoss(1),
-		m_smartJunctionMode(0) {
+		m_smartJunctionMode(0),
+		m_errorRate(0) {
 	srand(time(0));
 
 	RngSeedManager::SetSeed(time(0));
@@ -561,6 +563,7 @@ const std::string ROFFVanetExperiment::CalculateOutFilePath() const {
 //	std::string cwMax = std::to_string(m_cwMax);
 	std::string vehicleDistance = std::to_string(m_vehicleDistance);
 	std::string buildings = std::to_string(m_loadBuildings);
+	std::string error = std::to_string(m_errorRate);
 	std::string protocol = "ROFF";
 	std::string actualRange = std::to_string(m_actualRange);
 	std::string junctions = std::to_string(m_smartJunctionMode);
@@ -584,8 +587,9 @@ const std::string ROFFVanetExperiment::CalculateOutFilePath() const {
 	scenarioName = scenarioName.substr(0, dotPos);
 
 
-	fileName.append(scenarioName + "/" + "b" + buildings + "/r" + actualRange +  "/j" + junctions + "/" + protocol + "/" +
-			scenarioName + "-b" + buildings + "-r" + actualRange + "-" + junctions + "-" + protocol);
+	fileName.append(scenarioName + "/b" + buildings + "/e" + error +  "/r" + actualRange
+			+  "/j" + junctions + "/" + protocol + "/" + scenarioName + "-b" + buildings +
+			"-e" + error + "-r" + actualRange + "-j" + junctions + "-" + protocol);
 	cout << fileName << endl;
 //	fileName.append("cw-" + cwMin + "-" + cwMax + "/" + m_mapBaseNameWithoutDistance + "/d" + vehicleDistance + "/b" + buildings
 //			+ "/" + protocol + "-" + actualRange + "/" + m_mapBaseName + "-cw-" + cwMin + "-" + cwMax + "-b"
@@ -764,7 +768,8 @@ void ROFFVanetExperiment::ConfigureROFFApplication () {
 							   m_beaconInterval,
 							   m_distanceRange,
 							   m_startingNode,
-							   m_printCoords
+							   m_printCoords,
+							   m_errorRate
 							  );
 //	NS_LOG_UNCOND("POST INSTALL");
 	m_roffApplication->SetStartTime(Seconds(1));
@@ -834,6 +839,8 @@ void ROFFVanetExperiment::CommandSetup (int argc, char *argv[]) {
 	cmd.AddValue("distanceRange", "Distance range used to create ESD bitmap (called 'k' in ROFF article", m_distanceRange);
 	cmd.AddValue("propagationLoss", "Type of propagation loss model: 0=RangePropagation, 1=TwoRayGround", m_propagationLoss);
 	cmd.AddValue("smartJunctionMode", "Whether to activate smart junction mode: 0=disabled, 1=enabled", m_smartJunctionMode);
+	cmd.AddValue("errorRate", "Probability to incur in an error in transmission schedule (sending 1 slot earlier or later)", m_errorRate);
+
 
 	cmd.Parse(argc, argv);
 }

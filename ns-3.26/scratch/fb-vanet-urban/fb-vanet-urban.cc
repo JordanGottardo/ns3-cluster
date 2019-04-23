@@ -473,6 +473,7 @@ private:
 	uint32_t								m_useObstacleShadowingLossFile;
 	uint32_t								m_propagationLoss;
 	uint32_t								m_smartJunctionMode;
+	uint32_t								m_errorRate;
 	std::map<uint32_t, uint64_t>			m_nodeIdToJunctionIdMap;
 
 
@@ -510,7 +511,8 @@ FBVanetExperiment::FBVanetExperiment ()
 		m_createObstacleShadowingLossFile(0),
 		m_useObstacleShadowingLossFile(0),
 		m_propagationLoss(1),
-		m_smartJunctionMode(0) {
+		m_smartJunctionMode(0),
+		m_errorRate(0) {
 	srand (time (0));
 
 	RngSeedManager::SetSeed (time (0));
@@ -568,6 +570,7 @@ const std::string FBVanetExperiment::CalculateOutFilePath() const {
 	std::string cwMax = std::to_string(m_cwMax);
 	std::string vehicleDistance = std::to_string(m_vehicleDistance);
 	std::string buildings = std::to_string(m_loadBuildings);
+	std::string error = std::to_string(m_errorRate);
 	std::string protocol = "";
 	std::string actualRange = std::to_string(m_actualRange);
 	std::string junctions = std::to_string(m_smartJunctionMode);
@@ -592,9 +595,9 @@ const std::string FBVanetExperiment::CalculateOutFilePath() const {
 	int dotPos =scenarioName.find(".");
 	scenarioName = scenarioName.substr(0, dotPos);
 
-	fileName.append(scenarioName + "/" + "b" + buildings + "/r" + actualRange +  "/j" + junctions
+	fileName.append(scenarioName + "/b" + buildings + "/e" + error +  "/r" + actualRange +  "/j" + junctions
 			+ "/" + "cw[" + std::to_string(m_cwMin) + "-" + std::to_string(m_cwMax) + "]/" + protocol + "/" +
-			scenarioName + "-b" + buildings + "-r" + actualRange + "-" + junctions + "-" + protocol);
+			scenarioName + "-b" + buildings + "-e" + error + "-r" + actualRange + "-j" + junctions + "-" + protocol);
 	cout << "fileName=" << fileName << endl;
 //	fileName.append("cw-" + cwMin + "-" + cwMax + "/" + m_mapBaseNameWithoutDistance + "/d" + vehicleDistance + "/b" + buildings
 //			+ "/" + protocol + "-" + actualRange + "/" + m_mapBaseName + "-cw-" + cwMin + "-" + cwMax + "-b"
@@ -786,7 +789,7 @@ void FBVanetExperiment::ConfigureFBApplication () {
 							m_areaOfInterest,
 							m_vehicleDistance,
 							(m_flooding==1) ? true : false,
-							m_cwMin, m_cwMax, m_printCoords, m_vehicleDistance
+							m_cwMin, m_cwMax, m_printCoords, m_vehicleDistance, m_errorRate
 							);
 	m_fbApplication->SetStartTime (Seconds (1));
 	m_fbApplication->SetStopTime (Seconds (m_TotalSimTime));
@@ -854,6 +857,7 @@ void FBVanetExperiment::CommandSetup (int argc, char *argv[]) {
 			"keyed by senderCoord, receiverCoord:  0 don't use it, 1 use it ", m_useObstacleShadowingLossFile);
 	cmd.AddValue("propagationLoss", "Type of propagation loss model: 0=RangePropagation, 1=TwoRayGround", m_propagationLoss);
 	cmd.AddValue("smartJunctionMode", "Whether to activate smart junction mode: 0=disabled, 1=enabled", m_smartJunctionMode);
+	cmd.AddValue("errorRate", "Probability to incur in an error in transmission schedule (sending 1 slot earlier or later", m_errorRate);
 
 	cmd.Parse (argc, argv);
 }
