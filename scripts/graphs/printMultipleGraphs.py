@@ -116,16 +116,16 @@ def initCompoundData(txRanges, protocols, metrics):
 				compoundData[txRange][protocol][metricConfInt] = 0
 	return compoundData
 
-def appendCompoundData(basePath, txRanges, protocols, cw, junction, compoundData, metrics):
+def appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics):
 	for txRange in txRanges:
 		for protocol in protocols:
 			path = None
 			roff = False
 			if (protocol != "ROFF"):
-				path = os.path.join(basePath, "r" + txRange, "j" + junction, cw, protocol)
+				path = os.path.join(basePath, "e" + errorRate, "r" + txRange, "j" + junction, cw, protocol)
 			else: 
 				roff = True
-				path = os.path.join(basePath, "r" + txRange, "j" + junction, protocol)
+				path = os.path.join(basePath, "e" + errorRate, "r" + txRange, "j" + junction, protocol)
 			data = graphUtils.readCsvFromDirectory(path, roff)
 			entry = compoundData[txRange][protocol]
 			for metric in metrics:
@@ -168,6 +168,7 @@ def printAllComparison():
 	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
 	scenarios = ["Padova-25"]
 	buildings = ["0" , "1"]
+	errorRate = "0"
 	txRanges = ["100", "300", "500"]
 	protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300", "STATIC-500", "ROFF"]
 	#cws = ["cw[16-128]", "cw[32-1024]"]
@@ -189,7 +190,7 @@ def printAllComparison():
 					basePath = os.path.join(initialBasePath, scenario, "b" + building)
 					#print("basePath= " + basePath)
 					compoundData = initCompoundData(txRanges, protocols, metrics)
-					appendCompoundData(basePath, txRanges, protocols, cw, junction, compoundData, metrics)
+					appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics)
 					graphOutFolder = os.path.join(scenario, "b" + building, "j" + junction)
 					#print(compoundData)
 					for metric in metrics:
