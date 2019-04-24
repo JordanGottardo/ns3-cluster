@@ -568,18 +568,6 @@ const std::string ROFFVanetExperiment::CalculateOutFilePath() const {
 	std::string actualRange = std::to_string(m_actualRange);
 	std::string junctions = std::to_string(m_smartJunctionMode);
 
-//	if (m_staticProtocol == PROTOCOL_FB) {
-//		protocol = "fb";
-//	}
-//	else if (m_staticProtocol == PROTOCOL_STATIC_100) {
-//		protocol = "st100";
-//	}
-//	else if (m_staticProtocol == PROTOCOL_STATIC_300) {
-//		protocol = "st300";
-//	}
-//	else if (m_staticProtocol == PROTOCOL_STATIC_500) {
-//		protocol = "st500";
-//	}
 	vector<string> strings;
 	boost::split(strings, m_traceFile, boost::is_any_of("/"));
 	std::string scenarioName = strings[strings.size() - 1];

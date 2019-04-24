@@ -28,10 +28,81 @@ def printSingleGraphLineComparison():
 	plt.show()
 
 
+def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, protocols, cw, junction, metric, yLabel):
+	autoscale = True 
+	n = len(protocols)
+	ind = np.arange(n)
+	
+	barWidth = float((float(1)/float(4)) * float(0.90))
+	fig, ax = plt.subplots()
+
+	rects = []
+	count = 0
+	#colors = ["0.3", "0.5", "0.7"]
+	colors = ["0.3", "0.7"]
+	
+	widthDistance = [-1, 1]
+	#widthDistance = [-1.5, -0.5, 0.5, 1.5]
+	#widthDistance = [-1, 0, 1]
+
+	for protocol in protocols:
+		metricMeanList = []
+		metricConfIntList = []
+		for errorRate in errorRates:
+			metricMean = metric + "Mean"
+			metricConfInt = metric + "ConfInt"
+			metricMeanList.append(compoundData[errorRate][txRange][protocol][metricMean])
+			metricConfIntList.append(compoundData[errorRate][txRange][protocol][metricConfInt])
+		rects.append((ax.bar(ind + widthDistance[count] * barWidth, metricMeanList, barWidth, color=colors[count], label=protocol, yerr=metricConfIntList, capsize=4)))
+		count = count + 1
+	
+	ax.set_xlabel("Error in scheduling (%)", fontsize=11)
+	ax.set_ylabel(yLabel, fontsize=11)
+	if not autoscale:
+		ax.set_ylim(yBottomLim, yTopLim)
+	#ax.set_title(graphTitle, fontsize=20)
+	ax.set_xticks(ind)
+	ax.set_xticklabels(errorRates)
+	#ax.set_xticklabels(["15m", "25m", "35m", "45m"])
+
+	ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+	#ax.legend(loc="upper right")
+
+	def autolabel(rects, xpos='center'):
+		"""
+		Attach a text label above each bar in *rects*, displaying its height.
+
+		*xpos* indicates which side to place the text w.r.t. the center of
+		the bar. It can be one of the following {'center', 'right', 'left'}.
+		"""
+
+		xpos = xpos.lower()  # normalize the case of the parameter
+		ha = {'center': 'center', 'right': 'left', 'left': 'right'}
+		offset = {'center': 0.5, 'right': 0.57, 'left': 0.43}  # x_txt = x + w*off
+
+		for rect in rects:
+			height = rect.get_height()
+			ax.text(rect.get_x() + rect.get_width()*offset[xpos], 1.01*height,
+					'{}'.format(height), ha=ha[xpos], va='bottom') 
+
+	for rect in rects:
+		autolabel(rect)
+	#plt.savefig('a1.png')
+	#plt.savefig('a2.png', bbox_inches='tight')
+	
+	outPathDirectory = os.path.join("out", outFolder + "-" + cw)
+	outPath = os.path.join(outPathDirectory , metric) #todo fix
+	if (not os.path.exists(outPathDirectory)):
+		os.makedirs(outPathDirectory)
+	
+	plt.savefig(outPath + ".pdf")
+	plt.clf()
+	#plt.savefig('b2.pdf', bbox_inches='tight')
+	#plt.show()
+
+
 def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, cw, junction, metric, yLabel):
-	autoscale = True #todo fix
- #xList, xLabels, xLabel, yLabel, figureTitle, yDataDictionary, 
-#					confIntDictionary, protocols, autoscale=False, yBottomLim=0, yTopLim=100):
+	autoscale = True 
 	n = len(protocols)
 	ind = np.arange(n)
 	
@@ -161,8 +232,8 @@ def printGridComparison():
 	#printSingleGraphLineComparison()
 
 #Given a scenario path and buildings/nobuildings, prints graphs for all txRanges and protocols
-def printAllComparison():
-	print("PrintAllComparison")
+def printProtocolComparison():
+	print("PrintProtocolComparison")
 	plt.rcParams["figure.figsize"] = [18, 10]
 	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
 	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
@@ -193,6 +264,45 @@ def printAllComparison():
 					appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics)
 					graphOutFolder = os.path.join(scenario, "b" + building, "j" + junction)
 					#print(compoundData)
+					for metric in metrics:
+						yLabel = metricYLabels[metric]
+						printSingleGraph(graphOutFolder, "graphTitle", compoundData, txRanges, protocols, cw, junction, metric, yLabel)
+
+
+def printErrorComparison():
+	print("PrintAllComparison")
+	plt.rcParams["figure.figsize"] = [18, 10]
+	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
+	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
+	scenarios = ["Padova-25"]
+	buildings = ["0" , "1"]
+	txRanges = ["100", "300", "500"]
+	protocols = ["Fast-Broadcast", "ROFF"]
+	#cws = ["cw[16-128]", "cw[32-1024]"]
+	cws = ["cw[16-128]"]
+	errorRates = ["0", "10", "20", "30", "40", "50"]
+	junctions = ["0", "1"]
+	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
+	metricYLabels = {}
+	metricYLabels["totCoverage"] = "Total Coverage (%)"
+	metricYLabels["covOnCirc"] = "Coverage on circumference (%)"
+	metricYLabels["hops"] = "Number of hops to reach circumference"
+	metricYLabels["slotsWaited"] = "Number of slots waited to reach circumference"
+	metricYLabels["messageSent"] = "Number of alert messages sent"
+	
+
+	for scenario in scenarios:
+		for building in buildings:
+			for cw in cws:
+				for junction in junctions:
+					errorRateCompoundData = {}
+					for errorRate in errorRates:
+						basePath = os.path.join(initialBasePath, scenario, "b" + building)
+						#print("basePath= " + basePath)
+						compoundData = initCompoundData(txRanges, protocols, metrics)
+						appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics)
+						errorRateCompoundData[errorRate] = compoundData
+					graphOutFolder = os.path.join(scenario, "b" + building, "j" + junction)
 					for metric in metrics:
 						yLabel = metricYLabels[metric]
 						printSingleGraph(graphOutFolder, "graphTitle", compoundData, txRanges, protocols, cw, junction, metric, yLabel)

@@ -4,7 +4,7 @@ import printMultipleGraphs
 import sys
 
 def main():
-	printMultipleGraphs.printAllComparison()
+	printMultipleGraphs.printProtocolComparison()
 
 if __name__ == "__main__":
 	main()
