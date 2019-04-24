@@ -180,7 +180,7 @@ def printAllComparison():
 	metricYLabels["covOnCirc"] = "Coverage on circumference (%)"
 	metricYLabels["hops"] = "Number of hops to reach circumference"
 	metricYLabels["slotsWaited"] = "Number of slots waited to reach circumference"
-	metricYLabels["messageSent"] = "Number of alert message sent"
+	metricYLabels["messageSent"] = "Number of alert messages sent"
 	
 
 	for scenario in scenarios:
