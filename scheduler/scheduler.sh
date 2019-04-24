@@ -13,7 +13,7 @@ if [ ! -d "$finnished" ]; then
 fi
 
 #maximum number of jobs that can ben in a running status
-number_max_active_jobs=300
+number_max_active_jobs=400
 #check the number of scheduled jobs
 number_running=$(qstat | grep jgottard | wc -l)
 #number of jobs we can schedule this turn
@@ -33,7 +33,7 @@ fi
 for f in $left
 do
 	echo "Scheduling job $f"
-	sleep 0.2
+	sleep 0.4
 	## schedule job
 	qsub /home/jgottard/ns-3/scheduler/jobsToSchedule/$f	
 	## move job to scheduled directory
