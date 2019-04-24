@@ -28,12 +28,12 @@ def printSingleGraphLineComparison():
 	plt.show()
 
 
-def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, protocols, cw, junctions, metric, yLabel):
+def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, protocols, cw, txRange, junctions, metric, yLabel):
 	autoscale = True 
-	n = 4
+	n = 6
 	ind = np.arange(n)
 	
-	barWidth = float((float(1)/float(4)) * float(0.90))
+	barWidth = float((float(1)/float(4)) * float(0.6))
 	fig, ax = plt.subplots()
 
 	rects = []
@@ -46,17 +46,29 @@ def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, p
 	#widthDistance = [-1, 0, 1]
 
 	protocolsList = ["Fast-Broadcast", "SJ Fast-Broadcast", "ROFF", "SJ ROFF"]
+	protocolsListMap = {
+		"Fast-Broadcast": "Fast-Broadcast",
+		"SJ Fast-Broadcast": "Fast-Broadcast",
+		"ROFF": "ROFF",
+		"SJ ROFF": "ROFF"
+	}
 
-	for protocol in protocols:
+	for prot in protocolsList:
+		protocol = protocolsListMap[prot]
 		metricMeanList = []
 		metricConfIntList = []
 		for errorRate in errorRates:
-			for junction in junctions:
-				metricMean = metric + "Mean"
-				metricConfInt = metric + "ConfInt"
-				metricMeanList.append(compoundData[errorRate][junction][txRange][protocol][metricMean])
-				metricConfIntList.append(compoundData[errorRate][junction][txRange][protocol][metricConfInt])
-		rects.append((ax.bar(ind + widthDistance[count] * barWidth, metricMeanList, barWidth, color=colors[count], label=protocolsList[count], yerr=metricConfIntList, 	capsize=4)))
+			junction = None
+			if ("SJ" in prot):
+				junction = "1"
+			else:
+				junction = "0"
+			metricMean = metric + "Mean"
+			metricConfInt = metric + "ConfInt"
+			metricMeanList.append(compoundData[errorRate][junction][txRange][protocol][metricMean])
+			metricConfIntList.append(compoundData[errorRate][junction][txRange][protocol][metricConfInt])
+			print(len(metricMeanList))
+		rects.append((ax.bar(ind + widthDistance[count] * barWidth, metricMeanList, barWidth, color=colors[count], label=prot, yerr=metricConfIntList, 	capsize=4)))
 		count = count + 1
 	
 	ax.set_xlabel("Error in scheduling (%)", fontsize=11)
@@ -297,18 +309,20 @@ def printErrorComparison():
 	for scenario in scenarios:
 		for building in buildings:
 			for cw in cws:
+				errorRateCompoundData = {}
+				for errorRate in errorRates:
+					errorRateCompoundData[errorRate] = {}
 				for junction in junctions:
-					errorRateCompoundData = {}
 					for errorRate in errorRates:
 						basePath = os.path.join(initialBasePath, scenario, "b" + building)
 						#print("basePath= " + basePath)
 						compoundData = initCompoundData(txRanges, protocols, metrics)
 						appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics)
 						errorRateCompoundData[errorRate][junction] = compoundData
-					graphOutFolder = os.path.join(scenario, "error", "b" + building)
-					for metric in metrics:
-						yLabel = metricYLabels[metric]
-						printSingleGraph(graphOutFolder, "graphTitle", compoundData, txRanges, protocols, cw, junctions, metric, yLabel)
+				graphOutFolder = os.path.join(scenario, "error", "b" + building)
+				for metric in metrics:
+					yLabel = metricYLabels[metric]
+					printSingleGraphErrorRate(graphOutFolder, "graphTitle", errorRateCompoundData, errorRates, protocols, cw, "500", junctions, metric, yLabel)
 
 if __name__ == "__main__":
 	main()

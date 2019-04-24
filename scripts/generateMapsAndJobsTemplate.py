@@ -22,11 +22,26 @@ def findNumNodes(mobilityFilePath):
 				maxId = id
 	return maxId + 1
 
+def createJobFile(newJobName, command, jobsPath, jobTemplatePath, tempNewJobPath):
+	newJobFilename = newJobName + "-.job"
+	newJobPath = os.path.join(jobsPath, newJobFilename)
+	#print(command)
+	#print(fileName)
+	shutil.copy(jobTemplatePath, jobsPath)
+	os.rename(tempNewJobPath, newJobPath)
+	s = open(newJobPath).read()
+	s = s.replace("{**jobName}", newJobName)
+	s = s.replace("{**command}", command)
+	f = open(newJobPath, "w")
+	f.write(s)
+	f.close()
+
 def runScenario(cw, scenario, distance, startingNode, area=1000):
 	print(scenario)
 	# Protocols and transmission ranges
 	buildings = ["0", "1"]
-	errorRates = ["0", "10", "20", "30", "40", "50"]
+	errorRates = ["0", "10", "20", "30", "40", "50", "100"]
+	forgedCoordRates = ["0", "10", "20", "30", "40", "50", "100"]
 	#buildings = ["1"]
 	junctions = ["0", "1"]
 	protocols = ["1", "2", "3", "4", "5"]
@@ -88,34 +103,25 @@ def runScenario(cw, scenario, distance, startingNode, area=1000):
 				for junction in junctions:
 					for errorRate in errorRates:
 						protocolName = protocolsMap[protocol]
-						executablePath = None
 						propagationLoss = "1"
 						if (protocol == "5"): #ROFF
-							command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings={0} --actualRange={1} --mapBasePath={2} --vehicleDistance={3} --startingNode={4} --propagationLoss={5} --area={6} --smartJunctionMode={7} --errorRate={8} --printToFile=1 --printCoords=0  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1".format(b, txRange, mapPathWithoutExtension, distance, startingNode, propagationLoss, area, junction, errorRate)
+							command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings={0} --actualRange={1} --mapBasePath={2} --vehicleDistance={3} --startingNode={4} --propagationLoss={5} --area={6} --smartJunctionMode={7} --errorRate={8} --printToFile=1 --printCoords=0  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1 --forgedCoordTest=0 --forgedCoordRate=0".format(b, txRange, mapPathWithoutExtension, distance, startingNode, propagationLoss, area, junction, errorRate)
 						else: 
-							executablePath = "/home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban"
-							command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --mapBasePath={2} --cwMin={3} --cwMax={4} --vehicleDistance={5} --startingNode={6} --propagationLoss={7} --protocol={8} --area={9} --smartJunctionMode={10} --errorRate={11} --flooding=0  --printToFile=1 --printCoords=0 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1".format(b, txRange, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss, protocol, area, junction, errorRate)
+							command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --mapBasePath={2} --cwMin={3} --cwMax={4} --vehicleDistance={5} --startingNode={6} --propagationLoss={7} --protocol={8} --area={9} --smartJunctionMode={10} --errorRate={11} --flooding=0  --printToFile=1 --printCoords=0 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1 --forgedCoordTest=0 --forgedCoordRate=0".format(b, txRange, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss, protocol, area, junction, errorRate)
+
 						newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-e" + errorRate + "-j" + junction + "-" + protocolsMap[protocol] + "-" + txRange
-						newJobFilename = newJobName + "-.job"
-						newJobPath = os.path.join(jobsPath, newJobFilename)
-						#print(command)
-						#print(fileName)
-						shutil.copy(jobTemplatePath, jobsPath)
-						os.rename(tempNewJobPath, newJobPath)
-						s = open(newJobPath).read()
-						s = s.replace("{**jobName}", newJobName)
-						s = s.replace("{**command}", command)
-						f = open(newJobPath, "w")
-						f.write(s)
-						f.close()
-
-					#print(command)
-
-	#os.chdir(nsPath)
-	#print(os.getcwd())
-	#os.system(command)
-
-
+						createJobFile(newJobName, command, jobsPath, jobTemplatePath, tempNewJobPath)
+					'''
+					# FORGED COORD SCENARIO
+					if (scenario == "Padova-25" and distance == "25"):
+						for forgedCoordRate in forgedCoordRates:
+							if (protocol == "5"): #ROFF
+								command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings={0} --actualRange={1} --mapBasePath={2} --vehicleDistance={3} --startingNode={4} --propagationLoss={5} --area={6} --smartJunctionMode={7} --errorRate=0 --printToFile=1 --printCoords=0  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1 --forgedCoordTest=1 --forgedCoordRate={8}".format(b, txRange, mapPathWithoutExtension, distance, startingNode, propagationLoss, area, junction, forgedCoordRate)
+							else: 
+								command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --mapBasePath={2} --cwMin={3} --cwMax={4} --vehicleDistance={5} --startingNode={6} --propagationLoss={7} --protocol={8} --area={9} --smartJunctionMode={10} --errorRate=0 --flooding=0  --printToFile=1 --printCoords=0 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1 --forgedCoordTest=0 --forgedCoordRate={11}".format(b, txRange, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss, protocol, area, junction, forgedCoordRate)
+							newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-f" + forgedCoordRate + "-j" + junction + "-" + protocolsMap[protocol] + "-" + txRange
+							createJobFile(newJobName, command, jobsPath, jobTemplatePath, tempNewJobPath)
+					'''
 	print("\n")
 
 def main():

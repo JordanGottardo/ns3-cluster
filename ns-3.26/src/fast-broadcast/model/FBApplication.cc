@@ -72,6 +72,7 @@ FBApplication::FBApplication ()
 		m_cwndSum(0),
 		m_cwndCount(0),
 		m_errorRate(0),
+		m_forgedCoordRate(0),
 		m_collisions (0),
 		m_printCoords(0),
 		m_vehicleDistance(25),
@@ -90,7 +91,7 @@ FBApplication::~FBApplication () {
 
 void FBApplication::Install(uint32_t protocol, uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi,
 		uint32_t aoi_error, bool flooding, uint32_t cwMin, uint32_t cwMax, uint32_t printCoords,
-		uint32_t vehicleDistance, uint32_t errorRate) {
+		uint32_t vehicleDistance, uint32_t errorRate, uint32_t forgedCoordRate) {
 
 	if (protocol == PROTOCOL_FB) {
 		m_estimatedRange = PROTOCOL_FB;
@@ -121,6 +122,7 @@ void FBApplication::Install(uint32_t protocol, uint32_t broadcastPhaseStart, uin
 	m_printCoords = printCoords;
 	m_vehicleDistance = vehicleDistance;
 	m_errorRate = errorRate;
+	m_forgedCoordRate = forgedCoordRate;
 	m_randomVariable = CreateObject<UniformRandomVariable>();
 //	cout << "connect drop" << endl;
 //	Config::Connect("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Mac/MacRxDrop", MakeCallback(&FBApplication::LogCollision, this));
@@ -300,16 +302,46 @@ void FBApplication::StartApplication(void) {
 	if (!m_staticProtocol) {
 		// Start Estimation Phase
 		NS_LOG_INFO ("Start Estimation Phase.");
+		if (m_forgedCoordRate > 0) {
+			NS_LOG_INFO ("Start Forged Messages Generation Phase.");
+			GenerateForgedHelloTraffic();
+		}
 //		GenerateHelloTraffic(1);
 		GenerateHelloTraffic(5);
 	}
-
 	// Schedule Broadcast Phase
 	Simulator::Schedule(Seconds(m_broadcastPhaseStart), &FBApplication::StartBroadcastPhase, this);
 }
 
 void FBApplication::StopApplication(void) {
 	NS_LOG_FUNCTION(this);
+}
+
+void FBApplication::GenerateForgedHelloTraffic() {
+	uint32_t nAffectedNodes = m_nNodes * (m_forgedCoordRate / 100);
+	uint32_t forgedSenderNodeId = m_nNodes;
+	set<uint32_t> affectedNodes;
+	while (affectedNodes.size() < nAffectedNodes) {
+		uint32_t nodeId = m_randomVariable->GetInteger(0, m_nNodes - 1);
+		affectedNodes.insert(nodeId);
+	}
+
+	for (auto id: affectedNodes) {
+		for (uint32_t i = 0; i < 1000; i++) {
+			uint32_t headerType = HELLO_MESSAGE;
+			Vector position = Vector(10000, 10000, 0);
+
+			FBHeader fbHeader;
+			fbHeader.SetType (HELLO_MESSAGE);
+			fbHeader.SetMaxRange (10000);
+			fbHeader.SetStarterPosition (position);
+			fbHeader.SetPosition (position);
+			fbHeader.SetSenderId(forgedSenderNodeId + i); // added
+			fbHeader.SetSenderInJunction(false);
+			fbHeader.SetJunctionId(0);
+			HandleHelloMessage(m_nodes.at(id), fbHeader);
+		}
+	}
 }
 
 void FBApplication::GenerateHelloTraffic(uint32_t count) {
@@ -354,6 +386,9 @@ void FBApplication::StartBroadcastPhase(void) {
 
 	// Generate the first alert message
 	GenerateAlertMessage(fbNode);
+	if (m_errorRate > 0) {
+		Simulator::Schedule(MilliSeconds(1), &FBApplication::GenerateAlertMessage, this, m_nodes.at(m_startingNode));
+	}
 }
 
 void FBApplication::GenerateHelloMessage (Ptr<FBNode> fbNode) {
@@ -598,38 +633,47 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 		// Compute a random waiting time (1 <= waitingTime <= cwnd)
 		uint32_t waitingTime = m_randomVariable->GetInteger(1, cwnd);
 		int32_t errorDelay = ComputeErrorDelay();
-		waitingTime += errorDelay;
 
-		// Wait and then forward the message
-		if (m_flooding == false) {
-			Simulator::Schedule(MilliSeconds(waitingTime),
-					&FBApplication::ForwardAlertMessage, this, fbNode, fbHeader, waitingTime);
+		if (!m_flooding) {
+			if (errorDelay == 0) {
+					Simulator::Schedule(MilliSeconds(waitingTime), &FBApplication::ForwardAlertMessage,
+							this, fbNode, fbHeader, waitingTime, false);
+			 }
+			else {
+				uint32_t firstTransmissionTime;
+				uint32_t secondTransmissionTime;
+				firstTransmissionTime = errorDelay > 0 ? waitingTime : waitingTime + errorDelay;
+				secondTransmissionTime = errorDelay < 0 ? waitingTime : waitingTime + errorDelay;
+				Simulator::Schedule(MilliSeconds(firstTransmissionTime), &FBApplication::ForwardAlertMessage,
+									this, fbNode, fbHeader, firstTransmissionTime, false);
+				Simulator::Schedule(MilliSeconds(secondTransmissionTime), &FBApplication::ForwardAlertMessage,
+									this, fbNode, fbHeader, secondTransmissionTime, true);
+				}
 		}
 		else {
 			Simulator::Schedule(MilliSeconds(0),
-					&FBApplication::ForwardAlertMessage, this, fbNode, fbHeader, waitingTime);
+								&FBApplication::ForwardAlertMessage, this, fbNode, fbHeader, waitingTime, false);
 		}
-
 	}
 }
 
 void FBApplication::WaitAgain(Ptr<FBNode> fbNode, FBHeader fbHeader, uint32_t waitingTime) {
 	 NS_LOG_FUNCTION (this);
 
-	 // Get the phase
-	 int32_t phase = fbHeader.GetPhase();
-
-	 if (phase >= fbNode->GetPhase()) {
-		 uint32_t rnd = (rand() % 20)+1;
-		 uint32_t rnd1 = (rand() % 20)+1;
-		 uint32_t rnd2 = (rand() % 20)+1;
-		 uint32_t rnd3 = (rand() % 20)+1;
-		 Simulator::Schedule (MilliSeconds (10* (waitingTime+rnd+rnd1+rnd2+rnd3) * 200 * 3), //TODO cos'è sta roba?
-		 											&FBApplication::ForwardAlertMessage, this, fbNode, fbHeader, waitingTime);
-	 }
+//	 // Get the phase
+//	 int32_t phase = fbHeader.GetPhase();
+//
+//	 if (phase >= fbNode->GetPhase()) {
+//		 uint32_t rnd = (rand() % 20)+1;
+//		 uint32_t rnd1 = (rand() % 20)+1;
+//		 uint32_t rnd2 = (rand() % 20)+1;
+//		 uint32_t rnd3 = (rand() % 20)+1;
+//		 Simulator::Schedule (MilliSeconds (10* (waitingTime+rnd+rnd1+rnd2+rnd3) * 200 * 3), //TODO cos'è sta roba?
+//		 											&FBApplication::ForwardAlertMessage, this, fbNode, fbHeader, waitingTime);
+//	 }
 }
 
-void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader, uint32_t waitingTime) {
+void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader, uint32_t waitingTime, bool forceSend) {
 	NS_LOG_FUNCTION (this << fbNode << oldFBHeader);
 	// Get the phase
 	int32_t phase = oldFBHeader.GetPhase();
@@ -749,7 +793,7 @@ int32_t FBApplication::ComputeErrorDelay() {
 	}
 	int32_t delay = 0;
 	uint32_t percent = m_randomVariable->GetInteger(0, 100);
-	if (percent >= m_errorRate) {
+	if (percent <= m_errorRate) {
 		uint32_t plusOrMinusOne = m_randomVariable->GetInteger(0, 1);
 		if (plusOrMinusOne == 0) {
 			delay = 1;

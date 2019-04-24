@@ -25,6 +25,7 @@
 #include "ns3/nstime.h"
 #include "PositionRankingMap.h"
 #include <boost/dynamic_bitset.hpp>
+#include <set>
 
 namespace ns3 {
 
@@ -56,7 +57,7 @@ public:
 	void Install(uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi,
 			uint32_t aoi_error, uint32_t m_vehicleDistance, uint32_t beaconInterval,
 			uint32_t m_distanceRange, uint32_t startingNode, uint32_t printCoords,
-			uint32_t errorRate);
+			uint32_t errorRate, uint32_t forgedCoordRate);
 
 	/**
 	* \brief Add a new node to the application and set up protocol parameters
@@ -101,6 +102,12 @@ private:
 	* \return none
 	*/
 	void GenerateHelloTraffic(uint32_t count);
+
+	/**
+	 * \brief Generates forged hello messages with fake coords
+	 * \return none
+	 */
+  	void GenerateForgedHelloTraffic();
 
 	/**
 	* \brief Start the broadcast phase
@@ -149,9 +156,10 @@ private:
 	* \param fbNode node that received the message
 	* \param fbHeader header received in the message
 	* \param waitingTime contention window value
+	* \param forceSend whether to force forwarding of message due to error in schedule
 	* \return none
 	*/
-	void ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHeader, uint32_t waitingTime);
+	void ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHeader, uint32_t waitingTime, bool forceSend);
 
 	/**
 	* \brief Stop a node
@@ -208,7 +216,7 @@ private:
 	uint32_t							m_distanceRange;
 	Ptr<UniformRandomVariable> 			m_randomVariable;
 	uint32_t 							m_errorRate; //probability to incur in an error in transmission schedule (sending 1 slot earlier or later)
-
+	uint32_t							m_forgedCoordRate; // % of nodes which receive forged hello messages with fake coords
 
 	map<uint32_t, Ptr<ROFFNode>>		m_nodes; // nodes that run this application
 

@@ -22,7 +22,7 @@ TypeId ROFFApplication::GetTypeId() {
 
 void ROFFApplication::Install(uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi,
 	uint32_t aoi_error, uint32_t vehicleDistance, uint32_t beaconInterval, uint32_t distanceRange,
-	uint32_t startingNode, uint32_t printCoords, uint32_t errorRate) {
+	uint32_t startingNode, uint32_t printCoords, uint32_t errorRate, uint32_t forgedCoordRate) {
 	NS_LOG_FUNCTION(this);
 	m_broadcastPhaseStart = broadcastPhaseStart;
 	m_aoi = aoi;
@@ -34,6 +34,7 @@ void ROFFApplication::Install(uint32_t broadcastPhaseStart, uint32_t actualRange
 	m_startingNode = startingNode;
 	m_printCoords = printCoords;
 	m_errorRate = errorRate;
+	m_forgedCoordRate = forgedCoordRate;
 	m_randomVariable = CreateObject<UniformRandomVariable>();
 //	NS_LOG_UNCOND("END INSTALL");
 }
@@ -151,12 +152,34 @@ void ROFFApplication::StartApplication(void) {
 	NS_LOG_FUNCTION(this);
 
 	m_startingNode = this->GetNode()->GetId();
+	if (m_forgedCoordRate > 0) {
+		GenerateForgedHelloTraffic();
+	}
 	GenerateHelloTraffic(7);
 	Simulator::Schedule(Seconds(m_broadcastPhaseStart), &ROFFApplication::StartBroadcastPhase, this);
 }
 
 void ROFFApplication::StopApplication(void) {
 	NS_LOG_FUNCTION(this);
+}
+
+void ROFFApplication::GenerateForgedHelloTraffic() {
+	uint32_t nAffectedNodes = m_nodes.size() * (m_forgedCoordRate / 100);
+	uint32_t forgedSenderNodeId = m_nodes.size();
+	set<uint32_t> affectedNodes;
+	while (affectedNodes.size() < nAffectedNodes) {
+		uint32_t nodeId = m_randomVariable->GetInteger(0, m_nodes.size() - 1);
+		affectedNodes.insert(nodeId);
+	}
+
+	for (auto id: affectedNodes) {
+		for (uint32_t i = 0; i < 1000; i++) {
+			uint32_t headerType = HELLO_MESSAGE;
+			Vector position = Vector(10000, 10000, 0);
+			ROFFHeader header(headerType, position, forgedSenderNodeId + i, position, boost::dynamic_bitset<>(), 0, 0);
+			HandleHelloMessage(m_nodes.at(id), header);
+		}
+	}
 }
 
 void ROFFApplication::GenerateHelloTraffic(uint32_t count) {
@@ -185,6 +208,9 @@ void ROFFApplication::StartBroadcastPhase(void) {
 //		cout << "ROFFApplication::StartBroadcastPhase nbt size= " << roffNode->GetNBTSize() << endl;
 	}
 	GenerateAlertMessage(m_nodes.at(m_startingNode));
+	if (m_errorRate > 0) {
+		Simulator::Schedule(MilliSeconds(1), &ROFFApplication::GenerateAlertMessage, this, m_nodes.at(m_startingNode));
+	}
 }
 
 void ROFFApplication::GenerateHelloMessage(Ptr<ROFFNode> node) {
@@ -363,28 +389,44 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 
 	uint32_t waitingTime = ComputeWaitingTimeArmir(node, senderPosition, rankingOfPositions, priority);
 	int32_t errorDelay = ComputeErrorDelay();
-	waitingTime += errorDelay;
+
+	if (errorDelay == 0) {
+		Simulator::Schedule(MilliSeconds(waitingTime), &ROFFApplication::ForwardAlertMessage,
+				this, node, header, waitingTime, false);
+ 	}
+	else {
+		uint32_t firstTransmissionTime;
+		uint32_t secondTransmissionTime;
+		firstTransmissionTime = errorDelay > 0 ? waitingTime : waitingTime + errorDelay;
+		secondTransmissionTime = errorDelay < 0 ? waitingTime : waitingTime + errorDelay;
+		Simulator::Schedule(MilliSeconds(firstTransmissionTime), &ROFFApplication::ForwardAlertMessage,
+						this, node, header, firstTransmissionTime, false);
+		Simulator::Schedule(MilliSeconds(secondTransmissionTime), &ROFFApplication::ForwardAlertMessage,
+								this, node, header, secondTransmissionTime, true);
+	}
 
 //	cout << "ROFFApplication::HandleAlertMessage waitingTime= " << waitingTime << endl << endl << endl;
 
-	Simulator::Schedule(MilliSeconds(waitingTime), &ROFFApplication::ForwardAlertMessage,
-			this, node, header, waitingTime);
+
 	//	node->SetScheduled(true);
 //	}
 }
 
-void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHeader, uint32_t waitingTime) {
+void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHeader, uint32_t waitingTime, bool forceSend) {
 	int32_t phase = oldHeader.GetPhase();
-	NS_LOG_FUNCTION(this << node << oldHeader << waitingTime);
-	if (node->GetPhase() > phase) {
-		NS_LOG_DEBUG("ROFFApplication::ForwardAlertMessage node "
-				<< node->GetId() << " defers because of phase (" << node->GetPhase() << " > " << phase << ")");
-		return;
-	}
-	if (node->GetSent()) {
-		NS_LOG_DEBUG("ROFFApplication::ForwardAlertMessage node "
-				<< node->GetId() << " defers because of getSent");
-		return;
+	NS_LOG_FUNCTION(this << node << oldHeader << waitingTime << forceSend);
+
+	if (!(node->GetSent() && forceSend)) {
+		if (node->GetPhase() > phase) {
+			NS_LOG_DEBUG("ROFFApplication::ForwardAlertMessage node "
+					<< node->GetId() << " defers because of phase (" << node->GetPhase() << " > " << phase << ")");
+			return;
+		}
+		if (node->GetSent()) {
+			NS_LOG_DEBUG("ROFFApplication::ForwardAlertMessage node "
+					<< node->GetId() << " defers because of getSent");
+			return;
+		}
 	}
 
 //	cout << "id= " << node->GetId() << " nodePhase= " << node->GetPhase() << " headerPhase= "
@@ -509,7 +551,7 @@ int32_t ROFFApplication::ComputeErrorDelay() {
 	}
 	int32_t delay = 0;
 	uint32_t percent = m_randomVariable->GetInteger(0, 100);
-	if (percent >= m_errorRate) {
+	if (percent <= m_errorRate) {
 		uint32_t plusOrMinusOne = m_randomVariable->GetInteger(0, 1);
 		if (plusOrMinusOne == 0) {
 			delay = 1;

@@ -471,6 +471,8 @@ private:
 	uint32_t								m_propagationLoss;
 	uint32_t								m_smartJunctionMode;
 	uint32_t								m_errorRate;
+	uint32_t								m_forgedCoordTest;
+	uint32_t								m_forgedCoordRate;
 	std::map<uint32_t, uint64_t>			m_nodeIdToJunctionIdMap;
 
 };
@@ -510,7 +512,9 @@ ROFFVanetExperiment::ROFFVanetExperiment():
 		m_distanceRange(1),
 		m_propagationLoss(1),
 		m_smartJunctionMode(0),
-		m_errorRate(0) {
+		m_errorRate(0),
+		m_forgedCoordTest(0),
+		m_forgedCoordRate(0) {
 	srand(time(0));
 
 	RngSeedManager::SetSeed(time(0));
@@ -563,10 +567,13 @@ const std::string ROFFVanetExperiment::CalculateOutFilePath() const {
 //	std::string cwMax = std::to_string(m_cwMax);
 	std::string vehicleDistance = std::to_string(m_vehicleDistance);
 	std::string buildings = std::to_string(m_loadBuildings);
-	std::string error = std::to_string(m_errorRate);
+	std::string errorOrForged = "/e" + std::to_string(m_errorRate);
 	std::string protocol = "ROFF";
 	std::string actualRange = std::to_string(m_actualRange);
 	std::string junctions = std::to_string(m_smartJunctionMode);
+	if (m_forgedCoordTest) {
+		errorOrForged = "/f" + std::to_string(m_forgedCoordRate);
+	}
 
 	vector<string> strings;
 	boost::split(strings, m_traceFile, boost::is_any_of("/"));
@@ -575,9 +582,9 @@ const std::string ROFFVanetExperiment::CalculateOutFilePath() const {
 	scenarioName = scenarioName.substr(0, dotPos);
 
 
-	fileName.append(scenarioName + "/b" + buildings + "/e" + error +  "/r" + actualRange
+	fileName.append(scenarioName + "/b" + buildings + errorOrForged +  "/r" + actualRange
 			+  "/j" + junctions + "/" + protocol + "/" + scenarioName + "-b" + buildings +
-			"-e" + error + "-r" + actualRange + "-j" + junctions + "-" + protocol);
+			errorOrForged + "-r" + actualRange + "-j" + junctions + "-" + protocol);
 	cout << fileName << endl;
 //	fileName.append("cw-" + cwMin + "-" + cwMax + "/" + m_mapBaseNameWithoutDistance + "/d" + vehicleDistance + "/b" + buildings
 //			+ "/" + protocol + "-" + actualRange + "/" + m_mapBaseName + "-cw-" + cwMin + "-" + cwMax + "-b"
@@ -757,7 +764,8 @@ void ROFFVanetExperiment::ConfigureROFFApplication () {
 							   m_distanceRange,
 							   m_startingNode,
 							   m_printCoords,
-							   m_errorRate
+							   m_errorRate,
+							   m_forgedCoordRate
 							  );
 //	NS_LOG_UNCOND("POST INSTALL");
 	m_roffApplication->SetStartTime(Seconds(1));
@@ -828,7 +836,13 @@ void ROFFVanetExperiment::CommandSetup (int argc, char *argv[]) {
 	cmd.AddValue("propagationLoss", "Type of propagation loss model: 0=RangePropagation, 1=TwoRayGround", m_propagationLoss);
 	cmd.AddValue("smartJunctionMode", "Whether to activate smart junction mode: 0=disabled, 1=enabled", m_smartJunctionMode);
 	cmd.AddValue("errorRate", "Probability to incur in an error in transmission schedule (sending 1 slot earlier or later)", m_errorRate);
+	cmd.AddValue("forgedCoordTest", "Whether to run the forged hello messages attack test 0=disabled, 1=enabled", m_forgedCoordTest);
+	cmd.AddValue("forgedCoordRate", "Percentage of affected vehicle by forged hello messages attack", m_forgedCoordRate);
 
+	// only one of these tests is possible at a given time
+	if (m_forgedCoordTest) {
+		m_errorRate = 0;
+	}
 
 	cmd.Parse(argc, argv);
 }

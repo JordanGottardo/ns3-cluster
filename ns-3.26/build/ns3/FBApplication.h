@@ -30,6 +30,7 @@
 #include "Edge.h"
 #include <chrono>
 #include <ctime>
+#include <set>
 
 using namespace std;
 
@@ -74,7 +75,7 @@ public:
 	 */
 	virtual void Install (uint32_t protocol, uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi,
 				  uint32_t aoi_error, bool flooding, uint32_t cwMin, uint32_t cwMax, uint32_t printCoords,
-				  uint32_t vehicleDistance, uint32_t errorRate);
+				  uint32_t vehicleDistance, uint32_t errorRate, uint32_t forgedCoordRate);
 
 	/**
 	 * \brief Add a new node to the application and set up protocol parameters
@@ -116,7 +117,13 @@ private:
 	 * This method should be overridden by all or most application
 	 * subclasses.
 	 */
-  virtual void StopApplication (void);
+    virtual void StopApplication (void);
+
+	/**
+	 * \brief Generates forged hello messages with fake coords
+	 * \return none
+	 */
+  	void GenerateForgedHelloTraffic();
 
 	/**
 	 * \brief Start the estimation phase
@@ -181,9 +188,10 @@ private:
 	 * \param fbNode node that received the message
 	 * \param fbHeader header received in the message
 	 * \param waitingTime contention window value
+	 * \param forceSend whether to force forwarding of message due to error in schedule
 	 * \return none
 	 */
-	void ForwardAlertMessage (Ptr<FBNode> fbNode, FBHeader oldFBHeader, uint32_t waitingTime);
+	void ForwardAlertMessage (Ptr<FBNode> fbNode, FBHeader oldFBHeader, uint32_t waitingTime, bool forceSend);
 
 	/**
 	 * \brief Stop a node
@@ -249,6 +257,8 @@ private:
 	uint32_t																m_cwndCount;
 	uint32_t																m_errorRate; //probability to incur in an error in transmission schedule (sending 1 slot earlier or later)
 	Ptr<UniformRandomVariable> 												m_randomVariable;
+	uint32_t																m_forgedCoordRate; // % of nodes which receive forged hello messages with fake coords
+
 
 	uint32_t																m_collisions; // number of collisions
 	vector<uint32_t>														m_receivedNodes; // ids of nodes which have received alert messages, duplicates allowed
