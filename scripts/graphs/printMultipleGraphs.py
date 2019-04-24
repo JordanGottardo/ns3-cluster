@@ -28,9 +28,9 @@ def printSingleGraphLineComparison():
 	plt.show()
 
 
-def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, protocols, cw, junction, metric, yLabel):
+def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, protocols, cw, junctions, metric, yLabel):
 	autoscale = True 
-	n = len(protocols)
+	n = 4
 	ind = np.arange(n)
 	
 	barWidth = float((float(1)/float(4)) * float(0.90))
@@ -39,21 +39,24 @@ def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, p
 	rects = []
 	count = 0
 	#colors = ["0.3", "0.5", "0.7"]
-	colors = ["0.3", "0.7"]
+	colors = ["0.3", "0.5", "0.7","0.9"]
 	
-	widthDistance = [-1, 1]
-	#widthDistance = [-1.5, -0.5, 0.5, 1.5]
+	#widthDistance = [-1, 1]
+	widthDistance = [-1.5, -0.5, 0.5, 1.5]
 	#widthDistance = [-1, 0, 1]
+
+	protocolsList = ["Fast-Broadcast", "SJ Fast-Broadcast", "ROFF", "SJ ROFF"]
 
 	for protocol in protocols:
 		metricMeanList = []
 		metricConfIntList = []
 		for errorRate in errorRates:
-			metricMean = metric + "Mean"
-			metricConfInt = metric + "ConfInt"
-			metricMeanList.append(compoundData[errorRate][txRange][protocol][metricMean])
-			metricConfIntList.append(compoundData[errorRate][txRange][protocol][metricConfInt])
-		rects.append((ax.bar(ind + widthDistance[count] * barWidth, metricMeanList, barWidth, color=colors[count], label=protocol, yerr=metricConfIntList, capsize=4)))
+			for junction in junctions:
+				metricMean = metric + "Mean"
+				metricConfInt = metric + "ConfInt"
+				metricMeanList.append(compoundData[errorRate][junction][txRange][protocol][metricMean])
+				metricConfIntList.append(compoundData[errorRate][junction][txRange][protocol][metricConfInt])
+		rects.append((ax.bar(ind + widthDistance[count] * barWidth, metricMeanList, barWidth, color=colors[count], label=protocolsList[count], yerr=metricConfIntList, 	capsize=4)))
 		count = count + 1
 	
 	ax.set_xlabel("Error in scheduling (%)", fontsize=11)
@@ -301,11 +304,11 @@ def printErrorComparison():
 						#print("basePath= " + basePath)
 						compoundData = initCompoundData(txRanges, protocols, metrics)
 						appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics)
-						errorRateCompoundData[errorRate] = compoundData
-					graphOutFolder = os.path.join(scenario, "b" + building, "j" + junction)
+						errorRateCompoundData[errorRate][junction] = compoundData
+					graphOutFolder = os.path.join(scenario, "error", "b" + building)
 					for metric in metrics:
 						yLabel = metricYLabels[metric]
-						printSingleGraph(graphOutFolder, "graphTitle", compoundData, txRanges, protocols, cw, junction, metric, yLabel)
+						printSingleGraph(graphOutFolder, "graphTitle", compoundData, txRanges, protocols, cw, junctions, metric, yLabel)
 
 if __name__ == "__main__":
 	main()
