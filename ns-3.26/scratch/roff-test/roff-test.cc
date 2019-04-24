@@ -567,7 +567,7 @@ const std::string ROFFVanetExperiment::CalculateOutFilePath() const {
 //	std::string cwMax = std::to_string(m_cwMax);
 	std::string vehicleDistance = std::to_string(m_vehicleDistance);
 	std::string buildings = std::to_string(m_loadBuildings);
-	std::string errorOrForged = "/e" + std::to_string(m_errorRate);
+	std::string errorOrForged = "e" + std::to_string(m_errorRate);
 	std::string protocol = "ROFF";
 	std::string actualRange = std::to_string(m_actualRange);
 	std::string junctions = std::to_string(m_smartJunctionMode);
@@ -582,9 +582,9 @@ const std::string ROFFVanetExperiment::CalculateOutFilePath() const {
 	scenarioName = scenarioName.substr(0, dotPos);
 
 
-	fileName.append(scenarioName + "/b" + buildings + errorOrForged +  "/r" + actualRange
+	fileName.append(scenarioName + "/b" + buildings + "/" + errorOrForged +  "/r" + actualRange
 			+  "/j" + junctions + "/" + protocol + "/" + scenarioName + "-b" + buildings +
-			errorOrForged + "-r" + actualRange + "-j" + junctions + "-" + protocol);
+			"-" + errorOrForged + "-r" + actualRange + "-j" + junctions + "-" + protocol);
 	cout << fileName << endl;
 //	fileName.append("cw-" + cwMin + "-" + cwMax + "/" + m_mapBaseNameWithoutDistance + "/d" + vehicleDistance + "/b" + buildings
 //			+ "/" + protocol + "-" + actualRange + "/" + m_mapBaseName + "-cw-" + cwMin + "-" + cwMax + "-b"

@@ -574,7 +574,7 @@ const std::string FBVanetExperiment::CalculateOutFilePath() const {
 	std::string cwMax = std::to_string(m_cwMax);
 	std::string vehicleDistance = std::to_string(m_vehicleDistance);
 	std::string buildings = std::to_string(m_loadBuildings);
-	std::string errorOrForged = "/e" + std::to_string(m_errorRate);
+	std::string errorOrForged = "e" + std::to_string(m_errorRate);
 	std::string protocol = "";
 	std::string actualRange = std::to_string(m_actualRange);
 	std::string junctions = std::to_string(m_smartJunctionMode);
@@ -602,9 +602,9 @@ const std::string FBVanetExperiment::CalculateOutFilePath() const {
 	int dotPos =scenarioName.find(".");
 	scenarioName = scenarioName.substr(0, dotPos);
 
-	fileName.append(scenarioName + "/b" + buildings + errorOrForged +  "/r" + actualRange +  "/j" + junctions
+	fileName.append(scenarioName + "/b" + buildings + "/" + errorOrForged +  "/r" + actualRange +  "/j" + junctions
 			+ "/" + "cw[" + std::to_string(m_cwMin) + "-" + std::to_string(m_cwMax) + "]/" + protocol + "/" +
-			scenarioName + "-b" + buildings + errorOrForged + "-r" + actualRange + "-j" + junctions + "-" + protocol);
+			scenarioName + "-b" + buildings + "-" +errorOrForged + "-r" + actualRange + "-j" + junctions + "-" + protocol);
 	cout << "fileName=" << fileName << endl;
 //	fileName.append("cw-" + cwMin + "-" + cwMax + "/" + m_mapBaseNameWithoutDistance + "/d" + vehicleDistance + "/b" + buildings
 //			+ "/" + protocol + "-" + actualRange + "/" + m_mapBaseName + "-cw-" + cwMin + "-" + cwMax + "-b"
