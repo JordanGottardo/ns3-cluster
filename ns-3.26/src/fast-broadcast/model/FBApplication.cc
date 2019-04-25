@@ -318,7 +318,9 @@ void FBApplication::StopApplication(void) {
 }
 
 void FBApplication::GenerateForgedHelloTraffic() {
-	uint32_t nAffectedNodes = m_nNodes * (m_forgedCoordRate / 100);
+	cout << m_nNodes << endl;
+	uint32_t nAffectedNodes = m_nNodes * ((double)m_forgedCoordRate / 100);
+	NS_LOG_INFO("GeneratedForgedHelloTraffic affected " << nAffectedNodes << " nodes");
 	uint32_t forgedSenderNodeId = m_nNodes;
 	set<uint32_t> affectedNodes;
 	while (affectedNodes.size() < nAffectedNodes) {
@@ -347,7 +349,7 @@ void FBApplication::GenerateForgedHelloTraffic() {
 void FBApplication::GenerateHelloTraffic(uint32_t count) {
 
 //	NS_LOG_INFO (this << count);
-	NS_LOG_INFO(count);
+	NS_LOG_INFO("GenerateHelloTraffic" << count);
 	NS_LOG_DEBUG("GenerateHelloTraffic " << count);
 	std::vector<int> he;
 	uint32_t hel = (int) m_nNodes / 100 * 50;		// 50% of total nodes

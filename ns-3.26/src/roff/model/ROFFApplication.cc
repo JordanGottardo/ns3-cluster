@@ -164,7 +164,8 @@ void ROFFApplication::StopApplication(void) {
 }
 
 void ROFFApplication::GenerateForgedHelloTraffic() {
-	uint32_t nAffectedNodes = m_nodes.size() * (m_forgedCoordRate / 100);
+	uint32_t nAffectedNodes = m_nodes.size() * ((double)m_forgedCoordRate / 100);
+	NS_LOG_INFO("GeneratedForgedHelloTraffic affected " << nAffectedNodes << " nodes");
 	uint32_t forgedSenderNodeId = m_nodes.size();
 	set<uint32_t> affectedNodes;
 	while (affectedNodes.size() < nAffectedNodes) {

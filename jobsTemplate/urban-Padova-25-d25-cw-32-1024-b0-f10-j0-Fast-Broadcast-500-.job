@@ -54,4 +54,4 @@ export PATH=/home/jgottard/ns-3/ns-3.26/build/src/fd-net-device:/home/jgottard/n
 ###echo "boostdir = $BOOSTDIR"
 
 ### Below we append the launch command
-NS_GLOBAL_VALUE="RngRun=1" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings=0 --actualRange=500 --mapBasePath=../maps/Padova-25/Padova-25 --cwMin=32 --cwMax=1024 --vehicleDistance=25 --startingNode=310 --propagationLoss=1 --protocol=1 --area=1000 --smartJunctionMode=0 --errorRate=0 --flooding=0  --printToFile=1 --printCoords=0 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1 --forgedCoordTest=0 --forgedCoordRate=10
+NS_GLOBAL_VALUE="RngRun=1" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings=0 --actualRange=500 --mapBasePath=../maps/Padova-25/Padova-25 --cwMin=32 --cwMax=1024 --vehicleDistance=25 --startingNode=310 --propagationLoss=1 --protocol=1 --area=1000 --smartJunctionMode=0 --errorRate=0 --flooding=0  --printToFile=1 --printCoords=0 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1 --forgedCoordTest=1 --forgedCoordRate=10
