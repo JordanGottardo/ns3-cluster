@@ -373,13 +373,14 @@ def printDistanceComparison():
 	plt.rcParams["figure.figsize"] = [18, 10]
 	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
 	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
-	scenarios = ["Padova-25"]
+	scenarios = ["Padova"]
+	distances = ["15", "25", "35", "45"]
 	buildings = ["0" , "1"]
 	txRanges = ["100", "300", "500"]
 	protocols = ["Fast-Broadcast", "ROFF"]
+	errorRate = "e0"
 	#cws = ["cw[16-128]", "cw[32-1024]"]
 	cws = ["cw[16-128]"]
-	forgedRates = ["0", "10", "20", "30", "40", "50", "100"]
 	junctions = ["0", "1"]
 	xLabel = "% of vehicles affected by forging"
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
@@ -394,17 +395,17 @@ def printDistanceComparison():
 	for scenario in scenarios:
 		for building in buildings:
 			for cw in cws:
-				forgedRateCompoundData = {}
-				for forgedRate in forgedRates:
-					forgedRateCompoundData[forgedRate] = {}
+				distanceCompoundData = {}
+				for distance in distances:
+					distanceCompoundData[distance] = {}
 				for junction in junctions:
-					for forgedRate in forgedRates:
-						basePath = os.path.join(initialBasePath, scenario, "b" + building)
+					for distance in distances:
+						basePath = os.path.join(initialBasePath, scenario + "-" + distance, "b" + building)
 						#print("basePath= " + basePath)
 						compoundData = initCompoundData(txRanges, protocols, metrics)
-						appendCompoundData(basePath, txRanges, protocols, cw, junction, "f" + forgedRate, compoundData, metrics)
-						forgedRateCompoundData[errorRate][junction] = compoundData
-				graphOutFolder = os.path.join(scenario, "forged", "b" + building)
+						appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics)
+						distanceCompoundData[distance][junction] = compoundData
+				graphOutFolder = os.path.join(scenario, "distance", "b" + building) #todo aggiungere cw nel out path?
 				for metric in metrics:
 					yLabel = metricYLabels[metric]
 					printSingleGraphErrorRate(graphOutFolder, "graphTitle", forgedRateCompoundData, forgedRates, protocols, cw, "500", junctions, metric, xLabel, yLabel)

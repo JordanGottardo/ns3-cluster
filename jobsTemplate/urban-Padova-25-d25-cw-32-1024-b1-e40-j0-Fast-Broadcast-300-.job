@@ -24,7 +24,7 @@
 #PBS -l mem=2g
 
 ### Limite di tempo che vogliamo assegnare al nostro job
-#PBS -l walltime=03:00:00
+#PBS -l walltime=24:00:00
 
 
 ### Mi sposto nella directory di lavoro ${HOME}/ns-3-dev/ 
