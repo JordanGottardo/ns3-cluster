@@ -27,6 +27,93 @@ def printSingleGraphLineComparison():
 	rects.append((ax.bar([10, 20])))
 	plt.show()
 
+def printSingleGraphDistance(outFolder, graphTitle, compoundData, distances, protocols, cw, txRange, junctions, metric, xLabel, yLabel):
+	autoscale = True 
+	n = len(distances)
+	ind = np.arange(n)
+	
+	barWidth = float((float(1)/float(4)) * float(0.6))
+	fig, ax = plt.subplots()
+
+	rects = []
+	count = 0
+	#colors = ["0.3", "0.5", "0.7"]
+	colors = ["0.3", "0.5", "0.7","0.9"]
+	
+	#widthDistance = [-1, 1]
+	widthDistance = [-1.5, -0.5, 0.5, 1.5]
+	#widthDistance = [-1, 0, 1]
+
+	protocolsList = ["Fast-Broadcast", "SJ Fast-Broadcast", "ROFF", "SJ ROFF"]
+	protocolsListMap = {
+		"Fast-Broadcast": "Fast-Broadcast",
+		"SJ Fast-Broadcast": "Fast-Broadcast",
+		"ROFF": "ROFF",
+		"SJ ROFF": "ROFF"
+	}
+
+	for prot in protocolsList:
+		protocol = protocolsListMap[prot]
+		metricMeanList = []
+		metricConfIntList = []
+		for distance in distances:
+			junction = None
+			if ("SJ" in prot):
+				junction = "1"
+			else:
+				junction = "0"
+			metricMean = metric + "Mean"
+			metricConfInt = metric + "ConfInt"
+			metricMeanList.append(compoundData[distance][junction][txRange][protocol][metricMean] + count )
+			metricConfIntList.append(compoundData[distance][junction][txRange][protocol][metricConfInt])
+			print(len(metricMeanList))
+		plt.plot(ind + widthDistance[count] * barWidth, metricMeanList, barWidth, color=colors[count], label=prot)
+		count = count + 1
+	
+	ax.set_xlabel(xLabel, fontsize=11)
+	ax.set_ylabel(yLabel, fontsize=11)
+	if not autoscale:
+		ax.set_ylim(yBottomLim, yTopLim)
+	#ax.set_title(graphTitle, fontsize=20)
+	ax.set_xticks(ind)
+	ax.set_xticklabels(distances)
+	#ax.set_xticklabels(["15m", "25m", "35m", "45m"])
+
+	ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+	#ax.legend(loc="upper right")
+	'''
+	def autolabel(rects, xpos='center'):
+		"""
+		Attach a text label above each bar in *rects*, displaying its height.
+
+		*xpos* indicates which side to place the text w.r.t. the center of
+		the bar. It can be one of the following {'center', 'right', 'left'}.
+		"""
+
+		xpos = xpos.lower()  # normalize the case of the parameter
+		ha = {'center': 'center', 'right': 'left', 'left': 'right'}
+		offset = {'center': 0.5, 'right': 0.57, 'left': 0.43}  # x_txt = x + w*off
+
+		for rect in rects:
+			height = rect.get_height()
+			ax.text(rect.get_x() + rect.get_width()*offset[xpos], 1.01*height,
+					'{}'.format(height), ha=ha[xpos], va='bottom') 
+
+	for rect in rects:
+		autolabel(rect)
+	#plt.savefig('a1.png')
+	#plt.savefig('a2.png', bbox_inches='tight')
+	'''	
+	outPathDirectory = os.path.join("out", outFolder + "-" + cw)
+	outPath = os.path.join(outPathDirectory , metric) #todo fix
+	if (not os.path.exists(outPathDirectory)):
+		os.makedirs(outPathDirectory)
+	
+	plt.savefig(outPath + ".pdf")
+	plt.clf()
+	#plt.savefig('b2.pdf', bbox_inches='tight')
+	#plt.show()
+
 
 def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, protocols, cw, txRange, junctions, metric, xLabel, yLabel):
 	autoscale = True 
@@ -374,7 +461,8 @@ def printDistanceComparison():
 	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
 	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
 	scenarios = ["Padova"]
-	distances = ["15", "25", "35", "45"]
+	#distances = ["15", "25", "35", "45"]
+	distances = ["25", "25", "25", "25"]
 	buildings = ["0" , "1"]
 	txRanges = ["100", "300", "500"]
 	protocols = ["Fast-Broadcast", "ROFF"]
@@ -382,7 +470,7 @@ def printDistanceComparison():
 	#cws = ["cw[16-128]", "cw[32-1024]"]
 	cws = ["cw[16-128]"]
 	junctions = ["0", "1"]
-	xLabel = "% of vehicles affected by forging"
+	xLabel = "Distances between vehicle (m)"
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
 	metricYLabels = {}
 	metricYLabels["totCoverage"] = "Total Coverage (%)"
@@ -408,7 +496,7 @@ def printDistanceComparison():
 				graphOutFolder = os.path.join(scenario, "distance", "b" + building) #todo aggiungere cw nel out path?
 				for metric in metrics:
 					yLabel = metricYLabels[metric]
-					printSingleGraphErrorRate(graphOutFolder, "graphTitle", forgedRateCompoundData, forgedRates, protocols, cw, "500", junctions, metric, xLabel, yLabel)
+					printSingleGraphDistance(graphOutFolder, "graphTitle", distanceCompoundData, distances, protocols, cw, "500", junctions, metric, xLabel, yLabel)
 
 if __name__ == "__main__":
 	main()

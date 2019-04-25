@@ -1,0 +1,123 @@
+diff --git a/src/wifi/model/ap-wifi-mac.cc b/src/wifi/model/ap-wifi-mac.cc
+index 35b3f7da4..e3f467bbe 100644
+--- a/src/wifi/model/ap-wifi-mac.cc
++++ b/src/wifi/model/ap-wifi-mac.cc
+@@ -352,6 +352,10 @@ ApWifiMac::Enqueue (Ptr<const Packet> packet, Mac48Address to, Mac48Address from
+     {
+       ForwardDown (packet, from, to);
+     }
++  else
++    {
++      NotifyTxDrop (packet);
++    }
+ }
+ 
+ void
+diff --git a/src/wifi/model/dca-txop.cc b/src/wifi/model/dca-txop.cc
+index 5a8231efc..5eaf89504 100644
+--- a/src/wifi/model/dca-txop.cc
++++ b/src/wifi/model/dca-txop.cc
+@@ -142,6 +142,21 @@ DcaTxop::SetTxFailedCallback (TxFailed callback)
+   m_txFailedCallback = callback;
+ }
+ 
++void
++DcaTxop::SetTxDroppedCallback (TxDropped callback)
++{
++  NS_LOG_FUNCTION (this << &callback);
++  m_txDroppedCallback = callback;
++  NS_ASSERT (m_queue);
++  m_queue->TraceConnectWithoutContext ("Drop", MakeCallback (&DcaTxop::TxDroppedCallback, this));
++}
++
++void
++DcaTxop::TxDroppedCallback (Ptr<const WifiMacQueueItem> item)
++{
++  m_txDroppedCallback (item->GetPacket ());
++}
++
+ Ptr<WifiMacQueue >
+ DcaTxop::GetQueue () const
+ {
+diff --git a/src/wifi/model/dca-txop.h b/src/wifi/model/dca-txop.h
+index 05ee4055d..6ae9b1cbc 100644
+--- a/src/wifi/model/dca-txop.h
++++ b/src/wifi/model/dca-txop.h
+@@ -80,6 +80,11 @@ public:
+    * packet transmission was failed.
+    */
+   typedef Callback <void, const WifiMacHeader&> TxFailed;
++  /**
++   * typedef for a callback to invoke when a
++   * packet is dropped.
++   */
++  typedef Callback <void, Ptr<const Packet> > TxDropped;
+ 
+   /**
+    * Check for EDCA.
+@@ -123,6 +128,11 @@ public:
+    * packet transmission was completed unsuccessfully.
+    */
+   void SetTxFailedCallback (TxFailed callback);
++  /**
++   * \param callback the callback to invoke when a
++   * packet is dropped.
++   */
++  void SetTxDroppedCallback (TxDropped callback);
+ 
+   /**
+    * Return the MacLow associated with this DcaTxop.
+@@ -382,11 +392,20 @@ protected:
+    *         false otherwise.
+    */
+   virtual bool IsLastFragment (void) const;
++  /**
++   *
++   * Pass the packet included in the wifi MAC queue item to the
++   * packet dropped callback.
++   *
++   * \param item the wifi MAC queue item.
++   */
++  void TxDroppedCallback (Ptr<const WifiMacQueueItem> item);
+ 
+   DcfState *m_dcf; //!< the DCF state
+   DcfManager *m_manager; //!< the DCF manager
+   TxOk m_txOkCallback; //!< the transmit OK callback
+   TxFailed m_txFailedCallback; //!< the transmit failed callback
++  TxDropped m_txDroppedCallback; //!< the packet dropped callback
+   Ptr<WifiMacQueue> m_queue; //!< the wifi MAC queue
+   MacTxMiddle *m_txMiddle; //!< the MacTxMiddle
+   Ptr <MacLow> m_low; //!< the MacLow
+diff --git a/src/wifi/model/regular-wifi-mac.cc b/src/wifi/model/regular-wifi-mac.cc
+index 1ed04007d..c1753d502 100644
+--- a/src/wifi/model/regular-wifi-mac.cc
++++ b/src/wifi/model/regular-wifi-mac.cc
+@@ -59,6 +59,7 @@ RegularWifiMac::RegularWifiMac ()
+   m_dca->SetTxMiddle (m_txMiddle);
+   m_dca->SetTxOkCallback (MakeCallback (&RegularWifiMac::TxOk, this));
+   m_dca->SetTxFailedCallback (MakeCallback (&RegularWifiMac::TxFailed, this));
++  m_dca->SetTxDroppedCallback (MakeCallback (&RegularWifiMac::NotifyTxDrop, this));
+ 
+   //Construct the EDCAFs. The ordering is important - highest
+   //priority (Table 9-1 UP-to-AC mapping; IEEE 802.11-2012) must be created
+@@ -425,6 +426,7 @@ RegularWifiMac::SetupEdcaQueue (AcIndex ac)
+   edca->SetTxMiddle (m_txMiddle);
+   edca->SetTxOkCallback (MakeCallback (&RegularWifiMac::TxOk, this));
+   edca->SetTxFailedCallback (MakeCallback (&RegularWifiMac::TxFailed, this));
++  edca->SetTxDroppedCallback (MakeCallback (&RegularWifiMac::NotifyTxDrop, this));
+   edca->SetAccessCategory (ac);
+   edca->CompleteConfig ();
+ 
+diff --git a/src/wifi/model/wifi-mac.cc b/src/wifi/model/wifi-mac.cc
+index abd2dd19c..f8ea68b4b 100644
+--- a/src/wifi/model/wifi-mac.cc
++++ b/src/wifi/model/wifi-mac.cc
+@@ -209,7 +209,7 @@ WifiMac::GetTypeId (void)
+                      MakeTraceSourceAccessor (&WifiMac::m_macTxTrace),
+                      "ns3::Packet::TracedCallback")
+     .AddTraceSource ("MacTxDrop",
+-                     "A packet has been dropped in the MAC layer before being queued for transmission.",
++                     "A packet has been dropped in the MAC layer before transmission.",
+                      MakeTraceSourceAccessor (&WifiMac::m_macTxDropTrace),
+                      "ns3::Packet::TracedCallback")
+     .AddTraceSource ("MacPromiscRx",
