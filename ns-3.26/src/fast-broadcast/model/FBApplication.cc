@@ -680,14 +680,16 @@ void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader
 	Vector oldPos = oldFBHeader.GetPosition();
 	Vector position = fbNode->UpdatePosition();
 	double distance = ns3::CalculateDistance(position, oldPos);
-	if (fbNode->GetSent()) {
-		NS_LOG_DEBUG("node " << fbNode->GetId() << " defers because of GetSent");
-		return;
-	}
-	// If I'm not the first to wake up, I must not forward the message
-	if (!m_flooding && fbNode->GetPhase() > phase) {
-		NS_LOG_DEBUG("node " << fbNode->GetId() << " defers because of phase");
-		return;
+	if (!(fbNode->GetSent() && forceSend)) {
+		if (fbNode->GetSent()) {
+			NS_LOG_DEBUG("node " << fbNode->GetId() << " defers because of GetSent");
+			return;
+		}
+		// If I'm not the first to wake up, I must not forward the message
+		if (!m_flooding && fbNode->GetPhase() > phase) {
+			NS_LOG_DEBUG("node " << fbNode->GetId() << " defers because of phase");
+			return;
+		}
 	}
 
 	NS_LOG_DEBUG ("Forwarding Alert Message (" << fbNode->GetNode()->GetId() << ") after " << waitingTime << ".");

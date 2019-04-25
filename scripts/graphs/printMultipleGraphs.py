@@ -30,7 +30,7 @@ def printSingleGraphLineComparison():
 
 def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, protocols, cw, txRange, junctions, metric, yLabel):
 	autoscale = True 
-	n = 6
+	n = len(errorRates)
 	ind = np.arange(n)
 	
 	barWidth = float((float(1)/float(4)) * float(0.6))
@@ -285,7 +285,7 @@ def printProtocolComparison():
 
 
 def printErrorComparison():
-	print("PrintAllComparison")
+	print("PrintErrorComparison")
 	plt.rcParams["figure.figsize"] = [18, 10]
 	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
 	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
@@ -295,7 +295,49 @@ def printErrorComparison():
 	protocols = ["Fast-Broadcast", "ROFF"]
 	#cws = ["cw[16-128]", "cw[32-1024]"]
 	cws = ["cw[16-128]"]
-	errorRates = ["0", "10", "20", "30", "40", "50"]
+	errorRates = ["0", "10", "20", "30", "40", "50", "100"]
+	junctions = ["0", "1"]
+	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
+	metricYLabels = {}
+	metricYLabels["totCoverage"] = "Total Coverage (%)"
+	metricYLabels["covOnCirc"] = "Coverage on circumference (%)"
+	metricYLabels["hops"] = "Number of hops to reach circumference"
+	metricYLabels["slotsWaited"] = "Number of slots waited to reach circumference"
+	metricYLabels["messageSent"] = "Number of alert messages sent"
+	
+
+	for scenario in scenarios:
+		for building in buildings:
+			for cw in cws:
+				errorRateCompoundData = {}
+				for errorRate in errorRates:
+					errorRateCompoundData[errorRate] = {}
+				for junction in junctions:
+					for errorRate in errorRates:
+						basePath = os.path.join(initialBasePath, scenario, "b" + building)
+						#print("basePath= " + basePath)
+						compoundData = initCompoundData(txRanges, protocols, metrics)
+						appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics)
+						errorRateCompoundData[errorRate][junction] = compoundData
+				graphOutFolder = os.path.join(scenario, "error", "b" + building)
+				for metric in metrics:
+					yLabel = metricYLabels[metric]
+					printSingleGraphErrorRate(graphOutFolder, "graphTitle", errorRateCompoundData, errorRates, protocols, cw, "500", junctions, metric, yLabel)
+
+
+
+def printForgedComparison():
+	print("PrintForgedComparison")
+	plt.rcParams["figure.figsize"] = [18, 10]
+	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
+	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
+	scenarios = ["Padova-25"]
+	buildings = ["0" , "1"]
+	txRanges = ["100", "300", "500"]
+	protocols = ["Fast-Broadcast", "ROFF"]
+	#cws = ["cw[16-128]", "cw[32-1024]"]
+	cws = ["cw[16-128]"]
+	forgedRates = ["0", "10", "20", "30", "40", "50", "100"]
 	junctions = ["0", "1"]
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
 	metricYLabels = {}

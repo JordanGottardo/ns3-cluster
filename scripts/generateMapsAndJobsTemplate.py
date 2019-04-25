@@ -103,6 +103,9 @@ def runScenario(cw, scenario, distance, startingNode, area=1000):
 				for junction in junctions:
 					for errorRate in errorRates:
 						protocolName = protocolsMap[protocol]
+						# skips job generation for error rates > 0 with STATIC protocols
+						if (errorRate != "0" and "STATIC" in protocolName):
+							continue
 						propagationLoss = "1"
 						if (protocol == "5"): #ROFF
 							command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings={0} --actualRange={1} --mapBasePath={2} --vehicleDistance={3} --startingNode={4} --propagationLoss={5} --area={6} --smartJunctionMode={7} --errorRate={8} --printToFile=1 --printCoords=0  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1 --forgedCoordTest=0 --forgedCoordRate=0".format(b, txRange, mapPathWithoutExtension, distance, startingNode, propagationLoss, area, junction, errorRate)
