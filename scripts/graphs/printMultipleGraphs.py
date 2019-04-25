@@ -28,7 +28,7 @@ def printSingleGraphLineComparison():
 	plt.show()
 
 
-def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, protocols, cw, txRange, junctions, metric, yLabel):
+def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, protocols, cw, txRange, junctions, metric, xLabel, yLabel):
 	autoscale = True 
 	n = len(errorRates)
 	ind = np.arange(n)
@@ -71,7 +71,7 @@ def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, p
 		rects.append((ax.bar(ind + widthDistance[count] * barWidth, metricMeanList, barWidth, color=colors[count], label=prot, yerr=metricConfIntList, 	capsize=4)))
 		count = count + 1
 	
-	ax.set_xlabel("Error in scheduling (%)", fontsize=11)
+	ax.set_xlabel(xLabel, fontsize=11)
 	ax.set_ylabel(yLabel, fontsize=11)
 	if not autoscale:
 		ax.set_ylim(yBottomLim, yTopLim)
@@ -208,10 +208,10 @@ def appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, c
 			path = None
 			roff = False
 			if (protocol != "ROFF"):
-				path = os.path.join(basePath, "e" + errorRate, "r" + txRange, "j" + junction, cw, protocol)
+				path = os.path.join(basePath, errorRate, "r" + txRange, "j" + junction, cw, protocol)
 			else: 
 				roff = True
-				path = os.path.join(basePath, "e" + errorRate, "r" + txRange, "j" + junction, protocol)
+				path = os.path.join(basePath, errorRate, "r" + txRange, "j" + junction, protocol)
 			data = graphUtils.readCsvFromDirectory(path, roff)
 			entry = compoundData[txRange][protocol]
 			for metric in metrics:
@@ -254,7 +254,7 @@ def printProtocolComparison():
 	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
 	scenarios = ["Padova-25"]
 	buildings = ["0" , "1"]
-	errorRate = "0"
+	errorRate = "e0"
 	txRanges = ["100", "300", "500"]
 	protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300", "STATIC-500", "ROFF"]
 	#cws = ["cw[16-128]", "cw[32-1024]"]
@@ -297,6 +297,7 @@ def printErrorComparison():
 	cws = ["cw[16-128]"]
 	errorRates = ["0", "10", "20", "30", "40", "50", "100"]
 	junctions = ["0", "1"]
+	xLabel = "Error in scheduling (%)"
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
 	metricYLabels = {}
 	metricYLabels["totCoverage"] = "Total Coverage (%)"
@@ -317,7 +318,7 @@ def printErrorComparison():
 						basePath = os.path.join(initialBasePath, scenario, "b" + building)
 						#print("basePath= " + basePath)
 						compoundData = initCompoundData(txRanges, protocols, metrics)
-						appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics)
+						appendCompoundData(basePath, txRanges, protocols, cw, junction, "e" + errorRate, compoundData, metrics)
 						errorRateCompoundData[errorRate][junction] = compoundData
 				graphOutFolder = os.path.join(scenario, "error", "b" + building)
 				for metric in metrics:
@@ -339,6 +340,7 @@ def printForgedComparison():
 	cws = ["cw[16-128]"]
 	forgedRates = ["0", "10", "20", "30", "40", "50", "100"]
 	junctions = ["0", "1"]
+	xLabel = "% of vehicles affected by forging"
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
 	metricYLabels = {}
 	metricYLabels["totCoverage"] = "Total Coverage (%)"
@@ -351,20 +353,20 @@ def printForgedComparison():
 	for scenario in scenarios:
 		for building in buildings:
 			for cw in cws:
-				errorRateCompoundData = {}
-				for errorRate in errorRates:
-					errorRateCompoundData[errorRate] = {}
+				forgedRateCompoundData = {}
+				for forgedRate in forgedRates:
+					forgedRateCompoundData[forgedRate] = {}
 				for junction in junctions:
-					for errorRate in errorRates:
+					for forgedRate in forgedRates:
 						basePath = os.path.join(initialBasePath, scenario, "b" + building)
 						#print("basePath= " + basePath)
 						compoundData = initCompoundData(txRanges, protocols, metrics)
-						appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics)
-						errorRateCompoundData[errorRate][junction] = compoundData
-				graphOutFolder = os.path.join(scenario, "error", "b" + building)
+						appendCompoundData(basePath, txRanges, protocols, cw, junction, "f" + forgedRate, compoundData, metrics)
+						forgedRateCompoundData[errorRate][junction] = compoundData
+				graphOutFolder = os.path.join(scenario, "forged", "b" + building)
 				for metric in metrics:
 					yLabel = metricYLabels[metric]
-					printSingleGraphErrorRate(graphOutFolder, "graphTitle", errorRateCompoundData, errorRates, protocols, cw, "500", junctions, metric, yLabel)
+					printSingleGraphErrorRate(graphOutFolder, "graphTitle", forgedRateCompoundData, forgedRates, protocols, cw, "500", junctions, metric, xLabel, yLabel)
 
 if __name__ == "__main__":
 	main()
