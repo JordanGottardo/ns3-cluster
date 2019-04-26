@@ -78,9 +78,10 @@ namespace ns3 {
 		return m_junctionId;
 	}
 
-//	void ROFFNode::SetPosition(const Vector& position) {
-//		m_position = position;
-//	}
+	bool ROFFNode::GetStopSending (void) const	{
+		NS_LOG_FUNCTION (this);
+		return m_stopSending;
+	}
 
 
 //	Setters
@@ -131,7 +132,10 @@ namespace ns3 {
 		m_junctionId = junctionId;
 	}
 
-
+	void ROFFNode::SetStopSending (bool stopSending) {
+		NS_LOG_FUNCTION (this << stopSending);
+		m_stopSending = stopSending;
+	}
 
 //	Methods
 
@@ -172,6 +176,8 @@ namespace ns3 {
 		m_position = pos;
 		return pos;
 	}
+
+
 
 }
 

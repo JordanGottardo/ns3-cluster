@@ -417,6 +417,10 @@ void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHead
 	int32_t phase = oldHeader.GetPhase();
 	NS_LOG_FUNCTION(this << node << oldHeader << waitingTime << forceSend);
 
+	if (node->GetStopSending()) {
+		NS_LOG_DEBUG("node " << node->GetId() << " defers because of StopSending");
+		return;
+	}
 	if (!(node->GetSent() && forceSend)) {
 		if (node->GetPhase() > phase) {
 			NS_LOG_DEBUG("ROFFApplication::ForwardAlertMessage node "
@@ -429,7 +433,9 @@ void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHead
 			return;
 		}
 	}
-
+	if (forceSend) {
+		node->SetStopSending(true);
+	}
 //	cout << "id= " << node->GetId() << " nodePhase= " << node->GetPhase() << " headerPhase= "
 //			<< phase << endl;
 	uint32_t headerType = ALERT_MESSAGE;

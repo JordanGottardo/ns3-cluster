@@ -123,9 +123,7 @@ public:
 	 */
 	uint64_t GetJunctionId  (void) const;
 
-	/**
-	 * \returns the id of the junction the node is in
-	 */
+
 	bool GetStopSending  (void) const;
 
 	/**

@@ -72,6 +72,8 @@ public:
 	uint64_t GetJunctionId () const;
 
 
+	bool GetStopSending  (void) const;
+
 
 
 //	Setters
@@ -105,6 +107,8 @@ public:
 	 */
 	void SetJunctionId (uint64_t junctionId);
 
+	void SetStopSending (bool stopSending);
+
 //	Methods
 	void Send(Ptr<Packet> packet);
 
@@ -136,7 +140,7 @@ private:
 	Time				m_timestamp; // time of reception of alert message
 	bool				m_amIInJunction; // whether the node is inside a junction
 	uint64_t			m_junctionId; // id of the junction where the node is
-
+	bool				m_stopSending;
 };
 
 }
