@@ -174,6 +174,7 @@ void ROFFApplication::GenerateForgedHelloTraffic() {
 	}
 
 	for (auto id: affectedNodes) {
+		NS_LOG_DEBUG("affecting node " << id << " with forging");
 		for (uint32_t i = 0; i < 1000; i++) {
 			uint32_t headerType = HELLO_MESSAGE;
 			Vector position = Vector(10000, 10000, 0);
@@ -186,6 +187,7 @@ void ROFFApplication::GenerateForgedHelloTraffic() {
 void ROFFApplication::GenerateHelloTraffic(uint32_t count) {
 	NS_LOG_FUNCTION(this);
 //	cout << "generateHelloTraffic" << count << endl;
+	NS_LOG_INFO("Generate hello traffic " << count);
 	if (count == 0) {
 		return;
 	}
@@ -204,6 +206,7 @@ void ROFFApplication::GenerateHelloTraffic(uint32_t count) {
 
 void ROFFApplication::StartBroadcastPhase(void) {
 	NS_LOG_FUNCTION(this);
+	NS_LOG_INFO("Start broadcast phase");
 	for (auto entry: m_nodes) {
 		Ptr<ROFFNode> roffNode = entry.second;
 //		cout << "ROFFApplication::StartBroadcastPhase nbt size= " << roffNode->GetNBTSize() << endl;
