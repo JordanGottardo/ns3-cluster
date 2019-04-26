@@ -682,6 +682,10 @@ void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader
 	Vector oldPos = oldFBHeader.GetPosition();
 	Vector position = fbNode->UpdatePosition();
 	double distance = ns3::CalculateDistance(position, oldPos);
+	if (fbNode->GetStopSending()) {
+		NS_LOG_DEBUG("node " << fbNode->GetId() << " defers because of StopSending");
+		return;
+	}
 	if (!(fbNode->GetSent() && forceSend)) {
 		if (fbNode->GetSent()) {
 			NS_LOG_DEBUG("node " << fbNode->GetId() << " defers because of GetSent");
@@ -693,7 +697,9 @@ void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader
 			return;
 		}
 	}
-
+	if (forceSend) {
+		fbNode->SetStopSending(true);
+	}
 	NS_LOG_DEBUG ("Forwarding Alert Message (" << fbNode->GetNode()->GetId() << ") after " << waitingTime << ".");
 //		NS_LOG_UNCOND ("Forwarding Alert Message (" << fbNode->GetNode()->GetId() <<
 //				"at pos " << fbNode->GetPosition() << ") after " << waitingTime << ".");

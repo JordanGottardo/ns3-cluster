@@ -183,6 +183,13 @@
 		return m_junctionId;
 	}
 
+	bool
+	FBNode::GetStopSending (void) const
+	{
+		NS_LOG_FUNCTION (this);
+		return m_stopSending;
+	}
+
 	void
 	FBNode::SetId (uint32_t value)
 	{
@@ -317,4 +324,12 @@
 		NS_LOG_FUNCTION (this << junctionId);
 		m_junctionId = junctionId;
 	}
+
+	void
+	FBNode::SetStopSending (bool stopSending)
+	{
+		NS_LOG_FUNCTION (this << stopSending);
+		m_stopSending = stopSending;
+	}
+
 } // namespace ns3

@@ -382,7 +382,7 @@ def printErrorComparison():
 	protocols = ["Fast-Broadcast", "ROFF"]
 	#cws = ["cw[16-128]", "cw[32-1024]"]
 	cws = ["cw[16-128]"]
-	errorRates = ["0", "10", "20", "30", "40", "50", "100"]
+	errorRates = ["0", "10", "20", "30", "40", "50"]
 	junctions = ["0", "1"]
 	xLabel = "Error in scheduling (%)"
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
@@ -410,7 +410,7 @@ def printErrorComparison():
 				graphOutFolder = os.path.join(scenario, "error", "b" + building)
 				for metric in metrics:
 					yLabel = metricYLabels[metric]
-					printSingleGraphErrorRate(graphOutFolder, "graphTitle", errorRateCompoundData, errorRates, protocols, cw, "500", junctions, metric, yLabel)
+					printSingleGraphErrorRate(graphOutFolder, "graphTitle", errorRateCompoundData, errorRates, protocols, cw, "500", junctions, metric, xLabel, yLabel)
 
 
 

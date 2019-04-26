@@ -124,6 +124,11 @@ public:
 	uint64_t GetJunctionId  (void) const;
 
 	/**
+	 * \returns the id of the junction the node is in
+	 */
+	bool GetStopSending  (void) const;
+
+	/**
 	 * \brief set the node id
 	 * \param value id
 	 */
@@ -231,6 +236,8 @@ public:
 	 */
 	void SetJunctionId (uint64_t junctionId);
 
+	void SetStopSending (bool stopSending);
+
 	uint32_t								m_id;	// node id
 	Ptr<Node>								m_node;	// ns-3 node
 	Ptr<Socket> 							m_socket; // ns-3 socket
@@ -248,6 +255,7 @@ public:
 	bool									m_amIaVehicle;	// used for statistics
 	bool									m_amIInJunction; // whether the node is inside a junction
 	uint64_t								m_junctionId; // id of the junction where the node is
+	bool									m_stopSending;
 };
 
 } // namespace ns3
