@@ -641,7 +641,6 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 //		cout << "errorDelay= " << errorDelay << endl;
 		if (!m_flooding) {
 			if (errorDelay == 0) {
-				cout << "yup" << endl;
 				Simulator::Schedule(MilliSeconds(waitingTime), &FBApplication::ForwardAlertMessage,
 						this, fbNode, fbHeader, waitingTime, false);
 			 }
