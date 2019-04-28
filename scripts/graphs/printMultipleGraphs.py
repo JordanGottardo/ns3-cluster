@@ -203,8 +203,7 @@ def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, p
 	#plt.show()
 
 
-def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, cw, junction, metric, yLabel):
-	autoscale = True 
+def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, cw, junction, metric, yLabel, minY, maxY):
 	n = len(protocols)
 	ind = np.arange(n)
 	
@@ -233,8 +232,11 @@ def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, c
 	
 	ax.set_xlabel("Protocols", fontsize=11)
 	ax.set_ylabel(yLabel, fontsize=11)
-	if not autoscale:
-		ax.set_ylim(yBottomLim, yTopLim)
+	if ("cov" in metric or "Cov" in metric):
+		maxY = maxY * 1.05
+	else:
+		maxY = maxY * 1.1
+	ax.set_ylim(minY, maxY)
 	#ax.set_title(graphTitle, fontsize=20)
 	ax.set_xticks(ind)
 	ax.set_xticklabels(protocols)
@@ -355,6 +357,29 @@ def printProtocolComparison():
 	metricYLabels["slotsWaited"] = "Number of slots waited to reach circumference"
 	metricYLabels["messageSent"] = "Number of alert messages sent"
 	
+	maxMetricValues = {}
+
+	for scenario in scenarios:
+		for building in buildings:
+			for cw in cws:
+				for junction in junctions:
+					basePath = os.path.join(initialBasePath, scenario, "b" + building)
+					compoundData = initCompoundData(txRanges, protocols, metrics)
+					appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics)
+					graphOutFolder = os.path.join(scenario, "b" + building, "j" + junction)
+					for metric in metrics:
+						yLabel = metricYLabels[metric]
+						maxMetricValues[metric] = -1
+						if (metric == "totCoverage" or metric == "covOnCirc"):
+							maxMetricValues[metric] = 100
+						else:
+							for txRange in txRanges:
+								for protocol in protocols:
+									metricMean = metric + "Mean"
+									value = compoundData[txRange][protocol][metricMean] 
+									if ( value > maxMetricValues[metric]):
+										maxMetricValues[metric] = value
+
 
 	for scenario in scenarios:
 		for building in buildings:
@@ -368,7 +393,7 @@ def printProtocolComparison():
 					#print(compoundData)
 					for metric in metrics:
 						yLabel = metricYLabels[metric]
-						printSingleGraph(graphOutFolder, "graphTitle", compoundData, txRanges, protocols, cw, junction, metric, yLabel)
+						printSingleGraph(graphOutFolder, "graphTitle", compoundData, txRanges, protocols, cw, junction, metric, yLabel, 0, maxMetricValues[metric])
 
 
 def printErrorComparison():
