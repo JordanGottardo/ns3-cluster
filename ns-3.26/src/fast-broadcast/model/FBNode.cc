@@ -61,7 +61,8 @@
 			m_timestamp (0),
 			m_amIaVehicle (true),
 			m_amIInJunction(false),
-			m_junctionId(0)
+			m_junctionId(0),
+			m_stopSending(false)
 	{
 	  NS_LOG_FUNCTION (this);
 	}

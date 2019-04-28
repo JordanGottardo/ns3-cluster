@@ -223,6 +223,7 @@ namespace ns3 {
 	void ROFFHeader::Serialize(Buffer::Iterator start) const {
 		NS_LOG_FUNCTION(this);
 //		cout << "ROFFHeader::Serialize " << endl;
+//		cout << "ROFFHEADER Serialize bmp= " << m_esdBitmap << endl;
 		start.WriteU32(m_type);
 		WriteDouble(&start, m_position.x);
 		WriteDouble(&start, m_position.y);

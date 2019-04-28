@@ -173,11 +173,13 @@ void ROFFApplication::GenerateForgedHelloTraffic() {
 		affectedNodes.insert(nodeId);
 	}
 
+	double startingX = 10000;
+
 	for (auto id: affectedNodes) {
 		NS_LOG_DEBUG("affecting node " << id << " with forging");
 		for (uint32_t i = 0; i < 1000; i++) {
 			uint32_t headerType = HELLO_MESSAGE;
-			Vector position = Vector(10000, 10000, 0);
+			Vector position = Vector(startingX + i * m_distanceRange, startingX + i * m_distanceRange, 0);
 			ROFFHeader header(headerType, position, forgedSenderNodeId + i, position, boost::dynamic_bitset<>(), 0, 0);
 			HandleHelloMessage(m_nodes.at(id), header);
 		}
@@ -321,18 +323,18 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 
 
 	if (node->AmIInJunction()) {
-		NS_LOG_DEBUG("node " << node->GetId() << "is inside a junction and has received an alert message");
+		NS_LOG_LOGIC("node " << node->GetId() << "is inside a junction and has received an alert message");
 		if (header.IsSenderInJunction() && node->GetJunctionId() == header.GetJunctionId()) {
 			if (phase > node->GetPhase()) {
 				node->SetPhase(phase);
-				NS_LOG_DEBUG("node " << node->GetId() << "is inside a junction: updates phase from " << node->GetPhase() << " to " << phase);
+//				NS_LOG_LOGIC("node " << node->GetId() << "is inside a junction: updates phase from " << node->GetPhase() << " to " << phase);
 			}
 		}
 	}
 	else {
 //		if (phase > node->GetPhase() && (distanceSenderToStarter > distanceCurrentToStarter)) {
 		if (phase > node->GetPhase()) {
-			NS_LOG_DEBUG("node " << node->GetId() << "is not inside a junction: updates phase from " << node->GetPhase() << " to " << phase);
+			NS_LOG_LOGIC("node " << node->GetId() << "is not inside a junction: updates phase from " << node->GetPhase() << " to " << phase);
 			node->SetPhase(phase);
 		}
 	}
@@ -355,7 +357,7 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 		m_transmissionList[senderId].push_back(receiverId);
 		m_transmissionVector.push_back(Edge(senderId, receiverId, phase));
 	}
-	NS_LOG_INFO("ROFFApplication::HandleAlertMessage Node " << node->GetId() << " "
+	NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage Node " << node->GetId() << " "
 			"received alert message from node " << header.GetSenderId() <<
 			" with phase= " << phase);
 
@@ -385,9 +387,11 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 				<< " won't participate in contention: it has lost the contention");
 		return;
 	}
+//	cout << "receivedEsd = " << esdBitmap << endl;
 	PositionRankingMap rankingOfPositions = PositionRankingMap(m_distanceRange, esdBitmap);
 //	cout << "ROFFHeader::HandleAlertMessage " << rankingOfPositions << endl;
 	uint32_t priority = rankingOfPositions.GetPriority(dist);
+//	cout << "priority = " << priority << endl;
 //	cout << "ROFFHeader::HandleAlertMessage priority= " << priority << endl;
 //	uint32_t waitingTime = ComputeWaitingTime(node, dist, rankingOfPositions, priority);
 

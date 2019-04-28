@@ -42,10 +42,10 @@ NS_LOG="ROFFApplication=debug" NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'roff-test
 
 
 PLATOON FB 16-128
-NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'fb-vanet-urban --buildings=0 --actualRange=300 --vehicleDistance=25 --protocol=1 --flooding=0 --area=1000 --mapBasePath=../maps/Platoon/Platoon --cwMin=16 --cwMax=128 --printToFile=1 --printCoords=1 -startingNode=0 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=0 --propagationLoss=0'
+NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'fb-vanet-urban --buildings=0 --actualRange=300 --vehicleDistance=25 --protocol=1 --flooding=0 --area=1000 --mapBasePath=../maps/Platoon/Platoon --cwMin=16 --cwMax=128 --printToFile=1 --printCoords=1 -startingNode=0 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=0 --propagationLoss=0 --forgedCoordTest=0 --forgedCoordRate=0'
 
 PLATOON ROFF
-NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'roff-test --buildings=0 --actualRange=300 --vehicleDistance=25 --area=1000 --mapBasePath=../maps/Platoon/Platoon --printToFile=1 --printCoords=1 --startingNode=0 --beaconInterval=100 --distanceRange=1 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=0 --propagationLoss=0'
+NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'roff-test --buildings=0 --actualRange=300 --vehicleDistance=25 --area=1000 --mapBasePath=../maps/Platoon/Platoon --printToFile=1 --printCoords=1 --startingNode=0 --beaconInterval=100 --distanceRange=1 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=0 --propagationLoss=0 --forgedCoordTest=0 --forgedCoordRate=0'
 
 
 GRID-200 FB 16-128

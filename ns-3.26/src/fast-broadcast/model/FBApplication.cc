@@ -587,10 +587,12 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 	// Message coming from the back
 
 	if (fbNode->AmIInJunction()) {
+		NS_LOG_LOGIC("node " << fbNode->GetId() << "is inside a junction and has received an alert message");
 		//I am in a junction and I receive a message from the same junction -> I have to defer transmission
 		if (fbHeader.IsSenderInJunction() && fbNode->GetJunctionId() == fbHeader.GetJunctionId()) {
 			if (phase > fbNode->GetPhase()) {
 				fbNode->SetPhase(phase);
+//				NS_LOG_LOGIC("node " << node->GetId() << "is inside a junction: updates phase from " << node->GetPhase() << " to " << phase);
 			}
 		}
 	}
@@ -598,6 +600,7 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 		// I am not in a junction and I receive a message from a node farther than me -> I have to defer tranmission
 		if ((phase > fbNode->GetPhase()) && (distanceSenderToStarter > distanceCurrentToStarter)) {
 			fbNode->SetPhase(phase);
+//			NS_LOG_LOGIC("node " << node->GetId() << "is not inside a junction: updates phase from " << node->GetPhase() << " to " << phase);
 		}
 	}
 
@@ -635,11 +638,12 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 		// Compute a random waiting time (1 <= waitingTime <= cwnd)
 		uint32_t waitingTime = m_randomVariable->GetInteger(1, cwnd);
 		int32_t errorDelay = ComputeErrorDelay();
-
+//		cout << "errorDelay= " << errorDelay << endl;
 		if (!m_flooding) {
 			if (errorDelay == 0) {
-					Simulator::Schedule(MilliSeconds(waitingTime), &FBApplication::ForwardAlertMessage,
-							this, fbNode, fbHeader, waitingTime, false);
+				cout << "yup" << endl;
+				Simulator::Schedule(MilliSeconds(waitingTime), &FBApplication::ForwardAlertMessage,
+						this, fbNode, fbHeader, waitingTime, false);
 			 }
 			else {
 				uint32_t firstTransmissionTime;
@@ -698,6 +702,7 @@ void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader
 		}
 	}
 	if (forceSend) {
+		cout << "setStopSending" << endl;
 		fbNode->SetStopSending(true);
 	}
 	NS_LOG_DEBUG ("Forwarding Alert Message (" << fbNode->GetNode()->GetId() << ") after " << waitingTime << ".");
