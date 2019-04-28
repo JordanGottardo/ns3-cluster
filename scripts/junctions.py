@@ -32,7 +32,7 @@ def main():
 	ns2MobilityFilePath = sys.argv[1]
 	netFilePath = sys.argv[2]
 	nodeList = coordUtils.parseNodeList(ns2MobilityFilePath)
-	outFilePath = "./nodeIntersectionMap"
+	outFilePath = os.path.join(os.path.dirname(ns2MobilityFilePath), os.path.splitext(os.path.splitext(os.path.basename(ns2MobilityFilePath))[0])[0] + ".junctions")
 	nodesInsideJunctions = set()
 	#print(nodeList)
 	junctionList = coordUtils.parseJunctionList(netFilePath)
