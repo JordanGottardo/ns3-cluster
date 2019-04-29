@@ -701,7 +701,6 @@ void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader
 		}
 	}
 	if (forceSend) {
-		cout << "setStopSending" << endl;
 		fbNode->SetStopSending(true);
 	}
 	NS_LOG_DEBUG ("Forwarding Alert Message (" << fbNode->GetNode()->GetId() << ") after " << waitingTime << ".");

@@ -27,8 +27,7 @@ def printSingleGraphLineComparison():
 	rects.append((ax.bar([10, 20])))
 	plt.show()
 
-def printSingleGraphDistance(outFolder, graphTitle, compoundData, distances, protocols, cw, txRange, junctions, metric, xLabel, yLabel):
-	autoscale = True 
+def printSingleGraphDistance(outFolder, graphTitle, compoundData, distances, protocols, cw, txRange, junctions, metric, xLabel, yLabel, minY, maxY):
 	n = len(distances)
 	ind = np.arange(n)
 	
@@ -66,14 +65,16 @@ def printSingleGraphDistance(outFolder, graphTitle, compoundData, distances, pro
 			metricConfInt = metric + "ConfInt"
 			metricMeanList.append(compoundData[distance][junction][txRange][protocol][metricMean] + count )
 			metricConfIntList.append(compoundData[distance][junction][txRange][protocol][metricConfInt])
-			print(len(metricMeanList))
 		plt.plot(ind + widthDistance[count] * barWidth, metricMeanList, barWidth, color=colors[count], label=prot)
 		count = count + 1
 	
 	ax.set_xlabel(xLabel, fontsize=11)
 	ax.set_ylabel(yLabel, fontsize=11)
-	if not autoscale:
-		ax.set_ylim(yBottomLim, yTopLim)
+	if ("cov" in metric or "Cov" in metric):
+		maxY = maxY * 1.05
+	else:
+		maxY = maxY * 1.1
+	ax.set_ylim(minY, maxY)
 	#ax.set_title(graphTitle, fontsize=20)
 	ax.set_xticks(ind)
 	ax.set_xticklabels(distances)
@@ -115,8 +116,7 @@ def printSingleGraphDistance(outFolder, graphTitle, compoundData, distances, pro
 	#plt.show()
 
 
-def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, protocols, cw, txRange, junctions, metric, xLabel, yLabel):
-	autoscale = True 
+def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, protocols, cw, txRange, junctions, metric, xLabel, yLabel, minY, maxY):
 	n = len(errorRates)
 	ind = np.arange(n)
 	
@@ -154,14 +154,16 @@ def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, p
 			metricConfInt = metric + "ConfInt"
 			metricMeanList.append(compoundData[errorRate][junction][txRange][protocol][metricMean])
 			metricConfIntList.append(compoundData[errorRate][junction][txRange][protocol][metricConfInt])
-			print(len(metricMeanList))
 		rects.append((ax.bar(ind + widthDistance[count] * barWidth, metricMeanList, barWidth, color=colors[count], label=prot, yerr=metricConfIntList, 	capsize=4)))
 		count = count + 1
 	
 	ax.set_xlabel(xLabel, fontsize=11)
 	ax.set_ylabel(yLabel, fontsize=11)
-	if not autoscale:
-		ax.set_ylim(yBottomLim, yTopLim)
+	if ("cov" in metric or "Cov" in metric):
+		maxY = maxY * 1.05
+	else:
+		maxY = maxY * 1.1
+	ax.set_ylim(minY, maxY)
 	#ax.set_title(graphTitle, fontsize=20)
 	ax.set_xticks(ind)
 	ax.set_xticklabels(errorRates)
@@ -380,7 +382,6 @@ def printProtocolComparison():
 									if ( value > maxMetricValues[metric]):
 										maxMetricValues[metric] = value
 
-
 	for scenario in scenarios:
 		for building in buildings:
 			for cw in cws:
@@ -418,6 +419,35 @@ def printErrorComparison():
 	metricYLabels["slotsWaited"] = "Number of slots waited to reach circumference"
 	metricYLabels["messageSent"] = "Number of alert messages sent"
 	
+	maxMetricValues = {}
+
+	for scenario in scenarios:
+		for building in buildings:
+			for cw in cws:
+				errorRateCompoundData = {}
+				for errorRate in errorRates:
+					errorRateCompoundData[errorRate] = {}
+				for junction in junctions:
+					for errorRate in errorRates:
+						basePath = os.path.join(initialBasePath, scenario, "b" + building)
+						#print("basePath= " + basePath)
+						compoundData = initCompoundData(txRanges, protocols, metrics)
+						appendCompoundData(basePath, txRanges, protocols, cw, junction, "e" + errorRate, compoundData, metrics)
+						errorRateCompoundData[errorRate][junction] = compoundData
+				for metric in metrics:
+					yLabel = metricYLabels[metric]
+					maxMetricValues[metric] = -1
+					if (metric == "totCoverage" or metric == "covOnCirc"):
+							maxMetricValues[metric] = 100
+					else:
+						for junction in junctions:
+							for errorRate in errorRates:
+								for txRange in txRanges:
+									for protocol in protocols:
+										metricMean = metric + "Mean"
+										value = errorRateCompoundData[errorRate][junction][txRange][protocol][metricMean] 
+										if (value > maxMetricValues[metric]):
+											maxMetricValues[metric] = value
 
 	for scenario in scenarios:
 		for building in buildings:
@@ -435,7 +465,7 @@ def printErrorComparison():
 				graphOutFolder = os.path.join(scenario, "error", "b" + building)
 				for metric in metrics:
 					yLabel = metricYLabels[metric]
-					printSingleGraphErrorRate(graphOutFolder, "graphTitle", errorRateCompoundData, errorRates, protocols, cw, "100", junctions, metric, xLabel, yLabel)
+					printSingleGraphErrorRate(graphOutFolder, "graphTitle", errorRateCompoundData, errorRates, protocols, cw, "100", junctions, metric, xLabel, yLabel, 0, maxMetricValues[metric])
 
 
 
@@ -462,6 +492,35 @@ def printForgedComparison():
 	metricYLabels["messageSent"] = "Number of alert messages sent"
 	
 
+	maxMetricValues = {}
+
+	for scenario in scenarios:
+		for building in buildings:
+			for cw in cws:
+				forgedRateCompoundData = {}
+				for forgedRate in forgedRates:
+					forgedRateCompoundData[forgedRate] = {}
+				for junction in junctions:
+					for forgedRate in forgedRates:
+						basePath = os.path.join(initialBasePath, scenario, "b" + building)
+						compoundData = initCompoundData(txRanges, protocols, metrics)
+						appendCompoundData(basePath, txRanges, protocols, cw, junction, "f" + forgedRate, compoundData, metrics)
+						forgedRateCompoundData[forgedRate][junction] = compoundData
+				for metric in metrics:
+					yLabel = metricYLabels[metric]
+					maxMetricValues[metric] = -1
+					if (metric == "totCoverage" or metric == "covOnCirc"):
+							maxMetricValues[metric] = 100
+					else:
+						for junction in junctions:
+							for forgedRate in forgedRates: 
+								for txRange in txRanges:
+									for protocol in protocols:
+										metricMean = metric + "Mean"
+										value = forgedRateCompoundData[forgedRate][junction][txRange][protocol][metricMean] 
+										if ( value > maxMetricValues[metric]):
+											maxMetricValues[metric] = value
+
 	for scenario in scenarios:
 		for building in buildings:
 			for cw in cws:
@@ -478,7 +537,7 @@ def printForgedComparison():
 				graphOutFolder = os.path.join(scenario, "forged", "b" + building)
 				for metric in metrics:
 					yLabel = metricYLabels[metric]
-					printSingleGraphErrorRate(graphOutFolder, "graphTitle", forgedRateCompoundData, forgedRates, protocols, cw, "500", junctions, metric, xLabel, yLabel)
+					printSingleGraphErrorRate(graphOutFolder, "graphTitle", forgedRateCompoundData, forgedRates, protocols, cw, "500", junctions, metric, xLabel, yLabel, 0, maxMetricValues[metric])
 
 def printDistanceComparison():
 	print("PrintForgedComparison")
@@ -505,6 +564,8 @@ def printDistanceComparison():
 	metricYLabels["messageSent"] = "Number of alert messages sent"
 	
 
+	maxMetricValues = {}
+
 	for scenario in scenarios:
 		for building in buildings:
 			for cw in cws:
@@ -514,14 +575,40 @@ def printDistanceComparison():
 				for junction in junctions:
 					for distance in distances:
 						basePath = os.path.join(initialBasePath, scenario + "-" + distance, "b" + building)
-						#print("basePath= " + basePath)
+						compoundData = initCompoundData(txRanges, protocols, metrics)
+						appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics)
+						distanceCompoundData[distance][junction] = compoundData
+				for metric in metrics:
+					yLabel = metricYLabels[metric]
+					maxMetricValues[metric] = -1
+					if (metric == "totCoverage" or metric == "covOnCirc"):
+							maxMetricValues[metric] = 100
+					else:
+						for junction in junctions:
+							for distance in distances: 
+								for txRange in txRanges:
+									for protocol in protocols:
+										metricMean = metric + "Mean"
+										value = distanceCompoundData[distance][junction][txRange][protocol][metricMean] 
+										if ( value > maxMetricValues[metric]):
+											maxMetricValues[metric] = value
+
+	for scenario in scenarios:
+		for building in buildings:
+			for cw in cws:
+				distanceCompoundData = {}
+				for distance in distances:
+					distanceCompoundData[distance] = {}
+				for junction in junctions:
+					for distance in distances:
+						basePath = os.path.join(initialBasePath, scenario + "-" + distance, "b" + building)
 						compoundData = initCompoundData(txRanges, protocols, metrics)
 						appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics)
 						distanceCompoundData[distance][junction] = compoundData
 				graphOutFolder = os.path.join(scenario, "distance", "b" + building) #todo aggiungere cw nel out path?
 				for metric in metrics:
 					yLabel = metricYLabels[metric]
-					printSingleGraphDistance(graphOutFolder, "graphTitle", distanceCompoundData, distances, protocols, cw, "500", junctions, metric, xLabel, yLabel)
+					printSingleGraphDistance(graphOutFolder, "graphTitle", distanceCompoundData, distances, protocols, cw, "500", junctions, metric, xLabel, yLabel, 0, maxMetricValues[metric])
 
 if __name__ == "__main__":
 	main()

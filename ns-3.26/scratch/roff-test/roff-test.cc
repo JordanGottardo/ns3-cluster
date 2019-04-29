@@ -572,7 +572,7 @@ const std::string ROFFVanetExperiment::CalculateOutFilePath() const {
 	std::string actualRange = std::to_string(m_actualRange);
 	std::string junctions = std::to_string(m_smartJunctionMode);
 	if (m_forgedCoordTest) {
-		errorOrForged = "/f" + std::to_string(m_forgedCoordRate);
+		errorOrForged = "f" + std::to_string(m_forgedCoordRate);
 	}
 
 	vector<string> strings;
