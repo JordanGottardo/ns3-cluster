@@ -360,6 +360,8 @@ def printProtocolComparison():
 	metricYLabels["messageSent"] = "Number of alert messages sent"
 	
 	maxMetricValues = {}
+	for metric in metrics:
+		maxMetricValues[metric] = -1
 
 	for scenario in scenarios:
 		for building in buildings:
@@ -371,7 +373,6 @@ def printProtocolComparison():
 					graphOutFolder = os.path.join(scenario, "b" + building, "j" + junction)
 					for metric in metrics:
 						yLabel = metricYLabels[metric]
-						maxMetricValues[metric] = -1
 						if (metric == "totCoverage" or metric == "covOnCirc"):
 							maxMetricValues[metric] = 100
 						else:
@@ -387,11 +388,9 @@ def printProtocolComparison():
 			for cw in cws:
 				for junction in junctions:
 					basePath = os.path.join(initialBasePath, scenario, "b" + building)
-					#print("basePath= " + basePath)
 					compoundData = initCompoundData(txRanges, protocols, metrics)
 					appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics)
 					graphOutFolder = os.path.join(scenario, "b" + building, "j" + junction)
-					#print(compoundData)
 					for metric in metrics:
 						yLabel = metricYLabels[metric]
 						printSingleGraph(graphOutFolder, "graphTitle", compoundData, txRanges, protocols, cw, junction, metric, yLabel, 0, maxMetricValues[metric])
@@ -420,6 +419,8 @@ def printErrorComparison():
 	metricYLabels["messageSent"] = "Number of alert messages sent"
 	
 	maxMetricValues = {}
+	for metric in metrics:
+		maxMetricValues[metric] = -1
 
 	for scenario in scenarios:
 		for building in buildings:
@@ -436,7 +437,6 @@ def printErrorComparison():
 						errorRateCompoundData[errorRate][junction] = compoundData
 				for metric in metrics:
 					yLabel = metricYLabels[metric]
-					maxMetricValues[metric] = -1
 					if (metric == "totCoverage" or metric == "covOnCirc"):
 							maxMetricValues[metric] = 100
 					else:
@@ -493,6 +493,8 @@ def printForgedComparison():
 	
 
 	maxMetricValues = {}
+	for metric in metrics:
+		maxMetricValues[metric] = -1
 
 	for scenario in scenarios:
 		for building in buildings:
@@ -508,7 +510,6 @@ def printForgedComparison():
 						forgedRateCompoundData[forgedRate][junction] = compoundData
 				for metric in metrics:
 					yLabel = metricYLabels[metric]
-					maxMetricValues[metric] = -1
 					if (metric == "totCoverage" or metric == "covOnCirc"):
 							maxMetricValues[metric] = 100
 					else:
