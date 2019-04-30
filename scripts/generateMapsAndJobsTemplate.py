@@ -45,10 +45,10 @@ def runScenario(cw, scenario, distance, startingNode, area=1000):
 	forgedCoordRates = ["0", "10", "20", "30", "40", "50", "100"]
 	#buildings = ["1"]
 	junctions = ["0", "1"]
-	#protocols = ["1", "2", "3", "4"]
-	protocols = ["1", "2", "3", "4", "5"]
-	#txRanges = ["100"]
-	txRanges = ["100", "300", "500"]
+	protocols = ["1", "5"]
+	#protocols = ["1", "2", "3", "4", "5"]
+	txRanges = ["300"]
+	#txRanges = ["100", "300", "500"]
 	protocolsMap = {
 		"1": "Fast-Broadcast",
 		"2": "STATIC-100",
