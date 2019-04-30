@@ -74,7 +74,40 @@
 		
 		Since the traffic information, especially the emergency data, has a broadcast-oriented nature (i.e. it is of public interest), it is more appropriate to disseminate it using broadcasting routing scheme rather than unicast or multicast ones. \cite{5989903}
 %		suddivisione broadcasting protocols
-%
+		
+		This choice leads to some advantages, such as:
+		\begin{itemize}
+			\item the fact that vehicles do not need to know the destination address and how to calculate a route towards it;
+			\item a greater coverage of vehicles interested in the information, useful also in lossy scenarios, especially when paired with controlled redundancy schemes;
+			\item a greater efficiency in bandwidth usage.
+		\end{itemize}
+		
+		Advancements in research on this topic has lead to the development of a number of broadcasting protocols. However, as identified by   Panichpapiboon et al.\cite{5989903}, most of them belong to one of two main categories:
+		\begin{itemize}
+			\item Multi-hop Broadcasting Protocols, in which packets are transmitted through the network via flooding by some of the neighbors of the source. It is of utmost importance to reduce the number of redundant transmission in order not to waste bandwidth.
+			\item Single-hop Broadcasting Protocols, in which no flooding is employed. Instead, vehicles periodically select and broadcast only a subset of the packets it has received.
+		\end{itemize}
+		
+		Multi-hop Broadcasting Protocols can be further subdivided into three categories:
+		\begin{enumerate}
+			\item Delay based protocols, which assign a different waiting time before rebroadcasting the message to each vehicle. This delay is usually inversely proportional to the distance between the source and the potential sender.
+			Some examples are:
+			\begin{itemize}
+				\renewcommand\labelitemi{--}
+				\item \textit{Urban Multi-hop Broadcast (UMB)} \cite{Korkmaz:2004:UMB:1023875.1023887}, designed to solve the broadcast redundancy, hidden node and reliability problems in multi-hop broadcasting using \textit{Request-to-Broadcast (RTB)} and \textit{Clear-To-Broadcast (CTB)} packets; 
+				\item \textit{Smart Broadcast (SB)} \cite{4025102} and \textit{Efficient Directional Broadcast (EDB)} \cite{4340158}, which try to reduce the delay introduced by UMB and remove the RTB and CTB packets, respectively;
+				\item \textit{Vehicle-density-based Emergency Broadcasting (VDEB)} \cite{5663803}, a slotted broadcasting protocol which keeps vehicle density into consideration when computing waiting time slots;
+				\item \textit{Reliable Method for Disseminating Safety Information
+				(RMDSI)} \cite{4591259}, which aims to offer better performances when the network becomes fragmented by making a forwarder keep a copy of the packet it has broadcasted until it hears a retransmission (or until the packet lifetime expires). If no retransmission is heard within a certain time limit, the forwarder tries to find the next node which can relay the message using a small control packet;
+				\item \textit{Multi-hop Vehicular Broadcast (MHVB)} \cite{4068699}, a protocol that keeps traffic congestion into consideration by   checking whether the number of neighbors of a vehicle is greather than a certain threshold and its speed is less than another threshold. When a node detects congestion, it increases its broadcast interval in order to try to reduce the network load;
+				\item \textit{Reliable Broadcasting of Life Safety Messages (RBLSM)} \cite{4458046}, whose main objective is reliability, and a higher priority is given to the vehicle nearest to the sender instead to the one furthest from it, due to the assumption that the closer the vehicle is, the more reliable it is considered since its received signal strength is higher.
+			\end{itemize}
+		
+			\item Probabilistic-based Multi-hop Broadcasting Protocols...
+				 
+		\end{enumerate}
+		
+%		
 %%**************************************************************
 %\chapter{L'azienda}
 %\label{cap:lazienda}
