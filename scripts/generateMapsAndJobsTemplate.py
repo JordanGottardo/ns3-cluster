@@ -41,7 +41,7 @@ def runScenario(cw, scenario, distance, startingNode, area=1000):
 	# Protocols and transmission ranges
 	buildings = ["1"]
 	#errorRates = ["0", "10", "20", "30", "40", "50", "100"]
-	errorRates = ["0"]
+	errorRates = []
 	forgedCoordRates = ["0", "10", "20", "30", "40", "50", "100"]
 	#buildings = ["1"]
 	junctions = ["0", "1"]
@@ -120,6 +120,7 @@ def runScenario(cw, scenario, distance, startingNode, area=1000):
 					# FORGED COORD SCENARIO
 					if (scenario == "Padova-25" and distance == "25"):
 						for forgedCoordRate in forgedCoordRates:
+							propagationLoss = "1"
 							if (protocol == "5"): #ROFF
 								command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings={0} --actualRange={1} --mapBasePath={2} --vehicleDistance={3} --startingNode={4} --propagationLoss={5} --area={6} --smartJunctionMode={7} --errorRate=0 --printToFile=1 --printCoords=0  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1 --forgedCoordTest=1 --forgedCoordRate={8}".format(b, txRange, mapPathWithoutExtension, distance, startingNode, propagationLoss, area, junction, forgedCoordRate)
 							else: 
