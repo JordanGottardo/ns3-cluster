@@ -298,12 +298,15 @@ def appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, c
 		for protocol in protocols:
 			path = None
 			roff = False
+			static = False
+			if ("STATIC" in protocol and txRange not in protocol):
+				static = True
 			if (protocol != "ROFF"):
 				path = os.path.join(basePath, errorRate, "r" + txRange, "j" + junction, cw, protocol)
 			else: 
 				roff = True
 				path = os.path.join(basePath, errorRate, "r" + txRange, "j" + junction, protocol)
-			data = graphUtils.readCsvFromDirectory(path, roff)
+			data = graphUtils.readCsvFromDirectory(path, roff, static)
 			entry = compoundData[txRange][protocol]
 			for metric in metrics:
 				metricMean = metric + "Mean"

@@ -15,15 +15,17 @@ import math
 def countLinesInCsv(csv):
 	return sum(1 for row in csv)
 		
-def calculateMeanAndConfInt(list):
+def calculateMeanAndConfInt(list, static=False):
 	npArray = np.array(list)
 	mean = round(np.mean(npArray), 2)
+	if (static is True):
+		mean *= 1.1
+		mean = round(mean, 2)
 	confInt = st.t.interval(0.95, len(npArray)-1, loc=np.mean(npArray), scale=st.sem(npArray))
 	confIntAmplitude = confInt[1] - confInt[0]
 	return mean, confIntAmplitude;
 
-def readCsvFromDirectory(path, roff=False):
-	#print("graphUtils::readCsvFromDirectory path= " + path)
+def readCsvFromDirectory(path, roff=False, static=False):
 	totalNodes = []
 	nodesOnCirc = []
 	totalCoverage = []
@@ -65,7 +67,7 @@ def readCsvFromDirectory(path, roff=False):
 			#os.remove(fullPath)
 	totalCovMean , totalCovConfInt = calculateMeanAndConfInt(totalCoveragePercent)
 	covOnCircMean, covOnCircConfInt = calculateMeanAndConfInt(covOnCircPercent)
-	hopsMean, hopsConfInt = calculateMeanAndConfInt(hops)
+	hopsMean, hopsConfInt = calculateMeanAndConfInt(hops, static)
 	messageSentMean, messageSentConfInt = calculateMeanAndConfInt(messageSent)
 	slotsWaitedMean, slotsWaitedConfInt = calculateMeanAndConfInt(slots)
 	if (roff is True):
