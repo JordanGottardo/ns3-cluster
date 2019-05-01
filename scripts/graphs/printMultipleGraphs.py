@@ -486,7 +486,7 @@ def printForgedComparison():
 	protocols = ["Fast-Broadcast", "ROFF"]
 	#cws = ["cw[16-128]", "cw[32-1024]"]
 	cws = ["cw[32-1024]"]
-	forgedRates = ["0", "10", "20", "30", "40", "50", "100"]
+	forgedRates = ["0", "10", "20", "30", "40", "50",]
 	junctions = ["0", "1"]
 	xLabel = "% of vehicles affected by forging"
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
@@ -526,8 +526,6 @@ def printForgedComparison():
 										metricMean = metric + "Mean"
 										value = forgedRateCompoundData[forgedRate][junction][txRange][protocol][metricMean] 
 										if ( value > maxMetricValues[metric]):
-											if (metric == "hops"):
-												print("hops= " + str(value))
 											maxMetricValues[metric] = value
 
 	for scenario in scenarios:
@@ -545,8 +543,6 @@ def printForgedComparison():
 						forgedRateCompoundData[forgedRate][junction] = compoundData
 				graphOutFolder = os.path.join(scenario, "forged", "b" + building)
 				for metric in metrics:
-					if (metric == "hops"):
-						print("maxHops = " + str(maxMetricValues[metric]))
 					yLabel = metricYLabels[metric]
 					printSingleGraphErrorRate(graphOutFolder, "graphTitle", forgedRateCompoundData, forgedRates, protocols, cw, "300", junctions, metric, xLabel, yLabel, 0, maxMetricValues[metric])
 

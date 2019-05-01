@@ -15,12 +15,15 @@ import math
 def countLinesInCsv(csv):
 	return sum(1 for row in csv)
 		
-def calculateMeanAndConfInt(list, static=False):
+def calculateMeanAndConfInt(list, static=False, castToInt=False):
 	npArray = np.array(list)
+	#print(npArray)
 	mean = round(np.mean(npArray), 2)
 	if (static is True):
 		mean *= 1.1
 		mean = round(mean, 2)
+	if (castToInt is True):
+		mean = (int) (round(mean))
 	confInt = st.t.interval(0.95, len(npArray)-1, loc=np.mean(npArray), scale=st.sem(npArray))
 	confIntAmplitude = confInt[1] - confInt[0]
 	return mean, confIntAmplitude;
@@ -65,13 +68,17 @@ def readCsvFromDirectory(path, roff=False, static=False):
 					covOnCircPercent.append(((float(covOnCirc[-1]) / float(nodesOnCirc[-1])) * 100))
 		#if (deleteBecauseEmpty == True):
 			#os.remove(fullPath)
+	#print(path)
 	totalCovMean , totalCovConfInt = calculateMeanAndConfInt(totalCoveragePercent)
 	covOnCircMean, covOnCircConfInt = calculateMeanAndConfInt(covOnCircPercent)
 	hopsMean, hopsConfInt = calculateMeanAndConfInt(hops, static)
-	messageSentMean, messageSentConfInt = calculateMeanAndConfInt(messageSent)
-	slotsWaitedMean, slotsWaitedConfInt = calculateMeanAndConfInt(slots)
+	messageSentMean, messageSentConfInt = calculateMeanAndConfInt(messageSent, False, True)
+	slotsWaitedMean, slotsWaitedConfInt = calculateMeanAndConfInt(slots, False, True)
+	
+	#print(slotsWaitedMean)
 	if (roff is True):
-		slotsWaitedMean -= hopsMean
+		slotsWaitedMean = (int) (round(slotsWaitedMean - hopsMean))
+		
 	return {"totCoverageMean": totalCovMean, 
 			"totCoverageConfInt": totalCovConfInt,
 			"covOnCircMean": covOnCircMean,
