@@ -232,8 +232,8 @@ def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, c
 		rects.append((ax.bar(ind + widthDistance[count] * barWidth, metricMeanList, barWidth, color=colors[count], label=txRange + "m", yerr=metricConfIntList, capsize=4)))
 		count = count + 1
 	
-	ax.set_xlabel("Protocols", fontsize=11)
-	ax.set_ylabel(yLabel, fontsize=11)
+	ax.set_xlabel("Protocols", fontsize=15)
+	ax.set_ylabel(yLabel, fontsize=15)
 	if ("cov" in metric or "Cov" in metric):
 		maxY = maxY * 1.05
 	else:
@@ -241,10 +241,12 @@ def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, c
 	ax.set_ylim(minY, maxY)
 	#ax.set_title(graphTitle, fontsize=20)
 	ax.set_xticks(ind)
+	plt.xticks(fontsize=15)
+	plt.yticks(fontsize=15)
 	ax.set_xticklabels(protocols)
 	#ax.set_xticklabels(["15m", "25m", "35m", "45m"])
 
-	ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+	ax.legend(loc='center left', bbox_to_anchor=(1, 0.5), fontsize=15)
 	#ax.legend(loc="upper right")
 
 	def autolabel(rects, xpos='center'):
@@ -262,7 +264,7 @@ def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, c
 		for rect in rects:
 			height = rect.get_height()
 			ax.text(rect.get_x() + rect.get_width()*offset[xpos], 1.01*height,
-					'{}'.format(height), ha=ha[xpos], va='bottom') 
+					'{}'.format(height), ha=ha[xpos], va='bottom', fontsize=15) 
 
 	for rect in rects:
 		autolabel(rect)
@@ -479,10 +481,11 @@ def printForgedComparison():
 	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
 	scenarios = ["Padova-25"]
 	buildings = ["0" , "1"]
-	txRanges = ["100", "300", "500"]
+	#txRanges = ["100", "300", "500"]
+	txRanges = ["300"]
 	protocols = ["Fast-Broadcast", "ROFF"]
 	#cws = ["cw[16-128]", "cw[32-1024]"]
-	cws = ["cw[16-128]"]
+	cws = ["cw[32-1024]"]
 	forgedRates = ["0", "10", "20", "30", "40", "50", "100"]
 	junctions = ["0", "1"]
 	xLabel = "% of vehicles affected by forging"
@@ -523,6 +526,8 @@ def printForgedComparison():
 										metricMean = metric + "Mean"
 										value = forgedRateCompoundData[forgedRate][junction][txRange][protocol][metricMean] 
 										if ( value > maxMetricValues[metric]):
+											if (metric == "hops"):
+												print("hops= " + str(value))
 											maxMetricValues[metric] = value
 
 	for scenario in scenarios:
@@ -537,11 +542,13 @@ def printForgedComparison():
 						#print("basePath= " + basePath)
 						compoundData = initCompoundData(txRanges, protocols, metrics)
 						appendCompoundData(basePath, txRanges, protocols, cw, junction, "f" + forgedRate, compoundData, metrics)
-						forgedRateCompoundData[errorRate][junction] = compoundData
+						forgedRateCompoundData[forgedRate][junction] = compoundData
 				graphOutFolder = os.path.join(scenario, "forged", "b" + building)
 				for metric in metrics:
+					if (metric == "hops"):
+						print("maxHops = " + str(maxMetricValues[metric]))
 					yLabel = metricYLabels[metric]
-					printSingleGraphErrorRate(graphOutFolder, "graphTitle", forgedRateCompoundData, forgedRates, protocols, cw, "500", junctions, metric, xLabel, yLabel, 0, maxMetricValues[metric])
+					printSingleGraphErrorRate(graphOutFolder, "graphTitle", forgedRateCompoundData, forgedRates, protocols, cw, "300", junctions, metric, xLabel, yLabel, 0, maxMetricValues[metric])
 
 def printDistanceComparison():
 	print("PrintForgedComparison")
