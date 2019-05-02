@@ -625,42 +625,42 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 	// If starter-to-sender distance is less than starter-to-current distance,
 	// then the message is coming from the front and it needs to be menaged,
 	// otherwise do nothing
-	if (distanceCurrentToStarter > distanceSenderToStarter) {
-		NS_LOG_DEBUG("Alert message received by " << fbNode->GetId() << " from node " << fbHeader.GetSenderId() <<
-				" is being considered for forwarding since distanceCurrentToStarter > distanceSenderToStarter " <<
-				distanceCurrentToStarter << " > " << distanceSenderToStarter);
-		// Compute the size of the contention window
-		uint32_t bmr = fbNode->GetCMBR();
-		uint32_t cwnd = ComputeContetionWindow(bmr, distanceSenderToCurrent_uint);
+//	if (distanceCurrentToStarter > distanceSenderToStarter) { //todo check
+	NS_LOG_DEBUG("Alert message received by " << fbNode->GetId() << " from node " << fbHeader.GetSenderId() <<
+			" is being considered for forwarding since distanceCurrentToStarter > distanceSenderToStarter " <<
+			distanceCurrentToStarter << " > " << distanceSenderToStarter);
+	// Compute the size of the contention window
+	uint32_t bmr = fbNode->GetCMBR();
+	uint32_t cwnd = ComputeContetionWindow(bmr, distanceSenderToCurrent_uint);
 
 //		cout << "cwnd = " << cwnd << endl;
 //		m_cwndSum += cwnd;
 //		m_cwndCount++;
-		// Compute a random waiting time (1 <= waitingTime <= cwnd)
-		uint32_t waitingTime = m_randomVariable->GetInteger(1, cwnd);
-		int32_t errorDelay = ComputeErrorDelay();
+	// Compute a random waiting time (1 <= waitingTime <= cwnd)
+	uint32_t waitingTime = m_randomVariable->GetInteger(1, cwnd);
+	int32_t errorDelay = ComputeErrorDelay();
 //		cout << "errorDelay= " << errorDelay << endl;
-		if (!m_flooding) {
-			if (errorDelay == 0) {
-				Simulator::Schedule(MilliSeconds(waitingTime), &FBApplication::ForwardAlertMessage,
-						this, fbNode, fbHeader, waitingTime, false);
-			 }
-			else {
-				uint32_t firstTransmissionTime;
-				uint32_t secondTransmissionTime;
-				firstTransmissionTime = errorDelay > 0 ? waitingTime : waitingTime + errorDelay;
-				secondTransmissionTime = errorDelay < 0 ? waitingTime : waitingTime + errorDelay;
-				Simulator::Schedule(MilliSeconds(firstTransmissionTime), &FBApplication::ForwardAlertMessage,
-									this, fbNode, fbHeader, firstTransmissionTime, false);
-				Simulator::Schedule(MilliSeconds(secondTransmissionTime), &FBApplication::ForwardAlertMessage,
-									this, fbNode, fbHeader, secondTransmissionTime, true);
-				}
+	if (!m_flooding) {
+		if (errorDelay == 0) {
+			Simulator::Schedule(MilliSeconds(waitingTime), &FBApplication::ForwardAlertMessage,
+					this, fbNode, fbHeader, waitingTime, false);
+		 }
+		else {
+			uint32_t firstTransmissionTime;
+			uint32_t secondTransmissionTime;
+			firstTransmissionTime = errorDelay > 0 ? waitingTime : waitingTime + errorDelay;
+			secondTransmissionTime = errorDelay < 0 ? waitingTime : waitingTime + errorDelay;
+			Simulator::Schedule(MilliSeconds(firstTransmissionTime), &FBApplication::ForwardAlertMessage,
+								this, fbNode, fbHeader, firstTransmissionTime, false);
+			Simulator::Schedule(MilliSeconds(secondTransmissionTime), &FBApplication::ForwardAlertMessage,
+								this, fbNode, fbHeader, secondTransmissionTime, true);
+			}
 		}
 		else {
 			Simulator::Schedule(MilliSeconds(0),
 								&FBApplication::ForwardAlertMessage, this, fbNode, fbHeader, waitingTime, false);
 		}
-	}
+//	}
 }
 
 void FBApplication::WaitAgain(Ptr<FBNode> fbNode, FBHeader fbHeader, uint32_t waitingTime) {
