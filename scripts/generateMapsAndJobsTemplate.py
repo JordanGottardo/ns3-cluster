@@ -39,14 +39,14 @@ def createJobFile(newJobName, command, jobsPath, jobTemplatePath, tempNewJobPath
 def runScenario(cw, scenario, distance, startingNode, area=1000):
 	print(scenario)
 	# Protocols and transmission ranges
-	buildings = ["1"]
+	buildings = ["0", "1"]
 	#errorRates = ["0", "10", "20", "30", "40", "50", "100"]
 	errorRates = ["0"]
 	#forgedCoordRates = ["0", "10", "20", "30", "40", "50", "100"]
 	forgedCoordRates = ["0"]
 	#buildings = ["1"]
 	junctions = ["0", "1"]
-	protocols = ["1"]
+	protocols = ["1", "2", "3", "4"]
 	#protocols = ["1", "2", "3", "4", "5"]
 	#txRanges = ["300"]
 	txRanges = ["100", "300", "500"]
