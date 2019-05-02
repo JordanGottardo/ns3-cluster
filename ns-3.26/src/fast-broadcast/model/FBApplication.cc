@@ -604,6 +604,9 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 //			NS_LOG_LOGIC("node " << node->GetId() << "is not inside a junction: updates phase from " << node->GetPhase() << " to " << phase);
 		}
 	}
+	if (fbNode->GetReceived()) {
+		return;
+	}
 
 	if (!fbNode->GetReceived() ) {
 		fbNode->SetReceived(true);
