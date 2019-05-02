@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 #Invocation:
-#   ./drawVehicles.py graphTitle ns2mobilityFilePath polyFilePath netFilePath
+#   ./drawVehicles.py graphTitle ns2mobilityFilePath [polyFilePath] [netFilePath]
 #example /drawVehicles.py graphTitle ../../maps/Padova/Padova-25.ns2mobility.xml  [../../maps/Padova/Padova-25.poly.xml] [../../maps/Padova/Padova-25.net.xml] 
 
 
@@ -77,18 +77,18 @@ def main():
     plt.title(graphTitle)
     
     plt.plot(xPos, yPos, ".")
-    plt.plot(starterCoordX, starterCoordY, "ro")
+    #plt.plot(starterCoordX, starterCoordY, "ro")
 
-    plotTxRange(minTxRange, starterCoordX, starterCoordY, vehicleDistance, color1, False)
-    plotTxRange(maxTxRange, starterCoordX, starterCoordY, vehicleDistance, color2, False)
-    plotTxRange(1000, starterCoordX, starterCoordY, vehicleDistance, color3, True)
+    #plotTxRange(minTxRange, starterCoordX, starterCoordY, vehicleDistance, color1, False)
+    #plotTxRange(maxTxRange, starterCoordX, starterCoordY, vehicleDistance, color2, False)
+    #plotTxRange(1000, starterCoordX, starterCoordY, vehicleDistance, color3, True)
     plt.legend(loc = "upper left")
    
 
     #Plot junctions
     if (netFilePath is not None):
         print("Draw vehicles plot junctions")
-       # coordUtils.plotJunctions(netFilePath)
+        coordUtils.plotJunctions(netFilePath)
     plt.show()
     print("dopo plot")
     
