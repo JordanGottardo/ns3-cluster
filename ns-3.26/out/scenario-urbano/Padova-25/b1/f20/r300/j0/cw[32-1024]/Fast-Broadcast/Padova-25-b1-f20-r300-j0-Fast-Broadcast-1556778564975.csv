@@ -1,0 +1,3 @@
+"id","Scenario","Actual Range","Protocol","Buildings","Total nodes","Nodes on circ","Total coverage","Coverage on circ","Alert received mean time","Hops","Slots","Messages sent","Messages received"
+0,1,300,0,1,1776,80,627,23,1.77331e+06,12.3913,1376.61,223,627
+0,1,300,0,1,1776,80,627,23,1.77331e+06,12.3913,1376.61,223,627
