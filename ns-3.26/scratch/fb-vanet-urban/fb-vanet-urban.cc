@@ -702,7 +702,7 @@ FBVanetExperiment::SetupAdhocDevices ()
 	if (m_propagationLoss == 0) {
 		wifiChannel.AddPropagationLoss("ns3::RangePropagationLossModel", "MaxRange", DoubleValue(m_actualRange));
 	} else if (m_propagationLoss == 1) {
-		wifiChannel.AddPropagationLoss("ns3::TwoRayGroundPropagationLossModel", "Frequency", DoubleValue(freq), "HeightAboveZ", DoubleValue(1.5));
+		wifiChannel.AddPropagationLoss("ns3::TwoRayGroundPropagationLossModel", "Frequency", DoubleValue(freq), "HeightAboveZ", DoubleValue(2.0));
 	} else {
 		NS_LOG_ERROR("m_propagationLoss not recognized");
 	}

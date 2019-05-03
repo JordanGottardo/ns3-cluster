@@ -671,7 +671,7 @@ ROFFVanetExperiment::SetupAdhocDevices() {
 		wifiChannel.AddPropagationLoss("ns3::RangePropagationLossModel", "MaxRange", DoubleValue(m_actualRange));
 	} else if (m_propagationLoss == 1) {
 		cout << "2 " << endl;
-		wifiChannel.AddPropagationLoss("ns3::TwoRayGroundPropagationLossModel", "Frequency", DoubleValue(freq), "HeightAboveZ", DoubleValue(1.5));
+		wifiChannel.AddPropagationLoss("ns3::TwoRayGroundPropagationLossModel", "Frequency", DoubleValue(freq), "HeightAboveZ", DoubleValue(2.0));
 	} else {
 		NS_LOG_ERROR("m_propagationLoss not recognized");
 	}
