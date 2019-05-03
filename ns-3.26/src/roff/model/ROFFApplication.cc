@@ -332,8 +332,8 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 		}
 	}
 	else {
-		if (phase > node->GetPhase() && (distanceSenderToStarter > distanceCurrentToStarter)) {
-//		if (phase > node->GetPhase()) {
+//		if (phase > node->GetPhase() && (distanceSenderToStarter > distanceCurrentToStarter)) {
+		if (phase > node->GetPhase()) {
 			NS_LOG_LOGIC("node " << node->GetId() << "is not inside a junction: updates phase from " << node->GetPhase() << " to " << phase);
 			node->SetPhase(phase);
 		}
