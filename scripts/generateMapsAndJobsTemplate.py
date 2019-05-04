@@ -137,8 +137,8 @@ def main():
 	scenarios = ["LA-25"]
 	#scenarios = ["Padova-5", "Padova-15", "Padova-25", "Padova-35", "Padova-45"] 
 	#scenarios = ["Padova-15", "Padova-25", "Padova-35", "Padova-45", "LA-15", "LA-25", "LA-35", "LA-45"]
-	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
-	contentionWindows = [{"cwMin": 16, "cwMax": 128}]
+	contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
+	#contentionWindows = [{"cwMin": 16, "cwMax": 128}]
 	#distances = ["15", "25", "35", "45"]
 	#scenarios = ["Padova"]
 	startingNodeMap = {
