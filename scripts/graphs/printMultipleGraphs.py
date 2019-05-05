@@ -370,6 +370,8 @@ def printProtocolComparison():
 		maxMetricValues[metric] = -1
 
 	for scenario in scenarios:
+		if ("Platoon" in scenario):
+			buildings = ["0"]
 		for building in buildings:
 			for cw in cws:
 				for junction in junctions:
