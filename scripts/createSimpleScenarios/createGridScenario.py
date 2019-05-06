@@ -6,7 +6,7 @@
 
 #./createGridScenario.py 4800 25 200 10 25 Grid-200
 #./createGridScenario.py 4800 17 300 10 25 Grid-300
-#./createGridScenario.py 4800 13 200 10 25 Grid-400
+#./createGridScenario.py 4800 13 400 10 25 Grid-400
 
 
 #old grids:

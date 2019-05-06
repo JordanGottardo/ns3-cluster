@@ -68,7 +68,7 @@ def readCsvFromDirectory(path, roff=False, static=False):
 					covOnCircPercent.append(((float(covOnCirc[-1]) / float(nodesOnCirc[-1])) * 100))
 		#if (deleteBecauseEmpty == True):
 			#os.remove(fullPath)
-	#print(path)
+	print(path)
 	totalCovMean , totalCovConfInt = calculateMeanAndConfInt(totalCoveragePercent)
 	covOnCircMean, covOnCircConfInt = calculateMeanAndConfInt(covOnCircPercent)
 	hopsMean, hopsConfInt = calculateMeanAndConfInt(hops, static)

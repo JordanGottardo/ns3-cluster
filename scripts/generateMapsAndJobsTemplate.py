@@ -135,7 +135,7 @@ def runScenario(cw, scenario, distance, startingNode, area=1000):
 
 def main():
 	#Edit these to launch automatically 
-	scenarios = ["LA-25"]
+	scenarios = ["Grid-200"]
 	#scenarios = ["Padova-5", "Padova-15", "Padova-25", "Padova-35", "Padova-45"] 
 	#scenarios = ["Padova-15", "Padova-25", "Padova-35", "Padova-45", "LA-15", "LA-25", "LA-35", "LA-45"]
 	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
@@ -154,8 +154,8 @@ def main():
 		"LA-35":459,
 		"LA-45":354,
 		"Grid-200":2024,
-		"Grid-300": -1,
-		"Grid-400":-1,
+		"Grid-300":4896,
+		"Grid-400":1248,
 		"Platoon": 0,
 		"Platoon-15km": 0,
 	}

@@ -29,7 +29,7 @@ def main():
     print(graphTitle)
 
     print("Main!!")
-    startingVehicle = "2024"
+    startingVehicle = "1248"
     vehicleDistance = 25
     minTxRange = 300
     maxTxRange = 900
@@ -77,7 +77,7 @@ def main():
     plt.title(graphTitle)
     
     plt.plot(xPos, yPos, ".")
-    #plt.plot(starterCoordX, starterCoordY, "ro")
+    plt.plot(starterCoordX, starterCoordY, "ro")
 
     #plotTxRange(minTxRange, starterCoordX, starterCoordY, vehicleDistance, color1, False)
     #plotTxRange(maxTxRange, starterCoordX, starterCoordY, vehicleDistance, color2, False)

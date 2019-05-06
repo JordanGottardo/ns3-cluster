@@ -88,7 +88,7 @@
 			\item Single-hop Broadcasting Protocols, in which no flooding is employed. Instead, vehicles periodically select and broadcast only a subset of the packets it has received.
 		\end{itemize}
 		
-		Multi-hop Broadcasting Protocols can be further subdivided into three categories:
+		Multi-hop Broadcasting Protocols can be further subdivided into two categories:
 		\begin{enumerate}
 			\item Delay based protocols, which assign a different waiting time before rebroadcasting the message to each vehicle. This delay is usually inversely proportional to the distance between the source and the potential sender.
 			Some examples are:
@@ -121,7 +121,39 @@
  					p = e^{-\frac{\rho_s(z-d)}{c}}
  				\end{gather}
  				where $\rho_s$ is the vehicle density, $z$ is the transmission range, $d$ is the distance between the PFC and the transmitter and $c\geq1$ is a shaping parameter which influences rebroadcast probability. Irresponsible Forwarding aims to offer a solution that can scale with network density.
- 				
- 				
 			\end{itemize}
+		
+%		\item Network Coding-Based Multi-hop Broadcasting. TODO? da fare?
+		
+		Vehicles employing Single-Hop Broadcasting protocols will not flood received packets immediately through the network. Instead, vehicles use information from packets to update their database and periodically rebroadcast only a fraction of that information. The two variables these kind of protocol can work on to aim for good network efficiency are:
+		\begin{itemize}
+			\item \textit{Broadcast Interval}, i.e. the amount of time between retransmissions, which should keep into consideration both freshness of information and potential redundancy in transmissions;
+			\item \textit{Relevancy of information} to broadcast: as stated before, only relevant information (i.e. a subset of all the information) should be broadcast.
+		\end{itemize}
+		
+		Single-Hop protocols can be further subdivided into two categories:
+		\begin{enumerate}
+			
+			\item Fixed Broadcast Interval, which keep the Broadcast Interval fixed. Some exampels are:
+			\begin{itemize}
+				\renewcommand\labelitemi{--}
+				
+				\item \textit{TrafficInfo}
+				
+				\item \textit{TrafficView}
+			\end{itemize}
+			\item Adaptive Broadcast Interval, which adapt the Broadcast Interval based on dynamic information. Some examples are:
+			\begin{itemize}
+				\renewcommand\labelitemi{--}
+				
+				\item \textit{Collision Ratio Control Protocol (CRCP)}
+				
+				\item \textit{Abiding Geocast:}
+				
+				\item \textit{Segment-oriented Data Abstraction and Dissemination
+					(SODAD)}
+			\end{itemize}
+			
+		\end{enumerate}
+		
 		\end{enumerate}
