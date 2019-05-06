@@ -13,7 +13,7 @@ if [ ! -d "$finnished" ]; then
 fi
 
 #maximum number of jobs that can ben in a running status
-number_max_active_jobs=400
+number_max_active_jobs=250
 #check the number of scheduled jobs
 number_running=$(qstat | grep jgottard | wc -l)
 #number of jobs we can schedule this turn
