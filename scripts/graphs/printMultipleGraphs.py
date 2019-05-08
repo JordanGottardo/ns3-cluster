@@ -349,13 +349,14 @@ def printProtocolComparison():
 	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
 	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
 	scenarios = ["Platoon-15km"]
-	buildings = ["0" , "1"]
+	buildings = ["0"]
 	errorRate = "e0"
 	txRanges = ["100", "300", "500"]
 	protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300", "STATIC-500", "ROFF"]
 	#protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300"ROFF"]
-	cws = ["cw[16-128]"]
-	#cws = ["cw[16-128]", "cw[32-1024]"]
+	#cws = ["cw[16-128]"]
+	cws = ["cw[16-128]", "cw[32-1024]"]
+	#junctions = ["0", "1"]
 	junctions = ["0", "1"]
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
 	metricYLabels = {}
