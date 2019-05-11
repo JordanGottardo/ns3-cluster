@@ -38,20 +38,24 @@ def main():
 	polyFilePath = "./grid/gridScenario.poly.xml"
 
 	with open("./grid/gridScenario.ns2mobility.xml", "w+") as f:
+		#creates "slices"
 		for z in range(roadNumber):
 			# vertical roads
-			z = initialY + z #calcola la z
+			newZ = initialZ + z * nodeDistance #calcola la z
 			for x in range(roadNumber):
 				print("x= " + str(x))
 				for y in range(nodesPerRoad):
-					utils.writeNodeToFile(f, nodeId, initialX + x * roadDistance, initialY + y * nodeDistance, 0)
+					utils.writeNodeToFile(f, nodeId, initialX + x * roadDistance, initialY + y * nodeDistance, z)
 					nodeId += 1
 			
 			# horizontal roads
 			for y in range(roadNumber):
 				for x in range(nodesPerRoad):
-					utils.writeNodeToFile(f, nodeId, initialX + x * nodeDistance, initialY + y * roadDistance, 0)
+					utils.writeNodeToFile(f, nodeId, initialX + x * nodeDistance, initialY + y * roadDistance, z)
 					nodeId += 1
+
+		#creates vertical (3d) nodes
+
 	print("Created grid with " + str(nodeId + 1) + "nodes")
 	utils.createPolyFile(polyFilePath, roadNumber, roadDistance, roadSize, initialX, initialY)
 

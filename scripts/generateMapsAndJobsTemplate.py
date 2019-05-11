@@ -43,13 +43,13 @@ def runScenario(cw, scenario, distance, startingNode, area=1000):
 	buildings = ["0"]
 	#errorRates = ["0", "10", "20", "30", "40", "50", "100"]
 	errorRates = ["0"]
-	#forgedCoordRates = ["0", "10", "20", "30", "40", "50", "100"]
+	forgedCoordRates = ["0", "10", "20", "30", "40", "50", "100"]
 	#forgedCoordRates = ["0"]
 	#buildings = ["1"]
-	junctions = ["0"]
-	#protocols = ["1", "5"]
-	protocols = ["1", "2", "3", "4", "5"]
-	#txRanges = ["300"]
+	junctions = ["0", "1"]
+	protocols = ["5"]
+	#protocols = ["1", "2", "3", "4", "5"]
+	txRanges = ["300"]
 	txRanges = ["100", "300", "500"]
 	protocolsMap = {
 		"1": "Fast-Broadcast",
@@ -118,7 +118,7 @@ def runScenario(cw, scenario, distance, startingNode, area=1000):
 
 						newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-e" + errorRate + "-j" + junction + "-" + protocolsMap[protocol] + "-" + txRange
 						createJobFile(newJobName, command, jobsPath, jobTemplatePath, tempNewJobPath)
-					'''
+					
 					# FORGED COORD SCENARIO
 					if (scenario == "LA-25" and distance == "25"):
 						for forgedCoordRate in forgedCoordRates:
@@ -129,7 +129,7 @@ def runScenario(cw, scenario, distance, startingNode, area=1000):
 								command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --mapBasePath={2} --cwMin={3} --cwMax={4} --vehicleDistance={5} --startingNode={6} --propagationLoss={7} --protocol={8} --area={9} --smartJunctionMode={10} --errorRate=0 --flooding=0  --printToFile=1 --printCoords=0 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1 --forgedCoordTest=1 --forgedCoordRate={11}".format(b, txRange, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss, protocol, area, junction, forgedCoordRate)
 							newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-f" + forgedCoordRate + "-j" + junction + "-" + protocolsMap[protocol] + "-" + txRange
 							createJobFile(newJobName, command, jobsPath, jobTemplatePath, tempNewJobPath)
-					'''
+					
 					
 					
 	print("\n")
@@ -140,7 +140,7 @@ def main():
 	#scenarios = ["Padova-5", "Padova-15", "Padova-25", "Padova-35", "Padova-45"] 
 	#scenarios = ["Padova-15", "Padova-25", "Padova-35", "Padova-45", "LA-15", "LA-25", "LA-35", "LA-45"]
 	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
-	contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
+	contentionWindows = [{"cwMin": 16, "cwMax": 128}]
 	#distances = ["15", "25", "35", "45"]
 	#scenarios = ["Padova"]
 	startingNodeMap = {
