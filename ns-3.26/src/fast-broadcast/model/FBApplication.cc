@@ -598,8 +598,8 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 	}
 	else {
 		// I am not in a junction and I receive a message from a node farther than me -> I have to defer tranmission
-		if ((phase > fbNode->GetPhase()) && (distanceSenderToStarter > distanceCurrentToStarter)) {
-//		if (phase > fbNode->GetPhase()) { //todo abilitare per urbano
+//		if ((phase > fbNode->GetPhase()) && (distanceSenderToStarter > distanceCurrentToStarter)) {
+		if (phase > fbNode->GetPhase()) { //todo abilitare per urbano
 			fbNode->SetPhase(phase);
 //			NS_LOG_LOGIC("node " << node->GetId() << "is not inside a junction: updates phase from " << node->GetPhase() << " to " << phase);
 		}
