@@ -332,8 +332,8 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 		}
 	}
 	else {
-//		if (phase > node->GetPhase() && (distanceSenderToStarter > distanceCurrentToStarter)) {
-		if (phase > node->GetPhase()) { //todo abilitare per urbano
+		if (phase > node->GetPhase() && (distanceSenderToStarter > distanceCurrentToStarter)) {
+//		if (phase > node->GetPhase()) { //todo abilitare per urbano
 			NS_LOG_LOGIC("node " << node->GetId() << "is not inside a junction: updates phase from " << node->GetPhase() << " to " << phase);
 			node->SetPhase(phase);
 		}
@@ -424,6 +424,10 @@ void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHead
 	int32_t phase = oldHeader.GetPhase();
 	NS_LOG_FUNCTION(this << node << oldHeader << waitingTime << forceSend);
 
+	Vector oldPos = oldHeader.GetPosition();
+	Vector position = node->UpdatePosition();
+	double distance = ns3::CalculateDistance(position, oldPos);
+
 	if (node->GetStopSending()) {
 		NS_LOG_DEBUG("node " << node->GetId() << " defers because of StopSending");
 		return;
@@ -456,8 +460,8 @@ void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHead
 
 	Ptr<Packet> packet = Create<Packet>(m_packetPayload);
 	packet->AddHeader(header);
-	NS_LOG_DEBUG("ROFFApplication::ForwardAlertMessage node " << node->GetId()
-			<< " forwards after waitingTime= " << waitingTime << " at time= " << Simulator::Now());
+	NS_LOG_UNCOND("ROFFApplication::ForwardAlertMessage node " << node->GetId()
+			<< " forwards after waitingTime= " << waitingTime << " at distance" << distance);
 	node->Send(packet);
 	node->SetSent(true);
 	m_sent++;

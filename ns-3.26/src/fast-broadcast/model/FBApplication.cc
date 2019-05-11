@@ -598,8 +598,8 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 	}
 	else {
 		// I am not in a junction and I receive a message from a node farther than me -> I have to defer tranmission
-//		if ((phase > fbNode->GetPhase()) && (distanceSenderToStarter > distanceCurrentToStarter)) {
-		if (phase > fbNode->GetPhase()) { //todo abilitare per urbano
+		if ((phase > fbNode->GetPhase()) && (distanceSenderToStarter > distanceCurrentToStarter)) {
+//		if (phase > fbNode->GetPhase()) { //todo abilitare per urbano
 			fbNode->SetPhase(phase);
 //			NS_LOG_LOGIC("node " << node->GetId() << "is not inside a junction: updates phase from " << node->GetPhase() << " to " << phase);
 		}
@@ -707,7 +707,8 @@ void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader
 	if (forceSend) {
 		fbNode->SetStopSending(true);
 	}
-	NS_LOG_DEBUG ("Forwarding Alert Message (" << fbNode->GetNode()->GetId() << ") after " << waitingTime << ".");
+	NS_LOG_UNCOND ("Forwarding Alert Message (" << fbNode->GetNode()->GetId() << ") after " << waitingTime <<
+			" at distance= " << distance <<".");
 //		NS_LOG_UNCOND ("Forwarding Alert Message (" << fbNode->GetNode()->GetId() <<
 //				"at pos " << fbNode->GetPosition() << ") after " << waitingTime << ".");
 	// Create a packet with the correct parameters taken from the node
