@@ -329,7 +329,8 @@ void FBApplication::GenerateForgedHelloTraffic() {
 	}
 
 	for (auto id: affectedNodes) {
-		for (uint32_t i = 0; i < 1000; i++) {
+		double startingX = m_nodes[id]->UpdatePosition().x + m_actualRange + 100;
+		for (uint32_t i = 0; i < 100; i++) {
 			uint32_t headerType = HELLO_MESSAGE;
 			Vector position = Vector(10000, 10000, 0);
 

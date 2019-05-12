@@ -173,11 +173,12 @@ void ROFFApplication::GenerateForgedHelloTraffic() {
 		affectedNodes.insert(nodeId);
 	}
 
-	double startingX = 10000;
+
 
 	for (auto id: affectedNodes) {
+		double startingX = m_nodes[id]->UpdatePosition().x + m_actualRange + 100;
 		NS_LOG_DEBUG("affecting node " << id << " with forging");
-		for (uint32_t i = 0; i < 1000; i++) {
+		for (uint32_t i = 0; i < 100; i++) {
 			uint32_t headerType = HELLO_MESSAGE;
 			Vector position = Vector(startingX + i * m_distanceRange, startingX + i * m_distanceRange, 0);
 			ROFFHeader header(headerType, position, forgedSenderNodeId + i, position, boost::dynamic_bitset<>(), 0, 0);
