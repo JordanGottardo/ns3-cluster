@@ -490,8 +490,8 @@ def printForgedComparison():
 	#txRanges = ["100", "300", "500"]
 	txRanges = ["300"]
 	protocols = ["Fast-Broadcast", "ROFF"]
-	#cws = ["cw[16-128]", "cw[32-1024]"]
-	cws = ["cw[16-128]"]
+	cws = ["cw[16-128]", "cw[32-1024]"]
+	#cws = ["cw[16-128]"]
 	forgedRates = ["0", "10", "20", "30", "40", "50",]
 	junctions = ["0", "1"]
 	xLabel = "% of vehicles affected by forging"
