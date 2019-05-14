@@ -166,6 +166,11 @@ def main():
 		#"Cube-75:"13965,
 		"Cube-150":4209
 	}
+	vehiclesNumberMap = {
+		"LA-25": 1463
+	}
+
+
 	area = 1000
 
 	# Removes all previous job templates in output directory
@@ -182,10 +187,10 @@ def main():
 				if ("Grid" in scenario):
 					area = 2000
 				if ("Grid" in scenario or "Platoon" in scenario):
-					runScenario(cw, scenario, "25", startingNodeMap[scenario], area)
+					runScenario(cw, scenario, "25", startingNodeMap[scenario], area, vehiclesNumberMap[scenario])
 				else:
 					distance = scenario.split("-")[1]
-					runScenario(cw, scenario, distance, startingNodeMap[scenario], area)
+					runScenario(cw, scenario, distance, startingNodeMap[scenario], area, vehiclesNumberMap[scenario])
 	else:
 		runScenario(None, None)
 if __name__ == "__main__":
