@@ -22,7 +22,7 @@ TypeId ROFFApplication::GetTypeId() {
 
 void ROFFApplication::Install(uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi,
 	uint32_t aoi_error, uint32_t vehicleDistance, uint32_t beaconInterval, uint32_t distanceRange,
-	uint32_t startingNode, uint32_t printCoords, uint32_t errorRate, uint32_t forgedCoordRate) {
+	uint32_t startingNode, uint32_t printCoords, uint32_t errorRate, uint32_t forgedCoordRate, uint32_t droneTest) {
 	NS_LOG_FUNCTION(this);
 	m_broadcastPhaseStart = broadcastPhaseStart;
 	m_aoi = aoi;
@@ -35,14 +35,15 @@ void ROFFApplication::Install(uint32_t broadcastPhaseStart, uint32_t actualRange
 	m_printCoords = printCoords;
 	m_errorRate = errorRate;
 	m_forgedCoordRate = forgedCoordRate;
+	m_droneTest = droneTest;
 	m_randomVariable = CreateObject<UniformRandomVariable>();
 //	NS_LOG_UNCOND("END INSTALL");
 }
 
-void ROFFApplication::AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink,
+void ROFFApplication::AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink, bool onstats,
 		bool isNodeInJunction, uint64_t junctionId) {
 	NS_LOG_FUNCTION(this);
-	Ptr<ROFFNode> roffNode = CreateObject<ROFFNode>(node, source, isNodeInJunction, junctionId);
+	Ptr<ROFFNode> roffNode = CreateObject<ROFFNode>(node, source, isNodeInJunction, junctionId, onstats);
 //	NS_LOG_UNCOND("post create node");
 	sink->SetRecvCallback(MakeCallback(&ROFFApplication::ReceivePacket, this));
 //	NS_LOG_UNCOND("post cback");
@@ -145,6 +146,11 @@ void ROFFApplication::PrintStats(std::stringstream& dataStream) {
 		 dataStream << "," << startingNode->GetPosition().x << "," << startingNode->GetPosition().y << "," << m_startingNode << "," <<
 				m_vehicleDistance << "," << receivedNodes << "," << nodeIds.str() << "," << StringifyTransmissionMap() <<
 				"," << receivedOnCircIds.str() << "," << transmissionVector;
+	}
+	if (m_droneTest) {
+		uint32_t maxDistance = 0;
+		uint32_t maxDistanceNodeReached = IsMaxDistNodeReached(maxDistance);
+		dataStream << "," << maxDistance << "," << maxDistanceNodeReached;
 	}
 }
 
@@ -320,6 +326,11 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 	Vector senderPosition = header.GetPosition();
 	Vector starterPosition = header.GetStarterPosition();
 
+	double distanceSenderToCurrent = ns3::CalculateDistance(senderPosition, currentPosition);
+	if (distanceSenderToCurrent > m_actualRange + 100) {
+		return;
+	}
+
 	double distanceSenderToStarter = ns3::CalculateDistance(senderPosition, starterPosition);
 	double distanceCurrentToStarter = ns3::CalculateDistance(currentPosition, starterPosition);
 
@@ -462,7 +473,7 @@ void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHead
 
 	Ptr<Packet> packet = Create<Packet>(m_packetPayload);
 	packet->AddHeader(header);
-	NS_LOG_UNCOND("ROFFApplication::ForwardAlertMessage node " << node->GetId()
+	NS_LOG_DEBUG("ROFFApplication::ForwardAlertMessage node " << node->GetId()
 			<< " forwards after waitingTime= " << waitingTime << " at distance" << distance);
 	node->Send(packet);
 	node->SetSent(true);
@@ -604,6 +615,21 @@ string ROFFApplication::StringifyTransmissionMap() const {
 		ss << "}";
 	}
 	return ss.str();
+}
+
+uint32_t ROFFApplication::IsMaxDistNodeReached(uint32_t& maxDist) const {
+	NS_LOG_UNCOND("ROFFApplication::IsMaxDistNodeReached");
+	Ptr<ROFFNode> startingNode =  m_nodes.at(m_startingNode);
+	Vector startingNodePos = startingNode->GetPosition();
+	uint32_t nodeId = 0;
+	for (auto pair: m_nodes) {
+		uint32_t dist = round(ns3::CalculateDistance(pair.second->GetPosition(), startingNodePos));
+		if (dist > maxDist) {
+			maxDist = dist;
+			nodeId = pair.second->GetId();
+		}
+	}
+	return m_nodes.at(nodeId)->GetReceived();
 }
 
 }

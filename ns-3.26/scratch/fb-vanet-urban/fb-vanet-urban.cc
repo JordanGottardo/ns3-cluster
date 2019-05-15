@@ -321,6 +321,12 @@ public:
 	*/
 	uint32_t GetPrintCoords() const;
 
+	/**
+	* \brief droneTest getter
+	* \return droneTest
+	*/
+	uint32_t GetDroneTest() const;
+
 protected:
 	/**
 	 * \brief Process command line arguments
@@ -476,6 +482,8 @@ private:
 	uint32_t								m_errorRate;
 	uint32_t								m_forgedCoordTest;
 	uint32_t								m_forgedCoordRate;
+	uint32_t								m_nVeh;
+	uint32_t								m_droneTest;
 	std::map<uint32_t, uint64_t>			m_nodeIdToJunctionIdMap;
 
 
@@ -516,7 +524,9 @@ FBVanetExperiment::FBVanetExperiment ()
 		m_smartJunctionMode(0),
 		m_errorRate(0),
 		m_forgedCoordTest(0),
-		m_forgedCoordRate(0) {
+		m_forgedCoordRate(0),
+		m_nVeh(0),
+		m_droneTest(0) {
 	srand (time (0));
 
 	RngSeedManager::SetSeed (time (0));
@@ -625,6 +635,10 @@ uint32_t FBVanetExperiment::GetPrintToFile() const {
 
 uint32_t FBVanetExperiment::GetPrintCoords() const {
 	return m_printCoords;
+}
+
+uint32_t FBVanetExperiment::GetDroneTest() const {
+	return m_droneTest;
 }
 
 void
@@ -797,7 +811,7 @@ void FBVanetExperiment::ConfigureFBApplication () {
 							m_vehicleDistance,
 							(m_flooding==1) ? true : false,
 							m_cwMin, m_cwMax, m_printCoords,
-							m_vehicleDistance, m_errorRate, m_forgedCoordRate
+							m_vehicleDistance, m_errorRate, m_forgedCoordRate, m_droneTest
 							);
 	m_fbApplication->SetStartTime (Seconds (1));
 	m_fbApplication->SetStopTime (Seconds (m_TotalSimTime));
@@ -814,9 +828,11 @@ void FBVanetExperiment::ConfigureFBApplication () {
 				junctionId = m_nodeIdToJunctionIdMap.at(i);
 			}
 		}
-
-//		bool nodeInsideJunction = isNodeInsideJunction(junctionId);
-		m_fbApplication->AddNode (m_adhocNodes.Get (i), m_adhocSources.at (i), m_adhocSinks.at (i), true,
+		bool isNodeVehicle = true;
+		if (i >= m_nVeh) {
+			isNodeVehicle = false;
+		}
+		m_fbApplication->AddNode (m_adhocNodes.Get (i), m_adhocSources.at (i), m_adhocSinks.at (i), isNodeVehicle,
 				nodeInsideJunction, junctionId);
 	}
 
@@ -869,6 +885,9 @@ void FBVanetExperiment::CommandSetup (int argc, char *argv[]) {
 	cmd.AddValue("forgedCoordTest", "Whether to run the forged hello messages attack test 0=disabled, 1=enabled", m_forgedCoordTest);
 	cmd.AddValue("forgedCoordRate", "Percentage of affected vehicle by forged hello messages attack", m_forgedCoordRate);
 
+	cmd.AddValue("nVehicles", "Number of vehicles (to be used in drones+vehicles scenario", m_nVeh);
+	cmd.AddValue("droneTest", "Whether to read drones from ns2mobilityFile and run test with drones", m_droneTest);
+
 	// only one of these tests is possible at a given time
 	if (m_forgedCoordTest) {
 		m_errorRate = 0;
@@ -890,7 +909,11 @@ void FBVanetExperiment::SetupScenario () {
 	}
 
 	if (m_traceFile.empty()) {
-		m_traceFile = m_mapBasePath + ".ns2mobility.xml";
+		if (m_droneTest) {
+			m_traceFile = m_mapBasePath + ".ns2mobility.3D.xml";
+		} else {
+			m_traceFile = m_mapBasePath + ".ns2mobility.xml";
+		}
 	}
 
 	if (m_junctionFile.empty()) {
@@ -898,12 +921,17 @@ void FBVanetExperiment::SetupScenario () {
 	}
 
 	m_nNodes = CalculateNumNodes();
+	if (!m_droneTest) {
+		m_nVeh = m_nNodes;
+	}
 	cout << "numNodes = " << m_nNodes << endl;
 	if (m_startingNode == -1) {
 		m_startingNode = rand() % m_nNodes;
 	}
 	cout << "numNodes = " << m_nNodes << endl;
+	cout << "numVeh = " << m_nVeh << endl;
 	cout << "startingNode = " << m_startingNode << endl;
+	cout << "using tracefile " << m_traceFile << endl;
 
 	if (m_loadBuildings != 0) {
 		NS_LOG_INFO ("Loading buildings file \"" << m_bldgFile << "\".");
@@ -1047,6 +1075,12 @@ int main (int argc, char *argv[])
 					"\"Slots\",\"Messages sent\",\"Messages received\", \"Starting x\", \"Starting y\","
 					"\"Starting node\", \"Vehicle distance\", \"Received node ids\", "
 					"\"Node ids\", \"Transmission map\", \"Received on circ nodes\", \"Transmission vector\"";
+		}
+		else if (experiment.GetDroneTest()) {
+			additionalPath = "/out/scenario-droni/";
+			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
+								"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
+								"\"Slots\",\"Messages sent\",\"Messages received\", \"Max distance\", \"Reached maxDist node\"";
 		}
 		else {
 			additionalPath = "/out/scenario-urbano/";

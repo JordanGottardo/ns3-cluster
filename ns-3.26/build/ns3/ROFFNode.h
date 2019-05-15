@@ -36,7 +36,8 @@ public:
 	ROFFNode();
 
 
-	ROFFNode(Ptr<Node> node, Ptr<Socket> socket, bool isNodeInJunction = false, uint64_t junctionId = 0);
+	ROFFNode(Ptr<Node> node, Ptr<Socket> socket, bool isNodeInJunction = false,
+			uint64_t junctionId = 0, bool amIaVehicle = true);
 
 	//	Getters
 	Ptr<Node> GetNode() const;
@@ -138,6 +139,7 @@ private:
 	uint32_t			m_slot; // number of slots waited before the node has received the alert message
 	uint32_t			m_hop; // number of hops before the alert message reached this node
 	Time				m_timestamp; // time of reception of alert message
+	bool				m_amIaVehicle;	// used for statistics
 	bool				m_amIInJunction; // whether the node is inside a junction
 	uint64_t			m_junctionId; // id of the junction where the node is
 	bool				m_stopSending;

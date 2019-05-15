@@ -63,7 +63,7 @@ def retrieveHeights(filename, defaults):
 
 def estimateHeight(height, levels, roofLevels, defaults):
 	floorH, roofH = defaults
-
+	
 	res = 0
 
 	if (height != None):

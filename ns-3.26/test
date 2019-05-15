@@ -68,5 +68,8 @@ NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'fb-vanet-urban --buildings=0 --actualRan
 Padova-25 ROFF
 NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'roff-test --buildings=0 --actualRange=300 --vehicleDistance=25 --area=1000 --mapBasePath=../maps/Padova-25/Padova-25 --printToFile=1 --printCoords=1 --startingNode=310 --beaconInterval=100 --distanceRange=1 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1 --propagationLoss=1 --smartJunctionMode=0'
 
-Cube-75 FB
-NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'fb-vanet-urban --buildings=0 --actualRange=300 --vehicleDistance=75 --protocol=1 --flooding=0 --area=1000 --mapBasePath=../maps/Cube-75/Cube-75 --cwMin=16 --cwMax=128 --printToFile=1 --printCoords=1 -startingNode=13965 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1 --propagationLoss=1 --smartJunctionMode=0'
+LA-25 ROFF with DRONES
+NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'roff-test --buildings=0 --actualRange=300 --vehicleDistance=25 --area=1000 --mapBasePath=../maps/LA-25/LA-25 --printToFile=1 --printCoords=1 --startingNode=310 --beaconInterval=100 --distanceRange=1 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1 --propagationLoss=1 --smartJunctionMode=0 --nVehicles=1465 --droneTest=1'
+
+LA-25 FB 16-128 with DRONES
+NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'fb-vanet-urban --buildings=0 --actualRange=300 --vehicleDistance=25 --protocol=1 --flooding=0 --area=1000 --mapBasePath=../maps/LA-25/LA-25 --cwMin=16 --cwMax=128 --printToFile=1 --printCoords=1 -startingNode=310 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1 --propagationLoss=1 --smartJunctionMode=0 --nVehicles=1465 --droneTest=1'

@@ -71,11 +71,13 @@ public:
 	 * \param printCoords whether to print coordinates on file (1=true, 0=false)
 	 * \param vehicleDistance distance between vehicles
 	 * \param errorRate Probability to incur in an error in transmission schedule (sending 1 slot earlier or later)
+	 * \param forgedCoordRate % of vehicles affected by forging
+	 * \param droneTest whether drones are present in the simulation
 	 * \return none
 	 */
 	virtual void Install (uint32_t protocol, uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi,
 				  uint32_t aoi_error, bool flooding, uint32_t cwMin, uint32_t cwMax, uint32_t printCoords,
-				  uint32_t vehicleDistance, uint32_t errorRate, uint32_t forgedCoordRate);
+				  uint32_t vehicleDistance, uint32_t errorRate, uint32_t forgedCoordRate, uint32_t droneTest);
 
 	/**
 	 * \brief Add a new node to the application and set up protocol parameters
@@ -236,6 +238,12 @@ private:
 	* \return  a string representation of m_transmissionMap	 */
 	string StringifyTransmissionMap() const;
 
+	/**
+	* \brief Returns whether the most distant node from m_startingNode has been reached and also calculates maxDist
+	* \param maxDist max distance between a node and m_startingNode)
+	* \return  whether the most distant node from m_startingNode has been reached	 */
+	uint32_t IsMaxDistNodeReached(uint32_t& maxDist) const;
+
 private:
 	uint32_t																m_nNodes;	// number of nodes
 	vector<Ptr<FBNode>>														m_nodes;	// nodes that run this application
@@ -258,7 +266,7 @@ private:
 	uint32_t																m_errorRate; //probability to incur in an error in transmission schedule (sending 1 slot earlier or later)
 	Ptr<UniformRandomVariable> 												m_randomVariable;
 	uint32_t																m_forgedCoordRate; // % of nodes which receive forged hello messages with fake coords
-
+	uint32_t																m_droneTest;
 
 	uint32_t																m_collisions; // number of collisions
 	vector<uint32_t>														m_receivedNodes; // ids of nodes which have received alert messages, duplicates allowed
@@ -266,7 +274,8 @@ private:
 	uint32_t																m_vehicleDistance; //distance between vehicles
 	map<uint32_t, vector<uint32_t>>											m_transmissionList; //list to discover path of alert messages
 	vector<Edge>															m_transmissionVector; //vector to discover paths of alert messages (single broadcasts ordered by time of reception)
-//	TransmissionList														m_transmissionList; //list to discover path of alert messages
+
+	//	TransmissionList														m_transmissionList; //list to discover path of alert messages
 //	int																		counter = 0;
 };
 

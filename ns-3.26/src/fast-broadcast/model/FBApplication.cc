@@ -73,6 +73,7 @@ FBApplication::FBApplication ()
 		m_cwndCount(0),
 		m_errorRate(0),
 		m_forgedCoordRate(0),
+		m_droneTest(0),
 		m_collisions (0),
 		m_printCoords(0),
 		m_vehicleDistance(25),
@@ -91,7 +92,7 @@ FBApplication::~FBApplication () {
 
 void FBApplication::Install(uint32_t protocol, uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi,
 		uint32_t aoi_error, bool flooding, uint32_t cwMin, uint32_t cwMax, uint32_t printCoords,
-		uint32_t vehicleDistance, uint32_t errorRate, uint32_t forgedCoordRate) {
+		uint32_t vehicleDistance, uint32_t errorRate, uint32_t forgedCoordRate, uint32_t droneTest) {
 
 	if (protocol == PROTOCOL_FB) {
 		m_estimatedRange = PROTOCOL_FB;
@@ -123,6 +124,7 @@ void FBApplication::Install(uint32_t protocol, uint32_t broadcastPhaseStart, uin
 	m_vehicleDistance = vehicleDistance;
 	m_errorRate = errorRate;
 	m_forgedCoordRate = forgedCoordRate;
+	m_droneTest = droneTest;
 	m_randomVariable = CreateObject<UniformRandomVariable>();
 //	cout << "connect drop" << endl;
 //	Config::Connect("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Mac/MacRxDrop", MakeCallback(&FBApplication::LogCollision, this));
@@ -196,8 +198,8 @@ void FBApplication::PrintStats(std::stringstream &dataStream) {
 			continue;
 
 		// If this isn't a vehciles, skip
-		if (!current->AmIaVehicle())
-			continue;
+//		if (!current->AmIaVehicle())
+//			continue;
 
 		// Update the total cover value
 		if (current->GetReceived()) {
@@ -283,6 +285,11 @@ void FBApplication::PrintStats(std::stringstream &dataStream) {
 		 dataStream << "," << startingNode->GetPosition().x << "," << startingNode->GetPosition().y << "," << m_startingNode << "," <<
 				m_vehicleDistance << "," << receivedNodes << "," << nodeIds.str() << "," << StringifyTransmissionMap() <<
 				"," << receivedOnCircIds.str() << "," << transmissionVector;
+	}
+	if (m_droneTest) {
+		uint32_t maxDistance = 0;
+		uint32_t maxDistanceNodeReached = IsMaxDistNodeReached(maxDistance);
+		dataStream << "," << maxDistance << "," << maxDistanceNodeReached;
 	}
 
 
@@ -578,7 +585,9 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 	// Compute the distance between the sender and me (the node who received the message)
 	double distanceSenderToCurrent = ns3::CalculateDistance(senderPosition, currentPosition);
 	uint32_t distanceSenderToCurrent_uint = std::floor (distanceSenderToCurrent);
-
+	if (distanceSenderToCurrent > m_actualRange + 100) {
+		return;
+	}
 	// Get the position of the node who start the broadcast
 	Vector starterPosition = fbHeader.GetStarterPosition();
 
@@ -600,8 +609,8 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 	}
 	else {
 		// I am not in a junction and I receive a message from a node farther than me -> I have to defer tranmission
-//		if ((phase > fbNode->GetPhase()) && (distanceSenderToStarter > distanceCurrentToStarter)) {
-		if (phase > fbNode->GetPhase()) { //todo abilitare per urbano
+		if ((phase > fbNode->GetPhase()) && (distanceSenderToStarter > distanceCurrentToStarter)) {
+//		if (phase > fbNode->GetPhase()) { //todo abilitare per urbano
 			fbNode->SetPhase(phase);
 //			NS_LOG_LOGIC("node " << node->GetId() << "is not inside a junction: updates phase from " << node->GetPhase() << " to " << phase);
 		}
@@ -709,7 +718,7 @@ void FBApplication::ForwardAlertMessage(Ptr<FBNode> fbNode, FBHeader oldFBHeader
 	if (forceSend) {
 		fbNode->SetStopSending(true);
 	}
-	NS_LOG_UNCOND ("Forwarding Alert Message (" << fbNode->GetNode()->GetId() << ") after " << waitingTime <<
+	NS_LOG_DEBUG ("Forwarding Alert Message (" << fbNode->GetNode()->GetId() << ") after " << waitingTime <<
 			" at distance= " << distance <<".");
 //		NS_LOG_UNCOND ("Forwarding Alert Message (" << fbNode->GetNode()->GetId() <<
 //				"at pos " << fbNode->GetPosition() << ") after " << waitingTime << ".");
@@ -847,4 +856,20 @@ string FBApplication::StringifyTransmissionMap() const {
 //	cout << "FBApplication::StringifyTransmissionMap" + ss.str() << endl;
 	return ss.str();
 }
+
+uint32_t FBApplication::IsMaxDistNodeReached(uint32_t& maxDist) const {
+	cout << "FBApplication::IsMaxDistNodeReached" << endl;
+	Ptr<FBNode> startingNode =  m_nodes.at(m_startingNode);
+	Vector startingNodePos = startingNode->GetPosition();
+	uint32_t nodeId = 0;
+	for (auto node: m_nodes) {
+		uint32_t dist = round(ns3::CalculateDistance(node->GetPosition(), startingNodePos));
+		if (dist > maxDist) {
+			maxDist = dist;
+			nodeId = node->GetId();
+		}
+	}
+	return m_nodes.at(nodeId)->GetReceived();
+}
+
 } // namespace ns3

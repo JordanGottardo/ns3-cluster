@@ -52,12 +52,14 @@ public:
 	* \param cwMin minumum size of the contention window (slots)
 	* \param cwMin maximum size of the contention window (slots)
 	* \param errorRate Probability to incur in an error in transmission schedule (sending 1 slot earlier or later)
+	* \param forgedCoordRate % of vehicles affected by forging
+	* \param droneTest whether drones are present in the simulation
 	* \return none
 	*/
 	void Install(uint32_t broadcastPhaseStart, uint32_t actualRange, uint32_t aoi,
 			uint32_t aoi_error, uint32_t m_vehicleDistance, uint32_t beaconInterval,
 			uint32_t m_distanceRange, uint32_t startingNode, uint32_t printCoords,
-			uint32_t errorRate, uint32_t forgedCoordRate);
+			uint32_t errorRate, uint32_t forgedCoordRate, uint32_t droneTest);
 
 	/**
 	* \brief Add a new node to the application and set up protocol parameters
@@ -67,7 +69,7 @@ public:
 	* \param onstats if this node is a vehicle
 	* \return none
 	*/
-	void AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink,
+	void AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink, bool onstats,
 			bool isNodeInJunction, uint64_t junctionId = 0);
 
 	/**
@@ -203,6 +205,11 @@ private:
 	* \return  a string representation of m_transmissionMap	 */
 	string StringifyTransmissionMap() const;
 
+	/**
+	* \brief Returns whether the most distant node from m_startingNode has been reached and also calculates maxDist
+	* \param maxDist max distance between a node and m_startingNode)
+	* \return  whether the most distant node from m_startingNode has been reached	 */
+	uint32_t IsMaxDistNodeReached(uint32_t& maxDist) const;
 
 //	Application data
 	uint32_t							m_startingNode; // index of the node that will generate the Alert Message
@@ -217,6 +224,7 @@ private:
 	Ptr<UniformRandomVariable> 			m_randomVariable;
 	uint32_t 							m_errorRate; //probability to incur in an error in transmission schedule (sending 1 slot earlier or later)
 	uint32_t							m_forgedCoordRate; // % of nodes which receive forged hello messages with fake coords
+	uint32_t							m_droneTest;
 
 	map<uint32_t, Ptr<ROFFNode>>		m_nodes; // nodes that run this application
 

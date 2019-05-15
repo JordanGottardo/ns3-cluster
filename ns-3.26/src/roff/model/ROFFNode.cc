@@ -13,12 +13,12 @@ namespace ns3 {
 	NS_OBJECT_ENSURE_REGISTERED(ROFFNode);
 
 	ROFFNode::ROFFNode(): m_received(false), m_sent(false), m_scheduled(false),
-			m_phase(0), m_slot(0), m_hop(0), m_amIInJunction(false), m_junctionId(0), m_stopSending(false) {
+			m_phase(0), m_slot(0), m_hop(0), m_amIaVehicle(true), m_amIInJunction(false), m_junctionId(0), m_stopSending(false) {
 		NS_LOG_FUNCTION(this);
 	}
 
-	ROFFNode::ROFFNode(Ptr<Node> node, Ptr<Socket> socket, bool isNodeInJunction, uint64_t junctionId):
-			m_node(node), m_socket(socket), m_amIInJunction(isNodeInJunction), m_junctionId(junctionId),
+	ROFFNode::ROFFNode(Ptr<Node> node, Ptr<Socket> socket, bool isNodeInJunction, uint64_t junctionId, bool amIaVehicle):
+			m_node(node), m_socket(socket), m_amIInJunction(isNodeInJunction), m_junctionId(junctionId), m_amIaVehicle(amIaVehicle),
 			m_neighborTable(), m_received(false), m_sent(false), m_scheduled(false), m_phase(-1), m_slot(0), m_hop(0),
 			m_stopSending(false) {
 		NS_LOG_FUNCTION(this);
