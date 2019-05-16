@@ -282,9 +282,12 @@ void ROFFApplication::ReceivePacket(Ptr<Socket> socket) {
 		ROFFHeader header;
 		packet->RemoveHeader(header);
 		Vector senderPosition = header.GetPosition();
-		double distance =  ns3::CalculateDistance(senderPosition, currentPosition);
 //		cout << "received packet by node " << node->GetId() <<
 //				" from node in pos " << senderPosition << " distance= " << distance << endl;
+		double distance = ns3::CalculateDistance(currentPosition, senderPosition);
+		if (distance > m_actualRange) {
+			continue;
+		}
 
 		uint32_t packetType = header.GetType();
 		if (packetType == HELLO_MESSAGE) {

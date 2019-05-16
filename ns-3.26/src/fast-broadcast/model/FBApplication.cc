@@ -481,6 +481,10 @@ void FBApplication::ReceivePacket(Ptr<Socket> socket) {
 		Vector currentPosition = fbNode->UpdatePosition();
 		// Get the position of the sender node
 		Vector senderPosition = fbHeader.GetPosition();
+		double distance = ns3::CalculateDistance(currentPosition, senderPosition);
+		if (distance > m_actualRange) {
+			continue;
+		}
 //		cout << "received packet at distance= " << ns3::CalculateDistance(currentPosition, senderPosition) << endl;
 //		NS_LOG_DEBUG ("Packet received by node " << node->GetId() << " from node " << fbHeader.GetSenderId() << ".");
 		// Get the type of the message (Hello or Alert)
