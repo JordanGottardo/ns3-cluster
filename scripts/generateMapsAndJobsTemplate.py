@@ -40,7 +40,7 @@ def runScenario(cw, scenario, distance, startingNode, vehiclesNumber, area=1000)
 	print(scenario)
 	# Protocols and transmission ranges
 	drones = ["1"]
-	buildings = ["0", "1"]
+	buildings = ["0"]
 	#buildings = ["0"]
 	#errorRates = ["0", "10", "20", "30", "40", "50", "100"]
 	errorRates = ["0"]
@@ -144,8 +144,8 @@ def main():
 	scenarios = ["LA-25"]
 	#scenarios = ["Padova-5", "Padova-15", "Padova-25", "Padova-35", "Padova-45"] 
 	#scenarios = ["Padova-15", "Padova-25", "Padova-35", "Padova-45", "LA-15", "LA-25", "LA-35", "LA-45"]
-	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
-	contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
+	contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
+	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
 	#distances = ["15", "25", "35", "45"]
 	#scenarios = ["Padova"]
 	startingNodeMap = {
@@ -170,7 +170,7 @@ def main():
 	vehiclesNumber = {
 		"LA-5":2984,
 		"LA-15":2396,
-		"LA-25":1465
+		"LA-25":1465,
 		"LA-35":1083,
 		"LA-45":861
 	}
