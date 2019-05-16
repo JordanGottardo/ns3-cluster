@@ -161,7 +161,7 @@ void ROFFApplication::StartApplication(void) {
 	if (m_forgedCoordRate > 0) {
 		GenerateForgedHelloTraffic();
 	}
-	GenerateHelloTraffic(3); //todo rimettere a 7
+	GenerateHelloTraffic(7);
 	Simulator::Schedule(Seconds(m_broadcastPhaseStart), &ROFFApplication::StartBroadcastPhase, this);
 }
 
@@ -345,8 +345,8 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 		}
 	}
 	else {
-//		if (phase > node->GetPhase() && (distanceSenderToStarter > distanceCurrentToStarter)) {
-		if (phase > node->GetPhase()) { //todo abilitare per urbano
+		if (phase > node->GetPhase() && (distanceSenderToStarter > distanceCurrentToStarter)) {
+//		if (phase > node->GetPhase()) { //todo abilitare per urbano
 			NS_LOG_LOGIC("node " << node->GetId() << "is not inside a junction: updates phase from " << node->GetPhase() << " to " << phase);
 			node->SetPhase(phase);
 		}
