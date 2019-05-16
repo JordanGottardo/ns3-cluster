@@ -39,7 +39,7 @@ def createJobFile(newJobName, command, jobsPath, jobTemplatePath, tempNewJobPath
 def runScenario(cw, scenario, distance, startingNode, vehiclesNumber, area=1000):
 	print(scenario)
 	# Protocols and transmission ranges
-	drones = ["1"]
+	drones = ["0"]
 	buildings = ["0"]
 	#buildings = ["0"]
 	#errorRates = ["0", "10", "20", "30", "40", "50", "100"]
@@ -49,9 +49,9 @@ def runScenario(cw, scenario, distance, startingNode, vehiclesNumber, area=1000)
 	#forgedCoordRates = ["0"]
 	#buildings = ["1"]
 	junctions = ["0"]
-	#protocols = ["1", "5"]
+	#protocols = ["1", "2", "3", "4"]
 	protocols = ["1", "2", "3", "4", "5"]
-	#txRanges = ["300"]
+	#txRanges = ["100"]
 	txRanges = ["100", "300", "500"]
 	protocolsMap = {
 		"1": "Fast-Broadcast",
@@ -120,7 +120,7 @@ def runScenario(cw, scenario, distance, startingNode, vehiclesNumber, area=1000)
 							else: 
 								command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --mapBasePath={2} --cwMin={3} --cwMax={4} --vehicleDistance={5} --startingNode={6} --propagationLoss={7} --protocol={8} --area={9} --smartJunctionMode={10} --errorRate={11} --nVehicles={12} --droneTest={13} --flooding=0  --printToFile=1 --printCoords=0 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1 --forgedCoordTest=0 --forgedCoordRate=0".format(b, txRange, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss, protocol, area, junction, errorRate, vehiclesNumber, drone)
 
-							newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-e" + errorRate + "-j" + junction + "-" + protocolsMap[protocol] + "-" + txRange
+							newJobName = "urban-" + mapBaseName + "-drones" + str(drone) + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-e" + errorRate + "-j" + junction + "-" + protocolsMap[protocol] + "-" + txRange
 							createJobFile(newJobName, command, jobsPath, jobTemplatePath, tempNewJobPath)
 						'''
 						# FORGED COORD SCENARIO
@@ -141,11 +141,12 @@ def runScenario(cw, scenario, distance, startingNode, vehiclesNumber, area=1000)
 def main():
 	#Edit these to launch automatically 	forgedCoordRates = ["0", "10", "20", "30", "40", "50", "100"]
 
-	scenarios = ["LA-25"]
+	scenarios = ["Platoon-15km"]
 	#scenarios = ["Padova-5", "Padova-15", "Padova-25", "Padova-35", "Padova-45"] 
 	#scenarios = ["Padova-15", "Padova-25", "Padova-35", "Padova-45", "LA-15", "LA-25", "LA-35", "LA-45"]
-	contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
-	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
+	#contentionWindows = [{"cwMin": 32, "cwMax": 1024}, {"cwMin": 16, "cwMax": 128}]
+	contentionWindows = [{"cwMin": 32, "cwMax": 1024}]
+	#contentionWindows = [{"cwMin": 16, "cwMax": 128}]
 	#distances = ["15", "25", "35", "45"]
 	#scenarios = ["Padova"]
 	startingNodeMap = {
@@ -172,7 +173,16 @@ def main():
 		"LA-15":2396,
 		"LA-25":1465,
 		"LA-35":1083,
-		"LA-45":861
+		"LA-45":861,
+		"Padova-5":0,
+		"Padova-15":0,
+		"Padova-25":0,
+		"Padova-35":0,
+		"Padova-45":0,
+		"Platoon-15km":0,
+		"Grid-200":0,
+		"Grid-300":0,
+		"Grid-400":0
 	}
 
 
