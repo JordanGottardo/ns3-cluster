@@ -1110,6 +1110,12 @@ int main (int argc, char *argv[])
 								"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
 								"\"Slots\",\"Messages sent\",\"Messages received\", \"Max distance\", \"Reached maxDist node\"";
 		}
+		else if (experiment.GetHighBuildings()) {
+			additionalPath = "/out/scenario-droni-high/";
+			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
+							 "\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
+							 "\"Slots\",\"Messages sent\",\"Messages received\", \"Max distance\", \"Reached maxDist node\"";
+			}
 		else {
 			additionalPath = "/out/scenario-urbano/";
 			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
