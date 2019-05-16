@@ -324,6 +324,12 @@ public:
 	*/
 	uint32_t GetDroneTest() const;
 
+	/**
+	* \brief highBuildings getter
+	* \return highBuildings
+	*/
+	uint32_t GetHighBuildings() const;
+
 protected:
 	/**
 	 * \brief Process command line arguments
@@ -621,6 +627,10 @@ uint32_t ROFFVanetExperiment::GetPrintCoords() const {
 
 uint32_t ROFFVanetExperiment::GetDroneTest() const {
 	return m_droneTest;
+}
+
+uint32_t ROFFVanetExperiment::GetHighBuildings() const {
+	return m_highBuildings;
 }
 
 void
@@ -1068,14 +1078,20 @@ int main (int argc, char *argv[])
 		else if (experiment.GetDroneTest()) {
 			additionalPath = "/out/scenario-droni/";
 			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
-											"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
-											"\"Slots\",\"Messages sent\",\"Messages received\", \"Max distance\", \"Reached maxDist node\"";
+					"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
+					"\"Slots\",\"Messages sent\",\"Messages received\", \"Max distance\", \"Reached maxDist node\"";
+		}
+		else if (experiment.GetHighBuildings()) {
+			additionalPath = "/out/scenario-droni-high/";
+			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
+					 "\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
+					 "\"Slots\",\"Messages sent\",\"Messages received\", \"Max distance\", \"Reached maxDist node\"";
 		}
 		else {
 			additionalPath = "/out/scenario-urbano/";
 			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
-								"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
-								"\"Slots\",\"Messages sent\",\"Messages received\"";
+					 "\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
+					 "\"Slots\",\"Messages sent\",\"Messages received\"";
 		}
 
 //		header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","

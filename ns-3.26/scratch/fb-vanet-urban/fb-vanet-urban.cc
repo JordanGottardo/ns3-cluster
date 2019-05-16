@@ -327,6 +327,12 @@ public:
 	*/
 	uint32_t GetDroneTest() const;
 
+	/**
+	* \brief highBuildings getter
+	* \return highBuildings
+	*/
+	uint32_t GetHighBuildings() const;
+
 protected:
 	/**
 	 * \brief Process command line arguments
@@ -641,6 +647,10 @@ uint32_t FBVanetExperiment::GetPrintCoords() const {
 
 uint32_t FBVanetExperiment::GetDroneTest() const {
 	return m_droneTest;
+}
+
+uint32_t FBVanetExperiment::GetHighBuildings() const {
+	return m_highBuildings;
 }
 
 void
