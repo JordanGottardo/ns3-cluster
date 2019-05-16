@@ -314,7 +314,7 @@ void FBApplication::StartApplication(void) {
 			GenerateForgedHelloTraffic();
 		}
 //		GenerateHelloTraffic(1);
-		GenerateHelloTraffic(5);
+		GenerateHelloTraffic(2); //todo rimettere a 5
 	}
 	// Schedule Broadcast Phase
 	Simulator::Schedule(Seconds(m_broadcastPhaseStart), &FBApplication::StartBroadcastPhase, this);
@@ -361,8 +361,8 @@ void FBApplication::GenerateHelloTraffic(uint32_t count) {
 	NS_LOG_INFO("GenerateHelloTraffic" << count);
 	NS_LOG_DEBUG("GenerateHelloTraffic " << count);
 	std::vector<int> he;
-	uint32_t hel = (int) m_nNodes / 100 * 50;		// 50% of total nodes
-//	uint32_t hel = (int) m_nNodes;		// 100% of total nodes
+//	uint32_t hel = (int) m_nNodes / 100 * 50;		// 50% of total nodes todo riabilitare
+	uint32_t hel = (int) m_nNodes;		// 100% of total nodes
 	uint32_t time_factor = 10;
 //	cout << "hel= " << hel << endl;
 	if (count > 0)
@@ -688,7 +688,7 @@ void FBApplication::WaitAgain(Ptr<FBNode> fbNode, FBHeader fbHeader, uint32_t wa
 //		 uint32_t rnd1 = (rand() % 20)+1;
 //		 uint32_t rnd2 = (rand() % 20)+1;
 //		 uint32_t rnd3 = (rand() % 20)+1;
-//		 Simulator::Schedule (MilliSeconds (10* (waitingTime+rnd+rnd1+rnd2+rnd3) * 200 * 3), //TODO cos'è sta roba?
+//		 Simulator::Schedule (MilliSeconds (10* (waitingTime+rnd+rnd1+rnd2+rnd3) * 200 * 3), /
 //		 											&FBApplication::ForwardAlertMessage, this, fbNode, fbHeader, waitingTime);
 //	 }
 }

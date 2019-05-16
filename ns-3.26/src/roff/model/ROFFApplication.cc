@@ -161,7 +161,7 @@ void ROFFApplication::StartApplication(void) {
 	if (m_forgedCoordRate > 0) {
 		GenerateForgedHelloTraffic();
 	}
-	GenerateHelloTraffic(7);
+	GenerateHelloTraffic(3); //todo rimettere a 7
 	Simulator::Schedule(Seconds(m_broadcastPhaseStart), &ROFFApplication::StartBroadcastPhase, this);
 }
 
