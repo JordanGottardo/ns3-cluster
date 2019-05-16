@@ -50,7 +50,8 @@ public:
   Topology ();
 
 
-  Topology (uint32_t createFile, uint32_t useFile, std::string mapBasePath);
+  Topology (uint32_t createFile, uint32_t useFile, std::string mapBasePath,
+		  uint32_t droneTest, uint32_t highBuildings);
   /**
    * \brief Run
    * \return none
@@ -71,7 +72,8 @@ public:
    * \param useFile whether to load file with saved losses
    * \return the topology instance
    */
-  static Topology * GetTopology(uint32_t createFile, uint32_t useFile, std::string mapBasePath);
+  static Topology * GetTopology(uint32_t createFile, uint32_t useFile, std::string mapBasePath,
+		  uint32_t droneTest, uint32_t highBuildings);
 
   /**
    * \brief Loads table with saved losses (dBm) from file
@@ -83,7 +85,8 @@ public:
    * \param bldgFilename the filename that contains buildings data
    * \return none
    */
-  static void LoadBuildings(std::string bldgFilename, uint32_t createFile = 0, uint32_t useFile = 0, std::string mapBasePath = "");
+  static void LoadBuildings(std::string bldgFilename, uint32_t createFile = 0, uint32_t useFile = 0, std::string mapBasePath = "",
+		  uint32_t droneTest = 0, uint32_t highBuildings = 0);
 
 
   /**
@@ -229,6 +232,8 @@ public:
   uint32_t 		m_createFile;
   uint32_t 		m_useFile;
   std::string 	m_mapBasePath;
+  uint32_t		m_droneTest;
+  uint32_t		m_highBuildings;
 };
 
 } // namespace ns3

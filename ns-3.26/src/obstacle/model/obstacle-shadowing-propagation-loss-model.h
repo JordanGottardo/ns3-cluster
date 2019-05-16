@@ -77,6 +77,8 @@ private:
 	uint32_t 		m_createFile;
 	uint32_t 		m_useFile;
 	std::string 	m_mapBasePath;
+	uint32_t		m_droneTest;
+	uint32_t		m_highBuildings;
 };
 
 } // namespace ns3

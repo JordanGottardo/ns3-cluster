@@ -61,7 +61,17 @@ ObstacleShadowingPropagationLossModel::GetTypeId (void)
 				  "Base path of file which contains obstacle losses",
 				  StringValue(""),
 				  MakeStringAccessor(&ObstacleShadowingPropagationLossModel::m_mapBasePath),
-				  MakeStringChecker());
+				  MakeStringChecker())
+	.AddAttribute("DroneTest",
+				  "Whether it is a drone test",
+				  IntegerValue(0),
+				  MakeIntegerAccessor(&ObstacleShadowingPropagationLossModel::m_droneTest),
+				  MakeIntegerChecker<uint32_t>())
+	.AddAttribute("HighBuildings",
+				  "Whether buildings are higher than drones ( eg 100m) ",
+				  IntegerValue(0),
+				  MakeIntegerAccessor(&ObstacleShadowingPropagationLossModel::m_highBuildings),
+			      MakeIntegerChecker<uint32_t>());
 
   return tid;
 }
@@ -85,7 +95,7 @@ ObstacleShadowingPropagationLossModel::GetLoss (Ptr<MobilityModel> a, Ptr<Mobili
   double L_obs = 0.0;
 
   // get the topology instance, to search for obstacles
-  Topology * topology = Topology::GetTopology(m_createFile, m_useFile, m_mapBasePath);
+  Topology * topology = Topology::GetTopology(m_createFile, m_useFile, m_mapBasePath, m_droneTest, m_highBuildings);
   NS_ASSERT(topology != 0);
   if (topology->HasObstacles() == true)
     {

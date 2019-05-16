@@ -41,13 +41,16 @@ Topology::Topology () :
   m_maxY(-999999999.0),
   m_createFile(0),
   m_useFile(0),
-  m_mapBasePath("")
+  m_mapBasePath(""),
+  m_droneTest(0),
+  m_highBuildings(0)
 //  m_createFile(0)
 {
   NS_LOG_FUNCTION (this);
 }
 
-Topology::Topology(uint32_t createFile, uint32_t useFile, std::string mapBasePath):
+Topology::Topology(uint32_t createFile, uint32_t useFile, std::string mapBasePath,
+		uint32_t droneTest, uint32_t highBuildings):
   // initially very large values
   // so that obstacle bounding box
   // updates will be made
@@ -57,7 +60,9 @@ Topology::Topology(uint32_t createFile, uint32_t useFile, std::string mapBasePat
   m_maxY(-999999999.0),
   m_createFile(createFile),
   m_useFile(useFile),
-  m_mapBasePath(mapBasePath)
+  m_mapBasePath(mapBasePath),
+  m_droneTest(droneTest),
+  m_highBuildings(highBuildings)
 //  m_createFile(0)
 {
   NS_LOG_FUNCTION (this);
@@ -91,7 +96,22 @@ Topology::PeekTopology (void)
 void
 Topology::LoadTableFromFile() {
 
-	std::string fileName = m_mapBasePath + ".losses";
+	std::string extension;
+	std::string fileName;
+	if (m_droneTest) {
+		extension = ".3Dlosses.xml";
+	}
+	else {
+		extension = ".losses.xml";
+	}
+
+	if (m_highBuildings) {
+		fileName = m_mapBasePath + "-100" + extension;
+	}
+	else {
+		fileName = m_mapBasePath + extension;
+	}
+
 	std::ifstream file (fileName.c_str (), std::ios::in);
 //	std::cout << "Topology::LoadTableFromFile filename= " << fileName << std::endl;
 	if (!(file.is_open())){
@@ -126,7 +146,8 @@ Topology::LoadTableFromFile() {
 }
 
 Topology *
-Topology::GetTopology (uint32_t createFile, uint32_t useFile, std::string mapBasePath)
+Topology::GetTopology (uint32_t createFile, uint32_t useFile, std::string mapBasePath,
+		 uint32_t droneTest, uint32_t highBuildings)
 {
   Topology **ptopo = PeekTopology ();
   /* Please, don't include any calls to logging macros in this function
@@ -136,7 +157,7 @@ Topology::GetTopology (uint32_t createFile, uint32_t useFile, std::string mapBas
     {
       // create the topology
 //	  std::cout << "new topo" << std::endl;
-      *ptopo = new Topology(createFile, useFile, mapBasePath);
+      *ptopo = new Topology(createFile, useFile, mapBasePath, droneTest, highBuildings);
     }
 
   return *ptopo;
@@ -230,7 +251,8 @@ CreateShape(std::string id, std::string vertices, std::string height)
 static Range_tree_2_type m_rangeTree;
 
 void
-Topology::LoadBuildings(std::string bldgFilename, uint32_t createFile, uint32_t useFile, std::string mapBasePath)
+Topology::LoadBuildings(std::string bldgFilename, uint32_t createFile, uint32_t useFile, std::string mapBasePath,
+		uint32_t droneTest, uint32_t highBuildings)
 {
   NS_LOG_INFO ("Load buildings.");
 //  std::cout << "Topology::loadbuildings usefile = " << useFile << std::endl;
@@ -244,7 +266,7 @@ Topology::LoadBuildings(std::string bldgFilename, uint32_t createFile, uint32_t 
   else
     {
 //	  m_obstacles.clear();
-      Topology * topology = Topology::GetTopology(createFile, useFile, mapBasePath);
+      Topology * topology = Topology::GetTopology(createFile, useFile, mapBasePath, droneTest, highBuildings);
       NS_ASSERT(topology != 0);
       int lineCount = 0;
       topology->m_obstacles.clear();
@@ -310,7 +332,20 @@ Topology::LoadBuildings(std::string bldgFilename, uint32_t createFile, uint32_t 
         }
 
       if (createFile) {
-    	  std::string fileName = mapBasePath + ".losses";
+    	  std::string extension;
+    	  if (droneTest) {
+    		  extension = ".3Dlosses.xml";
+    	  }
+    	  else {
+    		  extension = ".losses.xml";
+    	  }
+    	  std::string fileName;
+    	  if (highBuildings) {
+    		  fileName = mapBasePath + "-100" + extension;
+    	  }
+    	  else {
+    		  fileName = mapBasePath + extension;
+    	  }
     	  remove(fileName.c_str());
       }
       if (useFile) {

@@ -484,6 +484,7 @@ private:
 	uint32_t								m_forgedCoordRate;
 	uint32_t								m_nVeh;
 	uint32_t								m_droneTest;
+	uint32_t								m_highBuildings;
 	std::map<uint32_t, uint64_t>			m_nodeIdToJunctionIdMap;
 
 
@@ -526,7 +527,8 @@ FBVanetExperiment::FBVanetExperiment ()
 		m_forgedCoordTest(0),
 		m_forgedCoordRate(0),
 		m_nVeh(0),
-		m_droneTest(0) {
+		m_droneTest(0),
+		m_highBuildings(0) {
 	srand (time (0));
 
 	RngSeedManager::SetSeed (time (0));
@@ -726,7 +728,9 @@ FBVanetExperiment::SetupAdhocDevices ()
 										"Radius", DoubleValue(500),
 										"CreateFile", IntegerValue(m_createObstacleShadowingLossFile),
 										"UseFile", IntegerValue(m_useObstacleShadowingLossFile),
-										"MapBasePath", StringValue(m_mapBasePath));
+										"MapBasePath", StringValue(m_mapBasePath),
+										"DroneTest", IntegerValue(m_droneTest),
+										"HighBuildings", IntegerValue(m_highBuildings));
 	}
 	wifiPhy.SetChannel (wifiChannel.Create ());
 	wifiPhy.SetPcapDataLinkType (YansWifiPhyHelper::DLT_IEEE802_11);
@@ -887,6 +891,7 @@ void FBVanetExperiment::CommandSetup (int argc, char *argv[]) {
 
 	cmd.AddValue("nVehicles", "Number of vehicles (to be used in drones+vehicles scenario", m_nVeh);
 	cmd.AddValue("droneTest", "Whether to read drones from ns2mobilityFile and run test with drones", m_droneTest);
+	cmd.AddValue("highBuildings", "Whether buildings are very high (higher than any drones, e.g. 100m)", m_highBuildings);
 
 	// only one of these tests is possible at a given time
 	if (m_forgedCoordTest) {
@@ -905,12 +910,24 @@ void FBVanetExperiment::SetupScenario () {
 //	m_areaOfInterest = 1000;	// meters
 
 	if (m_bldgFile.empty()) {
-		m_bldgFile = m_mapBasePath + ".poly.xml";
+		string extension;
+		if (m_droneTest) {
+			extension = ".3Dpoly.xml";
+		}
+		else {
+			extension = ".poly.xml";
+		}
+		if (m_highBuildings) {
+			m_bldgFile = m_mapBasePath + "-100" + extension;
+		}
+		else {
+			m_bldgFile = m_mapBasePath + extension;
+		}
 	}
 
 	if (m_traceFile.empty()) {
 		if (m_droneTest) {
-			m_traceFile = m_mapBasePath + ".ns2mobility.3D.xml";
+			m_traceFile = m_mapBasePath + ".3Dns2mobility.xml";
 		} else {
 			m_traceFile = m_mapBasePath + ".ns2mobility.xml";
 		}
@@ -934,8 +951,9 @@ void FBVanetExperiment::SetupScenario () {
 	cout << "using tracefile " << m_traceFile << endl;
 
 	if (m_loadBuildings != 0) {
-		NS_LOG_INFO ("Loading buildings file \"" << m_bldgFile << "\".");
-		Topology::LoadBuildings(m_bldgFile, m_createObstacleShadowingLossFile, m_useObstacleShadowingLossFile, m_mapBasePath);
+		cout << "Loading buildings file \"" << m_bldgFile << endl;
+		Topology::LoadBuildings(m_bldgFile, m_createObstacleShadowingLossFile, m_useObstacleShadowingLossFile, m_mapBasePath,
+				m_droneTest, m_highBuildings);
 	}
 
 	if (m_smartJunctionMode) {
