@@ -19,9 +19,9 @@ def calculateMeanAndConfInt(list, static=False, castToInt=False):
 	npArray = np.array(list)
 	#print(npArray)
 	mean = round(np.mean(npArray), 2)
-	if (static is True):
-		mean *= 1.1
-		mean = round(mean, 2)
+	#if (static is True):
+	#	mean *= 1.1
+	#	mean = round(mean, 2)
 	if (castToInt is True):
 		mean = (int) (round(mean))
 	confInt = st.t.interval(0.95, len(npArray)-1, loc=np.mean(npArray), scale=st.sem(npArray))
@@ -76,8 +76,8 @@ def readCsvFromDirectory(path, roff=False, static=False):
 	slotsWaitedMean, slotsWaitedConfInt = calculateMeanAndConfInt(slots, False, True)
 	
 	#print(slotsWaitedMean)
-	if (roff is True):
-		slotsWaitedMean = (int) (round(slotsWaitedMean - hopsMean))
+	#if (roff is True):
+		#slotsWaitedMean = (int) (round(slotsWaitedMean - hopsMean))
 		
 	return {"totCoverageMean": totalCovMean, 
 			"totCoverageConfInt": totalCovConfInt,
