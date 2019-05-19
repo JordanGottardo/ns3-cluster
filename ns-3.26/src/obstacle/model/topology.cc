@@ -99,10 +99,10 @@ Topology::LoadTableFromFile() {
 	std::string extension;
 	std::string fileName;
 	if (m_droneTest) {
-		extension = ".3Dlosses.xml";
+		extension = ".3Dlosses";
 	}
 	else {
-		extension = ".losses.xml";
+		extension = ".losses";
 	}
 
 	if (m_highBuildings) {
@@ -111,7 +111,7 @@ Topology::LoadTableFromFile() {
 	else {
 		fileName = m_mapBasePath + extension;
 	}
-
+	std::cout << "Loading losses from file " << fileName << std::endl;
 	std::ifstream file (fileName.c_str (), std::ios::in);
 //	std::cout << "Topology::LoadTableFromFile filename= " << fileName << std::endl;
 	if (!(file.is_open())){
@@ -334,10 +334,10 @@ Topology::LoadBuildings(std::string bldgFilename, uint32_t createFile, uint32_t 
       if (createFile) {
     	  std::string extension;
     	  if (droneTest) {
-    		  extension = ".3Dlosses.xml";
+    		  extension = ".3Dlosses";
     	  }
     	  else {
-    		  extension = ".losses.xml";
+    		  extension = ".losses";
     	  }
     	  std::string fileName;
     	  if (highBuildings) {

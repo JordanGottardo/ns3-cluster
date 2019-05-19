@@ -40,7 +40,7 @@ def runScenario(cw, scenario, distance, startingNode, vehiclesNumber, area=1000)
 	print(scenario)
 	# Protocols and transmission ranges
 	drones = ["0"]
-	buildings = ["0", "1"]
+	buildings = ["1"]
 	#buildings = ["0"]
 	#errorRates = ["0", "10", "20", "30", "40", "50", "100"]
 	errorRates = ["0"]
