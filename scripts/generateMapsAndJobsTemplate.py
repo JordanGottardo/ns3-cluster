@@ -39,6 +39,7 @@ def createJobFile(newJobName, command, jobsPath, jobTemplatePath, tempNewJobPath
 def runScenario(cw, scenario, distance, startingNode, vehiclesNumber, area=1000):
 	print(scenario)
 	# Protocols and transmission ranges
+	highBuildings = ["0", "1"]
 	drones = ["0", "1"]
 	buildings = ["0", "1"]
 	#buildings = ["0"]
@@ -48,7 +49,7 @@ def runScenario(cw, scenario, distance, startingNode, vehiclesNumber, area=1000)
 	#forgedCoordRates = ["0", "10", "20", "30", "40", "50", "100"]
 	#forgedCoordRates = ["0"]
 	#buildings = ["1"]
-	junctions = ["0", "1"]
+	junctions = ["0"]
 	#protocols = ["1", "2", "3", "4"]
 	protocols = ["1", "2", "3", "4", "5"]
 	#txRanges = ["100"]
@@ -102,38 +103,39 @@ def runScenario(cw, scenario, distance, startingNode, vehiclesNumber, area=1000)
 	#os.system(sumoFileGenerator)
 
 	# Creates jobs templates inside jobTemplates/
-	for drone in drones:
-		for b in buildings:
-			for txRange in txRanges:
-				for protocol in protocols:
-					for junction in junctions:
-						for errorRate in errorRates:
-							protocolName = protocolsMap[protocol]
-							# skips job generation for error rates > 0 with STATIC protocols
-							if (errorRate != "0" and "STATIC" in protocolName):
-								continue
-							propagationLoss = "1"
-							if ("Cube" in scenario):
-								propagationLoss = "0"
-							if (protocol == "5"): #ROFF
-								command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings={0} --actualRange={1} --mapBasePath={2} --vehicleDistance={3} --startingNode={4} --propagationLoss={5} --area={6} --smartJunctionMode={7} --errorRate={8} --nVehicles={9} --droneTest={10} --printToFile=1 --printCoords=0  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1 --forgedCoordTest=0 --forgedCoordRate=0".format(b, txRange, mapPathWithoutExtension, distance, startingNode, propagationLoss, area, junction, errorRate, vehiclesNumber, drone)
-							else: 
-								command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --mapBasePath={2} --cwMin={3} --cwMax={4} --vehicleDistance={5} --startingNode={6} --propagationLoss={7} --protocol={8} --area={9} --smartJunctionMode={10} --errorRate={11} --nVehicles={12} --droneTest={13} --flooding=0  --printToFile=1 --printCoords=0 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1 --forgedCoordTest=0 --forgedCoordRate=0".format(b, txRange, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss, protocol, area, junction, errorRate, vehiclesNumber, drone)
-
-							newJobName = "urban-" + mapBaseName + "-drones" + str(drone) + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-e" + errorRate + "-j" + junction + "-" + protocolsMap[protocol] + "-" + txRange
-							createJobFile(newJobName, command, jobsPath, jobTemplatePath, tempNewJobPath)
-						'''
-						# FORGED COORD SCENARIO
-						if (scenario == "LA-25" and distance == "25"):
-							for forgedCoordRate in forgedCoordRates:
+	for highBuilding in highBuildings:
+		for drone in drones:
+			for b in buildings:
+				for txRange in txRanges:
+					for protocol in protocols:
+						for junction in junctions:
+							for errorRate in errorRates:
+								protocolName = protocolsMap[protocol]
+								# skips job generation for error rates > 0 with STATIC protocols
+								if (errorRate != "0" and "STATIC" in protocolName):
+									continue
 								propagationLoss = "1"
+								if ("Cube" in scenario):
+									propagationLoss = "0"
 								if (protocol == "5"): #ROFF
-									command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings={0} --actualRange={1} --mapBasePath={2} --vehicleDistance={3} --startingNode={4} --propagationLoss={5} --area={6} --smartJunctionMode={7} --errorRate=0 --printToFile=1 --printCoords=0  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1 --forgedCoordTest=1 --forgedCoordRate={8}".format(b, txRange, mapPathWithoutExtension, distance, startingNode, propagationLoss, area, junction, forgedCoordRate)
+									command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings={0} --actualRange={1} --mapBasePath={2} --vehicleDistance={3} --startingNode={4} --propagationLoss={5} --area={6} --smartJunctionMode={7} --errorRate={8} --nVehicles={9} --droneTest={10} --highBuildings={11}--printToFile=1 --printCoords=0  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1 --forgedCoordTest=0 --forgedCoordRate=0".format(b, txRange, mapPathWithoutExtension, distance, startingNode, propagationLoss, area, junction, errorRate, vehiclesNumber, drone, highBuilding)
 								else: 
-									command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --mapBasePath={2} --cwMin={3} --cwMax={4} --vehicleDistance={5} --startingNode={6} --propagationLoss={7} --protocol={8} --area={9} --smartJunctionMode={10} --errorRate=0 --flooding=0  --printToFile=1 --printCoords=0 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1 --forgedCoordTest=1 --forgedCoordRate={11}".format(b, txRange, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss, protocol, area, junction, forgedCoordRate)
-								newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-f" + forgedCoordRate + "-j" + junction + "-" + protocolsMap[protocol] + "-" + txRange
+									command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --mapBasePath={2} --cwMin={3} --cwMax={4} --vehicleDistance={5} --startingNode={6} --propagationLoss={7} --protocol={8} --area={9} --smartJunctionMode={10} --errorRate={11} --nVehicles={12} --droneTest={13} --highBuildings={14} --flooding=0  --printToFile=1 --printCoords=0 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1 --forgedCoordTest=0 --forgedCoordRate=0".format(b, txRange, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss, protocol, area, junction, errorRate, vehiclesNumber, drone, highBuilding)
+
+								newJobName = "urban-" + mapBaseName + "-highBuildings" + str(highBuilding) + "-drones" + str(drone) + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-e" + errorRate + "-j" + junction + "-" + protocolsMap[protocol] + "-" + txRange
 								createJobFile(newJobName, command, jobsPath, jobTemplatePath, tempNewJobPath)
-						'''
+							'''
+							# FORGED COORD SCENARIO
+							if (scenario == "LA-25" and distance == "25"):
+								for forgedCoordRate in forgedCoordRates:
+									propagationLoss = "1"
+									if (protocol == "5"): #ROFF
+										command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings={0} --actualRange={1} --mapBasePath={2} --vehicleDistance={3} --startingNode={4} --propagationLoss={5} --area={6} --smartJunctionMode={7} --errorRate=0 --printToFile=1 --printCoords=0  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1 --forgedCoordTest=1 --forgedCoordRate={8}".format(b, txRange, mapPathWithoutExtension, distance, startingNode, propagationLoss, area, junction, forgedCoordRate)
+									else: 
+										command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --mapBasePath={2} --cwMin={3} --cwMax={4} --vehicleDistance={5} --startingNode={6} --propagationLoss={7} --protocol={8} --area={9} --smartJunctionMode={10} --errorRate=0 --flooding=0  --printToFile=1 --printCoords=0 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1 --forgedCoordTest=1 --forgedCoordRate={11}".format(b, txRange, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss, protocol, area, junction, forgedCoordRate)
+									newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-f" + forgedCoordRate + "-j" + junction + "-" + protocolsMap[protocol] + "-" + txRange
+									createJobFile(newJobName, command, jobsPath, jobTemplatePath, tempNewJobPath)
+							'''
 						
 					
 	print("\n")
