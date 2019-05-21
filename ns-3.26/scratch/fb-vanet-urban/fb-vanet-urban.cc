@@ -1105,18 +1105,19 @@ int main (int argc, char *argv[])
 					"\"Starting node\", \"Vehicle distance\", \"Received node ids\", "
 					"\"Node ids\", \"Transmission map\", \"Received on circ nodes\", \"Transmission vector\"";
 		}
+		else if (experiment.GetHighBuildings()) {
+			additionalPath = "/out/scenario-droni-high/";
+			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
+							 "\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
+							 "\"Slots\",\"Messages sent\",\"Messages received\", \"Max distance\", \"Reached maxDist node\"";
+		}
 		else if (experiment.GetDroneTest()) {
 			additionalPath = "/out/scenario-droni/";
 			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
 								"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
 								"\"Slots\",\"Messages sent\",\"Messages received\", \"Max distance\", \"Reached maxDist node\"";
 		}
-		else if (experiment.GetHighBuildings()) {
-			additionalPath = "/out/scenario-droni-high/";
-			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
-							 "\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
-							 "\"Slots\",\"Messages sent\",\"Messages received\", \"Max distance\", \"Reached maxDist node\"";
-			}
+
 		else {
 			additionalPath = "/out/scenario-urbano/";
 			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
