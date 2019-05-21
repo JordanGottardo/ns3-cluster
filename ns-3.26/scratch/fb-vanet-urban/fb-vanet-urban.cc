@@ -196,6 +196,7 @@ CSVManager::EnableAlternativeFilename(boost::filesystem::path path)
 //	new_filename.append(std::to_string(ms));
 	std::string finalPartOfPath = "-" + to_string(ms) + extension;
 	m_csvFilePath = path += finalPartOfPath;
+	cout << "fbTest= " << m_csvFilePath << endl;
 }
 
 
