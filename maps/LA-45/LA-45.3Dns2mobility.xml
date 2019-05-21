@@ -15045,3519 +15045,3479 @@ $ns_ at 39.0 "$node_(752) setdest 777.45 1244.53 11.52"
 $ns_ at 40.0 "$node_(251) setdest 866.15 428.14 12.97"
 $ns_ at 40.0 "$node_(310) setdest 1182.27 1211.06 12.02"
 $ns_ at 40.0 "$node_(752) setdest 777.29 1232.31 12.23"
-$node_(861) set X_ 1636.78
-$node_(861) set Y_ 1411.68
-$node_(861) set Y_ 30
+$node_(861) set X_ 1802.82
+$node_(861) set Y_ 2521.59
+$node_(861) set Z_ 30
 $ns_ at 0.0 "$node_(861) setdest 0.00 0.00 0.00"
 $node_(862) set X_ 1802.82
 $node_(862) set Y_ 2521.59
-$node_(862) set Y_ 30
+$node_(862) set Z_ 60
 $ns_ at 0.0 "$node_(862) setdest 0.00 0.00 0.00"
-$node_(863) set X_ 1690.77
-$node_(863) set Y_ 1466.48
-$node_(863) set Y_ 60
+$node_(863) set X_ 1689.7
+$node_(863) set Y_ 2422.01
+$node_(863) set Z_ 30
 $ns_ at 0.0 "$node_(863) setdest 0.00 0.00 0.00"
-$node_(864) set X_ 1522.4
-$node_(864) set Y_ 1215.96
-$node_(864) set Y_ 30
+$node_(864) set X_ 1690.77
+$node_(864) set Y_ 1466.48
+$node_(864) set Z_ 30
 $ns_ at 0.0 "$node_(864) setdest 0.00 0.00 0.00"
-$node_(865) set X_ 1522.4
-$node_(865) set Y_ 1215.96
-$node_(865) set Y_ 60
+$node_(865) set X_ 1690.77
+$node_(865) set Y_ 1466.48
+$node_(865) set Z_ 60
 $ns_ at 0.0 "$node_(865) setdest 0.00 0.00 0.00"
-$node_(866) set X_ 1587.64
-$node_(866) set Y_ 1312.99
-$node_(866) set Y_ 30
+$node_(866) set X_ 1522.4
+$node_(866) set Y_ 1215.96
+$node_(866) set Z_ 30
 $ns_ at 0.0 "$node_(866) setdest 0.00 0.00 0.00"
-$node_(867) set X_ 1587.64
-$node_(867) set Y_ 1312.99
-$node_(867) set Y_ 60
+$node_(867) set X_ 1522.4
+$node_(867) set Y_ 1215.96
+$node_(867) set Z_ 60
 $ns_ at 0.0 "$node_(867) setdest 0.00 0.00 0.00"
 $node_(868) set X_ 1588.3
 $node_(868) set Y_ 1357.98
-$node_(868) set Y_ 30
+$node_(868) set Z_ 60
 $ns_ at 0.0 "$node_(868) setdest 0.00 0.00 0.00"
-$node_(869) set X_ 571.84
-$node_(869) set Y_ 1106.7
-$node_(869) set Y_ 60
+$node_(869) set X_ 1588.96
+$node_(869) set Y_ 1402.97
+$node_(869) set Z_ 30
 $ns_ at 0.0 "$node_(869) setdest 0.00 0.00 0.00"
-$node_(870) set X_ 570.53
-$node_(870) set Y_ 1016.71
-$node_(870) set Y_ 30
+$node_(870) set X_ 571.18
+$node_(870) set Y_ 1061.7
+$node_(870) set Z_ 30
 $ns_ at 0.0 "$node_(870) setdest 0.00 0.00 0.00"
-$node_(871) set X_ 570.53
-$node_(871) set Y_ 1016.71
-$node_(871) set Y_ 60
+$node_(871) set X_ 571.18
+$node_(871) set Y_ 1061.7
+$node_(871) set Z_ 60
 $ns_ at 0.0 "$node_(871) setdest 0.00 0.00 0.00"
-$node_(872) set X_ 1691.4
-$node_(872) set Y_ 1511.47
-$node_(872) set Y_ 30
+$node_(872) set X_ 1751.53
+$node_(872) set Y_ 2216.61
+$node_(872) set Z_ 30
 $ns_ at 0.0 "$node_(872) setdest 0.00 0.00 0.00"
-$node_(873) set X_ 1692.03
-$node_(873) set Y_ 1556.47
-$node_(873) set Y_ 30
+$node_(873) set X_ 570.53
+$node_(873) set Y_ 1016.71
+$node_(873) set Z_ 30
 $ns_ at 0.0 "$node_(873) setdest 0.00 0.00 0.00"
-$node_(874) set X_ 689.86
-$node_(874) set Y_ 982.46
-$node_(874) set Y_ 60
+$node_(874) set X_ 570.53
+$node_(874) set Y_ 1016.71
+$node_(874) set Z_ 60
 $ns_ at 0.0 "$node_(874) setdest 0.00 0.00 0.00"
-$node_(875) set X_ 734.85
-$node_(875) set Y_ 981.92
-$node_(875) set Y_ 30
+$node_(875) set X_ 1691.4
+$node_(875) set Y_ 1511.47
+$node_(875) set Z_ 30
 $ns_ at 0.0 "$node_(875) setdest 0.00 0.00 0.00"
-$node_(876) set X_ 2290.81
-$node_(876) set Y_ 1070.64
-$node_(876) set Y_ 30
+$node_(876) set X_ 689.86
+$node_(876) set Y_ 982.46
+$node_(876) set Z_ 30
 $ns_ at 0.0 "$node_(876) setdest 0.00 0.00 0.00"
-$node_(877) set X_ 2290.81
-$node_(877) set Y_ 1070.64
-$node_(877) set Y_ 60
+$node_(877) set X_ 689.86
+$node_(877) set Y_ 982.46
+$node_(877) set Z_ 60
 $ns_ at 0.0 "$node_(877) setdest 0.00 0.00 0.00"
-$node_(878) set X_ 1894.39
-$node_(878) set Y_ 1861.52
-$node_(878) set Y_ 60
+$node_(878) set X_ 2290.81
+$node_(878) set Y_ 1070.64
+$node_(878) set Z_ 60
 $ns_ at 0.0 "$node_(878) setdest 0.00 0.00 0.00"
-$node_(879) set X_ 1951.87
-$node_(879) set Y_ 1912.51
-$node_(879) set Y_ 30
+$node_(879) set X_ 1894.39
+$node_(879) set Y_ 1861.52
+$node_(879) set Z_ 30
 $ns_ at 0.0 "$node_(879) setdest 0.00 0.00 0.00"
-$node_(880) set X_ 1951.87
-$node_(880) set Y_ 1912.51
-$node_(880) set Y_ 60
+$node_(880) set X_ 1906.87
+$node_(880) set Y_ 1913.12
+$node_(880) set Z_ 60
 $ns_ at 0.0 "$node_(880) setdest 0.00 0.00 0.00"
-$node_(881) set X_ 2307.2
-$node_(881) set Y_ 2363.38
-$node_(881) set Y_ 30
+$node_(881) set X_ 1951.87
+$node_(881) set Y_ 1912.51
+$node_(881) set Z_ 60
 $ns_ at 0.0 "$node_(881) setdest 0.00 0.00 0.00"
-$node_(882) set X_ 2307.2
-$node_(882) set Y_ 2363.38
-$node_(882) set Y_ 60
+$node_(882) set X_ 1996.86
+$node_(882) set Y_ 1911.89
+$node_(882) set Z_ 30
 $ns_ at 0.0 "$node_(882) setdest 0.00 0.00 0.00"
-$node_(883) set X_ 2107.89
-$node_(883) set Y_ 2263.61
-$node_(883) set Y_ 30
+$node_(883) set X_ 2307.2
+$node_(883) set Y_ 2363.38
+$node_(883) set Z_ 30
 $ns_ at 0.0 "$node_(883) setdest 0.00 0.00 0.00"
-$node_(884) set X_ 2107.89
-$node_(884) set Y_ 2263.61
-$node_(884) set Y_ 60
+$node_(884) set X_ 2307.2
+$node_(884) set Y_ 2363.38
+$node_(884) set Z_ 60
 $ns_ at 0.0 "$node_(884) setdest 0.00 0.00 0.00"
-$node_(885) set X_ 2160.45
-$node_(885) set Y_ 2214.54
-$node_(885) set Y_ 30
+$node_(885) set X_ 2305.81
+$node_(885) set Y_ 2261.98
+$node_(885) set Z_ 60
 $ns_ at 0.0 "$node_(885) setdest 0.00 0.00 0.00"
-$node_(886) set X_ 2391.12
-$node_(886) set Y_ 978.27
-$node_(886) set Y_ 30
+$node_(886) set X_ 2294.99
+$node_(886) set Y_ 2311.7
+$node_(886) set Z_ 30
 $ns_ at 0.0 "$node_(886) setdest 0.00 0.00 0.00"
-$node_(887) set X_ 2391.12
-$node_(887) set Y_ 978.27
-$node_(887) set Y_ 60
+$node_(887) set X_ 2160.45
+$node_(887) set Y_ 2214.54
+$node_(887) set Z_ 30
 $ns_ at 0.0 "$node_(887) setdest 0.00 0.00 0.00"
-$node_(888) set X_ 2290.78
-$node_(888) set Y_ 1115.64
-$node_(888) set Y_ 60
+$node_(888) set X_ 2160.45
+$node_(888) set Y_ 2214.54
+$node_(888) set Z_ 60
 $ns_ at 0.0 "$node_(888) setdest 0.00 0.00 0.00"
-$node_(889) set X_ 1988.27
-$node_(889) set Y_ 1164.7
-$node_(889) set Y_ 30
+$node_(889) set X_ 2391.12
+$node_(889) set Y_ 978.27
+$node_(889) set Z_ 30
 $ns_ at 0.0 "$node_(889) setdest 0.00 0.00 0.00"
-$node_(890) set X_ 1078.77
-$node_(890) set Y_ 1206.23
-$node_(890) set Y_ 30
+$node_(890) set X_ 2391.12
+$node_(890) set Y_ 978.27
+$node_(890) set Z_ 60
 $ns_ at 0.0 "$node_(890) setdest 0.00 0.00 0.00"
-$node_(891) set X_ 1078.21
-$node_(891) set Y_ 1161.23
-$node_(891) set Y_ 30
+$node_(891) set X_ 1283.65
+$node_(891) set Y_ 1257.03
+$node_(891) set Z_ 60
 $ns_ at 0.0 "$node_(891) setdest 0.00 0.00 0.00"
-$node_(892) set X_ 1171.59
-$node_(892) set Y_ 1220.8
-$node_(892) set Y_ 30
+$node_(892) set X_ 1988.27
+$node_(892) set Y_ 1164.7
+$node_(892) set Z_ 30
 $ns_ at 0.0 "$node_(892) setdest 0.00 0.00 0.00"
-$node_(893) set X_ 1279.33
-$node_(893) set Y_ 1198.55
-$node_(893) set Y_ 60
+$node_(893) set X_ 1988.27
+$node_(893) set Y_ 1164.7
+$node_(893) set Z_ 60
 $ns_ at 0.0 "$node_(893) setdest 0.00 0.00 0.00"
-$node_(894) set X_ 1231.0
-$node_(894) set Y_ 1220.0
-$node_(894) set Y_ 30
+$node_(894) set X_ 1078.77
+$node_(894) set Y_ 1206.23
+$node_(894) set Z_ 60
 $ns_ at 0.0 "$node_(894) setdest 0.00 0.00 0.00"
-$node_(895) set X_ 1231.0
-$node_(895) set Y_ 1220.0
-$node_(895) set Y_ 60
+$node_(895) set X_ 1126.6
+$node_(895) set Y_ 1221.4
+$node_(895) set Z_ 60
 $ns_ at 0.0 "$node_(895) setdest 0.00 0.00 0.00"
-$node_(896) set X_ 1373.65
-$node_(896) set Y_ 1218.08
-$node_(896) set Y_ 30
+$node_(896) set X_ 1279.33
+$node_(896) set Y_ 1198.55
+$node_(896) set Z_ 60
 $ns_ at 0.0 "$node_(896) setdest 0.00 0.00 0.00"
-$node_(897) set X_ 1328.65
-$node_(897) set Y_ 1218.69
-$node_(897) set Y_ 30
+$node_(897) set X_ 1373.65
+$node_(897) set Y_ 1218.08
+$node_(897) set Z_ 60
 $ns_ at 0.0 "$node_(897) setdest 0.00 0.00 0.00"
 $node_(898) set X_ 1328.65
 $node_(898) set Y_ 1218.69
-$node_(898) set Y_ 60
+$node_(898) set Z_ 30
 $ns_ at 0.0 "$node_(898) setdest 0.00 0.00 0.00"
-$node_(899) set X_ 1355.5
-$node_(899) set Y_ 2533.23
-$node_(899) set Y_ 30
+$node_(899) set X_ 1328.65
+$node_(899) set Y_ 1218.69
+$node_(899) set Z_ 60
 $ns_ at 0.0 "$node_(899) setdest 0.00 0.00 0.00"
 $node_(900) set X_ 1355.5
 $node_(900) set Y_ 2533.23
-$node_(900) set Y_ 60
+$node_(900) set Z_ 60
 $ns_ at 0.0 "$node_(900) setdest 0.00 0.00 0.00"
 $node_(901) set X_ 1433.81
 $node_(901) set Y_ 1217.45
-$node_(901) set Y_ 30
+$node_(901) set Z_ 60
 $ns_ at 0.0 "$node_(901) setdest 0.00 0.00 0.00"
-$node_(902) set X_ 1433.81
-$node_(902) set Y_ 1217.45
-$node_(902) set Y_ 60
+$node_(902) set X_ 2193.73
+$node_(902) set Y_ 1102.92
+$node_(902) set Z_ 60
 $ns_ at 0.0 "$node_(902) setdest 0.00 0.00 0.00"
-$node_(903) set X_ 2193.73
-$node_(903) set Y_ 1102.92
-$node_(903) set Y_ 60
+$node_(903) set X_ 2341.55
+$node_(903) set Y_ 1201.67
+$node_(903) set Z_ 60
 $ns_ at 0.0 "$node_(903) setdest 0.00 0.00 0.00"
 $node_(904) set X_ 2193.36
 $node_(904) set Y_ 1057.92
-$node_(904) set Y_ 30
+$node_(904) set Z_ 30
 $ns_ at 0.0 "$node_(904) setdest 0.00 0.00 0.00"
 $node_(905) set X_ 2193.36
 $node_(905) set Y_ 1057.92
-$node_(905) set Y_ 60
+$node_(905) set Z_ 60
 $ns_ at 0.0 "$node_(905) setdest 0.00 0.00 0.00"
-$node_(906) set X_ 979.12
-$node_(906) set Y_ 1250.96
-$node_(906) set Y_ 30
+$node_(906) set X_ 1011.5
+$node_(906) set Y_ 1219.81
+$node_(906) set Z_ 60
 $ns_ at 0.0 "$node_(906) setdest 0.00 0.00 0.00"
-$node_(907) set X_ 2289.74
-$node_(907) set Y_ 965.7
-$node_(907) set Y_ 60
+$node_(907) set X_ 979.12
+$node_(907) set Y_ 1250.96
+$node_(907) set Z_ 30
 $ns_ at 0.0 "$node_(907) setdest 0.00 0.00 0.00"
-$node_(908) set X_ 2290.54
-$node_(908) set Y_ 1010.69
-$node_(908) set Y_ 30
+$node_(908) set X_ 2289.74
+$node_(908) set Y_ 965.7
+$node_(908) set Z_ 30
 $ns_ at 0.0 "$node_(908) setdest 0.00 0.00 0.00"
-$node_(909) set X_ 981.0
-$node_(909) set Y_ 1385.94
-$node_(909) set Y_ 30
+$node_(909) set X_ 2289.74
+$node_(909) set Y_ 965.7
+$node_(909) set Z_ 60
 $ns_ at 0.0 "$node_(909) setdest 0.00 0.00 0.00"
-$node_(910) set X_ 981.62
-$node_(910) set Y_ 1430.94
-$node_(910) set Y_ 30
+$node_(910) set X_ 2290.54
+$node_(910) set Y_ 1010.69
+$node_(910) set Z_ 60
 $ns_ at 0.0 "$node_(910) setdest 0.00 0.00 0.00"
-$node_(911) set X_ 979.75
-$node_(911) set Y_ 1295.95
-$node_(911) set Y_ 30
+$node_(911) set X_ 981.0
+$node_(911) set Y_ 1385.94
+$node_(911) set Z_ 60
 $ns_ at 0.0 "$node_(911) setdest 0.00 0.00 0.00"
-$node_(912) set X_ 979.75
-$node_(912) set Y_ 1295.95
-$node_(912) set Y_ 60
+$node_(912) set X_ 980.37
+$node_(912) set Y_ 1340.95
+$node_(912) set Z_ 30
 $ns_ at 0.0 "$node_(912) setdest 0.00 0.00 0.00"
 $node_(913) set X_ 980.37
 $node_(913) set Y_ 1340.95
-$node_(913) set Y_ 30
+$node_(913) set Z_ 60
 $ns_ at 0.0 "$node_(913) setdest 0.00 0.00 0.00"
 $node_(914) set X_ 983.5
 $node_(914) set Y_ 1565.93
-$node_(914) set Y_ 60
+$node_(914) set Z_ 30
 $ns_ at 0.0 "$node_(914) setdest 0.00 0.00 0.00"
 $node_(915) set X_ 1395.6
 $node_(915) set Y_ 2325.32
-$node_(915) set Y_ 30
+$node_(915) set Z_ 30
 $ns_ at 0.0 "$node_(915) setdest 0.00 0.00 0.00"
 $node_(916) set X_ 1395.6
 $node_(916) set Y_ 2325.32
-$node_(916) set Y_ 60
+$node_(916) set Z_ 60
 $ns_ at 0.0 "$node_(916) setdest 0.00 0.00 0.00"
-$node_(917) set X_ 982.25
-$node_(917) set Y_ 1475.93
-$node_(917) set Y_ 60
+$node_(917) set X_ 982.87
+$node_(917) set Y_ 1520.93
+$node_(917) set Z_ 30
 $ns_ at 0.0 "$node_(917) setdest 0.00 0.00 0.00"
 $node_(918) set X_ 982.87
 $node_(918) set Y_ 1520.93
-$node_(918) set Y_ 30
+$node_(918) set Z_ 60
 $ns_ at 0.0 "$node_(918) setdest 0.00 0.00 0.00"
 $node_(919) set X_ 1346.4
 $node_(919) set Y_ 1992.24
-$node_(919) set Y_ 60
+$node_(919) set Z_ 30
 $ns_ at 0.0 "$node_(919) setdest 0.00 0.00 0.00"
-$node_(920) set X_ 1439.88
-$node_(920) set Y_ 1887.58
-$node_(920) set Y_ 30
+$node_(920) set X_ 1346.4
+$node_(920) set Y_ 1992.24
+$node_(920) set Z_ 60
 $ns_ at 0.0 "$node_(920) setdest 0.00 0.00 0.00"
 $node_(921) set X_ 1439.88
 $node_(921) set Y_ 1887.58
-$node_(921) set Y_ 60
+$node_(921) set Z_ 30
 $ns_ at 0.0 "$node_(921) setdest 0.00 0.00 0.00"
-$node_(922) set X_ 1439.56
-$node_(922) set Y_ 1842.58
-$node_(922) set Y_ 30
+$node_(922) set X_ 1439.88
+$node_(922) set Y_ 1887.58
+$node_(922) set Z_ 60
 $ns_ at 0.0 "$node_(922) setdest 0.00 0.00 0.00"
 $node_(923) set X_ 1439.56
 $node_(923) set Y_ 1842.58
-$node_(923) set Y_ 60
+$node_(923) set Z_ 30
 $ns_ at 0.0 "$node_(923) setdest 0.00 0.00 0.00"
 $node_(924) set X_ 1438.97
 $node_(924) set Y_ 1782.47
-$node_(924) set Y_ 60
+$node_(924) set Z_ 60
 $ns_ at 0.0 "$node_(924) setdest 0.00 0.00 0.00"
 $node_(925) set X_ 1438.25
 $node_(925) set Y_ 1737.48
-$node_(925) set Y_ 60
+$node_(925) set Z_ 30
 $ns_ at 0.0 "$node_(925) setdest 0.00 0.00 0.00"
-$node_(926) set X_ 1436.8
-$node_(926) set Y_ 1647.49
-$node_(926) set Y_ 60
+$node_(926) set X_ 1438.25
+$node_(926) set Y_ 1737.48
+$node_(926) set Z_ 60
 $ns_ at 0.0 "$node_(926) setdest 0.00 0.00 0.00"
-$node_(927) set X_ 1408.74
-$node_(927) set Y_ 1619.24
-$node_(927) set Y_ 30
+$node_(927) set X_ 1437.52
+$node_(927) set Y_ 1692.48
+$node_(927) set Z_ 30
 $ns_ at 0.0 "$node_(927) setdest 0.00 0.00 0.00"
-$node_(928) set X_ 1408.74
-$node_(928) set Y_ 1619.24
-$node_(928) set Y_ 60
+$node_(928) set X_ 1437.52
+$node_(928) set Y_ 1692.48
+$node_(928) set Z_ 60
 $ns_ at 0.0 "$node_(928) setdest 0.00 0.00 0.00"
-$node_(929) set X_ 1400.49
-$node_(929) set Y_ 2532.44
-$node_(929) set Y_ 30
+$node_(929) set X_ 1436.8
+$node_(929) set Y_ 1647.49
+$node_(929) set Z_ 30
 $ns_ at 0.0 "$node_(929) setdest 0.00 0.00 0.00"
-$node_(930) set X_ 1383.99
-$node_(930) set Y_ 1407.89
-$node_(930) set Y_ 30
+$node_(930) set X_ 1436.8
+$node_(930) set Y_ 1647.49
+$node_(930) set Z_ 60
 $ns_ at 0.0 "$node_(930) setdest 0.00 0.00 0.00"
-$node_(931) set X_ 1383.99
-$node_(931) set Y_ 1407.89
-$node_(931) set Y_ 60
+$node_(931) set X_ 1408.74
+$node_(931) set Y_ 1619.24
+$node_(931) set Z_ 30
 $ns_ at 0.0 "$node_(931) setdest 0.00 0.00 0.00"
-$node_(932) set X_ 2092.59
-$node_(932) set Y_ 1870.77
-$node_(932) set Y_ 30
+$node_(932) set X_ 1408.74
+$node_(932) set Y_ 1619.24
+$node_(932) set Z_ 60
 $ns_ at 0.0 "$node_(932) setdest 0.00 0.00 0.00"
-$node_(933) set X_ 2092.59
-$node_(933) set Y_ 1870.77
-$node_(933) set Y_ 60
+$node_(933) set X_ 1400.49
+$node_(933) set Y_ 2532.44
+$node_(933) set Z_ 30
 $ns_ at 0.0 "$node_(933) setdest 0.00 0.00 0.00"
-$node_(934) set X_ 2091.57
-$node_(934) set Y_ 1825.78
-$node_(934) set Y_ 30
+$node_(934) set X_ 1383.99
+$node_(934) set Y_ 1407.89
+$node_(934) set Z_ 60
 $ns_ at 0.0 "$node_(934) setdest 0.00 0.00 0.00"
-$node_(935) set X_ 2050.61
-$node_(935) set Y_ 1810.92
-$node_(935) set Y_ 60
+$node_(935) set X_ 2092.59
+$node_(935) set Y_ 1870.77
+$node_(935) set Z_ 60
 $ns_ at 0.0 "$node_(935) setdest 0.00 0.00 0.00"
-$node_(936) set X_ 2105.37
-$node_(936) set Y_ 2064.52
-$node_(936) set Y_ 30
+$node_(936) set X_ 2050.61
+$node_(936) set Y_ 1810.92
+$node_(936) set Z_ 60
 $ns_ at 0.0 "$node_(936) setdest 0.00 0.00 0.00"
-$node_(937) set X_ 2105.37
-$node_(937) set Y_ 2064.52
-$node_(937) set Y_ 60
+$node_(937) set X_ 2005.63
+$node_(937) set Y_ 1812.08
+$node_(937) set Z_ 30
 $ns_ at 0.0 "$node_(937) setdest 0.00 0.00 0.00"
-$node_(938) set X_ 2094.74
-$node_(938) set Y_ 1983.89
-$node_(938) set Y_ 30
+$node_(938) set X_ 2005.63
+$node_(938) set Y_ 1812.08
+$node_(938) set Z_ 60
 $ns_ at 0.0 "$node_(938) setdest 0.00 0.00 0.00"
-$node_(939) set X_ 2093.84
-$node_(939) set Y_ 1930.83
-$node_(939) set Y_ 60
+$node_(939) set X_ 2105.37
+$node_(939) set Y_ 2064.52
+$node_(939) set Z_ 60
 $ns_ at 0.0 "$node_(939) setdest 0.00 0.00 0.00"
-$node_(940) set X_ 2252.95
-$node_(940) set Y_ 2517.99
-$node_(940) set Y_ 30
+$node_(940) set X_ 2094.74
+$node_(940) set Y_ 1983.89
+$node_(940) set Z_ 30
 $ns_ at 0.0 "$node_(940) setdest 0.00 0.00 0.00"
-$node_(941) set X_ 1960.64
-$node_(941) set Y_ 1813.25
-$node_(941) set Y_ 60
+$node_(941) set X_ 2093.84
+$node_(941) set Y_ 1930.83
+$node_(941) set Z_ 30
 $ns_ at 0.0 "$node_(941) setdest 0.00 0.00 0.00"
-$node_(942) set X_ 1900.71
-$node_(942) set Y_ 1124.13
-$node_(942) set Y_ 30
+$node_(942) set X_ 2252.95
+$node_(942) set Y_ 2517.99
+$node_(942) set Z_ 30
 $ns_ at 0.0 "$node_(942) setdest 0.00 0.00 0.00"
-$node_(943) set X_ 1900.71
-$node_(943) set Y_ 1124.13
-$node_(943) set Y_ 60
+$node_(943) set X_ 2288.15
+$node_(943) set Y_ 875.71
+$node_(943) set Z_ 60
 $ns_ at 0.0 "$node_(943) setdest 0.00 0.00 0.00"
-$node_(944) set X_ 1991.84
-$node_(944) set Y_ 1002.52
-$node_(944) set Y_ 30
+$node_(944) set X_ 1960.64
+$node_(944) set Y_ 1813.25
+$node_(944) set Z_ 30
 $ns_ at 0.0 "$node_(944) setdest 0.00 0.00 0.00"
-$node_(945) set X_ 1991.84
-$node_(945) set Y_ 1002.52
-$node_(945) set Y_ 60
+$node_(945) set X_ 1960.64
+$node_(945) set Y_ 1813.25
+$node_(945) set Z_ 60
 $ns_ at 0.0 "$node_(945) setdest 0.00 0.00 0.00"
-$node_(946) set X_ 1377.24
-$node_(946) set Y_ 1013.53
-$node_(946) set Y_ 60
+$node_(946) set X_ 1915.66
+$node_(946) set Y_ 1814.42
+$node_(946) set Z_ 60
 $ns_ at 0.0 "$node_(946) setdest 0.00 0.00 0.00"
-$node_(947) set X_ 1394.04
-$node_(947) set Y_ 973.75
-$node_(947) set Y_ 30
+$node_(947) set X_ 1900.71
+$node_(947) set Y_ 1124.13
+$node_(947) set Z_ 30
 $ns_ at 0.0 "$node_(947) setdest 0.00 0.00 0.00"
-$node_(948) set X_ 1439.04
-$node_(948) set Y_ 973.27
-$node_(948) set Y_ 30
+$node_(948) set X_ 1945.71
+$node_(948) set Y_ 1123.32
+$node_(948) set Z_ 30
 $ns_ at 0.0 "$node_(948) setdest 0.00 0.00 0.00"
-$node_(949) set X_ 1994.27
-$node_(949) set Y_ 1107.7
-$node_(949) set Y_ 30
+$node_(949) set X_ 1945.71
+$node_(949) set Y_ 1123.32
+$node_(949) set Z_ 60
 $ns_ at 0.0 "$node_(949) setdest 0.00 0.00 0.00"
-$node_(950) set X_ 2110.45
-$node_(950) set Y_ 2454.66
-$node_(950) set Y_ 60
+$node_(950) set X_ 1991.84
+$node_(950) set Y_ 1002.52
+$node_(950) set Z_ 30
 $ns_ at 0.0 "$node_(950) setdest 0.00 0.00 0.00"
-$node_(951) set X_ 1700.33
-$node_(951) set Y_ 2474.38
-$node_(951) set Y_ 30
+$node_(951) set X_ 1377.24
+$node_(951) set Y_ 1013.53
+$node_(951) set Z_ 60
 $ns_ at 0.0 "$node_(951) setdest 0.00 0.00 0.00"
-$node_(952) set X_ 1700.33
-$node_(952) set Y_ 2474.38
-$node_(952) set Y_ 60
+$node_(952) set X_ 1394.04
+$node_(952) set Y_ 973.75
+$node_(952) set Z_ 60
 $ns_ at 0.0 "$node_(952) setdest 0.00 0.00 0.00"
-$node_(953) set X_ 710.49
-$node_(953) set Y_ 2485.04
-$node_(953) set Y_ 30
+$node_(953) set X_ 1439.04
+$node_(953) set Y_ 973.27
+$node_(953) set Z_ 30
 $ns_ at 0.0 "$node_(953) setdest 0.00 0.00 0.00"
-$node_(954) set X_ 710.49
-$node_(954) set Y_ 2485.04
-$node_(954) set Y_ 60
+$node_(954) set X_ 1439.04
+$node_(954) set Y_ 973.27
+$node_(954) set Z_ 60
 $ns_ at 0.0 "$node_(954) setdest 0.00 0.00 0.00"
-$node_(955) set X_ 689.28
-$node_(955) set Y_ 2434.67
-$node_(955) set Y_ 30
+$node_(955) set X_ 2110.45
+$node_(955) set Y_ 2454.66
+$node_(955) set Z_ 30
 $ns_ at 0.0 "$node_(955) setdest 0.00 0.00 0.00"
-$node_(956) set X_ 947.09
-$node_(956) set Y_ 2424.15
-$node_(956) set Y_ 30
+$node_(956) set X_ 1700.33
+$node_(956) set Y_ 2474.38
+$node_(956) set Z_ 60
 $ns_ at 0.0 "$node_(956) setdest 0.00 0.00 0.00"
-$node_(957) set X_ 947.09
-$node_(957) set Y_ 2424.15
-$node_(957) set Y_ 60
+$node_(957) set X_ 1992.5
+$node_(957) set Y_ 1062.73
+$node_(957) set Z_ 30
 $ns_ at 0.0 "$node_(957) setdest 0.00 0.00 0.00"
-$node_(958) set X_ 800.46
-$node_(958) set Y_ 2483.05
-$node_(958) set Y_ 60
+$node_(958) set X_ 710.49
+$node_(958) set Y_ 2485.04
+$node_(958) set Z_ 30
 $ns_ at 0.0 "$node_(958) setdest 0.00 0.00 0.00"
-$node_(959) set X_ 755.48
-$node_(959) set Y_ 2484.05
-$node_(959) set Y_ 30
+$node_(959) set X_ 710.49
+$node_(959) set Y_ 2485.04
+$node_(959) set Z_ 60
 $ns_ at 0.0 "$node_(959) setdest 0.00 0.00 0.00"
-$node_(960) set X_ 755.48
-$node_(960) set Y_ 2484.05
-$node_(960) set Y_ 60
+$node_(960) set X_ 689.28
+$node_(960) set Y_ 2434.67
+$node_(960) set Z_ 60
 $ns_ at 0.0 "$node_(960) setdest 0.00 0.00 0.00"
-$node_(961) set X_ 914.07
-$node_(961) set Y_ 2484.92
-$node_(961) set Y_ 30
+$node_(961) set X_ 947.09
+$node_(961) set Y_ 2424.15
+$node_(961) set Z_ 60
 $ns_ at 0.0 "$node_(961) setdest 0.00 0.00 0.00"
-$node_(962) set X_ 914.07
-$node_(962) set Y_ 2484.92
-$node_(962) set Y_ 60
+$node_(962) set X_ 949.33
+$node_(962) set Y_ 2379.2
+$node_(962) set Z_ 30
 $ns_ at 0.0 "$node_(962) setdest 0.00 0.00 0.00"
-$node_(963) set X_ 786.73
-$node_(963) set Y_ 2126.76
-$node_(963) set Y_ 60
+$node_(963) set X_ 949.33
+$node_(963) set Y_ 2379.2
+$node_(963) set Z_ 60
 $ns_ at 0.0 "$node_(963) setdest 0.00 0.00 0.00"
-$node_(964) set X_ 890.35
-$node_(964) set Y_ 2275.41
-$node_(964) set Y_ 30
+$node_(964) set X_ 1496.07
+$node_(964) set Y_ 2374.66
+$node_(964) set Z_ 30
 $ns_ at 0.0 "$node_(964) setdest 0.00 0.00 0.00"
-$node_(965) set X_ 940.13
-$node_(965) set Y_ 2289.05
-$node_(965) set Y_ 60
+$node_(965) set X_ 1496.07
+$node_(965) set Y_ 2374.66
+$node_(965) set Z_ 60
 $ns_ at 0.0 "$node_(965) setdest 0.00 0.00 0.00"
-$node_(966) set X_ 977.34
-$node_(966) set Y_ 2311.82
-$node_(966) set Y_ 30
+$node_(966) set X_ 800.46
+$node_(966) set Y_ 2483.05
+$node_(966) set Z_ 30
 $ns_ at 0.0 "$node_(966) setdest 0.00 0.00 0.00"
-$node_(967) set X_ 1022.56
-$node_(967) set Y_ 2302.67
-$node_(967) set Y_ 30
+$node_(967) set X_ 755.48
+$node_(967) set Y_ 2484.05
+$node_(967) set Z_ 30
 $ns_ at 0.0 "$node_(967) setdest 0.00 0.00 0.00"
-$node_(968) set X_ 1022.56
-$node_(968) set Y_ 2302.67
-$node_(968) set Y_ 60
+$node_(968) set X_ 845.23
+$node_(968) set Y_ 2480.49
+$node_(968) set Z_ 60
 $ns_ at 0.0 "$node_(968) setdest 0.00 0.00 0.00"
-$node_(969) set X_ 876.72
-$node_(969) set Y_ 2125.58
-$node_(969) set Y_ 30
+$node_(969) set X_ 786.73
+$node_(969) set Y_ 2126.76
+$node_(969) set Z_ 30
 $ns_ at 0.0 "$node_(969) setdest 0.00 0.00 0.00"
-$node_(970) set X_ 876.72
-$node_(970) set Y_ 2125.58
-$node_(970) set Y_ 60
+$node_(970) set X_ 831.73
+$node_(970) set Y_ 2126.17
+$node_(970) set Z_ 30
 $ns_ at 0.0 "$node_(970) setdest 0.00 0.00 0.00"
-$node_(971) set X_ 888.74
-$node_(971) set Y_ 2170.34
-$node_(971) set Y_ 60
+$node_(971) set X_ 890.35
+$node_(971) set Y_ 2275.41
+$node_(971) set Z_ 30
 $ns_ at 0.0 "$node_(971) setdest 0.00 0.00 0.00"
-$node_(972) set X_ 889.53
-$node_(972) set Y_ 2230.42
-$node_(972) set Y_ 30
+$node_(972) set X_ 940.13
+$node_(972) set Y_ 2289.05
+$node_(972) set Z_ 30
 $ns_ at 0.0 "$node_(972) setdest 0.00 0.00 0.00"
-$node_(973) set X_ 889.53
-$node_(973) set Y_ 2230.42
-$node_(973) set Y_ 60
+$node_(973) set X_ 977.34
+$node_(973) set Y_ 2311.82
+$node_(973) set Z_ 30
 $ns_ at 0.0 "$node_(973) setdest 0.00 0.00 0.00"
-$node_(974) set X_ 1414.94
-$node_(974) set Y_ 894.05
-$node_(974) set Y_ 30
+$node_(974) set X_ 876.72
+$node_(974) set Y_ 2125.58
+$node_(974) set Z_ 60
 $ns_ at 0.0 "$node_(974) setdest 0.00 0.00 0.00"
-$node_(975) set X_ 1372.05
-$node_(975) set Y_ 854.68
-$node_(975) set Y_ 60
+$node_(975) set X_ 888.74
+$node_(975) set Y_ 2170.34
+$node_(975) set Z_ 30
 $ns_ at 0.0 "$node_(975) setdest 0.00 0.00 0.00"
-$node_(976) set X_ 1376.58
-$node_(976) set Y_ 957.07
-$node_(976) set Y_ 60
+$node_(976) set X_ 888.74
+$node_(976) set Y_ 2170.34
+$node_(976) set Z_ 60
 $ns_ at 0.0 "$node_(976) setdest 0.00 0.00 0.00"
-$node_(977) set X_ 1393.59
-$node_(977) set Y_ 813.32
-$node_(977) set Y_ 30
+$node_(977) set X_ 1358.34
+$node_(977) set Y_ 2429.05
+$node_(977) set Z_ 30
 $ns_ at 0.0 "$node_(977) setdest 0.00 0.00 0.00"
-$node_(978) set X_ 1529.03
-$node_(978) set Y_ 972.3
-$node_(978) set Y_ 30
+$node_(978) set X_ 1375.82
+$node_(978) set Y_ 912.08
+$node_(978) set Z_ 30
 $ns_ at 0.0 "$node_(978) setdest 0.00 0.00 0.00"
-$node_(979) set X_ 1484.04
-$node_(979) set Y_ 972.78
-$node_(979) set Y_ 60
+$node_(979) set X_ 1414.94
+$node_(979) set Y_ 894.05
+$node_(979) set Z_ 60
 $ns_ at 0.0 "$node_(979) setdest 0.00 0.00 0.00"
-$node_(980) set X_ 1684.14
-$node_(980) set Y_ 992.21
-$node_(980) set Y_ 30
+$node_(980) set X_ 1372.05
+$node_(980) set Y_ 854.68
+$node_(980) set Z_ 60
 $ns_ at 0.0 "$node_(980) setdest 0.00 0.00 0.00"
-$node_(981) set X_ 1684.14
-$node_(981) set Y_ 992.21
-$node_(981) set Y_ 60
+$node_(981) set X_ 1376.58
+$node_(981) set Y_ 957.07
+$node_(981) set Z_ 60
 $ns_ at 0.0 "$node_(981) setdest 0.00 0.00 0.00"
-$node_(982) set X_ 1684.77
-$node_(982) set Y_ 1037.2
-$node_(982) set Y_ 30
+$node_(982) set X_ 1393.59
+$node_(982) set Y_ 813.32
+$node_(982) set Z_ 60
 $ns_ at 0.0 "$node_(982) setdest 0.00 0.00 0.00"
-$node_(983) set X_ 1684.77
-$node_(983) set Y_ 1037.2
-$node_(983) set Y_ 60
+$node_(983) set X_ 1529.03
+$node_(983) set Y_ 972.3
+$node_(983) set Z_ 30
 $ns_ at 0.0 "$node_(983) setdest 0.00 0.00 0.00"
-$node_(984) set X_ 2079.64
-$node_(984) set Y_ 2416.2
-$node_(984) set Y_ 60
+$node_(984) set X_ 1529.03
+$node_(984) set Y_ 972.3
+$node_(984) set Z_ 60
 $ns_ at 0.0 "$node_(984) setdest 0.00 0.00 0.00"
-$node_(985) set X_ 1719.14
-$node_(985) set Y_ 969.94
-$node_(985) set Y_ 30
+$node_(985) set X_ 1484.04
+$node_(985) set Y_ 972.78
+$node_(985) set Z_ 60
 $ns_ at 0.0 "$node_(985) setdest 0.00 0.00 0.00"
-$node_(986) set X_ 1719.14
-$node_(986) set Y_ 969.94
-$node_(986) set Y_ 60
+$node_(986) set X_ 1684.14
+$node_(986) set Y_ 992.21
+$node_(986) set Z_ 60
 $ns_ at 0.0 "$node_(986) setdest 0.00 0.00 0.00"
-$node_(987) set X_ 1809.13
-$node_(987) set Y_ 968.25
-$node_(987) set Y_ 60
+$node_(987) set X_ 1684.77
+$node_(987) set Y_ 1037.2
+$node_(987) set Z_ 30
 $ns_ at 0.0 "$node_(987) setdest 0.00 0.00 0.00"
-$node_(988) set X_ 1764.13
-$node_(988) set Y_ 969.1
-$node_(988) set Y_ 30
+$node_(988) set X_ 2079.64
+$node_(988) set Y_ 2416.2
+$node_(988) set Z_ 30
 $ns_ at 0.0 "$node_(988) setdest 0.00 0.00 0.00"
-$node_(989) set X_ 1899.11
-$node_(989) set Y_ 966.56
-$node_(989) set Y_ 30
+$node_(989) set X_ 1719.14
+$node_(989) set Y_ 969.94
+$node_(989) set Z_ 30
 $ns_ at 0.0 "$node_(989) setdest 0.00 0.00 0.00"
-$node_(990) set X_ 1627.4
-$node_(990) set Y_ 1214.15
-$node_(990) set Y_ 60
+$node_(990) set X_ 1719.14
+$node_(990) set Y_ 969.94
+$node_(990) set Z_ 60
 $ns_ at 0.0 "$node_(990) setdest 0.00 0.00 0.00"
-$node_(991) set X_ 1644.7
-$node_(991) set Y_ 2422.54
-$node_(991) set Y_ 60
+$node_(991) set X_ 1764.13
+$node_(991) set Y_ 969.1
+$node_(991) set Z_ 30
 $ns_ at 0.0 "$node_(991) setdest 0.00 0.00 0.00"
-$node_(992) set X_ 1901.98
-$node_(992) set Y_ 2428.63
-$node_(992) set Y_ 60
+$node_(992) set X_ 1899.11
+$node_(992) set Y_ 966.56
+$node_(992) set Z_ 60
 $ns_ at 0.0 "$node_(992) setdest 0.00 0.00 0.00"
-$node_(993) set X_ 1672.4
-$node_(993) set Y_ 1213.89
-$node_(993) set Y_ 30
+$node_(993) set X_ 1854.12
+$node_(993) set Y_ 967.4
+$node_(993) set Z_ 60
 $ns_ at 0.0 "$node_(993) setdest 0.00 0.00 0.00"
-$node_(994) set X_ 1672.4
-$node_(994) set Y_ 1213.89
-$node_(994) set Y_ 60
+$node_(994) set X_ 1567.38
+$node_(994) set Y_ 1214.82
+$node_(994) set Z_ 30
 $ns_ at 0.0 "$node_(994) setdest 0.00 0.00 0.00"
-$node_(995) set X_ 1686.57
-$node_(995) set Y_ 1165.62
-$node_(995) set Y_ 60
+$node_(995) set X_ 1567.38
+$node_(995) set Y_ 1214.82
+$node_(995) set Z_ 60
 $ns_ at 0.0 "$node_(995) setdest 0.00 0.00 0.00"
-$node_(996) set X_ 1573.28
-$node_(996) set Y_ 1126.36
-$node_(996) set Y_ 30
+$node_(996) set X_ 1627.4
+$node_(996) set Y_ 1214.15
+$node_(996) set Z_ 30
 $ns_ at 0.0 "$node_(996) setdest 0.00 0.00 0.00"
-$node_(997) set X_ 1528.29
-$node_(997) set Y_ 1126.98
-$node_(997) set Y_ 30
+$node_(997) set X_ 1644.7
+$node_(997) set Y_ 2422.54
+$node_(997) set Z_ 30
 $ns_ at 0.0 "$node_(997) setdest 0.00 0.00 0.00"
-$node_(998) set X_ 1663.27
-$node_(998) set Y_ 1125.13
-$node_(998) set Y_ 60
+$node_(998) set X_ 1644.7
+$node_(998) set Y_ 2422.54
+$node_(998) set Z_ 60
 $ns_ at 0.0 "$node_(998) setdest 0.00 0.00 0.00"
-$node_(999) set X_ 975.36
-$node_(999) set Y_ 976.7
-$node_(999) set Y_ 30
+$node_(999) set X_ 1686.57
+$node_(999) set Y_ 1165.62
+$node_(999) set Z_ 30
 $ns_ at 0.0 "$node_(999) setdest 0.00 0.00 0.00"
-$node_(1000) set X_ 975.36
-$node_(1000) set Y_ 976.7
-$node_(1000) set Y_ 60
+$node_(1000) set X_ 1686.57
+$node_(1000) set Y_ 1165.62
+$node_(1000) set Z_ 60
 $ns_ at 0.0 "$node_(1000) setdest 0.00 0.00 0.00"
-$node_(1001) set X_ 1752.94
-$node_(1001) set Y_ 2317.97
-$node_(1001) set Y_ 60
+$node_(1001) set X_ 1573.28
+$node_(1001) set Y_ 1126.36
+$node_(1001) set Z_ 30
 $ns_ at 0.0 "$node_(1001) setdest 0.00 0.00 0.00"
-$node_(1002) set X_ 1598.57
-$node_(1002) set Y_ 2322.96
-$node_(1002) set Y_ 30
+$node_(1002) set X_ 1663.27
+$node_(1002) set Y_ 1125.13
+$node_(1002) set Z_ 30
 $ns_ at 0.0 "$node_(1002) setdest 0.00 0.00 0.00"
-$node_(1003) set X_ 1598.57
-$node_(1003) set Y_ 2322.96
-$node_(1003) set Y_ 60
+$node_(1003) set X_ 1663.27
+$node_(1003) set Y_ 1125.13
+$node_(1003) set Z_ 60
 $ns_ at 0.0 "$node_(1003) setdest 0.00 0.00 0.00"
-$node_(1004) set X_ 1508.58
-$node_(1004) set Y_ 2324.01
-$node_(1004) set Y_ 30
+$node_(1004) set X_ 1618.28
+$node_(1004) set Y_ 1125.75
+$node_(1004) set Z_ 30
 $ns_ at 0.0 "$node_(1004) setdest 0.00 0.00 0.00"
-$node_(1005) set X_ 1508.58
-$node_(1005) set Y_ 2324.01
-$node_(1005) set Y_ 60
+$node_(1005) set X_ 1618.28
+$node_(1005) set Y_ 1125.75
+$node_(1005) set Z_ 60
 $ns_ at 0.0 "$node_(1005) setdest 0.00 0.00 0.00"
-$node_(1006) set X_ 1696.03
-$node_(1006) set Y_ 2169.5
-$node_(1006) set Y_ 60
+$node_(1006) set X_ 1752.94
+$node_(1006) set Y_ 2317.97
+$node_(1006) set Z_ 30
 $ns_ at 0.0 "$node_(1006) setdest 0.00 0.00 0.00"
-$node_(1007) set X_ 1497.54
-$node_(1007) set Y_ 2480.9
-$node_(1007) set Y_ 30
+$node_(1007) set X_ 1598.57
+$node_(1007) set Y_ 2322.96
+$node_(1007) set Z_ 30
 $ns_ at 0.0 "$node_(1007) setdest 0.00 0.00 0.00"
-$node_(1008) set X_ 1497.54
-$node_(1008) set Y_ 2480.9
-$node_(1008) set Y_ 60
+$node_(1008) set X_ 1598.57
+$node_(1008) set Y_ 2322.96
+$node_(1008) set Z_ 60
 $ns_ at 0.0 "$node_(1008) setdest 0.00 0.00 0.00"
-$node_(1009) set X_ 2044.75
-$node_(1009) set Y_ 2212.8
-$node_(1009) set Y_ 30
+$node_(1009) set X_ 725.71
+$node_(1009) set Y_ 1223.55
+$node_(1009) set Z_ 30
 $ns_ at 0.0 "$node_(1009) setdest 0.00 0.00 0.00"
-$node_(1010) set X_ 2044.75
-$node_(1010) set Y_ 2212.8
-$node_(1010) set Y_ 60
+$node_(1010) set X_ 725.71
+$node_(1010) set Y_ 1223.55
+$node_(1010) set Z_ 60
 $ns_ at 0.0 "$node_(1010) setdest 0.00 0.00 0.00"
-$node_(1011) set X_ 1690.14
-$node_(1011) set Y_ 1421.48
-$node_(1011) set Y_ 60
+$node_(1011) set X_ 1696.03
+$node_(1011) set Y_ 2169.5
+$node_(1011) set Z_ 30
 $ns_ at 0.0 "$node_(1011) setdest 0.00 0.00 0.00"
-$node_(1012) set X_ 1695.18
-$node_(1012) set Y_ 2109.31
-$node_(1012) set Y_ 60
+$node_(1012) set X_ 2089.74
+$node_(1012) set Y_ 2212.03
+$node_(1012) set Z_ 30
 $ns_ at 0.0 "$node_(1012) setdest 0.00 0.00 0.00"
-$node_(1013) set X_ 1694.41
-$node_(1013) set Y_ 2054.87
-$node_(1013) set Y_ 30
+$node_(1013) set X_ 2089.74
+$node_(1013) set Y_ 2212.03
+$node_(1013) set Z_ 60
 $ns_ at 0.0 "$node_(1013) setdest 0.00 0.00 0.00"
-$node_(1014) set X_ 1694.41
-$node_(1014) set Y_ 2054.87
-$node_(1014) set Y_ 60
+$node_(1014) set X_ 1695.18
+$node_(1014) set Y_ 2109.31
+$node_(1014) set Z_ 60
 $ns_ at 0.0 "$node_(1014) setdest 0.00 0.00 0.00"
-$node_(1015) set X_ 1992.1
-$node_(1015) set Y_ 2112.57
-$node_(1015) set Y_ 60
+$node_(1015) set X_ 973.5
+$node_(1015) set Y_ 841.72
+$node_(1015) set Z_ 30
 $ns_ at 0.0 "$node_(1015) setdest 0.00 0.00 0.00"
-$node_(1016) set X_ 1903.41
-$node_(1016) set Y_ 2308.02
-$node_(1016) set Y_ 60
+$node_(1016) set X_ 1992.1
+$node_(1016) set Y_ 2112.57
+$node_(1016) set Z_ 30
 $ns_ at 0.0 "$node_(1016) setdest 0.00 0.00 0.00"
 $node_(1017) set X_ 979.55
 $node_(1017) set Y_ 2522.06
-$node_(1017) set Y_ 60
+$node_(1017) set Z_ 30
 $ns_ at 0.0 "$node_(1017) setdest 0.00 0.00 0.00"
-$node_(1018) set X_ 1021.32
-$node_(1018) set Y_ 2354.71
-$node_(1018) set Y_ 60
+$node_(1018) set X_ 979.55
+$node_(1018) set Y_ 2522.06
+$node_(1018) set Z_ 60
 $ns_ at 0.0 "$node_(1018) setdest 0.00 0.00 0.00"
 $node_(1019) set X_ 1295.99
 $node_(1019) set Y_ 2340.1
-$node_(1019) set Y_ 60
+$node_(1019) set Z_ 30
 $ns_ at 0.0 "$node_(1019) setdest 0.00 0.00 0.00"
-$node_(1020) set X_ 1119.18
-$node_(1020) set Y_ 2529.36
-$node_(1020) set Y_ 30
+$node_(1020) set X_ 1295.99
+$node_(1020) set Y_ 2340.1
+$node_(1020) set Z_ 60
 $ns_ at 0.0 "$node_(1020) setdest 0.00 0.00 0.00"
-$node_(1021) set X_ 1300.17
-$node_(1021) set Y_ 2493.6
-$node_(1021) set Y_ 30
+$node_(1021) set X_ 1118.64
+$node_(1021) set Y_ 2484.37
+$node_(1021) set Z_ 30
 $ns_ at 0.0 "$node_(1021) setdest 0.00 0.00 0.00"
-$node_(1022) set X_ 1300.17
-$node_(1022) set Y_ 2493.6
-$node_(1022) set Y_ 60
+$node_(1022) set X_ 1118.64
+$node_(1022) set Y_ 2484.37
+$node_(1022) set Z_ 60
 $ns_ at 0.0 "$node_(1022) setdest 0.00 0.00 0.00"
-$node_(1023) set X_ 1036.29
-$node_(1023) set Y_ 2575.76
-$node_(1023) set Y_ 30
+$node_(1023) set X_ 1030.74
+$node_(1023) set Y_ 2499.1
+$node_(1023) set Z_ 30
 $ns_ at 0.0 "$node_(1023) setdest 0.00 0.00 0.00"
-$node_(1024) set X_ 1036.29
-$node_(1024) set Y_ 2575.76
-$node_(1024) set Y_ 60
+$node_(1024) set X_ 1030.74
+$node_(1024) set Y_ 2499.1
+$node_(1024) set Z_ 60
 $ns_ at 0.0 "$node_(1024) setdest 0.00 0.00 0.00"
-$node_(1025) set X_ 1030.74
-$node_(1025) set Y_ 2499.1
-$node_(1025) set Y_ 60
+$node_(1025) set X_ 1003.7
+$node_(1025) set Y_ 2544.72
+$node_(1025) set Z_ 30
 $ns_ at 0.0 "$node_(1025) setdest 0.00 0.00 0.00"
-$node_(1026) set X_ 1003.7
-$node_(1026) set Y_ 2544.72
-$node_(1026) set Y_ 60
+$node_(1026) set X_ 1035.33
+$node_(1026) set Y_ 2395.37
+$node_(1026) set Z_ 60
 $ns_ at 0.0 "$node_(1026) setdest 0.00 0.00 0.00"
-$node_(1027) set X_ 1035.33
-$node_(1027) set Y_ 2395.37
-$node_(1027) set Y_ 60
+$node_(1027) set X_ 1036.25
+$node_(1027) set Y_ 2455.31
+$node_(1027) set Z_ 30
 $ns_ at 0.0 "$node_(1027) setdest 0.00 0.00 0.00"
 $node_(1028) set X_ 1036.25
 $node_(1028) set Y_ 2455.31
-$node_(1028) set Y_ 60
+$node_(1028) set Z_ 60
 $ns_ at 0.0 "$node_(1028) setdest 0.00 0.00 0.00"
-$node_(1029) set X_ 644.86
-$node_(1029) set Y_ 982.99
-$node_(1029) set Y_ 30
+$node_(1029) set X_ 599.87
+$node_(1029) set Y_ 983.53
+$node_(1029) set Z_ 30
 $ns_ at 0.0 "$node_(1029) setdest 0.00 0.00 0.00"
-$node_(1030) set X_ 644.86
-$node_(1030) set Y_ 982.99
-$node_(1030) set Y_ 60
+$node_(1030) set X_ 1382.78
+$node_(1030) set Y_ 1317.9
+$node_(1030) set Z_ 30
 $ns_ at 0.0 "$node_(1030) setdest 0.00 0.00 0.00"
-$node_(1031) set X_ 1382.78
-$node_(1031) set Y_ 1317.9
-$node_(1031) set Y_ 30
+$node_(1031) set X_ 1382.17
+$node_(1031) set Y_ 1272.9
+$node_(1031) set Z_ 30
 $ns_ at 0.0 "$node_(1031) setdest 0.00 0.00 0.00"
-$node_(1032) set X_ 1381.57
-$node_(1032) set Y_ 1227.91
-$node_(1032) set Y_ 30
+$node_(1032) set X_ 975.97
+$node_(1032) set Y_ 1021.7
+$node_(1032) set Z_ 30
 $ns_ at 0.0 "$node_(1032) setdest 0.00 0.00 0.00"
-$node_(1033) set X_ 975.97
-$node_(1033) set Y_ 1021.7
-$node_(1033) set Y_ 30
+$node_(1033) set X_ 2401.36
+$node_(1033) set Y_ 1837.25
+$node_(1033) set Z_ 30
 $ns_ at 0.0 "$node_(1033) setdest 0.00 0.00 0.00"
-$node_(1034) set X_ 2402.04
-$node_(1034) set Y_ 1882.24
-$node_(1034) set Y_ 60
+$node_(1034) set X_ 974.74
+$node_(1034) set Y_ 931.71
+$node_(1034) set Z_ 30
 $ns_ at 0.0 "$node_(1034) setdest 0.00 0.00 0.00"
-$node_(1035) set X_ 2401.36
-$node_(1035) set Y_ 1837.25
-$node_(1035) set Y_ 60
+$node_(1035) set X_ 974.74
+$node_(1035) set Y_ 931.71
+$node_(1035) set Z_ 60
 $ns_ at 0.0 "$node_(1035) setdest 0.00 0.00 0.00"
-$node_(1036) set X_ 974.74
-$node_(1036) set Y_ 931.71
-$node_(1036) set Y_ 30
+$node_(1036) set X_ 2400.68
+$node_(1036) set Y_ 1792.25
+$node_(1036) set Z_ 30
 $ns_ at 0.0 "$node_(1036) setdest 0.00 0.00 0.00"
-$node_(1037) set X_ 974.74
-$node_(1037) set Y_ 931.71
-$node_(1037) set Y_ 60
+$node_(1037) set X_ 2299.23
+$node_(1037) set Y_ 2416.22
+$node_(1037) set Z_ 60
 $ns_ at 0.0 "$node_(1037) setdest 0.00 0.00 0.00"
-$node_(1038) set X_ 974.12
-$node_(1038) set Y_ 886.71
-$node_(1038) set Y_ 60
+$node_(1038) set X_ 2397.94
+$node_(1038) set Y_ 1612.28
+$node_(1038) set Z_ 60
 $ns_ at 0.0 "$node_(1038) setdest 0.00 0.00 0.00"
-$node_(1039) set X_ 2400.68
-$node_(1039) set Y_ 1792.25
-$node_(1039) set Y_ 60
+$node_(1039) set X_ 2399.31
+$node_(1039) set Y_ 1702.27
+$node_(1039) set Z_ 30
 $ns_ at 0.0 "$node_(1039) setdest 0.00 0.00 0.00"
-$node_(1040) set X_ 2399.99
-$node_(1040) set Y_ 1747.26
-$node_(1040) set Y_ 30
+$node_(1040) set X_ 2398.62
+$node_(1040) set Y_ 1657.27
+$node_(1040) set Z_ 60
 $ns_ at 0.0 "$node_(1040) setdest 0.00 0.00 0.00"
-$node_(1041) set X_ 2299.23
-$node_(1041) set Y_ 2416.22
-$node_(1041) set Y_ 60
+$node_(1041) set X_ 879.19
+$node_(1041) set Y_ 1381.25
+$node_(1041) set Z_ 60
 $ns_ at 0.0 "$node_(1041) setdest 0.00 0.00 0.00"
-$node_(1042) set X_ 2397.94
-$node_(1042) set Y_ 1612.28
-$node_(1042) set Y_ 30
+$node_(1042) set X_ 881.04
+$node_(1042) set Y_ 1516.24
+$node_(1042) set Z_ 30
 $ns_ at 0.0 "$node_(1042) setdest 0.00 0.00 0.00"
-$node_(1043) set X_ 2397.94
-$node_(1043) set Y_ 1612.28
-$node_(1043) set Y_ 60
+$node_(1043) set X_ 881.04
+$node_(1043) set Y_ 1516.24
+$node_(1043) set Z_ 60
 $ns_ at 0.0 "$node_(1043) setdest 0.00 0.00 0.00"
-$node_(1044) set X_ 2399.31
-$node_(1044) set Y_ 1702.27
-$node_(1044) set Y_ 30
+$node_(1044) set X_ 1291.16
+$node_(1044) set Y_ 2216.6
+$node_(1044) set Z_ 60
 $ns_ at 0.0 "$node_(1044) setdest 0.00 0.00 0.00"
-$node_(1045) set X_ 879.19
-$node_(1045) set Y_ 1381.25
-$node_(1045) set Y_ 30
+$node_(1045) set X_ 883.09
+$node_(1045) set Y_ 1666.43
+$node_(1045) set Z_ 30
 $ns_ at 0.0 "$node_(1045) setdest 0.00 0.00 0.00"
-$node_(1046) set X_ 879.19
-$node_(1046) set Y_ 1381.25
-$node_(1046) set Y_ 60
+$node_(1046) set X_ 882.27
+$node_(1046) set Y_ 1606.23
+$node_(1046) set Z_ 30
 $ns_ at 0.0 "$node_(1046) setdest 0.00 0.00 0.00"
-$node_(1047) set X_ 881.04
-$node_(1047) set Y_ 1516.24
-$node_(1047) set Y_ 30
+$node_(1047) set X_ 881.65
+$node_(1047) set Y_ 1561.24
+$node_(1047) set Z_ 60
 $ns_ at 0.0 "$node_(1047) setdest 0.00 0.00 0.00"
-$node_(1048) set X_ 1291.16
-$node_(1048) set Y_ 2216.6
-$node_(1048) set Y_ 30
+$node_(1048) set X_ 1847.81
+$node_(1048) set Y_ 2520.97
+$node_(1048) set Z_ 60
 $ns_ at 0.0 "$node_(1048) setdest 0.00 0.00 0.00"
-$node_(1049) set X_ 879.81
-$node_(1049) set Y_ 1426.25
-$node_(1049) set Y_ 30
+$node_(1049) set X_ 1551.39
+$node_(1049) set Y_ 2218.44
+$node_(1049) set Z_ 60
 $ns_ at 0.0 "$node_(1049) setdest 0.00 0.00 0.00"
-$node_(1050) set X_ 883.71
-$node_(1050) set Y_ 1711.43
-$node_(1050) set Y_ 60
+$node_(1050) set X_ 1034.05
+$node_(1050) set Y_ 2210.69
+$node_(1050) set Z_ 30
 $ns_ at 0.0 "$node_(1050) setdest 0.00 0.00 0.00"
-$node_(1051) set X_ 883.09
-$node_(1051) set Y_ 1666.43
-$node_(1051) set Y_ 30
+$node_(1051) set X_ 945.88
+$node_(1051) set Y_ 2202.47
+$node_(1051) set Z_ 60
 $ns_ at 0.0 "$node_(1051) setdest 0.00 0.00 0.00"
-$node_(1052) set X_ 882.27
-$node_(1052) set Y_ 1606.23
-$node_(1052) set Y_ 30
+$node_(1052) set X_ 990.88
+$node_(1052) set Y_ 2202.11
+$node_(1052) set Z_ 30
 $ns_ at 0.0 "$node_(1052) setdest 0.00 0.00 0.00"
-$node_(1053) set X_ 882.27
-$node_(1053) set Y_ 1606.23
-$node_(1053) set Y_ 60
+$node_(1053) set X_ 840.85
+$node_(1053) set Y_ 2203.91
+$node_(1053) set Z_ 30
 $ns_ at 0.0 "$node_(1053) setdest 0.00 0.00 0.00"
-$node_(1054) set X_ 881.65
-$node_(1054) set Y_ 1561.24
-$node_(1054) set Y_ 30
+$node_(1054) set X_ 900.88
+$node_(1054) set Y_ 2202.84
+$node_(1054) set Z_ 30
 $ns_ at 0.0 "$node_(1054) setdest 0.00 0.00 0.00"
-$node_(1055) set X_ 881.65
-$node_(1055) set Y_ 1561.24
-$node_(1055) set Y_ 60
+$node_(1055) set X_ 900.88
+$node_(1055) set Y_ 2202.84
+$node_(1055) set Z_ 60
 $ns_ at 0.0 "$node_(1055) setdest 0.00 0.00 0.00"
-$node_(1056) set X_ 2091.98
-$node_(1056) set Y_ 788.63
-$node_(1056) set Y_ 60
+$node_(1056) set X_ 1901.12
+$node_(1056) set Y_ 2370.04
+$node_(1056) set Z_ 60
 $ns_ at 0.0 "$node_(1056) setdest 0.00 0.00 0.00"
-$node_(1057) set X_ 1110.56
-$node_(1057) set Y_ 2282.66
-$node_(1057) set Y_ 60
+$node_(1057) set X_ 2195.49
+$node_(1057) set Y_ 981.26
+$node_(1057) set Z_ 30
 $ns_ at 0.0 "$node_(1057) setdest 0.00 0.00 0.00"
-$node_(1058) set X_ 945.88
-$node_(1058) set Y_ 2202.47
-$node_(1058) set Y_ 30
+$node_(1058) set X_ 2083.2
+$node_(1058) set Y_ 878.35
+$node_(1058) set Z_ 60
 $ns_ at 0.0 "$node_(1058) setdest 0.00 0.00 0.00"
-$node_(1059) set X_ 990.88
-$node_(1059) set Y_ 2202.11
-$node_(1059) set Y_ 30
+$node_(1059) set X_ 2082.79
+$node_(1059) set Y_ 833.35
+$node_(1059) set Z_ 60
 $ns_ at 0.0 "$node_(1059) setdest 0.00 0.00 0.00"
-$node_(1060) set X_ 840.85
-$node_(1060) set Y_ 2203.91
-$node_(1060) set Y_ 30
+$node_(1060) set X_ 1119.73
+$node_(1060) set Y_ 2325.7
+$node_(1060) set Z_ 30
 $ns_ at 0.0 "$node_(1060) setdest 0.00 0.00 0.00"
-$node_(1061) set X_ 900.88
-$node_(1061) set Y_ 2202.84
-$node_(1061) set Y_ 30
+$node_(1061) set X_ 1119.73
+$node_(1061) set Y_ 2325.7
+$node_(1061) set Z_ 60
 $ns_ at 0.0 "$node_(1061) setdest 0.00 0.00 0.00"
-$node_(1062) set X_ 2083.2
-$node_(1062) set Y_ 878.35
-$node_(1062) set Y_ 60
+$node_(1062) set X_ 1556.2
+$node_(1062) set Y_ 1047.77
+$node_(1062) set Z_ 30
 $ns_ at 0.0 "$node_(1062) setdest 0.00 0.00 0.00"
-$node_(1063) set X_ 2082.79
-$node_(1063) set Y_ 833.35
-$node_(1063) set Y_ 30
+$node_(1063) set X_ 1556.2
+$node_(1063) set Y_ 1047.77
+$node_(1063) set Z_ 60
 $ns_ at 0.0 "$node_(1063) setdest 0.00 0.00 0.00"
-$node_(1064) set X_ 2082.79
-$node_(1064) set Y_ 833.35
-$node_(1064) set Y_ 60
+$node_(1064) set X_ 1511.2
+$node_(1064) set Y_ 1048.09
+$node_(1064) set Z_ 30
 $ns_ at 0.0 "$node_(1064) setdest 0.00 0.00 0.00"
-$node_(1065) set X_ 1120.36
-$node_(1065) set Y_ 2370.7
-$node_(1065) set Y_ 30
+$node_(1065) set X_ 1511.2
+$node_(1065) set Y_ 1048.09
+$node_(1065) set Z_ 60
 $ns_ at 0.0 "$node_(1065) setdest 0.00 0.00 0.00"
-$node_(1066) set X_ 1120.36
-$node_(1066) set Y_ 2370.7
-$node_(1066) set Y_ 60
+$node_(1066) set X_ 1466.2
+$node_(1066) set Y_ 1048.41
+$node_(1066) set Z_ 60
 $ns_ at 0.0 "$node_(1066) setdest 0.00 0.00 0.00"
-$node_(1067) set X_ 677.18
-$node_(1067) set Y_ 1619.87
-$node_(1067) set Y_ 30
+$node_(1067) set X_ 1361.45
+$node_(1067) set Y_ 1049.12
+$node_(1067) set Z_ 60
 $ns_ at 0.0 "$node_(1067) setdest 0.00 0.00 0.00"
-$node_(1068) set X_ 1601.2
-$node_(1068) set Y_ 1047.46
-$node_(1068) set Y_ 60
+$node_(1068) set X_ 1316.45
+$node_(1068) set Y_ 1049.37
+$node_(1068) set Z_ 60
 $ns_ at 0.0 "$node_(1068) setdest 0.00 0.00 0.00"
-$node_(1069) set X_ 1556.2
-$node_(1069) set Y_ 1047.77
-$node_(1069) set Y_ 60
+$node_(1069) set X_ 1284.69
+$node_(1069) set Y_ 1118.21
+$node_(1069) set Z_ 30
 $ns_ at 0.0 "$node_(1069) setdest 0.00 0.00 0.00"
-$node_(1070) set X_ 1421.2
-$node_(1070) set Y_ 1048.72
-$node_(1070) set Y_ 60
+$node_(1070) set X_ 1284.69
+$node_(1070) set Y_ 1118.21
+$node_(1070) set Z_ 60
 $ns_ at 0.0 "$node_(1070) setdest 0.00 0.00 0.00"
-$node_(1071) set X_ 1511.2
-$node_(1071) set Y_ 1048.09
-$node_(1071) set Y_ 30
+$node_(1071) set X_ 1284.0
+$node_(1071) set Y_ 1064.36
+$node_(1071) set Z_ 30
 $ns_ at 0.0 "$node_(1071) setdest 0.00 0.00 0.00"
-$node_(1072) set X_ 1466.2
-$node_(1072) set Y_ 1048.41
-$node_(1072) set Y_ 30
+$node_(1072) set X_ 1284.0
+$node_(1072) set Y_ 1064.36
+$node_(1072) set Z_ 60
 $ns_ at 0.0 "$node_(1072) setdest 0.00 0.00 0.00"
-$node_(1073) set X_ 1316.45
-$node_(1073) set Y_ 1049.37
-$node_(1073) set Y_ 60
+$node_(1073) set X_ 1703.51
+$node_(1073) set Y_ 1046.58
+$node_(1073) set Z_ 30
 $ns_ at 0.0 "$node_(1073) setdest 0.00 0.00 0.00"
-$node_(1074) set X_ 1284.0
-$node_(1074) set Y_ 1064.36
-$node_(1074) set Y_ 30
+$node_(1074) set X_ 1703.51
+$node_(1074) set Y_ 1046.58
+$node_(1074) set Z_ 60
 $ns_ at 0.0 "$node_(1074) setdest 0.00 0.00 0.00"
-$node_(1075) set X_ 1703.51
-$node_(1075) set Y_ 1046.58
-$node_(1075) set Y_ 30
+$node_(1075) set X_ 835.61
+$node_(1075) set Y_ 2286.93
+$node_(1075) set Z_ 60
 $ns_ at 0.0 "$node_(1075) setdest 0.00 0.00 0.00"
-$node_(1076) set X_ 1703.51
-$node_(1076) set Y_ 1046.58
-$node_(1076) set Y_ 60
+$node_(1076) set X_ 790.61
+$node_(1076) set Y_ 2287.67
+$node_(1076) set Z_ 60
 $ns_ at 0.0 "$node_(1076) setdest 0.00 0.00 0.00"
-$node_(1077) set X_ 892.76
-$node_(1077) set Y_ 2509.95
-$node_(1077) set Y_ 30
+$node_(1077) set X_ 687.93
+$node_(1077) set Y_ 2338.98
+$node_(1077) set Z_ 60
 $ns_ at 0.0 "$node_(1077) setdest 0.00 0.00 0.00"
-$node_(1078) set X_ 892.76
-$node_(1078) set Y_ 2509.95
-$node_(1078) set Y_ 60
+$node_(1078) set X_ 705.88
+$node_(1078) set Y_ 2206.59
+$node_(1078) set Z_ 30
 $ns_ at 0.0 "$node_(1078) setdest 0.00 0.00 0.00"
-$node_(1079) set X_ 705.88
-$node_(1079) set Y_ 2206.59
-$node_(1079) set Y_ 30
+$node_(1079) set X_ 687.01
+$node_(1079) set Y_ 2250.77
+$node_(1079) set Z_ 60
 $ns_ at 0.0 "$node_(1079) setdest 0.00 0.00 0.00"
-$node_(1080) set X_ 705.88
-$node_(1080) set Y_ 2206.59
-$node_(1080) set Y_ 60
+$node_(1080) set X_ 1506.39
+$node_(1080) set Y_ 2218.85
+$node_(1080) set Z_ 30
 $ns_ at 0.0 "$node_(1080) setdest 0.00 0.00 0.00"
-$node_(1081) set X_ 687.01
-$node_(1081) set Y_ 2250.77
-$node_(1081) set Y_ 30
+$node_(1081) set X_ 1641.47
+$node_(1081) set Y_ 1790.57
+$node_(1081) set Z_ 30
 $ns_ at 0.0 "$node_(1081) setdest 0.00 0.00 0.00"
-$node_(1082) set X_ 687.01
-$node_(1082) set Y_ 2250.77
-$node_(1082) set Y_ 60
+$node_(1082) set X_ 1641.47
+$node_(1082) set Y_ 1790.57
+$node_(1082) set Z_ 60
 $ns_ at 0.0 "$node_(1082) setdest 0.00 0.00 0.00"
-$node_(1083) set X_ 1506.39
-$node_(1083) set Y_ 2218.85
-$node_(1083) set Y_ 30
+$node_(1083) set X_ 1640.85
+$node_(1083) set Y_ 1745.58
+$node_(1083) set Z_ 60
 $ns_ at 0.0 "$node_(1083) setdest 0.00 0.00 0.00"
-$node_(1084) set X_ 880.6
-$node_(1084) set Y_ 2286.18
-$node_(1084) set Y_ 60
+$node_(1084) set X_ 795.86
+$node_(1084) set Y_ 2204.8
+$node_(1084) set Z_ 30
 $ns_ at 0.0 "$node_(1084) setdest 0.00 0.00 0.00"
-$node_(1085) set X_ 1641.47
-$node_(1085) set Y_ 1790.57
-$node_(1085) set Y_ 60
+$node_(1085) set X_ 750.87
+$node_(1085) set Y_ 2205.7
+$node_(1085) set Z_ 30
 $ns_ at 0.0 "$node_(1085) setdest 0.00 0.00 0.00"
-$node_(1086) set X_ 1640.85
-$node_(1086) set Y_ 1745.58
-$node_(1086) set Y_ 30
+$node_(1086) set X_ 1974.13
+$node_(1086) set Y_ 2522.81
+$node_(1086) set Z_ 30
 $ns_ at 0.0 "$node_(1086) setdest 0.00 0.00 0.00"
-$node_(1087) set X_ 1640.85
-$node_(1087) set Y_ 1745.58
-$node_(1087) set Y_ 60
+$node_(1087) set X_ 1974.13
+$node_(1087) set Y_ 2522.81
+$node_(1087) set Z_ 60
 $ns_ at 0.0 "$node_(1087) setdest 0.00 0.00 0.00"
-$node_(1088) set X_ 795.86
-$node_(1088) set Y_ 2204.8
-$node_(1088) set Y_ 30
+$node_(1088) set X_ 1741.3
+$node_(1088) set Y_ 1649.13
+$node_(1088) set Z_ 60
 $ns_ at 0.0 "$node_(1088) setdest 0.00 0.00 0.00"
-$node_(1089) set X_ 795.86
-$node_(1089) set Y_ 2204.8
-$node_(1089) set Y_ 60
+$node_(1089) set X_ 1694.94
+$node_(1089) set Y_ 1799.61
+$node_(1089) set Z_ 30
 $ns_ at 0.0 "$node_(1089) setdest 0.00 0.00 0.00"
-$node_(1090) set X_ 1974.13
-$node_(1090) set Y_ 2522.81
-$node_(1090) set Y_ 60
+$node_(1090) set X_ 1403.34
+$node_(1090) set Y_ 2428.53
+$node_(1090) set Z_ 30
 $ns_ at 0.0 "$node_(1090) setdest 0.00 0.00 0.00"
-$node_(1091) set X_ 1741.99
-$node_(1091) set Y_ 1694.13
-$node_(1091) set Y_ 30
+$node_(1091) set X_ 1195.32
+$node_(1091) set Y_ 2146.36
+$node_(1091) set Z_ 30
 $ns_ at 0.0 "$node_(1091) setdest 0.00 0.00 0.00"
-$node_(1092) set X_ 1741.99
-$node_(1092) set Y_ 1694.13
-$node_(1092) set Y_ 60
+$node_(1092) set X_ 1127.41
+$node_(1092) set Y_ 2195.02
+$node_(1092) set Z_ 30
 $ns_ at 0.0 "$node_(1092) setdest 0.00 0.00 0.00"
-$node_(1093) set X_ 1741.3
-$node_(1093) set Y_ 1649.13
-$node_(1093) set Y_ 30
+$node_(1093) set X_ 1287.36
+$node_(1093) set Y_ 2096.54
+$node_(1093) set Z_ 30
 $ns_ at 0.0 "$node_(1093) setdest 0.00 0.00 0.00"
-$node_(1094) set X_ 1694.94
-$node_(1094) set Y_ 1799.61
-$node_(1094) set Y_ 30
+$node_(1094) set X_ 1096.22
+$node_(1094) set Y_ 2227.45
+$node_(1094) set Z_ 60
 $ns_ at 0.0 "$node_(1094) setdest 0.00 0.00 0.00"
-$node_(1095) set X_ 1403.34
-$node_(1095) set Y_ 2428.53
-$node_(1095) set Y_ 60
+$node_(1095) set X_ 1054.17
+$node_(1095) set Y_ 2270.64
+$node_(1095) set Z_ 30
 $ns_ at 0.0 "$node_(1095) setdest 0.00 0.00 0.00"
-$node_(1096) set X_ 1195.32
-$node_(1096) set Y_ 2146.36
-$node_(1096) set Y_ 30
+$node_(1096) set X_ 1592.17
+$node_(1096) set Y_ 1558.48
+$node_(1096) set Z_ 60
 $ns_ at 0.0 "$node_(1096) setdest 0.00 0.00 0.00"
-$node_(1097) set X_ 1195.32
-$node_(1097) set Y_ 2146.36
-$node_(1097) set Y_ 60
+$node_(1097) set X_ 1591.22
+$node_(1097) set Y_ 1513.49
+$node_(1097) set Z_ 30
 $ns_ at 0.0 "$node_(1097) setdest 0.00 0.00 0.00"
-$node_(1098) set X_ 1158.59
-$node_(1098) set Y_ 2162.58
-$node_(1098) set Y_ 30
+$node_(1098) set X_ 1591.22
+$node_(1098) set Y_ 1513.49
+$node_(1098) set Z_ 60
 $ns_ at 0.0 "$node_(1098) setdest 0.00 0.00 0.00"
-$node_(1099) set X_ 1127.41
-$node_(1099) set Y_ 2195.02
-$node_(1099) set Y_ 60
+$node_(1099) set X_ 2098.5
+$node_(1099) set Y_ 1161.9
+$node_(1099) set Z_ 30
 $ns_ at 0.0 "$node_(1099) setdest 0.00 0.00 0.00"
-$node_(1100) set X_ 1287.36
-$node_(1100) set Y_ 2096.54
-$node_(1100) set Y_ 30
+$node_(1100) set X_ 2098.5
+$node_(1100) set Y_ 1161.9
+$node_(1100) set Z_ 60
 $ns_ at 0.0 "$node_(1100) setdest 0.00 0.00 0.00"
-$node_(1101) set X_ 1287.36
-$node_(1101) set Y_ 2096.54
-$node_(1101) set Y_ 60
+$node_(1101) set X_ 2094.85
+$node_(1101) set Y_ 1108.5
+$node_(1101) set Z_ 60
 $ns_ at 0.0 "$node_(1101) setdest 0.00 0.00 0.00"
-$node_(1102) set X_ 1268.04
-$node_(1102) set Y_ 2222.87
-$node_(1102) set Y_ 30
+$node_(1102) set X_ 1944.66
+$node_(1102) set Y_ 2418.04
+$node_(1102) set Z_ 60
 $ns_ at 0.0 "$node_(1102) setdest 0.00 0.00 0.00"
-$node_(1103) set X_ 1268.04
-$node_(1103) set Y_ 2222.87
-$node_(1103) set Y_ 60
+$node_(1103) set X_ 2094.46
+$node_(1103) set Y_ 1063.5
+$node_(1103) set Z_ 60
 $ns_ at 0.0 "$node_(1103) setdest 0.00 0.00 0.00"
-$node_(1104) set X_ 1224.63
-$node_(1104) set Y_ 2226.8
-$node_(1104) set Y_ 30
+$node_(1104) set X_ 1973.48
+$node_(1104) set Y_ 1042.68
+$node_(1104) set Z_ 30
 $ns_ at 0.0 "$node_(1104) setdest 0.00 0.00 0.00"
-$node_(1105) set X_ 1197.0
-$node_(1105) set Y_ 2191.27
-$node_(1105) set Y_ 30
+$node_(1105) set X_ 1973.48
+$node_(1105) set Y_ 1042.68
+$node_(1105) set Z_ 60
 $ns_ at 0.0 "$node_(1105) setdest 0.00 0.00 0.00"
-$node_(1106) set X_ 1197.0
-$node_(1106) set Y_ 2191.27
-$node_(1106) set Y_ 60
+$node_(1106) set X_ 1593.11
+$node_(1106) set Y_ 1603.47
+$node_(1106) set Z_ 30
 $ns_ at 0.0 "$node_(1106) setdest 0.00 0.00 0.00"
-$node_(1107) set X_ 1096.22
-$node_(1107) set Y_ 2227.45
-$node_(1107) set Y_ 60
+$node_(1107) set X_ 1593.11
+$node_(1107) set Y_ 1603.47
+$node_(1107) set Z_ 60
 $ns_ at 0.0 "$node_(1107) setdest 0.00 0.00 0.00"
-$node_(1108) set X_ 1054.17
-$node_(1108) set Y_ 2270.64
-$node_(1108) set Y_ 30
+$node_(1108) set X_ 1928.48
+$node_(1108) set Y_ 1043.33
+$node_(1108) set Z_ 30
 $ns_ at 0.0 "$node_(1108) setdest 0.00 0.00 0.00"
-$node_(1109) set X_ 1054.17
-$node_(1109) set Y_ 2270.64
-$node_(1109) set Y_ 60
+$node_(1109) set X_ 1928.48
+$node_(1109) set Y_ 1043.33
+$node_(1109) set Z_ 60
 $ns_ at 0.0 "$node_(1109) setdest 0.00 0.00 0.00"
-$node_(1110) set X_ 1592.17
-$node_(1110) set Y_ 1558.48
-$node_(1110) set Y_ 60
+$node_(1110) set X_ 779.29
+$node_(1110) set Y_ 1387.55
+$node_(1110) set Z_ 30
 $ns_ at 0.0 "$node_(1110) setdest 0.00 0.00 0.00"
-$node_(1111) set X_ 1591.22
-$node_(1111) set Y_ 1513.49
-$node_(1111) set Y_ 60
+$node_(1111) set X_ 1839.38
+$node_(1111) set Y_ 2419.65
+$node_(1111) set Z_ 60
 $ns_ at 0.0 "$node_(1111) setdest 0.00 0.00 0.00"
-$node_(1112) set X_ 1686.15
-$node_(1112) set Y_ 1364.06
-$node_(1112) set Y_ 60
+$node_(1112) set X_ 2087.42
+$node_(1112) set Y_ 1322.28
+$node_(1112) set Z_ 30
 $ns_ at 0.0 "$node_(1112) setdest 0.00 0.00 0.00"
-$node_(1113) set X_ 2015.48
-$node_(1113) set Y_ 1410.95
-$node_(1113) set Y_ 60
+$node_(1113) set X_ 661.67
+$node_(1113) set Y_ 825.26
+$node_(1113) set Z_ 60
 $ns_ at 0.0 "$node_(1113) setdest 0.00 0.00 0.00"
-$node_(1114) set X_ 2098.5
-$node_(1114) set Y_ 1161.9
-$node_(1114) set Y_ 60
+$node_(1114) set X_ 1971.04
+$node_(1114) set Y_ 1610.48
+$node_(1114) set Z_ 60
 $ns_ at 0.0 "$node_(1114) setdest 0.00 0.00 0.00"
-$node_(1115) set X_ 2094.85
-$node_(1115) set Y_ 1108.5
-$node_(1115) set Y_ 30
+$node_(1115) set X_ 1989.51
+$node_(1115) set Y_ 1565.89
+$node_(1115) set Z_ 60
 $ns_ at 0.0 "$node_(1115) setdest 0.00 0.00 0.00"
-$node_(1116) set X_ 2094.85
-$node_(1116) set Y_ 1108.5
-$node_(1116) set Y_ 60
+$node_(1116) set X_ 1926.05
+$node_(1116) set Y_ 1611.16
+$node_(1116) set Z_ 30
 $ns_ at 0.0 "$node_(1116) setdest 0.00 0.00 0.00"
-$node_(1117) set X_ 1944.66
-$node_(1117) set Y_ 2418.04
-$node_(1117) set Y_ 60
+$node_(1117) set X_ 1926.05
+$node_(1117) set Y_ 1611.16
+$node_(1117) set Z_ 60
 $ns_ at 0.0 "$node_(1117) setdest 0.00 0.00 0.00"
-$node_(1118) set X_ 2094.46
-$node_(1118) set Y_ 1063.5
-$node_(1118) set Y_ 30
+$node_(1118) set X_ 2016.39
+$node_(1118) set Y_ 1606.6
+$node_(1118) set Z_ 30
 $ns_ at 0.0 "$node_(1118) setdest 0.00 0.00 0.00"
-$node_(1119) set X_ 1973.48
-$node_(1119) set Y_ 1042.68
-$node_(1119) set Y_ 60
+$node_(1119) set X_ 1894.97
+$node_(1119) set Y_ 1681.27
+$node_(1119) set Z_ 30
 $ns_ at 0.0 "$node_(1119) setdest 0.00 0.00 0.00"
-$node_(1120) set X_ 1835.79
-$node_(1120) set Y_ 1208.58
-$node_(1120) set Y_ 60
+$node_(1120) set X_ 1894.97
+$node_(1120) set Y_ 1681.27
+$node_(1120) set Z_ 60
 $ns_ at 0.0 "$node_(1120) setdest 0.00 0.00 0.00"
-$node_(1121) set X_ 1593.11
-$node_(1121) set Y_ 1603.47
-$node_(1121) set Y_ 60
+$node_(1121) set X_ 2131.59
+$node_(1121) set Y_ 1406.36
+$node_(1121) set Z_ 30
 $ns_ at 0.0 "$node_(1121) setdest 0.00 0.00 0.00"
-$node_(1122) set X_ 1928.48
-$node_(1122) set Y_ 1043.33
-$node_(1122) set Y_ 30
+$node_(1122) set X_ 2131.59
+$node_(1122) set Y_ 1406.36
+$node_(1122) set Z_ 60
 $ns_ at 0.0 "$node_(1122) setdest 0.00 0.00 0.00"
-$node_(1123) set X_ 779.29
-$node_(1123) set Y_ 1387.55
-$node_(1123) set Y_ 60
+$node_(1123) set X_ 2100.7
+$node_(1123) set Y_ 1794.79
+$node_(1123) set Z_ 60
 $ns_ at 0.0 "$node_(1123) setdest 0.00 0.00 0.00"
-$node_(1124) set X_ 1839.38
-$node_(1124) set Y_ 2419.65
-$node_(1124) set Y_ 30
+$node_(1124) set X_ 2205.45
+$node_(1124) set Y_ 2214.18
+$node_(1124) set Z_ 60
 $ns_ at 0.0 "$node_(1124) setdest 0.00 0.00 0.00"
-$node_(1125) set X_ 2087.42
-$node_(1125) set Y_ 1322.28
-$node_(1125) set Y_ 60
+$node_(1125) set X_ 2089.16
+$node_(1125) set Y_ 1490.86
+$node_(1125) set Z_ 60
 $ns_ at 0.0 "$node_(1125) setdest 0.00 0.00 0.00"
-$node_(1126) set X_ 616.68
-$node_(1126) set Y_ 826.02
-$node_(1126) set Y_ 30
+$node_(1126) set X_ 2085.48
+$node_(1126) set Y_ 1437.68
+$node_(1126) set Z_ 30
 $ns_ at 0.0 "$node_(1126) setdest 0.00 0.00 0.00"
-$node_(1127) set X_ 616.68
-$node_(1127) set Y_ 826.02
-$node_(1127) set Y_ 60
+$node_(1127) set X_ 2100.19
+$node_(1127) set Y_ 1688.02
+$node_(1127) set Z_ 30
 $ns_ at 0.0 "$node_(1127) setdest 0.00 0.00 0.00"
-$node_(1128) set X_ 1971.04
-$node_(1128) set Y_ 1610.48
-$node_(1128) set Y_ 60
+$node_(1128) set X_ 1987.84
+$node_(1128) set Y_ 1259.46
+$node_(1128) set Z_ 60
 $ns_ at 0.0 "$node_(1128) setdest 0.00 0.00 0.00"
-$node_(1129) set X_ 1989.51
-$node_(1129) set Y_ 1565.89
-$node_(1129) set Y_ 60
+$node_(1129) set X_ 1988.34
+$node_(1129) set Y_ 1395.29
+$node_(1129) set Z_ 30
 $ns_ at 0.0 "$node_(1129) setdest 0.00 0.00 0.00"
-$node_(1130) set X_ 1894.37
-$node_(1130) set Y_ 1636.28
-$node_(1130) set Y_ 30
+$node_(1130) set X_ 2395.17
+$node_(1130) set Y_ 1347.8
+$node_(1130) set Z_ 60
 $ns_ at 0.0 "$node_(1130) setdest 0.00 0.00 0.00"
-$node_(1131) set X_ 1894.37
-$node_(1131) set Y_ 1636.28
-$node_(1131) set Y_ 60
+$node_(1131) set X_ 2394.54
+$node_(1131) set Y_ 1302.81
+$node_(1131) set Z_ 30
 $ns_ at 0.0 "$node_(1131) setdest 0.00 0.00 0.00"
-$node_(1132) set X_ 1926.05
-$node_(1132) set Y_ 1611.16
-$node_(1132) set Y_ 60
+$node_(1132) set X_ 2394.54
+$node_(1132) set Y_ 1302.81
+$node_(1132) set Z_ 60
 $ns_ at 0.0 "$node_(1132) setdest 0.00 0.00 0.00"
-$node_(1133) set X_ 2016.39
-$node_(1133) set Y_ 1606.6
-$node_(1133) set Y_ 30
+$node_(1133) set X_ 746.4
+$node_(1133) set Y_ 2660.4
+$node_(1133) set Z_ 30
 $ns_ at 0.0 "$node_(1133) setdest 0.00 0.00 0.00"
-$node_(1134) set X_ 2016.39
-$node_(1134) set Y_ 1606.6
-$node_(1134) set Y_ 60
+$node_(1134) set X_ 894.35
+$node_(1134) set Y_ 2616.78
+$node_(1134) set Z_ 30
 $ns_ at 0.0 "$node_(1134) setdest 0.00 0.00 0.00"
-$node_(1135) set X_ 2131.59
-$node_(1135) set Y_ 1406.36
-$node_(1135) set Y_ 30
+$node_(1135) set X_ 2397.25
+$node_(1135) set Y_ 1543.02
+$node_(1135) set Z_ 30
 $ns_ at 0.0 "$node_(1135) setdest 0.00 0.00 0.00"
-$node_(1136) set X_ 2061.85
-$node_(1136) set Y_ 1407.19
-$node_(1136) set Y_ 60
+$node_(1136) set X_ 2396.83
+$node_(1136) set Y_ 1498.03
+$node_(1136) set Z_ 30
 $ns_ at 0.0 "$node_(1136) setdest 0.00 0.00 0.00"
-$node_(1137) set X_ 2100.7
-$node_(1137) set Y_ 1794.79
-$node_(1137) set Y_ 30
+$node_(1137) set X_ 2395.79
+$node_(1137) set Y_ 1392.8
+$node_(1137) set Z_ 60
 $ns_ at 0.0 "$node_(1137) setdest 0.00 0.00 0.00"
-$node_(1138) set X_ 2089.16
-$node_(1138) set Y_ 1490.86
-$node_(1138) set Y_ 30
+$node_(1138) set X_ 1031.18
+$node_(1138) set Y_ 2655.16
+$node_(1138) set Z_ 60
 $ns_ at 0.0 "$node_(1138) setdest 0.00 0.00 0.00"
-$node_(1139) set X_ 2089.16
-$node_(1139) set Y_ 1490.86
-$node_(1139) set Y_ 60
+$node_(1139) set X_ 986.52
+$node_(1139) set Y_ 2658.25
+$node_(1139) set Z_ 30
 $ns_ at 0.0 "$node_(1139) setdest 0.00 0.00 0.00"
-$node_(1140) set X_ 2085.48
-$node_(1140) set Y_ 1437.68
-$node_(1140) set Y_ 60
+$node_(1140) set X_ 1105.67
+$node_(1140) set Y_ 2642.2
+$node_(1140) set Z_ 30
 $ns_ at 0.0 "$node_(1140) setdest 0.00 0.00 0.00"
-$node_(1141) set X_ 2100.19
-$node_(1141) set Y_ 1688.02
-$node_(1141) set Y_ 30
+$node_(1141) set X_ 1064.95
+$node_(1141) set Y_ 2626.12
+$node_(1141) set Z_ 30
 $ns_ at 0.0 "$node_(1141) setdest 0.00 0.00 0.00"
-$node_(1142) set X_ 2100.19
-$node_(1142) set Y_ 1688.02
-$node_(1142) set Y_ 60
+$node_(1142) set X_ 1064.95
+$node_(1142) set Y_ 2626.12
+$node_(1142) set Z_ 60
 $ns_ at 0.0 "$node_(1142) setdest 0.00 0.00 0.00"
-$node_(1143) set X_ 2100.45
-$node_(1143) set Y_ 1741.63
-$node_(1143) set Y_ 60
+$node_(1143) set X_ 836.39
+$node_(1143) set Y_ 2659.3
+$node_(1143) set Z_ 60
 $ns_ at 0.0 "$node_(1143) setdest 0.00 0.00 0.00"
-$node_(1144) set X_ 1987.88
-$node_(1144) set Y_ 1350.3
-$node_(1144) set Y_ 60
+$node_(1144) set X_ 791.4
+$node_(1144) set Y_ 2659.85
+$node_(1144) set Z_ 30
 $ns_ at 0.0 "$node_(1144) setdest 0.00 0.00 0.00"
-$node_(1145) set X_ 1987.84
-$node_(1145) set Y_ 1259.46
-$node_(1145) set Y_ 60
+$node_(1145) set X_ 941.52
+$node_(1145) set Y_ 2658.41
+$node_(1145) set Z_ 30
 $ns_ at 0.0 "$node_(1145) setdest 0.00 0.00 0.00"
-$node_(1146) set X_ 1988.34
-$node_(1146) set Y_ 1395.29
-$node_(1146) set Y_ 30
+$node_(1146) set X_ 881.39
+$node_(1146) set Y_ 2658.75
+$node_(1146) set Z_ 60
 $ns_ at 0.0 "$node_(1146) setdest 0.00 0.00 0.00"
-$node_(1147) set X_ 1988.34
-$node_(1147) set Y_ 1395.29
-$node_(1147) set Y_ 60
+$node_(1147) set X_ 584.72
+$node_(1147) set Y_ 1963.18
+$node_(1147) set Z_ 60
 $ns_ at 0.0 "$node_(1147) setdest 0.00 0.00 0.00"
-$node_(1148) set X_ 2089.57
-$node_(1148) set Y_ 1535.85
-$node_(1148) set Y_ 30
+$node_(1148) set X_ 583.87
+$node_(1148) set Y_ 1873.19
+$node_(1148) set Z_ 30
 $ns_ at 0.0 "$node_(1148) setdest 0.00 0.00 0.00"
-$node_(1149) set X_ 2394.54
-$node_(1149) set Y_ 1302.81
-$node_(1149) set Y_ 60
+$node_(1149) set X_ 583.87
+$node_(1149) set Y_ 1873.19
+$node_(1149) set Z_ 60
 $ns_ at 0.0 "$node_(1149) setdest 0.00 0.00 0.00"
-$node_(1150) set X_ 746.4
-$node_(1150) set Y_ 2660.4
-$node_(1150) set Y_ 60
+$node_(1150) set X_ 583.45
+$node_(1150) set Y_ 1828.19
+$node_(1150) set Z_ 60
 $ns_ at 0.0 "$node_(1150) setdest 0.00 0.00 0.00"
-$node_(1151) set X_ 894.35
-$node_(1151) set Y_ 2616.78
-$node_(1151) set Y_ 30
+$node_(1151) set X_ 582.8
+$node_(1151) set Y_ 1768.56
+$node_(1151) set Z_ 30
 $ns_ at 0.0 "$node_(1151) setdest 0.00 0.00 0.00"
-$node_(1152) set X_ 2397.25
-$node_(1152) set Y_ 1543.02
-$node_(1152) set Y_ 30
+$node_(1152) set X_ 582.29
+$node_(1152) set Y_ 1723.56
+$node_(1152) set Z_ 60
 $ns_ at 0.0 "$node_(1152) setdest 0.00 0.00 0.00"
-$node_(1153) set X_ 2397.25
-$node_(1153) set Y_ 1543.02
-$node_(1153) set Y_ 60
+$node_(1153) set X_ 581.78
+$node_(1153) set Y_ 1678.57
+$node_(1153) set Z_ 30
 $ns_ at 0.0 "$node_(1153) setdest 0.00 0.00 0.00"
-$node_(1154) set X_ 2396.83
-$node_(1154) set Y_ 1498.03
-$node_(1154) set Y_ 30
+$node_(1154) set X_ 1697.45
+$node_(1154) set Y_ 2270.0
+$node_(1154) set Z_ 30
 $ns_ at 0.0 "$node_(1154) setdest 0.00 0.00 0.00"
-$node_(1155) set X_ 2396.41
-$node_(1155) set Y_ 1453.03
-$node_(1155) set Y_ 30
+$node_(1155) set X_ 1697.45
+$node_(1155) set Y_ 2270.0
+$node_(1155) set Z_ 60
 $ns_ at 0.0 "$node_(1155) setdest 0.00 0.00 0.00"
-$node_(1156) set X_ 2396.41
-$node_(1156) set Y_ 1453.03
-$node_(1156) set Y_ 60
+$node_(1156) set X_ 628.8
+$node_(1156) set Y_ 1626.11
+$node_(1156) set Z_ 60
 $ns_ at 0.0 "$node_(1156) setdest 0.00 0.00 0.00"
-$node_(1157) set X_ 2395.79
-$node_(1157) set Y_ 1392.8
-$node_(1157) set Y_ 30
+$node_(1157) set X_ 630.89
+$node_(1157) set Y_ 1811.68
+$node_(1157) set Z_ 60
 $ns_ at 0.0 "$node_(1157) setdest 0.00 0.00 0.00"
-$node_(1158) set X_ 1031.18
-$node_(1158) set Y_ 2655.16
-$node_(1158) set Y_ 60
+$node_(1158) set X_ 2037.1
+$node_(1158) set Y_ 2111.96
+$node_(1158) set Z_ 30
 $ns_ at 0.0 "$node_(1158) setdest 0.00 0.00 0.00"
-$node_(1159) set X_ 1064.95
-$node_(1159) set Y_ 2626.12
-$node_(1159) set Y_ 30
+$node_(1159) set X_ 2119.25
+$node_(1159) set Y_ 2418.85
+$node_(1159) set Z_ 60
 $ns_ at 0.0 "$node_(1159) setdest 0.00 0.00 0.00"
-$node_(1160) set X_ 1064.95
-$node_(1160) set Y_ 2626.12
-$node_(1160) set Y_ 60
+$node_(1160) set X_ 2291.04
+$node_(1160) set Y_ 1215.84
+$node_(1160) set Z_ 30
 $ns_ at 0.0 "$node_(1160) setdest 0.00 0.00 0.00"
-$node_(1161) set X_ 836.39
-$node_(1161) set Y_ 2659.3
-$node_(1161) set Y_ 30
+$node_(1161) set X_ 2291.04
+$node_(1161) set Y_ 1215.84
+$node_(1161) set Z_ 60
 $ns_ at 0.0 "$node_(1161) setdest 0.00 0.00 0.00"
-$node_(1162) set X_ 836.39
-$node_(1162) set Y_ 2659.3
-$node_(1162) set Y_ 60
+$node_(1162) set X_ 2293.44
+$node_(1162) set Y_ 1305.81
+$node_(1162) set Z_ 30
 $ns_ at 0.0 "$node_(1162) setdest 0.00 0.00 0.00"
-$node_(1163) set X_ 791.4
-$node_(1163) set Y_ 2659.85
-$node_(1163) set Y_ 30
+$node_(1163) set X_ 2293.44
+$node_(1163) set Y_ 1305.81
+$node_(1163) set Z_ 60
 $ns_ at 0.0 "$node_(1163) setdest 0.00 0.00 0.00"
-$node_(1164) set X_ 791.4
-$node_(1164) set Y_ 2659.85
-$node_(1164) set Y_ 60
+$node_(1164) set X_ 2295.83
+$node_(1164) set Y_ 1395.78
+$node_(1164) set Z_ 30
 $ns_ at 0.0 "$node_(1164) setdest 0.00 0.00 0.00"
-$node_(1165) set X_ 941.52
-$node_(1165) set Y_ 2658.41
-$node_(1165) set Y_ 30
+$node_(1165) set X_ 2294.63
+$node_(1165) set Y_ 1350.8
+$node_(1165) set Z_ 30
 $ns_ at 0.0 "$node_(1165) setdest 0.00 0.00 0.00"
-$node_(1166) set X_ 881.39
-$node_(1166) set Y_ 2658.75
-$node_(1166) set Y_ 30
+$node_(1166) set X_ 2294.63
+$node_(1166) set Y_ 1350.8
+$node_(1166) set Z_ 60
 $ns_ at 0.0 "$node_(1166) setdest 0.00 0.00 0.00"
-$node_(1167) set X_ 881.39
-$node_(1167) set Y_ 2658.75
-$node_(1167) set Y_ 60
+$node_(1167) set X_ 2248.22
+$node_(1167) set Y_ 1404.97
+$node_(1167) set Z_ 30
 $ns_ at 0.0 "$node_(1167) setdest 0.00 0.00 0.00"
-$node_(1168) set X_ 584.72
-$node_(1168) set Y_ 1963.18
-$node_(1168) set Y_ 30
+$node_(1168) set X_ 2173.82
+$node_(1168) set Y_ 1409.06
+$node_(1168) set Z_ 60
 $ns_ at 0.0 "$node_(1168) setdest 0.00 0.00 0.00"
-$node_(1169) set X_ 584.3
-$node_(1169) set Y_ 1918.18
-$node_(1169) set Y_ 30
+$node_(1169) set X_ 2194.09
+$node_(1169) set Y_ 1147.91
+$node_(1169) set Z_ 60
 $ns_ at 0.0 "$node_(1169) setdest 0.00 0.00 0.00"
-$node_(1170) set X_ 583.87
-$node_(1170) set Y_ 1873.19
-$node_(1170) set Y_ 30
+$node_(1170) set X_ 874.8
+$node_(1170) set Y_ 1050.96
+$node_(1170) set Z_ 30
 $ns_ at 0.0 "$node_(1170) setdest 0.00 0.00 0.00"
-$node_(1171) set X_ 583.45
-$node_(1171) set Y_ 1828.19
-$node_(1171) set Y_ 30
+$node_(1171) set X_ 874.8
+$node_(1171) set Y_ 1050.96
+$node_(1171) set Z_ 60
 $ns_ at 0.0 "$node_(1171) setdest 0.00 0.00 0.00"
-$node_(1172) set X_ 582.29
-$node_(1172) set Y_ 1723.56
-$node_(1172) set Y_ 60
+$node_(1172) set X_ 875.38
+$node_(1172) set Y_ 1095.96
+$node_(1172) set Z_ 60
 $ns_ at 0.0 "$node_(1172) setdest 0.00 0.00 0.00"
-$node_(1173) set X_ 581.78
-$node_(1173) set Y_ 1678.57
-$node_(1173) set Y_ 30
+$node_(1173) set X_ 874.22
+$node_(1173) set Y_ 1005.97
+$node_(1173) set Z_ 60
 $ns_ at 0.0 "$node_(1173) setdest 0.00 0.00 0.00"
-$node_(1174) set X_ 581.78
-$node_(1174) set Y_ 1678.57
-$node_(1174) set Y_ 60
+$node_(1174) set X_ 1393.02
+$node_(1174) set Y_ 2220.6
+$node_(1174) set Z_ 60
 $ns_ at 0.0 "$node_(1174) setdest 0.00 0.00 0.00"
-$node_(1175) set X_ 1697.45
-$node_(1175) set Y_ 2270.0
-$node_(1175) set Y_ 30
+$node_(1175) set X_ 877.35
+$node_(1175) set Y_ 1246.27
+$node_(1175) set Z_ 30
 $ns_ at 0.0 "$node_(1175) setdest 0.00 0.00 0.00"
-$node_(1176) set X_ 1697.45
-$node_(1176) set Y_ 2270.0
-$node_(1176) set Y_ 60
+$node_(1176) set X_ 877.35
+$node_(1176) set Y_ 1246.27
+$node_(1176) set Z_ 60
 $ns_ at 0.0 "$node_(1176) setdest 0.00 0.00 0.00"
-$node_(1177) set X_ 628.8
-$node_(1177) set Y_ 1626.11
-$node_(1177) set Y_ 30
+$node_(1177) set X_ 877.96
+$node_(1177) set Y_ 1291.26
+$node_(1177) set Z_ 30
 $ns_ at 0.0 "$node_(1177) setdest 0.00 0.00 0.00"
-$node_(1178) set X_ 628.8
-$node_(1178) set Y_ 1626.11
-$node_(1178) set Y_ 60
+$node_(1178) set X_ 875.96
+$node_(1178) set Y_ 1140.96
+$node_(1178) set Z_ 30
 $ns_ at 0.0 "$node_(1178) setdest 0.00 0.00 0.00"
-$node_(1179) set X_ 630.89
-$node_(1179) set Y_ 1811.68
-$node_(1179) set Y_ 30
+$node_(1179) set X_ 875.96
+$node_(1179) set Y_ 1140.96
+$node_(1179) set Z_ 60
 $ns_ at 0.0 "$node_(1179) setdest 0.00 0.00 0.00"
-$node_(1180) set X_ 630.89
-$node_(1180) set Y_ 1811.68
-$node_(1180) set Y_ 60
+$node_(1180) set X_ 876.54
+$node_(1180) set Y_ 1185.95
+$node_(1180) set Z_ 30
 $ns_ at 0.0 "$node_(1180) setdest 0.00 0.00 0.00"
-$node_(1181) set X_ 2119.25
-$node_(1181) set Y_ 2418.85
-$node_(1181) set Y_ 30
+$node_(1181) set X_ 876.54
+$node_(1181) set Y_ 1185.95
+$node_(1181) set Z_ 60
 $ns_ at 0.0 "$node_(1181) setdest 0.00 0.00 0.00"
-$node_(1182) set X_ 2239.4
-$node_(1182) set Y_ 755.57
-$node_(1182) set Y_ 30
+$node_(1182) set X_ 873.06
+$node_(1182) set Y_ 915.97
+$node_(1182) set Z_ 30
 $ns_ at 0.0 "$node_(1182) setdest 0.00 0.00 0.00"
-$node_(1183) set X_ 2291.04
-$node_(1183) set Y_ 1215.84
-$node_(1183) set Y_ 30
+$node_(1183) set X_ 873.64
+$node_(1183) set Y_ 960.97
+$node_(1183) set Z_ 60
 $ns_ at 0.0 "$node_(1183) setdest 0.00 0.00 0.00"
-$node_(1184) set X_ 2244.19
-$node_(1184) set Y_ 1206.1
-$node_(1184) set Y_ 30
+$node_(1184) set X_ 2017.89
+$node_(1184) set Y_ 2002.97
+$node_(1184) set Z_ 60
 $ns_ at 0.0 "$node_(1184) setdest 0.00 0.00 0.00"
-$node_(1185) set X_ 2293.44
-$node_(1185) set Y_ 1305.81
-$node_(1185) set Y_ 30
+$node_(1185) set X_ 1888.87
+$node_(1185) set Y_ 1465.9
+$node_(1185) set Z_ 60
 $ns_ at 0.0 "$node_(1185) setdest 0.00 0.00 0.00"
-$node_(1186) set X_ 2295.83
-$node_(1186) set Y_ 1395.78
-$node_(1186) set Y_ 30
+$node_(1186) set X_ 1889.48
+$node_(1186) set Y_ 1510.9
+$node_(1186) set Z_ 60
 $ns_ at 0.0 "$node_(1186) setdest 0.00 0.00 0.00"
-$node_(1187) set X_ 2295.83
-$node_(1187) set Y_ 1395.78
-$node_(1187) set Y_ 60
+$node_(1187) set X_ 1888.26
+$node_(1187) set Y_ 1420.91
+$node_(1187) set Z_ 30
 $ns_ at 0.0 "$node_(1187) setdest 0.00 0.00 0.00"
-$node_(1188) set X_ 2248.22
-$node_(1188) set Y_ 1404.97
-$node_(1188) set Y_ 30
+$node_(1188) set X_ 2207.95
+$node_(1188) set Y_ 2518.14
+$node_(1188) set Z_ 30
 $ns_ at 0.0 "$node_(1188) setdest 0.00 0.00 0.00"
-$node_(1189) set X_ 2173.82
-$node_(1189) set Y_ 1409.06
-$node_(1189) set Y_ 30
+$node_(1189) set X_ 2207.95
+$node_(1189) set Y_ 2518.14
+$node_(1189) set Z_ 60
 $ns_ at 0.0 "$node_(1189) setdest 0.00 0.00 0.00"
-$node_(1190) set X_ 2194.46
-$node_(1190) set Y_ 1192.91
-$node_(1190) set Y_ 30
+$node_(1190) set X_ 1900.36
+$node_(1190) set Y_ 2100.49
+$node_(1190) set Z_ 60
 $ns_ at 0.0 "$node_(1190) setdest 0.00 0.00 0.00"
-$node_(1191) set X_ 2194.09
-$node_(1191) set Y_ 1147.91
-$node_(1191) set Y_ 60
+$node_(1191) set X_ 1899.79
+$node_(1191) set Y_ 2045.71
+$node_(1191) set Z_ 60
 $ns_ at 0.0 "$node_(1191) setdest 0.00 0.00 0.00"
-$node_(1192) set X_ 875.38
-$node_(1192) set Y_ 1095.96
-$node_(1192) set Y_ 30
+$node_(1192) set X_ 1972.9
+$node_(1192) set Y_ 2003.71
+$node_(1192) set Z_ 30
 $ns_ at 0.0 "$node_(1192) setdest 0.00 0.00 0.00"
-$node_(1193) set X_ 874.22
-$node_(1193) set Y_ 1005.97
-$node_(1193) set Y_ 30
+$node_(1193) set X_ 1972.9
+$node_(1193) set Y_ 2003.71
+$node_(1193) set Z_ 60
 $ns_ at 0.0 "$node_(1193) setdest 0.00 0.00 0.00"
-$node_(1194) set X_ 874.22
-$node_(1194) set Y_ 1005.97
-$node_(1194) set Y_ 60
+$node_(1194) set X_ 1491.4
+$node_(1194) set Y_ 2048.62
+$node_(1194) set Z_ 60
 $ns_ at 0.0 "$node_(1194) setdest 0.00 0.00 0.00"
-$node_(1195) set X_ 1393.02
-$node_(1195) set Y_ 2220.6
-$node_(1195) set Y_ 30
+$node_(1195) set X_ 1357.32
+$node_(1195) set Y_ 1784.37
+$node_(1195) set Z_ 60
 $ns_ at 0.0 "$node_(1195) setdest 0.00 0.00 0.00"
-$node_(1196) set X_ 877.35
-$node_(1196) set Y_ 1246.27
-$node_(1196) set Y_ 60
+$node_(1196) set X_ 1356.93
+$node_(1196) set Y_ 1739.37
+$node_(1196) set Z_ 30
 $ns_ at 0.0 "$node_(1196) setdest 0.00 0.00 0.00"
-$node_(1197) set X_ 875.96
-$node_(1197) set Y_ 1140.96
-$node_(1197) set Y_ 30
+$node_(1197) set X_ 1682.29
+$node_(1197) set Y_ 1088.25
+$node_(1197) set Z_ 30
 $ns_ at 0.0 "$node_(1197) setdest 0.00 0.00 0.00"
-$node_(1198) set X_ 875.96
-$node_(1198) set Y_ 1140.96
-$node_(1198) set Y_ 60
+$node_(1198) set X_ 1687.94
+$node_(1198) set Y_ 1263.4
+$node_(1198) set Z_ 30
 $ns_ at 0.0 "$node_(1198) setdest 0.00 0.00 0.00"
-$node_(1199) set X_ 876.54
-$node_(1199) set Y_ 1185.95
-$node_(1199) set Y_ 30
+$node_(1199) set X_ 1687.94
+$node_(1199) set Y_ 1263.4
+$node_(1199) set Z_ 60
 $ns_ at 0.0 "$node_(1199) setdest 0.00 0.00 0.00"
-$node_(1200) set X_ 876.54
-$node_(1200) set Y_ 1185.95
-$node_(1200) set Y_ 60
+$node_(1200) set X_ 1883.49
+$node_(1200) set Y_ 1043.98
+$node_(1200) set Z_ 30
 $ns_ at 0.0 "$node_(1200) setdest 0.00 0.00 0.00"
-$node_(1201) set X_ 873.06
-$node_(1201) set Y_ 915.97
-$node_(1201) set Y_ 30
+$node_(1201) set X_ 1883.49
+$node_(1201) set Y_ 1043.98
+$node_(1201) set Z_ 60
 $ns_ at 0.0 "$node_(1201) setdest 0.00 0.00 0.00"
-$node_(1202) set X_ 873.64
-$node_(1202) set Y_ 960.97
-$node_(1202) set Y_ 60
+$node_(1202) set X_ 1838.49
+$node_(1202) set Y_ 1044.63
+$node_(1202) set Z_ 30
 $ns_ at 0.0 "$node_(1202) setdest 0.00 0.00 0.00"
-$node_(1203) set X_ 2070.84
-$node_(1203) set Y_ 1998.89
-$node_(1203) set Y_ 30
+$node_(1203) set X_ 1793.5
+$node_(1203) set Y_ 1045.28
+$node_(1203) set Z_ 30
 $ns_ at 0.0 "$node_(1203) setdest 0.00 0.00 0.00"
-$node_(1204) set X_ 2017.89
-$node_(1204) set Y_ 2002.97
-$node_(1204) set Y_ 30
+$node_(1204) set X_ 1748.5
+$node_(1204) set Y_ 1045.93
+$node_(1204) set Z_ 60
 $ns_ at 0.0 "$node_(1204) setdest 0.00 0.00 0.00"
-$node_(1205) set X_ 1888.87
-$node_(1205) set Y_ 1465.9
-$node_(1205) set Y_ 60
+$node_(1205) set X_ 1855.72
+$node_(1205) set Y_ 1124.95
+$node_(1205) set Z_ 30
 $ns_ at 0.0 "$node_(1205) setdest 0.00 0.00 0.00"
-$node_(1206) set X_ 1888.26
-$node_(1206) set Y_ 1420.91
-$node_(1206) set Y_ 30
+$node_(1206) set X_ 1855.72
+$node_(1206) set Y_ 1124.95
+$node_(1206) set Z_ 60
 $ns_ at 0.0 "$node_(1206) setdest 0.00 0.00 0.00"
-$node_(1207) set X_ 2207.95
-$node_(1207) set Y_ 2518.14
-$node_(1207) set Y_ 60
+$node_(1207) set X_ 1810.73
+$node_(1207) set Y_ 1125.76
+$node_(1207) set Z_ 30
 $ns_ at 0.0 "$node_(1207) setdest 0.00 0.00 0.00"
-$node_(1208) set X_ 1899.79
-$node_(1208) set Y_ 2045.71
-$node_(1208) set Y_ 30
+$node_(1208) set X_ 1810.73
+$node_(1208) set Y_ 1125.76
+$node_(1208) set Z_ 60
 $ns_ at 0.0 "$node_(1208) setdest 0.00 0.00 0.00"
-$node_(1209) set X_ 1899.79
-$node_(1209) set Y_ 2045.71
-$node_(1209) set Y_ 60
+$node_(1209) set X_ 1720.75
+$node_(1209) set Y_ 1127.38
+$node_(1209) set Z_ 60
 $ns_ at 0.0 "$node_(1209) setdest 0.00 0.00 0.00"
-$node_(1210) set X_ 1972.9
-$node_(1210) set Y_ 2003.71
-$node_(1210) set Y_ 30
+$node_(1210) set X_ 1374.87
+$node_(1210) set Y_ 1091.46
+$node_(1210) set Z_ 30
 $ns_ at 0.0 "$node_(1210) setdest 0.00 0.00 0.00"
-$node_(1211) set X_ 1491.4
-$node_(1211) set Y_ 2048.62
-$node_(1211) set Y_ 30
+$node_(1211) set X_ 1374.87
+$node_(1211) set Y_ 1091.46
+$node_(1211) set Z_ 60
 $ns_ at 0.0 "$node_(1211) setdest 0.00 0.00 0.00"
-$node_(1212) set X_ 1357.32
-$node_(1212) set Y_ 1784.37
-$node_(1212) set Y_ 30
+$node_(1212) set X_ 1373.48
+$node_(1212) set Y_ 1619.8
+$node_(1212) set Z_ 30
 $ns_ at 0.0 "$node_(1212) setdest 0.00 0.00 0.00"
-$node_(1213) set X_ 1356.93
-$node_(1213) set Y_ 1739.37
-$node_(1213) set Y_ 30
+$node_(1213) set X_ 2111.05
+$node_(1213) set Y_ 2499.66
+$node_(1213) set Z_ 30
 $ns_ at 0.0 "$node_(1213) setdest 0.00 0.00 0.00"
-$node_(1214) set X_ 1356.93
-$node_(1214) set Y_ 1739.37
-$node_(1214) set Y_ 60
+$node_(1214) set X_ 1686.38
+$node_(1214) set Y_ 2217.2
+$node_(1214) set Z_ 30
 $ns_ at 0.0 "$node_(1214) setdest 0.00 0.00 0.00"
-$node_(1215) set X_ 1682.29
-$node_(1215) set Y_ 1088.25
-$node_(1215) set Y_ 30
+$node_(1215) set X_ 1686.38
+$node_(1215) set Y_ 2217.2
+$node_(1215) set Z_ 60
 $ns_ at 0.0 "$node_(1215) setdest 0.00 0.00 0.00"
-$node_(1216) set X_ 1682.29
-$node_(1216) set Y_ 1088.25
-$node_(1216) set Y_ 60
+$node_(1216) set X_ 1087.51
+$node_(1216) set Y_ 1890.12
+$node_(1216) set Z_ 60
 $ns_ at 0.0 "$node_(1216) setdest 0.00 0.00 0.00"
-$node_(1217) set X_ 1687.94
-$node_(1217) set Y_ 1263.4
-$node_(1217) set Y_ 30
+$node_(1217) set X_ 1289.76
+$node_(1217) set Y_ 2005.83
+$node_(1217) set Z_ 60
 $ns_ at 0.0 "$node_(1217) setdest 0.00 0.00 0.00"
-$node_(1218) set X_ 1687.94
-$node_(1218) set Y_ 1263.4
-$node_(1218) set Y_ 60
+$node_(1218) set X_ 1224.1
+$node_(1218) set Y_ 2016.51
+$node_(1218) set Z_ 30
 $ns_ at 0.0 "$node_(1218) setdest 0.00 0.00 0.00"
-$node_(1219) set X_ 1838.49
-$node_(1219) set Y_ 1044.63
-$node_(1219) set Y_ 30
+$node_(1219) set X_ 1224.1
+$node_(1219) set Y_ 2016.51
+$node_(1219) set Z_ 60
 $ns_ at 0.0 "$node_(1219) setdest 0.00 0.00 0.00"
-$node_(1220) set X_ 1793.5
-$node_(1220) set Y_ 1045.28
-$node_(1220) set Y_ 30
+$node_(1220) set X_ 1192.69
+$node_(1220) set Y_ 1992.12
+$node_(1220) set Z_ 60
 $ns_ at 0.0 "$node_(1220) setdest 0.00 0.00 0.00"
-$node_(1221) set X_ 1748.5
-$node_(1221) set Y_ 1045.93
-$node_(1221) set Y_ 30
+$node_(1221) set X_ 1088.94
+$node_(1221) set Y_ 1993.27
+$node_(1221) set Z_ 30
 $ns_ at 0.0 "$node_(1221) setdest 0.00 0.00 0.00"
-$node_(1222) set X_ 1748.5
-$node_(1222) set Y_ 1045.93
-$node_(1222) set Y_ 60
+$node_(1222) set X_ 1088.94
+$node_(1222) set Y_ 1993.27
+$node_(1222) set Z_ 60
 $ns_ at 0.0 "$node_(1222) setdest 0.00 0.00 0.00"
-$node_(1223) set X_ 1855.72
-$node_(1223) set Y_ 1124.95
-$node_(1223) set Y_ 60
+$node_(1223) set X_ 1126.32
+$node_(1223) set Y_ 2031.45
+$node_(1223) set Z_ 30
 $ns_ at 0.0 "$node_(1223) setdest 0.00 0.00 0.00"
-$node_(1224) set X_ 1810.73
-$node_(1224) set Y_ 1125.76
-$node_(1224) set Y_ 30
+$node_(1224) set X_ 2045.12
+$node_(1224) set Y_ 2314.59
+$node_(1224) set Z_ 30
 $ns_ at 0.0 "$node_(1224) setdest 0.00 0.00 0.00"
-$node_(1225) set X_ 1810.73
-$node_(1225) set Y_ 1125.76
-$node_(1225) set Y_ 60
+$node_(1225) set X_ 2045.12
+$node_(1225) set Y_ 2314.59
+$node_(1225) set Z_ 60
 $ns_ at 0.0 "$node_(1225) setdest 0.00 0.00 0.00"
-$node_(1226) set X_ 1765.74
-$node_(1226) set Y_ 1126.57
-$node_(1226) set Y_ 30
+$node_(1226) set X_ 1021.87
+$node_(1226) set Y_ 1809.26
+$node_(1226) set Z_ 60
 $ns_ at 0.0 "$node_(1226) setdest 0.00 0.00 0.00"
-$node_(1227) set X_ 1720.75
-$node_(1227) set Y_ 1127.38
-$node_(1227) set Y_ 60
+$node_(1227) set X_ 990.43
+$node_(1227) set Y_ 1834.32
+$node_(1227) set Z_ 30
 $ns_ at 0.0 "$node_(1227) setdest 0.00 0.00 0.00"
-$node_(1228) set X_ 1374.87
-$node_(1228) set Y_ 1091.46
-$node_(1228) set Y_ 60
+$node_(1228) set X_ 1086.94
+$node_(1228) set Y_ 1845.13
+$node_(1228) set Z_ 30
 $ns_ at 0.0 "$node_(1228) setdest 0.00 0.00 0.00"
-$node_(1229) set X_ 1373.48
-$node_(1229) set Y_ 1619.8
-$node_(1229) set Y_ 60
+$node_(1229) set X_ 1066.86
+$node_(1229) set Y_ 1808.61
+$node_(1229) set Z_ 30
 $ns_ at 0.0 "$node_(1229) setdest 0.00 0.00 0.00"
-$node_(1230) set X_ 1400.68
-$node_(1230) set Y_ 1803.82
-$node_(1230) set Y_ 30
+$node_(1230) set X_ 985.59
+$node_(1230) set Y_ 1715.97
+$node_(1230) set Z_ 30
 $ns_ at 0.0 "$node_(1230) setdest 0.00 0.00 0.00"
-$node_(1231) set X_ 2111.05
-$node_(1231) set Y_ 2499.66
-$node_(1231) set Y_ 30
+$node_(1231) set X_ 991.03
+$node_(1231) set Y_ 1879.32
+$node_(1231) set Z_ 60
 $ns_ at 0.0 "$node_(1231) setdest 0.00 0.00 0.00"
-$node_(1232) set X_ 1686.38
-$node_(1232) set Y_ 2217.2
-$node_(1232) set Y_ 30
+$node_(1232) set X_ 991.64
+$node_(1232) set Y_ 1924.31
+$node_(1232) set Z_ 30
 $ns_ at 0.0 "$node_(1232) setdest 0.00 0.00 0.00"
-$node_(1233) set X_ 1686.38
-$node_(1233) set Y_ 2217.2
-$node_(1233) set Y_ 60
+$node_(1233) set X_ 991.64
+$node_(1233) set Y_ 1924.31
+$node_(1233) set Z_ 60
 $ns_ at 0.0 "$node_(1233) setdest 0.00 0.00 0.00"
-$node_(1234) set X_ 1087.51
-$node_(1234) set Y_ 1890.12
-$node_(1234) set Y_ 30
+$node_(1234) set X_ 1370.16
+$node_(1234) set Y_ 716.82
+$node_(1234) set Z_ 30
 $ns_ at 0.0 "$node_(1234) setdest 0.00 0.00 0.00"
-$node_(1235) set X_ 1289.76
-$node_(1235) set Y_ 2005.83
-$node_(1235) set Y_ 60
+$node_(1235) set X_ 1370.16
+$node_(1235) set Y_ 716.82
+$node_(1235) set Z_ 60
 $ns_ at 0.0 "$node_(1235) setdest 0.00 0.00 0.00"
-$node_(1236) set X_ 1224.1
-$node_(1236) set Y_ 2016.51
-$node_(1236) set Y_ 30
+$node_(1236) set X_ 984.12
+$node_(1236) set Y_ 1610.92
+$node_(1236) set Z_ 30
 $ns_ at 0.0 "$node_(1236) setdest 0.00 0.00 0.00"
-$node_(1237) set X_ 1224.1
-$node_(1237) set Y_ 2016.51
-$node_(1237) set Y_ 60
+$node_(1237) set X_ 1454.63
+$node_(1237) set Y_ 735.13
+$node_(1237) set Z_ 30
 $ns_ at 0.0 "$node_(1237) setdest 0.00 0.00 0.00"
-$node_(1238) set X_ 1192.69
-$node_(1238) set Y_ 1992.12
-$node_(1238) set Y_ 60
+$node_(1238) set X_ 1454.63
+$node_(1238) set Y_ 735.13
+$node_(1238) set Z_ 60
 $ns_ at 0.0 "$node_(1238) setdest 0.00 0.00 0.00"
-$node_(1239) set X_ 1088.94
-$node_(1239) set Y_ 1993.27
-$node_(1239) set Y_ 60
+$node_(1239) set X_ 1368.75
+$node_(1239) set Y_ 671.84
+$node_(1239) set Z_ 30
 $ns_ at 0.0 "$node_(1239) setdest 0.00 0.00 0.00"
-$node_(1240) set X_ 1102.18
-$node_(1240) set Y_ 2033.38
-$node_(1240) set Y_ 30
+$node_(1240) set X_ 1580.87
+$node_(1240) set Y_ 766.84
+$node_(1240) set Z_ 60
 $ns_ at 0.0 "$node_(1240) setdest 0.00 0.00 0.00"
-$node_(1241) set X_ 1126.32
-$node_(1241) set Y_ 2031.45
-$node_(1241) set Y_ 30
+$node_(1241) set X_ 1371.3
+$node_(1241) set Y_ 776.12
+$node_(1241) set Z_ 30
 $ns_ at 0.0 "$node_(1241) setdest 0.00 0.00 0.00"
-$node_(1242) set X_ 1126.32
-$node_(1242) set Y_ 2031.45
-$node_(1242) set Y_ 60
+$node_(1242) set X_ 1371.3
+$node_(1242) set Y_ 776.12
+$node_(1242) set Z_ 60
 $ns_ at 0.0 "$node_(1242) setdest 0.00 0.00 0.00"
-$node_(1243) set X_ 1177.86
-$node_(1243) set Y_ 2030.76
-$node_(1243) set Y_ 60
+$node_(1243) set X_ 915.81
+$node_(1243) set Y_ 1221.06
+$node_(1243) set Z_ 60
 $ns_ at 0.0 "$node_(1243) setdest 0.00 0.00 0.00"
-$node_(1244) set X_ 1043.25
-$node_(1244) set Y_ 2018.63
-$node_(1244) set Y_ 60
+$node_(1244) set X_ 1550.76
+$node_(1244) set Y_ 2123.69
+$node_(1244) set Z_ 30
 $ns_ at 0.0 "$node_(1244) setdest 0.00 0.00 0.00"
-$node_(1245) set X_ 2045.12
-$node_(1245) set Y_ 2314.59
-$node_(1245) set Y_ 60
+$node_(1245) set X_ 1550.76
+$node_(1245) set Y_ 2123.69
+$node_(1245) set Z_ 60
 $ns_ at 0.0 "$node_(1245) setdest 0.00 0.00 0.00"
-$node_(1246) set X_ 1364.53
-$node_(1246) set Y_ 536.9
-$node_(1246) set Y_ 30
+$node_(1246) set X_ 1448.33
+$node_(1246) set Y_ 2428.02
+$node_(1246) set Z_ 30
 $ns_ at 0.0 "$node_(1246) setdest 0.00 0.00 0.00"
-$node_(1247) set X_ 1367.35
-$node_(1247) set Y_ 626.86
-$node_(1247) set Y_ 60
+$node_(1247) set X_ 1505.77
+$node_(1247) set Y_ 2124.48
+$node_(1247) set Z_ 60
 $ns_ at 0.0 "$node_(1247) setdest 0.00 0.00 0.00"
-$node_(1248) set X_ 870.38
-$node_(1248) set Y_ 721.04
-$node_(1248) set Y_ 30
+$node_(1248) set X_ 1491.81
+$node_(1248) set Y_ 2096.88
+$node_(1248) set Z_ 30
 $ns_ at 0.0 "$node_(1248) setdest 0.00 0.00 0.00"
-$node_(1249) set X_ 870.38
-$node_(1249) set Y_ 721.04
-$node_(1249) set Y_ 60
+$node_(1249) set X_ 1496.0
+$node_(1249) set Y_ 2171.27
+$node_(1249) set Z_ 60
 $ns_ at 0.0 "$node_(1249) setdest 0.00 0.00 0.00"
-$node_(1250) set X_ 1021.87
-$node_(1250) set Y_ 1809.26
-$node_(1250) set Y_ 60
+$node_(1250) set X_ 1349.46
+$node_(1250) set Y_ 2126.18
+$node_(1250) set Z_ 30
 $ns_ at 0.0 "$node_(1250) setdest 0.00 0.00 0.00"
-$node_(1251) set X_ 990.43
-$node_(1251) set Y_ 1834.32
-$node_(1251) set Y_ 30
+$node_(1251) set X_ 1496.88
+$node_(1251) set Y_ 724.02
+$node_(1251) set Z_ 30
 $ns_ at 0.0 "$node_(1251) setdest 0.00 0.00 0.00"
-$node_(1252) set X_ 990.43
-$node_(1252) set Y_ 1834.32
-$node_(1252) set Y_ 60
+$node_(1252) set X_ 1496.88
+$node_(1252) set Y_ 724.02
+$node_(1252) set Z_ 60
 $ns_ at 0.0 "$node_(1252) setdest 0.00 0.00 0.00"
-$node_(1253) set X_ 1086.94
-$node_(1253) set Y_ 1845.13
-$node_(1253) set Y_ 60
+$node_(1253) set X_ 781.61
+$node_(1253) set Y_ 1567.53
+$node_(1253) set Z_ 60
 $ns_ at 0.0 "$node_(1253) setdest 0.00 0.00 0.00"
-$node_(1254) set X_ 1066.86
-$node_(1254) set Y_ 1808.61
-$node_(1254) set Y_ 30
+$node_(1254) set X_ 782.19
+$node_(1254) set Y_ 1612.53
+$node_(1254) set Z_ 30
 $ns_ at 0.0 "$node_(1254) setdest 0.00 0.00 0.00"
-$node_(1255) set X_ 1066.86
-$node_(1255) set Y_ 1808.61
-$node_(1255) set Y_ 60
+$node_(1255) set X_ 782.19
+$node_(1255) set Y_ 1612.53
+$node_(1255) set Z_ 60
 $ns_ at 0.0 "$node_(1255) setdest 0.00 0.00 0.00"
-$node_(1256) set X_ 991.94
-$node_(1256) set Y_ 1995.01
-$node_(1256) set Y_ 30
+$node_(1256) set X_ 752.92
+$node_(1256) set Y_ 2037.26
+$node_(1256) set Z_ 30
 $ns_ at 0.0 "$node_(1256) setdest 0.00 0.00 0.00"
-$node_(1257) set X_ 991.94
-$node_(1257) set Y_ 1995.01
-$node_(1257) set Y_ 60
+$node_(1257) set X_ 1797.94
+$node_(1257) set Y_ 2317.45
+$node_(1257) set Z_ 30
 $ns_ at 0.0 "$node_(1257) setdest 0.00 0.00 0.00"
-$node_(1258) set X_ 991.03
-$node_(1258) set Y_ 1879.32
-$node_(1258) set Y_ 30
+$node_(1258) set X_ 1797.94
+$node_(1258) set Y_ 2317.45
+$node_(1258) set Z_ 60
 $ns_ at 0.0 "$node_(1258) setdest 0.00 0.00 0.00"
-$node_(1259) set X_ 991.03
-$node_(1259) set Y_ 1879.32
-$node_(1259) set Y_ 60
+$node_(1259) set X_ 890.29
+$node_(1259) set Y_ 1957.76
+$node_(1259) set Z_ 60
 $ns_ at 0.0 "$node_(1259) setdest 0.00 0.00 0.00"
-$node_(1260) set X_ 991.64
-$node_(1260) set Y_ 1924.31
-$node_(1260) set Y_ 60
+$node_(1260) set X_ 1599.71
+$node_(1260) set Y_ 2423.06
+$node_(1260) set Z_ 60
 $ns_ at 0.0 "$node_(1260) setdest 0.00 0.00 0.00"
-$node_(1261) set X_ 984.12
-$node_(1261) set Y_ 1610.92
-$node_(1261) set Y_ 30
+$node_(1261) set X_ 1185.39
+$node_(1261) set Y_ 1419.24
+$node_(1261) set Z_ 30
 $ns_ at 0.0 "$node_(1261) setdest 0.00 0.00 0.00"
-$node_(1262) set X_ 1454.63
-$node_(1262) set Y_ 735.13
-$node_(1262) set Y_ 30
+$node_(1262) set X_ 1185.39
+$node_(1262) set Y_ 1419.24
+$node_(1262) set Z_ 60
 $ns_ at 0.0 "$node_(1262) setdest 0.00 0.00 0.00"
-$node_(1263) set X_ 1454.63
-$node_(1263) set Y_ 735.13
-$node_(1263) set Y_ 60
+$node_(1263) set X_ 1378.42
+$node_(1263) set Y_ 1174.18
+$node_(1263) set Z_ 30
 $ns_ at 0.0 "$node_(1263) setdest 0.00 0.00 0.00"
-$node_(1264) set X_ 1368.75
-$node_(1264) set Y_ 671.84
-$node_(1264) set Y_ 30
+$node_(1264) set X_ 1393.3
+$node_(1264) set Y_ 1128.83
+$node_(1264) set Z_ 30
 $ns_ at 0.0 "$node_(1264) setdest 0.00 0.00 0.00"
-$node_(1265) set X_ 1368.75
-$node_(1265) set Y_ 671.84
-$node_(1265) set Y_ 60
+$node_(1265) set X_ 1393.3
+$node_(1265) set Y_ 1128.83
+$node_(1265) set Z_ 60
 $ns_ at 0.0 "$node_(1265) setdest 0.00 0.00 0.00"
-$node_(1266) set X_ 1580.87
-$node_(1266) set Y_ 766.84
-$node_(1266) set Y_ 60
+$node_(1266) set X_ 1187.43
+$node_(1266) set Y_ 1554.22
+$node_(1266) set Z_ 60
 $ns_ at 0.0 "$node_(1266) setdest 0.00 0.00 0.00"
-$node_(1267) set X_ 1371.3
-$node_(1267) set Y_ 776.12
-$node_(1267) set Y_ 60
+$node_(1267) set X_ 1438.29
+$node_(1267) set Y_ 1128.21
+$node_(1267) set Z_ 30
 $ns_ at 0.0 "$node_(1267) setdest 0.00 0.00 0.00"
-$node_(1268) set X_ 1550.76
-$node_(1268) set Y_ 2123.69
-$node_(1268) set Y_ 60
+$node_(1268) set X_ 1483.29
+$node_(1268) set Y_ 1127.59
+$node_(1268) set Z_ 30
 $ns_ at 0.0 "$node_(1268) setdest 0.00 0.00 0.00"
-$node_(1269) set X_ 1595.75
-$node_(1269) set Y_ 2122.89
-$node_(1269) set Y_ 30
+$node_(1269) set X_ 1056.49
+$node_(1269) set Y_ 1219.16
+$node_(1269) set Z_ 30
 $ns_ at 0.0 "$node_(1269) setdest 0.00 0.00 0.00"
-$node_(1270) set X_ 1448.33
-$node_(1270) set Y_ 2428.02
-$node_(1270) set Y_ 30
+$node_(1270) set X_ 1056.49
+$node_(1270) set Y_ 1219.16
+$node_(1270) set Z_ 60
 $ns_ at 0.0 "$node_(1270) setdest 0.00 0.00 0.00"
-$node_(1271) set X_ 1448.33
-$node_(1271) set Y_ 2428.02
-$node_(1271) set Y_ 60
+$node_(1271) set X_ 1082.61
+$node_(1271) set Y_ 1256.6
+$node_(1271) set Z_ 60
 $ns_ at 0.0 "$node_(1271) setdest 0.00 0.00 0.00"
-$node_(1272) set X_ 1505.77
-$node_(1272) set Y_ 2124.48
-$node_(1272) set Y_ 30
+$node_(1272) set X_ 1084.33
+$node_(1272) set Y_ 1391.59
+$node_(1272) set Z_ 30
 $ns_ at 0.0 "$node_(1272) setdest 0.00 0.00 0.00"
-$node_(1273) set X_ 1505.77
-$node_(1273) set Y_ 2124.48
-$node_(1273) set Y_ 60
+$node_(1273) set X_ 1083.76
+$node_(1273) set Y_ 1346.59
+$node_(1273) set Z_ 30
 $ns_ at 0.0 "$node_(1273) setdest 0.00 0.00 0.00"
-$node_(1274) set X_ 1491.81
-$node_(1274) set Y_ 2096.88
-$node_(1274) set Y_ 60
+$node_(1274) set X_ 1083.76
+$node_(1274) set Y_ 1346.59
+$node_(1274) set Z_ 60
 $ns_ at 0.0 "$node_(1274) setdest 0.00 0.00 0.00"
-$node_(1275) set X_ 1496.0
-$node_(1275) set Y_ 2171.27
-$node_(1275) set Y_ 30
+$node_(1275) set X_ 1085.48
+$node_(1275) set Y_ 1481.58
+$node_(1275) set Z_ 60
 $ns_ at 0.0 "$node_(1275) setdest 0.00 0.00 0.00"
-$node_(1276) set X_ 1496.0
-$node_(1276) set Y_ 2171.27
-$node_(1276) set Y_ 60
+$node_(1276) set X_ 1084.91
+$node_(1276) set Y_ 1436.58
+$node_(1276) set Z_ 30
 $ns_ at 0.0 "$node_(1276) setdest 0.00 0.00 0.00"
-$node_(1277) set X_ 1297.24
-$node_(1277) set Y_ 2183.76
-$node_(1277) set Y_ 30
+$node_(1277) set X_ 1086.63
+$node_(1277) set Y_ 1571.57
+$node_(1277) set Z_ 60
 $ns_ at 0.0 "$node_(1277) setdest 0.00 0.00 0.00"
-$node_(1278) set X_ 1297.24
-$node_(1278) set Y_ 2183.76
-$node_(1278) set Y_ 60
+$node_(1278) set X_ 1887.93
+$node_(1278) set Y_ 2316.41
+$node_(1278) set Z_ 30
 $ns_ at 0.0 "$node_(1278) setdest 0.00 0.00 0.00"
-$node_(1279) set X_ 1496.88
-$node_(1279) set Y_ 724.02
-$node_(1279) set Y_ 30
+$node_(1279) set X_ 1887.93
+$node_(1279) set Y_ 2316.41
+$node_(1279) set Z_ 60
 $ns_ at 0.0 "$node_(1279) setdest 0.00 0.00 0.00"
-$node_(1280) set X_ 1496.88
-$node_(1280) set Y_ 724.02
-$node_(1280) set Y_ 60
+$node_(1280) set X_ 1511.5
+$node_(1280) set Y_ 2530.45
+$node_(1280) set Z_ 30
 $ns_ at 0.0 "$node_(1280) setdest 0.00 0.00 0.00"
-$node_(1281) set X_ 781.61
-$node_(1281) set Y_ 1567.53
-$node_(1281) set Y_ 30
+$node_(1281) set X_ 1511.5
+$node_(1281) set Y_ 2530.45
+$node_(1281) set Z_ 60
 $ns_ at 0.0 "$node_(1281) setdest 0.00 0.00 0.00"
-$node_(1282) set X_ 780.55
-$node_(1282) set Y_ 943.51
-$node_(1282) set Y_ 30
+$node_(1282) set X_ 1205.97
+$node_(1282) set Y_ 2714.79
+$node_(1282) set Z_ 60
 $ns_ at 0.0 "$node_(1282) setdest 0.00 0.00 0.00"
-$node_(1283) set X_ 780.55
-$node_(1283) set Y_ 943.51
-$node_(1283) set Y_ 60
+$node_(1283) set X_ 1206.14
+$node_(1283) set Y_ 2669.79
+$node_(1283) set Z_ 30
 $ns_ at 0.0 "$node_(1283) setdest 0.00 0.00 0.00"
-$node_(1284) set X_ 782.19
-$node_(1284) set Y_ 1612.53
-$node_(1284) set Y_ 30
+$node_(1284) set X_ 1206.14
+$node_(1284) set Y_ 2669.79
+$node_(1284) set Z_ 60
 $ns_ at 0.0 "$node_(1284) setdest 0.00 0.00 0.00"
-$node_(1285) set X_ 752.92
-$node_(1285) set Y_ 2037.26
-$node_(1285) set Y_ 30
+$node_(1285) set X_ 1206.16
+$node_(1285) set Y_ 2624.79
+$node_(1285) set Z_ 30
 $ns_ at 0.0 "$node_(1285) setdest 0.00 0.00 0.00"
-$node_(1286) set X_ 752.92
-$node_(1286) set Y_ 2037.26
-$node_(1286) set Y_ 60
+$node_(1286) set X_ 1206.16
+$node_(1286) set Y_ 2624.79
+$node_(1286) set Z_ 60
 $ns_ at 0.0 "$node_(1286) setdest 0.00 0.00 0.00"
-$node_(1287) set X_ 1797.94
-$node_(1287) set Y_ 2317.45
-$node_(1287) set Y_ 30
+$node_(1287) set X_ 1205.54
+$node_(1287) set Y_ 2579.8
+$node_(1287) set Z_ 60
 $ns_ at 0.0 "$node_(1287) setdest 0.00 0.00 0.00"
-$node_(1288) set X_ 1186.75
-$node_(1288) set Y_ 1509.22
-$node_(1288) set Y_ 30
+$node_(1288) set X_ 1154.72
+$node_(1288) set Y_ 2432.78
+$node_(1288) set Z_ 30
 $ns_ at 0.0 "$node_(1288) setdest 0.00 0.00 0.00"
-$node_(1289) set X_ 1599.71
-$node_(1289) set Y_ 2423.06
-$node_(1289) set Y_ 60
+$node_(1289) set X_ 1203.33
+$node_(1289) set Y_ 2417.57
+$node_(1289) set Z_ 30
 $ns_ at 0.0 "$node_(1289) setdest 0.00 0.00 0.00"
-$node_(1290) set X_ 1186.07
-$node_(1290) set Y_ 1464.23
-$node_(1290) set Y_ 30
+$node_(1290) set X_ 1202.75
+$node_(1290) set Y_ 2372.58
+$node_(1290) set Z_ 30
 $ns_ at 0.0 "$node_(1290) setdest 0.00 0.00 0.00"
-$node_(1291) set X_ 1378.42
-$node_(1291) set Y_ 1174.18
-$node_(1291) set Y_ 30
+$node_(1291) set X_ 1202.75
+$node_(1291) set Y_ 2372.58
+$node_(1291) set Z_ 60
 $ns_ at 0.0 "$node_(1291) setdest 0.00 0.00 0.00"
-$node_(1292) set X_ 1393.3
-$node_(1292) set Y_ 1128.83
-$node_(1292) set Y_ 60
+$node_(1292) set X_ 1202.17
+$node_(1292) set Y_ 2327.58
+$node_(1292) set Z_ 30
 $ns_ at 0.0 "$node_(1292) setdest 0.00 0.00 0.00"
-$node_(1293) set X_ 1187.43
-$node_(1293) set Y_ 1554.22
-$node_(1293) set Y_ 30
+$node_(1293) set X_ 1365.94
+$node_(1293) set Y_ 581.88
+$node_(1293) set Z_ 30
 $ns_ at 0.0 "$node_(1293) setdest 0.00 0.00 0.00"
-$node_(1294) set X_ 1188.11
-$node_(1294) set Y_ 1599.21
-$node_(1294) set Y_ 30
+$node_(1294) set X_ 1365.94
+$node_(1294) set Y_ 581.88
+$node_(1294) set Z_ 60
 $ns_ at 0.0 "$node_(1294) setdest 0.00 0.00 0.00"
-$node_(1295) set X_ 1438.29
-$node_(1295) set Y_ 1128.21
-$node_(1295) set Y_ 30
+$node_(1295) set X_ 1138.06
+$node_(1295) set Y_ 2673.44
+$node_(1295) set Z_ 30
 $ns_ at 0.0 "$node_(1295) setdest 0.00 0.00 0.00"
-$node_(1296) set X_ 1438.29
-$node_(1296) set Y_ 1128.21
-$node_(1296) set Y_ 60
+$node_(1296) set X_ 1138.06
+$node_(1296) set Y_ 2673.44
+$node_(1296) set Z_ 60
 $ns_ at 0.0 "$node_(1296) setdest 0.00 0.00 0.00"
-$node_(1297) set X_ 1483.29
-$node_(1297) set Y_ 1127.59
-$node_(1297) set Y_ 30
+$node_(1297) set X_ 1497.04
+$node_(1297) set Y_ 2435.9
+$node_(1297) set Z_ 60
 $ns_ at 0.0 "$node_(1297) setdest 0.00 0.00 0.00"
-$node_(1298) set X_ 1483.29
-$node_(1298) set Y_ 1127.59
-$node_(1298) set Y_ 60
+$node_(1298) set X_ 732.58
+$node_(1298) set Y_ 1813.41
+$node_(1298) set Z_ 60
 $ns_ at 0.0 "$node_(1298) setdest 0.00 0.00 0.00"
-$node_(1299) set X_ 778.71
-$node_(1299) set Y_ 1342.55
-$node_(1299) set Y_ 60
+$node_(1299) set X_ 840.06
+$node_(1299) set Y_ 1808.67
+$node_(1299) set Z_ 60
 $ns_ at 0.0 "$node_(1299) setdest 0.00 0.00 0.00"
-$node_(1300) set X_ 1083.18
-$node_(1300) set Y_ 1301.59
-$node_(1300) set Y_ 60
+$node_(1300) set X_ 1395.03
+$node_(1300) set Y_ 492.57
+$node_(1300) set Z_ 60
 $ns_ at 0.0 "$node_(1300) setdest 0.00 0.00 0.00"
-$node_(1301) set X_ 1082.61
-$node_(1301) set Y_ 1256.6
-$node_(1301) set Y_ 60
+$node_(1301) set X_ 2090.12
+$node_(1301) set Y_ 2314.07
+$node_(1301) set Z_ 30
 $ns_ at 0.0 "$node_(1301) setdest 0.00 0.00 0.00"
-$node_(1302) set X_ 1084.33
-$node_(1302) set Y_ 1391.59
-$node_(1302) set Y_ 60
+$node_(1302) set X_ 2090.12
+$node_(1302) set Y_ 2314.07
+$node_(1302) set Z_ 60
 $ns_ at 0.0 "$node_(1302) setdest 0.00 0.00 0.00"
-$node_(1303) set X_ 1083.76
-$node_(1303) set Y_ 1346.59
-$node_(1303) set Y_ 30
+$node_(1303) set X_ 1556.49
+$node_(1303) set Y_ 2529.44
+$node_(1303) set Z_ 30
 $ns_ at 0.0 "$node_(1303) setdest 0.00 0.00 0.00"
-$node_(1304) set X_ 1083.76
-$node_(1304) set Y_ 1346.59
-$node_(1304) set Y_ 60
+$node_(1304) set X_ 1556.49
+$node_(1304) set Y_ 2529.44
+$node_(1304) set Z_ 60
 $ns_ at 0.0 "$node_(1304) setdest 0.00 0.00 0.00"
-$node_(1305) set X_ 1085.48
-$node_(1305) set Y_ 1481.58
-$node_(1305) set Y_ 60
+$node_(1305) set X_ 1514.67
+$node_(1305) set Y_ 684.51
+$node_(1305) set Z_ 60
 $ns_ at 0.0 "$node_(1305) setdest 0.00 0.00 0.00"
-$node_(1306) set X_ 1084.91
-$node_(1306) set Y_ 1436.58
-$node_(1306) set Y_ 60
+$node_(1306) set X_ 1483.62
+$node_(1306) set Y_ 651.94
+$node_(1306) set Z_ 30
 $ns_ at 0.0 "$node_(1306) setdest 0.00 0.00 0.00"
-$node_(1307) set X_ 1086.63
-$node_(1307) set Y_ 1571.57
-$node_(1307) set Y_ 30
+$node_(1307) set X_ 1453.14
+$node_(1307) set Y_ 618.84
+$node_(1307) set Z_ 30
 $ns_ at 0.0 "$node_(1307) setdest 0.00 0.00 0.00"
-$node_(1308) set X_ 1086.63
-$node_(1308) set Y_ 1571.57
-$node_(1308) set Y_ 60
+$node_(1308) set X_ 1453.14
+$node_(1308) set Y_ 618.84
+$node_(1308) set Z_ 60
 $ns_ at 0.0 "$node_(1308) setdest 0.00 0.00 0.00"
-$node_(1309) set X_ 1887.93
-$node_(1309) set Y_ 2316.41
-$node_(1309) set Y_ 60
+$node_(1309) set X_ 1422.99
+$node_(1309) set Y_ 585.43
+$node_(1309) set Z_ 30
 $ns_ at 0.0 "$node_(1309) setdest 0.00 0.00 0.00"
-$node_(1310) set X_ 1511.5
-$node_(1310) set Y_ 2530.45
-$node_(1310) set Y_ 30
+$node_(1310) set X_ 1393.23
+$node_(1310) set Y_ 551.67
+$node_(1310) set Z_ 60
 $ns_ at 0.0 "$node_(1310) setdest 0.00 0.00 0.00"
-$node_(1311) set X_ 1511.5
-$node_(1311) set Y_ 2530.45
-$node_(1311) set Y_ 60
+$node_(1311) set X_ 1347.74
+$node_(1311) set Y_ 504.2
+$node_(1311) set Z_ 60
 $ns_ at 0.0 "$node_(1311) setdest 0.00 0.00 0.00"
-$node_(1312) set X_ 1205.97
-$node_(1312) set Y_ 2714.79
-$node_(1312) set Y_ 60
+$node_(1312) set X_ 1349.2
+$node_(1312) set Y_ 817.1
+$node_(1312) set Z_ 60
 $ns_ at 0.0 "$node_(1312) setdest 0.00 0.00 0.00"
-$node_(1313) set X_ 1206.14
-$node_(1313) set Y_ 2669.79
-$node_(1313) set Y_ 30
+$node_(1313) set X_ 1554.83
+$node_(1313) set Y_ 729.51
+$node_(1313) set Z_ 30
 $ns_ at 0.0 "$node_(1313) setdest 0.00 0.00 0.00"
-$node_(1314) set X_ 1206.14
-$node_(1314) set Y_ 2669.79
-$node_(1314) set Y_ 60
+$node_(1314) set X_ 1554.83
+$node_(1314) set Y_ 729.51
+$node_(1314) set Z_ 60
 $ns_ at 0.0 "$node_(1314) setdest 0.00 0.00 0.00"
-$node_(1315) set X_ 1206.16
-$node_(1315) set Y_ 2624.79
-$node_(1315) set Y_ 30
+$node_(1315) set X_ 1695.24
+$node_(1315) set Y_ 1313.13
+$node_(1315) set Z_ 30
 $ns_ at 0.0 "$node_(1315) setdest 0.00 0.00 0.00"
-$node_(1316) set X_ 1206.16
-$node_(1316) set Y_ 2624.79
-$node_(1316) set Y_ 60
+$node_(1316) set X_ 1695.24
+$node_(1316) set Y_ 1313.13
+$node_(1316) set Z_ 60
 $ns_ at 0.0 "$node_(1316) setdest 0.00 0.00 0.00"
-$node_(1317) set X_ 1205.54
-$node_(1317) set Y_ 2579.8
-$node_(1317) set Y_ 30
+$node_(1317) set X_ 2205.0
+$node_(1317) set Y_ 2312.74
+$node_(1317) set Z_ 30
 $ns_ at 0.0 "$node_(1317) setdest 0.00 0.00 0.00"
-$node_(1318) set X_ 1205.54
-$node_(1318) set Y_ 2579.8
-$node_(1318) set Y_ 60
+$node_(1318) set X_ 1646.2
+$node_(1318) set Y_ 1047.14
+$node_(1318) set Z_ 30
 $ns_ at 0.0 "$node_(1318) setdest 0.00 0.00 0.00"
-$node_(1319) set X_ 1154.72
-$node_(1319) set Y_ 2432.78
-$node_(1319) set Y_ 30
+$node_(1319) set X_ 1875.23
+$node_(1319) set Y_ 1310.89
+$node_(1319) set Z_ 30
 $ns_ at 0.0 "$node_(1319) setdest 0.00 0.00 0.00"
-$node_(1320) set X_ 1154.72
-$node_(1320) set Y_ 2432.78
-$node_(1320) set Y_ 60
+$node_(1320) set X_ 1740.24
+$node_(1320) set Y_ 1312.57
+$node_(1320) set Z_ 30
 $ns_ at 0.0 "$node_(1320) setdest 0.00 0.00 0.00"
-$node_(1321) set X_ 1203.33
-$node_(1321) set Y_ 2417.57
-$node_(1321) set Y_ 60
+$node_(1321) set X_ 1740.24
+$node_(1321) set Y_ 1312.57
+$node_(1321) set Z_ 60
 $ns_ at 0.0 "$node_(1321) setdest 0.00 0.00 0.00"
-$node_(1322) set X_ 1202.75
-$node_(1322) set Y_ 2372.58
-$node_(1322) set Y_ 60
+$node_(1322) set X_ 1920.22
+$node_(1322) set Y_ 1310.33
+$node_(1322) set Z_ 30
 $ns_ at 0.0 "$node_(1322) setdest 0.00 0.00 0.00"
-$node_(1323) set X_ 1365.94
-$node_(1323) set Y_ 581.88
-$node_(1323) set Y_ 60
+$node_(1323) set X_ 1920.22
+$node_(1323) set Y_ 1310.33
+$node_(1323) set Z_ 60
 $ns_ at 0.0 "$node_(1323) setdest 0.00 0.00 0.00"
-$node_(1324) set X_ 1298.73
-$node_(1324) set Y_ 2448.35
-$node_(1324) set Y_ 60
+$node_(1324) set X_ 1965.22
+$node_(1324) set Y_ 1309.77
+$node_(1324) set Z_ 60
 $ns_ at 0.0 "$node_(1324) setdest 0.00 0.00 0.00"
-$node_(1325) set X_ 1138.06
-$node_(1325) set Y_ 2673.44
-$node_(1325) set Y_ 30
+$node_(1325) set X_ 2307.78
+$node_(1325) set Y_ 1896.27
+$node_(1325) set Z_ 30
 $ns_ at 0.0 "$node_(1325) setdest 0.00 0.00 0.00"
-$node_(1326) set X_ 1138.06
-$node_(1326) set Y_ 2673.44
-$node_(1326) set Y_ 60
+$node_(1326) set X_ 2307.78
+$node_(1326) set Y_ 1896.27
+$node_(1326) set Z_ 60
 $ns_ at 0.0 "$node_(1326) setdest 0.00 0.00 0.00"
-$node_(1327) set X_ 1497.04
-$node_(1327) set Y_ 2435.9
-$node_(1327) set Y_ 30
+$node_(1327) set X_ 2320.08
+$node_(1327) set Y_ 2000.5
+$node_(1327) set Z_ 30
 $ns_ at 0.0 "$node_(1327) setdest 0.00 0.00 0.00"
-$node_(1328) set X_ 1497.04
-$node_(1328) set Y_ 2435.9
-$node_(1328) set Y_ 60
+$node_(1328) set X_ 2320.08
+$node_(1328) set Y_ 2000.5
+$node_(1328) set Z_ 60
 $ns_ at 0.0 "$node_(1328) setdest 0.00 0.00 0.00"
-$node_(1329) set X_ 840.06
-$node_(1329) set Y_ 1808.67
-$node_(1329) set Y_ 30
+$node_(1329) set X_ 2295.39
+$node_(1329) set Y_ 1752.73
+$node_(1329) set Z_ 30
 $ns_ at 0.0 "$node_(1329) setdest 0.00 0.00 0.00"
-$node_(1330) set X_ 840.06
-$node_(1330) set Y_ 1808.67
-$node_(1330) set Y_ 60
+$node_(1330) set X_ 2295.39
+$node_(1330) set Y_ 1752.73
+$node_(1330) set Z_ 60
 $ns_ at 0.0 "$node_(1330) setdest 0.00 0.00 0.00"
-$node_(1331) set X_ 1395.03
-$node_(1331) set Y_ 492.57
-$node_(1331) set Y_ 60
+$node_(1331) set X_ 2294.93
+$node_(1331) set Y_ 1707.73
+$node_(1331) set Z_ 30
 $ns_ at 0.0 "$node_(1331) setdest 0.00 0.00 0.00"
-$node_(1332) set X_ 2090.12
-$node_(1332) set Y_ 2314.07
-$node_(1332) set Y_ 30
+$node_(1332) set X_ 2352.78
+$node_(1332) set Y_ 1896.26
+$node_(1332) set Z_ 30
 $ns_ at 0.0 "$node_(1332) setdest 0.00 0.00 0.00"
-$node_(1333) set X_ 2090.12
-$node_(1333) set Y_ 2314.07
-$node_(1333) set Y_ 60
+$node_(1333) set X_ 2305.41
+$node_(1333) set Y_ 2467.2
+$node_(1333) set Z_ 30
 $ns_ at 0.0 "$node_(1333) setdest 0.00 0.00 0.00"
-$node_(1334) set X_ 1556.49
-$node_(1334) set Y_ 2529.44
-$node_(1334) set Y_ 30
+$node_(1334) set X_ 2305.41
+$node_(1334) set Y_ 2467.2
+$node_(1334) set Z_ 60
 $ns_ at 0.0 "$node_(1334) setdest 0.00 0.00 0.00"
-$node_(1335) set X_ 1514.67
-$node_(1335) set Y_ 684.51
-$node_(1335) set Y_ 60
+$node_(1335) set X_ 2082.09
+$node_(1335) set Y_ 2111.35
+$node_(1335) set Z_ 30
 $ns_ at 0.0 "$node_(1335) setdest 0.00 0.00 0.00"
-$node_(1336) set X_ 1422.99
-$node_(1336) set Y_ 585.43
-$node_(1336) set Y_ 30
+$node_(1336) set X_ 2294.46
+$node_(1336) set Y_ 1662.74
+$node_(1336) set Z_ 30
 $ns_ at 0.0 "$node_(1336) setdest 0.00 0.00 0.00"
-$node_(1337) set X_ 1347.74
-$node_(1337) set Y_ 504.2
-$node_(1337) set Y_ 60
+$node_(1337) set X_ 1294.46
+$node_(1337) set Y_ 2409.98
+$node_(1337) set Z_ 30
 $ns_ at 0.0 "$node_(1337) setdest 0.00 0.00 0.00"
-$node_(1338) set X_ 1349.2
-$node_(1338) set Y_ 817.1
-$node_(1338) set Y_ 30
+$node_(1338) set X_ 913.02
+$node_(1338) set Y_ 2385.21
+$node_(1338) set Z_ 30
 $ns_ at 0.0 "$node_(1338) setdest 0.00 0.00 0.00"
-$node_(1339) set X_ 1349.2
-$node_(1339) set Y_ 817.1
-$node_(1339) set Y_ 60
+$node_(1339) set X_ 896.32
+$node_(1339) set Y_ 2551.42
+$node_(1339) set Z_ 30
 $ns_ at 0.0 "$node_(1339) setdest 0.00 0.00 0.00"
-$node_(1340) set X_ 676.7
-$node_(1340) set Y_ 1574.87
-$node_(1340) set Y_ 30
+$node_(1340) set X_ 896.32
+$node_(1340) set Y_ 2551.42
+$node_(1340) set Z_ 60
 $ns_ at 0.0 "$node_(1340) setdest 0.00 0.00 0.00"
-$node_(1341) set X_ 676.7
-$node_(1341) set Y_ 1574.87
-$node_(1341) set Y_ 60
+$node_(1341) set X_ 954.39
+$node_(1341) set Y_ 2574.93
+$node_(1341) set Z_ 30
 $ns_ at 0.0 "$node_(1341) setdest 0.00 0.00 0.00"
-$node_(1342) set X_ 1554.83
-$node_(1342) set Y_ 729.51
-$node_(1342) set Y_ 60
+$node_(1342) set X_ 954.39
+$node_(1342) set Y_ 2574.93
+$node_(1342) set Z_ 60
 $ns_ at 0.0 "$node_(1342) setdest 0.00 0.00 0.00"
-$node_(1343) set X_ 1695.24
-$node_(1343) set Y_ 1313.13
-$node_(1343) set Y_ 30
+$node_(1343) set X_ 1494.35
+$node_(1343) set Y_ 2269.37
+$node_(1343) set Z_ 30
 $ns_ at 0.0 "$node_(1343) setdest 0.00 0.00 0.00"
-$node_(1344) set X_ 1695.24
-$node_(1344) set Y_ 1313.13
-$node_(1344) set Y_ 60
+$node_(1344) set X_ 1494.35
+$node_(1344) set Y_ 2269.37
+$node_(1344) set Z_ 60
 $ns_ at 0.0 "$node_(1344) setdest 0.00 0.00 0.00"
-$node_(1345) set X_ 1830.23
-$node_(1345) set Y_ 1311.45
-$node_(1345) set Y_ 30
+$node_(1345) set X_ 909.63
+$node_(1345) set Y_ 2577.34
+$node_(1345) set Z_ 60
 $ns_ at 0.0 "$node_(1345) setdest 0.00 0.00 0.00"
-$node_(1346) set X_ 1830.23
-$node_(1346) set Y_ 1311.45
-$node_(1346) set Y_ 60
+$node_(1346) set X_ 850.07
+$node_(1346) set Y_ 2577.93
+$node_(1346) set Z_ 30
 $ns_ at 0.0 "$node_(1346) setdest 0.00 0.00 0.00"
-$node_(1347) set X_ 1875.23
-$node_(1347) set Y_ 1310.89
-$node_(1347) set Y_ 30
+$node_(1347) set X_ 850.07
+$node_(1347) set Y_ 2577.93
+$node_(1347) set Z_ 60
 $ns_ at 0.0 "$node_(1347) setdest 0.00 0.00 0.00"
-$node_(1348) set X_ 1740.24
-$node_(1348) set Y_ 1312.57
-$node_(1348) set Y_ 30
+$node_(1348) set X_ 805.07
+$node_(1348) set Y_ 2578.17
+$node_(1348) set Z_ 30
 $ns_ at 0.0 "$node_(1348) setdest 0.00 0.00 0.00"
-$node_(1349) set X_ 1740.24
-$node_(1349) set Y_ 1312.57
-$node_(1349) set Y_ 60
+$node_(1349) set X_ 805.07
+$node_(1349) set Y_ 2578.17
+$node_(1349) set Z_ 60
 $ns_ at 0.0 "$node_(1349) setdest 0.00 0.00 0.00"
-$node_(1350) set X_ 1920.22
-$node_(1350) set Y_ 1310.33
-$node_(1350) set Y_ 30
+$node_(1350) set X_ 760.07
+$node_(1350) set Y_ 2578.41
+$node_(1350) set Z_ 30
 $ns_ at 0.0 "$node_(1350) setdest 0.00 0.00 0.00"
-$node_(1351) set X_ 1920.22
-$node_(1351) set Y_ 1310.33
-$node_(1351) set Y_ 60
+$node_(1351) set X_ 715.07
+$node_(1351) set Y_ 2578.65
+$node_(1351) set Z_ 30
 $ns_ at 0.0 "$node_(1351) setdest 0.00 0.00 0.00"
-$node_(1352) set X_ 1965.22
-$node_(1352) set Y_ 1309.77
-$node_(1352) set Y_ 30
+$node_(1352) set X_ 715.07
+$node_(1352) set Y_ 2578.65
+$node_(1352) set Z_ 60
 $ns_ at 0.0 "$node_(1352) setdest 0.00 0.00 0.00"
-$node_(1353) set X_ 1965.22
-$node_(1353) set Y_ 1309.77
-$node_(1353) set Y_ 60
+$node_(1353) set X_ 960.8
+$node_(1353) set Y_ 1220.5
+$node_(1353) set Z_ 30
 $ns_ at 0.0 "$node_(1353) setdest 0.00 0.00 0.00"
-$node_(1354) set X_ 2307.78
-$node_(1354) set Y_ 1896.27
-$node_(1354) set Y_ 30
+$node_(1354) set X_ 2031.22
+$node_(1354) set Y_ 1205.92
+$node_(1354) set Z_ 60
 $ns_ at 0.0 "$node_(1354) setdest 0.00 0.00 0.00"
-$node_(1355) set X_ 2320.08
-$node_(1355) set Y_ 2000.5
-$node_(1355) set Y_ 60
+$node_(1355) set X_ 2060.03
+$node_(1355) set Y_ 1205.53
+$node_(1355) set Z_ 30
 $ns_ at 0.0 "$node_(1355) setdest 0.00 0.00 0.00"
-$node_(1356) set X_ 2295.39
-$node_(1356) set Y_ 1752.73
-$node_(1356) set Y_ 60
+$node_(1356) set X_ 2060.03
+$node_(1356) set Y_ 1205.53
+$node_(1356) set Z_ 60
 $ns_ at 0.0 "$node_(1356) setdest 0.00 0.00 0.00"
-$node_(1357) set X_ 2294.93
-$node_(1357) set Y_ 1707.73
-$node_(1357) set Y_ 30
+$node_(1357) set X_ 1970.78
+$node_(1357) set Y_ 1206.75
+$node_(1357) set Z_ 30
 $ns_ at 0.0 "$node_(1357) setdest 0.00 0.00 0.00"
-$node_(1358) set X_ 2294.93
-$node_(1358) set Y_ 1707.73
-$node_(1358) set Y_ 60
+$node_(1358) set X_ 1788.98
+$node_(1358) set Y_ 810.8
+$node_(1358) set Z_ 60
 $ns_ at 0.0 "$node_(1358) setdest 0.00 0.00 0.00"
-$node_(1359) set X_ 2352.78
-$node_(1359) set Y_ 1896.26
-$node_(1359) set Y_ 60
+$node_(1359) set X_ 1743.98
+$node_(1359) set Y_ 811.19
+$node_(1359) set Z_ 30
 $ns_ at 0.0 "$node_(1359) setdest 0.00 0.00 0.00"
-$node_(1360) set X_ 2305.41
-$node_(1360) set Y_ 2467.2
-$node_(1360) set Y_ 30
+$node_(1360) set X_ 1743.98
+$node_(1360) set Y_ 811.19
+$node_(1360) set Z_ 60
 $ns_ at 0.0 "$node_(1360) setdest 0.00 0.00 0.00"
-$node_(1361) set X_ 2082.09
-$node_(1361) set Y_ 2111.35
-$node_(1361) set Y_ 60
+$node_(1361) set X_ 673.31
+$node_(1361) set Y_ 1259.9
+$node_(1361) set Z_ 30
 $ns_ at 0.0 "$node_(1361) setdest 0.00 0.00 0.00"
-$node_(1362) set X_ 2294.46
-$node_(1362) set Y_ 1662.74
-$node_(1362) set Y_ 30
+$node_(1362) set X_ 1656.73
+$node_(1362) set Y_ 1931.31
+$node_(1362) set Z_ 30
 $ns_ at 0.0 "$node_(1362) setdest 0.00 0.00 0.00"
-$node_(1363) set X_ 2294.46
-$node_(1363) set Y_ 1662.74
-$node_(1363) set Y_ 60
+$node_(1363) set X_ 1181.42
+$node_(1363) set Y_ 1141.95
+$node_(1363) set Z_ 60
 $ns_ at 0.0 "$node_(1363) setdest 0.00 0.00 0.00"
-$node_(1364) set X_ 1294.46
-$node_(1364) set Y_ 2409.98
-$node_(1364) set Y_ 60
+$node_(1364) set X_ 1178.67
+$node_(1364) set Y_ 916.96
+$node_(1364) set Z_ 30
 $ns_ at 0.0 "$node_(1364) setdest 0.00 0.00 0.00"
-$node_(1365) set X_ 879.04
-$node_(1365) set Y_ 2383.75
-$node_(1365) set Y_ 30
+$node_(1365) set X_ 1178.67
+$node_(1365) set Y_ 916.96
+$node_(1365) set Z_ 60
 $ns_ at 0.0 "$node_(1365) setdest 0.00 0.00 0.00"
-$node_(1366) set X_ 896.32
-$node_(1366) set Y_ 2551.42
-$node_(1366) set Y_ 60
+$node_(1366) set X_ 1302.53
+$node_(1366) set Y_ 2582.91
+$node_(1366) set Z_ 30
 $ns_ at 0.0 "$node_(1366) setdest 0.00 0.00 0.00"
-$node_(1367) set X_ 954.39
-$node_(1367) set Y_ 2574.93
-$node_(1367) set Y_ 60
+$node_(1367) set X_ 1302.53
+$node_(1367) set Y_ 2582.91
+$node_(1367) set Z_ 60
 $ns_ at 0.0 "$node_(1367) setdest 0.00 0.00 0.00"
-$node_(1368) set X_ 1494.35
-$node_(1368) set Y_ 2269.37
-$node_(1368) set Y_ 30
+$node_(1368) set X_ 1178.12
+$node_(1368) set Y_ 871.97
+$node_(1368) set Z_ 30
 $ns_ at 0.0 "$node_(1368) setdest 0.00 0.00 0.00"
-$node_(1369) set X_ 850.07
-$node_(1369) set Y_ 2577.93
-$node_(1369) set Y_ 30
+$node_(1369) set X_ 1178.12
+$node_(1369) set Y_ 871.97
+$node_(1369) set Z_ 60
 $ns_ at 0.0 "$node_(1369) setdest 0.00 0.00 0.00"
-$node_(1370) set X_ 805.07
-$node_(1370) set Y_ 2578.17
-$node_(1370) set Y_ 60
+$node_(1370) set X_ 1180.87
+$node_(1370) set Y_ 1096.95
+$node_(1370) set Z_ 30
 $ns_ at 0.0 "$node_(1370) setdest 0.00 0.00 0.00"
-$node_(1371) set X_ 960.8
-$node_(1371) set Y_ 1220.5
-$node_(1371) set Y_ 30
+$node_(1371) set X_ 1180.87
+$node_(1371) set Y_ 1096.95
+$node_(1371) set Z_ 60
 $ns_ at 0.0 "$node_(1371) setdest 0.00 0.00 0.00"
-$node_(1372) set X_ 960.8
-$node_(1372) set Y_ 1220.5
-$node_(1372) set Y_ 60
+$node_(1372) set X_ 1180.32
+$node_(1372) set Y_ 1051.95
+$node_(1372) set Z_ 30
 $ns_ at 0.0 "$node_(1372) setdest 0.00 0.00 0.00"
-$node_(1373) set X_ 2031.22
-$node_(1373) set Y_ 1205.92
-$node_(1373) set Y_ 30
+$node_(1373) set X_ 1180.32
+$node_(1373) set Y_ 1051.95
+$node_(1373) set Z_ 60
 $ns_ at 0.0 "$node_(1373) setdest 0.00 0.00 0.00"
-$node_(1374) set X_ 2031.22
-$node_(1374) set Y_ 1205.92
-$node_(1374) set Y_ 60
+$node_(1374) set X_ 1179.77
+$node_(1374) set Y_ 1006.96
+$node_(1374) set Z_ 30
 $ns_ at 0.0 "$node_(1374) setdest 0.00 0.00 0.00"
-$node_(1375) set X_ 2060.03
-$node_(1375) set Y_ 1205.53
-$node_(1375) set Y_ 60
+$node_(1375) set X_ 1179.77
+$node_(1375) set Y_ 1006.96
+$node_(1375) set Z_ 60
 $ns_ at 0.0 "$node_(1375) setdest 0.00 0.00 0.00"
-$node_(1376) set X_ 2059.98
-$node_(1376) set Y_ 1034.54
-$node_(1376) set Y_ 30
+$node_(1376) set X_ 1179.22
+$node_(1376) set Y_ 961.96
+$node_(1376) set Z_ 60
 $ns_ at 0.0 "$node_(1376) setdest 0.00 0.00 0.00"
-$node_(1377) set X_ 2059.98
-$node_(1377) set Y_ 1034.54
-$node_(1377) set Y_ 60
+$node_(1377) set X_ 584.11
+$node_(1377) set Y_ 2018.26
+$node_(1377) set Z_ 30
 $ns_ at 0.0 "$node_(1377) setdest 0.00 0.00 0.00"
-$node_(1378) set X_ 1880.79
-$node_(1378) set Y_ 1207.97
-$node_(1378) set Y_ 30
+$node_(1378) set X_ 584.11
+$node_(1378) set Y_ 2018.26
+$node_(1378) set Z_ 60
 $ns_ at 0.0 "$node_(1378) setdest 0.00 0.00 0.00"
-$node_(1379) set X_ 1645.04
-$node_(1379) set Y_ 1889.99
-$node_(1379) set Y_ 60
+$node_(1379) set X_ 826.12
+$node_(1379) set Y_ 820.06
+$node_(1379) set Z_ 60
 $ns_ at 0.0 "$node_(1379) setdest 0.00 0.00 0.00"
-$node_(1380) set X_ 673.31
-$node_(1380) set Y_ 1259.9
-$node_(1380) set Y_ 60
+$node_(1380) set X_ 1639.63
+$node_(1380) set Y_ 1655.59
+$node_(1380) set Z_ 30
 $ns_ at 0.0 "$node_(1380) setdest 0.00 0.00 0.00"
-$node_(1381) set X_ 1181.97
-$node_(1381) set Y_ 1186.94
-$node_(1381) set Y_ 30
+$node_(1381) set X_ 613.44
+$node_(1381) set Y_ 2039.53
+$node_(1381) set Z_ 30
 $ns_ at 0.0 "$node_(1381) setdest 0.00 0.00 0.00"
-$node_(1382) set X_ 1181.42
-$node_(1382) set Y_ 1141.95
-$node_(1382) set Y_ 30
+$node_(1382) set X_ 613.44
+$node_(1382) set Y_ 2039.53
+$node_(1382) set Z_ 60
 $ns_ at 0.0 "$node_(1382) setdest 0.00 0.00 0.00"
-$node_(1383) set X_ 1177.56
-$node_(1383) set Y_ 826.97
-$node_(1383) set Y_ 60
+$node_(1383) set X_ 1841.52
+$node_(1383) set Y_ 2215.79
+$node_(1383) set Z_ 30
 $ns_ at 0.0 "$node_(1383) setdest 0.00 0.00 0.00"
-$node_(1384) set X_ 1180.87
-$node_(1384) set Y_ 1096.95
-$node_(1384) set Y_ 60
+$node_(1384) set X_ 633.63
+$node_(1384) set Y_ 2024.51
+$node_(1384) set Z_ 60
 $ns_ at 0.0 "$node_(1384) setdest 0.00 0.00 0.00"
-$node_(1385) set X_ 1180.32
-$node_(1385) set Y_ 1051.95
-$node_(1385) set Y_ 30
+$node_(1385) set X_ 1292.1
+$node_(1385) set Y_ 1845.25
+$node_(1385) set Z_ 30
 $ns_ at 0.0 "$node_(1385) setdest 0.00 0.00 0.00"
-$node_(1386) set X_ 569.09
-$node_(1386) set Y_ 865.61
-$node_(1386) set Y_ 60
+$node_(1386) set X_ 1292.33
+$node_(1386) set Y_ 1890.24
+$node_(1386) set Z_ 30
 $ns_ at 0.0 "$node_(1386) setdest 0.00 0.00 0.00"
-$node_(1387) set X_ 584.11
-$node_(1387) set Y_ 2018.26
-$node_(1387) set Y_ 60
+$node_(1387) set X_ 1842.09
+$node_(1387) set Y_ 2114.98
+$node_(1387) set Z_ 30
 $ns_ at 0.0 "$node_(1387) setdest 0.00 0.00 0.00"
-$node_(1388) set X_ 1639.63
-$node_(1388) set Y_ 1655.59
-$node_(1388) set Y_ 30
+$node_(1388) set X_ 1284.6
+$node_(1388) set Y_ 1639.24
+$node_(1388) set Z_ 60
 $ns_ at 0.0 "$node_(1388) setdest 0.00 0.00 0.00"
-$node_(1389) set X_ 1639.63
-$node_(1389) set Y_ 1655.59
-$node_(1389) set Y_ 60
+$node_(1389) set X_ 1794.39
+$node_(1389) set Y_ 2420.37
+$node_(1389) set Z_ 60
 $ns_ at 0.0 "$node_(1389) setdest 0.00 0.00 0.00"
-$node_(1390) set X_ 613.44
-$node_(1390) set Y_ 2039.53
-$node_(1390) set Y_ 30
+$node_(1390) set X_ 1989.21
+$node_(1390) set Y_ 1520.89
+$node_(1390) set Z_ 30
 $ns_ at 0.0 "$node_(1390) setdest 0.00 0.00 0.00"
-$node_(1391) set X_ 568.45
-$node_(1391) set Y_ 2040.55
-$node_(1391) set Y_ 30
+$node_(1391) set X_ 1989.21
+$node_(1391) set Y_ 1520.89
+$node_(1391) set Z_ 60
 $ns_ at 0.0 "$node_(1391) setdest 0.00 0.00 0.00"
-$node_(1392) set X_ 568.45
-$node_(1392) set Y_ 2040.55
-$node_(1392) set Y_ 60
+$node_(1392) set X_ 1988.62
+$node_(1392) set Y_ 1430.89
+$node_(1392) set Z_ 30
 $ns_ at 0.0 "$node_(1392) setdest 0.00 0.00 0.00"
-$node_(1393) set X_ 1841.52
-$node_(1393) set Y_ 2215.79
-$node_(1393) set Y_ 30
+$node_(1393) set X_ 1988.92
+$node_(1393) set Y_ 1475.89
+$node_(1393) set Z_ 30
 $ns_ at 0.0 "$node_(1393) setdest 0.00 0.00 0.00"
-$node_(1394) set X_ 1841.52
-$node_(1394) set Y_ 2215.79
-$node_(1394) set Y_ 60
+$node_(1394) set X_ 1988.92
+$node_(1394) set Y_ 1475.89
+$node_(1394) set Z_ 60
 $ns_ at 0.0 "$node_(1394) setdest 0.00 0.00 0.00"
-$node_(1395) set X_ 633.63
-$node_(1395) set Y_ 2024.51
-$node_(1395) set Y_ 30
+$node_(1395) set X_ 1902.91
+$node_(1395) set Y_ 1409.09
+$node_(1395) set Z_ 60
 $ns_ at 0.0 "$node_(1395) setdest 0.00 0.00 0.00"
-$node_(1396) set X_ 1292.1
-$node_(1396) set Y_ 1845.25
-$node_(1396) set Y_ 30
+$node_(1396) set X_ 1947.91
+$node_(1396) set Y_ 1408.55
+$node_(1396) set Z_ 30
 $ns_ at 0.0 "$node_(1396) setdest 0.00 0.00 0.00"
-$node_(1397) set X_ 1292.33
-$node_(1397) set Y_ 1890.24
-$node_(1397) set Y_ 60
+$node_(1397) set X_ 1947.91
+$node_(1397) set Y_ 1408.55
+$node_(1397) set Z_ 60
 $ns_ at 0.0 "$node_(1397) setdest 0.00 0.00 0.00"
-$node_(1398) set X_ 1842.09
-$node_(1398) set Y_ 2114.98
-$node_(1398) set Y_ 60
+$node_(1398) set X_ 1843.26
+$node_(1398) set Y_ 1409.98
+$node_(1398) set Z_ 60
 $ns_ at 0.0 "$node_(1398) setdest 0.00 0.00 0.00"
-$node_(1399) set X_ 1794.39
-$node_(1399) set Y_ 2420.37
-$node_(1399) set Y_ 30
+$node_(1399) set X_ 1591.58
+$node_(1399) set Y_ 1797.89
+$node_(1399) set Z_ 60
 $ns_ at 0.0 "$node_(1399) setdest 0.00 0.00 0.00"
-$node_(1400) set X_ 1794.39
-$node_(1400) set Y_ 2420.37
-$node_(1400) set Y_ 60
+$node_(1400) set X_ 1738.63
+$node_(1400) set Y_ 1411.26
+$node_(1400) set Z_ 60
 $ns_ at 0.0 "$node_(1400) setdest 0.00 0.00 0.00"
-$node_(1401) set X_ 1989.21
-$node_(1401) set Y_ 1520.89
-$node_(1401) set Y_ 30
+$node_(1401) set X_ 2086.9
+$node_(1401) set Y_ 1277.29
+$node_(1401) set Z_ 30
 $ns_ at 0.0 "$node_(1401) setdest 0.00 0.00 0.00"
-$node_(1402) set X_ 1988.62
-$node_(1402) set Y_ 1430.89
-$node_(1402) set Y_ 60
+$node_(1402) set X_ 2086.9
+$node_(1402) set Y_ 1277.29
+$node_(1402) set Z_ 60
 $ns_ at 0.0 "$node_(1402) setdest 0.00 0.00 0.00"
-$node_(1403) set X_ 1902.91
-$node_(1403) set Y_ 1409.09
-$node_(1403) set Y_ 60
+$node_(1403) set X_ 2083.1
+$node_(1403) set Y_ 1224.27
+$node_(1403) set Z_ 30
 $ns_ at 0.0 "$node_(1403) setdest 0.00 0.00 0.00"
-$node_(1404) set X_ 1843.26
-$node_(1404) set Y_ 1409.98
-$node_(1404) set Y_ 30
+$node_(1404) set X_ 2083.1
+$node_(1404) set Y_ 1224.27
+$node_(1404) set Z_ 60
 $ns_ at 0.0 "$node_(1404) setdest 0.00 0.00 0.00"
-$node_(1405) set X_ 1591.58
-$node_(1405) set Y_ 1797.89
-$node_(1405) set Y_ 30
+$node_(1405) set X_ 2139.49
+$node_(1405) set Y_ 1204.45
+$node_(1405) set Z_ 60
 $ns_ at 0.0 "$node_(1405) setdest 0.00 0.00 0.00"
-$node_(1406) set X_ 1591.58
-$node_(1406) set Y_ 1797.89
-$node_(1406) set Y_ 60
+$node_(1406) set X_ 2226.88
+$node_(1406) set Y_ 1026.11
+$node_(1406) set Z_ 30
 $ns_ at 0.0 "$node_(1406) setdest 0.00 0.00 0.00"
-$node_(1407) set X_ 1738.63
-$node_(1407) set Y_ 1411.26
-$node_(1407) set Y_ 30
+$node_(1407) set X_ 2271.88
+$node_(1407) set Y_ 1025.54
+$node_(1407) set Z_ 30
 $ns_ at 0.0 "$node_(1407) setdest 0.00 0.00 0.00"
-$node_(1408) set X_ 1738.63
-$node_(1408) set Y_ 1411.26
-$node_(1408) set Y_ 60
+$node_(1408) set X_ 2271.88
+$node_(1408) set Y_ 1025.54
+$node_(1408) set Z_ 60
 $ns_ at 0.0 "$node_(1408) setdest 0.00 0.00 0.00"
-$node_(1409) set X_ 2086.9
-$node_(1409) set Y_ 1277.29
-$node_(1409) set Y_ 30
+$node_(1409) set X_ 2331.59
+$node_(1409) set Y_ 1024.89
+$node_(1409) set Z_ 30
 $ns_ at 0.0 "$node_(1409) setdest 0.00 0.00 0.00"
-$node_(1410) set X_ 2086.9
-$node_(1410) set Y_ 1277.29
-$node_(1410) set Y_ 60
+$node_(1410) set X_ 2331.59
+$node_(1410) set Y_ 1024.89
+$node_(1410) set Z_ 60
 $ns_ at 0.0 "$node_(1410) setdest 0.00 0.00 0.00"
-$node_(1411) set X_ 2139.49
-$node_(1411) set Y_ 1204.45
-$node_(1411) set Y_ 30
+$node_(1411) set X_ 2376.58
+$node_(1411) set Y_ 1024.43
+$node_(1411) set Z_ 30
 $ns_ at 0.0 "$node_(1411) setdest 0.00 0.00 0.00"
-$node_(1412) set X_ 2139.49
-$node_(1412) set Y_ 1204.45
-$node_(1412) set Y_ 60
+$node_(1412) set X_ 579.12
+$node_(1412) set Y_ 1439.05
+$node_(1412) set Z_ 60
 $ns_ at 0.0 "$node_(1412) setdest 0.00 0.00 0.00"
-$node_(1413) set X_ 2167.16
-$node_(1413) set Y_ 1026.75
-$node_(1413) set Y_ 30
+$node_(1413) set X_ 579.62
+$node_(1413) set Y_ 1484.05
+$node_(1413) set Z_ 30
 $ns_ at 0.0 "$node_(1413) setdest 0.00 0.00 0.00"
-$node_(1414) set X_ 2167.16
-$node_(1414) set Y_ 1026.75
-$node_(1414) set Y_ 60
+$node_(1414) set X_ 579.62
+$node_(1414) set Y_ 1484.05
+$node_(1414) set Z_ 60
 $ns_ at 0.0 "$node_(1414) setdest 0.00 0.00 0.00"
-$node_(1415) set X_ 2271.88
-$node_(1415) set Y_ 1025.54
-$node_(1415) set Y_ 30
+$node_(1415) set X_ 603.37
+$node_(1415) set Y_ 1228.17
+$node_(1415) set Z_ 60
 $ns_ at 0.0 "$node_(1415) setdest 0.00 0.00 0.00"
-$node_(1416) set X_ 2271.88
-$node_(1416) set Y_ 1025.54
-$node_(1416) set Y_ 60
+$node_(1416) set X_ 577.14
+$node_(1416) set Y_ 1259.06
+$node_(1416) set Z_ 30
 $ns_ at 0.0 "$node_(1416) setdest 0.00 0.00 0.00"
-$node_(1417) set X_ 2376.58
-$node_(1417) set Y_ 1024.43
-$node_(1417) set Y_ 60
+$node_(1417) set X_ 577.63
+$node_(1417) set Y_ 1304.06
+$node_(1417) set Z_ 30
 $ns_ at 0.0 "$node_(1417) setdest 0.00 0.00 0.00"
-$node_(1418) set X_ 2391.86
-$node_(1418) set Y_ 1073.08
-$node_(1418) set Y_ 30
+$node_(1418) set X_ 578.13
+$node_(1418) set Y_ 1349.05
+$node_(1418) set Z_ 60
 $ns_ at 0.0 "$node_(1418) setdest 0.00 0.00 0.00"
-$node_(1419) set X_ 2392.3
-$node_(1419) set Y_ 1118.07
-$node_(1419) set Y_ 30
+$node_(1419) set X_ 580.61
+$node_(1419) set Y_ 1574.04
+$node_(1419) set Z_ 60
 $ns_ at 0.0 "$node_(1419) setdest 0.00 0.00 0.00"
-$node_(1420) set X_ 2392.3
-$node_(1420) set Y_ 1118.07
-$node_(1420) set Y_ 60
+$node_(1420) set X_ 581.11
+$node_(1420) set Y_ 1619.04
+$node_(1420) set Z_ 30
 $ns_ at 0.0 "$node_(1420) setdest 0.00 0.00 0.00"
-$node_(1421) set X_ 578.63
-$node_(1421) set Y_ 1394.05
-$node_(1421) set Y_ 60
+$node_(1421) set X_ 581.11
+$node_(1421) set Y_ 1619.04
+$node_(1421) set Z_ 60
 $ns_ at 0.0 "$node_(1421) setdest 0.00 0.00 0.00"
-$node_(1422) set X_ 579.12
-$node_(1422) set Y_ 1439.05
-$node_(1422) set Y_ 30
+$node_(1422) set X_ 1797.1
+$node_(1422) set Y_ 2115.89
+$node_(1422) set Z_ 60
 $ns_ at 0.0 "$node_(1422) setdest 0.00 0.00 0.00"
-$node_(1423) set X_ 579.12
-$node_(1423) set Y_ 1439.05
-$node_(1423) set Y_ 60
+$node_(1423) set X_ 2390.86
+$node_(1423) set Y_ 933.27
+$node_(1423) set Z_ 60
 $ns_ at 0.0 "$node_(1423) setdest 0.00 0.00 0.00"
-$node_(1424) set X_ 580.11
-$node_(1424) set Y_ 1529.04
-$node_(1424) set Y_ 30
+$node_(1424) set X_ 2209.24
+$node_(1424) set Y_ 2417.53
+$node_(1424) set Z_ 30
 $ns_ at 0.0 "$node_(1424) setdest 0.00 0.00 0.00"
-$node_(1425) set X_ 580.11
-$node_(1425) set Y_ 1529.04
-$node_(1425) set Y_ 60
+$node_(1425) set X_ 2209.24
+$node_(1425) set Y_ 2417.53
+$node_(1425) set Z_ 60
 $ns_ at 0.0 "$node_(1425) setdest 0.00 0.00 0.00"
-$node_(1426) set X_ 577.63
-$node_(1426) set Y_ 1304.06
-$node_(1426) set Y_ 60
+$node_(1426) set X_ 2152.98
+$node_(1426) set Y_ 1207.45
+$node_(1426) set Z_ 30
 $ns_ at 0.0 "$node_(1426) setdest 0.00 0.00 0.00"
-$node_(1427) set X_ 578.13
-$node_(1427) set Y_ 1349.05
-$node_(1427) set Y_ 30
+$node_(1427) set X_ 2390.6
+$node_(1427) set Y_ 888.28
+$node_(1427) set Z_ 30
 $ns_ at 0.0 "$node_(1427) setdest 0.00 0.00 0.00"
-$node_(1428) set X_ 580.61
-$node_(1428) set Y_ 1574.04
-$node_(1428) set Y_ 60
+$node_(1428) set X_ 2197.42
+$node_(1428) set Y_ 1417.35
+$node_(1428) set Z_ 60
 $ns_ at 0.0 "$node_(1428) setdest 0.00 0.00 0.00"
-$node_(1429) set X_ 581.11
-$node_(1429) set Y_ 1619.04
-$node_(1429) set Y_ 30
+$node_(1429) set X_ 2197.33
+$node_(1429) set Y_ 1462.35
+$node_(1429) set Z_ 60
 $ns_ at 0.0 "$node_(1429) setdest 0.00 0.00 0.00"
-$node_(1430) set X_ 581.11
-$node_(1430) set Y_ 1619.04
-$node_(1430) set Y_ 60
+$node_(1430) set X_ 2197.23
+$node_(1430) set Y_ 1507.35
+$node_(1430) set Z_ 60
 $ns_ at 0.0 "$node_(1430) setdest 0.00 0.00 0.00"
-$node_(1431) set X_ 1797.1
-$node_(1431) set Y_ 2115.89
-$node_(1431) set Y_ 60
+$node_(1431) set X_ 2090.05
+$node_(1431) set Y_ 1588.9
+$node_(1431) set Z_ 60
 $ns_ at 0.0 "$node_(1431) setdest 0.00 0.00 0.00"
-$node_(1432) set X_ 2390.86
-$node_(1432) set Y_ 933.27
-$node_(1432) set Y_ 60
+$node_(1432) set X_ 2194.8
+$node_(1432) set Y_ 1221.99
+$node_(1432) set Z_ 30
 $ns_ at 0.0 "$node_(1432) setdest 0.00 0.00 0.00"
-$node_(1433) set X_ 2209.24
-$node_(1433) set Y_ 2417.53
-$node_(1433) set Y_ 30
+$node_(1433) set X_ 2194.8
+$node_(1433) set Y_ 1221.99
+$node_(1433) set Z_ 60
 $ns_ at 0.0 "$node_(1433) setdest 0.00 0.00 0.00"
-$node_(1434) set X_ 2152.98
-$node_(1434) set Y_ 1207.45
-$node_(1434) set Y_ 30
+$node_(1434) set X_ 2195.44
+$node_(1434) set Y_ 1266.98
+$node_(1434) set Z_ 60
 $ns_ at 0.0 "$node_(1434) setdest 0.00 0.00 0.00"
-$node_(1435) set X_ 2152.98
-$node_(1435) set Y_ 1207.45
-$node_(1435) set Y_ 60
+$node_(1435) set X_ 2196.09
+$node_(1435) set Y_ 1311.98
+$node_(1435) set Z_ 30
 $ns_ at 0.0 "$node_(1435) setdest 0.00 0.00 0.00"
-$node_(1436) set X_ 2390.6
-$node_(1436) set Y_ 888.28
-$node_(1436) set Y_ 30
+$node_(1436) set X_ 2196.73
+$node_(1436) set Y_ 1356.97
+$node_(1436) set Z_ 60
 $ns_ at 0.0 "$node_(1436) setdest 0.00 0.00 0.00"
-$node_(1437) set X_ 2390.6
-$node_(1437) set Y_ 888.28
-$node_(1437) set Y_ 60
+$node_(1437) set X_ 797.92
+$node_(1437) set Y_ 2036.74
+$node_(1437) set Z_ 30
 $ns_ at 0.0 "$node_(1437) setdest 0.00 0.00 0.00"
-$node_(1438) set X_ 2197.42
-$node_(1438) set Y_ 1417.35
-$node_(1438) set Y_ 30
+$node_(1438) set X_ 867.78
+$node_(1438) set Y_ 541.06
+$node_(1438) set Z_ 30
 $ns_ at 0.0 "$node_(1438) setdest 0.00 0.00 0.00"
-$node_(1439) set X_ 2197.33
-$node_(1439) set Y_ 1462.35
-$node_(1439) set Y_ 30
+$node_(1439) set X_ 867.13
+$node_(1439) set Y_ 496.06
+$node_(1439) set Z_ 30
 $ns_ at 0.0 "$node_(1439) setdest 0.00 0.00 0.00"
-$node_(1440) set X_ 2197.23
-$node_(1440) set Y_ 1507.35
-$node_(1440) set Y_ 60
+$node_(1440) set X_ 867.13
+$node_(1440) set Y_ 496.06
+$node_(1440) set Z_ 60
 $ns_ at 0.0 "$node_(1440) setdest 0.00 0.00 0.00"
-$node_(1441) set X_ 2194.8
-$node_(1441) set Y_ 1221.99
-$node_(1441) set Y_ 30
+$node_(1441) set X_ 639.89
+$node_(1441) set Y_ 2125.54
+$node_(1441) set Z_ 60
 $ns_ at 0.0 "$node_(1441) setdest 0.00 0.00 0.00"
-$node_(1442) set X_ 2194.8
-$node_(1442) set Y_ 1221.99
-$node_(1442) set Y_ 60
+$node_(1442) set X_ 688.85
+$node_(1442) set Y_ 2185.66
+$node_(1442) set Z_ 60
 $ns_ at 0.0 "$node_(1442) setdest 0.00 0.00 0.00"
-$node_(1443) set X_ 2195.44
-$node_(1443) set Y_ 1266.98
-$node_(1443) set Y_ 60
+$node_(1443) set X_ 894.24
+$node_(1443) set Y_ 2311.81
+$node_(1443) set Z_ 30
 $ns_ at 0.0 "$node_(1443) setdest 0.00 0.00 0.00"
-$node_(1444) set X_ 2196.09
-$node_(1444) set Y_ 1311.98
-$node_(1444) set Y_ 60
+$node_(1444) set X_ 871.69
+$node_(1444) set Y_ 811.03
+$node_(1444) set Z_ 30
 $ns_ at 0.0 "$node_(1444) setdest 0.00 0.00 0.00"
-$node_(1445) set X_ 886.85
-$node_(1445) set Y_ 2004.71
-$node_(1445) set Y_ 60
+$node_(1445) set X_ 871.69
+$node_(1445) set Y_ 811.03
+$node_(1445) set Z_ 60
 $ns_ at 0.0 "$node_(1445) setdest 0.00 0.00 0.00"
-$node_(1446) set X_ 867.78
-$node_(1446) set Y_ 541.06
-$node_(1446) set Y_ 30
+$node_(1446) set X_ 868.43
+$node_(1446) set Y_ 586.05
+$node_(1446) set Z_ 30
 $ns_ at 0.0 "$node_(1446) setdest 0.00 0.00 0.00"
-$node_(1447) set X_ 867.13
-$node_(1447) set Y_ 496.06
-$node_(1447) set Y_ 60
+$node_(1447) set X_ 1438.01
+$node_(1447) set Y_ 2219.87
+$node_(1447) set Z_ 30
 $ns_ at 0.0 "$node_(1447) setdest 0.00 0.00 0.00"
-$node_(1448) set X_ 687.94
-$node_(1448) set Y_ 2140.67
-$node_(1448) set Y_ 30
+$node_(1448) set X_ 869.73
+$node_(1448) set Y_ 676.04
+$node_(1448) set Z_ 30
 $ns_ at 0.0 "$node_(1448) setdest 0.00 0.00 0.00"
-$node_(1449) set X_ 687.94
-$node_(1449) set Y_ 2140.67
-$node_(1449) set Y_ 60
+$node_(1449) set X_ 869.73
+$node_(1449) set Y_ 676.04
+$node_(1449) set Z_ 60
 $ns_ at 0.0 "$node_(1449) setdest 0.00 0.00 0.00"
-$node_(1450) set X_ 688.85
-$node_(1450) set Y_ 2185.66
-$node_(1450) set Y_ 30
+$node_(1450) set X_ 869.08
+$node_(1450) set Y_ 631.05
+$node_(1450) set Z_ 60
 $ns_ at 0.0 "$node_(1450) setdest 0.00 0.00 0.00"
-$node_(1451) set X_ 688.85
-$node_(1451) set Y_ 2185.66
-$node_(1451) set Y_ 60
+$node_(1451) set X_ 2337.79
+$node_(1451) set Y_ 750.87
+$node_(1451) set Z_ 60
 $ns_ at 0.0 "$node_(1451) setdest 0.00 0.00 0.00"
-$node_(1452) set X_ 894.24
-$node_(1452) set Y_ 2311.81
-$node_(1452) set Y_ 30
+$node_(1452) set X_ 2286.55
+$node_(1452) set Y_ 785.73
+$node_(1452) set Z_ 30
 $ns_ at 0.0 "$node_(1452) setdest 0.00 0.00 0.00"
-$node_(1453) set X_ 872.48
-$node_(1453) set Y_ 870.98
-$node_(1453) set Y_ 60
+$node_(1453) set X_ 2286.55
+$node_(1453) set Y_ 785.73
+$node_(1453) set Z_ 60
 $ns_ at 0.0 "$node_(1453) setdest 0.00 0.00 0.00"
-$node_(1454) set X_ 871.69
-$node_(1454) set Y_ 811.03
-$node_(1454) set Y_ 60
+$node_(1454) set X_ 1287.3
+$node_(1454) set Y_ 1460.95
+$node_(1454) set Z_ 30
 $ns_ at 0.0 "$node_(1454) setdest 0.00 0.00 0.00"
-$node_(1455) set X_ 868.43
-$node_(1455) set Y_ 586.05
-$node_(1455) set Y_ 30
+$node_(1455) set X_ 1287.42
+$node_(1455) set Y_ 1505.95
+$node_(1455) set Z_ 30
 $ns_ at 0.0 "$node_(1455) setdest 0.00 0.00 0.00"
-$node_(1456) set X_ 1438.01
-$node_(1456) set Y_ 2219.87
-$node_(1456) set Y_ 30
+$node_(1456) set X_ 1285.64
+$node_(1456) set Y_ 1347.01
+$node_(1456) set Z_ 30
 $ns_ at 0.0 "$node_(1456) setdest 0.00 0.00 0.00"
-$node_(1457) set X_ 1438.01
-$node_(1457) set Y_ 2219.87
-$node_(1457) set Y_ 60
+$node_(1457) set X_ 1286.63
+$node_(1457) set Y_ 1391.99
+$node_(1457) set Z_ 60
 $ns_ at 0.0 "$node_(1457) setdest 0.00 0.00 0.00"
-$node_(1458) set X_ 869.73
-$node_(1458) set Y_ 676.04
-$node_(1458) set Y_ 60
+$node_(1458) set X_ 1284.64
+$node_(1458) set Y_ 1302.02
+$node_(1458) set Z_ 60
 $ns_ at 0.0 "$node_(1458) setdest 0.00 0.00 0.00"
-$node_(1459) set X_ 869.08
-$node_(1459) set Y_ 631.05
-$node_(1459) set Y_ 30
+$node_(1459) set X_ 1890.69
+$node_(1459) set Y_ 1600.89
+$node_(1459) set Z_ 30
 $ns_ at 0.0 "$node_(1459) setdest 0.00 0.00 0.00"
-$node_(1460) set X_ 2286.55
-$node_(1460) set Y_ 785.73
-$node_(1460) set Y_ 30
+$node_(1460) set X_ 1890.08
+$node_(1460) set Y_ 1555.9
+$node_(1460) set Z_ 30
 $ns_ at 0.0 "$node_(1460) setdest 0.00 0.00 0.00"
-$node_(1461) set X_ 2286.55
-$node_(1461) set Y_ 785.73
-$node_(1461) set Y_ 60
+$node_(1461) set X_ 1890.08
+$node_(1461) set Y_ 1555.9
+$node_(1461) set Z_ 60
 $ns_ at 0.0 "$node_(1461) setdest 0.00 0.00 0.00"
-$node_(1462) set X_ 1287.3
-$node_(1462) set Y_ 1460.95
-$node_(1462) set Y_ 30
+$node_(1462) set X_ 1717.17
+$node_(1462) set Y_ 1614.7
+$node_(1462) set Z_ 30
 $ns_ at 0.0 "$node_(1462) setdest 0.00 0.00 0.00"
-$node_(1463) set X_ 1287.42
-$node_(1463) set Y_ 1505.95
-$node_(1463) set Y_ 30
+$node_(1463) set X_ 1841.78
+$node_(1463) set Y_ 1609.56
+$node_(1463) set Z_ 30
 $ns_ at 0.0 "$node_(1463) setdest 0.00 0.00 0.00"
-$node_(1464) set X_ 1285.64
-$node_(1464) set Y_ 1347.01
-$node_(1464) set Y_ 30
+$node_(1464) set X_ 1841.78
+$node_(1464) set Y_ 1609.56
+$node_(1464) set Z_ 60
 $ns_ at 0.0 "$node_(1464) setdest 0.00 0.00 0.00"
-$node_(1465) set X_ 1285.64
-$node_(1465) set Y_ 1347.01
-$node_(1465) set Y_ 60
+$node_(1465) set X_ 1789.47
+$node_(1465) set Y_ 1489.02
+$node_(1465) set Z_ 30
 $ns_ at 0.0 "$node_(1465) setdest 0.00 0.00 0.00"
-$node_(1466) set X_ 1707.94
-$node_(1466) set Y_ 2318.49
-$node_(1466) set Y_ 30
+$node_(1466) set X_ 1789.47
+$node_(1466) set Y_ 1489.02
+$node_(1466) set Z_ 60
 $ns_ at 0.0 "$node_(1466) setdest 0.00 0.00 0.00"
-$node_(1467) set X_ 1890.08
-$node_(1467) set Y_ 1555.9
-$node_(1467) set Y_ 30
+$node_(1467) set X_ 1788.91
+$node_(1467) set Y_ 1444.02
+$node_(1467) set Z_ 30
 $ns_ at 0.0 "$node_(1467) setdest 0.00 0.00 0.00"
-$node_(1468) set X_ 1890.08
-$node_(1468) set Y_ 1555.9
-$node_(1468) set Y_ 60
+$node_(1468) set X_ 1788.91
+$node_(1468) set Y_ 1444.02
+$node_(1468) set Z_ 60
 $ns_ at 0.0 "$node_(1468) setdest 0.00 0.00 0.00"
-$node_(1469) set X_ 1717.17
-$node_(1469) set Y_ 1614.7
-$node_(1469) set Y_ 30
+$node_(1469) set X_ 1790.59
+$node_(1469) set Y_ 1579.01
+$node_(1469) set Z_ 60
 $ns_ at 0.0 "$node_(1469) setdest 0.00 0.00 0.00"
-$node_(1470) set X_ 1717.17
-$node_(1470) set Y_ 1614.7
-$node_(1470) set Y_ 60
+$node_(1470) set X_ 1790.03
+$node_(1470) set Y_ 1534.01
+$node_(1470) set Z_ 30
 $ns_ at 0.0 "$node_(1470) setdest 0.00 0.00 0.00"
-$node_(1471) set X_ 1841.78
-$node_(1471) set Y_ 1609.56
-$node_(1471) set Y_ 30
+$node_(1471) set X_ 1790.03
+$node_(1471) set Y_ 888.89
+$node_(1471) set Z_ 30
 $ns_ at 0.0 "$node_(1471) setdest 0.00 0.00 0.00"
-$node_(1472) set X_ 1789.47
-$node_(1472) set Y_ 1489.02
-$node_(1472) set Y_ 30
+$node_(1472) set X_ 1790.03
+$node_(1472) set Y_ 888.89
+$node_(1472) set Z_ 60
 $ns_ at 0.0 "$node_(1472) setdest 0.00 0.00 0.00"
-$node_(1473) set X_ 1788.91
-$node_(1473) set Y_ 1444.02
-$node_(1473) set Y_ 30
+$node_(1473) set X_ 1745.04
+$node_(1473) set Y_ 889.85
+$node_(1473) set Z_ 30
 $ns_ at 0.0 "$node_(1473) setdest 0.00 0.00 0.00"
-$node_(1474) set X_ 1790.59
-$node_(1474) set Y_ 1579.01
-$node_(1474) set Y_ 60
+$node_(1474) set X_ 1700.05
+$node_(1474) set Y_ 890.8
+$node_(1474) set Z_ 30
 $ns_ at 0.0 "$node_(1474) setdest 0.00 0.00 0.00"
-$node_(1475) set X_ 1790.03
-$node_(1475) set Y_ 1534.01
-$node_(1475) set Y_ 30
+$node_(1475) set X_ 1480.08
+$node_(1475) set Y_ 2010.01
+$node_(1475) set Z_ 30
 $ns_ at 0.0 "$node_(1475) setdest 0.00 0.00 0.00"
-$node_(1476) set X_ 1790.03
-$node_(1476) set Y_ 1534.01
-$node_(1476) set Y_ 60
+$node_(1476) set X_ 2064.12
+$node_(1476) set Y_ 2522.04
+$node_(1476) set Z_ 30
 $ns_ at 0.0 "$node_(1476) setdest 0.00 0.00 0.00"
-$node_(1477) set X_ 1929.13
-$node_(1477) set Y_ 2523.19
-$node_(1477) set Y_ 30
+$node_(1477) set X_ 2064.12
+$node_(1477) set Y_ 2522.04
+$node_(1477) set Z_ 60
 $ns_ at 0.0 "$node_(1477) setdest 0.00 0.00 0.00"
-$node_(1478) set X_ 1929.13
-$node_(1478) set Y_ 2523.19
-$node_(1478) set Y_ 60
+$node_(1478) set X_ 1549.93
+$node_(1478) set Y_ 892.61
+$node_(1478) set Z_ 60
 $ns_ at 0.0 "$node_(1478) setdest 0.00 0.00 0.00"
-$node_(1479) set X_ 1835.01
-$node_(1479) set Y_ 887.93
-$node_(1479) set Y_ 60
+$node_(1479) set X_ 1238.88
+$node_(1479) set Y_ 1806.14
+$node_(1479) set Z_ 30
 $ns_ at 0.0 "$node_(1479) setdest 0.00 0.00 0.00"
-$node_(1480) set X_ 1790.03
-$node_(1480) set Y_ 888.89
-$node_(1480) set Y_ 30
+$node_(1480) set X_ 1320.29
+$node_(1480) set Y_ 1804.97
+$node_(1480) set Z_ 60
 $ns_ at 0.0 "$node_(1480) setdest 0.00 0.00 0.00"
-$node_(1481) set X_ 1790.03
-$node_(1481) set Y_ 888.89
-$node_(1481) set Y_ 60
+$node_(1481) set X_ 1444.06
+$node_(1481) set Y_ 1988.98
+$node_(1481) set Z_ 60
 $ns_ at 0.0 "$node_(1481) setdest 0.00 0.00 0.00"
-$node_(1482) set X_ 1745.04
-$node_(1482) set Y_ 889.85
-$node_(1482) set Y_ 30
+$node_(1482) set X_ 1288.62
+$node_(1482) set Y_ 1790.55
+$node_(1482) set Z_ 30
 $ns_ at 0.0 "$node_(1482) setdest 0.00 0.00 0.00"
-$node_(1483) set X_ 1745.04
-$node_(1483) set Y_ 889.85
-$node_(1483) set Y_ 60
+$node_(1483) set X_ 1288.62
+$node_(1483) set Y_ 1790.55
+$node_(1483) set Z_ 60
 $ns_ at 0.0 "$node_(1483) setdest 0.00 0.00 0.00"
-$node_(1484) set X_ 1480.08
-$node_(1484) set Y_ 2010.01
-$node_(1484) set Y_ 60
+$node_(1484) set X_ 1356.16
+$node_(1484) set Y_ 1649.37
+$node_(1484) set Z_ 30
 $ns_ at 0.0 "$node_(1484) setdest 0.00 0.00 0.00"
-$node_(1485) set X_ 1594.93
-$node_(1485) set Y_ 892.12
-$node_(1485) set Y_ 30
+$node_(1485) set X_ 1356.16
+$node_(1485) set Y_ 1649.37
+$node_(1485) set Z_ 60
 $ns_ at 0.0 "$node_(1485) setdest 0.00 0.00 0.00"
-$node_(1486) set X_ 1594.93
-$node_(1486) set Y_ 892.12
-$node_(1486) set Y_ 60
+$node_(1486) set X_ 1356.55
+$node_(1486) set Y_ 1694.37
+$node_(1486) set Z_ 30
 $ns_ at 0.0 "$node_(1486) setdest 0.00 0.00 0.00"
-$node_(1487) set X_ 1238.88
-$node_(1487) set Y_ 1806.14
-$node_(1487) set Y_ 30
+$node_(1487) set X_ 1356.55
+$node_(1487) set Y_ 1694.37
+$node_(1487) set Z_ 60
 $ns_ at 0.0 "$node_(1487) setdest 0.00 0.00 0.00"
-$node_(1488) set X_ 1238.88
-$node_(1488) set Y_ 1806.14
-$node_(1488) set Y_ 60
+$node_(1488) set X_ 1348.81
+$node_(1488) set Y_ 1932.21
+$node_(1488) set Z_ 60
 $ns_ at 0.0 "$node_(1488) setdest 0.00 0.00 0.00"
-$node_(1489) set X_ 1320.29
-$node_(1489) set Y_ 1804.97
-$node_(1489) set Y_ 30
+$node_(1489) set X_ 1348.22
+$node_(1489) set Y_ 1887.22
+$node_(1489) set Z_ 30
 $ns_ at 0.0 "$node_(1489) setdest 0.00 0.00 0.00"
-$node_(1490) set X_ 1444.06
-$node_(1490) set Y_ 1988.98
-$node_(1490) set Y_ 30
+$node_(1490) set X_ 1348.22
+$node_(1490) set Y_ 1887.22
+$node_(1490) set Z_ 60
 $ns_ at 0.0 "$node_(1490) setdest 0.00 0.00 0.00"
-$node_(1491) set X_ 1444.06
-$node_(1491) set Y_ 1988.98
-$node_(1491) set Y_ 60
+$node_(1491) set X_ 1641.38
+$node_(1491) set Y_ 2217.62
+$node_(1491) set Z_ 30
 $ns_ at 0.0 "$node_(1491) setdest 0.00 0.00 0.00"
-$node_(1492) set X_ 1288.62
-$node_(1492) set Y_ 1790.55
-$node_(1492) set Y_ 30
+$node_(1492) set X_ 1641.38
+$node_(1492) set Y_ 2217.62
+$node_(1492) set Z_ 60
 $ns_ at 0.0 "$node_(1492) setdest 0.00 0.00 0.00"
-$node_(1493) set X_ 1356.16
-$node_(1493) set Y_ 1649.37
-$node_(1493) set Y_ 60
+$node_(1493) set X_ 998.26
+$node_(1493) set Y_ 2019.8
+$node_(1493) set Z_ 30
 $ns_ at 0.0 "$node_(1493) setdest 0.00 0.00 0.00"
-$node_(1494) set X_ 1356.55
-$node_(1494) set Y_ 1694.37
-$node_(1494) set Y_ 30
+$node_(1494) set X_ 998.26
+$node_(1494) set Y_ 2019.8
+$node_(1494) set Z_ 60
 $ns_ at 0.0 "$node_(1494) setdest 0.00 0.00 0.00"
-$node_(1495) set X_ 1356.55
-$node_(1495) set Y_ 1694.37
-$node_(1495) set Y_ 60
+$node_(1495) set X_ 963.16
+$node_(1495) set Y_ 2034.95
+$node_(1495) set Z_ 60
 $ns_ at 0.0 "$node_(1495) setdest 0.00 0.00 0.00"
-$node_(1496) set X_ 1348.22
-$node_(1496) set Y_ 1887.22
-$node_(1496) set Y_ 30
+$node_(1496) set X_ 910.02
+$node_(1496) set Y_ 2036.98
+$node_(1496) set Z_ 30
 $ns_ at 0.0 "$node_(1496) setdest 0.00 0.00 0.00"
-$node_(1497) set X_ 1348.22
-$node_(1497) set Y_ 1887.22
-$node_(1497) set Y_ 60
+$node_(1497) set X_ 910.02
+$node_(1497) set Y_ 2036.98
+$node_(1497) set Z_ 60
 $ns_ at 0.0 "$node_(1497) setdest 0.00 0.00 0.00"
-$node_(1498) set X_ 1641.38
-$node_(1498) set Y_ 2217.62
-$node_(1498) set Y_ 30
+$node_(1498) set X_ 903.91
+$node_(1498) set Y_ 2125.14
+$node_(1498) set Z_ 30
 $ns_ at 0.0 "$node_(1498) setdest 0.00 0.00 0.00"
-$node_(1499) set X_ 1641.38
-$node_(1499) set Y_ 2217.62
-$node_(1499) set Y_ 60
+$node_(1499) set X_ 1090.01
+$node_(1499) set Y_ 2095.72
+$node_(1499) set Z_ 60
 $ns_ at 0.0 "$node_(1499) setdest 0.00 0.00 0.00"
-$node_(1500) set X_ 998.26
-$node_(1500) set Y_ 2019.8
-$node_(1500) set Y_ 30
+$node_(1500) set X_ 2287.35
+$node_(1500) set Y_ 830.72
+$node_(1500) set Z_ 30
 $ns_ at 0.0 "$node_(1500) setdest 0.00 0.00 0.00"
-$node_(1501) set X_ 1008.16
-$node_(1501) set Y_ 2034.23
-$node_(1501) set Y_ 30
+$node_(1501) set X_ 1483.57
+$node_(1501) set Y_ 811.55
+$node_(1501) set Z_ 30
 $ns_ at 0.0 "$node_(1501) setdest 0.00 0.00 0.00"
-$node_(1502) set X_ 1008.16
-$node_(1502) set Y_ 2034.23
-$node_(1502) set Y_ 60
+$node_(1502) set X_ 1438.58
+$node_(1502) set Y_ 812.43
+$node_(1502) set Z_ 30
 $ns_ at 0.0 "$node_(1502) setdest 0.00 0.00 0.00"
-$node_(1503) set X_ 963.16
-$node_(1503) set Y_ 2034.95
-$node_(1503) set Y_ 30
+$node_(1503) set X_ 1438.58
+$node_(1503) set Y_ 812.43
+$node_(1503) set Z_ 60
 $ns_ at 0.0 "$node_(1503) setdest 0.00 0.00 0.00"
-$node_(1504) set X_ 963.16
-$node_(1504) set Y_ 2034.95
-$node_(1504) set Y_ 60
+$node_(1504) set X_ 1573.56
+$node_(1504) set Y_ 809.77
+$node_(1504) set Z_ 30
 $ns_ at 0.0 "$node_(1504) setdest 0.00 0.00 0.00"
-$node_(1505) set X_ 910.02
-$node_(1505) set Y_ 2036.98
-$node_(1505) set Y_ 30
+$node_(1505) set X_ 1573.56
+$node_(1505) set Y_ 809.77
+$node_(1505) set Z_ 60
 $ns_ at 0.0 "$node_(1505) setdest 0.00 0.00 0.00"
-$node_(1506) set X_ 910.02
-$node_(1506) set Y_ 2036.98
-$node_(1506) set Y_ 60
+$node_(1506) set X_ 1528.57
+$node_(1506) set Y_ 810.66
+$node_(1506) set Z_ 30
 $ns_ at 0.0 "$node_(1506) setdest 0.00 0.00 0.00"
-$node_(1507) set X_ 938.47
-$node_(1507) set Y_ 2020.43
-$node_(1507) set Y_ 60
+$node_(1507) set X_ 1749.39
+$node_(1507) set Y_ 2421.1
+$node_(1507) set Z_ 60
 $ns_ at 0.0 "$node_(1507) setdest 0.00 0.00 0.00"
-$node_(1508) set X_ 903.91
-$node_(1508) set Y_ 2125.14
-$node_(1508) set Y_ 30
+$node_(1508) set X_ 1542.4
+$node_(1508) set Y_ 1752.9
+$node_(1508) set Z_ 30
 $ns_ at 0.0 "$node_(1508) setdest 0.00 0.00 0.00"
-$node_(1509) set X_ 903.91
-$node_(1509) set Y_ 2125.14
-$node_(1509) set Y_ 60
+$node_(1509) set X_ 1542.4
+$node_(1509) set Y_ 1752.9
+$node_(1509) set Z_ 60
 $ns_ at 0.0 "$node_(1509) setdest 0.00 0.00 0.00"
-$node_(1510) set X_ 1090.01
-$node_(1510) set Y_ 2095.72
-$node_(1510) set Y_ 30
+$node_(1510) set X_ 1541.82
+$node_(1510) set Y_ 1707.91
+$node_(1510) set Z_ 30
 $ns_ at 0.0 "$node_(1510) setdest 0.00 0.00 0.00"
-$node_(1511) set X_ 1089.69
-$node_(1511) set Y_ 2053.99
-$node_(1511) set Y_ 30
+$node_(1511) set X_ 1449.17
+$node_(1511) set Y_ 1618.42
+$node_(1511) set Z_ 30
 $ns_ at 0.0 "$node_(1511) setdest 0.00 0.00 0.00"
-$node_(1512) set X_ 1053.16
-$node_(1512) set Y_ 2032.99
-$node_(1512) set Y_ 30
+$node_(1512) set X_ 1449.17
+$node_(1512) set Y_ 1618.42
+$node_(1512) set Z_ 60
 $ns_ at 0.0 "$node_(1512) setdest 0.00 0.00 0.00"
-$node_(1513) set X_ 1053.16
-$node_(1513) set Y_ 2032.99
-$node_(1513) set Y_ 60
+$node_(1513) set X_ 1568.53
+$node_(1513) set Y_ 1617.13
+$node_(1513) set Z_ 30
 $ns_ at 0.0 "$node_(1513) setdest 0.00 0.00 0.00"
-$node_(1514) set X_ 1483.57
-$node_(1514) set Y_ 811.55
-$node_(1514) set Y_ 60
+$node_(1514) set X_ 1568.53
+$node_(1514) set Y_ 1617.13
+$node_(1514) set Z_ 60
 $ns_ at 0.0 "$node_(1514) setdest 0.00 0.00 0.00"
-$node_(1515) set X_ 1573.56
-$node_(1515) set Y_ 809.77
-$node_(1515) set Y_ 30
+$node_(1515) set X_ 1628.49
+$node_(1515) set Y_ 1616.34
+$node_(1515) set Z_ 30
 $ns_ at 0.0 "$node_(1515) setdest 0.00 0.00 0.00"
-$node_(1516) set X_ 1573.56
-$node_(1516) set Y_ 809.77
-$node_(1516) set Y_ 60
+$node_(1516) set X_ 1628.49
+$node_(1516) set Y_ 1616.34
+$node_(1516) set Z_ 60
 $ns_ at 0.0 "$node_(1516) setdest 0.00 0.00 0.00"
-$node_(1517) set X_ 1528.57
-$node_(1517) set Y_ 810.66
-$node_(1517) set Y_ 60
+$node_(1517) set X_ 1692.66
+$node_(1517) set Y_ 1601.46
+$node_(1517) set Z_ 60
 $ns_ at 0.0 "$node_(1517) setdest 0.00 0.00 0.00"
-$node_(1518) set X_ 1749.39
-$node_(1518) set Y_ 2421.1
-$node_(1518) set Y_ 30
+$node_(1518) set X_ 795.07
+$node_(1518) set Y_ 1809.32
+$node_(1518) set Z_ 30
 $ns_ at 0.0 "$node_(1518) setdest 0.00 0.00 0.00"
-$node_(1519) set X_ 1542.4
-$node_(1519) set Y_ 1752.9
-$node_(1519) set Y_ 60
+$node_(1519) set X_ 784.72
+$node_(1519) set Y_ 1762.97
+$node_(1519) set Z_ 30
 $ns_ at 0.0 "$node_(1519) setdest 0.00 0.00 0.00"
-$node_(1520) set X_ 1449.17
-$node_(1520) set Y_ 1618.42
-$node_(1520) set Y_ 60
+$node_(1520) set X_ 1706.53
+$node_(1520) set Y_ 2217.02
+$node_(1520) set Z_ 30
 $ns_ at 0.0 "$node_(1520) setdest 0.00 0.00 0.00"
-$node_(1521) set X_ 1568.53
-$node_(1521) set Y_ 1617.13
-$node_(1521) set Y_ 60
+$node_(1521) set X_ 785.0
+$node_(1521) set Y_ 1717.98
+$node_(1521) set Z_ 30
 $ns_ at 0.0 "$node_(1521) setdest 0.00 0.00 0.00"
-$node_(1522) set X_ 1692.66
-$node_(1522) set Y_ 1601.46
-$node_(1522) set Y_ 60
+$node_(1522) set X_ 785.0
+$node_(1522) set Y_ 1717.98
+$node_(1522) set Z_ 60
 $ns_ at 0.0 "$node_(1522) setdest 0.00 0.00 0.00"
-$node_(1523) set X_ 1706.53
-$node_(1523) set Y_ 2217.02
-$node_(1523) set Y_ 30
+$node_(1523) set X_ 889.07
+$node_(1523) set Y_ 1867.77
+$node_(1523) set Z_ 30
 $ns_ at 0.0 "$node_(1523) setdest 0.00 0.00 0.00"
-$node_(1524) set X_ 785.0
-$node_(1524) set Y_ 1717.98
-$node_(1524) set Y_ 60
+$node_(1524) set X_ 889.07
+$node_(1524) set Y_ 1867.77
+$node_(1524) set Z_ 60
 $ns_ at 0.0 "$node_(1524) setdest 0.00 0.00 0.00"
-$node_(1525) set X_ 889.07
-$node_(1525) set Y_ 1867.77
-$node_(1525) set Y_ 30
+$node_(1525) set X_ 888.45
+$node_(1525) set Y_ 1822.78
+$node_(1525) set Z_ 30
 $ns_ at 0.0 "$node_(1525) setdest 0.00 0.00 0.00"
-$node_(1526) set X_ 889.07
-$node_(1526) set Y_ 1867.77
-$node_(1526) set Y_ 60
+$node_(1526) set X_ 888.45
+$node_(1526) set Y_ 1822.78
+$node_(1526) set Z_ 60
 $ns_ at 0.0 "$node_(1526) setdest 0.00 0.00 0.00"
-$node_(1527) set X_ 888.45
-$node_(1527) set Y_ 1822.78
-$node_(1527) set Y_ 30
+$node_(1527) set X_ 1529.2
+$node_(1527) set Y_ 1801.99
+$node_(1527) set Z_ 60
 $ns_ at 0.0 "$node_(1527) setdest 0.00 0.00 0.00"
-$node_(1528) set X_ 1484.21
-$node_(1528) set Y_ 1802.63
-$node_(1528) set Y_ 30
+$node_(1528) set X_ 1191.07
+$node_(1528) set Y_ 1768.62
+$node_(1528) set Z_ 60
 $ns_ at 0.0 "$node_(1528) setdest 0.00 0.00 0.00"
-$node_(1529) set X_ 1529.2
-$node_(1529) set Y_ 1801.99
-$node_(1529) set Y_ 30
+$node_(1529) set X_ 1166.92
+$node_(1529) set Y_ 1807.18
+$node_(1529) set Z_ 60
 $ns_ at 0.0 "$node_(1529) setdest 0.00 0.00 0.00"
-$node_(1530) set X_ 1191.07
-$node_(1530) set Y_ 1768.62
-$node_(1530) set Y_ 30
+$node_(1530) set X_ 1189.47
+$node_(1530) set Y_ 1678.63
+$node_(1530) set Z_ 30
 $ns_ at 0.0 "$node_(1530) setdest 0.00 0.00 0.00"
-$node_(1531) set X_ 1191.07
-$node_(1531) set Y_ 1768.62
-$node_(1531) set Y_ 60
+$node_(1531) set X_ 1190.27
+$node_(1531) set Y_ 1723.63
+$node_(1531) set Z_ 30
 $ns_ at 0.0 "$node_(1531) setdest 0.00 0.00 0.00"
-$node_(1532) set X_ 1166.92
-$node_(1532) set Y_ 1807.18
-$node_(1532) set Y_ 30
+$node_(1532) set X_ 1188.67
+$node_(1532) set Y_ 1633.64
+$node_(1532) set Z_ 60
 $ns_ at 0.0 "$node_(1532) setdest 0.00 0.00 0.00"
-$node_(1533) set X_ 1166.92
-$node_(1533) set Y_ 1807.18
-$node_(1533) set Y_ 60
+$node_(1533) set X_ 1139.85
+$node_(1533) set Y_ 1619.49
+$node_(1533) set Z_ 60
 $ns_ at 0.0 "$node_(1533) setdest 0.00 0.00 0.00"
-$node_(1534) set X_ 1189.47
-$node_(1534) set Y_ 1678.63
-$node_(1534) set Y_ 60
+$node_(1534) set X_ 810.97
+$node_(1534) set Y_ 1222.42
+$node_(1534) set Z_ 30
 $ns_ at 0.0 "$node_(1534) setdest 0.00 0.00 0.00"
-$node_(1535) set X_ 1190.27
-$node_(1535) set Y_ 1723.63
-$node_(1535) set Y_ 30
+$node_(1535) set X_ 855.96
+$node_(1535) set Y_ 1221.82
+$node_(1535) set Z_ 60
 $ns_ at 0.0 "$node_(1535) setdest 0.00 0.00 0.00"
-$node_(1536) set X_ 1305.61
-$node_(1536) set Y_ 2326.37
-$node_(1536) set Y_ 30
+$node_(1536) set X_ 778.13
+$node_(1536) set Y_ 1297.55
+$node_(1536) set Z_ 60
 $ns_ at 0.0 "$node_(1536) setdest 0.00 0.00 0.00"
-$node_(1537) set X_ 1188.67
-$node_(1537) set Y_ 1633.64
-$node_(1537) set Y_ 30
+$node_(1537) set X_ 777.55
+$node_(1537) set Y_ 1252.56
+$node_(1537) set Z_ 60
 $ns_ at 0.0 "$node_(1537) setdest 0.00 0.00 0.00"
-$node_(1538) set X_ 1094.86
-$node_(1538) set Y_ 1620.09
-$node_(1538) set Y_ 60
+$node_(1538) set X_ 731.73
+$node_(1538) set Y_ 1627.98
+$node_(1538) set Z_ 60
 $ns_ at 0.0 "$node_(1538) setdest 0.00 0.00 0.00"
-$node_(1539) set X_ 1139.85
-$node_(1539) set Y_ 1619.49
-$node_(1539) set Y_ 30
+$node_(1539) set X_ 1121.93
+$node_(1539) set Y_ 1807.82
+$node_(1539) set Z_ 60
 $ns_ at 0.0 "$node_(1539) setdest 0.00 0.00 0.00"
-$node_(1540) set X_ 810.97
-$node_(1540) set Y_ 1222.42
-$node_(1540) set Y_ 30
+$node_(1540) set X_ 1086.11
+$node_(1540) set Y_ 1780.52
+$node_(1540) set Z_ 60
 $ns_ at 0.0 "$node_(1540) setdest 0.00 0.00 0.00"
-$node_(1541) set X_ 855.96
-$node_(1541) set Y_ 1221.82
-$node_(1541) set Y_ 30
+$node_(1541) set X_ 1481.59
+$node_(1541) set Y_ 1226.11
+$node_(1541) set Z_ 30
 $ns_ at 0.0 "$node_(1541) setdest 0.00 0.00 0.00"
-$node_(1542) set X_ 855.96
-$node_(1542) set Y_ 1221.82
-$node_(1542) set Y_ 60
+$node_(1542) set X_ 1481.59
+$node_(1542) set Y_ 1226.11
+$node_(1542) set Z_ 60
 $ns_ at 0.0 "$node_(1542) setdest 0.00 0.00 0.00"
-$node_(1543) set X_ 778.13
-$node_(1543) set Y_ 1297.55
-$node_(1543) set Y_ 60
+$node_(1543) set X_ 1482.64
+$node_(1543) set Y_ 1271.09
+$node_(1543) set Z_ 60
 $ns_ at 0.0 "$node_(1543) setdest 0.00 0.00 0.00"
-$node_(1544) set X_ 1842.93
-$node_(1544) set Y_ 2316.93
-$node_(1544) set Y_ 30
+$node_(1544) set X_ 1887.08
+$node_(1544) set Y_ 2114.07
+$node_(1544) set Z_ 30
 $ns_ at 0.0 "$node_(1544) setdest 0.00 0.00 0.00"
-$node_(1545) set X_ 1121.93
-$node_(1545) set Y_ 1807.82
-$node_(1545) set Y_ 30
+$node_(1545) set X_ 1887.08
+$node_(1545) set Y_ 2114.07
+$node_(1545) set Z_ 60
 $ns_ at 0.0 "$node_(1545) setdest 0.00 0.00 0.00"
-$node_(1546) set X_ 1121.93
-$node_(1546) set Y_ 1807.82
-$node_(1546) set Y_ 60
+$node_(1546) set X_ 1384.82
+$node_(1546) set Y_ 1488.86
+$node_(1546) set Z_ 30
 $ns_ at 0.0 "$node_(1546) setdest 0.00 0.00 0.00"
-$node_(1547) set X_ 1086.11
-$node_(1547) set Y_ 1780.52
-$node_(1547) set Y_ 30
+$node_(1547) set X_ 1385.25
+$node_(1547) set Y_ 1533.86
+$node_(1547) set Z_ 30
 $ns_ at 0.0 "$node_(1547) setdest 0.00 0.00 0.00"
-$node_(1548) set X_ 1481.59
-$node_(1548) set Y_ 1226.11
-$node_(1548) set Y_ 30
+$node_(1548) set X_ 1385.25
+$node_(1548) set Y_ 1533.86
+$node_(1548) set Z_ 60
 $ns_ at 0.0 "$node_(1548) setdest 0.00 0.00 0.00"
-$node_(1549) set X_ 1482.64
-$node_(1549) set Y_ 1271.09
-$node_(1549) set Y_ 60
+$node_(1549) set X_ 1525.8
+$node_(1549) set Y_ 1413.5
+$node_(1549) set Z_ 60
 $ns_ at 0.0 "$node_(1549) setdest 0.00 0.00 0.00"
-$node_(1550) set X_ 1887.08
-$node_(1550) set Y_ 2114.07
-$node_(1550) set Y_ 30
+$node_(1550) set X_ 1483.7
+$node_(1550) set Y_ 1316.08
+$node_(1550) set Z_ 60
 $ns_ at 0.0 "$node_(1550) setdest 0.00 0.00 0.00"
-$node_(1551) set X_ 1384.82
-$node_(1551) set Y_ 1488.86
-$node_(1551) set Y_ 30
+$node_(1551) set X_ 1570.77
+$node_(1551) set Y_ 1412.17
+$node_(1551) set Z_ 30
 $ns_ at 0.0 "$node_(1551) setdest 0.00 0.00 0.00"
-$node_(1552) set X_ 1420.93
-$node_(1552) set Y_ 1416.54
-$node_(1552) set Y_ 30
+$node_(1552) set X_ 1570.77
+$node_(1552) set Y_ 1412.17
+$node_(1552) set Z_ 60
 $ns_ at 0.0 "$node_(1552) setdest 0.00 0.00 0.00"
-$node_(1553) set X_ 1465.91
-$node_(1553) set Y_ 1415.25
-$node_(1553) set Y_ 30
+$node_(1553) set X_ 1278.63
+$node_(1553) set Y_ 799.85
+$node_(1553) set Z_ 30
 $ns_ at 0.0 "$node_(1553) setdest 0.00 0.00 0.00"
-$node_(1554) set X_ 1483.7
-$node_(1554) set Y_ 1316.08
-$node_(1554) set Y_ 30
+$node_(1554) set X_ 1278.63
+$node_(1554) set Y_ 799.85
+$node_(1554) set Z_ 60
 $ns_ at 0.0 "$node_(1554) setdest 0.00 0.00 0.00"
-$node_(1555) set X_ 1483.7
-$node_(1555) set Y_ 1316.08
-$node_(1555) set Y_ 60
+$node_(1555) set X_ 1282.96
+$node_(1555) set Y_ 935.79
+$node_(1555) set Z_ 60
 $ns_ at 0.0 "$node_(1555) setdest 0.00 0.00 0.00"
-$node_(1556) set X_ 1278.63
-$node_(1556) set Y_ 799.85
-$node_(1556) set Y_ 60
+$node_(1556) set X_ 1283.3
+$node_(1556) set Y_ 980.78
+$node_(1556) set Z_ 30
 $ns_ at 0.0 "$node_(1556) setdest 0.00 0.00 0.00"
-$node_(1557) set X_ 2109.15
-$node_(1557) set Y_ 2364.66
-$node_(1557) set Y_ 30
+$node_(1557) set X_ 1283.3
+$node_(1557) set Y_ 980.78
+$node_(1557) set Z_ 60
 $ns_ at 0.0 "$node_(1557) setdest 0.00 0.00 0.00"
-$node_(1558) set X_ 2109.15
-$node_(1558) set Y_ 2364.66
-$node_(1558) set Y_ 60
+$node_(1558) set X_ 1283.64
+$node_(1558) set Y_ 1025.78
+$node_(1558) set Z_ 60
 $ns_ at 0.0 "$node_(1558) setdest 0.00 0.00 0.00"
-$node_(1559) set X_ 1282.62
-$node_(1559) set Y_ 890.79
-$node_(1559) set Y_ 30
+$node_(1559) set X_ 1307.1
+$node_(1559) set Y_ 817.42
+$node_(1559) set Z_ 30
 $ns_ at 0.0 "$node_(1559) setdest 0.00 0.00 0.00"
-$node_(1560) set X_ 1282.62
-$node_(1560) set Y_ 890.79
-$node_(1560) set Y_ 60
+$node_(1560) set X_ 1241.05
+$node_(1560) set Y_ 818.28
+$node_(1560) set Z_ 30
 $ns_ at 0.0 "$node_(1560) setdest 0.00 0.00 0.00"
-$node_(1561) set X_ 1282.96
-$node_(1561) set Y_ 935.79
-$node_(1561) set Y_ 30
+$node_(1561) set X_ 1241.05
+$node_(1561) set Y_ 818.28
+$node_(1561) set Z_ 60
 $ns_ at 0.0 "$node_(1561) setdest 0.00 0.00 0.00"
-$node_(1562) set X_ 1282.96
-$node_(1562) set Y_ 935.79
-$node_(1562) set Y_ 60
+$node_(1562) set X_ 1196.06
+$node_(1562) set Y_ 819.03
+$node_(1562) set Z_ 60
 $ns_ at 0.0 "$node_(1562) setdest 0.00 0.00 0.00"
-$node_(1563) set X_ 1283.64
-$node_(1563) set Y_ 1025.78
-$node_(1563) set Y_ 30
+$node_(1563) set X_ 1282.21
+$node_(1563) set Y_ 837.26
+$node_(1563) set Z_ 60
 $ns_ at 0.0 "$node_(1563) setdest 0.00 0.00 0.00"
-$node_(1564) set X_ 1307.1
-$node_(1564) set Y_ 817.42
-$node_(1564) set Y_ 30
+$node_(1564) set X_ 1140.28
+$node_(1564) set Y_ 2017.31
+$node_(1564) set Z_ 30
 $ns_ at 0.0 "$node_(1564) setdest 0.00 0.00 0.00"
-$node_(1565) set X_ 1307.1
-$node_(1565) set Y_ 817.42
-$node_(1565) set Y_ 60
+$node_(1565) set X_ 923.68
+$node_(1565) set Y_ 819.58
+$node_(1565) set Z_ 60
 $ns_ at 0.0 "$node_(1565) setdest 0.00 0.00 0.00"
-$node_(1566) set X_ 1241.05
-$node_(1566) set Y_ 818.28
-$node_(1566) set Y_ 30
+$node_(1566) set X_ 866.48
+$node_(1566) set Y_ 451.07
+$node_(1566) set Z_ 30
 $ns_ at 0.0 "$node_(1566) setdest 0.00 0.00 0.00"
-$node_(1567) set X_ 1282.21
-$node_(1567) set Y_ 837.26
-$node_(1567) set Y_ 30
+$node_(1567) set X_ 1210.24
+$node_(1567) set Y_ 2030.46
+$node_(1567) set Z_ 30
 $ns_ at 0.0 "$node_(1567) setdest 0.00 0.00 0.00"
-$node_(1568) set X_ 1192.32
-$node_(1568) set Y_ 1887.46
-$node_(1568) set Y_ 30
+$node_(1568) set X_ 1192.65
+$node_(1568) set Y_ 1932.45
+$node_(1568) set Z_ 60
 $ns_ at 0.0 "$node_(1568) setdest 0.00 0.00 0.00"
-$node_(1569) set X_ 1192.32
-$node_(1569) set Y_ 1887.46
-$node_(1569) set Y_ 60
+$node_(1569) set X_ 1320.87
+$node_(1569) set Y_ 2016.81
+$node_(1569) set Z_ 30
 $ns_ at 0.0 "$node_(1569) setdest 0.00 0.00 0.00"
-$node_(1570) set X_ 1140.28
-$node_(1570) set Y_ 2017.31
-$node_(1570) set Y_ 30
+$node_(1570) set X_ 2249.99
+$node_(1570) set Y_ 2312.22
+$node_(1570) set Z_ 30
 $ns_ at 0.0 "$node_(1570) setdest 0.00 0.00 0.00"
-$node_(1571) set X_ 923.68
-$node_(1571) set Y_ 819.58
-$node_(1571) set Y_ 30
+$node_(1571) set X_ 2249.99
+$node_(1571) set Y_ 2312.22
+$node_(1571) set Z_ 60
 $ns_ at 0.0 "$node_(1571) setdest 0.00 0.00 0.00"
-$node_(1572) set X_ 923.68
-$node_(1572) set Y_ 819.58
-$node_(1572) set Y_ 60
+$node_(1572) set X_ 836.46
+$node_(1572) set Y_ 2021.8
+$node_(1572) set Z_ 60
 $ns_ at 0.0 "$node_(1572) setdest 0.00 0.00 0.00"
-$node_(1573) set X_ 866.48
-$node_(1573) set Y_ 451.07
-$node_(1573) set Y_ 30
+$node_(1573) set X_ 791.48
+$node_(1573) set Y_ 2022.64
+$node_(1573) set Z_ 60
 $ns_ at 0.0 "$node_(1573) setdest 0.00 0.00 0.00"
-$node_(1574) set X_ 1210.24
-$node_(1574) set Y_ 2030.46
-$node_(1574) set Y_ 30
+$node_(1574) set X_ 780.92
+$node_(1574) set Y_ 1849.36
+$node_(1574) set Z_ 30
 $ns_ at 0.0 "$node_(1574) setdest 0.00 0.00 0.00"
-$node_(1575) set X_ 1296.81
-$node_(1575) set Y_ 2049.87
-$node_(1575) set Y_ 60
+$node_(1575) set X_ 1227.54
+$node_(1575) set Y_ 2431.45
+$node_(1575) set Z_ 30
 $ns_ at 0.0 "$node_(1575) setdest 0.00 0.00 0.00"
-$node_(1576) set X_ 1192.65
-$node_(1576) set Y_ 1932.45
-$node_(1576) set Y_ 30
+$node_(1576) set X_ 731.52
+$node_(1576) set Y_ 2023.2
+$node_(1576) set Z_ 30
 $ns_ at 0.0 "$node_(1576) setdest 0.00 0.00 0.00"
-$node_(1577) set X_ 1320.87
-$node_(1577) set Y_ 2016.81
-$node_(1577) set Y_ 60
+$node_(1577) set X_ 678.37
+$node_(1577) set Y_ 1704.39
+$node_(1577) set Z_ 30
 $ns_ at 0.0 "$node_(1577) setdest 0.00 0.00 0.00"
-$node_(1578) set X_ 1483.0
-$node_(1578) set Y_ 2219.15
-$node_(1578) set Y_ 30
+$node_(1578) set X_ 678.37
+$node_(1578) set Y_ 1704.39
+$node_(1578) set Z_ 60
 $ns_ at 0.0 "$node_(1578) setdest 0.00 0.00 0.00"
-$node_(1579) set X_ 1483.0
-$node_(1579) set Y_ 2219.15
-$node_(1579) set Y_ 60
+$node_(1579) set X_ 782.98
+$node_(1579) set Y_ 1997.93
+$node_(1579) set Z_ 30
 $ns_ at 0.0 "$node_(1579) setdest 0.00 0.00 0.00"
-$node_(1580) set X_ 2249.99
-$node_(1580) set Y_ 2312.22
-$node_(1580) set Y_ 30
+$node_(1580) set X_ 782.98
+$node_(1580) set Y_ 1997.93
+$node_(1580) set Z_ 60
 $ns_ at 0.0 "$node_(1580) setdest 0.00 0.00 0.00"
-$node_(1581) set X_ 2249.99
-$node_(1581) set Y_ 2312.22
-$node_(1581) set Y_ 60
+$node_(1581) set X_ 2203.95
+$node_(1581) set Y_ 2113.48
+$node_(1581) set Z_ 30
 $ns_ at 0.0 "$node_(1581) setdest 0.00 0.00 0.00"
-$node_(1582) set X_ 780.92
-$node_(1582) set Y_ 1849.36
-$node_(1582) set Y_ 60
+$node_(1582) set X_ 2304.61
+$node_(1582) set Y_ 2100.37
+$node_(1582) set Z_ 30
 $ns_ at 0.0 "$node_(1582) setdest 0.00 0.00 0.00"
-$node_(1583) set X_ 780.55
-$node_(1583) set Y_ 1894.35
-$node_(1583) set Y_ 30
+$node_(1583) set X_ 2304.01
+$node_(1583) set Y_ 2055.38
+$node_(1583) set Z_ 30
 $ns_ at 0.0 "$node_(1583) setdest 0.00 0.00 0.00"
-$node_(1584) set X_ 1227.54
-$node_(1584) set Y_ 2431.45
-$node_(1584) set Y_ 30
+$node_(1584) set X_ 699.1
+$node_(1584) set Y_ 2039.4
+$node_(1584) set Z_ 30
 $ns_ at 0.0 "$node_(1584) setdest 0.00 0.00 0.00"
-$node_(1585) set X_ 1227.54
-$node_(1585) set Y_ 2431.45
-$node_(1585) set Y_ 60
+$node_(1585) set X_ 699.1
+$node_(1585) set Y_ 2039.4
+$node_(1585) set Z_ 60
 $ns_ at 0.0 "$node_(1585) setdest 0.00 0.00 0.00"
-$node_(1586) set X_ 731.52
-$node_(1586) set Y_ 2023.2
-$node_(1586) set Y_ 60
+$node_(1586) set X_ 2279.0
+$node_(1586) set Y_ 1997.49
+$node_(1586) set Z_ 30
 $ns_ at 0.0 "$node_(1586) setdest 0.00 0.00 0.00"
-$node_(1587) set X_ 678.37
-$node_(1587) set Y_ 1704.39
-$node_(1587) set Y_ 60
+$node_(1587) set X_ 2279.0
+$node_(1587) set Y_ 1997.49
+$node_(1587) set Z_ 60
 $ns_ at 0.0 "$node_(1587) setdest 0.00 0.00 0.00"
-$node_(1588) set X_ 677.72
-$node_(1588) set Y_ 1659.39
-$node_(1588) set Y_ 30
+$node_(1588) set X_ 2180.73
+$node_(1588) set Y_ 2001.19
+$node_(1588) set Z_ 30
 $ns_ at 0.0 "$node_(1588) setdest 0.00 0.00 0.00"
-$node_(1589) set X_ 2203.95
-$node_(1589) set Y_ 2113.48
-$node_(1589) set Y_ 30
+$node_(1589) set X_ 2127.42
+$node_(1589) set Y_ 2001.47
+$node_(1589) set Z_ 30
 $ns_ at 0.0 "$node_(1589) setdest 0.00 0.00 0.00"
-$node_(1590) set X_ 2304.61
-$node_(1590) set Y_ 2100.37
-$node_(1590) set Y_ 30
+$node_(1590) set X_ 2158.96
+$node_(1590) set Y_ 2113.83
+$node_(1590) set Z_ 30
 $ns_ at 0.0 "$node_(1590) setdest 0.00 0.00 0.00"
-$node_(1591) set X_ 2304.61
-$node_(1591) set Y_ 2100.37
-$node_(1591) set Y_ 60
+$node_(1591) set X_ 673.79
+$node_(1591) set Y_ 1304.89
+$node_(1591) set Z_ 30
 $ns_ at 0.0 "$node_(1591) setdest 0.00 0.00 0.00"
-$node_(1592) set X_ 699.1
-$node_(1592) set Y_ 2039.4
-$node_(1592) set Y_ 60
+$node_(1592) set X_ 648.36
+$node_(1592) set Y_ 1227.7
+$node_(1592) set Z_ 30
 $ns_ at 0.0 "$node_(1592) setdest 0.00 0.00 0.00"
-$node_(1593) set X_ 2279.0
-$node_(1593) set Y_ 1997.49
-$node_(1593) set Y_ 60
+$node_(1593) set X_ 696.3
+$node_(1593) set Y_ 2635.36
+$node_(1593) set Z_ 30
 $ns_ at 0.0 "$node_(1593) setdest 0.00 0.00 0.00"
-$node_(1594) set X_ 2225.72
-$node_(1594) set Y_ 2000.96
-$node_(1594) set Y_ 30
+$node_(1594) set X_ 809.08
+$node_(1594) set Y_ 2385.86
+$node_(1594) set Z_ 60
 $ns_ at 0.0 "$node_(1594) setdest 0.00 0.00 0.00"
-$node_(1595) set X_ 2225.72
-$node_(1595) set Y_ 2000.96
-$node_(1595) set Y_ 60
+$node_(1595) set X_ 853.79
+$node_(1595) set Y_ 2387.71
+$node_(1595) set Z_ 30
 $ns_ at 0.0 "$node_(1595) setdest 0.00 0.00 0.00"
-$node_(1596) set X_ 2180.73
-$node_(1596) set Y_ 2001.19
-$node_(1596) set Y_ 30
+$node_(1596) set X_ 695.76
+$node_(1596) set Y_ 2590.36
+$node_(1596) set Z_ 60
 $ns_ at 0.0 "$node_(1596) setdest 0.00 0.00 0.00"
-$node_(1597) set X_ 2127.42
-$node_(1597) set Y_ 2001.47
-$node_(1597) set Y_ 30
+$node_(1597) set X_ 694.67
+$node_(1597) set Y_ 2530.0
+$node_(1597) set Z_ 30
 $ns_ at 0.0 "$node_(1597) setdest 0.00 0.00 0.00"
-$node_(1598) set X_ 2113.96
-$node_(1598) set Y_ 2114.18
-$node_(1598) set Y_ 30
+$node_(1598) set X_ 1892.81
+$node_(1598) set Y_ 2520.36
+$node_(1598) set Z_ 30
 $ns_ at 0.0 "$node_(1598) setdest 0.00 0.00 0.00"
-$node_(1599) set X_ 2113.96
-$node_(1599) set Y_ 2114.18
-$node_(1599) set Y_ 60
+$node_(1599) set X_ 1892.81
+$node_(1599) set Y_ 2520.36
+$node_(1599) set Z_ 60
 $ns_ at 0.0 "$node_(1599) setdest 0.00 0.00 0.00"
-$node_(1600) set X_ 2158.96
-$node_(1600) set Y_ 2113.83
-$node_(1600) set Y_ 30
+$node_(1600) set X_ 675.73
+$node_(1600) set Y_ 1484.88
+$node_(1600) set Z_ 60
 $ns_ at 0.0 "$node_(1600) setdest 0.00 0.00 0.00"
-$node_(1601) set X_ 673.79
-$node_(1601) set Y_ 1304.89
-$node_(1601) set Y_ 30
+$node_(1601) set X_ 719.09
+$node_(1601) set Y_ 2386.57
+$node_(1601) set Z_ 60
 $ns_ at 0.0 "$node_(1601) setdest 0.00 0.00 0.00"
-$node_(1602) set X_ 673.79
-$node_(1602) set Y_ 1304.89
-$node_(1602) set Y_ 60
+$node_(1602) set X_ 764.09
+$node_(1602) set Y_ 2386.21
+$node_(1602) set Z_ 30
 $ns_ at 0.0 "$node_(1602) setdest 0.00 0.00 0.00"
-$node_(1603) set X_ 840.77
-$node_(1603) set Y_ 2430.93
-$node_(1603) set Y_ 60
+$node_(1603) set X_ 764.09
+$node_(1603) set Y_ 2386.21
+$node_(1603) set Z_ 60
 $ns_ at 0.0 "$node_(1603) setdest 0.00 0.00 0.00"
-$node_(1604) set X_ 696.3
-$node_(1604) set Y_ 2635.36
-$node_(1604) set Y_ 30
+$node_(1604) set X_ 674.76
+$node_(1604) set Y_ 1394.89
+$node_(1604) set Z_ 60
 $ns_ at 0.0 "$node_(1604) setdest 0.00 0.00 0.00"
-$node_(1605) set X_ 809.08
-$node_(1605) set Y_ 2385.86
-$node_(1605) set Y_ 30
+$node_(1605) set X_ 1944.1
+$node_(1605) set Y_ 965.71
+$node_(1605) set Z_ 30
 $ns_ at 0.0 "$node_(1605) setdest 0.00 0.00 0.00"
-$node_(1606) set X_ 853.79
-$node_(1606) set Y_ 2387.71
-$node_(1606) set Y_ 30
+$node_(1606) set X_ 1944.1
+$node_(1606) set Y_ 965.71
+$node_(1606) set Z_ 60
 $ns_ at 0.0 "$node_(1606) setdest 0.00 0.00 0.00"
-$node_(1607) set X_ 695.76
-$node_(1607) set Y_ 2590.36
-$node_(1607) set Y_ 60
+$node_(1607) set X_ 1682.18
+$node_(1607) set Y_ 851.33
+$node_(1607) set Z_ 30
 $ns_ at 0.0 "$node_(1607) setdest 0.00 0.00 0.00"
-$node_(1608) set X_ 1495.06
-$node_(1608) set Y_ 2314.36
-$node_(1608) set Y_ 30
+$node_(1608) set X_ 1682.18
+$node_(1608) set Y_ 851.33
+$node_(1608) set Z_ 60
 $ns_ at 0.0 "$node_(1608) setdest 0.00 0.00 0.00"
-$node_(1609) set X_ 1892.81
-$node_(1609) set Y_ 2520.36
-$node_(1609) set Y_ 30
+$node_(1609) set X_ 1634.83
+$node_(1609) set Y_ 812.21
+$node_(1609) set Z_ 30
 $ns_ at 0.0 "$node_(1609) setdest 0.00 0.00 0.00"
-$node_(1610) set X_ 1892.81
-$node_(1610) set Y_ 2520.36
-$node_(1610) set Y_ 60
+$node_(1610) set X_ 1634.83
+$node_(1610) set Y_ 812.21
+$node_(1610) set Z_ 60
 $ns_ at 0.0 "$node_(1610) setdest 0.00 0.00 0.00"
-$node_(1611) set X_ 675.73
-$node_(1611) set Y_ 1484.88
-$node_(1611) set Y_ 30
+$node_(1611) set X_ 1683.64
+$node_(1611) set Y_ 955.76
+$node_(1611) set Z_ 30
 $ns_ at 0.0 "$node_(1611) setdest 0.00 0.00 0.00"
-$node_(1612) set X_ 719.09
-$node_(1612) set Y_ 2386.57
-$node_(1612) set Y_ 30
+$node_(1612) set X_ 1990.29
+$node_(1612) set Y_ 904.18
+$node_(1612) set Z_ 30
 $ns_ at 0.0 "$node_(1612) setdest 0.00 0.00 0.00"
-$node_(1613) set X_ 676.21
-$node_(1613) set Y_ 1529.88
-$node_(1613) set Y_ 30
+$node_(1613) set X_ 1989.21
+$node_(1613) set Y_ 844.61
+$node_(1613) set Z_ 30
 $ns_ at 0.0 "$node_(1613) setdest 0.00 0.00 0.00"
-$node_(1614) set X_ 674.76
-$node_(1614) set Y_ 1394.89
-$node_(1614) set Y_ 30
+$node_(1614) set X_ 1025.34
+$node_(1614) set Y_ 821.89
+$node_(1614) set Z_ 30
 $ns_ at 0.0 "$node_(1614) setdest 0.00 0.00 0.00"
-$node_(1615) set X_ 675.24
-$node_(1615) set Y_ 1439.88
-$node_(1615) set Y_ 30
+$node_(1615) set X_ 1025.34
+$node_(1615) set Y_ 821.89
+$node_(1615) set Z_ 60
 $ns_ at 0.0 "$node_(1615) setdest 0.00 0.00 0.00"
-$node_(1616) set X_ 1944.1
-$node_(1616) set Y_ 965.71
-$node_(1616) set Y_ 60
+$node_(1616) set X_ 1553.58
+$node_(1616) set Y_ 2323.48
+$node_(1616) set Z_ 30
 $ns_ at 0.0 "$node_(1616) setdest 0.00 0.00 0.00"
-$node_(1617) set X_ 1991.54
-$node_(1617) set Y_ 949.16
-$node_(1617) set Y_ 30
+$node_(1617) set X_ 1077.64
+$node_(1617) set Y_ 1116.24
+$node_(1617) set Z_ 60
 $ns_ at 0.0 "$node_(1617) setdest 0.00 0.00 0.00"
-$node_(1618) set X_ 2297.95
-$node_(1618) set Y_ 2517.84
-$node_(1618) set Y_ 30
+$node_(1618) set X_ 1077.08
+$node_(1618) set Y_ 1071.24
+$node_(1618) set Z_ 30
 $ns_ at 0.0 "$node_(1618) setdest 0.00 0.00 0.00"
-$node_(1619) set X_ 1682.18
-$node_(1619) set Y_ 851.33
-$node_(1619) set Y_ 30
+$node_(1619) set X_ 1077.08
+$node_(1619) set Y_ 1071.24
+$node_(1619) set Z_ 60
 $ns_ at 0.0 "$node_(1619) setdest 0.00 0.00 0.00"
-$node_(1620) set X_ 1682.18
-$node_(1620) set Y_ 851.33
-$node_(1620) set Y_ 60
+$node_(1620) set X_ 1075.95
+$node_(1620) set Y_ 981.25
+$node_(1620) set Z_ 60
 $ns_ at 0.0 "$node_(1620) setdest 0.00 0.00 0.00"
-$node_(1621) set X_ 2034.65
-$node_(1621) set Y_ 2416.81
-$node_(1621) set Y_ 30
+$node_(1621) set X_ 1074.82
+$node_(1621) set Y_ 891.25
+$node_(1621) set Z_ 30
 $ns_ at 0.0 "$node_(1621) setdest 0.00 0.00 0.00"
-$node_(1622) set X_ 2034.65
-$node_(1622) set Y_ 2416.81
-$node_(1622) set Y_ 60
+$node_(1622) set X_ 1074.26
+$node_(1622) set Y_ 846.26
+$node_(1622) set Z_ 30
 $ns_ at 0.0 "$node_(1622) setdest 0.00 0.00 0.00"
-$node_(1623) set X_ 1683.01
-$node_(1623) set Y_ 910.77
-$node_(1623) set Y_ 30
+$node_(1623) set X_ 776.47
+$node_(1623) set Y_ 895.35
+$node_(1623) set Z_ 30
 $ns_ at 0.0 "$node_(1623) setdest 0.00 0.00 0.00"
-$node_(1624) set X_ 1634.83
-$node_(1624) set Y_ 812.21
-$node_(1624) set Y_ 30
+$node_(1624) set X_ 776.47
+$node_(1624) set Y_ 895.35
+$node_(1624) set Z_ 60
 $ns_ at 0.0 "$node_(1624) setdest 0.00 0.00 0.00"
-$node_(1625) set X_ 1634.83
-$node_(1625) set Y_ 812.21
-$node_(1625) set Y_ 60
+$node_(1625) set X_ 725.06
+$node_(1625) set Y_ 901.45
+$node_(1625) set Z_ 30
 $ns_ at 0.0 "$node_(1625) setdest 0.00 0.00 0.00"
-$node_(1626) set X_ 1990.29
-$node_(1626) set Y_ 904.18
-$node_(1626) set Y_ 60
+$node_(1626) set X_ 725.06
+$node_(1626) set Y_ 901.45
+$node_(1626) set Z_ 60
 $ns_ at 0.0 "$node_(1626) setdest 0.00 0.00 0.00"
-$node_(1627) set X_ 1989.21
-$node_(1627) set Y_ 844.61
-$node_(1627) set Y_ 30
+$node_(1627) set X_ 722.01
+$node_(1627) set Y_ 824.31
+$node_(1627) set Z_ 30
 $ns_ at 0.0 "$node_(1627) setdest 0.00 0.00 0.00"
-$node_(1628) set X_ 1989.21
-$node_(1628) set Y_ 844.61
-$node_(1628) set Y_ 60
+$node_(1628) set X_ 1902.81
+$node_(1628) set Y_ 2263.02
+$node_(1628) set Z_ 30
 $ns_ at 0.0 "$node_(1628) setdest 0.00 0.00 0.00"
-$node_(1629) set X_ 1124.7
-$node_(1629) set Y_ 817.03
-$node_(1629) set Y_ 30
+$node_(1629) set X_ 1886.52
+$node_(1629) set Y_ 2215.38
+$node_(1629) set Z_ 30
 $ns_ at 0.0 "$node_(1629) setdest 0.00 0.00 0.00"
-$node_(1630) set X_ 1124.7
-$node_(1630) set Y_ 817.03
-$node_(1630) set Y_ 60
+$node_(1630) set X_ 777.05
+$node_(1630) set Y_ 850.36
+$node_(1630) set Z_ 30
 $ns_ at 0.0 "$node_(1630) setdest 0.00 0.00 0.00"
-$node_(1631) set X_ 1553.58
-$node_(1631) set Y_ 2323.48
-$node_(1631) set Y_ 60
+$node_(1631) set X_ 777.05
+$node_(1631) set Y_ 850.36
+$node_(1631) set Z_ 60
 $ns_ at 0.0 "$node_(1631) setdest 0.00 0.00 0.00"
-$node_(1632) set X_ 1077.64
-$node_(1632) set Y_ 1116.24
-$node_(1632) set Y_ 60
+$node_(1632) set X_ 1490.82
+$node_(1632) set Y_ 1605.48
+$node_(1632) set Z_ 30
 $ns_ at 0.0 "$node_(1632) setdest 0.00 0.00 0.00"
-$node_(1633) set X_ 1310.51
-$node_(1633) set Y_ 2534.01
-$node_(1633) set Y_ 60
+$node_(1633) set X_ 1490.82
+$node_(1633) set Y_ 1605.48
+$node_(1633) set Z_ 60
 $ns_ at 0.0 "$node_(1633) setdest 0.00 0.00 0.00"
-$node_(1634) set X_ 1076.51
-$node_(1634) set Y_ 1026.24
-$node_(1634) set Y_ 60
+$node_(1634) set X_ 1490.07
+$node_(1634) set Y_ 1515.49
+$node_(1634) set Z_ 30
 $ns_ at 0.0 "$node_(1634) setdest 0.00 0.00 0.00"
-$node_(1635) set X_ 1075.95
-$node_(1635) set Y_ 981.25
-$node_(1635) set Y_ 30
+$node_(1635) set X_ 1490.07
+$node_(1635) set Y_ 1515.49
+$node_(1635) set Z_ 60
 $ns_ at 0.0 "$node_(1635) setdest 0.00 0.00 0.00"
-$node_(1636) set X_ 1075.38
-$node_(1636) set Y_ 936.25
-$node_(1636) set Y_ 60
+$node_(1636) set X_ 2097.04
+$node_(1636) set Y_ 2163.3
+$node_(1636) set Z_ 60
 $ns_ at 0.0 "$node_(1636) setdest 0.00 0.00 0.00"
-$node_(1637) set X_ 1074.26
-$node_(1637) set Y_ 846.26
-$node_(1637) set Y_ 30
+$node_(1637) set X_ 1999.75
+$node_(1637) set Y_ 2213.57
+$node_(1637) set Z_ 60
 $ns_ at 0.0 "$node_(1637) setdest 0.00 0.00 0.00"
-$node_(1638) set X_ 776.47
-$node_(1638) set Y_ 895.35
-$node_(1638) set Y_ 60
+$node_(1638) set X_ 1796.53
+$node_(1638) set Y_ 2216.2
+$node_(1638) set Z_ 30
 $ns_ at 0.0 "$node_(1638) setdest 0.00 0.00 0.00"
-$node_(1639) set X_ 725.06
-$node_(1639) set Y_ 901.45
-$node_(1639) set Y_ 30
+$node_(1639) set X_ 680.06
+$node_(1639) set Y_ 901.97
+$node_(1639) set Z_ 30
 $ns_ at 0.0 "$node_(1639) setdest 0.00 0.00 0.00"
-$node_(1640) set X_ 725.06
-$node_(1640) set Y_ 901.45
-$node_(1640) set Y_ 60
+$node_(1640) set X_ 2254.23
+$node_(1640) set Y_ 2416.88
+$node_(1640) set Z_ 30
 $ns_ at 0.0 "$node_(1640) setdest 0.00 0.00 0.00"
-$node_(1641) set X_ 722.01
-$node_(1641) set Y_ 824.31
-$node_(1641) set Y_ 60
+$node_(1641) set X_ 830.94
+$node_(1641) set Y_ 1626.7
+$node_(1641) set Z_ 30
 $ns_ at 0.0 "$node_(1641) setdest 0.00 0.00 0.00"
-$node_(1642) set X_ 1902.81
-$node_(1642) set Y_ 2263.02
-$node_(1642) set Y_ 30
+$node_(1642) set X_ 830.94
+$node_(1642) set Y_ 1626.7
+$node_(1642) set Z_ 60
 $ns_ at 0.0 "$node_(1642) setdest 0.00 0.00 0.00"
-$node_(1643) set X_ 1902.81
-$node_(1643) set Y_ 2263.02
-$node_(1643) set Y_ 60
+$node_(1643) set X_ 875.93
+$node_(1643) set Y_ 1626.12
+$node_(1643) set Z_ 60
 $ns_ at 0.0 "$node_(1643) setdest 0.00 0.00 0.00"
-$node_(1644) set X_ 1297.07
-$node_(1644) set Y_ 2385.44
-$node_(1644) set Y_ 60
+$node_(1644) set X_ 1337.07
+$node_(1644) set Y_ 1417.0
+$node_(1644) set Z_ 30
 $ns_ at 0.0 "$node_(1644) setdest 0.00 0.00 0.00"
-$node_(1645) set X_ 1886.52
-$node_(1645) set Y_ 2215.38
-$node_(1645) set Y_ 30
+$node_(1645) set X_ 780.45
+$node_(1645) set Y_ 1477.54
+$node_(1645) set Z_ 30
 $ns_ at 0.0 "$node_(1645) setdest 0.00 0.00 0.00"
-$node_(1646) set X_ 1490.45
-$node_(1646) set Y_ 1560.48
-$node_(1646) set Y_ 30
+$node_(1646) set X_ 781.03
+$node_(1646) set Y_ 1522.54
+$node_(1646) set Z_ 30
 $ns_ at 0.0 "$node_(1646) setdest 0.00 0.00 0.00"
-$node_(1647) set X_ 1490.07
-$node_(1647) set Y_ 1515.49
-$node_(1647) set Y_ 30
+$node_(1647) set X_ 2295.98
+$node_(1647) set Y_ 1416.48
+$node_(1647) set Z_ 60
 $ns_ at 0.0 "$node_(1647) setdest 0.00 0.00 0.00"
-$node_(1648) set X_ 1292.56
-$node_(1648) set Y_ 1935.24
-$node_(1648) set Y_ 30
+$node_(1648) set X_ 2346.84
+$node_(1648) set Y_ 1403.79
+$node_(1648) set Z_ 30
 $ns_ at 0.0 "$node_(1648) setdest 0.00 0.00 0.00"
-$node_(1649) set X_ 2097.04
-$node_(1649) set Y_ 2163.3
-$node_(1649) set Y_ 60
+$node_(1649) set X_ 2346.84
+$node_(1649) set Y_ 1403.79
+$node_(1649) set Z_ 60
 $ns_ at 0.0 "$node_(1649) setdest 0.00 0.00 0.00"
-$node_(1650) set X_ 590.07
-$node_(1650) set Y_ 903.0
-$node_(1650) set Y_ 30
+$node_(1650) set X_ 2247.29
+$node_(1650) set Y_ 1607.76
+$node_(1650) set Z_ 30
 $ns_ at 0.0 "$node_(1650) setdest 0.00 0.00 0.00"
-$node_(1651) set X_ 680.06
-$node_(1651) set Y_ 901.97
-$node_(1651) set Y_ 30
+$node_(1651) set X_ 2142.44
+$node_(1651) set Y_ 1608.42
+$node_(1651) set Z_ 30
 $ns_ at 0.0 "$node_(1651) setdest 0.00 0.00 0.00"
-$node_(1652) set X_ 2099.9
-$node_(1652) set Y_ 1626.33
-$node_(1652) set Y_ 30
+$node_(1652) set X_ 2142.44
+$node_(1652) set Y_ 1608.42
+$node_(1652) set Z_ 60
 $ns_ at 0.0 "$node_(1652) setdest 0.00 0.00 0.00"
-$node_(1653) set X_ 830.94
-$node_(1653) set Y_ 1626.7
-$node_(1653) set Y_ 30
+$node_(1653) set X_ 1383.38
+$node_(1653) set Y_ 1362.9
+$node_(1653) set Z_ 60
 $ns_ at 0.0 "$node_(1653) setdest 0.00 0.00 0.00"
-$node_(1654) set X_ 875.93
-$node_(1654) set Y_ 1626.12
-$node_(1654) set Y_ 30
+$node_(1654) set X_ 884.33
+$node_(1654) set Y_ 1756.42
+$node_(1654) set Z_ 30
 $ns_ at 0.0 "$node_(1654) setdest 0.00 0.00 0.00"
-$node_(1655) set X_ 1337.07
-$node_(1655) set Y_ 1417.0
-$node_(1655) set Y_ 30
+$node_(1655) set X_ 884.96
+$node_(1655) set Y_ 1801.42
+$node_(1655) set Z_ 30
 $ns_ at 0.0 "$node_(1655) setdest 0.00 0.00 0.00"
-$node_(1656) set X_ 1337.07
-$node_(1656) set Y_ 1417.0
-$node_(1656) set Y_ 60
+$node_(1656) set X_ 938.3
+$node_(1656) set Y_ 1810.45
+$node_(1656) set Z_ 30
 $ns_ at 0.0 "$node_(1656) setdest 0.00 0.00 0.00"
-$node_(1657) set X_ 780.45
-$node_(1657) set Y_ 1477.54
-$node_(1657) set Y_ 30
+$node_(1657) set X_ 938.3
+$node_(1657) set Y_ 1810.45
+$node_(1657) set Z_ 60
 $ns_ at 0.0 "$node_(1657) setdest 0.00 0.00 0.00"
-$node_(1658) set X_ 780.45
-$node_(1658) set Y_ 1477.54
-$node_(1658) set Y_ 60
+$node_(1658) set X_ 1049.5
+$node_(1658) set Y_ 1623.88
+$node_(1658) set Z_ 30
 $ns_ at 0.0 "$node_(1658) setdest 0.00 0.00 0.00"
-$node_(1659) set X_ 781.03
-$node_(1659) set Y_ 1522.54
-$node_(1659) set Y_ 30
+$node_(1659) set X_ 1902.52
+$node_(1659) set Y_ 2473.62
+$node_(1659) set Z_ 60
 $ns_ at 0.0 "$node_(1659) setdest 0.00 0.00 0.00"
-$node_(1660) set X_ 2295.48
-$node_(1660) set Y_ 1461.48
-$node_(1660) set Y_ 30
+$node_(1660) set X_ 1084.38
+$node_(1660) set Y_ 1645.53
+$node_(1660) set Z_ 30
 $ns_ at 0.0 "$node_(1660) setdest 0.00 0.00 0.00"
-$node_(1661) set X_ 2295.48
-$node_(1661) set Y_ 1461.48
-$node_(1661) set Y_ 60
+$node_(1661) set X_ 1084.38
+$node_(1661) set Y_ 1645.53
+$node_(1661) set Z_ 60
 $ns_ at 0.0 "$node_(1661) setdest 0.00 0.00 0.00"
-$node_(1662) set X_ 2346.84
-$node_(1662) set Y_ 1403.79
-$node_(1662) set Y_ 60
+$node_(1662) set X_ 1084.96
+$node_(1662) set Y_ 1690.53
+$node_(1662) set Z_ 30
 $ns_ at 0.0 "$node_(1662) setdest 0.00 0.00 0.00"
-$node_(1663) set X_ 2247.29
-$node_(1663) set Y_ 1607.76
-$node_(1663) set Y_ 60
+$node_(1663) set X_ 1085.53
+$node_(1663) set Y_ 1735.52
+$node_(1663) set Z_ 60
 $ns_ at 0.0 "$node_(1663) setdest 0.00 0.00 0.00"
-$node_(1664) set X_ 2187.44
-$node_(1664) set Y_ 1608.23
-$node_(1664) set Y_ 30
+$node_(1664) set X_ 2392.75
+$node_(1664) set Y_ 1163.07
+$node_(1664) set Z_ 30
 $ns_ at 0.0 "$node_(1664) setdest 0.00 0.00 0.00"
-$node_(1665) set X_ 2142.44
-$node_(1665) set Y_ 1608.42
-$node_(1665) set Y_ 30
+$node_(1665) set X_ 2392.75
+$node_(1665) set Y_ 1163.07
+$node_(1665) set Z_ 60
 $ns_ at 0.0 "$node_(1665) setdest 0.00 0.00 0.00"
-$node_(1666) set X_ 2142.44
-$node_(1666) set Y_ 1608.42
-$node_(1666) set Y_ 60
+$node_(1666) set X_ 1332.71
+$node_(1666) set Y_ 1617.05
+$node_(1666) set Z_ 30
 $ns_ at 0.0 "$node_(1666) setdest 0.00 0.00 0.00"
-$node_(1667) set X_ 2066.2
-$node_(1667) set Y_ 1609.05
-$node_(1667) set Y_ 30
+$node_(1667) set X_ 1236.9
+$node_(1667) set Y_ 1621.44
+$node_(1667) set Z_ 30
 $ns_ at 0.0 "$node_(1667) setdest 0.00 0.00 0.00"
-$node_(1668) set X_ 2066.2
-$node_(1668) set Y_ 1609.05
-$node_(1668) set Y_ 60
+$node_(1668) set X_ 1288.09
+$node_(1668) set Y_ 1692.28
+$node_(1668) set Z_ 30
 $ns_ at 0.0 "$node_(1668) setdest 0.00 0.00 0.00"
-$node_(1669) set X_ 1383.38
-$node_(1669) set Y_ 1362.9
-$node_(1669) set Y_ 30
+$node_(1669) set X_ 1288.09
+$node_(1669) set Y_ 1692.28
+$node_(1669) set Z_ 60
 $ns_ at 0.0 "$node_(1669) setdest 0.00 0.00 0.00"
-$node_(1670) set X_ 884.96
-$node_(1670) set Y_ 1801.42
-$node_(1670) set Y_ 30
+$node_(1670) set X_ 1288.33
+$node_(1670) set Y_ 1737.28
+$node_(1670) set Z_ 30
 $ns_ at 0.0 "$node_(1670) setdest 0.00 0.00 0.00"
-$node_(1671) set X_ 1004.5
-$node_(1671) set Y_ 1624.46
-$node_(1671) set Y_ 30
+$node_(1671) set X_ 1288.33
+$node_(1671) set Y_ 1737.28
+$node_(1671) set Z_ 60
 $ns_ at 0.0 "$node_(1671) setdest 0.00 0.00 0.00"
-$node_(1672) set X_ 1004.5
-$node_(1672) set Y_ 1624.46
-$node_(1672) set Y_ 60
+$node_(1672) set X_ 1893.38
+$node_(1672) set Y_ 1801.13
+$node_(1672) set Z_ 60
 $ns_ at 0.0 "$node_(1672) setdest 0.00 0.00 0.00"
-$node_(1673) set X_ 1049.5
-$node_(1673) set Y_ 1623.88
-$node_(1673) set Y_ 30
+$node_(1673) set X_ 1892.77
+$node_(1673) set Y_ 1756.14
+$node_(1673) set Z_ 30
 $ns_ at 0.0 "$node_(1673) setdest 0.00 0.00 0.00"
-$node_(1674) set X_ 1291.86
-$node_(1674) set Y_ 2276.73
-$node_(1674) set Y_ 30
+$node_(1674) set X_ 1892.77
+$node_(1674) set Y_ 1756.14
+$node_(1674) set Z_ 60
 $ns_ at 0.0 "$node_(1674) setdest 0.00 0.00 0.00"
-$node_(1675) set X_ 1902.52
-$node_(1675) set Y_ 2473.62
-$node_(1675) set Y_ 30
+$node_(1675) set X_ 1287.66
+$node_(1675) set Y_ 1604.95
+$node_(1675) set Z_ 30
 $ns_ at 0.0 "$node_(1675) setdest 0.00 0.00 0.00"
-$node_(1676) set X_ 1902.52
-$node_(1676) set Y_ 2473.62
-$node_(1676) set Y_ 60
+$node_(1676) set X_ 1287.53
+$node_(1676) set Y_ 1550.95
+$node_(1676) set Z_ 30
 $ns_ at 0.0 "$node_(1676) setdest 0.00 0.00 0.00"
-$node_(1677) set X_ 1084.38
-$node_(1677) set Y_ 1645.53
-$node_(1677) set Y_ 30
+$node_(1677) set X_ 1287.53
+$node_(1677) set Y_ 1550.95
+$node_(1677) set Z_ 60
 $ns_ at 0.0 "$node_(1677) setdest 0.00 0.00 0.00"
-$node_(1678) set X_ 1084.38
-$node_(1678) set Y_ 1645.53
-$node_(1678) set Y_ 60
+$node_(1678) set X_ 1121.0
+$node_(1678) set Y_ 2415.69
+$node_(1678) set Z_ 30
 $ns_ at 0.0 "$node_(1678) setdest 0.00 0.00 0.00"
-$node_(1679) set X_ 2392.75
-$node_(1679) set Y_ 1163.07
-$node_(1679) set Y_ 60
+$node_(1679) set X_ 1121.0
+$node_(1679) set Y_ 2415.69
+$node_(1679) set Z_ 60
 $ns_ at 0.0 "$node_(1679) setdest 0.00 0.00 0.00"
-$node_(1680) set X_ 1332.71
-$node_(1680) set Y_ 1617.05
-$node_(1680) set Y_ 60
+$node_(1680) set X_ 1253.72
+$node_(1680) set Y_ 2040.81
+$node_(1680) set Z_ 30
 $ns_ at 0.0 "$node_(1680) setdest 0.00 0.00 0.00"
-$node_(1681) set X_ 1236.9
-$node_(1681) set Y_ 1621.44
-$node_(1681) set Y_ 30
+$node_(1681) set X_ 1233.75
+$node_(1681) set Y_ 2078.1
+$node_(1681) set Z_ 30
 $ns_ at 0.0 "$node_(1681) setdest 0.00 0.00 0.00"
-$node_(1682) set X_ 1288.09
-$node_(1682) set Y_ 1692.28
-$node_(1682) set Y_ 60
+$node_(1682) set X_ 1233.75
+$node_(1682) set Y_ 2078.1
+$node_(1682) set Z_ 60
 $ns_ at 0.0 "$node_(1682) setdest 0.00 0.00 0.00"
-$node_(1683) set X_ 1884.37
-$node_(1683) set Y_ 2418.92
-$node_(1683) set Y_ 30
+$node_(1683) set X_ 1083.88
+$node_(1683) set Y_ 2121.63
+$node_(1683) set Z_ 30
 $ns_ at 0.0 "$node_(1683) setdest 0.00 0.00 0.00"
-$node_(1684) set X_ 1884.37
-$node_(1684) set Y_ 2418.92
-$node_(1684) set Y_ 60
+$node_(1684) set X_ 1083.88
+$node_(1684) set Y_ 2121.63
+$node_(1684) set Z_ 60
 $ns_ at 0.0 "$node_(1684) setdest 0.00 0.00 0.00"
-$node_(1685) set X_ 1288.33
-$node_(1685) set Y_ 1737.28
-$node_(1685) set Y_ 30
+$node_(1685) set X_ 1143.52
+$node_(1685) set Y_ 2121.14
+$node_(1685) set Z_ 60
 $ns_ at 0.0 "$node_(1685) setdest 0.00 0.00 0.00"
-$node_(1686) set X_ 1288.33
-$node_(1686) set Y_ 1737.28
-$node_(1686) set Y_ 60
+$node_(1686) set X_ 948.9
+$node_(1686) set Y_ 2124.26
+$node_(1686) set Z_ 30
 $ns_ at 0.0 "$node_(1686) setdest 0.00 0.00 0.00"
-$node_(1687) set X_ 1893.38
-$node_(1687) set Y_ 1801.13
-$node_(1687) set Y_ 30
+$node_(1687) set X_ 948.9
+$node_(1687) set Y_ 2124.26
+$node_(1687) set Z_ 60
 $ns_ at 0.0 "$node_(1687) setdest 0.00 0.00 0.00"
-$node_(1688) set X_ 1893.38
-$node_(1688) set Y_ 1801.13
-$node_(1688) set Y_ 60
+$node_(1688) set X_ 993.89
+$node_(1688) set Y_ 2123.38
+$node_(1688) set Z_ 30
 $ns_ at 0.0 "$node_(1688) setdest 0.00 0.00 0.00"
-$node_(1689) set X_ 1287.53
-$node_(1689) set Y_ 1550.95
-$node_(1689) set Y_ 30
+$node_(1689) set X_ 2193.91
+$node_(1689) set Y_ 891.28
+$node_(1689) set Z_ 30
 $ns_ at 0.0 "$node_(1689) setdest 0.00 0.00 0.00"
-$node_(1690) set X_ 1075.43
-$node_(1690) set Y_ 2433.68
-$node_(1690) set Y_ 30
+$node_(1690) set X_ 2193.91
+$node_(1690) set Y_ 891.28
+$node_(1690) set Z_ 60
 $ns_ at 0.0 "$node_(1690) setdest 0.00 0.00 0.00"
-$node_(1691) set X_ 1121.0
-$node_(1691) set Y_ 2415.69
-$node_(1691) set Y_ 60
+$node_(1691) set X_ 2163.74
+$node_(1691) set Y_ 757.34
+$node_(1691) set Z_ 30
 $ns_ at 0.0 "$node_(1691) setdest 0.00 0.00 0.00"
-$node_(1692) set X_ 1253.72
-$node_(1692) set Y_ 2040.81
-$node_(1692) set Y_ 30
+$node_(1692) set X_ 2163.74
+$node_(1692) set Y_ 757.34
+$node_(1692) set Z_ 60
 $ns_ at 0.0 "$node_(1692) setdest 0.00 0.00 0.00"
-$node_(1693) set X_ 1233.75
-$node_(1693) set Y_ 2078.1
-$node_(1693) set Y_ 30
+$node_(1693) set X_ 1955.13
+$node_(1693) set Y_ 2315.63
+$node_(1693) set Z_ 30
 $ns_ at 0.0 "$node_(1693) setdest 0.00 0.00 0.00"
-$node_(1694) set X_ 1233.75
-$node_(1694) set Y_ 2078.1
-$node_(1694) set Y_ 60
+$node_(1694) set X_ 1955.13
+$node_(1694) set Y_ 2315.63
+$node_(1694) set Z_ 60
 $ns_ at 0.0 "$node_(1694) setdest 0.00 0.00 0.00"
-$node_(1695) set X_ 1083.88
-$node_(1695) set Y_ 2121.63
-$node_(1695) set Y_ 30
+$node_(1695) set X_ 2119.71
+$node_(1695) set Y_ 1030.33
+$node_(1695) set Z_ 30
 $ns_ at 0.0 "$node_(1695) setdest 0.00 0.00 0.00"
-$node_(1696) set X_ 1143.52
-$node_(1696) set Y_ 2121.14
-$node_(1696) set Y_ 30
+$node_(1696) set X_ 1639.92
+$node_(1696) set Y_ 891.64
+$node_(1696) set Z_ 60
 $ns_ at 0.0 "$node_(1696) setdest 0.00 0.00 0.00"
-$node_(1697) set X_ 1143.52
-$node_(1697) set Y_ 2121.14
-$node_(1697) set Y_ 60
+$node_(1697) set X_ 935.71
+$node_(1697) set Y_ 1625.35
+$node_(1697) set Z_ 30
 $ns_ at 0.0 "$node_(1697) setdest 0.00 0.00 0.00"
-$node_(1698) set X_ 1596.39
-$node_(1698) set Y_ 2218.03
-$node_(1698) set Y_ 30
+$node_(1698) set X_ 935.71
+$node_(1698) set Y_ 1625.35
+$node_(1698) set Z_ 60
 $ns_ at 0.0 "$node_(1698) setdest 0.00 0.00 0.00"
-$node_(1699) set X_ 1596.39
-$node_(1699) set Y_ 2218.03
-$node_(1699) set Y_ 60
+$node_(1699) set X_ 680.53
+$node_(1699) set Y_ 1854.23
+$node_(1699) set Z_ 60
 $ns_ at 0.0 "$node_(1699) setdest 0.00 0.00 0.00"
-$node_(1700) set X_ 1038.89
-$node_(1700) set Y_ 2122.51
-$node_(1700) set Y_ 30
+$node_(1700) set X_ 679.67
+$node_(1700) set Y_ 1794.38
+$node_(1700) set Z_ 30
 $ns_ at 0.0 "$node_(1700) setdest 0.00 0.00 0.00"
-$node_(1701) set X_ 948.9
-$node_(1701) set Y_ 2124.26
-$node_(1701) set Y_ 60
+$node_(1701) set X_ 679.67
+$node_(1701) set Y_ 1794.38
+$node_(1701) set Z_ 60
 $ns_ at 0.0 "$node_(1701) setdest 0.00 0.00 0.00"
-$node_(1702) set X_ 993.89
-$node_(1702) set Y_ 2123.38
-$node_(1702) set Y_ 30
+$node_(1702) set X_ 681.18
+$node_(1702) set Y_ 1899.22
+$node_(1702) set Z_ 60
 $ns_ at 0.0 "$node_(1702) setdest 0.00 0.00 0.00"
-$node_(1703) set X_ 2193.91
-$node_(1703) set Y_ 891.28
-$node_(1703) set Y_ 60
+$node_(1703) set X_ 681.98
+$node_(1703) set Y_ 1999.42
+$node_(1703) set Z_ 30
 $ns_ at 0.0 "$node_(1703) setdest 0.00 0.00 0.00"
-$node_(1704) set X_ 2163.74
-$node_(1704) set Y_ 757.34
-$node_(1704) set Y_ 60
+$node_(1704) set X_ 681.84
+$node_(1704) set Y_ 1944.21
+$node_(1704) set Z_ 30
 $ns_ at 0.0 "$node_(1704) setdest 0.00 0.00 0.00"
-$node_(1705) set X_ 1955.13
-$node_(1705) set Y_ 2315.63
-$node_(1705) set Y_ 30
+$node_(1705) set X_ 887.2
+$node_(1705) set Y_ 2057.48
+$node_(1705) set Z_ 30
 $ns_ at 0.0 "$node_(1705) setdest 0.00 0.00 0.00"
-$node_(1706) set X_ 1639.92
-$node_(1706) set Y_ 891.64
-$node_(1706) set Y_ 60
+$node_(1706) set X_ 887.2
+$node_(1706) set Y_ 2057.48
+$node_(1706) set Z_ 60
 $ns_ at 0.0 "$node_(1706) setdest 0.00 0.00 0.00"
-$node_(1707) set X_ 2397.67
-$node_(1707) set Y_ 1588.02
-$node_(1707) set Y_ 30
+$node_(1707) set X_ 682.67
+$node_(1707) set Y_ 2060.2
+$node_(1707) set Z_ 30
 $ns_ at 0.0 "$node_(1707) setdest 0.00 0.00 0.00"
-$node_(1708) set X_ 679.67
-$node_(1708) set Y_ 1794.38
-$node_(1708) set Y_ 60
+$node_(1708) set X_ 696.74
+$node_(1708) set Y_ 2127.94
+$node_(1708) set Z_ 60
 $ns_ at 0.0 "$node_(1708) setdest 0.00 0.00 0.00"
-$node_(1709) set X_ 681.18
-$node_(1709) set Y_ 1899.22
-$node_(1709) set Y_ 30
+$node_(1709) set X_ 1504.93
+$node_(1709) set Y_ 893.09
+$node_(1709) set Z_ 30
 $ns_ at 0.0 "$node_(1709) setdest 0.00 0.00 0.00"
-$node_(1710) set X_ 681.18
-$node_(1710) set Y_ 1899.22
-$node_(1710) set Y_ 60
+$node_(1710) set X_ 1947.11
+$node_(1710) set Y_ 2113.18
+$node_(1710) set Z_ 30
 $ns_ at 0.0 "$node_(1710) setdest 0.00 0.00 0.00"
-$node_(1711) set X_ 681.98
-$node_(1711) set Y_ 1999.42
-$node_(1711) set Y_ 30
+$node_(1711) set X_ 1459.93
+$node_(1711) set Y_ 893.57
+$node_(1711) set Z_ 30
 $ns_ at 0.0 "$node_(1711) setdest 0.00 0.00 0.00"
-$node_(1712) set X_ 681.84
-$node_(1712) set Y_ 1944.21
-$node_(1712) set Y_ 60
+$node_(1712) set X_ 1459.93
+$node_(1712) set Y_ 893.57
+$node_(1712) set Z_ 60
 $ns_ at 0.0 "$node_(1712) setdest 0.00 0.00 0.00"
-$node_(1713) set X_ 887.2
-$node_(1713) set Y_ 2057.48
-$node_(1713) set Y_ 30
+$node_(1713) set X_ 1742.68
+$node_(1713) set Y_ 1739.12
+$node_(1713) set Z_ 30
 $ns_ at 0.0 "$node_(1713) setdest 0.00 0.00 0.00"
-$node_(1714) set X_ 741.73
-$node_(1714) set Y_ 2127.35
-$node_(1714) set Y_ 30
+$node_(1714) set X_ 1693.42
+$node_(1714) set Y_ 1984.74
+$node_(1714) set Z_ 30
 $ns_ at 0.0 "$node_(1714) setdest 0.00 0.00 0.00"
-$node_(1715) set X_ 741.73
-$node_(1715) set Y_ 2127.35
-$node_(1715) set Y_ 60
+$node_(1715) set X_ 1918.97
+$node_(1715) set Y_ 2004.6
+$node_(1715) set Z_ 30
 $ns_ at 0.0 "$node_(1715) setdest 0.00 0.00 0.00"
-$node_(1716) set X_ 696.74
-$node_(1716) set Y_ 2127.94
-$node_(1716) set Y_ 30
+$node_(1716) set X_ 1895.77
+$node_(1716) set Y_ 1964.16
+$node_(1716) set Z_ 30
 $ns_ at 0.0 "$node_(1716) setdest 0.00 0.00 0.00"
-$node_(1717) set X_ 1504.93
-$node_(1717) set Y_ 893.09
-$node_(1717) set Y_ 60
+$node_(1717) set X_ 1895.77
+$node_(1717) set Y_ 1964.16
+$node_(1717) set Z_ 60
 $ns_ at 0.0 "$node_(1717) setdest 0.00 0.00 0.00"
-$node_(1718) set X_ 1947.11
-$node_(1718) set Y_ 2113.18
-$node_(1718) set Y_ 30
+$node_(1718) set X_ 1877.25
+$node_(1718) set Y_ 2001.9
+$node_(1718) set Z_ 30
 $ns_ at 0.0 "$node_(1718) setdest 0.00 0.00 0.00"
-$node_(1719) set X_ 1459.93
-$node_(1719) set Y_ 893.57
-$node_(1719) set Y_ 30
+$node_(1719) set X_ 1877.25
+$node_(1719) set Y_ 2001.9
+$node_(1719) set Z_ 60
 $ns_ at 0.0 "$node_(1719) setdest 0.00 0.00 0.00"
-$node_(1720) set X_ 1742.68
-$node_(1720) set Y_ 1739.12
-$node_(1720) set Y_ 30
+$node_(1720) set X_ 1824.1
+$node_(1720) set Y_ 2005.51
+$node_(1720) set Z_ 30
 $ns_ at 0.0 "$node_(1720) setdest 0.00 0.00 0.00"
-$node_(1721) set X_ 1742.68
-$node_(1721) set Y_ 1739.12
-$node_(1721) set Y_ 60
+$node_(1721) set X_ 1540.11
+$node_(1721) set Y_ 1840.98
+$node_(1721) set Z_ 60
 $ns_ at 0.0 "$node_(1721) setdest 0.00 0.00 0.00"
-$node_(1722) set X_ 1743.37
-$node_(1722) set Y_ 1784.11
-$node_(1722) set Y_ 30
+$node_(1722) set X_ 1544.22
+$node_(1722) set Y_ 1987.45
+$node_(1722) set Z_ 60
 $ns_ at 0.0 "$node_(1722) setdest 0.00 0.00 0.00"
-$node_(1723) set X_ 1743.31
-$node_(1723) set Y_ 1844.53
-$node_(1723) set Y_ 30
+$node_(1723) set X_ 1408.09
+$node_(1723) set Y_ 2024.11
+$node_(1723) set Z_ 30
 $ns_ at 0.0 "$node_(1723) setdest 0.00 0.00 0.00"
-$node_(1724) set X_ 1743.06
-$node_(1724) set Y_ 1889.53
-$node_(1724) set Y_ 30
+$node_(1724) set X_ 1408.09
+$node_(1724) set Y_ 2024.11
+$node_(1724) set Z_ 60
 $ns_ at 0.0 "$node_(1724) setdest 0.00 0.00 0.00"
-$node_(1725) set X_ 1743.06
-$node_(1725) set Y_ 1889.53
-$node_(1725) set Y_ 60
+$node_(1725) set X_ 1540.45
+$node_(1725) set Y_ 1885.97
+$node_(1725) set Z_ 30
 $ns_ at 0.0 "$node_(1725) setdest 0.00 0.00 0.00"
-$node_(1726) set X_ 1693.42
-$node_(1726) set Y_ 1984.74
-$node_(1726) set Y_ 30
+$node_(1726) set X_ 1665.91
+$node_(1726) set Y_ 2003.79
+$node_(1726) set Z_ 30
 $ns_ at 0.0 "$node_(1726) setdest 0.00 0.00 0.00"
-$node_(1727) set X_ 1693.42
-$node_(1727) set Y_ 1984.74
-$node_(1727) set Y_ 60
+$node_(1727) set X_ 1505.63
+$node_(1727) set Y_ 2022.44
+$node_(1727) set Z_ 60
 $ns_ at 0.0 "$node_(1727) setdest 0.00 0.00 0.00"
-$node_(1728) set X_ 1918.97
-$node_(1728) set Y_ 2004.6
-$node_(1728) set Y_ 30
+$node_(1728) set X_ 2019.12
+$node_(1728) set Y_ 2522.43
+$node_(1728) set Z_ 30
 $ns_ at 0.0 "$node_(1728) setdest 0.00 0.00 0.00"
-$node_(1729) set X_ 1895.77
-$node_(1729) set Y_ 1964.16
-$node_(1729) set Y_ 30
+$node_(1729) set X_ 2019.12
+$node_(1729) set Y_ 2522.43
+$node_(1729) set Z_ 60
 $ns_ at 0.0 "$node_(1729) setdest 0.00 0.00 0.00"
-$node_(1730) set X_ 1895.77
-$node_(1730) set Y_ 1964.16
-$node_(1730) set Y_ 60
-$ns_ at 0.0 "$node_(1730) setdest 0.00 0.00 0.00"
-$node_(1731) set X_ 1877.25
-$node_(1731) set Y_ 2001.9
-$node_(1731) set Y_ 60
-$ns_ at 0.0 "$node_(1731) setdest 0.00 0.00 0.00"
-$node_(1732) set X_ 1824.1
-$node_(1732) set Y_ 2005.51
-$node_(1732) set Y_ 30
-$ns_ at 0.0 "$node_(1732) setdest 0.00 0.00 0.00"
-$node_(1733) set X_ 1540.11
-$node_(1733) set Y_ 1840.98
-$node_(1733) set Y_ 30
-$ns_ at 0.0 "$node_(1733) setdest 0.00 0.00 0.00"
-$node_(1734) set X_ 1540.45
-$node_(1734) set Y_ 1885.97
-$node_(1734) set Y_ 30
-$ns_ at 0.0 "$node_(1734) setdest 0.00 0.00 0.00"
-$node_(1735) set X_ 1540.45
-$node_(1735) set Y_ 1885.97
-$node_(1735) set Y_ 60
-$ns_ at 0.0 "$node_(1735) setdest 0.00 0.00 0.00"
-$node_(1736) set X_ 1612.96
-$node_(1736) set Y_ 2007.85
-$node_(1736) set Y_ 60
-$ns_ at 0.0 "$node_(1736) setdest 0.00 0.00 0.00"
-$node_(1737) set X_ 1505.63
-$node_(1737) set Y_ 2022.44
-$node_(1737) set Y_ 30
-$ns_ at 0.0 "$node_(1737) setdest 0.00 0.00 0.00"
-$node_(1738) set X_ 1725.64
-$node_(1738) set Y_ 2006.27
-$node_(1738) set Y_ 30
-$ns_ at 0.0 "$node_(1738) setdest 0.00 0.00 0.00"
-$node_(1739) set X_ 2019.12
-$node_(1739) set Y_ 2522.43
-$node_(1739) set Y_ 30
-$ns_ at 0.0 "$node_(1739) setdest 0.00 0.00 0.00"

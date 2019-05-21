@@ -157,7 +157,7 @@ void FBApplication::AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink
 	fbNode->SetReceived(false);
 	fbNode->SetSent(false);
 	fbNode->SetMeAsVehicle(onstats);
-
+	cout << "AddNode id= " << node->GetId() << " onstats= " << onstats << endl;
 
 	fbNode->SetMeInJunction(isNodeInJunction);
 	fbNode->SetJunctionId(junctionId);
@@ -479,6 +479,9 @@ void FBApplication::ReceivePacket(Ptr<Socket> socket) {
 		FBHeader fbHeader;
 		packet->RemoveHeader(fbHeader);
 		Vector currentPosition = fbNode->UpdatePosition();
+		if (fbHeader.GetType() == ALERT_MESSAGE && currentPosition.z > 0) {
+			cout << "ricevuto alert da drone in pos " << currentPosition << endl;
+		}
 		// Get the position of the sender node
 		Vector senderPosition = fbHeader.GetPosition();
 		double distance = ns3::CalculateDistance(currentPosition, senderPosition);

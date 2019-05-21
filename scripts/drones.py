@@ -22,7 +22,7 @@ def generateDrone(nodeCoords, id, z):
 	line = ""
 	line += "$node_(" + str(id) + ") set X_ " + str(nodeCoords.x) + "\n"
 	line += "$node_(" + str(id) + ") set Y_ " + str(nodeCoords.y) + "\n"	
-	line += "$node_(" + str(id) + ") set Y_ " + str(z) + "\n"		
+	line += "$node_(" + str(id) + ") set Z_ " + str(z) + "\n"		
 	line += '$ns_ at 0.0 "$node_(' + str(id) + ') setdest 0.00 0.00 0.00"\n'
 	return line
 

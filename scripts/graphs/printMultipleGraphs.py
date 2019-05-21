@@ -407,6 +407,77 @@ def printProtocolComparison():
 						printSingleGraph(graphOutFolder, "graphTitle", compoundData, txRanges, protocols, cw, junction, metric, yLabel, 0, maxMetricValues[metric])
 
 
+def printDroneComparison():
+	print("PrintDroneComparison")
+	plt.rcParams["figure.figsize"] = [18, 10]
+	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-droni"
+	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
+	scenarios = ["LA-25"]
+	highBuildings = ["0"]
+	buildings = ["0"]
+	errorRate = "e0"
+	#txRanges = ["100", "300", "500"]
+	txRanges = ["100", "300", "500"]
+	protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300", "STATIC-500", "ROFF"]
+	#protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300"ROFF"]
+	#cws = ["cw[32-1024]"]
+	cws = ["cw[16-128]", "cw[32-1024]"]
+	#junctions = ["0", "1"]
+	junctions = ["0"]
+	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
+	metricYLabels = {}
+	metricYLabels["totCoverage"] = "Total Coverage (%)"
+	metricYLabels["covOnCirc"] = "Coverage on circumference (%)"
+	metricYLabels["hops"] = "Number of hops to reach circumference"
+	metricYLabels["slotsWaited"] = "Number of slots waited to reach circumference"
+	metricYLabels["messageSent"] = "Number of alert messages sent"
+	
+	maxMetricValues = {}
+	for metric in metrics:
+		maxMetricValues[metric] = -1
+
+	
+	for scenario in scenarios:
+		if ("Platoon" in scenario):
+			buildings = ["0"]
+		for highBuilding in highBuildings:
+			if (highBuilding == "1"):
+				initialBasePath += "-high"
+				buildings = ["1"]
+			for building in buildings:
+				for cw in cws:
+					for junction in junctions:
+						basePath = os.path.join(initialBasePath, scenario, "b" + building)
+						compoundData = initCompoundData(txRanges, protocols, metrics)
+						appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics)
+						graphOutFolder = os.path.join(scenario, "b" + building, "j" + junction)
+						for metric in metrics:
+							yLabel = metricYLabels[metric]
+							if (metric == "totCoverage" or metric == "covOnCirc"):
+								maxMetricValues[metric] = 100
+							else:
+								for txRange in txRanges:
+									for protocol in protocols:
+										metricMean = metric + "Mean"
+										value = compoundData[txRange][protocol][metricMean] 
+										if ( value > maxMetricValues[metric]):
+											maxMetricValues[metric] = value
+
+	for scenario in scenarios:
+		for building in buildings:
+			for highBuilding in highBuildings:
+				for cw in cws:
+					for junction in junctions:
+						basePath = os.path.join(initialBasePath, scenario, "b" + building)
+						compoundData = initCompoundData(txRanges, protocols, metrics)
+						appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics)
+						graphOutFolder = os.path.join(scenario, "drones", "b" + building + "-h" + highBuilding)
+						for metric in metrics:
+							yLabel = metricYLabels[metric]
+							printSingleGraph(graphOutFolder, "graphTitle", compoundData, txRanges, protocols, cw, junction, metric, yLabel, 0, maxMetricValues[metric])
+
+
+
 def printErrorComparison():
 	print("PrintErrorComparison")
 	plt.rcParams["figure.figsize"] = [18, 10]

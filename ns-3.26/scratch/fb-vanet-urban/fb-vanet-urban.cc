@@ -847,6 +847,7 @@ void FBVanetExperiment::ConfigureFBApplication () {
 		if (i >= m_nVeh) {
 			isNodeVehicle = false;
 		}
+//		cout << "addNode " << i << " " << isNodeVehicle << endl;
 		m_fbApplication->AddNode (m_adhocNodes.Get (i), m_adhocSources.at (i), m_adhocSinks.at (i), isNodeVehicle,
 				nodeInsideJunction, junctionId);
 	}
