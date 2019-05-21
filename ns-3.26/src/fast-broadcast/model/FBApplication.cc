@@ -314,7 +314,7 @@ void FBApplication::StartApplication(void) {
 			GenerateForgedHelloTraffic();
 		}
 //		GenerateHelloTraffic(1);
-		GenerateHelloTraffic(5);
+		GenerateHelloTraffic(2); //todo
 	}
 	// Schedule Broadcast Phase
 	Simulator::Schedule(Seconds(m_broadcastPhaseStart), &FBApplication::StartBroadcastPhase, this);
@@ -361,8 +361,8 @@ void FBApplication::GenerateHelloTraffic(uint32_t count) {
 	NS_LOG_INFO("GenerateHelloTraffic" << count);
 	NS_LOG_DEBUG("GenerateHelloTraffic " << count);
 	std::vector<int> he;
-	uint32_t hel = (int) m_nNodes / 100 * 50;		// 50% of total nodes
-//	uint32_t hel = (int) m_nNodes;		// 100% of total nodes
+//	uint32_t hel = (int) m_nNodes / 100 * 50;		// 50% of total nodes
+	uint32_t hel = (int) m_nNodes;		// 100% of total nodes
 	uint32_t time_factor = 10;
 //	cout << "hel= " << hel << endl;
 	if (count > 0)
