@@ -404,10 +404,10 @@ TwoRayGroundPropagationLossModel::DoCalcRxPower (double txPowerDbm,
    */
 
   double distance = a->GetDistanceFrom (b);
-  std::cout << b->GetPosition() << std::endl;
+//  std::cout << b->GetPosition() << std::endl;
   if (b->GetPosition().z > 0) {
-	  std::cout << "TwoRayGroundPropagationLossModel::DoCalcRxPower a= " << a->GetPosition() << " b= "
-  			<< b->GetPosition() << " txPowerDbm= " << txPowerDbm << " distance= " << distance << std::endl;
+//	  std::cout << "TwoRayGroundPropagationLossModel::DoCalcRxPower a= " << a->GetPosition() << " b= "
+//  			<< b->GetPosition() << " txPowerDbm= " << txPowerDbm << " distance= " << distance << std::endl;
   }
   if (distance <= m_minDistance)
     {

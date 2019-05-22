@@ -157,7 +157,7 @@ void FBApplication::AddNode(Ptr<Node> node, Ptr<Socket> source, Ptr<Socket> sink
 	fbNode->SetReceived(false);
 	fbNode->SetSent(false);
 	fbNode->SetMeAsVehicle(onstats);
-	cout << "AddNode id= " << node->GetId() << " onstats= " << onstats << endl;
+//	cout << "AddNode id= " << node->GetId() << " onstats= " << onstats << endl;
 
 	fbNode->SetMeInJunction(isNodeInJunction);
 	fbNode->SetJunctionId(junctionId);
@@ -314,7 +314,7 @@ void FBApplication::StartApplication(void) {
 			GenerateForgedHelloTraffic();
 		}
 //		GenerateHelloTraffic(1);
-		GenerateHelloTraffic(2); //todo
+		GenerateHelloTraffic(2);
 	}
 	// Schedule Broadcast Phase
 	Simulator::Schedule(Seconds(m_broadcastPhaseStart), &FBApplication::StartBroadcastPhase, this);
@@ -479,9 +479,9 @@ void FBApplication::ReceivePacket(Ptr<Socket> socket) {
 		FBHeader fbHeader;
 		packet->RemoveHeader(fbHeader);
 		Vector currentPosition = fbNode->UpdatePosition();
-		if (fbHeader.GetType() == ALERT_MESSAGE && currentPosition.z > 0) {
-			cout << "ricevuto alert da drone in pos " << currentPosition << endl;
-		}
+//		if (fbHeader.GetType() == ALERT_MESSAGE && currentPosition.z > 0) {
+//			cout << "ricevuto alert da drone in pos " << currentPosition << endl;
+//		}
 		// Get the position of the sender node
 		Vector senderPosition = fbHeader.GetPosition();
 		double distance = ns3::CalculateDistance(currentPosition, senderPosition);
