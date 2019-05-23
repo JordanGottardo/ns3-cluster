@@ -178,6 +178,7 @@ void FBApplication::PrintStats(std::stringstream &dataStream) {
 //	cout << "cwndAvg " << (m_cwndSum / m_cwndCount) << endl;
 //	cout << "collisions= " << m_collisions << endl;
 	uint32_t cover = 1;	// 'cause we count m_startingNode
+	uint32_t coverVehicles = 1;
 	uint32_t circ = 0, circCont = 0;
 //	cout << "PrintStats area " << m_aoi << endl;
 	double radiusMin = m_aoi - m_aoi_error;
@@ -197,14 +198,15 @@ void FBApplication::PrintStats(std::stringstream &dataStream) {
 		if (nodeId == m_startingNode)
 			continue;
 
-		// If this isn't a vehciles, skip
-//		if (!current->AmIaVehicle())
-//			continue;
+
 
 		// Update the total cover value
 		if (current->GetReceived()) {
 //			cout << "cover++" << endl;
 			cover++;
+			if (current->AmIaVehicle()) {
+				coverVehicles++;
+			}
 		}
 
 		// Compute cover on circumference of radius m_aoi
@@ -289,7 +291,7 @@ void FBApplication::PrintStats(std::stringstream &dataStream) {
 	if (m_droneTest) {
 		uint32_t maxDistance = 0;
 		uint32_t maxDistanceNodeReached = IsMaxDistNodeReached(maxDistance);
-		dataStream << "," << maxDistance << "," << maxDistanceNodeReached;
+		dataStream << "," << maxDistance << "," << maxDistanceNodeReached << "," << coverVehicles;
 	}
 
 
@@ -314,7 +316,7 @@ void FBApplication::StartApplication(void) {
 			GenerateForgedHelloTraffic();
 		}
 //		GenerateHelloTraffic(1);
-		GenerateHelloTraffic(2);
+		GenerateHelloTraffic(5);
 	}
 	// Schedule Broadcast Phase
 	Simulator::Schedule(Seconds(m_broadcastPhaseStart), &FBApplication::StartBroadcastPhase, this);
@@ -361,8 +363,8 @@ void FBApplication::GenerateHelloTraffic(uint32_t count) {
 	NS_LOG_INFO("GenerateHelloTraffic" << count);
 	NS_LOG_DEBUG("GenerateHelloTraffic " << count);
 	std::vector<int> he;
-//	uint32_t hel = (int) m_nNodes / 100 * 50;		// 50% of total nodes
-	uint32_t hel = (int) m_nNodes;		// 100% of total nodes
+	uint32_t hel = (int) m_nNodes / 100 * 50;		// 50% of total nodes
+//	uint32_t hel = (int) m_nNodes;		// 100% of total nodes
 	uint32_t time_factor = 10;
 //	cout << "hel= " << hel << endl;
 	if (count > 0)

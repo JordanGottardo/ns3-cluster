@@ -1078,14 +1078,16 @@ int main (int argc, char *argv[])
 		else if (experiment.GetHighBuildings()) {
 			additionalPath = "/out/scenario-droni-high/";
 			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
-					 "\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
-					 "\"Slots\",\"Messages sent\",\"Messages received\", \"Max distance\", \"Reached maxDist node\"";
+							 "\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
+							 "\"Slots\",\"Messages sent\",\"Messages received\", \"Max distance\", \"Reached maxDist node\","
+							 "\"Vehicles cover\"";
 		}
 		else if (experiment.GetDroneTest()) {
 			additionalPath = "/out/scenario-droni/";
 			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
-					"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
-					"\"Slots\",\"Messages sent\",\"Messages received\", \"Max distance\", \"Reached maxDist node\"";
+								"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
+								"\"Slots\",\"Messages sent\",\"Messages received\", \"Max distance\", \"Reached maxDist node\","
+					 	 	 	"\"Vehicles cover\"";
 		}
 		else {
 			additionalPath = "/out/scenario-urbano/";

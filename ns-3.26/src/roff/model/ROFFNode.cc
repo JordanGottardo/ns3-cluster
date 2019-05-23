@@ -84,6 +84,9 @@ namespace ns3 {
 		return m_stopSending;
 	}
 
+	bool ROFFNode::AmIAVehicle() const {
+		return m_amIaVehicle;
+	}
 
 //	Setters
 	void ROFFNode::SetNode(Ptr<Node> node) {
@@ -136,6 +139,10 @@ namespace ns3 {
 	void ROFFNode::SetStopSending (bool stopSending) {
 		NS_LOG_FUNCTION (this << stopSending);
 		m_stopSending = stopSending;
+	}
+
+	void ROFFNode::SetMeAsVehicle(bool vehicle) {
+		m_amIaVehicle = vehicle;
 	}
 
 //	Methods

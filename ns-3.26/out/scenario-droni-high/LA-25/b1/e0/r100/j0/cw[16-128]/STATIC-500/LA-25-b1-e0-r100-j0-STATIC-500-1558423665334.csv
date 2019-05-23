@@ -1,2 +1,0 @@
-"id","Scenario","Actual Range","Protocol","Buildings","Total nodes","Nodes on circ","Total coverage","Coverage on circ","Alert received mean time","Hops","Slots","Messages sent","Messages received", "Max distance", "Reached maxDist node"
-0,1,100,500,1,2922,77,1407,66,644270,22.4242,665.712,766,1407,1863,0

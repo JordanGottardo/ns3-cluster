@@ -57,6 +57,7 @@ void ROFFApplication::PrintStats(std::stringstream& dataStream) {
 	NS_LOG_FUNCTION (this);
 //	NS_LOG_INFO("ROFFApplication::PrintStats " << m_received << " nodes have received the message");
 	uint32_t cover = 1;	// 'cause we count m_startingNode
+	uint32_t coverVehicles = 1;
 	uint32_t circ = 0, circCont = 0;
 
 	double radiusMin = m_aoi - m_aoi_error;
@@ -76,14 +77,13 @@ void ROFFApplication::PrintStats(std::stringstream& dataStream) {
 		if (nodeId == m_startingNode)
 			continue;
 
-		// If this isn't a vehciles, skip
-//			if (!current->AmIaVehicle())
-//				continue;
-
 		// Update the total cover value
 		if (current->GetReceived()) {
 //			cout << "cover++" << endl;
 			cover++;
+			if (current->AmIAVehicle()) {
+				coverVehicles++;
+			}
 		}
 
 		// Compute cover on circumference of radius m_aoi
@@ -150,7 +150,7 @@ void ROFFApplication::PrintStats(std::stringstream& dataStream) {
 	if (m_droneTest) {
 		uint32_t maxDistance = 0;
 		uint32_t maxDistanceNodeReached = IsMaxDistNodeReached(maxDistance);
-		dataStream << "," << maxDistance << "," << maxDistanceNodeReached;
+		dataStream << "," << maxDistance << "," << maxDistanceNodeReached << "," << coverVehicles;
 	}
 }
 
@@ -161,7 +161,7 @@ void ROFFApplication::StartApplication(void) {
 	if (m_forgedCoordRate > 0) {
 		GenerateForgedHelloTraffic();
 	}
-	GenerateHelloTraffic(7);
+	GenerateHelloTraffic(15);
 	Simulator::Schedule(Seconds(m_broadcastPhaseStart), &ROFFApplication::StartBroadcastPhase, this);
 }
 
@@ -202,15 +202,29 @@ void ROFFApplication::GenerateHelloTraffic(uint32_t count) {
 		return;
 	}
 	Ptr<ROFFNode> roffNode = m_nodes.at(0);
+	cout << "nodes size = " << m_nodes.size() << endl;
+	int toSend = m_nodes.size() * 0.4;
+	cout << "toSend= " << toSend << endl;
+	map<uint32_t, bool> sentMap;
 
+	while (sentMap.size() < toSend) {
+		uint32_t send = m_randomVariable->GetInteger(0, m_nodes.size() - 1);
+		if (sentMap.count(send) == 0) {
+			sentMap[send] = true;
+			Ptr<ROFFNode> roffNode = m_nodes.at(send);
+			uint32_t waitingTime = m_randomVariable->GetInteger(0, m_beaconInterval * 2);
+			Simulator::Schedule(MilliSeconds(waitingTime), &ROFFApplication::GenerateHelloMessage, this, roffNode);
 
-	for (auto entry: m_nodes) {
-		Ptr<ROFFNode> roffNode = entry.second;
-		// Generate random waiting time between [0, beaconInterval*2]. Average is beaconInterval
-		uint32_t waitingTime = m_randomVariable->GetInteger(0, m_beaconInterval * 2);
-		Simulator::Schedule(MilliSeconds(waitingTime), &ROFFApplication::GenerateHelloMessage, this, roffNode);
+		}
 	}
-	Simulator::Schedule (Seconds(1), &ROFFApplication::GenerateHelloTraffic, this, count - 1);
+
+//	for (auto entry: m_nodes) {
+//		Ptr<ROFFNode> roffNode = entry.second;
+//		// Generate random waiting time between [0, beaconInterval*2]. Average is beaconInterval
+//		uint32_t waitingTime = m_randomVariable->GetInteger(0, m_beaconInterval * 2);
+//		Simulator::Schedule(MilliSeconds(waitingTime), &ROFFApplication::GenerateHelloMessage, this, roffNode);
+//	}
+	Simulator::Schedule (MilliSeconds(m_beaconInterval * 2 + 1), &ROFFApplication::GenerateHelloTraffic, this, count - 1);
 
 }
 
@@ -221,6 +235,8 @@ void ROFFApplication::StartBroadcastPhase(void) {
 		Ptr<ROFFNode> roffNode = entry.second;
 //		cout << "ROFFApplication::StartBroadcastPhase nbt size= " << roffNode->GetNBTSize() << endl;
 	}
+			cout << "ROFFApplication::StartBroadcastPhase nbt size= " << m_nodes.at(m_startingNode)->GetNBTSize() << endl;
+
 	GenerateAlertMessage(m_nodes.at(m_startingNode));
 	if (m_errorRate > 0) {
 		Simulator::Schedule(MilliSeconds(1), &ROFFApplication::GenerateAlertMessage, this, m_nodes.at(m_startingNode));
@@ -293,10 +309,10 @@ void ROFFApplication::ReceivePacket(Ptr<Socket> socket) {
 		if (packetType == HELLO_MESSAGE) {
 			HandleHelloMessage(roffNode, header);
 		} else if (packetType == ALERT_MESSAGE) {
-			NS_LOG_DEBUG("ROFFApplication::ReceivePacket node " << node->GetId() <<
-					" has received an alertMessage from node "
-					<< header.GetSenderId() <<
-					" at time= " << Simulator::Now());
+//			NS_LOG_DEBUG("ROFFApplication::ReceivePacket node " << node->GetId() <<
+//					" has received an alertMessage from node "
+//					<< header.GetSenderId() <<
+//					" at time= " << Simulator::Now());
 //			cout << "nbt size= " << roffNode->GetNBTSize() << endl;
 			HandleAlertMessage(roffNode, header, distance);
 		} else {
@@ -330,9 +346,6 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 	Vector starterPosition = header.GetStarterPosition();
 
 	double distanceSenderToCurrent = ns3::CalculateDistance(senderPosition, currentPosition);
-	if (distanceSenderToCurrent > m_actualRange + 100) {
-		return;
-	}
 
 	double distanceSenderToStarter = ns3::CalculateDistance(senderPosition, starterPosition);
 	double distanceCurrentToStarter = ns3::CalculateDistance(currentPosition, starterPosition);
@@ -348,8 +361,8 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 		}
 	}
 	else {
-		if (phase > node->GetPhase() && (distanceSenderToStarter > distanceCurrentToStarter)) {
-//		if (phase > node->GetPhase()) { //todo abilitare per urbano
+//		if (phase > node->GetPhase() && (distanceSenderToStarter > distanceCurrentToStarter)) {
+		if (phase > node->GetPhase()) { //todo abilitare per urbano
 			NS_LOG_LOGIC("node " << node->GetId() << "is not inside a junction: updates phase from " << node->GetPhase() << " to " << phase);
 			node->SetPhase(phase);
 		}
@@ -373,9 +386,9 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 		m_transmissionList[senderId].push_back(receiverId);
 		m_transmissionVector.push_back(Edge(senderId, receiverId, phase));
 	}
-	NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage Node " << node->GetId() << " "
-			"received alert message from node " << header.GetSenderId() <<
-			" with phase= " << phase);
+//	NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage Node " << node->GetId() << " "
+//			"received alert message from node " << header.GetSenderId() <<
+//			" with phase= " << phase);
 
 
 	boost::dynamic_bitset<> esdBitmap =  header.GetESDBitmap();
@@ -394,12 +407,12 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 //	if (distanceCurrentToStarter > distanceSenderToStarter) {
 
 	if ( posToCheck >= esdBitmapSize || esdBitmap[posToCheck] == 0) {
-		NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage Node " << node->GetId()
+		NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage Node " << node->GetId() << " pos " << node->UpdatePosition()
 				<< " won't participate in contention: not present in esd bitmap");
 		return;
 	}
 	if (!node->IsNodeWinnerInContention(dist, senderPosition)) {
-		NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage Node " << node->GetId()
+		NS_LOG_DEBUG("ROFFApplication::HandleAlertMessage Node " << node->GetId() << " pos " << node->UpdatePosition()
 				<< " won't participate in contention: it has lost the contention");
 		return;
 	}
@@ -451,12 +464,12 @@ void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHead
 	if (!(node->GetSent() && forceSend)) {
 		if (node->GetPhase() > phase) {
 			NS_LOG_DEBUG("ROFFApplication::ForwardAlertMessage node "
-					<< node->GetId() << " defers because of phase (" << node->GetPhase() << " > " << phase << ")");
+					<< node->GetId() << " pos " << node->UpdatePosition() << " defers because of phase (" << node->GetPhase() << " > " << phase << ")");
 			return;
 		}
 		if (node->GetSent()) {
 			NS_LOG_DEBUG("ROFFApplication::ForwardAlertMessage node "
-					<< node->GetId() << " defers because of getSent");
+					<< node->GetId() << " pos " << node->UpdatePosition() << " defers because of getSent");
 			return;
 		}
 	}
@@ -476,7 +489,7 @@ void ROFFApplication::ForwardAlertMessage(Ptr<ROFFNode> node, ROFFHeader oldHead
 
 	Ptr<Packet> packet = Create<Packet>(m_packetPayload);
 	packet->AddHeader(header);
-	NS_LOG_DEBUG("ROFFApplication::ForwardAlertMessage node " << node->GetId()
+	NS_LOG_DEBUG("ROFFApplication::ForwardAlertMessage node " << node->GetId() << " pos " << node->UpdatePosition()
 			<< " forwards after waitingTime= " << waitingTime << " at distance" << distance);
 	node->Send(packet);
 	node->SetSent(true);

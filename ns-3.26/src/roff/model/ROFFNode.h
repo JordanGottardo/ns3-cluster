@@ -62,6 +62,8 @@ public:
 
 	Time GetTimestamp() const;
 
+	bool AmIAVehicle() const;
+
 	/**
 	 * \returns true if the node is inside an junction
 	 */
@@ -109,6 +111,8 @@ public:
 	void SetJunctionId (uint64_t junctionId);
 
 	void SetStopSending (bool stopSending);
+
+	void SetMeAsVehicle(bool vehicle);
 
 //	Methods
 	void Send(Ptr<Packet> packet);
