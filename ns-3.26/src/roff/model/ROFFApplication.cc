@@ -361,8 +361,8 @@ void ROFFApplication::HandleAlertMessage(Ptr<ROFFNode> node,
 		}
 	}
 	else {
-//		if (phase > node->GetPhase() && (distanceSenderToStarter > distanceCurrentToStarter)) {
-		if (phase > node->GetPhase()) { //todo abilitare per urbano
+		if (phase > node->GetPhase() && (distanceSenderToStarter > distanceCurrentToStarter)) {
+//		if (phase > node->GetPhase()) { //todo abilitare per urbano
 			NS_LOG_LOGIC("node " << node->GetId() << "is not inside a junction: updates phase from " << node->GetPhase() << " to " << phase);
 			node->SetPhase(phase);
 		}
