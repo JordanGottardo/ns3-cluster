@@ -11,12 +11,14 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Definition of $minDiff$ between $f_N$ and $f_{N-1}$ (\cite {6906275})\relax }}{14}{figure.caption.8}
+\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces ns-3 module structure\relax }}{16}{figure.caption.8}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces ns-3 module structure\relax }}{16}{figure.caption.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Packet transmission in NetAnim\relax }}{17}{figure.caption.9}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Packet transmission in NetAnim\relax }}{17}{figure.caption.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Steps to generate necessary files using SUMO (\cite {ROM2017})\relax }}{18}{figure.caption.10}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Steps to generate necessary files using SUMO (\cite {ROM2017})\relax }}{18}{figure.caption.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Padua scenario with vehicle distance equals to 15 meters (top) and 45 meters (bottom)\relax }}{19}{figure.caption.11}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Padua scenario with vehicle distance equals to 15 meters (top) and 45 meters (bottom)\relax }}{19}{figure.caption.12}
