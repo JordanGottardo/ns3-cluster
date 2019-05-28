@@ -77,7 +77,62 @@
 			\caption{Components of ROFF algorithm}
 			\label{fig:roffAlgo}
 		\end{figure}
+	
+		The algorithm in short works as follows (additional information will be given in the following sections):
+		\begin{itemize}
+			\item when a forwarder relays an Alert Message, it also broadcasts a special structure called ESD Bitmap which describe the empty space distribution within the forwarderś NFA;
+			\item PFCs which receive the Alert Message and the ESD Bitmap decide whether they are eligible for contention based on the ESD Bitmap;
+			\item Eligible PFCs contend by choosing different waiting times based on a unique forwarding priority.
+		\end{itemize}
+	
+		\subsection{ESD Bitmap Construction}
+			Upon Hello Message reception, each vehicle uses the data within the message in order to update and maintain a structure called Neighbor Table (NBT) which monitors its local view (i.e. all the vehicles in the neighborhood of said vehicle). Each entry of the NBT contains:
+			\begin{itemize}
+				\item the ID of the neighbor;
+				\item the position of the neighbor;
+				\item the reception time of the Hello Message to verify the freshness of information and remove outdates entries.
+			\end{itemize}
+			An example of Neighbor Table of node with ID 0 is represented in Picture \ref{fig:nbt}.
+				
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{immagini/nbt}
+			\caption{Example of Neighbor Table of node with ID 0}
+			\label{fig:nbt}
+		\end{figure}
+		Thanks to the NBT, the forwarder can advertise its neighborhood to other vehicles. We can define the set of neighbors detected by the forwarder as its \textit{local view}. If a vehicle who receives an Alert Message is not present inside the local view of the forwarder, then that vehicle cannot participate in contention.
 		
+		
+		The NBT could be piggybacked as-is on the Alert Message, but the authors of ROFF identified some problems with this solution, such as the great overhead caused by the size of IDs. Hence, the proposed solution consists in compressing the NBT in a bitmap-like structure called ESD Bitmap. 
+		
+		
+		In order to build the ESD Bitmap, first of all the forwarder measures the distance between itself and each of its neighbors listed in the NBT. Due to GPS granularity, distances are expressed at meter-level and can be represented with non-negative integers.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{immagini/esdBitmapConstruction}
+			\caption{ESD Bitmap construction with \textit{k} = 1}
+			\label{fig:esdBitmapConstruction}
+		\end{figure}
+		
+		After distance measurement, \textit{fwd} builds a bitmap to represent the measured distances by setting the \textit{i-th} bit to either:
+		\begin{itemize}
+			\item 1 if there is a PFC distant $d$ from \textit{fwd} such that $k * i \leq d \leq k * ( i + 1 ) - 1$;
+			\item 0 otherwise.
+		\end{itemize} 
+		The parameter \textit{k}, called \textit{distance range}, identifies how many distances can be identified by the same bit in the ESD Bitmap. This parameter can be controlled to manage the compression level and the accuracy of the Bitmap. Increasing \textit{k} decreases the number of bits of the Bitmap, but every bit will identify \textit{k} different distances, hence losing precision.
+		Picture \ref{fig:esdBitmapConstruction} shows the construction of an ESD Bitmap using $k = 1$.
+		
+		
+		An ESD Bitmap using $k = 2$ is show in Figure \ref{fig:esdBitmapConstructionK2}. It is possible to see that the bit in position 4 represents distances $d$ such that $8 \leq d \leq 9$. 
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{immagini/esdBitmapConstructionK2}
+			\caption{ESD Bitmap construction with \textit{k} = 1}
+			\label{fig:esdBitmapConstructionK2}
+		\end{figure}
+	
 		
 		
 		
