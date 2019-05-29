@@ -94,45 +94,65 @@
 			\end{itemize}
 			An example of Neighbor Table of node with ID 0 is represented in Picture \ref{fig:nbt}.
 				
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=0.7\textwidth]{immagini/nbt}
-			\caption{Example of Neighbor Table of node with ID 0}
-			\label{fig:nbt}
-		\end{figure}
-		Thanks to the NBT, the forwarder can advertise its neighborhood to other vehicles. We can define the set of neighbors detected by the forwarder as its \textit{local view}. If a vehicle who receives an Alert Message is not present inside the local view of the forwarder, then that vehicle cannot participate in contention.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.7\textwidth]{immagini/nbt}
+				\caption{Example of Neighbor Table of node with ID 0}
+				\label{fig:nbt}
+			\end{figure}
+			Thanks to the NBT, the forwarder can advertise its neighborhood to other vehicles. We can define the set of neighbors detected by the forwarder as its \textit{local view}. If a vehicle who receives an Alert Message is not present inside the local view of the forwarder, then that vehicle cannot participate in contention.
+			
+			
+			The NBT could be piggybacked as-is on the Alert Message, but the authors of ROFF identified some problems with this solution, such as the great overhead caused by the size of IDs. Hence, the proposed solution consists in compressing the NBT in a bitmap-like structure called ESD Bitmap. 
+			
+			
+			In order to build the ESD Bitmap, first of all the forwarder measures the distance between itself and each of its neighbors listed in the NBT. Due to GPS granularity, distances are expressed at meter-level and can be represented with non-negative integers.
+			
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=\textwidth]{immagini/esdBitmapConstruction}
+				\caption{ESD Bitmap construction with \textit{k} = 1}
+				\label{fig:esdBitmapConstruction}
+			\end{figure}
+			
+			After distance measurement, \textit{fwd} builds a bitmap to represent the measured distances by setting the \textit{i-th} bit to either:
+			\begin{itemize}
+				\item 1 if there is a PFC distant $d$ from \textit{fwd} such that $k * i \leq d \leq k * ( i + 1 ) - 1$;
+				\item 0 otherwise.
+			\end{itemize} 
+			The parameter \textit{k}, called \textit{distance range}, identifies how many distances can be identified by the same bit in the ESD Bitmap. This parameter can be controlled to manage the compression level and the accuracy of the Bitmap. Increasing \textit{k} decreases the number of bits of the Bitmap, but every bit will identify \textit{k} different distances, hence losing precision.
+			Picture \ref{fig:esdBitmapConstruction} shows the construction of an ESD Bitmap using $k = 1$.
+			
+			
+			An ESD Bitmap using $k = 2$ is show in Figure \ref{fig:esdBitmapConstructionK2}. It is possible to see that the bit in position 4 represents distances $d$ such that $8 \leq d \leq 9$. 
+			
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=\textwidth]{immagini/esdBitmapConstructionK2}
+				\caption{Resulting ESD Bitmap with \textit{k} = 2}
+				\label{fig:esdBitmapConstructionK2}
+			\end{figure}
 		
-		
-		The NBT could be piggybacked as-is on the Alert Message, but the authors of ROFF identified some problems with this solution, such as the great overhead caused by the size of IDs. Hence, the proposed solution consists in compressing the NBT in a bitmap-like structure called ESD Bitmap. 
-		
-		
-		In order to build the ESD Bitmap, first of all the forwarder measures the distance between itself and each of its neighbors listed in the NBT. Due to GPS granularity, distances are expressed at meter-level and can be represented with non-negative integers.
-		
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=\textwidth]{immagini/esdBitmapConstruction}
-			\caption{ESD Bitmap construction with \textit{k} = 1}
-			\label{fig:esdBitmapConstruction}
-		\end{figure}
-		
-		After distance measurement, \textit{fwd} builds a bitmap to represent the measured distances by setting the \textit{i-th} bit to either:
-		\begin{itemize}
-			\item 1 if there is a PFC distant $d$ from \textit{fwd} such that $k * i \leq d \leq k * ( i + 1 ) - 1$;
-			\item 0 otherwise.
-		\end{itemize} 
-		The parameter \textit{k}, called \textit{distance range}, identifies how many distances can be identified by the same bit in the ESD Bitmap. This parameter can be controlled to manage the compression level and the accuracy of the Bitmap. Increasing \textit{k} decreases the number of bits of the Bitmap, but every bit will identify \textit{k} different distances, hence losing precision.
-		Picture \ref{fig:esdBitmapConstruction} shows the construction of an ESD Bitmap using $k = 1$.
-		
-		
-		An ESD Bitmap using $k = 2$ is show in Figure \ref{fig:esdBitmapConstructionK2}. It is possible to see that the bit in position 4 represents distances $d$ such that $8 \leq d \leq 9$. 
-		
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=\textwidth]{immagini/esdBitmapConstructionK2}
-			\caption{ESD Bitmap construction with \textit{k} = 1}
-			\label{fig:esdBitmapConstructionK2}
-		\end{figure}
+		\subsection{Forwarding Priority Acquisition}
+			Whenever a PFC $f_i$ receives the Alert Message with included the ESD Bitmap from $fwd$, it checks whether the distance between itself and the previous forwarder is listed inside the bitmap (i.e. $f_i$ checks whether the bit in position $d(fwd, f_i)$ in the bitmap is equal to 1, assuming $k = 1$). If so, $f_i$ can participate in contention since it is inside the \textit{local view} of $fwd$. Otherwise, is cannot participate in contention to forward the Alert Message.
+			
+			
+			After $f_i$ has entered contention, it can calculate its own forwarding priority based on the distances express by the ESD Bitmap. These distances are the distances of every other PFC which can participate in contention. Assuming that $L_{dist}$ is the list of distances ordered in ascending order and $distance = d(fwd, f_i)$, $f_i$'s forwarding priority is set as the rank of $distance$ inside $L_{dist}$. This way PFCs that are farther away from $fwd$ are assigned a higher forwarding priority, while PFCs nearer $fwd$ are assigned a lower forwarding priority.
+			
+			
+			ROFF avoids assigning the same priority to two different PFCs by a technique called \textit{ID-based contention}. Using this technique, whenever a PFC $f_i$ receives an Alert Message it checks whether its NBT contains another vehicle $f_j$ whose distance from $fwd$ is the same as $f_i$'s (hence the distance is identified by the same bit in the bitmap). If so, $f_i$ participates in detection only if its ID is higher than the ID of $f_j$. In other words, if inside $f_i$'s NBT there exists an entry for $f_j$ such that $d(fwd, f_i) = d(fwd, f_j)$ and $ID_{f_j} > ID_{f_i}$, then $f_i$ defers its transmission. Figure \ref{fig:idBasedContention} depicts a scenario where node A does not participate in contention due to ID-based contention.
 	
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=\textwidth]{immagini/idBasedContention}
+				\caption{ID-based contention: node A defers its transmission}
+				\label{fig:idBasedContention}
+			\end{figure}
+		
+		\section{Waiting Time Assignment}
+			Once forwarding priorities are determined, ROFF assigns a waiting time that is inversely proportional to it. Letting $PFC(i)$ be the PFC with forwarding priority $i$ and $WT_p$ the waiting time of PFC $p$, in order to achieve successful suppression of transmission by $PFC(i-1)$, the waiting time of $PFC(i-1)$ should be at least longer by $minDiff_{PFC(i), PFC(i-1)}$ than waiting time of $PFC(i)$ (i.e. $WT_{PFC(i-1)} \geq WT_{PFC(i)} + minDiff_{PFC(i), PFC(i-1)})$. Hence, the waiting time of $PFC(k)$ is the sum of $minDiff$s between PFCs with forwarding priorities lower than $k$, as shown in Equation xxx. PFC with top priority (being equal to 1) broadcasts immediately and does not have to wait any time.
+			
+			$$WT_{PFC(k)} = \sum_{i=2}^{k} minDiff_{PFC(i),PFC(i-1)} (k \geq 2)$$
 		
 		
 		

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.24)  28 MAY 2019 15:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.24)  29 MAY 2019 11:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1875,7 +1875,7 @@ Overfull \hbox (10.3969pt too wide) in paragraph at lines 27--28
 LaTeX Warning: Citation '5720204' on page 2 undefined on input line 30.
 
 [2]
-<immagini/sumo-obstacle.png, id=131, 1906.12125pt x 842.14626pt>
+<immagini/sumo-obstacle.png, id=137, 1906.12125pt x 842.14626pt>
 File: immagini/sumo-obstacle.png Graphic file (type png)
 <use immagini/sumo-obstacle.png>
 Package pdftex.def Info: immagini/sumo-obstacle.png  used on input line 67.
@@ -1997,7 +1997,7 @@ LaTeX Warning: Citation '4199282' on page 11 undefined on input line 111.
 
 LaTeX Warning: Citation 'BAR2017' on page 11 undefined on input line 111.
 
-<immagini/fb-2dpicc.png, id=193, 897.3525pt x 767.86874pt>
+<immagini/fb-2dpicc.png, id=199, 897.3525pt x 767.86874pt>
 File: immagini/fb-2dpicc.png Graphic file (type png)
 <use immagini/fb-2dpicc.png>
 Package pdftex.def Info: immagini/fb-2dpicc.png  used on input line 125.
@@ -2007,7 +2007,7 @@ Chapter 3.
 
 LaTeX Warning: Citation '6906275' on page 13 undefined on input line 8.
 
-<immagini/minDiff.png, id=213, 1098.1025pt x 534.99875pt>
+<immagini/minDiff.png, id=219, 1098.1025pt x 534.99875pt>
 File: immagini/minDiff.png Graphic file (type png)
 <use immagini/minDiff.png>
 Package pdftex.def Info: immagini/minDiff.png  used on input line 22.
@@ -2021,7 +2021,7 @@ LaTeX Warning: Citation '6906275' on page 13 undefined on input line 23.
 [13
 
 ] [14 <./immagini/minDiff.png>]
-<immagini/emptySpace.png, id=230, 991.705pt x 517.935pt>
+<immagini/emptySpace.png, id=236, 991.705pt x 517.935pt>
 File: immagini/emptySpace.png Graphic file (type png)
 <use immagini/emptySpace.png>
 Package pdftex.def Info: immagini/emptySpace.png  used on input line 51.
@@ -2034,42 +2034,47 @@ LaTeX Warning: Citation '6906275' on page 15 undefined on input line 52.
 LaTeX Warning: Citation '6906275' on page 15 undefined on input line 52.
 
 [15 <./immagini/emptySpace.png>]
-<immagini/roffAlgo.png, id=237, 1037.8775pt x 742.775pt>
+<immagini/roffAlgo.png, id=243, 1037.8775pt x 742.775pt>
 File: immagini/roffAlgo.png Graphic file (type png)
 <use immagini/roffAlgo.png>
 Package pdftex.def Info: immagini/roffAlgo.png  used on input line 76.
 (pdftex.def)             Requested size: 260.39886pt x 186.36198pt.
  [16 <./immagini/roffAlgo.png>]
-<immagini/nbt.png, id=246, 1117.17375pt x 294.09875pt>
+<immagini/nbt.png, id=252, 1117.17375pt x 294.09875pt>
 File: immagini/nbt.png Graphic file (type png)
 <use immagini/nbt.png>
 Package pdftex.def Info: immagini/nbt.png  used on input line 99.
 (pdftex.def)             Requested size: 260.39886pt x 68.54778pt.
-<immagini/esdBitmapConstruction.png, id=247, 1521.685pt x 868.24374pt>
+<immagini/esdBitmapConstruction.png, id=253, 1521.685pt x 868.24374pt>
 File: immagini/esdBitmapConstruction.png Graphic file (type png)
 <use immagini/esdBitmapConstruction.png>
 Package pdftex.def Info: immagini/esdBitmapConstruction.png  used on input line
  113.
 (pdftex.def)             Requested size: 372.0pt x 212.25127pt.
  [17 <./immagini/nbt.png> <./immagini/esdBitmapConstruction.png>]
-<immagini/esdBitmapConstructionK2.png, id=256, 1431.3475pt x 176.66pt>
+<immagini/esdBitmapConstructionK2.png, id=262, 1431.3475pt x 176.66pt>
 File: immagini/esdBitmapConstructionK2.png Graphic file (type png)
 <use immagini/esdBitmapConstructionK2.png>
 Package pdftex.def Info: immagini/esdBitmapConstructionK2.png  used on input li
 ne 131.
 (pdftex.def)             Requested size: 372.0pt x 45.91164pt.
-)
-(./capitoli/capitolo-4-tools-and-applications.tex [18 <./immagini/esdBitmapCons
-tructionK2.png>]
+<immagini/idBasedContention.png, id=264, 1642.135pt x 851.18pt>
+File: immagini/idBasedContention.png Graphic file (type png)
+<use immagini/idBasedContention.png>
+Package pdftex.def Info: immagini/idBasedContention.png  used on input line 147
+.
+(pdftex.def)             Requested size: 372.0pt x 192.81902pt.
+ [18 <./immagini/esdBitmapConstructionK2.png>]) (./capitoli/capitolo-4-tools-an
+d-applications.tex [19 <./immagini/idBasedContention.png>] [20
+
+]
 Chapter 4.
-<immagini/ns-3-module.png, id=263, 1734.48pt x 718.685pt>
+<immagini/ns-3-module.png, id=279, 1734.48pt x 718.685pt>
 File: immagini/ns-3-module.png Graphic file (type png)
 <use immagini/ns-3-module.png>
 Package pdftex.def Info: immagini/ns-3-module.png  used on input line 30.
 (pdftex.def)             Requested size: 372.0pt x 154.13043pt.
-[19
-
-]
+[21]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 46.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -2084,39 +2089,39 @@ Overfull \hbox (51.97722pt too wide) in paragraph at lines 52--53
 on. For ex-am-ple, the \T1/cmtt/m/n/10 UdoEchoClientApplication
  []
 
-[20 <./immagini/ns-3-module.png>]
-<immagini/netanim.png, id=276, 674.52pt x 689.57625pt>
+[22 <./immagini/ns-3-module.png>]
+<immagini/netanim.png, id=293, 674.52pt x 689.57625pt>
 File: immagini/netanim.png Graphic file (type png)
 <use immagini/netanim.png>
 Package pdftex.def Info: immagini/netanim.png  used on input line 77.
 (pdftex.def)             Requested size: 256.32027pt x 262.04169pt.
- [21 <./immagini/netanim.png>]
+ [23 <./immagini/netanim.png>]
 
-LaTeX Warning: Citation 'ROM2017' on page 22 undefined on input line 89.
+LaTeX Warning: Citation 'ROM2017' on page 24 undefined on input line 89.
 
-<immagini/sumo-process.png, id=285, 1173.38374pt x 852.18375pt>
+<immagini/sumo-process.png, id=303, 1173.38374pt x 852.18375pt>
 File: immagini/sumo-process.png Graphic file (type png)
 <use immagini/sumo-process.png>
 Package pdftex.def Info: immagini/sumo-process.png  used on input line 100.
 (pdftex.def)             Requested size: 372.0pt x 270.16873pt.
 
-LaTeX Warning: Citation 'ROM2017' on page 22 undefined on input line 101.
+LaTeX Warning: Citation 'ROM2017' on page 24 undefined on input line 101.
 
 
-LaTeX Warning: Citation 'ROM2017' on page 22 undefined on input line 101.
+LaTeX Warning: Citation 'ROM2017' on page 24 undefined on input line 101.
 
-<immagini/sumo-distances.png, id=286, 1957.3125pt x 2261.44875pt>
+<immagini/sumo-distances.png, id=304, 1957.3125pt x 2261.44875pt>
 File: immagini/sumo-distances.png Graphic file (type png)
 <use immagini/sumo-distances.png>
 Package pdftex.def Info: immagini/sumo-distances.png  used on input line 107.
 (pdftex.def)             Requested size: 372.0pt x 429.78325pt.
-) [22 <./immagini/sumo-process.png>] [23 <./immagini/sumo-distances.png>]
-[24
+) [24 <./immagini/sumo-process.png>] [25 <./immagini/sumo-distances.png>]
+[26
 
-] (./tesi.gls) (./tesi.acr) (./inizio-fine/bibliografia.tex [25
+] (./tesi.gls) (./tesi.acr) (./inizio-fine/bibliografia.tex [27
 
 
-] [26
+] [28
 
 ])
 
@@ -2142,11 +2147,11 @@ Package logreq Info: Writing requests to 'tesi.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 197.
  ) 
 Here is how much of TeX's memory you used:
- 37141 strings out of 492982
- 664373 string characters out of 6134895
+ 37164 strings out of 492982
+ 664728 string characters out of 6134895
  1225700 words of memory out of 5000000
- 39707 multiletter control sequences out of 15000+600000
- 28944 words of font info for 132 fonts, out of 8000000 for 9000
+ 39716 multiletter control sequences out of 15000+600000
+ 29284 words of font info for 136 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  61i,13n,122p,1969b,2471s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
@@ -2174,10 +2179,10 @@ super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1000.pfb><
 /usr/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf/fon
 ts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sftt1000.pfb>
-Output written on tesi.pdf (28 pages, 1278908 bytes).
+Output written on tesi.pdf (30 pages, 1352762 bytes).
 PDF statistics:
- 508 PDF objects out of 1000 (max. 8388607)
- 427 compressed objects within 5 object streams
- 99 named destinations out of 1000 (max. 500000)
- 26385 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 531 PDF objects out of 1000 (max. 8388607)
+ 447 compressed objects within 5 object streams
+ 104 named destinations out of 1000 (max. 500000)
+ 26406 words of extra memory for PDF output out of 29859 (max. 10000000)
 
