@@ -9,8 +9,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.3}Emergency Message Dissemination and broadcasting protocols}{3}{section.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.4}sec:emd}{3}{section.1.4}
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Fast Broadcast}{9}{chapter.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Estimation Phase}{9}{section.2.1}
@@ -27,18 +25,26 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.2}Latency Analysis}{14}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Tools and applications}{15}{chapter.4}
+\contentsline {section}{\numberline {3.2}ROFF Algorithm}{16}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Network Simulator 3}{15}{section.4.1}
+\contentsline {subsection}{\numberline {3.2.1}ESD Bitmap Construction}{16}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}Modules and module structure}{15}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {3.2.2}Forwarding Priority Acquisition}{18}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.2}Key elements}{16}{subsection.4.1.2}
+\contentsline {section}{\numberline {3.3}Waiting Time Assignment}{19}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.3}Structure of a simulation}{17}{subsection.4.1.3}
+\contentsline {chapter}{\numberline {4}Tools and applications}{21}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.4}NetAnim}{17}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.1}Network Simulator 3}{21}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Simulation of Urban MObility}{18}{section.4.2}
+\contentsline {subsection}{\numberline {4.1.1}Modules and module structure}{21}{subsection.4.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Acronyms}{21}{section*.13}
+\contentsline {subsection}{\numberline {4.1.2}Key elements}{22}{subsection.4.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.3}Structure of a simulation}{23}{subsection.4.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.4}NetAnim}{23}{subsection.4.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Simulation of Urban MObility}{24}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Acronyms}{27}{section*.19}
