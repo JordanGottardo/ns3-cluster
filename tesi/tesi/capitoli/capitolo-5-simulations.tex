@@ -1,0 +1,75 @@
+% !TEX encoding = UTF-8
+% !TEX TS-program = pdflatex
+% !TEX root = ../tesi.tex
+
+
+\chapter{Simulations}
+	After the protocols under consideration have been presented in Chapters \ref{chapter:fb} and \ref{chapter:roff}, this Chapter will contain the results of the simulation carried out through various scenario of increasing complexity.
+	
+	\section{Metrics}
+		Before proceeding with the presentation of simulation results, metrics used to evaluate the protocol's performances will be presented in this section. 
+		
+		\subsection{Total Delivery Ratio (TDR)}
+			\label{ssec:tdr}
+			This metric is used to detect how many vehicles have received the Alert Message in total. Ideally, broadcasting protocols should be able to reach all the reachable nodes in the scenario in order to warn them of the danger. The metric is calculated as follows:
+			
+			\begin{gather}
+				\label{eq:tdr}
+				TDR = \frac{\textrm{\textit{no. of vehicles successfully receiving the Alert Message}}}{\textrm{\textit{no. of vehicles in the scenario}}}
+			\end{gather}
+			
+			All scenarios are created in a way such that every node can be reached by multi-hop propagation regardless of the source of the Alert Message. In other words, from graph theory point of view, the graph resulting from vehicle distribution where two nodes are connected only if they are within transmission range of each other is a connected graph. This way, the term at the denominator of Equation \ref{eq:tdr} is equivalent to the number of vehicles reachable by pure flooding.
+			
+		\subsection{Total Delivery Ratio On Circumference (TDROC)}
+			This metric is used to detect how many vehicles on the circumference have received the Alert Message. The circumference is built starting from the source of the Alert Message. The way it is built depends on scenario topology (e.g. 1D, 2D, etc) and will be explained more thoroughly in the following Sections. The main idea behind the circumference consists in considering only vehicles far from the source of the AM. The metric is calculated as follows:
+			
+			\begin{gather}
+			 	\label{eq:tdroc}
+			 	TDROC = \frac{\textrm{\textit{no. of vehicles on circ. successfully receiving the Alert Message}}}{\textrm{\textit{no. of vehicles on circ.}}}
+			\end{gather}
+		
+			The same consideration about vehicles and reachability by pure flooding presented in Section \ref{ssec:tdr} is also valid for Equation \ref{eq:tdroc}.
+			
+		\subsection{Number Of Hops (NOH)}
+			This metric is used to measure the mean number of hops required in order to propagate the Alert Message from the source to all vehicles reached on the circumference. This value is obviously dependent on the paths taken by forwarder Alert Messages from the source to all destinations. We have that \textit{ONOH} is always greater than or equal to the \textit{Optimal Number of Hops BNOH} (i.e. $ONOH \leq NOH$). \textit{BNOH} is calculated using the following formula:
+			$$ BNOH = \frac{\textrm{\textit{Circumference Radius}}}{\textrm{\textit{Transmission Range}}} $$
+			
+			The Number Of Hops metric can be calculated as:
+			
+			\begin{gather}
+				\label{eq:noh}
+				NOH = \frac{ \sum_{p \in RC } \textrm{\textit{no. of hops from source to p}}} {\textrm{\textit{no. of vehicles on circ}}}
+			\end{gather}
+			
+			where $RC$ is the set of vehicles which have successfully received the message on the circumference.
+			
+			
+			The \textit{NOH} metric (whose value should be as close as possible to \textit{BNOH} ) is an important indicator of the effectiveness of the multi-hop protocol in choosing the farthest forwarder during contention.
+			
+			%			todo immagine hop
+			
+		\subsection{Number Of Slots (NOS)}
+			This metric is used to measure the number of slots required in order to propagate the Alert Message from the source to all vehicles reached on the circumference. High values of this metric means that the multi-hop protocol introduces a lot of waiting time before each forwarding, hence increasing end-to-end delay and hurting the timeliness of the emergency message propagation.
+		
+			\begin{gather}
+				\label{eq:nos}
+				NOH = \frac{ \sum_{p \in RC } \textrm{\textit{no. of slots waited along path from source to p}}} {\textrm{\textit{no. of vehicles on circ}}}
+			\end{gather}	
+	
+			where $RC$ is the set of vehicles which have successfully received the message on the circumference
+			The number of slots along the path from node $a$ to $b$ at the numerator of Equation \ref{eq:nos} is the sum of the slots waited by each forwarder before relaying the Alert Message. 
+			
+			%			todo immagine slots  
+			
+			
+		\subsection{Forward Node Ratio (FNR)}
+			This metric is used to measure the number of vehicles which forward the Alert Message. The value of this metric is an indicator of the effectiveness of the multi-hop protocol in successfully suppressing scheduled transmissions from PFCs after the FFC has relayed the message. The metric is calculated as follows:
+			 
+			\begin{gather}
+				\label{eq:nos}
+				NOH = \textrm{\textit{no. of vehicles forwarding the Alert Message}}
+			\end{gather}	
+				
+	\section{Platoon scenario}
+		The first scenario taken into consideration is a simple platoon scenario, where vehicles are placed in a strip-like area 15 kilometers long. Vehicle are 25 meters distant from each other. 
+	
