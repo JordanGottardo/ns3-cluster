@@ -239,7 +239,7 @@ def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, c
 	else:
 		maxY = maxY * 1.1
 	ax.set_ylim(minY, maxY)
-	#ax.set_title(graphTitle, fontsize=20)
+	ax.set_title(graphTitle, fontsize=20)
 	ax.set_xticks(ind)
 	plt.xticks(fontsize=15)
 	plt.yticks(fontsize=15)
@@ -263,7 +263,9 @@ def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, c
 
 		for rect in rects:
 			height = rect.get_height()
-			ax.text(rect.get_x() + rect.get_width()*offset[xpos], 1.01*height,
+			if (hasattr(height, "is_integer") and height.is_integer()):
+				height = int(height)
+			ax.text(rect.get_x() + rect.get_width()*offset[xpos], height,
 					'{}'.format(height), ha=ha[xpos], va='bottom', fontsize=15) 
 
 	for rect in rects:
@@ -276,6 +278,7 @@ def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, c
 	if (not os.path.exists(outPathDirectory)):
 		os.makedirs(outPathDirectory)
 	
+	#plt.tight_layout(pad=10.0)
 	plt.savefig(outPath + ".pdf")
 	plt.clf()
 	#plt.savefig('b2.pdf', bbox_inches='tight')
@@ -346,11 +349,11 @@ def printGridComparison():
 #Grid-300: contentionWindows = [{"cwMin": 16, "cwMax": 128}], buildings = ["0"], junctions = ["0"], txRanges = ["100", "300", "500"]
 def printProtocolComparison():
 	print("PrintProtocolComparison")
-	plt.rcParams["figure.figsize"] = [18, 10]
+	plt.rcParams["figure.figsize"] = [18, 6]
 	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
 	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
-	scenarios = ["Padova-25"]
-	buildings = ["0", "1"]
+	scenarios = ["Platoon-15km"]
+	buildings = ["0"]
 	errorRate = "e0"
 	#txRanges = ["100", "300", "500"]
 	txRanges = ["100", "300", "500"]
@@ -359,7 +362,7 @@ def printProtocolComparison():
 	#cws = ["cw[32-1024]"]
 	cws = ["cw[16-128]", "cw[32-1024]"]
 	#junctions = ["0", "1"]
-	junctions = ["0", "1"]
+	junctions = ["0"]
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
 	metricYLabels = {}
 	metricYLabels["totCoverage"] = "Total Coverage (%)"
@@ -367,6 +370,8 @@ def printProtocolComparison():
 	metricYLabels["hops"] = "Number of hops to reach circumference"
 	metricYLabels["slotsWaited"] = "Number of slots waited to reach circumference"
 	metricYLabels["messageSent"] = "Number of alert messages sent"
+
+
 	
 	maxMetricValues = {}
 	for metric in metrics:

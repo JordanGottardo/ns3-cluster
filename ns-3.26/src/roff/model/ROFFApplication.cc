@@ -251,6 +251,7 @@ void ROFFApplication::GenerateHelloMessage(Ptr<ROFFNode> node) {
 	ROFFHeader header(headerType, position, nodeId, position, boost::dynamic_bitset<>(), 0, 0);
 
 	Ptr<Packet> packet = Create<Packet>(m_packetPayload);
+	cout << "packetPayload = " << m_packetPayload << endl;
 	packet->AddHeader(header);
 	node->Send(packet);
 

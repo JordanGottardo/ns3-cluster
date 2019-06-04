@@ -145,6 +145,11 @@
 \newcommand\imgref[1]{\hyperref[#1]{figure \ref{#1}}}
 \newcommand\imgrefcap[1]{\hyperref[#1]{Figure \ref{#1}}}
 
+%Extra space in top and bottom tables
+\newcommand\Tstrut{\rule{0pt}{2.6ex}}       % "top" strut
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}} % "bottom" strut
+\newcommand{\TBstrut}{\Tstrut\Bstrut} % top&bottom struts
+
 %\lstset{% Add other global options here
 %	%basicstyle=\small\sffamily,
 %	escapechar=\&,	% char to escape out of listings and back to LaTeX

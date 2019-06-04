@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.24)  3 JUN 2019 16:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.24)  4 JUN 2019 17:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1668,31 +1668,40 @@ Package biblatex Info: ... file 'english.lbx' found.
 File: english.lbx 2017/12/19 v3.10 biblatex localization (PK/JW/AB)
 ) (./tesi.aux
 
-LaTeX Warning: Label `eq:nos' multiply defined.
+LaTeX Warning: Label `fig:minDiff' multiply defined.
+
+
+LaTeX Warning: Label `fig:minDiff' multiply defined.
+
+
+LaTeX Warning: Label `fig:minDiff' multiply defined.
+
+
+LaTeX Warning: Label `fig:minDiff' multiply defined.
 
 )
 \openout1 = `tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
 \AtBeginShipoutBox=\box59
-Package hyperref Info: Link coloring ON on input line 162.
-LaTeX Info: Redefining \ref on input line 162.
-LaTeX Info: Redefining \pageref on input line 162.
-LaTeX Info: Redefining \nameref on input line 162.
-LaTeX Info: Redefining \Ref on input line 162.
+Package hyperref Info: Link coloring ON on input line 167.
+LaTeX Info: Redefining \ref on input line 167.
+LaTeX Info: Redefining \pageref on input line 167.
+LaTeX Info: Redefining \nameref on input line 167.
+LaTeX Info: Redefining \Ref on input line 167.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
@@ -1770,7 +1779,7 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count410
-LaTeX Info: Redefining \microtypecontext on input line 162.
+LaTeX Info: Redefining \microtypecontext on input line 167.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1792,8 +1801,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'tesi.bbl' found.
  (./tesi.bbl)
-Package biblatex Info: Reference section=0 on input line 162.
-Package biblatex Info: Reference segment=0 on input line 162.
+Package biblatex Info: Reference section=0 on input line 167.
+Package biblatex Info: Reference segment=0 on input line 167.
 
 ABD: EveryShipout initializing macros (./inizio-fine/indici.tex (./tesi.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 6.
@@ -1879,7 +1888,7 @@ Overfull \hbox (10.3969pt too wide) in paragraph at lines 27--28
 LaTeX Warning: Citation '5720204' on page 2 undefined on input line 30.
 
 [2]
-<immagini/sumo-obstacle.png, id=174, 1906.12125pt x 842.14626pt>
+<immagini/sumo-obstacle.png, id=187, 1906.12125pt x 842.14626pt>
 File: immagini/sumo-obstacle.png Graphic file (type png)
 <use immagini/sumo-obstacle.png>
 Package pdftex.def Info: immagini/sumo-obstacle.png  used on input line 67.
@@ -2001,7 +2010,7 @@ LaTeX Warning: Citation '4199282' on page 11 undefined on input line 112.
 
 LaTeX Warning: Citation 'BAR2017' on page 11 undefined on input line 112.
 
-<immagini/fb-2dpicc.png, id=237, 897.3525pt x 767.86874pt>
+<immagini/fb-2dpicc.png, id=249, 897.3525pt x 767.86874pt>
 File: immagini/fb-2dpicc.png Graphic file (type png)
 <use immagini/fb-2dpicc.png>
 Package pdftex.def Info: immagini/fb-2dpicc.png  used on input line 126.
@@ -2011,7 +2020,7 @@ Chapter 3.
 
 LaTeX Warning: Citation '6906275' on page 13 undefined on input line 8.
 
-<immagini/minDiff.png, id=256, 1098.1025pt x 534.99875pt>
+<immagini/minDiff.png, id=268, 1098.1025pt x 534.99875pt>
 File: immagini/minDiff.png Graphic file (type png)
 <use immagini/minDiff.png>
 Package pdftex.def Info: immagini/minDiff.png  used on input line 22.
@@ -2025,7 +2034,7 @@ LaTeX Warning: Citation '6906275' on page 13 undefined on input line 23.
 [13
 
 ] [14 <./immagini/minDiff.png>]
-<immagini/emptySpace.png, id=274, 991.705pt x 517.935pt>
+<immagini/emptySpace.png, id=286, 991.705pt x 517.935pt>
 File: immagini/emptySpace.png Graphic file (type png)
 <use immagini/emptySpace.png>
 Package pdftex.def Info: immagini/emptySpace.png  used on input line 56.
@@ -2038,38 +2047,38 @@ LaTeX Warning: Citation '6906275' on page 15 undefined on input line 57.
 LaTeX Warning: Citation '6906275' on page 15 undefined on input line 57.
 
 [15 <./immagini/emptySpace.png>]
-<immagini/roffAlgo.png, id=282, 1037.8775pt x 742.775pt>
+<immagini/roffAlgo.png, id=294, 1037.8775pt x 742.775pt>
 File: immagini/roffAlgo.png Graphic file (type png)
 <use immagini/roffAlgo.png>
 Package pdftex.def Info: immagini/roffAlgo.png  used on input line 81.
 (pdftex.def)             Requested size: 260.39886pt x 186.36198pt.
  [16 <./immagini/roffAlgo.png>]
-<immagini/nbt.png, id=291, 1117.17375pt x 294.09875pt>
+<immagini/nbt.png, id=303, 1117.17375pt x 294.09875pt>
 File: immagini/nbt.png Graphic file (type png)
 <use immagini/nbt.png>
 Package pdftex.def Info: immagini/nbt.png  used on input line 104.
 (pdftex.def)             Requested size: 260.39886pt x 68.54778pt.
-<immagini/esdBitmapConstruction.png, id=292, 1521.685pt x 868.24374pt>
+<immagini/esdBitmapConstruction.png, id=304, 1521.685pt x 868.24374pt>
 File: immagini/esdBitmapConstruction.png Graphic file (type png)
 <use immagini/esdBitmapConstruction.png>
 Package pdftex.def Info: immagini/esdBitmapConstruction.png  used on input line
  118.
 (pdftex.def)             Requested size: 372.0pt x 212.25127pt.
  [17 <./immagini/nbt.png> <./immagini/esdBitmapConstruction.png>]
-<immagini/esdBitmapConstructionK2.png, id=300, 1431.3475pt x 176.66pt>
+<immagini/esdBitmapConstructionK2.png, id=313, 1431.3475pt x 176.66pt>
 File: immagini/esdBitmapConstructionK2.png Graphic file (type png)
 <use immagini/esdBitmapConstructionK2.png>
 Package pdftex.def Info: immagini/esdBitmapConstructionK2.png  used on input li
 ne 136.
 (pdftex.def)             Requested size: 372.0pt x 45.91164pt.
-<immagini/idBasedContention.png, id=302, 1642.135pt x 851.18pt>
+<immagini/idBasedContention.png, id=315, 1642.135pt x 851.18pt>
 File: immagini/idBasedContention.png Graphic file (type png)
 <use immagini/idBasedContention.png>
 Package pdftex.def Info: immagini/idBasedContention.png  used on input line 152
 .
 (pdftex.def)             Requested size: 372.0pt x 192.81902pt.
  [18 <./immagini/esdBitmapConstructionK2.png>]
-<immagini/waitingTimeAssignment.png, id=313, 1008.76875pt x 395.4775pt>
+<immagini/waitingTimeAssignment.png, id=325, 1008.76875pt x 395.4775pt>
 File: immagini/waitingTimeAssignment.png Graphic file (type png)
 <use immagini/waitingTimeAssignment.png>
 Package pdftex.def Info: immagini/waitingTimeAssignment.png  used on input line
@@ -2080,12 +2089,12 @@ Package pdftex.def Info: immagini/waitingTimeAssignment.png  used on input line
 
 LaTeX Warning: Citation '6906275' on page 20 undefined on input line 177.
 
-<immagini/roffHelloHeader.png, id=323, 1737.49126pt x 215.80624pt>
+<immagini/roffHelloHeader.png, id=335, 1737.49126pt x 215.80624pt>
 File: immagini/roffHelloHeader.png Graphic file (type png)
 <use immagini/roffHelloHeader.png>
 Package pdftex.def Info: immagini/roffHelloHeader.png  used on input line 184.
 (pdftex.def)             Requested size: 372.0pt x 46.20314pt.
-<immagini/roffAlertHeader.png, id=325, 1738.495pt x 419.5675pt>
+<immagini/roffAlertHeader.png, id=337, 1738.495pt x 419.5675pt>
 File: immagini/roffAlertHeader.png Graphic file (type png)
 <use immagini/roffAlertHeader.png>
 Package pdftex.def Info: immagini/roffAlertHeader.png  used on input line 200.
@@ -2095,7 +2104,7 @@ Package pdftex.def Info: immagini/roffAlertHeader.png  used on input line 200.
 
 ]
 Chapter 4.
-<immagini/ns-3-module.png, id=341, 1734.48pt x 718.685pt>
+<immagini/ns-3-module.png, id=353, 1734.48pt x 718.685pt>
 File: immagini/ns-3-module.png Graphic file (type png)
 <use immagini/ns-3-module.png>
 Package pdftex.def Info: immagini/ns-3-module.png  used on input line 30.
@@ -2116,7 +2125,7 @@ on. For ex-am-ple, the \T1/cmtt/m/n/10 UdoEchoClientApplication
  []
 
 [24 <./immagini/ns-3-module.png>]
-<immagini/netanim.png, id=354, 674.52pt x 689.57625pt>
+<immagini/netanim.png, id=366, 674.52pt x 689.57625pt>
 File: immagini/netanim.png Graphic file (type png)
 <use immagini/netanim.png>
 Package pdftex.def Info: immagini/netanim.png  used on input line 77.
@@ -2125,7 +2134,7 @@ Package pdftex.def Info: immagini/netanim.png  used on input line 77.
 
 LaTeX Warning: Citation 'ROM2017' on page 26 undefined on input line 89.
 
-<immagini/sumo-process.png, id=363, 1173.38374pt x 852.18375pt>
+<immagini/sumo-process.png, id=375, 1173.38374pt x 852.18375pt>
 File: immagini/sumo-process.png Graphic file (type png)
 <use immagini/sumo-process.png>
 Package pdftex.def Info: immagini/sumo-process.png  used on input line 100.
@@ -2136,7 +2145,7 @@ LaTeX Warning: Citation 'ROM2017' on page 26 undefined on input line 101.
 
 LaTeX Warning: Citation 'ROM2017' on page 26 undefined on input line 101.
 
-<immagini/sumo-distances.png, id=364, 1957.3125pt x 2261.44875pt>
+<immagini/sumo-distances.png, id=376, 1957.3125pt x 2261.44875pt>
 File: immagini/sumo-distances.png Graphic file (type png)
 <use immagini/sumo-distances.png>
 Package pdftex.def Info: immagini/sumo-distances.png  used on input line 107.
@@ -2146,23 +2155,166 @@ Package pdftex.def Info: immagini/sumo-distances.png  used on input line 107.
 
 ]
 Chapter 5.
-[29] [30]) [31] [32
+[29]
+<immagini/hops.png, id=406, 999.735pt x 842.14626pt>
+File: immagini/hops.png Graphic file (type png)
+<use immagini/hops.png>
+Package pdftex.def Info: immagini/hops.png  used on input line 54.
+(pdftex.def)             Requested size: 260.39886pt x 219.35121pt.
+ [30 <./immagini/hops.png>]
+<immagini/slots.png, id=417, 1172.38pt x 914.41624pt>
+File: immagini/slots.png Graphic file (type png)
+<use immagini/slots.png>
+Package pdftex.def Info: immagini/slots.png  used on input line 75.
+(pdftex.def)             Requested size: 260.39886pt x 203.09769pt.
 
-] (./tesi.gls) (./tesi.acr) (./inizio-fine/bibliografia.tex
-[33
+
+Package caption Warning: \label without proper reference on input line 132.
+See the caption package documentation for explanation.
 
 
-] [34
+LaTeX Warning: Reference `table:platoon' on page 31 undefined on input line 91.
+
+
+[31 <./immagini/slots.png>]
+<../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024]/totCoverage.png, id=42
+5, 1628.0825pt x 555.07375pt>
+File: ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024]/totCoverage.png G
+raphic file (type png)
+<use ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024]/totCoverage.png>
+Package pdftex.def Info: ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024
+]/totCoverage.png  used on input line 138.
+(pdftex.def)             Requested size: 409.20227pt x 139.51343pt.
+File: ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024]/totCoverage.png G
+raphic file (type png)
+<use ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024]/totCoverage.png>
+Package pdftex.def Info: ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024
+]/totCoverage.png  used on input line 145.
+(pdftex.def)             Requested size: 409.20227pt x 139.51343pt.
+
+Overfull \hbox (37.20227pt too wide) in paragraph at lines 138--146
+ [][] 
+ []
+
+
+Overfull \hbox (37.20227pt too wide) in paragraph at lines 138--146
+ [] 
+ []
+
+
+LaTeX Warning: Citation '6906275' on page 32 undefined on input line 146.
+
+
+LaTeX Warning: Citation '6906275' on page 32 undefined on input line 146.
+
+File: ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024]/totCoverage.png G
+raphic file (type png)
+<use ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024]/totCoverage.png>
+Package pdftex.def Info: ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024
+]/totCoverage.png  used on input line 152.
+(pdftex.def)             Requested size: 409.20227pt x 139.51343pt.
+File: ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024]/totCoverage.png G
+raphic file (type png)
+<use ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024]/totCoverage.png>
+Package pdftex.def Info: ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024
+]/totCoverage.png  used on input line 159.
+(pdftex.def)             Requested size: 409.20227pt x 139.51343pt.
+
+Overfull \hbox (37.20227pt too wide) in paragraph at lines 152--160
+ [][] 
+ []
+
+
+Overfull \hbox (37.20227pt too wide) in paragraph at lines 152--160
+ [] 
+ []
+
+
+LaTeX Warning: Citation '6906275' on page 32 undefined on input line 160.
+
+
+LaTeX Warning: Citation '6906275' on page 32 undefined on input line 160.
+
+[32]
+Overfull \vbox (1.14777pt too high) has occurred while \output is active []
+
+
+[33 <../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024]/totCoverage.png>]
+File: ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024]/totCoverage.png G
+raphic file (type png)
+<use ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024]/totCoverage.png>
+Package pdftex.def Info: ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024
+]/totCoverage.png  used on input line 169.
+(pdftex.def)             Requested size: 409.20227pt x 139.51343pt.
+File: ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024]/totCoverage.png G
+raphic file (type png)
+<use ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024]/totCoverage.png>
+Package pdftex.def Info: ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024
+]/totCoverage.png  used on input line 176.
+(pdftex.def)             Requested size: 409.20227pt x 139.51343pt.
+
+Overfull \hbox (37.20227pt too wide) in paragraph at lines 169--177
+ [][] 
+ []
+
+
+Overfull \hbox (37.20227pt too wide) in paragraph at lines 169--177
+ [] 
+ []
+
+
+LaTeX Warning: Citation '6906275' on page 34 undefined on input line 177.
+
+
+LaTeX Warning: Citation '6906275' on page 34 undefined on input line 177.
+
+File: ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024]/totCoverage.png G
+raphic file (type png)
+<use ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024]/totCoverage.png>
+Package pdftex.def Info: ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024
+]/totCoverage.png  used on input line 183.
+(pdftex.def)             Requested size: 409.20227pt x 139.51343pt.
+File: ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024]/totCoverage.png G
+raphic file (type png)
+<use ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024]/totCoverage.png>
+Package pdftex.def Info: ../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024
+]/totCoverage.png  used on input line 190.
+(pdftex.def)             Requested size: 409.20227pt x 139.51343pt.
+
+Overfull \hbox (37.20227pt too wide) in paragraph at lines 183--191
+ [][] 
+ []
+
+
+Overfull \hbox (37.20227pt too wide) in paragraph at lines 183--191
+ [] 
+ []
+
+
+LaTeX Warning: Citation '6906275' on page 34 undefined on input line 191.
+
+
+LaTeX Warning: Citation '6906275' on page 34 undefined on input line 191.
+
+
+Overfull \vbox (1.14777pt too high) has occurred while \output is active []
+
+
+[34]) (./tesi.gls) (./tesi.acr) (./inizio-fine/bibliografia.tex [35
+
+
+
+] [36
 
 ])
 
 LaTeX Warning: Empty bibliography on input line 20.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 198.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 198.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 203.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 203.
 (./tesi.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 198.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 198.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 203.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 203.
 
 
 LaTeX Warning: There were undefined references.
@@ -2178,14 +2330,14 @@ Package biblatex Warning: Please (re)run Biber on the file:
 Package logreq Info: Writing requests to 'tesi.run.xml'.
 \openout1 = `tesi.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 198.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 203.
  ) 
 Here is how much of TeX's memory you used:
- 37247 strings out of 492982
- 666095 string characters out of 6134895
- 1226700 words of memory out of 5000000
- 39762 multiletter control sequences out of 15000+600000
- 30658 words of font info for 138 fonts, out of 8000000 for 9000
+ 37288 strings out of 492982
+ 667020 string characters out of 6134895
+ 1237740 words of memory out of 5000000
+ 39788 multiletter control sequences out of 15000+600000
+ 30777 words of font info for 139 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  61i,13n,122p,1969b,2471s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
@@ -2209,14 +2361,14 @@ onts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm
 -super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb>
 </usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fo
 nts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-
-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1000.pfb><
-/usr/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf/fon
-ts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
-uper/sftt1000.pfb>
-Output written on tesi.pdf (38 pages, 1432186 bytes).
+super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb><
+/usr/share/texmf/fonts/type1/public/cm-super/sfsl1000.pfb></usr/share/texmf/fon
+ts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on tesi.pdf (40 pages, 1655292 bytes).
 PDF statistics:
- 662 PDF objects out of 1000 (max. 8388607)
- 565 compressed objects within 6 object streams
- 133 named destinations out of 1000 (max. 500000)
- 27533 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 696 PDF objects out of 1000 (max. 8388607)
+ 593 compressed objects within 6 object streams
+ 141 named destinations out of 1000 (max. 500000)
+ 27548 words of extra memory for PDF output out of 29859 (max. 10000000)
 
