@@ -205,16 +205,15 @@ def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, p
 	#plt.show()
 
 
-def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, cw, junction, metric, yLabel, minY, maxY):
+def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, cw, junction, metric, yLabel, minY, maxY, colors=["0.3", "0.5", "0.7"]):
 	n = len(protocols)
 	ind = np.arange(n)
 	
 	barWidth = float((float(1)/float(4)) * float(0.90))
 	fig, ax = plt.subplots()
-
+	print(colors)
 	rects = []
 	count = 0
-	colors = ["0.3", "0.5", "0.7"]
 	#colors = ["0.3", "0.7"]
 	
 	#widthDistance = [-1, 1]
@@ -359,23 +358,34 @@ def printProtocolComparison():
 	txRanges = ["100", "300", "500"]
 	protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300", "STATIC-500", "ROFF"]
 	#protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300"ROFF"]
-	#cws = ["cw[32-1024]"]
-	cws = ["cw[16-128]", "cw[32-1024]"]
+	cws = ["cw[32-1024]"]
+	#cws = ["cw[16-128]", "cw[32-1024]"]
 	#junctions = ["0", "1"]
 	junctions = ["0"]
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
 	metricYLabels = {}
-	metricYLabels["totCoverage"] = "Total Coverage (%)"
-	metricYLabels["covOnCirc"] = "Coverage on circumference (%)"
-	metricYLabels["hops"] = "Number of hops to reach circumference"
-	metricYLabels["slotsWaited"] = "Number of slots waited to reach circumference"
-	metricYLabels["messageSent"] = "Number of alert messages sent"
-
-
+	metricYLabels["totCoverage"] = "Total Delivery Ratio (%)"
+	metricYLabels["covOnCirc"] = "Total Delivery Ratio On Circ. (%)"
+	metricYLabels["hops"] = "Number Of Hops"
+	metricYLabels["slotsWaited"] = "Number Of Slots"
+	metricYLabels["messageSent"] = "Forward Node Ratio"
 	
 	maxMetricValues = {}
 	for metric in metrics:
 		maxMetricValues[metric] = -1
+
+	colors = {}
+	colors["0"] = {} 
+	colors["0"]["0"] = ["#B5B7FF", "#5155D5", "#00034D"] #buildings=0, junctions=0 blu
+	#colors["0"]["1"] = ["#9EDE9E", "#368B36", "#003C00"] #buildings=0, junctions=1 verde
+
+	colors["0"]["1"] = ["#D1AFD1", "#864A89", "#3C003F"] #buildings=0, junctions=1 viola
+
+	colors["1"] = {} # 1=buildings
+	colors["1"]["0"] = ["#FFA6A6", "#BD2525", "#510000"] #buildings=1, junctions=0 rosso
+	colors["1"]["1"] = ["#FFC497", "#B9692C", "#4E2200"] #buildings=1, junctions=1 arancione
+
+	
 
 	for scenario in scenarios:
 		if ("Platoon" in scenario):
@@ -409,7 +419,8 @@ def printProtocolComparison():
 					graphOutFolder = os.path.join(scenario, "b" + building, "j" + junction)
 					for metric in metrics:
 						yLabel = metricYLabels[metric]
-						printSingleGraph(graphOutFolder, "graphTitle", compoundData, txRanges, protocols, cw, junction, metric, yLabel, 0, maxMetricValues[metric])
+						printSingleGraph(graphOutFolder, "graphTitle", compoundData, txRanges, protocols, cw, junction, metric, yLabel, 0, maxMetricValues[metric], 
+						colors[building][junction])
 
 
 def printDroneComparison():
