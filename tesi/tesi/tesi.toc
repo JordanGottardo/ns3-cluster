@@ -69,4 +69,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.2}Platoon scenario}{32}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Acronyms}{35}{section*.27}
+\contentsline {section}{\numberline {5.3}Grid scenario}{35}{section.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Acronyms}{37}{section*.28}

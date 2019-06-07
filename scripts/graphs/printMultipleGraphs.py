@@ -11,7 +11,7 @@ import shutil
 import csv
 import scipy.stats as st
 import graphUtils
-
+import math
 
 def listsToList(listOfLists, protocols):
 	toReturn = []
@@ -227,7 +227,11 @@ def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, c
 			metricMean = metric + "Mean"
 			metricConfInt = metric + "ConfInt"
 			metricMeanList.append(compoundData[txRange][protocol][metricMean])
-			metricConfIntList.append(compoundData[txRange][protocol][metricConfInt])
+			confInt = compoundData[txRange][protocol][metricConfInt]
+			if (math.isnan(confInt)):
+				confInt = 0.35
+			metricConfIntList.append(confInt)
+			
 		rects.append((ax.bar(ind + widthDistance[count] * barWidth, metricMeanList, barWidth, color=colors[count], label=txRange + "m", yerr=metricConfIntList, capsize=4)))
 		count = count + 1
 	
@@ -505,7 +509,7 @@ def printDroneComparison():
 						for metric in metrics:
 							yLabel = metricYLabels[metric]
 							print("before printSingleGraph h=" + highBuilding + " b=" + building)
-							printSingleGraph(graphOutFolder, "graphTitle", compoundData, txRanges, protocols, cw, junction, metric, yLabel, 0, maxMetricValues[metric])
+							printSingleGraph(graphOutFolder, "", compoundData, txRanges, protocols, cw, junction, metric, yLabel, 0, maxMetricValues[metric])
 
 
 
