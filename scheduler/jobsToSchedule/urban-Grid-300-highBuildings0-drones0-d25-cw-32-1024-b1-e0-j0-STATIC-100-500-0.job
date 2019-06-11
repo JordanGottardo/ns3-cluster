@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ### job name
-#PBS -N urban-Grid-300-highBuildings0-drones0-d25-cw-32-1024-b1-e0-j1-STATIC-100-100
+#PBS -N urban-Grid-300-highBuildings0-drones0-d25-cw-32-1024-b1-e0-j0-STATIC-100-500
 
 ### Programma non-rerunable
 #PBS -r n
@@ -11,8 +11,8 @@
 #PBS -M jordan.gottardo@studenti.unipd.it
 
 ### Redirezione dello standard output e standard error del programma
-#PBS -e localhost:${HOME}/ns-3/log/urban-Grid-300-highBuildings0-drones0-d25-cw-32-1024-b1-e0-j1-STATIC-100-100{**timestamp}.err
-#PBS -o localhost:${HOME}/ns-3/log/urban-Grid-300-highBuildings0-drones0-d25-cw-32-1024-b1-e0-j1-STATIC-100-100{**timestamp}.out
+#PBS -e localhost:${HOME}/ns-3/log/urban-Grid-300-highBuildings0-drones0-d25-cw-32-1024-b1-e0-j0-STATIC-100-500-0.err
+#PBS -o localhost:${HOME}/ns-3/log/urban-Grid-300-highBuildings0-drones0-d25-cw-32-1024-b1-e0-j0-STATIC-100-500-0.out
 
 ### Scelta della coda "cluster_long"
 #PBS -q cluster_long
@@ -41,7 +41,7 @@ echo PBS_WORKDIR=$PBS_O_WORKDIR
 
 ### Esecuzione del nostro programma
 echo "Launching job for execution"
-set > /home/jgottard/ns-3/log/urban-Grid-300-highBuildings0-drones0-d25-cw-32-1024-b1-e0-j1-STATIC-100-100{**timestamp}
+set > /home/jgottard/ns-3/log/urban-Grid-300-highBuildings0-drones0-d25-cw-32-1024-b1-e0-j0-STATIC-100-500-0
 echo "after set"
 
 export LD_LIBRARY_PATH=/home/jgottard/ns-3/ns-3.26/build:/home/jgottard/ns-3/mpfr_4_0_1/lib:/home/jgottard/ns-3/CGAL_4_11/lib:/usr/local/cuda/lib64:/usr/local/cula/lib64:/usr/local/culasparse/lib64:/home/jgottard/ns-3/boost_1_54_0/lib:$LD_LIBRARY_PATH
@@ -54,4 +54,4 @@ export PATH=/home/jgottard/ns-3/ns-3.26/build/src/fd-net-device:/home/jgottard/n
 ###echo "boostdir = $BOOSTDIR"
 
 ### Below we append the launch command
-NS_GLOBAL_VALUE="RngRun=1" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings=1 --actualRange=100 --mapBasePath=../maps/Grid-300/Grid-300 --cwMin=32 --cwMax=1024 --vehicleDistance=25 --startingNode=4896 --propagationLoss=1 --protocol=2 --area=2000 --smartJunctionMode=1 --errorRate=0 --nVehicles=0 --droneTest=0 --highBuildings=0 --flooding=0  --printToFile=1 --printCoords=0 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1 --forgedCoordTest=0 --forgedCoordRate=0
+NS_GLOBAL_VALUE="RngRun=1" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings=1 --actualRange=500 --mapBasePath=../maps/Grid-300/Grid-300 --cwMin=32 --cwMax=1024 --vehicleDistance=25 --startingNode=4896 --propagationLoss=1 --protocol=2 --area=2000 --smartJunctionMode=0 --errorRate=0 --nVehicles=0 --droneTest=0 --highBuildings=0 --flooding=0  --printToFile=1 --printCoords=0 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1 --forgedCoordTest=0 --forgedCoordRate=0
