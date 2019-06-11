@@ -163,8 +163,8 @@
 		
 		
 	\section{Grid scenario}
-		After tests on the 1D Platoon scenario have been carried out, the next step consisted in testing the algorithm's performances in a 2D Grid scenario, employing also the shadowing model.
-		Parameters for this scenario are included in Table \ref{table:platoon}.  
+		After tests on the 1D Platoon scenario have been carried out, the next step consisted in testing the algorithms' performances in a 2D Grid scenario, employing also the shadowing model introduced in \ref{sec:shadowing}.
+		Parameters for this scenario are included in Table \ref{tab:grid}.  
 		
 		\begin{table}[H]
 			\def\arraystretch{1.1}
@@ -176,11 +176,11 @@
 				%			\midrule[1pt]
 				\rowcolor{P} \multicolumn{3}{c}{Scenario configuration} \\
 				\midrule[1pt]
-				Road length 							& 15000 				& m		\\
+				Road length 							& 4800	 				& m		\\
 				Distance between vehicles 				& 25					& m		\\
-				Circumference							& 14000					& m		\\
-				Number of vehicles						& 600					& 		\\
-				Source of alert message position		& Left of platoon		&		\\
+				Circumference							& 2000					& m		\\
+				Number of vehicles						& 6528					& 		\\
+				Source of alert message position		& Center				&		\\
 				\midrule[1pt]
 				\rowcolor{P} \multicolumn{3}{c}{Network configuration} \\
 				\midrule[1pt]
@@ -193,7 +193,7 @@
 				Transmission range						& 100, 300, 500			& m		\\
 				Modulation								& DSSS					& 		\\
 				Propagation loss model					& ns3::TwoRayGround 	&		\\
-				Shadowing model							& None					&		\\
+				Shadowing model							& Obstacle Shadowing	&		\\
 				Propagation delay model					& ns3::ConstantSpeed	&		\\
 				\midrule[1pt]
 				\rowcolor{P} \multicolumn{3}{c}{Protocols configuration} \\
@@ -205,10 +205,49 @@
 				Number of simulations per configuration	& 1000					&		\\
 				\bottomrule
 			\end{tabularx}
-			\label{table:platoon}
 			\caption{Platoon scenario configuration}
+			\label{tab:grid}
 		\end{table}
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/grid-300/b0/tdr}
+			\includegraphics[width=1.0\textwidth]{immagini/grid-300/b1/tdr}
+			\caption{\textit{TDR} without buildings (top) and with buildings (bottom) for Grid scenario}
+			\label{fig:grid-tdr}
+		\end{figure}
 		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/grid-300/b0/tdroc}
+			\includegraphics[width=1.0\textwidth]{immagini/grid-300/b1/tdroc}
+			\caption{\textit{TDROC} without buildings (top) and with buildings (bottom) for Grid scenario}
+			\label{fig:grid-tdroc}
+		\end{figure}
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/grid-300/b0/noh}
+			\includegraphics[width=1.0\textwidth]{immagini/grid-300/b1/noh}
+			\caption{\textit{NOH} without buildings (top) and with buildings (bottom) for Grid scenario}
+			\label{fig:grid-noh}
+		\end{figure}
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/grid-300/b0/nos}
+			\includegraphics[width=1.0\textwidth]{immagini/grid-300/b1/nos}
+			\caption{\textit{NOS} without buildings (top) and with buildings (bottom) for Grid scenario}
+			\label{fig:grid-nos}
+		\end{figure}
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/grid-300/b0/fnr}
+			\includegraphics[width=1.0\textwidth]{immagini/grid-300/b1/fnr}
+			\caption{\textit{FNR} without buildings (top) and with buildings (bottom) for Grid scenario}
+			\label{fig:grid-fnr}
+		\end{figure}
 
 
 %		../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024]/totCoverage

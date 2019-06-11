@@ -355,8 +355,8 @@ def printProtocolComparison():
 	plt.rcParams["figure.figsize"] = [18, 6]
 	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
 	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
-	scenarios = ["Padova-25"]
-	buildings = ["0", "1"]
+	scenarios = ["Grid-300"]
+	buildings = ["0"]
 	errorRate = "e0"
 	#txRanges = ["100", "300", "500"]
 	txRanges = ["100", "300", "500"]
@@ -365,7 +365,7 @@ def printProtocolComparison():
 	cws = ["cw[32-1024]"]
 	#cws = ["cw[16-128]", "cw[32-1024]"]
 	#junctions = ["0", "1"]
-	junctions = ["0", "1"]
+	junctions = ["0"]
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
 	metricYLabels = {}
 	metricYLabels["totCoverage"] = "Total Delivery Ratio (%)"
@@ -380,6 +380,10 @@ def printProtocolComparison():
 	graphTitles["hops"] = "Number Of Hops"
 	graphTitles["slotsWaited"] = "Number Of Slots"
 	graphTitles["messageSent"] = "Forward Node Ratio"
+
+	additionalTitle = {}
+	additionalTitle["0"] = " (without buildings)"
+	additionalTitle["1"] = " (with buildings)"
 
 	maxMetricValues = {}
 	for metric in metrics:
@@ -430,7 +434,8 @@ def printProtocolComparison():
 					graphOutFolder = os.path.join(scenario, "b" + building, "j" + junction)
 					for metric in metrics:
 						yLabel = metricYLabels[metric]
-						printSingleGraph(graphOutFolder, graphTitles[metric], compoundData, txRanges, protocols, cw, junction, metric, yLabel, 0, maxMetricValues[metric], 
+						
+						printSingleGraph(graphOutFolder, graphTitles[metric] + additionalTitle[building], compoundData, txRanges, protocols, cw, junction, metric, yLabel, 0, maxMetricValues[metric], 
 						colors[building][junction])
 
 
