@@ -246,7 +246,10 @@ def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, c
 	ax.set_xticks(ind)
 	plt.xticks(fontsize=15)
 	plt.yticks(fontsize=15)
-	ax.set_xticklabels(protocols)
+	myProtocols = protocols
+	if junction == "1":
+		myProtocols = list(map(lambda x: "SJ-" + x, protocols))
+	ax.set_xticklabels(myProtocols)
 	#ax.set_xticklabels(["15m", "25m", "35m", "45m"])
 
 	ax.legend(loc='center left', bbox_to_anchor=(1, 0.5), fontsize=15)
@@ -355,8 +358,8 @@ def printProtocolComparison():
 	plt.rcParams["figure.figsize"] = [18, 6]
 	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
 	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
-	scenarios = ["Grid-300"]
-	buildings = ["0"]
+	scenarios = ["LA-25"]
+	buildings = ["0", "1"]
 	errorRate = "e0"
 	#txRanges = ["100", "300", "500"]
 	txRanges = ["100", "300", "500"]
@@ -365,7 +368,7 @@ def printProtocolComparison():
 	cws = ["cw[32-1024]"]
 	#cws = ["cw[16-128]", "cw[32-1024]"]
 	#junctions = ["0", "1"]
-	junctions = ["0"]
+	junctions = ["0", "1"]
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
 	metricYLabels = {}
 	metricYLabels["totCoverage"] = "Total Delivery Ratio (%)"
@@ -382,8 +385,14 @@ def printProtocolComparison():
 	graphTitles["messageSent"] = "Forward Node Ratio"
 
 	additionalTitle = {}
-	additionalTitle["0"] = " (without buildings)"
-	additionalTitle["1"] = " (with buildings)"
+	additionalTitle["0"] = {} #no buildings
+	additionalTitle["0"]["0"] = "(without buildings, without junctions)" #no buildings, no junctions
+	additionalTitle["0"]["1"] = "(without buildings, with junctions)" #no buildings, no junctions
+
+
+	additionalTitle["1"] = {} #with buildings
+	additionalTitle["1"]["0"] = "(with buildings, without junctions)" #no buildings, no junctions
+	additionalTitle["1"]["1"] = "(with buildings, with junctions)" #no buildings, no junctions
 
 	maxMetricValues = {}
 	for metric in metrics:
@@ -434,8 +443,7 @@ def printProtocolComparison():
 					graphOutFolder = os.path.join(scenario, "b" + building, "j" + junction)
 					for metric in metrics:
 						yLabel = metricYLabels[metric]
-						
-						printSingleGraph(graphOutFolder, graphTitles[metric] + additionalTitle[building], compoundData, txRanges, protocols, cw, junction, metric, yLabel, 0, maxMetricValues[metric], 
+						printSingleGraph(graphOutFolder, graphTitles[metric] + additionalTitle[building][junction], compoundData, txRanges, protocols, cw, junction, metric, yLabel, 0, maxMetricValues[metric], 
 						colors[building][junction])
 
 
