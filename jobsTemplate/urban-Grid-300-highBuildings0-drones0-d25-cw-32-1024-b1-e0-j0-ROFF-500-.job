@@ -54,4 +54,4 @@ export PATH=/home/jgottard/ns-3/ns-3.26/build/src/fd-net-device:/home/jgottard/n
 ###echo "boostdir = $BOOSTDIR"
 
 ### Below we append the launch command
-NS_GLOBAL_VALUE="RngRun=1" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings=1 --actualRange=500 --mapBasePath=../maps/Grid-300/Grid-300 --vehicleDistance=25 --startingNode=4896 --propagationLoss=1 --area=2000 --smartJunctionMode=0 --errorRate=0 --nVehicles=0 --droneTest=0 --highBuildings=0 --printToFile=1 --printCoords=0  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1 --forgedCoordTest=0 --forgedCoordRate=0
+NS_LOG="*=error" NS_GLOBAL_VALUE="RngRun=1" /home/jgottard/ns-3/ns-3.26/build/scratch/roff-test/roff-test --buildings=1 --actualRange=500 --mapBasePath=../maps/Grid-300/Grid-300 --vehicleDistance=25 --startingNode=4896 --propagationLoss=1 --area=2000 --smartJunctionMode=0 --errorRate=0 --nVehicles=0 --droneTest=0 --highBuildings=0 --printToFile=1 --printCoords=0  --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1  --beaconInterval=100 --distanceRange=1 --forgedCoordTest=0 --forgedCoordRate=0

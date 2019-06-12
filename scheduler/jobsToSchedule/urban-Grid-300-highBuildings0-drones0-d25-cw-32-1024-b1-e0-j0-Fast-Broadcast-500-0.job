@@ -11,8 +11,8 @@
 #PBS -M jordan.gottardo@studenti.unipd.it
 
 ### Redirezione dello standard output e standard error del programma
-#PBS -e localhost:${HOME}/ns-3/log/urban-Grid-300-highBuildings0-drones0-d25-cw-32-1024-b1-e0-j0-Fast-Broadcast-500{**timestamp}.err
-#PBS -o localhost:${HOME}/ns-3/log/urban-Grid-300-highBuildings0-drones0-d25-cw-32-1024-b1-e0-j0-Fast-Broadcast-500{**timestamp}.out
+#PBS -e localhost:${HOME}/ns-3/log/urban-Grid-300-highBuildings0-drones0-d25-cw-32-1024-b1-e0-j0-Fast-Broadcast-500-0.err
+#PBS -o localhost:${HOME}/ns-3/log/urban-Grid-300-highBuildings0-drones0-d25-cw-32-1024-b1-e0-j0-Fast-Broadcast-500-0.out
 
 ### Scelta della coda "cluster_long"
 #PBS -q cluster_long
@@ -41,7 +41,7 @@ echo PBS_WORKDIR=$PBS_O_WORKDIR
 
 ### Esecuzione del nostro programma
 echo "Launching job for execution"
-set > /home/jgottard/ns-3/log/urban-Grid-300-highBuildings0-drones0-d25-cw-32-1024-b1-e0-j0-Fast-Broadcast-500{**timestamp}
+set > /home/jgottard/ns-3/log/urban-Grid-300-highBuildings0-drones0-d25-cw-32-1024-b1-e0-j0-Fast-Broadcast-500-0
 echo "after set"
 
 export LD_LIBRARY_PATH=/home/jgottard/ns-3/ns-3.26/build:/home/jgottard/ns-3/mpfr_4_0_1/lib:/home/jgottard/ns-3/CGAL_4_11/lib:/usr/local/cuda/lib64:/usr/local/cula/lib64:/usr/local/culasparse/lib64:/home/jgottard/ns-3/boost_1_54_0/lib:$LD_LIBRARY_PATH
