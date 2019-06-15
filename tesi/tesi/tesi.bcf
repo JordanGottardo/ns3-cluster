@@ -1957,16 +1957,17 @@
     <bcf:citekey order="34">4199282</bcf:citekey>
     <bcf:citekey order="35">4199282</bcf:citekey>
     <bcf:citekey order="36">BAR2017</bcf:citekey>
-    <bcf:citekey order="37">6906275</bcf:citekey>
+    <bcf:citekey order="37">BAR2017</bcf:citekey>
     <bcf:citekey order="38">6906275</bcf:citekey>
     <bcf:citekey order="39">6906275</bcf:citekey>
     <bcf:citekey order="40">6906275</bcf:citekey>
     <bcf:citekey order="41">6906275</bcf:citekey>
     <bcf:citekey order="42">6906275</bcf:citekey>
-    <bcf:citekey order="43">ROM2017</bcf:citekey>
+    <bcf:citekey order="43">6906275</bcf:citekey>
     <bcf:citekey order="44">ROM2017</bcf:citekey>
     <bcf:citekey order="45">ROM2017</bcf:citekey>
-    <bcf:citekey order="46">BAR2017</bcf:citekey>
+    <bcf:citekey order="46">ROM2017</bcf:citekey>
+    <bcf:citekey order="47">BAR2017</bcf:citekey>
     <bcf:citekey order="0">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->

@@ -173,8 +173,76 @@
 			
 			When calculating $minDiff$ as explained in Section \ref{ssec:collision-analysis}, , $MPD$, $Rx/Tx$ and $CCATime$ are fixed system parameters; the only variables are propagation delays between vehicles, which are dependent on distance. Since coordinates are not included in the ESD Bitmap (only distances are), each PFC needs to identify the coordinates of the previous forwarder's neighbors. In other words, whenever a PFC $f_i$ receives the ESD Bitmap from $fwd$ and calculates its own waiting time, it checks for each distance $dist$ in $L_{dist}$ whether there is a vehicle $f_j$ distant $dist$ from $fwd$ (i.e. $d(fwd, f_j) = dist$. If such vehicle exists, then $f_i$ uses $f_j$ coordinates in the propagation delay (hence $minDiff$) calculation, otherwise it disregards $dist$ in the computation since possibly there is no vehicle distant $dist$ from $fwd$ in $f_i$'s local view.
 			
-	\section{Implementation}
-		In the original work \cite{6906275}, ROFF has been implemented in the network simulator ns-2. Since retrieval of the original code has proven to be impossible, part of this thesis concerned the implementation of ROFF in ns-3. 
+	\section{Multiple dimensions extension}
+		
+		In the original work \cite{6906275}, ROFF has been implemented in the network simulator ns-2. Since retrieval of the original code has proven to be impossible, part of this thesis concerned the implementation of ROFF in ns-3. Moreover, the original article focuses only on 1D message propagation along a strip-shaped area. This work proposes a 2D and 3D extension of ROFF based on the idea of Fast-Broadcast presented in Section \ref{sec:fb-multiple-dimensions}. The main addition to the original algorithms consists in the suppression of scheduled transmissions only when an Alert Message is heard coming from a vehicle farther from the initial sender than the current vehicle. More in detail, if $fwd$ is the origin of the Alert Message, $A$ is the previous forwarder and $B$ is a PFC with a scheduled transmission. $B$ will suppress its transmission only if it hears an Alert Message coming from $D$ such that $d_{fwd, D} > d_{fwd, B}$.
+		Algorithm \ref{alg:roff-hello-message-sending}, \ref{alg:roff-hello-message-receiving}, \ref{alg:roff-alert-message-generation} and \ref{alg:roff-alert-message-forwarding} show ROFF's phases in detail.
+		
+		\begin{algorithm}[H]
+			\begin{algorithmic}[1]
+				\ForEach{beaconInterval}
+				\State helloMsg.ID $\gets$ retrieveID()
+				\State helloMsg.senderPosition $\gets$ retrievePosition()
+				\State transmit(helloMsg)
+				\EndFor
+			\end{algorithmic}
+			\caption{Hello message sending procedure for 2D}
+			\label{alg:roff-hello-message-sending}
+		\end{algorithm}
+	
+		\begin{algorithm}[H]
+			\begin{algorithmic}[1]
+				\State id $\gets$ helloMsg.ID
+				\State sp $\gets$ helloMsg.senderPosition
+				\State time $\gets$ currentTime()
+				\State addNBTEntry(id, sp, time)
+			\end{algorithmic}
+			\caption{Hello message receiving procedure for 2D}
+			\label{alg:roff-hello-message-receiving}
+		\end{algorithm}
+		
+		\begin{algorithm}[H]
+			\begin{algorithmic}[1]
+				\State esdBitmap $\gets$ createEsdBitmap(NBT)
+				\State alertMsg.esdBitmapSize $\gets$ esdBitmap.size
+				\State alertMsg.esdBitmap $\gets$ esdBitmap
+				\State alertMsg.senderPosition $\gets$ retrievePosition()
+				\State alertMsg.originPosition $\gets$ retrievePosition()
+				\State transmit(alertMsg)
+			\end{algorithmic}
+			\caption{Alert Message generation procedure for 2D}
+			\label{alg:roff-alert-message-generation}
+		\end{algorithm}
+		
+		\begin{algorithm}[H]
+			\begin{algorithmic}[1]
+				\State esdBitmap $\gets$ alertMsg.esdBitmap
+				\If{vehicleNotPresentInEsd() $\lor$ lostIDContention()}
+				\State exit()
+				\Else
+				\State listOfDistances $\gets$ computeListOfDistances(esdBitmap)
+				\State myPosition $\gets$ retrievePosition()
+				\State senderPosition $\gets$ alertMsg.senderPosition
+				\State dist $\gets$ distance(myPosition, senderPosition)
+				\State myRank $\gets$ getRank(dist, listOfDistances)
+				\State wait $\gets$ computeWaitTime(myRank)
+				\If{sameBroadcastHeardFromBack()}
+				\State exit()
+				\ElsIf{sameBroadcastHeardFromFront()}
+				\State restartBroadcastProcedure()
+				\Else
+				\State esdBitmap $\gets$ createEsdBitmap(NBT)
+				\State alertMsg.esdBitmapSize $\gets$ esdBitmap.size
+				\State alertMsg.esdBitmap $\gets$ esdBitmap
+				\State alertMsg.senderPosition $\gets$ retrievePosition()
+				\State transmit(alertMsg)
+				\EndIf 
+				\EndIf
+			\end{algorithmic}
+			\caption{Alert Message forwarding procedure for 2D}
+			\label{alg:roff-alert-message-forwarding}
+		\end{algorithm}
+		
 		
 		\subsection{Hello Message Header Structure}
 			The Hello Message header structure is represented in Figure \ref{fig:roffHelloHeader}.
@@ -202,7 +270,7 @@
 				\label{fig:roffAlertHeader}
 			\end{figure}
 			
-			The fields contained in the Hello Message are the following:
+			The fields contained in the Alert Message are the following:
 			\begin{itemize}
 				\item ID: unique ID of the Alert Message's sender (or forwarder);
 				\item x coord, y coord and z coord: coordinates of the Hello Message's forwarder;
@@ -210,7 +278,69 @@
 				\item ESD Bitmap size: field which indicates how many bytes the ESD Bitmap occupies;
 				\item ESD Bitmap: the ESD Bitmap itself, with variable length.
 			\end{itemize}
+	
+	\section{Smart Junction ROFF (SJ-ROFF)}
+		Since ROFF does not consider junctions in the default algorithm, the proposal explained in Section \ref{sj:fb} could also bring benefits to it. Hence, we have implemented a Smart Junction variant of ROFF (called SJ-ROFF) following the logic of SJ-Fast-Broadcast. The modifications to the base algorithm are fairly simple: two fields have been added to the Alert Message Header to indicate whether the sender is inside a junction (and the ID of the junction, if it is). Algorithm todo and todo2 show the updated functionalities of Alert Message creation and forwarding. Hello Message algorithms are unchanged.
 		
+		\begin{algorithm}[H]
+			\begin{algorithmic}[1]
+				\State esdBitmap $\gets$ createEsdBitmap(NBT)
+				\State alertMsg.esdBitmapSize $\gets$ esdBitmap.size
+				\State alertMsg.esdBitmap $\gets$ esdBitmap
+				\State alertMsg.senderPosition $\gets$ retrievePosition()
+				\State alertMsg.originPosition $\gets$ retrievePosition()
+				\State alertMsg.senderInJunction $\gets$ isSenderInJunction()
+				\State alertMsg.junctionId $\gets$ getJunctionId()
+				\State transmit(alertMsg)
+			\end{algorithmic}
+			\caption{Alert Message generation procedure for 2D}
+			\label{alg:sj-roff-alert-message-generation}
+		\end{algorithm}
+		
+		\begin{algorithm}[H]
+			\begin{algorithmic}[1]
+				\State esdBitmap $\gets$ alertMsg.esdBitmap
+				\If{vehicleNotPresentInEsd() $\lor$ lostIDContention()}
+				\State exit()
+				\Else
+				\State listOfDistances $\gets$ computeListOfDistances(esdBitmap)
+				\State myPosition $\gets$ retrievePosition()
+				\State senderPosition $\gets$ alertMsg.senderPosition
+				\State dist $\gets$ distance(myPosition, senderPosition)
+				\State myRank $\gets$ getRank(dist, listOfDistances)
+				\State wait $\gets$ computeWaitTime(myRank)
+				\If{sameBroadcastHeardFromBack() $\land$ vehicleIsInJunction(j) $\land$ alertMsg.senderInJunction $\land$ alertMsg.junctionId == j}
+				\State exit()
+				\ElsIf{sameBroadcastHeardFromFront()}
+				\State restartBroadcastProcedure()
+				\Else
+				\State esdBitmap $\gets$ createEsdBitmap(NBT)
+				\State alertMsg.esdBitmapSize $\gets$ esdBitmap.size
+				\State alertMsg.esdBitmap $\gets$ esdBitmap
+				\State alertMsg.senderPosition $\gets$ retrievePosition()
+				\State transmit(alertMsg)
+				\EndIf 
+				\EndIf
+			\end{algorithmic}
+			\caption{Alert Message forwarding procedure for 2D}
+			\label{alg:sj-roff-alert-message-forwarding}
+		\end{algorithm}
+	
+		\subsection{Alert Message Header Structure}
+			The Hello Message header structure is the same as Figure \ref{fig:roffHelloHeader}, hence it is not reported here. The Alert Message header structure is represented in Figure \ref{fig:sj-roffAlertHeader}.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{immagini/sj-roffAlertHeader}
+			\caption{SJ-ROFF Alert Message header structure}
+			\label{fig:sj-roffAlertHeader}
+		\end{figure}
+		
+		The additional fields are the following:
+		\begin{itemize}
+			\item  vehicle in junction: whether the vehicle which is send this Alert Message is inside a junction;
+			\item junction ID: the ID of the junction the sender is inside.
+		\end{itemize}
 		
 	
 		

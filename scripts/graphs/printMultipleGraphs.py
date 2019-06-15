@@ -375,14 +375,14 @@ def printProtocolComparison():
 	metricYLabels["covOnCirc"] = "Total Delivery Ratio On Circ. (%)"
 	metricYLabels["hops"] = "Number Of Hops"
 	metricYLabels["slotsWaited"] = "Number Of Slots"
-	metricYLabels["messageSent"] = "Forward Node Ratio"
+	metricYLabels["messageSent"] = "Forwarding Node Number"
 	
 	graphTitles = {}
 	graphTitles["totCoverage"] = "Total Delivery Ratio"
 	graphTitles["covOnCirc"] = "Total Delivery Ratio On Circumference"
 	graphTitles["hops"] = "Number Of Hops"
 	graphTitles["slotsWaited"] = "Number Of Slots"
-	graphTitles["messageSent"] = "Forward Node Ratio"
+	graphTitles["messageSent"] = "Forwarding Node Number"
 
 	additionalTitle = {}
 	additionalTitle["0"] = {} #no buildings
