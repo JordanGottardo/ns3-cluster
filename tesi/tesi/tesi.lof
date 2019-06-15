@@ -1,0 +1,84 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Example of obstacle shadowing in vehicle-to-vehicle communication. Walls encountered by the signal are surrounded in red circles\relax }}{8}{figure.caption.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Example of data about a junction retrieved from OpenStreetMap and elaborated through SUMO\relax }}{9}{figure.caption.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Junction modeling process\relax }}{9}{figure.caption.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Example of 6 junctions in an urban scenario\relax }}{9}{figure.caption.9}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Example of Fast Broadcast in 2d scenario\relax }}{14}{figure.caption.10}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Definition of $minDiff$ between $f_N$ and $f_{N-1}$ (\cite {6906275})\relax }}{16}{figure.caption.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Definition of empty space (\cite {6906275})\relax }}{17}{figure.caption.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Components of ROFF algorithm\relax }}{18}{figure.caption.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Example of Neighbor Table of node with ID 0\relax }}{19}{figure.caption.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.5}{\ignorespaces ESD Bitmap construction with \textit {k} = 1\relax }}{19}{figure.caption.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Resulting ESD Bitmap with \textit {k} = 2\relax }}{20}{figure.caption.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.7}{\ignorespaces ID-based contention: node A defers its transmission\relax }}{21}{figure.caption.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Waiting time assignment based on vehicle distribution depicted in Figure \ref {fig:esdBitmapConstruction}\relax }}{21}{figure.caption.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.9}{\ignorespaces ROFF Hello Message header structure\relax }}{22}{figure.caption.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.10}{\ignorespaces ROFF Alert Message header structure\relax }}{22}{figure.caption.20}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.1}{\ignorespaces ns-3 module structure\relax }}{26}{figure.caption.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Packet transmission in NetAnim\relax }}{27}{figure.caption.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Steps to generate necessary files using SUMO (\cite {ROM2017})\relax }}{28}{figure.caption.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Padua scenario with vehicle distance equals to 15 meters (top) and 45 meters (bottom)\relax }}{29}{figure.caption.24}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Example of \textit {NOH} calculation with Alert Message starting from node S\relax }}{32}{figure.caption.25}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Example of \textit {NOS} calculation with Alert Message starting from node S\relax }}{33}{figure.caption.26}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.3}{\ignorespaces \textit {TDR}, \textit {TDROC}, \textit {NOH} and \textit {NOS} metrics for Platoon scenario\relax }}{35}{figure.caption.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.4}{\ignorespaces \textit {FNN} metric for Platoon scenario \relax }}{36}{figure.caption.29}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.5}{\ignorespaces \textit {TDR} without buildings (top) and with buildings (bottom) for Grid scenario\relax }}{38}{figure.caption.31}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.6}{\ignorespaces \textit {TDROC} without buildings (top) and with buildings (bottom) for Grid scenario\relax }}{38}{figure.caption.32}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.7}{\ignorespaces \textit {NOH} without buildings (top) and with buildings (bottom) for Grid scenario\relax }}{39}{figure.caption.33}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.8}{\ignorespaces \textit {NOS} without buildings (top) and with buildings (bottom) for Grid scenario\relax }}{39}{figure.caption.34}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.9}{\ignorespaces \textit {FNN} without buildings (top) and with buildings (bottom) for Grid scenario\relax }}{40}{figure.caption.35}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Test overview of Los Angeles urban scenario\relax }}{41}{figure.caption.36}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.11}{\ignorespaces \textit {TDR} for Los Angeles urban scenario\relax }}{43}{figure.caption.38}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.12}{\ignorespaces \textit {TDROC} for Los Angeles urban scenario\relax }}{44}{figure.caption.39}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.13}{\ignorespaces \textit {NOH} for Los Angeles urban scenario\relax }}{45}{figure.caption.40}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.14}{\ignorespaces \textit {NOS} for Los Angeles urban scenario\relax }}{46}{figure.caption.41}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.15}{\ignorespaces \textit {FNN} for Los Angeles urban scenario\relax }}{47}{figure.caption.42}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Alert Message delivery for Los Angeles scenario with buildings and without junctions (Fast-Broadcast with 100 meters transmission range)\relax }}{48}{figure.caption.43}

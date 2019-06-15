@@ -53,4 +53,37 @@
 		\end{figure}
 	
 	\section{Junction modeling}
-%		todo
+		\label{sec:junction-modeling}
+		Part of this work consisted in implementing extensions for the algorithms which will be presented in Chapter \ref{chapter:roff} and \ref{chapter:fb} to utilize junctions in a smart way. The aim of these extension is reaching a higher number of vehicles during the Alert Message propagation. In order for those extension to work, a model to represent and identify junctions was necessary. Using data retrieved from OpenStreetMap elaborated through SUMO (see Section \ref{sec:sumo} for the full process), it was possible to have information about junctions present inside a urban scenario. Figure \ref{fig:junction} shows the JSON representation of a junction.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{immagini/junction}
+			\caption{Example of data about a junction retrieved from OpenStreetMap and elaborated through SUMO}
+			\label{fig:junction}
+		\end{figure}
+		
+		Among other data, the most useful information about a junction are:
+		\begin{itemize}
+			\item the \textit{x} and \textit{y} coordinates, which identify its center;
+			\item the \textit{shape} attribute, containing coordinates which represent its shape.
+		\end{itemize}
+		
+		Using from this data it was possible to create the junction modeling process, represented in Figure \ref{fig:junction-process}. Since the \textit{shape} attribute resulted in a polygon too small for the purpose of this work, a bounding box which extends the polygon by 20 meters in each direction has been implemented.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.4\textwidth]{immagini/junction-process}
+			\caption{Junction modeling process}
+			\label{fig:junction-process}
+		\end{figure}
+	
+		Id ecc assegnazione veicolo
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.6\textwidth]{immagini/junction-example}
+			\caption{Example of 6 junctions in an urban scenario}
+			\label{fig:junction-example}
+		\end{figure}
+		

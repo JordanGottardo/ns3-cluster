@@ -51,6 +51,7 @@ def isFileComplete(filePath):
 
 
 def plotTxRange(txRange, starterCoordX, starterCoordY, vehicleDistance, color, plotInterval):
+    color = "black"
     x = np.linspace(0, 3000, 100)
     y = np.linspace(0, 3000, 100)
     X, Y = np.meshgrid(x, y)

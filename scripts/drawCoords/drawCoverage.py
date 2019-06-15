@@ -40,14 +40,16 @@ def plotCoverage(relativeFileName, outFilePath, ns2MobilityFile, polyFilePath):
 
     txRange, startingX, startingY, startingVehicle, vehicleDistance, xReceivedCoords, yReceivedCoords, xNodeCoords, yNodeCoords, transmissionMap, receivedCoordsOnCirc, receivedOnCircIds, transmissionVector, nodeIds = coordUtils.parseFile(relativeFileName, ns2MobilityFile) 
 
-    plt.plot(xNodeCoords, yNodeCoords, ".",markersize=5, color="red")
-    plt.plot(xReceivedCoords, yReceivedCoords, ".", color="green")
-    plt.plot(startingX, startingY, "ro", color="blue", markersize=5)
-
-    color1 = "#840000"
+    plt.plot(xNodeCoords, yNodeCoords, ".",markersize=5, color="#A00000", label="Not reached by Alert Message")
+    plt.plot(xReceivedCoords, yReceivedCoords, ".", color="#32DC32", label="Reached by Alert Message")
+    plt.plot(startingX, startingY, "ro", color="yellow", markersize=5, markeredgecolor="blue", label="Source of Alert Message")
+    plt.legend(loc="best")
+    plt.xlim(300, 2700)
+    plt.ylim(300, 2700)
+    color1 = "black"
     coordUtils.plotTxRange(circRadius, startingX, startingY, vehicleDistance, color1, True)
     coordUtils.plotBuildings(polyFilePath)
-    
+
     #Save file
     if not os.path.exists(os.path.dirname(outFilePath)):
         try:

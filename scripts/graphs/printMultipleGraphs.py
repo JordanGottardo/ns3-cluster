@@ -386,13 +386,13 @@ def printProtocolComparison():
 
 	additionalTitle = {}
 	additionalTitle["0"] = {} #no buildings
-	additionalTitle["0"]["0"] = "(without buildings, without junctions)" #no buildings, no junctions
-	additionalTitle["0"]["1"] = "(without buildings, with junctions)" #no buildings, no junctions
+	additionalTitle["0"]["0"] = " (without buildings, without junctions)" #no buildings, no junctions
+	additionalTitle["0"]["1"] = " (without buildings, with junctions)" #no buildings, no junctions
 
 
 	additionalTitle["1"] = {} #with buildings
-	additionalTitle["1"]["0"] = "(with buildings, without junctions)" #no buildings, no junctions
-	additionalTitle["1"]["1"] = "(with buildings, with junctions)" #no buildings, no junctions
+	additionalTitle["1"]["0"] = " (with buildings, without junctions)" #no buildings, no junctions
+	additionalTitle["1"]["1"] = " (with buildings, with junctions)" #no buildings, no junctions
 
 	maxMetricValues = {}
 	for metric in metrics:

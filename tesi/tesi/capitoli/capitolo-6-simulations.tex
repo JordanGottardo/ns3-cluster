@@ -78,16 +78,16 @@
 			\end{figure}
 			
 			
-		\subsection{Forward Node Ratio (FNR)}
+		\subsection{Forwarding Node Number (FNN)}
 			This metric is used to measure the number of vehicles which forward the Alert Message. The value of this metric is an indicator of the effectiveness of the multi-hop protocol in successfully suppressing scheduled transmissions from PFCs after the FFC has relayed the message. The metric is calculated as follows:
 			 
 			\begin{gather}
 				\label{eq:nos}
-				NOH = \textrm{\textit{no. of vehicles forwarding the Alert Message}}
+				FNN = \textrm{\textit{no. of vehicles forwarding the Alert Message}}
 			\end{gather}	
 				
 	\section{Platoon scenario}
-		The first scenario taken into consideration is a simple platoon scenario, where vehicles are placed in a strip-like area 15 kilometers long. Vehicles are 25 meters distant from each other.  Transmission ranges of 100, 300 and 500 has been employed during simulations. 
+		The first scenario taken into consideration is a simple platoon scenario, where vehicles are placed in a strip-like area 15 kilometers long. Vehicles are 25 meters distant from each other. Transmission ranges of 100, 300 and 500 has been employed during simulations. 
 		Parameters for this scenario are included in Table \ref{table:platoon}.  
 		
 		\begin{table}[H]
@@ -146,8 +146,8 @@
 
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=1.1\textwidth]{immagini/platoon-15km/fnr}
-			\caption{\textit{FNR} metric for Platoon scenario }
+			\includegraphics[width=1.1\textwidth]{immagini/platoon-15km/fnn}
+			\caption{\textit{FNN} metric for Platoon scenario }
 			\label{fig:metric-platoon-15km-2}
 		\end{figure}
 	
@@ -245,16 +245,16 @@
 	
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=1.0\textwidth]{immagini/grid-300/b0/fnr}
-			\includegraphics[width=1.0\textwidth]{immagini/grid-300/b1/fnr}
-			\caption{\textit{FNR} without buildings (top) and with buildings (bottom) for Grid scenario}
-			\label{fig:grid-fnr}
+			\includegraphics[width=1.0\textwidth]{immagini/grid-300/b0/fnn}
+			\includegraphics[width=1.0\textwidth]{immagini/grid-300/b1/fnn}
+			\caption{\textit{FNN} without buildings (top) and with buildings (bottom) for Grid scenario}
+			\label{fig:grid-fnn}
 		\end{figure}
 	
 %		todo commento
 
 	\section{Los Angeles urban scenario}
-		The next step consisted in expanding the 2D scenario with realistic urban data taken from OpenStreetMap and processed by SUMO as explained in Section \ref{sec:sumo}. In addition to the shadowing model, in this scenario (and also in the urban scenario regarding Padua, which will be presented in the next section), a \textit{smart junction} variant of the algorithms has been introduced in order to try to increase the delivery ratios. All configurations are reported in Figure \ref{fig:la-overview}. Parameters for this scenario are included in Table \ref{tab:la-25}.  
+		The next step consisted in expanding the 2D scenario with realistic urban data taken from OpenStreetMap and processed by SUMO as explained in Section \ref{sec:sumo}. In addition to the shadowing model, in this scenario (and also in the urban scenario regarding Padua, which will be presented in the next section), a \textit{smart junction} variant of the algorithms has been introduced in order to try to increase the delivery ratios. All configurations are reported in Figure \ref{fig:la-overview}. In order to facilitate the understanding of the various configurations, the following graphs will utilize shades of color similar to those in Figure \ref{fig:la-overview} (e.g. graphs with shades of blue will represent a scenario without buildings and without junctions, while shades of orange will represent a scenario with buildings and with junctions). Parameters for this scenario are included in Table \ref{tab:la-25}.  
 		
 		\begin{figure}[H]
 			\centering
@@ -263,7 +263,7 @@
 			\label{fig:la-overview}
 		\end{figure}
 	
-				\begin{table}[H]
+		\begin{table}[H]
 			\def\arraystretch{1.1}
 			\rowcolors{2}{D}{P}	
 			\begin{tabularx}{\textwidth}{l | l  l}
@@ -318,46 +318,92 @@
 			\label{fig:la-25-tdr}
 		\end{figure}
 	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=1.0\textwidth]{immagini/la-25/b0/j0/tdroc}
-		\includegraphics[width=1.0\textwidth]{immagini/la-25/b0/j1/tdroc}
-		\includegraphics[width=1.0\textwidth]{immagini/la-25/b1/j0/tdroc}
-		\includegraphics[width=1.0\textwidth]{immagini/la-25/b1/j1/tdroc}
-		\caption{\textit{TDROC} for Los Angeles urban scenario}
-		\label{fig:la-25-tdroc}
-	\end{figure}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/la-25/b0/j0/tdroc}
+			\includegraphics[width=1.0\textwidth]{immagini/la-25/b0/j1/tdroc}
+			\includegraphics[width=1.0\textwidth]{immagini/la-25/b1/j0/tdroc}
+			\includegraphics[width=1.0\textwidth]{immagini/la-25/b1/j1/tdroc}
+			\caption{\textit{TDROC} for Los Angeles urban scenario}
+			\label{fig:la-25-tdroc}
+		\end{figure}
 
 		\begin{figure}[H]
-		\centering
-		\includegraphics[width=1.0\textwidth]{immagini/la-25/b0/j0/noh}
-		\includegraphics[width=1.0\textwidth]{immagini/la-25/b0/j1/noh}
-		\includegraphics[width=1.0\textwidth]{immagini/la-25/b1/j0/noh}
-		\includegraphics[width=1.0\textwidth]{immagini/la-25/b1/j1/noh}
-		\caption{\textit{NOH} for Los Angeles urban scenario}
-		\label{fig:la-25-noh}
-	\end{figure}
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/la-25/b0/j0/noh}
+			\includegraphics[width=1.0\textwidth]{immagini/la-25/b0/j1/noh}
+			\includegraphics[width=1.0\textwidth]{immagini/la-25/b1/j0/noh}
+			\includegraphics[width=1.0\textwidth]{immagini/la-25/b1/j1/noh}
+			\caption{\textit{NOH} for Los Angeles urban scenario}
+			\label{fig:la-25-noh}
+		\end{figure}
 
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=1.0\textwidth]{immagini/la-25/b0/j0/nos}
-		\includegraphics[width=1.0\textwidth]{immagini/la-25/b0/j1/nos}
-		\includegraphics[width=1.0\textwidth]{immagini/la-25/b1/j0/nos}
-		\includegraphics[width=1.0\textwidth]{immagini/la-25/b1/j1/nos}
-		\caption{\textit{NOS} for Los Angeles urban scenario}
-		\label{fig:la-25-nos}
-	\end{figure}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/la-25/b0/j0/nos}
+			\includegraphics[width=1.0\textwidth]{immagini/la-25/b0/j1/nos}
+			\includegraphics[width=1.0\textwidth]{immagini/la-25/b1/j0/nos}
+			\includegraphics[width=1.0\textwidth]{immagini/la-25/b1/j1/nos}
+			\caption{\textit{NOS} for Los Angeles urban scenario}
+			\label{fig:la-25-nos}
+		\end{figure}
 
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=1.0\textwidth]{immagini/la-25/b0/j0/fnr}
-		\includegraphics[width=1.0\textwidth]{immagini/la-25/b0/j1/fnr}
-		\includegraphics[width=1.0\textwidth]{immagini/la-25/b1/j0/fnr}
-		\includegraphics[width=1.0\textwidth]{immagini/la-25/b1/j1/fnr}
-		\caption{\textit{FNR} for Los Angeles urban scenario}
-		\label{fig:la-25-fnr}
-	\end{figure}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/la-25/b0/j0/fnn}
+			\includegraphics[width=1.0\textwidth]{immagini/la-25/b0/j1/fnn}
+			\includegraphics[width=1.0\textwidth]{immagini/la-25/b1/j0/fnn}
+			\includegraphics[width=1.0\textwidth]{immagini/la-25/b1/j1/fnn}
+			\caption{\textit{FNN} for Los Angeles urban scenario}
+			\label{fig:la-25-fnn}
+		\end{figure}
+	
+		It is possible to observe the effects of the Obstacle Shadowing model on \textit{Total Delivery Ratio} and \textit{Total Delivery Ratio On Circumference}. The effects are pretty mild across all configurations, but are more noticeable with lower transmission ranges (100 and 300 meters). For example, introducing the shadowing model without considering junctions leads to a decrease of 5.97\% (98.38 to 92.5) in \textit{TDR} (Figure \ref{fig:la-25-tdr}) with a transmission range of 100 meters and a decrease of 5\% (99.96 to 94.96) with transmission range of 300 meters for Fast-Broadcast. Results for ROFF are comparable, with decreases of 6.28\% and 5.73\% respectively.
 		
+		
+		The decrease in \textit{TDROC} (Figure \ref{fig:la-25-tdr}) is much more noticeable, especially for the 100 meters transmission range. The value decrease by 16.11\% for Fast-Broadcast and 16.74\% for ROFF. This means that introducing building shadowing leads to more problems when the Alert Message has to reach further distances. This phenomenon can be seen in Figure \ref{fig:la-coverage-fb100}.
+		Vehicles not reached by the Alert Message are more concentrated towards the circumference instead of the center.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/la-25/la-coverage-fb100}
+			\caption{Alert Message delivery for Los Angeles scenario with buildings and without junctions (Fast-Broadcast with 100 meters transmission range)}
+			\label{fig:la-coverage-fb100}
+		\end{figure}
+		
+		The introduction of the smart junction variants of the algorithms proves to be fairly effective, increasing \textit{TDR} by 3,52\% and 5,03\% when employing SJ-Fast-Broadcast instead of Fast-Broadcast for the scenario with buildings and transmission range of 100 and 300 meters respectively. Increases of the same magnitude can be noticed when utilizing SJ-ROFF instead of ROFF. With regards to \textit{TDROC}, both SJ-Fast-Broadcast and SJ-ROFF reach 100\% for 300 and 500 meters transmission ranges, while having a mild increase of around 3,40\% for 100 meters transmission range.
+		
+		
+		Considering the Number Of Hops to reach the circumference (\ref{fig:la-25-noh}), we can observe that the introduction of the shadowing model leads to an increase in the metric's value across all algorithms. Comparing the first and third configuration, \textit{NOH} rises by 8.98, 53,74 and 115,68\% for Fast-Broadcast, and by 3.85, 36.27 and 64.69\% for ROFF, for the three increasing transmission ranges. We notice that:
+		\begin{enumerate}
+			\item the rise increases with the increase in transmission range;
+			\item Fast-Broadcast is affected in a greater way by the shadowing model compared to ROFF.
+		\end{enumerate}
+		The first point is expected, since the one-hop progress is greater in a scenario with a higher transmission range. This leads to a greater probability for the signal to run into a building. In a scenario with a lower transmission range, transmissions have a lower probability to run into a building and follow more closely the road segment even without the effects of buildings. Hence, they are less likely to be influenced by the model. The second point may be due to the fact that the Neighbor Table continues to work well to identify the FFC along the road segment, leading to a smaller increase in the number of hops.
+		
+		
+		SJ-Fast-Broadcast and SJ-ROFF need less hops in order to reach the circumference than their counterparts which do not take junctions into consideration. This holds true for both scenarios with and without buildings. This is probably due to the additional transmissions inside junctions, which help to propagate the signal along road segments in a linear way, hence covering more space with each hop. SJ-ROFF performs better than SJ-Fast-Broadcast with regards to \textit{NOH}. The difference between the two algorithms decreases as the transmission range increases.
+		
+		
+		Regarding \textit{NOS} (Figure \ref{fig:la-25-nos}), Fast-Broadcast results increase by 106.09, 1220 and 3014\% while ROFF's ones increase by 111.11 and 520\% for 300 and 500 meters transmission range, and decrease by 4.44\% for 100 meters transmission range, when going from a building-less scenario to a scenario with buildings. Moreover, Fast-Broadcast's values are 4412.82, 1636.84 and 603.23\% higher than ROFF's values in the scenario with buildings. This goes to show the effect of empty space distribution on waiting times (here represented by the number of slots waited): when the distance between the FFC and the previous forwarder is close to the estimated transmission range, then Fast-Broadcast's waiting slots are pretty close to the minimum. But when obstacles are introduced, there might not be any PFC close to the estimated transmission range. Hence, the FFC will wait a very long time. ROFF is not affected by this phenomenon thanks to the forwarding priority acquisition, as introduced in Chapter \ref{chapter:roff}. Comparing the third and fourth image in Figure \ref{fig:la-25-nos}, we can see that the introduction of junctions is beneficial for both algorithms, leading to a decrease in \textit{NOS}. This is a consequence of the abovementioned decrease in Number Of Hops.
+		
+	%	todo mettere immagine dove mostriamo che a m=75 con txRange di 100 ROFF aspetta 0 mentre FB aspetta tanto?
+			
+		Concerning the Forwarding Node Number (Figure \ref{fig:la-25-fnn}), the value increases when the shadowing model is introduced. ROFF with 100 meters transmission range is the only configuration where the values decreases. This phenomenon needs further testing in order to be explained. %todo mangari dire che diminuiscono le collision area relative al 2D?
+		The introduction of junction brings abount an increase in the number of forwardings for all algorithms, as expected. Focusing on the fourth image of Figure \ref{fig:la-25-fnn}, SJ-ROFF is affected greatly by this increase, almost equalling SJ-Fast-Broadcast with 100 meters transmission range, and with \textit{FNN} much greater values in 300 and 500 meters transmission range configurations. This might be caused by the introduction of transmissions inside junctions, which exacerbate the collision problem already reported, leading to an imperfect suppression of scheduled transmissions. 
+	
+	\section{Padua urban scenario}
+
+	\section{Los Angeles smart city scenario}
+	
+	\section{Hello Message forging scenario}
+		\subsection{Low severity attack}
+		\subsection{High severity attack}
+	
+	\section{Varying vehicle density scenario}
+
+	
+	
 	
 
 %		../../scripts/graphs/out/Platoon-15km/b0/j0-cw[32-1024]/totCoverage
