@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.24)  14 JUN 2019 19:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.24)  15 JUN 2019 17:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1968,146 +1968,195 @@ LaTeX Warning: Citation '5720204' on page 7 undefined on input line 13.
 [7
 
 ]
-<immagini/sumo-obstacle.png, id=273, 1906.12125pt x 842.14626pt>
+<immagini/sumo-obstacle.png, id=293, 1906.12125pt x 842.14626pt>
 File: immagini/sumo-obstacle.png Graphic file (type png)
 <use immagini/sumo-obstacle.png>
 Package pdftex.def Info: immagini/sumo-obstacle.png  used on input line 50.
 (pdftex.def)             Requested size: 372.0pt x 164.35278pt.
-<immagini/junction.png, id=279, 1179.40625pt x 163.61125pt>
+<immagini/junction.png, id=299, 1179.40625pt x 163.61125pt>
 File: immagini/junction.png Graphic file (type png)
 <use immagini/junction.png>
 Package pdftex.def Info: immagini/junction.png  used on input line 61.
 (pdftex.def)             Requested size: 372.0pt x 51.60521pt.
  [8 <./immagini/sumo-obstacle.png>]
-<immagini/junction-process.png, id=288, 372.39125pt x 221.82875pt>
+<immagini/junction-process.png, id=308, 372.39125pt x 221.82875pt>
 File: immagini/junction-process.png Graphic file (type png)
 <use immagini/junction-process.png>
 Package pdftex.def Info: immagini/junction-process.png  used on input line 76.
 (pdftex.def)             Requested size: 148.79773pt x 88.63852pt.
-<immagini/junction-example.png, id=289, 835.12pt x 728.7225pt>
+<immagini/junction-example.png, id=310, 835.12pt x 728.7225pt>
 File: immagini/junction-example.png Graphic file (type png)
 <use immagini/junction-example.png>
 Package pdftex.def Info: immagini/junction-example.png  used on input line 85.
 (pdftex.def)             Requested size: 223.20227pt x 194.76733pt.
-)
-(./capitoli/capitolo-3-fast-broadcast.tex [9 <./immagini/junction.png> <./immag
-ini/junction-process.png> <./immagini/junction-example.png>] [10
-
-]
+ [9 <./immagini/junction.png> <./immagini/junction-process.png>]) (./capitoli/c
+apitolo-3-fast-broadcast.tex [10 <./immagini/junction-example.png>]
 Chapter 3.
 
 LaTeX Warning: Citation '4199282' on page 11 undefined on input line 7.
 
-[11]
+[11
+
+]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 46.
+put line 47.
  [12]
 
-LaTeX Warning: Citation '4199282' on page 13 undefined on input line 112.
+LaTeX Warning: Citation '4199282' on page 13 undefined on input line 116.
 
 
-LaTeX Warning: Citation 'BAR2017' on page 13 undefined on input line 112.
+LaTeX Warning: Citation 'BAR2017' on page 13 undefined on input line 116.
 
-<immagini/fb-2dpicc.png, id=319, 897.3525pt x 767.86874pt>
+
+LaTeX Warning: Citation 'BAR2017' on page 13 undefined on input line 116.
+
+[13]
+<immagini/fb-2dpicc.png, id=349, 897.3525pt x 767.86874pt>
 File: immagini/fb-2dpicc.png Graphic file (type png)
 <use immagini/fb-2dpicc.png>
-Package pdftex.def Info: immagini/fb-2dpicc.png  used on input line 126.
+Package pdftex.def Info: immagini/fb-2dpicc.png  used on input line 130.
 (pdftex.def)             Requested size: 372.0pt x 318.31981pt.
-[13]) (./capitoli/capitolo-4-roff.tex [14 <./immagini/fb-2dpicc.png>]
+ [14 <./immagini/fb-2dpicc.png>]
+<immagini/fbHelloHeader.png, id=362, 1742.51pt x 334.24875pt>
+File: immagini/fbHelloHeader.png Graphic file (type png)
+<use immagini/fbHelloHeader.png>
+Package pdftex.def Info: immagini/fbHelloHeader.png  used on input line 214.
+(pdftex.def)             Requested size: 372.0pt x 71.35715pt.
+ [15]
+<immagini/fbAlertHeader.png, id=373, 1744.5175pt x 431.6125pt>
+File: immagini/fbAlertHeader.png Graphic file (type png)
+<use immagini/fbAlertHeader.png>
+Package pdftex.def Info: immagini/fbAlertHeader.png  used on input line 230.
+(pdftex.def)             Requested size: 372.0pt x 92.03749pt.
+
+Overfull \hbox (17.75468pt too wide) in paragraph at lines 243--243
+[]\T1/cmr/bx/n/14.4 Smart Junc-tion Fast-Broadcast (SJ-Fast-Broadcast) 
+ []
+
+[16 <./immagini/fbHelloHeader.png> <./immagini/fbAlertHeader.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
+[]\T1/cmr/bx/n/10 if \T1/cmr/m/n/10 (+20) same-Broad-cast-Heard-From-Back() $\O
+MS/cmsy/m/n/10 ^$ \T1/cmr/m/n/10 (+20) ve-hi-cleIs-In-Junc-tion(j) $\OMS/cmsy/m
+/n/10 ^$
+ []
+
+<immagini/sj-fbAlertHeader.png, id=385, 1742.51pt x 429.605pt>
+File: immagini/sj-fbAlertHeader.png Graphic file (type png)
+<use immagini/sj-fbAlertHeader.png>
+Package pdftex.def Info: immagini/sj-fbAlertHeader.png  used on input line 293.
+
+(pdftex.def)             Requested size: 372.0pt x 91.7143pt.
+[17]) (./capitoli/capitolo-4-roff.tex [18 <./immagini/sj-fbAlertHeader.png>]
 Chapter 4.
 
-LaTeX Warning: Citation '6906275' on page 15 undefined on input line 8.
+LaTeX Warning: Citation '6906275' on page 19 undefined on input line 8.
 
-<immagini/minDiff.png, id=339, 1098.1025pt x 534.99875pt>
+<immagini/minDiff.png, id=400, 1098.1025pt x 534.99875pt>
 File: immagini/minDiff.png Graphic file (type png)
 <use immagini/minDiff.png>
 Package pdftex.def Info: immagini/minDiff.png  used on input line 22.
 (pdftex.def)             Requested size: 372.0pt x 181.23593pt.
 
-LaTeX Warning: Citation '6906275' on page 15 undefined on input line 23.
+LaTeX Warning: Citation '6906275' on page 19 undefined on input line 23.
 
 
-LaTeX Warning: Citation '6906275' on page 15 undefined on input line 23.
+LaTeX Warning: Citation '6906275' on page 19 undefined on input line 23.
 
-[15
+[19
 
-] [16 <./immagini/minDiff.png>]
-<immagini/emptySpace.png, id=358, 991.705pt x 517.935pt>
+] [20 <./immagini/minDiff.png>]
+<immagini/emptySpace.png, id=417, 991.705pt x 517.935pt>
 File: immagini/emptySpace.png Graphic file (type png)
 <use immagini/emptySpace.png>
 Package pdftex.def Info: immagini/emptySpace.png  used on input line 56.
 (pdftex.def)             Requested size: 372.0pt x 194.28046pt.
 
 
-LaTeX Warning: Citation '6906275' on page 17 undefined on input line 57.
+LaTeX Warning: Citation '6906275' on page 21 undefined on input line 57.
 
 
-LaTeX Warning: Citation '6906275' on page 17 undefined on input line 57.
+LaTeX Warning: Citation '6906275' on page 21 undefined on input line 57.
 
-[17 <./immagini/emptySpace.png>]
-<immagini/roffAlgo.png, id=365, 1037.8775pt x 742.775pt>
+[21 <./immagini/emptySpace.png>]
+<immagini/roffAlgo.png, id=425, 1037.8775pt x 742.775pt>
 File: immagini/roffAlgo.png Graphic file (type png)
 <use immagini/roffAlgo.png>
 Package pdftex.def Info: immagini/roffAlgo.png  used on input line 81.
 (pdftex.def)             Requested size: 260.39886pt x 186.36198pt.
- [18 <./immagini/roffAlgo.png>]
-<immagini/nbt.png, id=374, 1117.17375pt x 294.09875pt>
+ [22 <./immagini/roffAlgo.png>]
+<immagini/nbt.png, id=434, 1117.17375pt x 294.09875pt>
 File: immagini/nbt.png Graphic file (type png)
 <use immagini/nbt.png>
 Package pdftex.def Info: immagini/nbt.png  used on input line 104.
 (pdftex.def)             Requested size: 260.39886pt x 68.54778pt.
-<immagini/esdBitmapConstruction.png, id=375, 1521.685pt x 868.24374pt>
+<immagini/esdBitmapConstruction.png, id=435, 1521.685pt x 868.24374pt>
 File: immagini/esdBitmapConstruction.png Graphic file (type png)
 <use immagini/esdBitmapConstruction.png>
 Package pdftex.def Info: immagini/esdBitmapConstruction.png  used on input line
  118.
 (pdftex.def)             Requested size: 372.0pt x 212.25127pt.
- [19 <./immagini/nbt.png> <./immagini/esdBitmapConstruction.png>]
-<immagini/esdBitmapConstructionK2.png, id=383, 1431.3475pt x 176.66pt>
+ [23 <./immagini/nbt.png> <./immagini/esdBitmapConstruction.png>]
+<immagini/esdBitmapConstructionK2.png, id=443, 1431.3475pt x 176.66pt>
 File: immagini/esdBitmapConstructionK2.png Graphic file (type png)
 <use immagini/esdBitmapConstructionK2.png>
 Package pdftex.def Info: immagini/esdBitmapConstructionK2.png  used on input li
 ne 136.
 (pdftex.def)             Requested size: 372.0pt x 45.91164pt.
-<immagini/idBasedContention.png, id=385, 1642.135pt x 851.18pt>
+<immagini/idBasedContention.png, id=445, 1642.135pt x 851.18pt>
 File: immagini/idBasedContention.png Graphic file (type png)
 <use immagini/idBasedContention.png>
 Package pdftex.def Info: immagini/idBasedContention.png  used on input line 152
 .
 (pdftex.def)             Requested size: 372.0pt x 192.81902pt.
- [20 <./immagini/esdBitmapConstructionK2.png>]
-<immagini/waitingTimeAssignment.png, id=395, 1008.76875pt x 395.4775pt>
+ [24 <./immagini/esdBitmapConstructionK2.png>]
+<immagini/waitingTimeAssignment.png, id=456, 1008.76875pt x 395.4775pt>
 File: immagini/waitingTimeAssignment.png Graphic file (type png)
 <use immagini/waitingTimeAssignment.png>
 Package pdftex.def Info: immagini/waitingTimeAssignment.png  used on input line
  169.
 (pdftex.def)             Requested size: 372.0pt x 145.83559pt.
- [21 <./immagini/idBasedContention.png> <./immagini/waitingTimeAssignment.png>]
+ [25 <./immagini/idBasedContention.png> <./immagini/waitingTimeAssignment.png>]
 
 
-LaTeX Warning: Citation '6906275' on page 22 undefined on input line 177.
+LaTeX Warning: Citation '6906275' on page 26 undefined on input line 178.
 
-<immagini/roffHelloHeader.png, id=406, 1737.49126pt x 215.80624pt>
+[26]
+<immagini/roffHelloHeader.png, id=479, 1737.49126pt x 215.80624pt>
 File: immagini/roffHelloHeader.png Graphic file (type png)
 <use immagini/roffHelloHeader.png>
-Package pdftex.def Info: immagini/roffHelloHeader.png  used on input line 184.
+Package pdftex.def Info: immagini/roffHelloHeader.png  used on input line 252.
 (pdftex.def)             Requested size: 372.0pt x 46.20314pt.
-<immagini/roffAlertHeader.png, id=408, 1738.495pt x 419.5675pt>
+<immagini/roffAlertHeader.png, id=481, 1738.495pt x 419.5675pt>
 File: immagini/roffAlertHeader.png Graphic file (type png)
 <use immagini/roffAlertHeader.png>
-Package pdftex.def Info: immagini/roffAlertHeader.png  used on input line 200.
+Package pdftex.def Info: immagini/roffAlertHeader.png  used on input line 268.
 (pdftex.def)             Requested size: 372.0pt x 89.7763pt.
-[22 <./immagini/roffHelloHeader.png> <./immagini/roffAlertHeader.png>])
-(./capitoli/capitolo-5-tools-and-applications.tex [23] [24
+ [27 <./immagini/roffHelloHeader.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
+[] \T1/cmr/bx/n/10 if \T1/cmr/m/n/10 (+20) same-Broad-cast-Heard-From-Back() $\
+OMS/cmsy/m/n/10 ^$ \T1/cmr/m/n/10 (+20) ve-hi-cleIs-In-Junc-tion(j) $\OMS/cmsy/
+m/n/10 ^$
+ []
+
+[28 <./immagini/roffAlertHeader.png>]
+<immagini/sj-roffAlertHeader.png, id=495, 1741.50626pt x 540.0175pt>
+File: immagini/sj-roffAlertHeader.png Graphic file (type png)
+<use immagini/sj-roffAlertHeader.png>
+Package pdftex.def Info: immagini/sj-roffAlertHeader.png  used on input line 33
+4.
+(pdftex.def)             Requested size: 372.0pt x 115.35165pt.
+)
+(./capitoli/capitolo-5-tools-and-applications.tex [29 <./immagini/sj-roffAlertH
+eader.png>] [30
 
 ]
 Chapter 5.
-<immagini/ns-3-module.png, id=423, 1734.48pt x 718.685pt>
+<immagini/ns-3-module.png, id=507, 1734.48pt x 718.685pt>
 File: immagini/ns-3-module.png Graphic file (type png)
 <use immagini/ns-3-module.png>
 Package pdftex.def Info: immagini/ns-3-module.png  used on input line 30.
 (pdftex.def)             Requested size: 372.0pt x 154.13043pt.
-[25]
+[31]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 46.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -2122,45 +2171,45 @@ Overfull \hbox (51.97722pt too wide) in paragraph at lines 52--53
 on. For ex-am-ple, the \T1/cmtt/m/n/10 UdoEchoClientApplication
  []
 
-[26 <./immagini/ns-3-module.png>]
-<immagini/netanim.png, id=436, 674.52pt x 689.57625pt>
+[32 <./immagini/ns-3-module.png>]
+<immagini/netanim.png, id=520, 674.52pt x 689.57625pt>
 File: immagini/netanim.png Graphic file (type png)
 <use immagini/netanim.png>
 Package pdftex.def Info: immagini/netanim.png  used on input line 77.
 (pdftex.def)             Requested size: 256.32027pt x 262.04169pt.
- [27 <./immagini/netanim.png>]
+ [33 <./immagini/netanim.png>]
 
-LaTeX Warning: Citation 'ROM2017' on page 28 undefined on input line 90.
+LaTeX Warning: Citation 'ROM2017' on page 34 undefined on input line 90.
 
-<immagini/sumo-process.png, id=448, 1173.38374pt x 852.18375pt>
+<immagini/sumo-process.png, id=531, 1173.38374pt x 852.18375pt>
 File: immagini/sumo-process.png Graphic file (type png)
 <use immagini/sumo-process.png>
 Package pdftex.def Info: immagini/sumo-process.png  used on input line 103.
 (pdftex.def)             Requested size: 372.0pt x 270.16873pt.
 
-LaTeX Warning: Citation 'ROM2017' on page 28 undefined on input line 104.
+LaTeX Warning: Citation 'ROM2017' on page 34 undefined on input line 104.
 
 
-LaTeX Warning: Citation 'ROM2017' on page 28 undefined on input line 104.
+LaTeX Warning: Citation 'ROM2017' on page 34 undefined on input line 104.
 
-<immagini/sumo-distances.png, id=449, 1957.3125pt x 2261.44875pt>
+<immagini/sumo-distances.png, id=532, 1957.3125pt x 2261.44875pt>
 File: immagini/sumo-distances.png Graphic file (type png)
 <use immagini/sumo-distances.png>
 Package pdftex.def Info: immagini/sumo-distances.png  used on input line 110.
 (pdftex.def)             Requested size: 372.0pt x 429.78325pt.
-) (./capitoli/capitolo-6-simulations.tex [28 <./immagini/sumo-process.png>]
-[29 <./immagini/sumo-distances.png>] [30
+) (./capitoli/capitolo-6-simulations.tex [34 <./immagini/sumo-process.png>]
+[35 <./immagini/sumo-distances.png>] [36
 
 ]
 Chapter 6.
-[31]
-<immagini/hops.png, id=478, 999.735pt x 842.14626pt>
+[37]
+<immagini/hops.png, id=562, 999.735pt x 842.14626pt>
 File: immagini/hops.png Graphic file (type png)
 <use immagini/hops.png>
 Package pdftex.def Info: immagini/hops.png  used on input line 54.
 (pdftex.def)             Requested size: 260.39886pt x 219.35121pt.
- [32 <./immagini/hops.png>]
-<immagini/slots.png, id=488, 1172.38pt x 914.41624pt>
+ [38 <./immagini/hops.png>]
+<immagini/slots.png, id=572, 1172.38pt x 914.41624pt>
 File: immagini/slots.png Graphic file (type png)
 <use immagini/slots.png>
 Package pdftex.def Info: immagini/slots.png  used on input line 75.
@@ -2171,29 +2220,29 @@ Package caption Warning: \label without proper reference on input line 133.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `table:platoon' on page 33 undefined on input line 91.
+LaTeX Warning: Reference `table:platoon' on page 39 undefined on input line 91.
 
 
-[33 <./immagini/slots.png>]
-<immagini/platoon-15km/tdr.png, id=497, 1366.10374pt x 467.7475pt>
+[39 <./immagini/slots.png>]
+<immagini/platoon-15km/tdr.png, id=581, 1366.10374pt x 467.7475pt>
 File: immagini/platoon-15km/tdr.png Graphic file (type png)
 <use immagini/platoon-15km/tdr.png>
 Package pdftex.def Info: immagini/platoon-15km/tdr.png  used on input line 139.
 
 (pdftex.def)             Requested size: 409.20227pt x 140.10406pt.
-<immagini/platoon-15km/tdroc.png, id=498, 1362.08875pt x 462.72874pt>
+<immagini/platoon-15km/tdroc.png, id=582, 1362.08875pt x 462.72874pt>
 File: immagini/platoon-15km/tdroc.png Graphic file (type png)
 <use immagini/platoon-15km/tdroc.png>
 Package pdftex.def Info: immagini/platoon-15km/tdroc.png  used on input line 14
 0.
 (pdftex.def)             Requested size: 409.20227pt x 139.01033pt.
-<immagini/platoon-15km/noh.png, id=499, 1631.09375pt x 549.05125pt>
+<immagini/platoon-15km/noh.png, id=583, 1631.09375pt x 549.05125pt>
 File: immagini/platoon-15km/noh.png Graphic file (type png)
 <use immagini/platoon-15km/noh.png>
 Package pdftex.def Info: immagini/platoon-15km/noh.png  used on input line 141.
 
 (pdftex.def)             Requested size: 409.20227pt x 137.74pt.
-<immagini/platoon-15km/nos.png, id=500, 1655.18375pt x 550.055pt>
+<immagini/platoon-15km/nos.png, id=584, 1655.18375pt x 550.055pt>
 File: immagini/platoon-15km/nos.png Graphic file (type png)
 <use immagini/platoon-15km/nos.png>
 Package pdftex.def Info: immagini/platoon-15km/nos.png  used on input line 142.
@@ -2219,8 +2268,8 @@ Overfull \hbox (37.20227pt too wide) in paragraph at lines 139--143
  [] 
  []
 
-[34]
-<immagini/platoon-15km/fnn.png, id=507, 1633.10126pt x 552.0625pt>
+[40]
+<immagini/platoon-15km/fnn.png, id=591, 1633.10126pt x 552.0625pt>
 File: immagini/platoon-15km/fnn.png Graphic file (type png)
 <use immagini/platoon-15km/fnn.png>
 Package pdftex.def Info: immagini/platoon-15km/fnn.png  used on input line 149.
@@ -2231,203 +2280,203 @@ Overfull \hbox (37.20227pt too wide) in paragraph at lines 149--150
  [][] 
  []
 
-[35 <./immagini/platoon-15km/tdr.png> <./immagini/platoon-15km/tdroc.png> <./im
+[41 <./immagini/platoon-15km/tdr.png> <./immagini/platoon-15km/tdroc.png> <./im
 magini/platoon-15km/noh.png> <./immagini/platoon-15km/nos.png>]
 
-LaTeX Warning: Citation 'BAR2017' on page 36 undefined on input line 157.
+LaTeX Warning: Citation 'BAR2017' on page 42 undefined on input line 157.
 
-[36 <./immagini/platoon-15km/fnn.png>]
-<immagini/grid-300/b0/tdr.png, id=518, 1635.10875pt x 556.0775pt>
+[42 <./immagini/platoon-15km/fnn.png>]
+<immagini/grid-300/b0/tdr.png, id=602, 1724.4425pt x 584.1825pt>
 File: immagini/grid-300/b0/tdr.png Graphic file (type png)
 <use immagini/grid-300/b0/tdr.png>
 Package pdftex.def Info: immagini/grid-300/b0/tdr.png  used on input line 216.
-(pdftex.def)             Requested size: 372.0pt x 126.51207pt.
-<immagini/grid-300/b1/tdr.png, id=519, 1635.10875pt x 556.0775pt>
+(pdftex.def)             Requested size: 372.0pt x 126.01573pt.
+<immagini/grid-300/b1/tdr.png, id=603, 1728.4575pt x 585.18625pt>
 File: immagini/grid-300/b1/tdr.png Graphic file (type png)
 <use immagini/grid-300/b1/tdr.png>
 Package pdftex.def Info: immagini/grid-300/b1/tdr.png  used on input line 217.
-(pdftex.def)             Requested size: 372.0pt x 126.51207pt.
- [37]
-<immagini/grid-300/b0/tdroc.png, id=525, 1635.10875pt x 556.0775pt>
+(pdftex.def)             Requested size: 372.0pt x 125.93759pt.
+ [43]
+<immagini/grid-300/b0/tdroc.png, id=609, 1731.46875pt x 590.205pt>
 File: immagini/grid-300/b0/tdroc.png Graphic file (type png)
 <use immagini/grid-300/b0/tdroc.png>
 Package pdftex.def Info: immagini/grid-300/b0/tdroc.png  used on input line 224
 .
-(pdftex.def)             Requested size: 372.0pt x 126.51207pt.
-<immagini/grid-300/b1/tdroc.png, id=526, 1635.10875pt x 556.0775pt>
+(pdftex.def)             Requested size: 372.0pt x 126.80154pt.
+<immagini/grid-300/b1/tdroc.png, id=610, 1724.4425pt x 583.17876pt>
 File: immagini/grid-300/b1/tdroc.png Graphic file (type png)
 <use immagini/grid-300/b1/tdroc.png>
 Package pdftex.def Info: immagini/grid-300/b1/tdroc.png  used on input line 225
 .
-(pdftex.def)             Requested size: 372.0pt x 126.51207pt.
-<immagini/grid-300/b0/noh.png, id=527, 1635.10875pt x 556.0775pt>
+(pdftex.def)             Requested size: 372.0pt x 125.79922pt.
+<immagini/grid-300/b0/noh.png, id=611, 1714.405pt x 587.19376pt>
 File: immagini/grid-300/b0/noh.png Graphic file (type png)
 <use immagini/grid-300/b0/noh.png>
 Package pdftex.def Info: immagini/grid-300/b0/noh.png  used on input line 232.
-(pdftex.def)             Requested size: 372.0pt x 126.51207pt.
-<immagini/grid-300/b1/noh.png, id=528, 1635.10875pt x 556.0775pt>
+(pdftex.def)             Requested size: 372.0pt x 127.40897pt.
+<immagini/grid-300/b1/noh.png, id=612, 1713.40125pt x 581.17125pt>
 File: immagini/grid-300/b1/noh.png Graphic file (type png)
 <use immagini/grid-300/b1/noh.png>
 Package pdftex.def Info: immagini/grid-300/b1/noh.png  used on input line 233.
-(pdftex.def)             Requested size: 372.0pt x 126.51207pt.
- [38 <./immagini/grid-300/b0/tdr.png> <./immagini/grid-300/b1/tdr.png> <./immag
+(pdftex.def)             Requested size: 372.0pt x 126.17316pt.
+ [44 <./immagini/grid-300/b0/tdr.png> <./immagini/grid-300/b1/tdr.png> <./immag
 ini/grid-300/b0/tdroc.png> <./immagini/grid-300/b1/tdroc.png>]
-<immagini/grid-300/b0/nos.png, id=533, 1635.10875pt x 556.0775pt>
+<immagini/grid-300/b0/nos.png, id=617, 1736.4875pt x 585.18625pt>
 File: immagini/grid-300/b0/nos.png Graphic file (type png)
 <use immagini/grid-300/b0/nos.png>
 Package pdftex.def Info: immagini/grid-300/b0/nos.png  used on input line 240.
-(pdftex.def)             Requested size: 372.0pt x 126.51207pt.
-<immagini/grid-300/b1/nos.png, id=534, 1635.10875pt x 556.0775pt>
+(pdftex.def)             Requested size: 372.0pt x 125.3572pt.
+<immagini/grid-300/b1/nos.png, id=618, 1735.48375pt x 589.20125pt>
 File: immagini/grid-300/b1/nos.png Graphic file (type png)
 <use immagini/grid-300/b1/nos.png>
 Package pdftex.def Info: immagini/grid-300/b1/nos.png  used on input line 241.
-(pdftex.def)             Requested size: 372.0pt x 126.51207pt.
-<immagini/grid-300/b0/fnn.png, id=535, 1635.10875pt x 556.0775pt>
+(pdftex.def)             Requested size: 372.0pt x 126.2892pt.
+<immagini/grid-300/b0/fnn.png, id=619, 1736.4875pt x 583.17876pt>
 File: immagini/grid-300/b0/fnn.png Graphic file (type png)
 <use immagini/grid-300/b0/fnn.png>
 Package pdftex.def Info: immagini/grid-300/b0/fnn.png  used on input line 248.
-(pdftex.def)             Requested size: 372.0pt x 126.51207pt.
-<immagini/grid-300/b1/fnn.png, id=536, 1635.10875pt x 556.0775pt>
+(pdftex.def)             Requested size: 372.0pt x 124.92715pt.
+<immagini/grid-300/b1/fnn.png, id=620, 1736.4875pt x 587.19376pt>
 File: immagini/grid-300/b1/fnn.png Graphic file (type png)
 <use immagini/grid-300/b1/fnn.png>
 Package pdftex.def Info: immagini/grid-300/b1/fnn.png  used on input line 249.
-(pdftex.def)             Requested size: 372.0pt x 126.51207pt.
- [39 <./immagini/grid-300/b0/noh.png> <./immagini/grid-300/b1/noh.png> <./immag
+(pdftex.def)             Requested size: 372.0pt x 125.78725pt.
+ [45 <./immagini/grid-300/b0/noh.png> <./immagini/grid-300/b1/noh.png> <./immag
 ini/grid-300/b0/nos.png> <./immagini/grid-300/b1/nos.png>]
-<immagini/la-25/overview.png, id=546, 3254.1575pt x 1499.6025pt>
+<immagini/la-25/overview.png, id=630, 3254.1575pt x 1499.6025pt>
 File: immagini/la-25/overview.png Graphic file (type png)
 <use immagini/la-25/overview.png>
 Package pdftex.def Info: immagini/la-25/overview.png  used on input line 261.
 (pdftex.def)             Requested size: 372.0pt x 171.40952pt.
- [40 <./immagini/grid-300/b0/fnn.png> <./immagini/grid-300/b1/fnn.png>]
-[41 <./immagini/la-25/overview.png>]
-<immagini/la-25/b0/j0/tdr.png, id=557, 1629.08624pt x 552.0625pt>
+ [46 <./immagini/grid-300/b0/fnn.png> <./immagini/grid-300/b1/fnn.png>]
+[47 <./immagini/la-25/overview.png>]
+<immagini/la-25/b0/j0/tdr.png, id=640, 1629.08624pt x 552.0625pt>
 File: immagini/la-25/b0/j0/tdr.png Graphic file (type png)
 <use immagini/la-25/b0/j0/tdr.png>
 Package pdftex.def Info: immagini/la-25/b0/j0/tdr.png  used on input line 313.
 (pdftex.def)             Requested size: 372.0pt x 126.06192pt.
-<immagini/la-25/b0/j1/tdr.png, id=558, 1624.0675pt x 551.05875pt>
+<immagini/la-25/b0/j1/tdr.png, id=641, 1624.0675pt x 551.05875pt>
 File: immagini/la-25/b0/j1/tdr.png Graphic file (type png)
 <use immagini/la-25/b0/j1/tdr.png>
 Package pdftex.def Info: immagini/la-25/b0/j1/tdr.png  used on input line 314.
 (pdftex.def)             Requested size: 372.0pt x 126.21951pt.
-<immagini/la-25/b1/j0/tdr.png, id=559, 1629.08624pt x 555.07375pt>
+<immagini/la-25/b1/j0/tdr.png, id=642, 1629.08624pt x 555.07375pt>
 File: immagini/la-25/b1/j0/tdr.png Graphic file (type png)
 <use immagini/la-25/b1/j0/tdr.png>
 Package pdftex.def Info: immagini/la-25/b1/j0/tdr.png  used on input line 315.
 (pdftex.def)             Requested size: 372.0pt x 126.74954pt.
-<immagini/la-25/b1/j1/tdr.png, id=560, 1501.61pt x 510.90875pt>
+<immagini/la-25/b1/j1/tdr.png, id=643, 1501.61pt x 510.90875pt>
 File: immagini/la-25/b1/j1/tdr.png Graphic file (type png)
 <use immagini/la-25/b1/j1/tdr.png>
 Package pdftex.def Info: immagini/la-25/b1/j1/tdr.png  used on input line 316.
 (pdftex.def)             Requested size: 372.0pt x 126.56529pt.
- [42]
-<immagini/la-25/b0/j0/tdroc.png, id=566, 1630.09pt x 553.06625pt>
+ [48]
+<immagini/la-25/b0/j0/tdroc.png, id=649, 1630.09pt x 553.06625pt>
 File: immagini/la-25/b0/j0/tdroc.png Graphic file (type png)
 <use immagini/la-25/b0/j0/tdroc.png>
 Package pdftex.def Info: immagini/la-25/b0/j0/tdroc.png  used on input line 323
 .
 (pdftex.def)             Requested size: 372.0pt x 126.21518pt.
-<immagini/la-25/b0/j1/tdroc.png, id=567, 1626.075pt x 555.07375pt>
+<immagini/la-25/b0/j1/tdroc.png, id=650, 1626.075pt x 555.07375pt>
 File: immagini/la-25/b0/j1/tdroc.png Graphic file (type png)
 <use immagini/la-25/b0/j1/tdroc.png>
 Package pdftex.def Info: immagini/la-25/b0/j1/tdroc.png  used on input line 324
 .
 (pdftex.def)             Requested size: 372.0pt x 126.97823pt.
-<immagini/la-25/b1/j0/tdroc.png, id=568, 1626.075pt x 554.07pt>
+<immagini/la-25/b1/j0/tdroc.png, id=651, 1626.075pt x 554.07pt>
 File: immagini/la-25/b1/j0/tdroc.png Graphic file (type png)
 <use immagini/la-25/b1/j0/tdroc.png>
 Package pdftex.def Info: immagini/la-25/b1/j0/tdroc.png  used on input line 325
 .
 (pdftex.def)             Requested size: 372.0pt x 126.74861pt.
-<immagini/la-25/b1/j1/tdroc.png, id=569, 1630.09pt x 555.07375pt>
+<immagini/la-25/b1/j1/tdroc.png, id=652, 1630.09pt x 555.07375pt>
 File: immagini/la-25/b1/j1/tdroc.png Graphic file (type png)
 <use immagini/la-25/b1/j1/tdroc.png>
 Package pdftex.def Info: immagini/la-25/b1/j1/tdroc.png  used on input line 326
 .
 (pdftex.def)             Requested size: 372.0pt x 126.67331pt.
- [43 <./immagini/la-25/b0/j0/tdr.png> <./immagini/la-25/b0/j1/tdr.png> <./immag
+ [49 <./immagini/la-25/b0/j0/tdr.png> <./immagini/la-25/b0/j1/tdr.png> <./immag
 ini/la-25/b1/j0/tdr.png> <./immagini/la-25/b1/j1/tdr.png>]
-<immagini/la-25/b0/j0/noh.png, id=574, 1619.04875pt x 554.07pt>
+<immagini/la-25/b0/j0/noh.png, id=657, 1619.04875pt x 554.07pt>
 File: immagini/la-25/b0/j0/noh.png Graphic file (type png)
 <use immagini/la-25/b0/j0/noh.png>
 Package pdftex.def Info: immagini/la-25/b0/j0/noh.png  used on input line 333.
 (pdftex.def)             Requested size: 372.0pt x 127.3066pt.
-<immagini/la-25/b0/j1/noh.png, id=575, 1614.03pt x 547.04375pt>
+<immagini/la-25/b0/j1/noh.png, id=658, 1614.03pt x 547.04375pt>
 File: immagini/la-25/b0/j1/noh.png Graphic file (type png)
 <use immagini/la-25/b0/j1/noh.png>
 Package pdftex.def Info: immagini/la-25/b0/j1/noh.png  used on input line 334.
 (pdftex.def)             Requested size: 372.0pt x 126.07617pt.
-<immagini/la-25/b1/j0/noh.png, id=576, 1614.03pt x 555.07375pt>
+<immagini/la-25/b1/j0/noh.png, id=659, 1614.03pt x 555.07375pt>
 File: immagini/la-25/b1/j0/noh.png Graphic file (type png)
 <use immagini/la-25/b1/j0/noh.png>
 Package pdftex.def Info: immagini/la-25/b1/j0/noh.png  used on input line 335.
 (pdftex.def)             Requested size: 372.0pt x 127.92683pt.
-<immagini/la-25/b1/j1/noh.png, id=577, 1617.04124pt x 550.055pt>
+<immagini/la-25/b1/j1/noh.png, id=660, 1617.04124pt x 550.055pt>
 File: immagini/la-25/b1/j1/noh.png Graphic file (type png)
 <use immagini/la-25/b1/j1/noh.png>
 Package pdftex.def Info: immagini/la-25/b1/j1/noh.png  used on input line 336.
 (pdftex.def)             Requested size: 372.0pt x 126.53516pt.
- [44 <./immagini/la-25/b0/j0/tdroc.png> <./immagini/la-25/b0/j1/tdroc.png> <./i
+ [50 <./immagini/la-25/b0/j0/tdroc.png> <./immagini/la-25/b0/j1/tdroc.png> <./i
 mmagini/la-25/b1/j0/tdroc.png> <./immagini/la-25/b1/j1/tdroc.png>]
-<immagini/la-25/b0/j0/nos.png, id=582, 1641.13126pt x 550.055pt>
+<immagini/la-25/b0/j0/nos.png, id=665, 1641.13126pt x 550.055pt>
 File: immagini/la-25/b0/j0/nos.png Graphic file (type png)
 <use immagini/la-25/b0/j0/nos.png>
 Package pdftex.def Info: immagini/la-25/b0/j0/nos.png  used on input line 343.
 (pdftex.def)             Requested size: 372.0pt x 124.68027pt.
-<immagini/la-25/b0/j1/nos.png, id=583, 1637.11626pt x 551.05875pt>
+<immagini/la-25/b0/j1/nos.png, id=666, 1637.11626pt x 551.05875pt>
 File: immagini/la-25/b0/j1/nos.png Graphic file (type png)
 <use immagini/la-25/b0/j1/nos.png>
 Package pdftex.def Info: immagini/la-25/b0/j1/nos.png  used on input line 344.
 (pdftex.def)             Requested size: 372.0pt x 125.2105pt.
-<immagini/la-25/b1/j0/nos.png, id=584, 1641.13126pt x 553.06625pt>
+<immagini/la-25/b1/j0/nos.png, id=667, 1641.13126pt x 553.06625pt>
 File: immagini/la-25/b1/j0/nos.png Graphic file (type png)
 <use immagini/la-25/b1/j0/nos.png>
 Package pdftex.def Info: immagini/la-25/b1/j0/nos.png  used on input line 345.
 (pdftex.def)             Requested size: 372.0pt x 125.36284pt.
-<immagini/la-25/b1/j1/nos.png, id=585, 1638.12pt x 555.07375pt>
+<immagini/la-25/b1/j1/nos.png, id=668, 1638.12pt x 555.07375pt>
 File: immagini/la-25/b1/j1/nos.png Graphic file (type png)
 <use immagini/la-25/b1/j1/nos.png>
 Package pdftex.def Info: immagini/la-25/b1/j1/nos.png  used on input line 346.
 (pdftex.def)             Requested size: 372.0pt x 126.04655pt.
- [45 <./immagini/la-25/b0/j0/noh.png> <./immagini/la-25/b0/j1/noh.png> <./immag
+ [51 <./immagini/la-25/b0/j0/noh.png> <./immagini/la-25/b0/j1/noh.png> <./immag
 ini/la-25/b1/j0/noh.png> <./immagini/la-25/b1/j1/noh.png>]
-<immagini/la-25/b0/j0/fnn.png, id=591, 1626.075pt x 551.05875pt>
+<immagini/la-25/b0/j0/fnn.png, id=674, 1626.075pt x 551.05875pt>
 File: immagini/la-25/b0/j0/fnn.png Graphic file (type png)
 <use immagini/la-25/b0/j0/fnn.png>
 Package pdftex.def Info: immagini/la-25/b0/j0/fnn.png  used on input line 353.
 (pdftex.def)             Requested size: 372.0pt x 126.05975pt.
-<immagini/la-25/b0/j1/fnn.png, id=592, 1622.06pt x 549.05125pt>
+<immagini/la-25/b0/j1/fnn.png, id=675, 1622.06pt x 549.05125pt>
 File: immagini/la-25/b0/j1/fnn.png Graphic file (type png)
 <use immagini/la-25/b0/j1/fnn.png>
 Package pdftex.def Info: immagini/la-25/b0/j1/fnn.png  used on input line 354.
 (pdftex.def)             Requested size: 372.0pt x 125.91888pt.
-<immagini/la-25/b1/j0/fnn.png, id=593, 1629.08624pt x 551.05875pt>
+<immagini/la-25/b1/j0/fnn.png, id=676, 1629.08624pt x 551.05875pt>
 File: immagini/la-25/b1/j0/fnn.png Graphic file (type png)
 <use immagini/la-25/b1/j0/fnn.png>
 Package pdftex.def Info: immagini/la-25/b1/j0/fnn.png  used on input line 355.
 (pdftex.def)             Requested size: 372.0pt x 125.83272pt.
-<immagini/la-25/b1/j1/fnn.png, id=594, 1632.0975pt x 547.04375pt>
+<immagini/la-25/b1/j1/fnn.png, id=677, 1632.0975pt x 547.04375pt>
 File: immagini/la-25/b1/j1/fnn.png Graphic file (type png)
 <use immagini/la-25/b1/j1/fnn.png>
 Package pdftex.def Info: immagini/la-25/b1/j1/fnn.png  used on input line 356.
 (pdftex.def)             Requested size: 372.0pt x 124.68219pt.
- [46 <./immagini/la-25/b0/j0/nos.png> <./immagini/la-25/b0/j1/nos.png> <./immag
-ini/la-25/b1/j0/nos.png> <./immagini/la-25/b1/j1/nos.png>] [47 <./immagini/la-2
+ [52 <./immagini/la-25/b0/j0/nos.png> <./immagini/la-25/b0/j1/nos.png> <./immag
+ini/la-25/b1/j0/nos.png> <./immagini/la-25/b1/j1/nos.png>] [53 <./immagini/la-2
 5/b0/j0/fnn.png> <./immagini/la-25/b0/j1/fnn.png> <./immagini/la-25/b1/j0/fnn.p
 ng> <./immagini/la-25/b1/j1/fnn.png>]
-<immagini/la-25/la-coverage-fb100.png, id=606, 991.705pt x 970.62625pt>
+<immagini/la-25/la-coverage-fb100.png, id=689, 991.705pt x 970.62625pt>
 File: immagini/la-25/la-coverage-fb100.png Graphic file (type png)
 <use immagini/la-25/la-coverage-fb100.png>
 Package pdftex.def Info: immagini/la-25/la-coverage-fb100.png  used on input li
 ne 369.
 (pdftex.def)             Requested size: 372.0pt x 364.08762pt.
- [48 <./immagini/la-25/la-coverage-fb100.png>]) [49]
-[50] (./tesi.gls) (./tesi.acr) (./inizio-fine/bibliografia.tex [51
+ [54 <./immagini/la-25/la-coverage-fb100.png>]) [55]
+[56] (./tesi.gls) (./tesi.acr) (./inizio-fine/bibliografia.tex [57
 
 
 
-] [52
+] [58
 
 ])
 
@@ -2453,10 +2502,10 @@ Package logreq Info: Writing requests to 'tesi.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 204.
  ) 
 Here is how much of TeX's memory you used:
- 37573 strings out of 492982
- 673904 string characters out of 6134895
- 1239740 words of memory out of 5000000
- 39994 multiletter control sequences out of 15000+600000
+ 37653 strings out of 492982
+ 675524 string characters out of 6134895
+ 1240970 words of memory out of 5000000
+ 40042 multiletter control sequences out of 15000+600000
  31075 words of font info for 142 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  61i,13n,122p,1969b,2473s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2485,10 +2534,10 @@ super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb><
 /usr/share/texmf/fonts/type1/public/cm-super/sfsl1000.pfb></usr/share/texmf/fon
 ts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on tesi.pdf (56 pages, 3897405 bytes).
+Output written on tesi.pdf (62 pages, 4088789 bytes).
 PDF statistics:
- 924 PDF objects out of 1000 (max. 8388607)
- 762 compressed objects within 8 object streams
- 188 named destinations out of 1000 (max. 500000)
- 27823 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 1030 PDF objects out of 1200 (max. 8388607)
+ 857 compressed objects within 9 object streams
+ 216 named destinations out of 1000 (max. 500000)
+ 27891 words of extra memory for PDF output out of 29859 (max. 10000000)
 
