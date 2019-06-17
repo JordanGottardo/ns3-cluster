@@ -52,8 +52,9 @@ def isFileComplete(filePath):
 
 def plotTxRange(txRange, starterCoordX, starterCoordY, vehicleDistance, color, plotInterval):
     color = "black"
-    x = np.linspace(0, 3000, 100)
-    y = np.linspace(0, 3000, 100)
+    #print("PlotTxRange" + " txRange= " + str(txRange) + " starterCoordX= " + str(starterCoordX) + " starterCoordY= " + str(starterCoordY) + " vehicleDistance= " + str(vehicleDistance))
+    x = np.linspace(0, 5000, 100)
+    y = np.linspace(0, 5000, 100)
     X, Y = np.meshgrid(x, y)
     realTxRange = (X - starterCoordX) ** 2 + (Y - starterCoordY) ** 2 - txRange ** 2
     CS = plt.contour(X, Y, realTxRange, [0], colors = color)

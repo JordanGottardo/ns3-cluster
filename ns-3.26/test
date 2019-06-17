@@ -78,3 +78,7 @@ NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'fb-vanet-urban --buildings=0 --actualRan
 
 LA-25 FB without drones txRange 100
 NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'fb-vanet-urban --buildings=1 --actualRange=100 --vehicleDistance=25 --protocol=1 --flooding=0 --area=1000 --mapBasePath=../maps/LA-25/LA-25 --cwMin=32 --cwMax=1024 --printToFile=1 --printCoords=1 -startingNode=1009 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1 --propagationLoss=1 --smartJunctionMode=0'
+
+Grid-300
+
+NS_GLOBAL_VALUE="RngRun=1" ./waf --run 'fb-vanet-urban --buildings=1 --actualRange=500 --vehicleDistance=25 --protocol=1 --flooding=0 --area=1000 --mapBasePath=../maps/Grid-300/Grid-300 --cwMin=32 --cwMax=1024 --printToFile=1 --printCoords=1 -startingNode=4896 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=0 --propagationLoss=1 --smartJunctionMode=0'

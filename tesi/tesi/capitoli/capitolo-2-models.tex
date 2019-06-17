@@ -54,7 +54,7 @@
 	
 	\section{Junction modeling}
 		\label{sec:junction-modeling}
-		Part of this work consisted in implementing extensions for the algorithms which will be presented in Chapter \ref{chapter:roff} and \ref{chapter:fb} to utilize junctions in a smart way. The aim of these extension is reaching a higher number of vehicles during the Alert Message propagation. In order for those extension to work, a model to represent and identify junctions was necessary. Using data retrieved from OpenStreetMap elaborated through SUMO (see Section \ref{sec:sumo} for the full process), it was possible to have information about junctions present inside a urban scenario. Figure \ref{fig:junction} shows the JSON representation of a junction.
+		Part of this work consisted in implementing extensions for the algorithms which will be presented in Chapter \ref{chapter:fb} and \ref{chapter:roff} to utilize junctions in a smart way. These extensions aim to reach a higher number of vehicles during the Alert Message propagation. In order for those extension to work, a model to identify and represent junctions was necessary. Using data retrieved from OpenStreetMap elaborated through SUMO (see Section \ref{sec:sumo} for the full process), it has been possible to retrieve information about junctions present inside a urban scenario. Figure \ref{fig:junction} shows the JSON representation of a junction.
 		
 		\begin{figure}[H]
 			\centering
@@ -69,7 +69,7 @@
 			\item the \textit{shape} attribute, containing coordinates which represent its shape.
 		\end{itemize}
 		
-		Using from this data it was possible to create the junction modeling process, represented in Figure \ref{fig:junction-process}. Since the \textit{shape} attribute resulted in a polygon too small for the purpose of this work, a bounding box which extends the polygon by 20 meters in each direction has been implemented.
+		Using from this data it was possible to establish the junction modeling process, represented in Figure \ref{fig:junction-process}. Since the \textit{shape} attribute resulted in a polygon too small for the purpose of this work, a bounding box which extends the polygon by 20 meters in each direction has been implemented.
 		
 		\begin{figure}[H]
 			\centering

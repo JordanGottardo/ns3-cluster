@@ -18,7 +18,7 @@ import coordUtils as coordUtils
 
 
 plt.rcParams["figure.figsize"] = [10, 10]
-circRadius = 1000
+circRadius = 2000
 baseFolder = "../../ns-3.26/out/scenario-urbano-con-coord/cw-32-1024/Padova/d25/"
 
 def createOrderedSourcesList(transmissionVector):
@@ -57,7 +57,7 @@ def plotSingleTransmission(relativeFileName, outFileBasePath, ns2MobilityFile, p
         print("source " + str(count))
         count += 1
     
-        plt.plot(xNodeCoords, yNodeCoords, ".", markersize=5, color="red")
+        plt.plot(xNodeCoords, yNodeCoords, ".", markersize=5, color="#A00000", label="Not reached by Alert Message") #red
         coordUtils.plotTxRange(circRadius, startingX, startingY, vehicleDistance, color1, True)
 
         for edge in transmissionVector:
@@ -65,9 +65,11 @@ def plotSingleTransmission(relativeFileName, outFileBasePath, ns2MobilityFile, p
                 continue
             lineColor = "0.8"
             sourceColor = "#560589"
+            forwarderLabel = "Previous forwarder"
             if (edge.source == orderedSource):
                 lineColor = "0.35"
                 sourceColor = "#bf59ff"
+                forwarderLabel = "Latest forwarder"
             source = edge.source
             destination = edge.destination
             if (not source in nodeCoordsMap):
@@ -79,13 +81,13 @@ def plotSingleTransmission(relativeFileName, outFileBasePath, ns2MobilityFile, p
             
             c1 = np.array((sourceCoord.x, sourceCoord.y, sourceCoord.z))
             c2 = np.array((destCoord.x, destCoord.y, destCoord.z))
-            plt.plot(sourceCoord.x, sourceCoord.y, "ro", color=sourceColor, markersize=5)
+            plt.plot(sourceCoord.x, sourceCoord.y, "ro", color=sourceColor,  markersize=5, label=forwarderLabel)
             plt.plot([sourceCoord.x, destCoord.x], [sourceCoord.y, destCoord.y], color=lineColor, linewidth=0.3, alpha=0.7)
-            plt.plot(destCoord.x, destCoord.y, ".", color="green", markersize=5)   
-            plt.plot(startingX, startingY, "ro", color="blue", markersize=5)
+            plt.plot(destCoord.x, destCoord.y, ".", color="#32DC32", markersize=5, label="Reached by Alert Message") #green  
+            plt.plot(startingX, startingY, "ro", color="yellow", markeredgecolor="blue", markersize=5, label="Source of Alert Message")
 
             coordUtils.plotTxRange(circRadius, startingX, startingY, vehicleDistance, color1, True)
-
+            plt.legend(loc="best", framealpha=1.0)
             #coordUtils.plotBuildings(polyFilePath)
 
             #Save file 

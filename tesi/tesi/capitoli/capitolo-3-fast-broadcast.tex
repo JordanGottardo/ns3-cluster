@@ -4,17 +4,17 @@
 
 \chapter{Fast-Broadcast}
 	\label{chapter:fb}
-	Fast-Broadcast \cite{4199282} is a multi-hop routing protocol for vehicular communication. Its main feature consists in breaking the assumption that all vehicles should know, a priori, their fixed and constant transmission range. This assumption is often unreasonable, especially in \acrshort{vaneta}s and urban environments, where electromagnetic interferences and obstacles such as buildings heavily influence the transmission range.
+	Fast-Broadcast \cite{4199282} is a multi-hop routing protocol for vehicular communication. Its main feature consists in breaking the assumption that all vehicles should know, \textit{a priori}, their fixed and constant transmission range. This assumption is often unreasonable, especially in \acrshort{vaneta}s and urban environments, where electromagnetic interferences and obstacles such as buildings heavily influence the transmission range.
 	
 	
 	Fast-Broadcast employs two different phases:
 	\begin{enumerate}
-		\item the \textbf{Estimation Phase}, during which cars estimate their frontward and backward transmission range;
-		\item the \textbf{Broadcasts Phase}, during which a car sends an Alert Message and the other cars need to forward it in order to propagate the information.
+		\item the \textbf{Estimation Phase}, during which vehicles estimate their frontward and backward transmission range;
+		\item the \textbf{Broadcasts Phase}, during which a vehicle sends an Alert Message and the other cars need to forward it in order to propagate the information.
 	\end{enumerate}
 
 	\section{Estimation Phase}
-		During this phase, cars try to estimate their frontward and backward transmission range by the means of Hello Messages. These beacons are sent periodically via broadcast to all the neighbors of a vehicle.
+		During this phase, vehicles try to estimate their frontward and backward transmission range by the means of Hello Messages. These beacons are sent periodically via broadcast to all the neighbors of a vehicle.
 		
 		
 		Time is divided into turns and, in order to keep estimations fresh, data collected during a certain turn is kept for the duration of the next turn, then discarded. The parameter \textit{turnSize} specifies the duration of a turn: the authors suggest a duration of one second. A bigger \textit{turnSize} could guarantee less collisions to the detriment of freshness of information. On the other hand, the effects of a smaller \textit{turnSize} are specular to those just presented. 
@@ -25,7 +25,7 @@
 			\item \textit{Current-turn Maximum Front Range (CMFR)}, which estimates the maximum frontward distance from which another car can be heard by the considered one;
 			\item \textit{Current-turn Maximum Back Range} (CMBR), which estimates the maximum backward distance at which the considered car can be heard.
 		\end{itemize}
-		When the turn expires, the value of these variables is stored in the LMFR and LMBR variables (\textit{Latest-turn Maximum Front Range} and \textit{Latest-turn Maximum Back Range}, respectively). The algorithm uses both last turn and current turn data because the former guarantees values calculated with a larger pool of Hello Messages, while the latter considers fresher information.
+		When the turn expires, the value of these variables is stored in the \textit{LMFR} and \textit{LMBR} variables (\textit{Latest-turn Maximum Front Range} and \textit{Latest-turn Maximum Back Range}, respectively). The algorithm uses both last turn and current turn data because the former guarantees values calculated with a larger pool of Hello Messages, while the latter considers fresher information.
 		
 		When sending a Hello Message (Algorithm \ref{alg:hello-message-sending-1d}), the vehicle initially waits for a random time between 0 and \textit{turnSize}. After this, if it has not heard another Hello Message or a collision, it proceeds to transmit a Hello Message containing the estimation of its frontward transmission range.
 		
@@ -50,14 +50,14 @@
 		
 		\begin{algorithm}[H]
 			\begin{algorithmic}[1]
-				\State mp $\gets$ retrievePosition()
-				\State sp $\gets$ helloMsg.senderPosition
-				\State dmr $\gets$ helloMsg.declaredMaxRange
-				\State d $\gets$ distance(mp, sp)
+				\State myPosition $\gets$ retrievePosition()
+				\State senderPosition $\gets$ helloMsg.senderPosition
+				\State declaredMaxRange $\gets$ helloMsg.declaredMaxRange
+				\State d $\gets$ distance(myPosition, senderPosition)
 				\If{receivedFromFront(helloMsg)} 
-				\State CMFR $\gets$ max(CMFR, d, dmr)
+				\State CMFR $\gets$ max(CMFR, d, declaredMaxRange)
 				\Else
-				\State CMBR $\gets$ max(CMBR, d, dmr)
+				\State CMBR $\gets$ max(CMBR, d, declaredMaxRange)
 				\EndIf
 			\end{algorithmic}
 			\caption{Hello message receiving procedure for 1D}
@@ -65,10 +65,10 @@
 		\end{algorithm}
 	
 	\section{Broadcast Phase}
-		This phase is activated once a car sends an Alert Message. The other cars can exploit the estimation of transmission ranges to reduce redundancy in message broadcast. Each vehicle can exploit this information to assign itself a forwarding priority inversely proportional to the relative distance: the higher the relative distance, the higher the priority.  
+		This phase is activated once a vehicle sends an Alert Message. The other cars can exploit the estimation of transmission ranges to reduce redundancy in message broadcast. Each vehicle can exploit this information to assign itself a forwarding priority inversely proportional to the relative distance: the higher the relative distance, the higher the priority.  
 		
 		
-		When the Broadcast Phase is activated , a vehicle sends an Alert Message with application specific data. Broadcast specific data is also piggybacked on the Alert Message, such as:
+		When the Broadcast Phase is activated, a vehicle sends an Alert Message with application specific data. Broadcast specific data is also piggybacked on the Alert Message, such as:
 		\begin{itemize}
 			\item \textit{MaxRange:} the maximum range a transmission is expected to travel backward before the signal becomes too weak to be received. This value is utilized by following vehicles to rank their forwarding priority;
 			\item \textit{SenderPosition}: the coordinates of the sender.
@@ -78,7 +78,7 @@
 			\left\lfloor \left( \frac{\text{MaxRange} - \text{Distance}}{\text{MaxRange}} \times (\text{CWMax} - \text{CWMin}) \right) + \text{CWmin}  \right\rfloor
 			\label{eq:contention-window}
 		\end{gather}
-		If another forwarding of the same message coming from behind is heard during waiting time, the vehicle suppresses its transmission because the message has already been forwarded by another vehicle further back in the column. On the contrary, if the same message is heard coming from the front, the procedure is restarted using the new parameters. The vehicle can forward the message only if the waiting time expires without having received the same message.
+		If another forwarding of the same message coming from behind is heard during waiting time, the vehicle suppresses its transmission because the message has already been forwarded by another vehicle farther back in the column. On the contrary, if the same message is heard coming from the front, the procedure is restarted using the new parameters. The vehicle can forward the message only if the waiting time expires without having received the same message.
 		
 		Algorithm \ref{alg:alert-message-generation-1d} and \ref{alg:alert-message-forwarding-1d} describe the logic behind the Broadcast Phase.
 		
@@ -142,7 +142,7 @@
 		
 		D receives the message from B as well. D is a good candidate for transmission since the origin-vehicle distance, which amounts to 180m, is greater than origin-sender distance, equal to 120m.
 		
-		However, the condition by which vehicles suppressed their transmission when the origin-sender distance was smaller than the origin-sender distance causes delivery problems in particular scenarios, reported in Appendix %todo appendice dove si confrontano i 2 algoritmi FB
+		However, the condition by which vehicles suppressed their transmission when the origin-sender distance was smaller than the origin-sender distance causes delivery problems in particular scenarios, reported in Appendix TODO %todo appendice dove si confrontano i 2 algoritmi FB
 		
 		. Hence, that condition has been dropped in the algorithm implemented in this work. Referring to the example in Figure \ref{fig:fb-2d}, this change makes vehicle C a forwarder candidate as well.
 		
@@ -166,11 +166,11 @@
 		
 		\begin{algorithm}[H]
 			\begin{algorithmic}[1]
-				\State mp $\gets$ retrievePosition()
-				\State sp $\gets$ helloMsg.senderPosition
-				\State dmr $\gets$ helloMsg.declaredMaxRange
-				\State d $\gets$ distance(mp, sp)
-				\State CMR $\gets$ max(CMR, d, dmr)
+				\State myPosition $\gets$ retrievePosition()
+				\State senderPosition $\gets$ helloMsg.senderPosition
+				\State declaredMaxRange $\gets$ helloMsg.declaredMaxRange
+				\State d $\gets$ distance(myPosition, senderPosition)
+				\State CMR $\gets$ max(CMR, d, declaredMaxRange)
 			\end{algorithmic}
 			\caption{Hello message receiving procedure for 2D}
 			\label{alg:hello-message-receiving-2d}
@@ -218,9 +218,9 @@
 			
 			The fields contained in the Hello Message are the following:
 			\begin{itemize}
-				\item ID: unique ID of the Hello Message's sender;
-				\item declared max range: maximum range detected by the vehicle during Estimation Phase;
-				\item x coord, y coord and z coord: coordinates of the Hello Message's sender.
+				\item \textit{ID}: unique ID of the Hello Message's sender;
+				\item \textit{declared max range}: maximum range detected by the vehicle during Estimation Phase;
+				\item \textit{x coord}, \textit{y coord} and \textit{z coord}: coordinates of the Hello Message's sender.
 			\end{itemize}
 		
 		\subsection{Alert Message Header Structure}
@@ -233,12 +233,12 @@
 			\end{figure}
 		
 		The fields contained in the Alert Message are the following:
-			\begin{itemize}
-				\item ID: unique ID of the Hello Message's sender;
-				\item max range: maximum range detected by the vehicle during Estimation Phase;
-				\item x coord, y coord and z coord: coordinates of the Hello Message's sender;
-				\item origin x, origin y and origin z coord: coordinates where the Alert initially originated from.
-			\end{itemize}
+		\begin{itemize}
+			\item \textit{ID}: unique ID of the Alert Message's sender;
+			\item \textit{max range}: maximum range detected by the vehicle during Estimation Phase;
+			\item \textit{x coord}, \textit{y coord} and \textit{z coord}: coordinates of the Hello Message's sender;
+			\item \textit{origin x}, \textit{origin y} and \textit{origin z coord}: coordinates where the Alert initially originated from.
+		\end{itemize}
 	
 	\section{Smart Junction Fast-Broadcast (SJ-Fast-Broadcast)}
 		\label{sj:fb}
@@ -247,11 +247,29 @@
 			\item in one direction, if the forwarder is not inside a junction and the road segment is surrounded by buildings which block the signal;
 			\item in three directions, whenever the forwarder lies inside a junction. 
 		\end{itemize}
-		Actually the signal travels respectively in two and four directions, but we are not considering the direction where the previous Alert Message is coming from (i.e. we are only considering forwarding towards previously uncovered areas in this analysis). Figure todo shows an example.
-		If the message is coming from the top and A and B forwards it, then only vehicles in the north-south road will be reached. Vehicles on the west-east road will be reached by the Alert Message at a later point, if the propagation circles back to them through another road, otherwise they will never be informed about the alert. If C is also forced to forward, then we have coverage across all road segments and the propagation can continue towards all directions.
+		Actually the signal travels respectively in two and four directions, but we are not considering the direction where the previous Alert Message is coming from (i.e. we are only considering forwarding towards previously uncovered areas in this analysis).
+		Referring to Figure \ref{fig:fb-junction-0}, if the message is coming from the top and A and B forwards it, then only vehicles in the north-south road will be reached. Vehicles on the west-east road will be reached by the Alert Message at a later point, if the propagation circles back to them through another road, otherwise they will never be informed about the alert. If C is also forced to forward, then we have coverage across all road segments and the propagation can continue towards all directions. Figure \ref{fig:fb-junction-1} shows an example where SJ-Fast-Broadcast is employed and a greater coverage is achieved.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{immagini/fb-junction-0}
+			\caption{Usual Fast-Broadcast Alert Message propagation}
+			\label{fig:fb-junction-0}
+		\end{figure}
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{immagini/fb-junction-1}
+			\caption{SJ-Fast-Broadcast Alert Message propagation}
+			\label{fig:fb-junction-1}
+		\end{figure}
 		
 		
-		The proposed extension works by having nodes inside a junction participate in a second contention with all other vehicles inside the same junction. When the original timer calculated by Fast-Broadcast expires for one of the vehicles inside the junction, it forwards the message. All other vehicles inside the same junction suppress their transmission. This way the propagation can proceed in all directions, while the propagation in the normal direction can proceed without additional delays. Algorithm \ref{alg:sj-alert-message-generation} and \ref{alg:sj-alert-message-forwarding} show the code for SJ-Fast-Broadcast's Broadcast Phase. Estimation Phase's algorithms remain the same as Algorithm \ref{alg:hello-message-sending-2d} and \ref{alg:hello-message-receiving-2d}.
+		The proposed extension works by having nodes inside a junction participate in a second contention with all other vehicles inside the same junction. When the original timer calculated by Fast-Broadcast expires for one of the vehicles inside the junction, it forwards the message. All other vehicles inside the same junction suppress their transmission. This way the propagation can proceed in all directions, while the propagation in the normal direction can proceed without additional delays. Algorithm \ref{alg:sj-alert-message-generation} and \ref{alg:sj-alert-message-forwarding} show the code for SJ-Fast-Broadcast's Broadcast Phase. Estimation Phase's algorithms remain the same as Algorithm \ref{alg:hello-message-sending-2d} and \ref{alg:hello-message-receiving-2d}. Line 4 of Algorithm \ref{alg:sj-alert-message-forwarding} shows that a vehicle suppresses its transmission in one of the following two cases:
+		\begin{itemize}
+			\item if the vehicle has heard the same broadcast coming from the back and is not inside a junction;
+			\item if the vehicle has heard the same broadcast coming from the back, is inside a junction with ID \textit{j} and the sender is also inside the same junction.
+		\end{itemize}
 		
 		\begin{algorithm}[H]
 			\begin{algorithmic}[1]
@@ -271,7 +289,7 @@
 				\State cwnd $\gets$ computeCwnd()
 				\State waitTime $\gets$ random(cwnd)
 				\State wait(waitTime)
-				\If{sameBroadcastHeardFromBack() $\land$ vehicleIsInJunction(j) $\land$ alertMsg.senderInJunction $\land$ alertMsg.junctionId == j}
+				\If{(sameBroadcastHeardFromBack() $\land$ vehicleNotInJunction()) $\lor$ (sameBroadcastHeardFromBack() $\land$ vehicleInJunction(j) tel$\land$ alertMsg.senderInJunction $\land$ alertMsg.junctionId == j)}
 				\State exit()
 				\ElsIf{sameBroadcastHeardFromFront()}
 				\State restartBroadcastProcedure()
@@ -297,6 +315,6 @@
 			
 			The additional fields are the following:
 			\begin{itemize}
-				\item  vehicle in junction: whether the vehicle which is send this Alert Message is inside a junction;
-				\item junction ID: the ID of the junction the sender is inside.
+				\item  \textit{vehicle in junction}: whether the vehicle which is send this Alert Message is inside a junction;
+				\item \textit{junction ID}: the ID of the junction the sender is inside.
 			\end{itemize}

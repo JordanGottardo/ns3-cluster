@@ -44,8 +44,8 @@ def plotCoverage(relativeFileName, outFilePath, ns2MobilityFile, polyFilePath):
     plt.plot(xReceivedCoords, yReceivedCoords, ".", color="#32DC32", label="Reached by Alert Message")
     plt.plot(startingX, startingY, "ro", color="yellow", markersize=5, markeredgecolor="blue", label="Source of Alert Message")
     plt.legend(loc="best")
-    plt.xlim(300, 2700)
-    plt.ylim(300, 2700)
+    #plt.xlim(300, 2700)
+    #plt.ylim(300, 2700)
     color1 = "black"
     coordUtils.plotTxRange(circRadius, startingX, startingY, vehicleDistance, color1, True)
     coordUtils.plotBuildings(polyFilePath)

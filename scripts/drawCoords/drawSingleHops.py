@@ -18,7 +18,7 @@ import coordUtils as coordUtils
 
 
 plt.rcParams["figure.figsize"] = [10, 10]
-circRadius = 1000
+circRadius = 2000
 baseFolder = "../../ns-3.26/out/scenario-urbano-con-coord/cw-32-1024/Padova/d25/"
 
 def findMaxHop(transmissionVector):
@@ -49,7 +49,7 @@ def plotHops(relativeFileName, outFileBasePath, ns2MobilityFile, polyFilePath):
     for hop in range(0, maxHop + 1):
         print("hop" + str(hop))
 
-        plt.plot(xNodeCoords, yNodeCoords, ".", markersize=5, color="red")
+        plt.plot(xNodeCoords, yNodeCoords, ".", markersize=5, color="#A00000", label="Not reached by Alert Message") #red
         #plt.plot(xReceivedCoords, yReceivedCoords, ".", color="green")
         
         filteredTransmissionVector = filter(lambda x: x.phase <= hop, transmissionVector)           
@@ -70,15 +70,15 @@ def plotHops(relativeFileName, outFileBasePath, ns2MobilityFile, polyFilePath):
             destCoord = nodeCoordsMap[destination]
             sourceCoord = coordUtils.findCoordsFromFile(edge.source, ns2MobilityFile)
             destCoord = coordUtils.findCoordsFromFile(edge.destination, ns2MobilityFile)
-            plt.plot(destCoord.x, destCoord.y, ".", color="green")
-            plt.plot(sourceCoord.x, sourceCoord.y, "ro", color=sourceColor, markersize=5)
+            plt.plot(destCoord.x, destCoord.y, ".", color="#32DC32", label="Reached by Alert Message") #green
+            plt.plot(sourceCoord.x, sourceCoord.y, "ro", color=sourceColor, markersize=5, label="Forwarder")
             plt.plot([sourceCoord.x, destCoord.x], [sourceCoord.y, destCoord.y], color=lineColor, linewidth=0.3, alpha=0.7)
             
-        plt.plot(startingX, startingY, "ro", color="blue", markersize=5)
+        plt.plot(startingX, startingY, "ro", color="yellow", markeredgecolor="blue", markersize=5, label="Source of Alert Message")
 
         color1 = "#840000"
         coordUtils.plotTxRange(circRadius, startingX, startingY, vehicleDistance, color1, True)
-
+        plt.legend(loc="best", framealpha=1.0)
         #coordUtils.plotBuildings(polyFilePath)
 
         #Save file 
