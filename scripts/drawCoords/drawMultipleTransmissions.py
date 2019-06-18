@@ -81,16 +81,16 @@ def plotSingleTransmission(relativeFileName, outFileBasePath, ns2MobilityFile, p
             
             c1 = np.array((sourceCoord.x, sourceCoord.y, sourceCoord.z))
             c2 = np.array((destCoord.x, destCoord.y, destCoord.z))
+            plt.plot(destCoord.x, destCoord.y, ".", color="#32DC32", markersize=5, label="Reached by Alert Message") #green  
             plt.plot(sourceCoord.x, sourceCoord.y, "ro", color=sourceColor,  markersize=5, label=forwarderLabel)
             plt.plot([sourceCoord.x, destCoord.x], [sourceCoord.y, destCoord.y], color=lineColor, linewidth=0.3, alpha=0.7)
-            plt.plot(destCoord.x, destCoord.y, ".", color="#32DC32", markersize=5, label="Reached by Alert Message") #green  
-            plt.plot(startingX, startingY, "ro", color="yellow", markeredgecolor="blue", markersize=5, label="Source of Alert Message")
+        plt.plot(startingX, startingY, "ro", color="yellow", markeredgecolor="blue", markersize=5, label="Source of Alert Message")
 
-            coordUtils.plotTxRange(circRadius, startingX, startingY, vehicleDistance, color1, True)
-            plt.legend(loc="best")
-            #coordUtils.plotBuildings(polyFilePath)
+        coordUtils.plotTxRange(circRadius, startingX, startingY, vehicleDistance, color1, True)
+        plt.legend(loc="upper center", framealpha=1.0)
+        coordUtils.plotBuildings(polyFilePath)
 
-            #Save file 
+        #Save file 
             
         if not os.path.exists(os.path.dirname(outFileBasePath)):
             try:

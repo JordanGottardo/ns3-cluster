@@ -57,9 +57,11 @@ def plotHops(relativeFileName, outFileBasePath, ns2MobilityFile, polyFilePath):
             #print(edge)
             lineColor = "0.8"
             sourceColor = "#560589"
+            forwarderLabel = "Previous forwarder"
             if (edge.phase == hop):
                 lineColor = "0.35"
                 sourceColor = "#bf59ff"
+                forwarderLabel = "Latest forwarder"
             source = edge.source
             destination = edge.destination
             if (not source in nodeCoordsMap):
@@ -71,15 +73,15 @@ def plotHops(relativeFileName, outFileBasePath, ns2MobilityFile, polyFilePath):
             sourceCoord = coordUtils.findCoordsFromFile(edge.source, ns2MobilityFile)
             destCoord = coordUtils.findCoordsFromFile(edge.destination, ns2MobilityFile)
             plt.plot(destCoord.x, destCoord.y, ".", color="#32DC32", label="Reached by Alert Message") #green
-            plt.plot(sourceCoord.x, sourceCoord.y, "ro", color=sourceColor, markersize=5, label="Forwarder")
+            plt.plot(sourceCoord.x, sourceCoord.y, "ro", color=sourceColor, markersize=5, label=forwarderLabel)
             plt.plot([sourceCoord.x, destCoord.x], [sourceCoord.y, destCoord.y], color=lineColor, linewidth=0.3, alpha=0.7)
             
         plt.plot(startingX, startingY, "ro", color="yellow", markeredgecolor="blue", markersize=5, label="Source of Alert Message")
 
         color1 = "#840000"
         coordUtils.plotTxRange(circRadius, startingX, startingY, vehicleDistance, color1, True)
-        plt.legend(loc="best", framealpha=1.0)
-        #coordUtils.plotBuildings(polyFilePath)
+        plt.legend(loc="upper center", framealpha=1.0)
+        coordUtils.plotBuildings(polyFilePath)
 
         #Save file 
         

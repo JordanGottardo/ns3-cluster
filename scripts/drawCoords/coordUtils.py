@@ -50,24 +50,24 @@ def isFileComplete(filePath):
     return (i == 1)
 
 
-def plotTxRange(txRange, starterCoordX, starterCoordY, vehicleDistance, color, plotInterval):
+def plotTxRange(txRange, starterCoordX, starterCoordY, vehicleDistance, color="black", plotInterval=True):
     color = "black"
     #print("PlotTxRange" + " txRange= " + str(txRange) + " starterCoordX= " + str(starterCoordX) + " starterCoordY= " + str(starterCoordY) + " vehicleDistance= " + str(vehicleDistance))
     x = np.linspace(0, 5000, 100)
     y = np.linspace(0, 5000, 100)
     X, Y = np.meshgrid(x, y)
     realTxRange = (X - starterCoordX) ** 2 + (Y - starterCoordY) ** 2 - txRange ** 2
-    CS = plt.contour(X, Y, realTxRange, [0], colors = color)
+    CS = plt.contour(X, Y, realTxRange, [0], colors = color, label='_nolegend_')
 
     if (plotInterval):
         outerTxRange = (X - starterCoordX) ** 2 + (Y - starterCoordY) ** 2 - (txRange + vehicleDistance) ** 2 
         innerTxRange = (X - starterCoordX) ** 2 + (Y - starterCoordY) ** 2 - (txRange - vehicleDistance) ** 2
-        plt.contour(X, Y, outerTxRange, [0], colors = color, linestyles = "dashed")
-        plt.contour(X, Y, innerTxRange, [0], colors = color, linestyles = "dashed")
+        plt.contour(X, Y, outerTxRange, [0], colors = color, linestyles = "dashed", label='_nolegend_')
+        plt.contour(X, Y, innerTxRange, [0], colors = color, linestyles = "dashed", label='_nolegend_')
     # F = X**2 + Y**2 - 90000
     # if (color == "#840000"):
-    plt.clabel(CS, inline=1, fontsize=10)
-    CS.collections[0].set_label(str(txRange) + " m")
+    #plt.clabel(CS, inline=1, fontsize=1)
+    #CS.collections[0].set_label(str(txRange) + " m")
 
 def findCoordsFromFile(nodeId, ns2MobilityFile):
     nodeId = str(nodeId)
@@ -280,6 +280,21 @@ def parseNodeList(ns2MobilityFilePath):
             coordDict[id] = coords
     return coordDict
 
+def plotNodeList(ns2MobilityFilePath):
+    coordDict = parseNodeList(ns2MobilityFilePath)
+    xCoord = []
+    yCoord = []
+    for key, coord in coordDict.iteritems():
+        xCoord.append(coord.x)
+        yCoord.append(coord.y)
+    plt.plot(xCoord, yCoord, ".", color="#32DC32")
+
+def plotStartingNode(startingNodeId, ns2MobilityFile):
+    coordDict = parseNodeList(ns2MobilityFile)
+    startingX = coordDict[startingNodeId].x 
+    startingY = coordDict[startingNodeId].y
+    plt.plot(startingX, startingY, "ro", color="yellow", markeredgecolor="blue", markersize=5, label="Source of Alert Message")
+    plotTxRange(1000, startingX, startingY, 25)
 
 def parseJunctionList(netFilePath):
     tree = ET.parse(netFilePath)
