@@ -87,7 +87,7 @@ def plotSingleTransmission(relativeFileName, outFileBasePath, ns2MobilityFile, p
             plt.plot(startingX, startingY, "ro", color="yellow", markeredgecolor="blue", markersize=5, label="Source of Alert Message")
 
             coordUtils.plotTxRange(circRadius, startingX, startingY, vehicleDistance, color1, True)
-            plt.legend(loc="best", framealpha=0.8)
+            plt.legend(loc="best")
             #coordUtils.plotBuildings(polyFilePath)
 
             #Save file 
