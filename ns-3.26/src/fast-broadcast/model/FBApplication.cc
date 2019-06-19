@@ -341,7 +341,7 @@ void FBApplication::GenerateForgedHelloTraffic() {
 		double startingX = m_nodes[id]->UpdatePosition().x + m_actualRange; //low sev
 		double startingY = m_nodes[id]->UpdatePosition().y;
 //		double startingX = 10000; //high sev
-		for (uint32_t i = 1; i < 101; i++) {
+		for (uint32_t i = 1; i < 1001; i++) {
 			uint32_t headerType = HELLO_MESSAGE;
 			Vector position = Vector(startingX + i, startingY, 0);
 
