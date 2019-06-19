@@ -182,12 +182,13 @@ void ROFFApplication::GenerateForgedHelloTraffic() {
 
 
 	for (auto id: affectedNodes) {
-//		double startingX = m_nodes[id]->UpdatePosition().x + m_actualRange + 100;
-		double startingX = 10000;
+		double startingX = m_nodes[id]->UpdatePosition().x + m_actualRange; //low sev
+		double startingY = m_nodes[id]->UpdatePosition().y;
+//		double startingX = 10000; //high sev
 		NS_LOG_DEBUG("affecting node " << id << " with forging");
-		for (uint32_t i = 0; i < 1000; i++) {
+		for (uint32_t i = 1; i < 101; i++) {
 			uint32_t headerType = HELLO_MESSAGE;
-			Vector position = Vector(startingX + i * m_distanceRange, startingX + i * m_distanceRange, 0);
+			Vector position = Vector(startingX + i * m_distanceRange, startingY, 0);
 			ROFFHeader header(headerType, position, forgedSenderNodeId + i, position, boost::dynamic_bitset<>(), 0, 0);
 			HandleHelloMessage(m_nodes.at(id), header);
 		}
@@ -302,7 +303,7 @@ void ROFFApplication::ReceivePacket(Ptr<Socket> socket) {
 //		cout << "received packet by node " << node->GetId() <<
 //				" from node in pos " << senderPosition << " distance= " << distance << endl;
 		double distance = ns3::CalculateDistance(currentPosition, senderPosition);
-		if (distance > m_actualRange) {
+		if (m_forgedCoordRate == 0 && distance > m_actualRange) {
 			continue;
 		}
 

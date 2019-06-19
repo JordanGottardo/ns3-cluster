@@ -338,15 +338,16 @@ void FBApplication::GenerateForgedHelloTraffic() {
 	}
 
 	for (auto id: affectedNodes) {
-//		double startingX = m_nodes[id]->UpdatePosition().x + m_actualRange + 100;
-		double startingX = 10000;
-		for (uint32_t i = 0; i < 1000; i++) {
+		double startingX = m_nodes[id]->UpdatePosition().x + m_actualRange; //low sev
+		double startingY = m_nodes[id]->UpdatePosition().y;
+//		double startingX = 10000; //high sev
+		for (uint32_t i = 1; i < 101; i++) {
 			uint32_t headerType = HELLO_MESSAGE;
-			Vector position = Vector(10000, 10000, 0);
+			Vector position = Vector(startingX + i, startingY, 0);
 
 			FBHeader fbHeader;
 			fbHeader.SetType (HELLO_MESSAGE);
-			fbHeader.SetMaxRange (10000);
+			fbHeader.SetMaxRange (m_actualRange + i);
 			fbHeader.SetStarterPosition (position);
 			fbHeader.SetPosition (position);
 			fbHeader.SetSenderId(forgedSenderNodeId + i); // added
@@ -487,7 +488,7 @@ void FBApplication::ReceivePacket(Ptr<Socket> socket) {
 		// Get the position of the sender node
 		Vector senderPosition = fbHeader.GetPosition();
 		double distance = ns3::CalculateDistance(currentPosition, senderPosition);
-		if (distance > m_actualRange) {
+		if (m_forgedCoordRate == 0 && distance > m_actualRange) {
 			continue;
 		}
 //		cout << "received packet at distance= " << ns3::CalculateDistance(currentPosition, senderPosition) << endl;
