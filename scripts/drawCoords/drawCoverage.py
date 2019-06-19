@@ -43,7 +43,7 @@ def plotCoverage(relativeFileName, outFilePath, ns2MobilityFile, polyFilePath):
     plt.plot(xNodeCoords, yNodeCoords, ".",markersize=5, color="#A00000", label="Not reached by Alert Message")
     plt.plot(xReceivedCoords, yReceivedCoords, ".", color="#32DC32", label="Reached by Alert Message")
     plt.plot(startingX, startingY, "ro", color="yellow", markersize=5, markeredgecolor="blue", label="Source of Alert Message")
-    plt.legend(loc="best")
+    plt.legend(loc="best", framealpha=1.0)
     #plt.xlim(300, 2700)
     #plt.ylim(300, 2700)
     color1 = "black"

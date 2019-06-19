@@ -118,7 +118,7 @@
 				Transmission range						& 100, 300, 500			& m		\\
 				Modulation								& DSSS					& 		\\
 				Propagation loss model					& ns3::TwoRayGround 	&		\\
-				Shadowing model							& None					&		\\
+				Shadowing model							& No					&		\\
 				Propagation delay model					& ns3::ConstantSpeed	&		\\
 				Junction modeling						& No					&		\\
 				\midrule[1pt]
@@ -243,8 +243,42 @@
 			\label{fig:grid-fnn}
 		\end{figure}
 	
-		All the algorithms perform well as far as delivery ratios are concerned (Figure \ref{fig:grid-tdr} \ref{fig:grid-tdroc}), both for scenarios with and without buildings. This means that the shadowing caused by the Obstacle Model does not create no-reach zones, and the signal manages to find its way to almost all of the vehicles. The regular pattern by which vehicles are placed may help with that: further testing where this hypothesis is removed will be presented in the next sections.
+		All the algorithms perform well as far as delivery ratios are concerned (Figure \ref{fig:grid-tdr} \ref{fig:grid-tdroc}), both for scenarios with and without buildings. This means that the shadowing caused by the Obstacle Model does not create no-reach zones, and the signal manages to find its way to almost all of the vehicles. The regular pattern by which vehicles are placed may help with that: further testing where this hypothesis is removed will be presented in the next sections. Even though delivery ratios are unchanged, the effect of the Obstacle model can be observed qualitatively comparing Figure \ref{fig:fb-b0-grid-transmission} and \ref{fig:fb-b1-grid-transmission} for Fast-Broadcast, and Figure \ref{fig:roff-b0-grid-transmission} and \ref{fig:roff-b1-grid-transmission} for ROFF. The effects of obstacles on propagation cause the signal to travel only through roads segments where line of sight is possible. Instead, without obstacles the signal can be propagated freely in all directions.
 		
+		
+		Moreover, Fast-Broadcast and ROFF can be compared with each other by looking at Figure \ref{fig:fb-b0-grid-transmission} and \ref{fig:roff-b0-grid-transmission} for the scenario without buildings, and Figure \ref{fig:fb-b1-grid-transmission} and \ref{fig:roff-b1-grid-transmission} for the scenario with buildings. In both cases, ROFF designates the furthest PFC as the next forwarder much more reliably than Fast-Broadcast thanks to the Neighbor Table mechanism. Instead, Fast-Broadcast relies on a random choice of waiting time, so the next designated forwarder is sometimes not one of the farthest vehicles from the previous forwarder. Based on this observation, we can expect a much lower NOH value for ROFF. Quantitative analysis of this and other metrics will be reported in the next paragraphs of this section.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\textwidth]{immagini/grid-300/b0/fb-1hop}
+			\includegraphics[width=0.8\textwidth]{immagini/grid-300/b0/fb-2hop}
+			\caption{Fast-Broadcast after 1 hop (top) and 2 hops (bottom) in Grid scenario with 500 meters transmission range and without the Obstacle model}
+			\label{fig:fb-b0-grid-transmission} 
+		\end{figure}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\textwidth]{immagini/grid-300/b1/fb-1hop}
+			\includegraphics[width=0.8\textwidth]{immagini/grid-300/b1/fb-2hop}
+			\caption{Fast-Broadcast after 1 hop (top) and 2 hops (bottom) in Grid scenario with 500 meters transmission range and with the Obstacle model}
+			\label{fig:fb-b1-grid-transmission} 
+		\end{figure}
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\textwidth]{immagini/grid-300/b0/fb-1hop}
+			\includegraphics[width=0.8\textwidth]{immagini/grid-300/b0/fb-1hop}
+			\caption{ROFF after 1 hop (top) and 2 hops (bottom) in Grid scenario with 500 meters transmission range and without the Obstacle model}
+			\label{fig:roff-b0-grid-transmission} %todo
+		\end{figure}
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\textwidth]{immagini/grid-300/b1/fb-1hop}
+			\includegraphics[width=0.8\textwidth]{immagini/grid-300/b1/fb-1hop}
+			\caption{ROFF after 1 hop (top) and 2 hops (bottom) in Grid scenario with 500 meters transmission range and with the Obstacle model}
+			\label{fig:roff-b1-grid-transmission} %todo
+		\end{figure}
 		
 		If we focus on the Number Of Hops (Figure \ref{fig:grid-noh}), we notice that the introduction of buildings causes the number of hops to increases for transmission ranges of 100 and 500 meters, while decreases for 300 meters tranmission range. This is probably due to the fact that the distance between roads is also 300 meters and the starting vehicle is inside a junction. This means that the effect of buildings causes the signal to travel along roads, hopping from junction to junction, and reaching the circumference much faster. Another unusual observervation consists in ROFF with 100 meters transmission range, where the value increases by a lot. This case needs further examination in order to be explained. Apart from this case, ROFF achieves better results than Fast-Broadcast, with results 9\% and 3.47\% better for 300 and 500 meters transmission range respectively. 
 		
@@ -262,12 +296,25 @@
 		\end{figure}
 
 	\section{Los Angeles urban scenario}
-		The next step consisted in expanding the 2D scenario with realistic urban data taken from OpenStreetMap and processed by SUMO as explained in Section \ref{sec:sumo}. In addition to the shadowing model, in this scenario (and also in the urban scenario regarding Padua, which will be presented in the next section), a \textit{smart junction} variant of the algorithms has been introduced in order to try to increase the delivery ratios. All configurations are reported in Figure \ref{fig:la-overview}. In order to facilitate the understanding of the various configurations, the following graphs will utilize shades of color similar to those in Figure \ref{fig:la-overview} (e.g. graphs with shades of blue will represent a scenario without buildings and without junctions, while shades of orange will represent a scenario with buildings and with junctions). Parameters for this scenario are included in Table \ref{tab:la-25}.  
+		\label{sec:la-scenario}
+		The next step consisted in expanding the 2D scenario with realistic urban data taken from OpenStreetMap and processed by SUMO as explained in Section \ref{sec:sumo}. In addition to the shadowing model, in this scenario (and also in the urban scenario regarding Padua, which will be presented in the next section), a \textit{smart junction} variant of the algorithms has been introduced in order to try to increase the delivery ratios. 
+		
+		Figure \ref{fig:la-scenario} depicts the scenario with vehicles (green dots), buildings (purple polygons) and junctions (yellow polygons).
+		
+		
+		All configurations are reported in Figure \ref{fig:la-overview}. In order to facilitate the understanding of the various configurations, the following graphs will utilize shades of color similar to those in Figure \ref{fig:la-overview} (e.g. graphs with shades of blue will represent a scenario without buildings and without junctions, while shades of orange will represent a scenario with buildings and with junctions). Parameters for this scenario are included in Table \ref{tab:la-25}.  
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/la-25/la-scenario}
+			\caption{Los Angeles urban scenario depiction}
+			\label{fig:la-scenario}
+		\end{figure}
 		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=1.0\textwidth]{immagini/la-25/overview}
-			\caption{Test overview of Los Angeles urban scenario}
+			\caption{Los Angeles urban scenario test overview}
 			\label{fig:la-overview}
 		\end{figure}
 	
@@ -292,7 +339,7 @@
 				Source of alert message position		& Center				&		\\
 				Number of buildings						& 8241					&		\\
 				Mobility model							& ns3::ConstantPosition	&		\\
-				Number of junctions						& 258					&		\\	
+				Number of junctions						& 1288					&		\\	
 				\midrule[1pt]
 				\rowcolor{P} \multicolumn{3}{c}{Network configuration} \\
 				\midrule[1pt]
@@ -391,6 +438,14 @@
 		The introduction of junctions brings about an increase in the number of forwardings for all algorithms, as expected. Focusing on the fourth image of Figure \ref{fig:la-25-fnn}, SJ-ROFF is affected greatly by this increase, almost equalling SJ-Fast-Broadcast with 100 meters transmission range, and with \textit{FNN} much greater values in 300 and 500 meters transmission range configurations. This might be caused by the introduction of transmissions inside junctions, which exacerbate the collision problem already reported in the previous section (Figure \ref{fig:2d-roff}), leading to an imperfect suppression of scheduled transmissions. The problem is not as severe as in the Grid scenario since the node distribution is less regular, but overall Fast-Broadcast performs slightly better in terms of FNN.
 	
 	\section{Padua urban scenario}
+		As reported in the previous section the Los Angeles scenario, despite being realistic, still had a certain degree of regularity for what concerns vehicle distribution and scenario topology. In fact, roads and sidewalks are pretty large and the overall road positioning resembles a Grid scenario. The next step in testing consisted in employing the algorithms in a more difficult scenario, with narrower roads and intersections, smaller (if any) sidewalks and pedestrian zones where no traffic is allowed. The chosen scenario is located in Padua and, as the previous one, data about the scenario have been retrieved by OSM and processed through SUMO. The scenario is depicted in Figure \ref{fig:padua-scenario}, while its configuration is reported in Table \ref{tab:padua-25}. 
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/padua-scenario}
+			\caption{Padua urban scenario depiction}
+			\label{fig:padua-scenario}
+		\end{figure}
 	
 		\begin{table}[H]
 			\def\arraystretch{1.1}
@@ -413,7 +468,7 @@
 				Source of alert message position		& Center				&		\\
 				Number of buildings						& 6322					&		\\
 				Mobility model							& ns3::ConstantPosition	&		\\
-				Number of junctions						& 258					&		\\	
+				Number of junctions						& 3231					&		\\	
 				\midrule[1pt]
 				\rowcolor{P} \multicolumn{3}{c}{Network configuration} \\
 				\midrule[1pt]
@@ -428,9 +483,71 @@
 		\end{table}
 
 	\section{Los Angeles smart city scenario}
+		After the comparison of the algorithms in 2D scenarios, we wanted to test them in a mixed 2D-3D scenario, where drones were also employed. Drones are utilized in many military and civil applications, such as agriculture, environmental protection and traffic flow control. It is foreseeable that they will also be a part of the development of the so called "smart cities", defined as "the use of discrete new technology applications such as RFID and Internet Of Things through more holistic conception of intelligent, integrated working that is closely linked to the concept of living and user generated services"\cite{smartCity}. One of the possible applications of drones in a urban scenario could make them help vehicles in Emergency Message Dissemination in order to exploit their greater field of view and bypass the effects of ground level shadowing and obstacles. 
+		
+		
+		This scenario is built upon the Los Angeles urban scenario presented in Section \ref{sec:la-scenario}. Two layers of drones were added to the ground level of vehicles: 
+		\begin{itemize}
+			\item the first layer is situated at a height of 30 meters from ground level and employs 732 drones;
+			\item the second layer, employing the same number of drones, is situated at a height of 60 meters.
+		\end{itemize}
+		Drones are more spaced from one another than vehicles, with an average distance of 50 meters. We also wanted to test the effects of the Obstacle Model on drones in this scenario. Since the maximum height of a building in the data retrieved from OpenStreetMap is 21.9 meters, drones would not have their line of sight affected by the obstacles. Hence, as an additional configuration of this scenario, all buildings have been heightened to be taller than the second layer of drones (e.g. every building is high 100 meters).
+		
+		
+		The TDR metric considers delivery to all entities in the scenario (both vehicles and drones), while the circumference relative to the area of interest continues to be defined in the same way as the 2D Los Angeles urban scenario, hence TDROC concerns exclusively vehicles.
+		
+		
+		All configurations are reported in Figure \ref{fig:la-smart-city-overview}, whose colors will guide the following graph results. Table \ref{tab:la-smart-city} reports all the scenario settings.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/la-smart-city/overview}
+			\caption{Test overview of Los Angeles smart city scenario}
+			\label{fig:la-smart-city-overview}
+		\end{figure}
+		
+	\begin{table}[H]
+		\def\arraystretch{1.1}
+		\rowcolors{2}{D}{P}	
+		\begin{tabularx}{\textwidth}{l | l  l}
+			\rowcolor{I} {\large \textcolor{white}{Parameter}} & {\large \textcolor{white}{Value}} & {\large \textcolor{white}{}} \TBstrut  \\
+			\toprule
+			\endhead
+			%			\midrule[1pt]
+			\rowcolor{P} \multicolumn{3}{c}{Scenario configuration} \\
+			\midrule[1pt]
+			Circumference radius					& 1000					& m		\\
+			Number of vehicles						& 1465					& 		\\
+			Distance between vehicles 				& 25					& m		\\
+			Source of alert message position		& Center				&		\\
+			Number of drone layers					& 2						&		\\
+			Height of first drone layer				& 30					& m		\\
+			Number of drones in first layer			& 732					& 		\\
+			Height of second drone layer			& 60					& m		\\
+			Number of drones in second layer		& 732					& 		\\
+			Distance between drones (average)		& 50					& m		\\
+			Number of buildings						& 8241					&		\\
+			Building heights						& Real, 100				& m		\\
+			Mobility model							& ns3::ConstantPosition	&		\\
+			\midrule[1pt]
+			\rowcolor{P} \multicolumn{3}{c}{Network configuration} \\
+			\midrule[1pt]
+			Shadowing model							& Obstacle Shadowing 	&		\\
+			Junction modeling						& No					&		\\
+			\midrule[1pt]
+			Number of simulations per configuration	& 5000					&		\\
+			\bottomrule
+		\end{tabularx}
+		\caption{Los Angeles urban scenario configuration}
+		\label{tab:la-smart-city}
+	\end{table}
 	
 	\section{Hello Message forging scenario}
-		\subsection{Low severity attack}
+		During our analysis we wanted to test how vulnerable the algorithms were to attacks where some malicious attacker tries to increase the end to end delay (the NOS metric in our case). The attack consists in sending fake Hello Messages to vehicles during the Estimation Phase in order to mess with their estimations. We tested two different levels of severity on the attack: a low severity one, reported in Section \ref{sec:low-severity}, and a high severity one, reported in Section \ref{sec:high-severity}. Several percentages of affected vehicles (i.e. the vehicles which receive the forged hello message bursts) ranging from 0 to 50\% have been tested. Both tests were carried out using the Los Angeles urban scenario without the effect of the Obstacle model. Only Fast-Broadcast and ROFF algorithms (and their Smart Junction variants) were tested.
+		
+		\subsection{Low severity attack} 
+			In the low severity attack the effect of 100 different forged Hello Messages was tested. Each forged message reports a fake position such that the detected distances by the affected node (the receiver) ranges from 301 ($txRange + 1$) to 40 ($txRange + 100$). Parameters for this scenario are reported in Table \ref{tab:low-forging}.
+			\label{sec:low-severity}
 				\begin{table}[H]
 				\def\arraystretch{1.1}
 				\rowcolors{2}{D}{P}	
@@ -441,31 +558,27 @@
 					%			\midrule[1pt]
 					\rowcolor{P} \multicolumn{3}{c}{Scenario configuration} \\
 					\midrule[1pt]
-					Road length 							& 1200	 				& m		\\
-					Distance between vehicles 				& 25					& m		\\
-					Circumference radius					& 1000					& m		\\
-					Number of vehicles						& 1465					& 		\\
-					Source of alert message position		& Center				&		\\
-					Mobility model							& ns3::ConstantPosition	&		\\
-					Vehicles reached by forging				& 0, 10, 20, 30, 40, 50 & \%	\\
+					Vehicles affected by forging			& 0, 10, 20, 30, 40, 50 & \%	\\
 					Number of forged messages				& 100					&		\\
-					Forged distances						& 300, 301,...,400			&		\\
+					Forged distances						& 301, 302,...,400		&		\\
 					\midrule[1pt]
 					\rowcolor{P} \multicolumn{3}{c}{Network configuration} \\
 					\midrule[1pt]
 					Transmission power						& 4.6					& dBm	\\
 					Transmission range						& 300					&		\\
 					Shadowing model							& No					&		\\
-					Junction modeling						& No					&		\\
+					Junction modeling						& Yes					&		\\
 					\midrule[1pt]
 					Number of simulations per configuration	& 1000					&		\\
 					\bottomrule
 				\end{tabularx}
-				\caption{Low severity forging attack scenario configuration}
+				\caption{High severity forging attack scenario configuration based on Los Angeles urban scenario}
 				\label{tab:low-forging}
 			\end{table}
 		
 		\subsection{High severity attack}
+			In the high severity attack the number of forged Hello Messages was increased to 1000. Moreover, even the fake positions included in the messages have been increased in a way such that the receivers detected distances ranging from 10000 to 11000 meters. Parameters for this scenario are reported in Table \ref{tab:high-forging}.
+			\label{sec:high-severity}
 			\begin{table}[H]
 				\def\arraystretch{1.1}
 				\rowcolors{2}{D}{P}	
@@ -476,13 +589,7 @@
 					%			\midrule[1pt]
 					\rowcolor{P} \multicolumn{3}{c}{Scenario configuration} \\
 					\midrule[1pt]
-					Road length 							& 1200	 				& m		\\
-					Distance between vehicles 				& 25					& m		\\
-					Circumference radius					& 1000					& m		\\
-					Number of vehicles						& 1465					& 		\\
-					Source of alert message position		& Center				&		\\
-					Mobility model							& ns3::ConstantPosition	&		\\
-					Vehicles reached by forging				& 0, 10, 20, 30, 40, 50 & \%	\\
+					Vehicles affected by forging			& 0, 10, 20, 30, 40, 50 & \%	\\
 					Number of forged messages				& 1000					&		\\
 					Forged distances						& 10000, 10001,...,11000			&		\\
 					\midrule[1pt]
@@ -496,7 +603,7 @@
 					Number of simulations per configuration	& 1000					&		\\
 					\bottomrule
 				\end{tabularx}
-				\caption{High severity forging attack scenario configuration}
+				\caption{High severity forging attack scenario configuration based on Los Angeles urban scenario}
 				\label{tab:high-forging}
 			\end{table}
 			
@@ -504,6 +611,31 @@
 	\section{Varying vehicle density scenario}
 	
 	\section{Contention window}
+		\begin{table}[H]
+			\def\arraystretch{1.1}
+			\rowcolors{2}{D}{P}	
+			\begin{tabularx}{\textwidth}{l | l  l}
+				\rowcolor{I} {\large \textcolor{white}{Parameter}} & {\large \textcolor{white}{Value}} & {\large \textcolor{white}{}} \TBstrut  \\
+				\toprule
+				\endhead
+				\midrule[1pt]
+				\rowcolor{P} \multicolumn{3}{c}{Network configuration} \\
+				\midrule[1pt]
+				Shadowing model							& No					&		\\
+				Junction modeling						& No					&		\\
+				\midrule[1pt]
+				\rowcolor{P} \multicolumn{3}{c}{Protocols configuration} \\
+				\midrule[1pt]
+				%			Protocols tested						& \makecell{FB, ROFF, STATIC100, \\ STATIC300, STATIC500} & \\
+				FB contention window					& [16, 128], [32, 1024]	& slot	\\
+				ROFF distance range (\textit{k} parameter) & 1					&		\\	
+				\midrule[1pt]
+				Number of simulations per configuration	& 1000					&		\\
+				\bottomrule
+			\end{tabularx}
+			\label{table:fb-cw}
+			\caption{Smaller contention window scenario configuraton based on Los Angeles urban scenario}
+		\end{table}
 
 	
 	

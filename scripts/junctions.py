@@ -17,9 +17,9 @@ import random
 import coordUtils
 
 import sumolib
-#from sumolib import route2trips
-#from sumolib.miscutils import euclidean
-#from sumolib.net.lane import SUMO_VEHICLE_CLASSES
+
+
+
 
 def isNodeInsideJunction(nodeCoords, junction):
 	shape = junction.get("shape")
@@ -36,6 +36,7 @@ def main():
 	nodesInsideJunctions = set()
 	#print(nodeList)
 	junctionList = coordUtils.parseJunctionList(netFilePath)
+	print("found " + str(len(junctionList)) + " junctions")
 	with open(outFilePath, "w") as f: 
 		for nodeId, nodeCoords in nodeList.iteritems():
 			for junction in junctionList:
