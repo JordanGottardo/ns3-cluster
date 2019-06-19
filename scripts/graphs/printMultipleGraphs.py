@@ -128,11 +128,12 @@ def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, p
 	#colors = ["0.3", "0.5", "0.7"]
 	colors = ["0.3", "0.5", "0.7","0.9"]
 	
-	#widthDistance = [-1, 1]
-	widthDistance = [-1.5, -0.5, 0.5, 1.5]
+	widthDistance = [-1, 1]
+	#widthDistance = [-1.5, -0.5, 0.5, 1.5]
 	#widthDistance = [-1, 0, 1]
 
-	protocolsList = ["Fast-Broadcast", "SJ Fast-Broadcast", "ROFF", "SJ ROFF"]
+	#protocolsList = ["Fast-Broadcast", "SJ Fast-Broadcast", "ROFF", "SJ ROFF"]
+	protocolsList = ["Fast-Broadcast", "ROFF"]
 	protocolsListMap = {
 		"Fast-Broadcast": "Fast-Broadcast",
 		"SJ Fast-Broadcast": "Fast-Broadcast",
@@ -609,10 +610,10 @@ def printForgedComparison():
 	#txRanges = ["100", "300", "500"]
 	txRanges = ["300"]
 	protocols = ["Fast-Broadcast", "ROFF"]
-	cws = ["cw[16-128]", "cw[32-1024]"]
+	cws = ["cw[32-1024]"]
 	#cws = ["cw[16-128]"]
-	forgedRates = ["0", "10", "20", "30", "40", "50", "100"]
-	junctions = ["0", "1"]
+	forgedRates = ["0", "10", "20", "30", "40", "50"]
+	junctions = ["0"]
 	xLabel = "% of vehicles affected by forging"
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
 	metricYLabels = {}

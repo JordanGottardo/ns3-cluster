@@ -45,8 +45,8 @@ def runScenario(cw, scenario, distance, startingNode, vehiclesNumber, area=1000)
 	#buildings = ["0"]
 	#errorRates = ["0", "10", "20", "30", "40", "50"]
 	errorRates = ["0"]
-	#forgedCoordRates = ["0", "10", "20", "30", "40", "50"]
-	forgedCoordRates = ["0"]
+	forgedCoordRates = ["0", "10", "20", "30", "40", "50"]
+	#forgedCoordRates = ["0"]
 	#buildings = ["1"]
 	junctions = ["0"]
 	#protocols = ["2"]
@@ -123,7 +123,7 @@ def runScenario(cw, scenario, distance, startingNode, vehiclesNumber, area=1000)
 
 								newJobName = "urban-" + mapBaseName + "-highBuildings" + str(highBuilding) + "-drones" + str(drone) + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-e" + errorRate + "-j" + junction + "-" + protocolsMap[protocol] + "-" + txRange
 								createJobFile(newJobName, command, jobsPath, jobTemplatePath, tempNewJobPath)
-							'''
+							
 							# FORGED COORD SCENARIO
 							if (scenario == "LA-25" and distance == "25"):
 								for forgedCoordRate in forgedCoordRates:
@@ -134,7 +134,7 @@ def runScenario(cw, scenario, distance, startingNode, vehiclesNumber, area=1000)
 										command = "NS_GLOBAL_VALUE=\"RngRun=1\" /home/jgottard/ns-3/ns-3.26/build/scratch/fb-vanet-urban/fb-vanet-urban --buildings={0} --actualRange={1} --mapBasePath={2} --cwMin={3} --cwMax={4} --vehicleDistance={5} --startingNode={6} --propagationLoss={7} --protocol={8} --area={9} --smartJunctionMode={10} --errorRate=0 --flooding=0  --printToFile=1 --printCoords=0 --createObstacleShadowingLossFile=0 --useObstacleShadowingLossFile=1 --forgedCoordTest=1 --forgedCoordRate={11}".format(b, txRange, mapPathWithoutExtension, cwMin, cwMax, distance, startingNode, propagationLoss, protocol, area, junction, forgedCoordRate)
 									newJobName = "urban-" + mapBaseName + "-d" + str(vehicleDistance) + "-cw-" +str(cwMin) + "-" + str(cwMax) + "-b" + b + "-f" + forgedCoordRate + "-j" + junction + "-" + protocolsMap[protocol] + "-" + txRange
 									createJobFile(newJobName, command, jobsPath, jobTemplatePath, tempNewJobPath)
-							'''
+							
 						
 					
 	print("\n")
