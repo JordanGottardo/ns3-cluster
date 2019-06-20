@@ -68,8 +68,8 @@ def printSingleGraphDistance(outFolder, graphTitle, compoundData, distances, pro
 		plt.plot(ind + widthDistance[count] * barWidth, metricMeanList, barWidth, color=colors[count], label=prot)
 		count = count + 1
 	
-	ax.set_xlabel(xLabel, fontsize=11)
-	ax.set_ylabel(yLabel, fontsize=11)
+	ax.set_xlabel(xLabel, fontsize=15)
+	ax.set_ylabel(yLabel, fontsize=15)
 	if ("cov" in metric or "Cov" in metric):
 		maxY = maxY * 1.05
 	else:
@@ -80,7 +80,7 @@ def printSingleGraphDistance(outFolder, graphTitle, compoundData, distances, pro
 	ax.set_xticklabels(distances)
 	#ax.set_xticklabels(["15m", "25m", "35m", "45m"])
 
-	ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+	ax.legend(loc='center left', bbox_to_anchor=(1, 0.5), fontsize=15)
 	#ax.legend(loc="upper right")
 	'''
 	def autolabel(rects, xpos='center'):
@@ -116,7 +116,7 @@ def printSingleGraphDistance(outFolder, graphTitle, compoundData, distances, pro
 	#plt.show()
 
 
-def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, protocols, cw, txRange, junctions, metric, xLabel, yLabel, minY, maxY):
+def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, protocols, cw, txRange, junctions, metric, xLabel, yLabel, minY, maxY, colors=["0.3", "0.5"]):
 	n = len(errorRates)
 	ind = np.arange(n)
 	
@@ -125,8 +125,6 @@ def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, p
 
 	rects = []
 	count = 0
-	#colors = ["0.3", "0.5", "0.7"]
-	colors = ["0.3", "0.5", "0.7","0.9"]
 	
 	widthDistance = [-1, 1]
 	#widthDistance = [-1.5, -0.5, 0.5, 1.5]
@@ -158,19 +156,19 @@ def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, p
 		rects.append((ax.bar(ind + widthDistance[count] * barWidth, metricMeanList, barWidth, color=colors[count], label=prot, yerr=metricConfIntList, 	capsize=4)))
 		count = count + 1
 	
-	ax.set_xlabel(xLabel, fontsize=11)
-	ax.set_ylabel(yLabel, fontsize=11)
+	ax.set_xlabel(xLabel, fontsize=15)
+	ax.set_ylabel(yLabel, fontsize=15)
 	if ("cov" in metric or "Cov" in metric):
 		maxY = maxY * 1.05
 	else:
 		maxY = maxY * 1.1
 	ax.set_ylim(minY, maxY)
-	#ax.set_title(graphTitle, fontsize=20)
+	ax.set_title(graphTitle, fontsize=20)
 	ax.set_xticks(ind)
-	ax.set_xticklabels(errorRates)
+	ax.set_xticklabels(errorRates, fontsize=12)
 	#ax.set_xticklabels(["15m", "25m", "35m", "45m"])
 
-	ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+	ax.legend(loc='center left', bbox_to_anchor=(1, 0.5), fontsize=15)
 	#ax.legend(loc="upper right")
 
 	def autolabel(rects, xpos='center'):
@@ -187,8 +185,10 @@ def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, p
 
 		for rect in rects:
 			height = rect.get_height()
-			ax.text(rect.get_x() + rect.get_width()*offset[xpos], 1.01*height,
-					'{}'.format(height), ha=ha[xpos], va='bottom') 
+			if (hasattr(height, "is_integer") and height.is_integer()):
+				height = int(height)
+			ax.text(rect.get_x() + rect.get_width()*offset[xpos], height,
+					'{}'.format(height), ha=ha[xpos], va='bottom', fontsize=15) 
 
 	for rect in rects:
 		autolabel(rect)
@@ -200,7 +200,7 @@ def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, p
 	if (not os.path.exists(outPathDirectory)):
 		os.makedirs(outPathDirectory)
 	
-	plt.savefig(outPath + ".pdf")
+	plt.savefig(outPath + ".pdf", bbox_inches='tight')
 	plt.clf()
 	#plt.savefig('b2.pdf', bbox_inches='tight')
 	#plt.show()
@@ -387,13 +387,13 @@ def printProtocolComparison():
 
 	additionalTitle = {}
 	additionalTitle["0"] = {} #no buildings
-	additionalTitle["0"]["0"] = " (without buildings, without junctions)" #no buildings, no junctions
-	additionalTitle["0"]["1"] = " (without buildings, with junctions)" #no buildings, no junctions
+	additionalTitle["0"]["0"] = " (without buildings, without junctions)"
+	additionalTitle["0"]["1"] = " (without buildings, with junctions)"
 
 
 	additionalTitle["1"] = {} #with buildings
-	additionalTitle["1"]["0"] = " (with buildings, without junctions)" #no buildings, no junctions
-	additionalTitle["1"]["1"] = " (with buildings, with junctions)" #no buildings, no junctions
+	additionalTitle["1"]["0"] = " (with buildings, without junctions)" 
+	additionalTitle["1"]["1"] = " (with buildings, with junctions)" 
 
 	maxMetricValues = {}
 	for metric in metrics:
@@ -467,12 +467,37 @@ def printDroneComparison():
 	junctions = ["0"]
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
 	metricYLabels = {}
-	metricYLabels["totCoverage"] = "Total Coverage (%)"
-	metricYLabels["covOnCirc"] = "Coverage on circumference (%)"
-	metricYLabels["hops"] = "Number of hops to reach circumference"
-	metricYLabels["slotsWaited"] = "Number of slots waited to reach circumference"
-	metricYLabels["messageSent"] = "Number of alert messages sent"
+	metricYLabels["totCoverage"] = "Total Delivery Ratio (%)"
+	metricYLabels["covOnCirc"] = "Total Delivery Ratio On Circ. (%)"
+	metricYLabels["hops"] = "Number Of Hops"
+	metricYLabels["slotsWaited"] = "Number Of Slots"
+	metricYLabels["messageSent"] = "Forwarding Node Number"
 	
+	graphTitles = {}
+	graphTitles["totCoverage"] = "Total Delivery Ratio"
+	graphTitles["covOnCirc"] = "Total Delivery Ratio On Circumference"
+	graphTitles["hops"] = "Number Of Hops"
+	graphTitles["slotsWaited"] = "Number Of Slots"
+	graphTitles["messageSent"] = "Forwarding Node Number"
+
+	additionalTitle = {}
+	additionalTitle["0"] = {} #no buildings
+	additionalTitle["0"]["0"] = " (without buildings)" #no buildings, no highBuildings
+
+
+	additionalTitle["1"] = {} #with buildings
+	additionalTitle["1"]["0"] = " (with buildings, real heights)" 
+	additionalTitle["1"]["1"] = " (with buildings, 100m heights)"
+	
+	colors = {}
+	colors["0"] = {} 
+	colors["0"]["0"] = ["#B5B7FF", "#5155D5", "#00034D"] #buildings=0, highBuildings=0 blu
+
+	colors["1"] = {} # 1=buildings
+	colors["1"]["0"] = ["#FFA6A6", "#BD2525", "#510000"] #buildings=1, highBuildings=0 rosso
+	colors["1"]["1"] = ["#D1AFD1", "#864A89", "#3C003F"] #buildings=1, highBuildings=1 viola
+
+
 	maxMetricValues = {}
 	for metric in metrics:
 		maxMetricValues[metric] = -1
@@ -523,7 +548,7 @@ def printDroneComparison():
 						for metric in metrics:
 							yLabel = metricYLabels[metric]
 							print("before printSingleGraph h=" + highBuilding + " b=" + building)
-							printSingleGraph(graphOutFolder, "", compoundData, txRanges, protocols, cw, junction, metric, yLabel, 0, maxMetricValues[metric])
+							printSingleGraph(graphOutFolder, graphTitles[metric] + additionalTitle[building][highBuilding], compoundData, txRanges, protocols, cw, junction, metric, yLabel, 0, maxMetricValues[metric], colors[building][highBuilding])
 
 
 
@@ -617,12 +642,20 @@ def printForgedComparison():
 	xLabel = "% of vehicles affected by forging"
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
 	metricYLabels = {}
-	metricYLabels["totCoverage"] = "Total Coverage (%)"
-	metricYLabels["covOnCirc"] = "Coverage on circumference (%)"
-	metricYLabels["hops"] = "Number of hops to reach circumference"
-	metricYLabels["slotsWaited"] = "Number of slots waited to reach circumference"
-	metricYLabels["messageSent"] = "Number of alert messages sent"
+	metricYLabels["totCoverage"] = "Total Delivery Ratio (%)"
+	metricYLabels["covOnCirc"] = "Total Delivery Ratio On Circ. (%)"
+	metricYLabels["hops"] = "Number Of Hops"
+	metricYLabels["slotsWaited"] = "Number Of Slots"
+	metricYLabels["messageSent"] = "Forwarding Node Number"
 	
+	graphTitles = {}
+	graphTitles["totCoverage"] = "Total Delivery Ratio"
+	graphTitles["covOnCirc"] = "Total Delivery Ratio On Circumference"
+	graphTitles["hops"] = "Number Of Hops"
+	graphTitles["slotsWaited"] = "Number Of Slots"
+	graphTitles["messageSent"] = "Forwarding Node Number"
+
+	colors = ["#B5B7FF", "#5155D5"]
 
 	maxMetricValues = {}
 	for metric in metrics:
@@ -670,7 +703,7 @@ def printForgedComparison():
 				graphOutFolder = os.path.join(scenario, "forged", "b" + building)
 				for metric in metrics:
 					yLabel = metricYLabels[metric]
-					printSingleGraphErrorRate(graphOutFolder, "graphTitle", forgedRateCompoundData, forgedRates, protocols, cw, "300", junctions, metric, xLabel, yLabel, 0, maxMetricValues[metric])
+					printSingleGraphErrorRate(graphOutFolder, graphTitles[metric], forgedRateCompoundData, forgedRates, protocols, cw, "300", junctions, metric, xLabel, yLabel, 0, maxMetricValues[metric], colors)
 
 def printDistanceComparison():
 	print("PrintDistanceComparison")
