@@ -487,7 +487,7 @@
 			\centering
 			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b0/j0/tdr}
 			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b0/j1/tdr}
-			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b1/j0/tdr}
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b1/j0/tdr} %todo tutte di quelle di questo tipo
 			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b1/j1/tdr}
 			\caption{\textit{TDR} for Padua urban scenario}
 			\label{fig:padua-25-tdr}
@@ -536,7 +536,7 @@
 		In this scenario the effects of obstacle shadowing on delivery ratios is quite large, especially for the 300 and 500 meters cases, for all algorithms. We have a decrease in \textit{TDR} (Figure \ref{fig:padua-25-tdr} of around 65\% for Fast-Broadcast in both transmission ranges when introducing buildings (first and third images), which results in quite poor performances. The Smart Junction variants of Fast-Broadcast manages to reach pretty good results in total delivery ratio (fourth image), with 72.1\% and 91.42\% for the two transmission ranges. ROFF's results are even worse before the introduction of junctions, with \textit{TDR} below 10\% for the lowest transmission range. Even in this case, SJ-ROFF manages to improve the values, overcoming Fast-Broadcast's results.
 		
 		
-		The same observations hold true even for \textit{TDROC} (\Figure{fig:padua-25-tdr}). Hence, the benefits of junctions are twofold even for this scenario regarding delivery ratios.
+		The same observations hold true even for \textit{TDROC} (\ref{fig:padua-25-tdr}). Hence, the benefits of junctions are twofold even for this scenario regarding delivery ratios.
 		
 		
 		Concerning \textit{NOS}, the increase due to the obstacle model is even more pronounced than the previous scenario for both algorithms. Due to the lower coverage, it is possible that the few messages who reach the circumference go through a very irregular path with and the one-hop progress is quite low. The introduction of junctions, as in the Los Angeles scenario, causes a decrease in \textit{NOH}. One anomalous results is ROFF with 100 meters transmission range, whose values shoots up by more than 232\$ when comparing it with SJ-ROFF, and is much higher than SJ-Fast-Broadcast under the same conditions. This phenomenon might be due to the harsher vehicle distribution, obstacle and junction positioning which cause the signal to follow very long paths from the source to the circumference. With the other two transmission ranges, SJ-ROFF outperforms SJ-Fast-Broadcast.
@@ -557,7 +557,7 @@
 		Drones are more spaced from one another than vehicles, with an average distance of 50 meters. We also wanted to test the effects of the Obstacle Model on drones in this scenario. Since the maximum height of a building in the data retrieved from OpenStreetMap is 21.9 meters, drones would not have their line of sight affected by the obstacles. Hence, as an additional configuration of this scenario, all buildings have been heightened to be taller than the second layer of drones (e.g. every building is high 100 meters).
 		
 		
-		The TDR metric considers delivery to all entities in the scenario (both vehicles and drones), while the circumference relative to the area of interest continues to be defined in the same way as the 2D Los Angeles urban scenario, hence TDROC concerns exclusively vehicles.
+		The \textit{TDR} metric considers delivery to all entities in the scenario (both vehicles and drones), while the circumference relative to the area of interest continues to be defined in the same way as the 2D Los Angeles urban scenario, hence TDROC concerns exclusively vehicles.
 		
 		
 		All configurations are reported in Figure \ref{fig:la-smart-city-overview}, whose colors will guide the following graph results. Table \ref{tab:la-smart-city} reports all the scenario settings.
@@ -604,7 +604,53 @@
 		\caption{Los Angeles urban scenario configuration}
 		\label{tab:la-smart-city}
 	\end{table}
+
+%	todo cambiare figure con quelle reali
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1.0\textwidth]{immagini/la-smart-city/b0/tdr}
+		\includegraphics[width=1.0\textwidth]{immagini/la-smart-city/b1/h0/tdr}
+		\includegraphics[width=1.0\textwidth]{immagini/la-smart-city/b1//h1/tdr}
+		\caption{\textit{TDR} for Los angeles smart city scenario}
+		\label{fig:la-smart-city-tdr}
+	\end{figure}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1.0\textwidth]{immagini/la-smart-city/b0/tdroc}
+		\includegraphics[width=1.0\textwidth]{immagini/la-smart-city/b1/h0/tdroc}
+		\includegraphics[width=1.0\textwidth]{immagini/la-smart-city/b1//h1/tdroc}
+		\caption{\textit{TDR} for Los angeles smart city scenario}
+		\label{fig:la-smart-city-tdroc}
+	\end{figure}
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1.0\textwidth]{immagini/la-smart-city/b0/noh}
+		\includegraphics[width=1.0\textwidth]{immagini/la-smart-city/b1/h0/noh}
+		\includegraphics[width=1.0\textwidth]{immagini/la-smart-city/b1//h1/noh}
+		\caption{\textit{TDR} for Los angeles smart city scenario}
+		\label{fig:la-smart-city-noh}
+	\end{figure}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1.0\textwidth]{immagini/la-smart-city/b0/nos}
+		\includegraphics[width=1.0\textwidth]{immagini/la-smart-city/b1/h0/nos}
+		\includegraphics[width=1.0\textwidth]{immagini/la-smart-city/b1//h1/nos}
+		\caption{\textit{TDR} for Los angeles smart city scenario}
+		\label{fig:la-smart-city-nos}
+	\end{figure}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1.0\textwidth]{immagini/la-smart-city/b0/fnn}
+		\includegraphics[width=1.0\textwidth]{immagini/la-smart-city/b1/h0/fnn}
+		\includegraphics[width=1.0\textwidth]{immagini/la-smart-city/b1//h1/fnn}
+		\caption{\textit{TDR} for Los angeles smart city scenario}
+		\label{fig:la-smart-city-fnn}
+	\end{figure}
+
 	\section{Hello Message forging scenario}
 		During our analysis we wanted to test how vulnerable the algorithms were to attacks where some malicious attacker tries to increase the end to end delay (the NOS metric in our case). The attack consists in sending fake Hello Messages to vehicles during the Estimation Phase in order to mess with their estimations. We tested two different levels of severity on the attack: a low severity one, reported in Section \ref{sec:low-severity}, and a high severity one, reported in Section \ref{sec:high-severity}. Several percentages of affected vehicles (i.e. the vehicles which receive the forged hello message bursts) ranging from 0 to 50\% have been tested. Both tests were carried out using the Los Angeles urban scenario without the effect of the Obstacle model. Only Fast-Broadcast and ROFF algorithms (and their Smart Junction variants) were tested.
 		
