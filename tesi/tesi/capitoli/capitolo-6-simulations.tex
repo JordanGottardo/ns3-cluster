@@ -438,8 +438,9 @@
 		The introduction of junctions brings about an increase in the number of forwardings for all algorithms, as expected. Focusing on the fourth image of Figure \ref{fig:la-25-fnn}, SJ-ROFF is affected greatly by this increase, almost equalling SJ-Fast-Broadcast with 100 meters transmission range, and with \textit{FNN} much greater values in 300 and 500 meters transmission range configurations. This might be caused by the introduction of transmissions inside junctions, which exacerbate the collision problem already reported in the previous section (Figure \ref{fig:2d-roff}), leading to an imperfect suppression of scheduled transmissions. The problem is not as severe as in the Grid scenario since the node distribution is less regular, but overall Fast-Broadcast performs slightly better in terms of FNN.
 	
 	\section{Padua urban scenario}
+		\label{sec:padua-urban}
 		As reported in the previous section the Los Angeles scenario, despite being realistic, still had a certain degree of regularity for what concerns vehicle distribution and scenario topology. In fact, roads and sidewalks are pretty large and the overall road positioning resembles a Grid scenario. The next step in testing consisted in employing the algorithms in a more difficult scenario, with narrower roads and intersections, smaller (if any) sidewalks and pedestrian zones where no traffic is allowed. The chosen scenario is located in Padua and, as the previous one, data about the scenario have been retrieved by OSM and processed through SUMO. The scenario is depicted in Figure \ref{fig:padua-scenario}, while its configuration is reported in Table \ref{tab:padua-25}. 
-	
+		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=1.0\textwidth]{immagini/padua-25/padua-scenario}
@@ -481,6 +482,61 @@
 			\caption{Los Angeles urban scenario configuration}
 			\label{tab:padua-25}
 		\end{table}
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b0/j0/tdr}
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b0/j1/tdr}
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b1/j0/tdr}
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b1/j1/tdr}
+			\caption{\textit{TDR} for Padua urban scenario}
+			\label{fig:padua-25-tdr}
+		\end{figure}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b0/j0/tdroc}
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b0/j1/tdroc}
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b1/j0/tdroc}
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b1/j1/tdroc}
+			\caption{\textit{TDROC} for Padua urban scenario}
+			\label{fig:padua-25-tdroc}
+		\end{figure}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b0/j0/noh}
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b0/j1/noh}
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b1/j0/noh}
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b1/j1/noh}
+			\caption{\textit{NOH} for Padua urban scenario}
+			\label{fig:padua-25-noh}
+		\end{figure}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b0/j0/nos}
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b0/j1/nos}
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b1/j0/nos}
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b1/j1/nos}
+			\caption{\textit{NOS} for Padua urban scenario}
+			\label{fig:padua-25-nos}
+		\end{figure}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b0/j0/fnn}
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b0/j1/fnn}
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b1/j0/fnn}
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b1/j1/fnn}
+			\caption{\textit{FNN} for Padua urban scenario}
+			\label{fig:padua-25-fnn}
+		\end{figure}
+	
+		In this scenario the effects of obstacle shadowing on delivery ratios is quite large, especially for the 300 and 500 meters cases, for all algorithms. We have a decrease in \textit{TDR} (Figure \ref{fig:padua-25-tdr} of around 65\% for Fast-Broadcast in both transmission ranges when introducing buildings (first and third images), which results in quite poor performances. The Smart Junction variants of Fast-Broadcast manages to reach pretty good results in total delivery ratio (fourth image), with 72.1\% and 91.42\% for the two transmission ranges. ROFF's results are even worse before the introduction of junctions, with \textit{TDR} below 10\% for the lowest transmission range. Even in this case, SJ-ROFF manages to improve the values, overcoming Fast-Broadcast's results.
+		
+		
+		The same observations hold true even for TDROC (\Figure{fig:padua-25-tdr}). Hence, the benefits of junctions are twofold even for this scenario.
 
 	\section{Los Angeles smart city scenario}
 		After the comparison of the algorithms in 2D scenarios, we wanted to test them in a mixed 2D-3D scenario, where drones were also employed. Drones are utilized in many military and civil applications, such as agriculture, environmental protection and traffic flow control. It is foreseeable that they will also be a part of the development of the so called "smart cities", defined as "the use of discrete new technology applications such as RFID and Internet Of Things through more holistic conception of intelligent, integrated working that is closely linked to the concept of living and user generated services"\cite{smartCity}. One of the possible applications of drones in a urban scenario could make them help vehicles in Emergency Message Dissemination in order to exploit their greater field of view and bypass the effects of ground level shadowing and obstacles. 
@@ -572,12 +628,12 @@
 					Number of simulations per configuration	& 1000					&		\\
 					\bottomrule
 				\end{tabularx}
-				\caption{High severity forging attack scenario configuration based on Los Angeles urban scenario}
+				\caption{Low severity forging attack scenario configuration based on Los Angeles urban scenario}
 				\label{tab:low-forging}
 			\end{table}
 		
 		\subsection{High severity attack}
-			In the high severity attack the number of forged Hello Messages was increased to 1000. Moreover, even the fake positions included in the messages have been increased in a way such that the receivers detected distances ranging from 10000 to 11000 meters. Parameters for this scenario are reported in Table \ref{tab:high-forging}.
+			In the high severity attack the number of forged Hello Messages was increased to 1000. Moreover, even the fake positions included in the messages have been increased in a way such that the receivers detected distances ranging from 301 to 1300 meters. Parameters for this scenario are reported in Table \ref{tab:high-forging}.
 			\label{sec:high-severity}
 			\begin{table}[H]
 				\def\arraystretch{1.1}
@@ -591,7 +647,7 @@
 					\midrule[1pt]
 					Vehicles affected by forging			& 0, 10, 20, 30, 40, 50 & \%	\\
 					Number of forged messages				& 1000					&		\\
-					Forged distances						& 301, 302,...,400			&		\\
+					Forged distances						& 301, 302,...,1300			&		\\
 					\midrule[1pt]
 					\rowcolor{P} \multicolumn{3}{c}{Network configuration} \\
 					\midrule[1pt]
@@ -607,10 +663,45 @@
 				\label{tab:high-forging}
 			\end{table}
 			
+			%todo immagine
+			In this case it is possible to observe that ROFF is affected a lot more than Fast-Broadcast. Even when jumping from 0\% to only 10\% of affected nodes, ROFF's \textit{NOS} increases more than tenfold, with a value todo higher than Fast-Broadcast. Fast-Broadcast is affected as well when going from 0\% to 10\%, but the increase is much lower. Higher percentages of affected vehicles increase the Number Of Slots even more for ROFF, while Fast-Broadcast caps out after 10\% and its metric's value does not increase.
 	
-	\section{Varying vehicle density scenario}
+	\section{Different vehicle density scenario}
+		The previous scenarios all employed a distance between vehicles equal to 25 meters. Real vehicle distributions are obviously different than this idealistic scenario. Moreover, good broadcasting algorithms should work well regardless of vehicle distribution and density. Hence, in this section different vehicle distribution (generated by different distances between vehicles) have been tested. The scenario is based on the Padua urban scenario (Section \ref{sec:padua-urban}, with vehicle distances ranges from 5 to 45 meters. Parameters are reported in Table \ref{table:densities}.
+		
+		\begin{table}[H]
+			\def\arraystretch{1.1}
+			\rowcolors{2}{D}{P}	
+			\begin{tabularx}{\textwidth}{l | l  l}
+				\rowcolor{I} {\large \textcolor{white}{Parameter}} & {\large \textcolor{white}{Value}} & {\large \textcolor{white}{}} \TBstrut  \\
+				\toprule
+				\endhead
+				\rowcolor{P} \multicolumn{3}{c}{Scenario configuration} \\
+				\midrule[1pt]
+				Distance between vehicles				& 5, 15, 25, 35, 45		& 		\\
+				\midrule[1pt]
+				\rowcolor{P} \multicolumn{3}{c}{Network configuration} \\
+				\midrule[1pt]
+				Transmission power						& 4.6					& dBm	\\
+				Transmission range						& 300					&		\\
+				Shadowing model							& No					&		\\
+				Junction modeling						& No					&		\\
+				\midrule[1pt]
+				\rowcolor{P} \multicolumn{3}{c}{Protocols configuration} \\
+				\midrule[1pt]
+				%			Protocols tested						& \makecell{FB, ROFF, STATIC100, \\ STATIC300, STATIC500} & \\
+				FB contention window					& [32, 1024]	& slot	\\
+				ROFF distance range (\textit{k} parameter) & 1					&		\\	
+				\midrule[1pt]
+				Number of simulations per configuration	& 1000					&		\\
+				\bottomrule
+			\end{tabularx}
+			\caption{Smaller contention window scenario configuraton based on Los Angeles urban scenario}
+			\label{table:densities}
+		\end{table}
 	
 	\section{Contention window}
+		All previous tests involving Fast-Broadcast have been carried out with a contention window ranging from 32 to 1024 slots. This interval is so wide in order to guarantee correct waiting time calculation even in high vehicle density scenarios. Fast-Broadcast's results on Number Of Slots could benefit from using a narrower contention window. In this scenario, based on the Los Angeles urban scenario, a contention window ranging from 16 to 128 slots will be utilized. Parameters for this scenario are reported in Table \ref{table:fb-cw}.
 		\begin{table}[H]
 			\def\arraystretch{1.1}
 			\rowcolors{2}{D}{P}	
@@ -633,9 +724,10 @@
 				Number of simulations per configuration	& 1000					&		\\
 				\bottomrule
 			\end{tabularx}
-			\label{table:fb-cw}
 			\caption{Smaller contention window scenario configuraton based on Los Angeles urban scenario}
+			\label{table:fb-cw}
 		\end{table}
+	
 
 	
 	
