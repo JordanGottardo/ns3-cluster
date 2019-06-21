@@ -95,16 +95,16 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.5}Padua urban scenario}{64}{section.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.6}Los Angeles smart city scenario}{70}{section.6.6}
+\contentsline {section}{\numberline {6.6}Los Angeles smart city scenario}{71}{section.6.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.7}Hello Message forging scenario}{72}{section.6.7}
+\contentsline {section}{\numberline {6.7}Hello Message forging scenario}{73}{section.6.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.7.1}Low severity attack}{72}{subsection.6.7.1}
+\contentsline {subsection}{\numberline {6.7.1}Low severity attack}{73}{subsection.6.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.7.2}High severity attack}{73}{subsection.6.7.2}
+\contentsline {subsection}{\numberline {6.7.2}High severity attack}{74}{subsection.6.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.8}Different vehicle density scenario}{74}{section.6.8}
+\contentsline {section}{\numberline {6.8}Different vehicle density scenario}{75}{section.6.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.9}Contention window}{74}{section.6.9}
+\contentsline {section}{\numberline {6.9}Contention window}{75}{section.6.9}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Acronyms}{77}{section*.69}

@@ -536,8 +536,15 @@
 		In this scenario the effects of obstacle shadowing on delivery ratios is quite large, especially for the 300 and 500 meters cases, for all algorithms. We have a decrease in \textit{TDR} (Figure \ref{fig:padua-25-tdr} of around 65\% for Fast-Broadcast in both transmission ranges when introducing buildings (first and third images), which results in quite poor performances. The Smart Junction variants of Fast-Broadcast manages to reach pretty good results in total delivery ratio (fourth image), with 72.1\% and 91.42\% for the two transmission ranges. ROFF's results are even worse before the introduction of junctions, with \textit{TDR} below 10\% for the lowest transmission range. Even in this case, SJ-ROFF manages to improve the values, overcoming Fast-Broadcast's results.
 		
 		
-		The same observations hold true even for TDROC (\Figure{fig:padua-25-tdr}). Hence, the benefits of junctions are twofold even for this scenario.
-
+		The same observations hold true even for \textit{TDROC} (\Figure{fig:padua-25-tdr}). Hence, the benefits of junctions are twofold even for this scenario regarding delivery ratios.
+		
+		
+		Concerning \textit{NOS}, the increase due to the obstacle model is even more pronounced than the previous scenario for both algorithms. Due to the lower coverage, it is possible that the few messages who reach the circumference go through a very irregular path with and the one-hop progress is quite low. The introduction of junctions, as in the Los Angeles scenario, causes a decrease in \textit{NOH}. One anomalous results is ROFF with 100 meters transmission range, whose values shoots up by more than 232\$ when comparing it with SJ-ROFF, and is much higher than SJ-Fast-Broadcast under the same conditions. This phenomenon might be due to the harsher vehicle distribution, obstacle and junction positioning which cause the signal to follow very long paths from the source to the circumference. With the other two transmission ranges, SJ-ROFF outperforms SJ-Fast-Broadcast.
+		
+		
+		Results for \textit{NOH} and \textit{FNN} are comparable with the one observed in previous scenarios.
+		
+		
 	\section{Los Angeles smart city scenario}
 		After the comparison of the algorithms in 2D scenarios, we wanted to test them in a mixed 2D-3D scenario, where drones were also employed. Drones are utilized in many military and civil applications, such as agriculture, environmental protection and traffic flow control. It is foreseeable that they will also be a part of the development of the so called "smart cities", defined as "the use of discrete new technology applications such as RFID and Internet Of Things through more holistic conception of intelligent, integrated working that is closely linked to the concept of living and user generated services"\cite{smartCity}. One of the possible applications of drones in a urban scenario could make them help vehicles in Emergency Message Dissemination in order to exploit their greater field of view and bypass the effects of ground level shadowing and obstacles. 
 		
