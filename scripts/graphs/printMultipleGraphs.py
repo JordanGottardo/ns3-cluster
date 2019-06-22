@@ -359,7 +359,7 @@ def printProtocolComparison():
 	plt.rcParams["figure.figsize"] = [18, 6]
 	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
 	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
-	scenarios = ["Padova-25"]
+	scenarios = ["LA-25"]
 	buildings = ["0", "1"]
 	errorRate = "e0"
 	#txRanges = ["100", "300", "500"]
