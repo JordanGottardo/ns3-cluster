@@ -123,10 +123,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {6.30}{\ignorespaces \textit {TDR} for Los angeles smart city scenario\relax }}{74}{figure.caption.65}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.31}{\ignorespaces \textit {TDR} for Los angeles smart city scenario\relax }}{75}{figure.caption.66}
+\contentsline {figure}{\numberline {6.31}{\ignorespaces \textit {TDROC} for Los angeles smart city scenario\relax }}{75}{figure.caption.66}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.32}{\ignorespaces \textit {TDR} for Los angeles smart city scenario\relax }}{76}{figure.caption.67}
+\contentsline {figure}{\numberline {6.32}{\ignorespaces \textit {NOH} for Los angeles smart city scenario\relax }}{76}{figure.caption.67}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.33}{\ignorespaces \textit {TDR} for Los angeles smart city scenario\relax }}{77}{figure.caption.68}
+\contentsline {figure}{\numberline {6.33}{\ignorespaces \textit {NOS} for Los angeles smart city scenario\relax }}{77}{figure.caption.68}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.34}{\ignorespaces \textit {TDR} for Los angeles smart city scenario\relax }}{78}{figure.caption.69}
+\contentsline {figure}{\numberline {6.34}{\ignorespaces \textit {FNN} for Los angeles smart city scenario\relax }}{78}{figure.caption.69}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.35}{\ignorespaces \textit {TDR} for [16, 128] contention window (top) and [32, 1024] ] contention window (bottom)\relax }}{82}{figure.caption.74}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.36}{\ignorespaces \textit {TDROC} for [16, 128] contention window (top) and [32, 1024] contention window (bottom)\relax }}{82}{figure.caption.75}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.37}{\ignorespaces \textit {NOH} for [16, 128] contention window (top) and [32, 1024] ] contention window (bottom)\relax }}{83}{figure.caption.76}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.38}{\ignorespaces \textit {NOS} for [16, 128] contention window (top) and [32, 1024] ] contention window (bottom)\relax }}{83}{figure.caption.77}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.39}{\ignorespaces \textit {FNN} for [16, 128] contention window (top) and [32, 1024] ] contention window (bottom)\relax }}{84}{figure.caption.78}
