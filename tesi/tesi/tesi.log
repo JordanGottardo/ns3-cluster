@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.24)  22 JUN 2019 16:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.24)  22 JUN 2019 18:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2601,11 +2601,11 @@ File: immagini/la-25/overview.png Graphic file (type png)
 Package pdftex.def Info: immagini/la-25/overview.png  used on input line 316.
 (pdftex.def)             Requested size: 372.0pt x 171.40952pt.
  [55 <./immagini/la-25/la-scenario.png> <./immagini/la-25/overview.png>]
-<immagini/la-25/b0/j0/tdr.png, id=786, 1670.24pt x 566.115pt>
+<immagini/la-25/b0/j0/tdr.png, id=786, 1728.4575pt x 591.20876pt>
 File: immagini/la-25/b0/j0/tdr.png Graphic file (type png)
 <use immagini/la-25/b0/j0/tdr.png>
 Package pdftex.def Info: immagini/la-25/b0/j0/tdr.png  used on input line 358.
-(pdftex.def)             Requested size: 372.0pt x 126.08328pt.
+(pdftex.def)             Requested size: 372.0pt x 127.23369pt.
 <immagini/la-25/b0/j1/tdr.png, id=787, 1670.24pt x 569.12625pt>
 File: immagini/la-25/b0/j1/tdr.png Graphic file (type png)
 <use immagini/la-25/b0/j1/tdr.png>
@@ -2622,12 +2622,12 @@ File: immagini/la-25/b1/j1/tdr.png Graphic file (type png)
 Package pdftex.def Info: immagini/la-25/b1/j1/tdr.png  used on input line 361.
 (pdftex.def)             Requested size: 372.0pt x 127.54611pt.
  [56]
-<immagini/la-25/b0/j0/tdroc.png, id=796, 1679.27374pt x 570.13pt>
+<immagini/la-25/b0/j0/tdroc.png, id=796, 1439.3775pt x 481.8pt>
 File: immagini/la-25/b0/j0/tdroc.png Graphic file (type png)
 <use immagini/la-25/b0/j0/tdroc.png>
 Package pdftex.def Info: immagini/la-25/b0/j0/tdroc.png  used on input line 368
 .
-(pdftex.def)             Requested size: 372.0pt x 126.29893pt.
+(pdftex.def)             Requested size: 372.0pt x 124.51517pt.
 <immagini/la-25/b0/j1/tdroc.png, id=797, 1670.24pt x 568.1225pt>
 File: immagini/la-25/b0/j1/tdroc.png Graphic file (type png)
 <use immagini/la-25/b0/j1/tdroc.png>
@@ -2648,11 +2648,11 @@ Package pdftex.def Info: immagini/la-25/b1/j1/tdroc.png  used on input line 371
 (pdftex.def)             Requested size: 372.0pt x 125.63553pt.
  [57 <./immagini/la-25/b0/j0/tdr.png> <./immagini/la-25/b0/j1/tdr.png> <./immag
 ini/la-25/b1/j0/tdr.png> <./immagini/la-25/b1/j1/tdr.png>]
-<immagini/la-25/b0/j0/noh.png, id=804, 1664.2175pt x 571.13374pt>
+<immagini/la-25/b0/j0/noh.png, id=804, 1715.40875pt x 587.19376pt>
 File: immagini/la-25/b0/j0/noh.png Graphic file (type png)
 <use immagini/la-25/b0/j0/noh.png>
 Package pdftex.def Info: immagini/la-25/b0/j0/noh.png  used on input line 378.
-(pdftex.def)             Requested size: 372.0pt x 127.66292pt.
+(pdftex.def)             Requested size: 372.0pt x 127.3373pt.
 <immagini/la-25/b0/j1/noh.png, id=805, 1656.1875pt x 564.1075pt>
 File: immagini/la-25/b0/j1/noh.png Graphic file (type png)
 <use immagini/la-25/b0/j1/noh.png>
@@ -2670,11 +2670,11 @@ Package pdftex.def Info: immagini/la-25/b1/j1/noh.png  used on input line 381.
 (pdftex.def)             Requested size: 372.0pt x 126.62604pt.
  [58 <./immagini/la-25/b0/j0/tdroc.png> <./immagini/la-25/b0/j1/tdroc.png> <./i
 mmagini/la-25/b1/j0/tdroc.png> <./immagini/la-25/b1/j1/tdroc.png>]
-<immagini/la-25/b0/j0/nos.png, id=812, 1683.28876pt x 570.13pt>
+<immagini/la-25/b0/j0/nos.png, id=812, 1741.50626pt x 590.205pt>
 File: immagini/la-25/b0/j0/nos.png Graphic file (type png)
 <use immagini/la-25/b0/j0/nos.png>
 Package pdftex.def Info: immagini/la-25/b0/j0/nos.png  used on input line 388.
-(pdftex.def)             Requested size: 372.0pt x 125.99445pt.
+(pdftex.def)             Requested size: 372.0pt x 126.07207pt.
 <immagini/la-25/b0/j1/nos.png, id=813, 1681.28125pt x 568.1225pt>
 File: immagini/la-25/b0/j1/nos.png Graphic file (type png)
 <use immagini/la-25/b0/j1/nos.png>
@@ -2692,11 +2692,11 @@ Package pdftex.def Info: immagini/la-25/b1/j1/nos.png  used on input line 391.
 (pdftex.def)             Requested size: 372.0pt x 126.13254pt.
  [59 <./immagini/la-25/b0/j0/noh.png> <./immagini/la-25/b0/j1/noh.png> <./immag
 ini/la-25/b1/j0/noh.png> <./immagini/la-25/b1/j1/noh.png>]
-<immagini/la-25/b0/j0/fnn.png, id=820, 1677.26625pt x 572.1375pt>
+<immagini/la-25/b0/j0/fnn.png, id=820, 1727.45375pt x 582.175pt>
 File: immagini/la-25/b0/j0/fnn.png Graphic file (type png)
 <use immagini/la-25/b0/j0/fnn.png>
 Package pdftex.def Info: immagini/la-25/b0/j0/fnn.png  used on input line 398.
-(pdftex.def)             Requested size: 372.0pt x 126.89206pt.
+(pdftex.def)             Requested size: 372.0pt x 125.36949pt.
 <immagini/la-25/b0/j1/fnn.png, id=821, 1671.24374pt x 568.1225pt>
 File: immagini/la-25/b0/j1/fnn.png Graphic file (type png)
 <use immagini/la-25/b0/j1/fnn.png>
@@ -2872,108 +2872,126 @@ Package pdftex.def Info: immagini/la-smart-city/overview.png  used on input lin
 e 567.
 (pdftex.def)             Requested size: 372.0pt x 194.86363pt.
  [72 <./immagini/la-smart-city/overview.png>]
-<immagini/la-smart-city/b0/tdr.png, id=1188, 1620.0525pt x 548.0475pt>
+<immagini/la-smart-city/b0/tdr.png, id=1188, 1438.37375pt x 764.8575pt>
 File: immagini/la-smart-city/b0/tdr.png Graphic file (type png)
 <use immagini/la-smart-city/b0/tdr.png>
 Package pdftex.def Info: immagini/la-smart-city/b0/tdr.png  used on input line 
 611.
-(pdftex.def)             Requested size: 372.0pt x 125.8392pt.
-<immagini/la-smart-city/b1/h0/tdr.png, id=1189, 1620.0525pt x 548.0475pt>
+(pdftex.def)             Requested size: 372.0pt x 197.80788pt.
+<immagini/la-smart-city/b1/h0/tdr.png, id=1189, 1435.3625pt x 770.88pt>
 File: immagini/la-smart-city/b1/h0/tdr.png Graphic file (type png)
 <use immagini/la-smart-city/b1/h0/tdr.png>
 Package pdftex.def Info: immagini/la-smart-city/b1/h0/tdr.png  used on input li
 ne 612.
-(pdftex.def)             Requested size: 372.0pt x 125.8392pt.
-<immagini/la-smart-city/b1//h1/tdr.png, id=1190, 1620.0525pt x 548.0475pt>
+(pdftex.def)             Requested size: 372.0pt x 199.7889pt.
+<immagini/la-smart-city/b1//h1/tdr.png, id=1190, 1441.385pt x 762.85pt>
 File: immagini/la-smart-city/b1//h1/tdr.png Graphic file (type png)
 <use immagini/la-smart-city/b1//h1/tdr.png>
 Package pdftex.def Info: immagini/la-smart-city/b1//h1/tdr.png  used on input l
 ine 613.
-(pdftex.def)             Requested size: 372.0pt x 125.8392pt.
+(pdftex.def)             Requested size: 372.0pt x 196.86966pt.
  [73]
-<immagini/la-smart-city/b0/tdroc.png, id=1197, 1622.06pt x 551.05875pt>
+Overfull \vbox (15.56049pt too high) has occurred while \output is active []
+
+
+[74 <./immagini/la-smart-city/b0/tdr.png> <./immagini/la-smart-city/b1/h0/tdr.p
+ng> <./immagini/la-smart-city/b1//h1/tdr.png>]
+<immagini/la-smart-city/b0/tdroc.png, id=1201, 1445.4pt x 770.88pt>
 File: immagini/la-smart-city/b0/tdroc.png Graphic file (type png)
 <use immagini/la-smart-city/b0/tdroc.png>
 Package pdftex.def Info: immagini/la-smart-city/b0/tdroc.png  used on input lin
 e 620.
-(pdftex.def)             Requested size: 372.0pt x 126.37927pt.
-<immagini/la-smart-city/b1/h0/tdroc.png, id=1198, 1622.06pt x 551.05875pt>
+(pdftex.def)             Requested size: 372.0pt x 198.4009pt.
+<immagini/la-smart-city/b1/h0/tdroc.png, id=1202, 1445.4pt x 760.8425pt>
 File: immagini/la-smart-city/b1/h0/tdroc.png Graphic file (type png)
 <use immagini/la-smart-city/b1/h0/tdroc.png>
 Package pdftex.def Info: immagini/la-smart-city/b1/h0/tdroc.png  used on input 
 line 621.
-(pdftex.def)             Requested size: 372.0pt x 126.37927pt.
-<immagini/la-smart-city/b1//h1/tdroc.png, id=1199, 1622.06pt x 551.05875pt>
+(pdftex.def)             Requested size: 372.0pt x 195.81755pt.
+<immagini/la-smart-city/b1//h1/tdroc.png, id=1203, 1443.3925pt x 768.8725pt>
 File: immagini/la-smart-city/b1//h1/tdroc.png Graphic file (type png)
 <use immagini/la-smart-city/b1//h1/tdroc.png>
 Package pdftex.def Info: immagini/la-smart-city/b1//h1/tdroc.png  used on input
  line 622.
-(pdftex.def)             Requested size: 372.0pt x 126.37927pt.
- [74 <./immagini/la-smart-city/b0/tdr.png> <./immagini/la-smart-city/b1/h0/tdr.
-png> <./immagini/la-smart-city/b1//h1/tdr.png>]
-<immagini/la-smart-city/b0/noh.png, id=1204, 1610.015pt x 550.055pt>
+(pdftex.def)             Requested size: 372.0pt x 198.15405pt.
+
+Overfull \vbox (13.46655pt too high) has occurred while \output is active []
+
+
+[75 <./immagini/la-smart-city/b0/tdroc.png> <./immagini/la-smart-city/b1/h0/tdr
+oc.png> <./immagini/la-smart-city/b1//h1/tdroc.png>]
+<immagini/la-smart-city/b0/noh.png, id=1209, 1430.34375pt x 773.89125pt>
 File: immagini/la-smart-city/b0/noh.png Graphic file (type png)
 <use immagini/la-smart-city/b0/noh.png>
 Package pdftex.def Info: immagini/la-smart-city/b0/noh.png  used on input line 
 629.
-(pdftex.def)             Requested size: 372.0pt x 127.08911pt.
-<immagini/la-smart-city/b1/h0/noh.png, id=1205, 1610.015pt x 550.055pt>
+(pdftex.def)             Requested size: 372.0pt x 201.26602pt.
+<immagini/la-smart-city/b1/h0/noh.png, id=1210, 1429.34pt x 762.85pt>
 File: immagini/la-smart-city/b1/h0/noh.png Graphic file (type png)
 <use immagini/la-smart-city/b1/h0/noh.png>
 Package pdftex.def Info: immagini/la-smart-city/b1/h0/noh.png  used on input li
 ne 630.
-(pdftex.def)             Requested size: 372.0pt x 127.08911pt.
-<immagini/la-smart-city/b1//h1/noh.png, id=1206, 1610.015pt x 550.055pt>
+(pdftex.def)             Requested size: 372.0pt x 198.5342pt.
+<immagini/la-smart-city/b1//h1/noh.png, id=1211, 1423.3175pt x 771.88374pt>
 File: immagini/la-smart-city/b1//h1/noh.png Graphic file (type png)
 <use immagini/la-smart-city/b1//h1/noh.png>
 Package pdftex.def Info: immagini/la-smart-city/b1//h1/noh.png  used on input l
 ine 631.
-(pdftex.def)             Requested size: 372.0pt x 127.08911pt.
- [75 <./immagini/la-smart-city/b0/tdroc.png> <./immagini/la-smart-city/b1/h0/td
-roc.png> <./immagini/la-smart-city/b1//h1/tdroc.png>]
-<immagini/la-smart-city/b0/nos.png, id=1212, 1635.10875pt x 550.055pt>
+(pdftex.def)             Requested size: 372.0pt x 201.73328pt.
+
+Overfull \vbox (22.62755pt too high) has occurred while \output is active []
+
+
+[76 <./immagini/la-smart-city/b0/noh.png> <./immagini/la-smart-city/b1/h0/noh.p
+ng> <./immagini/la-smart-city/b1//h1/noh.png>]
+<immagini/la-smart-city/b0/nos.png, id=1216, 1461.46pt x 770.88pt>
 File: immagini/la-smart-city/b0/nos.png Graphic file (type png)
 <use immagini/la-smart-city/b0/nos.png>
 Package pdftex.def Info: immagini/la-smart-city/b0/nos.png  used on input line 
 638.
-(pdftex.def)             Requested size: 372.0pt x 125.14189pt.
-<immagini/la-smart-city/b1/h0/nos.png, id=1213, 1635.10875pt x 550.055pt>
+(pdftex.def)             Requested size: 372.0pt x 196.21304pt.
+<immagini/la-smart-city/b1/h0/nos.png, id=1217, 1451.4225pt x 767.86874pt>
 File: immagini/la-smart-city/b1/h0/nos.png Graphic file (type png)
 <use immagini/la-smart-city/b1/h0/nos.png>
 Package pdftex.def Info: immagini/la-smart-city/b1/h0/nos.png  used on input li
 ne 639.
-(pdftex.def)             Requested size: 372.0pt x 125.14189pt.
-<immagini/la-smart-city/b1//h1/nos.png, id=1214, 1635.10875pt x 550.055pt>
+(pdftex.def)             Requested size: 372.0pt x 196.80571pt.
+<immagini/la-smart-city/b1//h1/nos.png, id=1218, 1450.41875pt x 768.8725pt>
 File: immagini/la-smart-city/b1//h1/nos.png Graphic file (type png)
 <use immagini/la-smart-city/b1//h1/nos.png>
 Package pdftex.def Info: immagini/la-smart-city/b1//h1/nos.png  used on input l
 ine 640.
-(pdftex.def)             Requested size: 372.0pt x 125.14189pt.
+(pdftex.def)             Requested size: 372.0pt x 197.19203pt.
 
-[76 <./immagini/la-smart-city/b0/noh.png> <./immagini/la-smart-city/b1/h0/noh.p
-ng> <./immagini/la-smart-city/b1//h1/noh.png>]
-<immagini/la-smart-city/b0/fnn.png, id=1219, 1634.105pt x 550.055pt>
+Overfull \vbox (11.30484pt too high) has occurred while \output is active []
+
+
+[77 <./immagini/la-smart-city/b0/nos.png> <./immagini/la-smart-city/b1/h0/nos.p
+ng> <./immagini/la-smart-city/b1//h1/nos.png>]
+<immagini/la-smart-city/b0/fnn.png, id=1223, 1452.42625pt x 761.84625pt>
 File: immagini/la-smart-city/b0/fnn.png Graphic file (type png)
 <use immagini/la-smart-city/b0/fnn.png>
 Package pdftex.def Info: immagini/la-smart-city/b0/fnn.png  used on input line 
 647.
-(pdftex.def)             Requested size: 372.0pt x 125.21744pt.
-<immagini/la-smart-city/b1/h0/fnn.png, id=1220, 1634.105pt x 550.055pt>
+(pdftex.def)             Requested size: 372.0pt x 195.12265pt.
+<immagini/la-smart-city/b1/h0/fnn.png, id=1224, 1450.41875pt x 760.8425pt>
 File: immagini/la-smart-city/b1/h0/fnn.png Graphic file (type png)
 <use immagini/la-smart-city/b1/h0/fnn.png>
 Package pdftex.def Info: immagini/la-smart-city/b1/h0/fnn.png  used on input li
 ne 648.
-(pdftex.def)             Requested size: 372.0pt x 125.21744pt.
-<immagini/la-smart-city/b1//h1/fnn.png, id=1221, 1634.105pt x 550.055pt>
+(pdftex.def)             Requested size: 372.0pt x 195.13258pt.
+<immagini/la-smart-city/b1//h1/fnn.png, id=1225, 1456.44125pt x 772.8875pt>
 File: immagini/la-smart-city/b1//h1/fnn.png Graphic file (type png)
 <use immagini/la-smart-city/b1//h1/fnn.png>
 Package pdftex.def Info: immagini/la-smart-city/b1//h1/fnn.png  used on input l
 ine 649.
-(pdftex.def)             Requested size: 372.0pt x 125.21744pt.
- [77 <./immagini/la-smart-city/b0/nos.png> <./immagini/la-smart-city/b1/h0/nos.
-png> <./immagini/la-smart-city/b1//h1/nos.png>] [78 <./immagini/la-smart-city/b
-0/fnn.png> <./immagini/la-smart-city/b1/h0/fnn.png> <./immagini/la-smart-city/b
-1//h1/fnn.png>] [79] [80]
+(pdftex.def)             Requested size: 372.0pt x 197.40802pt.
+
+Overfull \vbox (8.75731pt too high) has occurred while \output is active []
+
+
+[78 <./immagini/la-smart-city/b0/fnn.png> <./immagini/la-smart-city/b1/h0/fnn.p
+ng> <./immagini/la-smart-city/b1//h1/fnn.png>] [79] [80]
 Underfull \vbox (badness 10000) detected at line 779
  []
 
@@ -3098,7 +3116,7 @@ onts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm
 nts/type1/public/cm-super/sfsl1000.pfb></usr/share/texmf/fonts/type1/public/cm-
 super/sfti0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb><
 /usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on tesi.pdf (92 pages, 9224714 bytes).
+Output written on tesi.pdf (92 pages, 9222929 bytes).
 PDF statistics:
  1625 PDF objects out of 1728 (max. 8388607)
  1122 compressed objects within 12 object streams
