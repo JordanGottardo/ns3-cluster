@@ -1122,7 +1122,7 @@ int main (int argc, char *argv[])
 		}
 
 		else {
-			additionalPath = "/out/scenario-urbano/";
+			additionalPath = "/out/scenario-urbano-oldFB/";
 			header = "\"id\",\"Scenario\",\"Actual Range\",\"Protocol\",\"Buildings\",\"Total nodes\","
 								"\"Nodes on circ\",\"Total coverage\",\"Coverage on circ\",\"Alert received mean time\",\"Hops\","
 								"\"Slots\",\"Messages sent\",\"Messages received\"";

@@ -12,6 +12,11 @@ import csv
 import scipy.stats as st
 import graphUtils
 import math
+from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.pyplot as plt
+from matplotlib import cm
+from matplotlib.ticker import LinearLocator
+import numpy as np
 
 def listsToList(listOfLists, protocols):
 	toReturn = []
@@ -27,23 +32,60 @@ def printSingleGraphLineComparison():
 	rects.append((ax.bar([10, 20])))
 	plt.show()
 
-def printSingleGraphDistance(outFolder, graphTitle, compoundData, distances, protocols, cw, txRange, junctions, metric, xLabel, yLabel, minY, maxY):
+def printSingleGraphDistance(outFolder, graphTitle, compoundData, distances, protocol, cw, txRange, junctions, metric, xLabel, yLabel, zLabel, minZ, maxZ, txRanges, color):
+	fig = plt.figure()
+	ax = fig.gca(projection='3d')
+
 	n = len(distances)
 	ind = np.arange(n)
 	
 	barWidth = float((float(1)/float(4)) * float(0.6))
-	fig, ax = plt.subplots()
+	#fig, ax = plt.subplots()
 
 	rects = []
 	count = 0
+	X1 = map(int, txRanges)
+	Y1 = map(int, distances)
+	X, Y = np.meshgrid(X1, Y1)
+	Z = []
+
+	junction = "0"
+	metricMean = metric + "Mean"
+	metricConfInt = metric + "ConfInt"
+	for distance in distances:
+		resultList = []
+		for txRange in txRanges:
+			resultList.append(compoundData[distance][junction][txRange][protocol][metricMean])
+		Z.append(resultList)
+
+	Z = np.array(Z)
+	ax.set_xticks(X1)
+	ax.set_yticks(Y1)
+	ax.set_xlabel(xLabel, fontsize=15)
+	ax.set_ylabel(yLabel, fontsize=15)
+	ax.set_zlabel(zLabel, fontsize=15)
+	ax.set_title(graphTitle, fontsize=20)
+
+	if ("cov" in metric or "Cov" in metric):
+		maxZ = maxZ * 1.05
+	else:
+		maxZ = maxZ * 1.1
+	ax.set_zlim(minZ, maxZ)
+
+	surf = ax.plot_surface(X, Y, Z, color=color, alpha=0.7)
+
+	plt.show()
+
 	#colors = ["0.3", "0.5", "0.7"]
-	colors = ["0.3", "0.5", "0.7","0.9"]
+	#colors = ["0.1", "0.3", "0.5", "0.7","0.9"]
 	
 	#widthDistance = [-1, 1]
-	widthDistance = [-1.5, -0.5, 0.5, 1.5]
+	#widthDistance = [-1.5, -0.5, 0.5, 1.5]
 	#widthDistance = [-1, 0, 1]
 
-	protocolsList = ["Fast-Broadcast", "SJ Fast-Broadcast", "ROFF", "SJ ROFF"]
+	#protocolsList = ["Fast-Broadcast", "SJ Fast-Broadcast", "ROFF", "SJ ROFF"]
+	'''
+	protocolsList = ["Fast-Broadcast", "ROFF"]
 	protocolsListMap = {
 		"Fast-Broadcast": "Fast-Broadcast",
 		"SJ Fast-Broadcast": "Fast-Broadcast",
@@ -82,7 +124,7 @@ def printSingleGraphDistance(outFolder, graphTitle, compoundData, distances, pro
 
 	ax.legend(loc='center left', bbox_to_anchor=(1, 0.5), fontsize=15)
 	#ax.legend(loc="upper right")
-	'''
+	
 	def autolabel(rects, xpos='center'):
 		"""
 		Attach a text label above each bar in *rects*, displaying its height.
@@ -104,7 +146,7 @@ def printSingleGraphDistance(outFolder, graphTitle, compoundData, distances, pro
 		autolabel(rect)
 	#plt.savefig('a1.png')
 	#plt.savefig('a2.png', bbox_inches='tight')
-	'''	
+	
 	outPathDirectory = os.path.join("out", outFolder + "-" + cw)
 	outPath = os.path.join(outPathDirectory , metric) #todo fix
 	if (not os.path.exists(outPathDirectory)):
@@ -114,7 +156,7 @@ def printSingleGraphDistance(outFolder, graphTitle, compoundData, distances, pro
 	plt.clf()
 	#plt.savefig('b2.pdf', bbox_inches='tight')
 	#plt.show()
-
+	'''
 
 def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, protocols, cw, txRange, junctions, metric, xLabel, yLabel, minY, maxY, colors=["0.3", "0.5"]):
 	n = len(errorRates)
@@ -359,7 +401,7 @@ def printProtocolComparison():
 	plt.rcParams["figure.figsize"] = [18, 6]
 	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
 	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
-	scenarios = ["LA-25"]
+	scenarios = ["Padova-25"]
 	buildings = ["0", "1"]
 	errorRate = "e0"
 	#txRanges = ["100", "300", "500"]
@@ -712,23 +754,31 @@ def printDistanceComparison():
 	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
 	scenarios = ["Padova"]
 	#distances = ["15", "25", "35", "45"]
-	distances = ["25", "25", "25", "25"]
-	buildings = ["0" , "1"]
+	distances = ["5", "15", "25", "35", "45"]
+	buildings = ["0"]
 	txRanges = ["100", "300", "500"]
 	protocols = ["Fast-Broadcast", "ROFF"]
 	errorRate = "e0"
 	#cws = ["cw[16-128]", "cw[32-1024]"]
-	cws = ["cw[16-128]"]
-	junctions = ["0", "1"]
-	xLabel = "Distances between vehicle (m)"
+	cws = ["cw[32-1024]"]
+	junctions = ["0"]
+	xLabel = "Vehicle distance (m)"
+	yOrigLabel = "Transmission range (m)"
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
 	metricYLabels = {}
-	metricYLabels["totCoverage"] = "Total Coverage (%)"
-	metricYLabels["covOnCirc"] = "Coverage on circumference (%)"
-	metricYLabels["hops"] = "Number of hops to reach circumference"
-	metricYLabels["slotsWaited"] = "Number of slots waited to reach circumference"
-	metricYLabels["messageSent"] = "Number of alert messages sent"
+	metricYLabels["totCoverage"] = "Total Delivery Ratio (%)"
+	metricYLabels["covOnCirc"] = "Total Delivery Ratio On Circ. (%)"
+	metricYLabels["hops"] = "Number Of Hops"
+	metricYLabels["slotsWaited"] = "Number Of Slots"
+	metricYLabels["messageSent"] = "Forwarding Node Number"
 	
+	colors = {}
+	colors["Fast-Broadcast"] = "#5155D5"
+	colors["ROFF"] = "#BD2525"
+
+	#chiari
+	#colors["Fast-Broadcast"] = "#B5B7FF"
+	#colors["ROFF"] = "#FFA6A6"
 
 	maxMetricValues = {}
 
@@ -772,9 +822,12 @@ def printDistanceComparison():
 						appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics)
 						distanceCompoundData[distance][junction] = compoundData
 				graphOutFolder = os.path.join(scenario, "distance", "b" + building) #todo aggiungere cw nel out path?
-				for metric in metrics:
-					yLabel = metricYLabels[metric]
-					printSingleGraphDistance(graphOutFolder, "graphTitle", distanceCompoundData, distances, protocols, cw, "500", junctions, metric, xLabel, yLabel, 0, maxMetricValues[metric])
+				for protocol in protocols:
+					for metric in metrics:
+						yLabel = metricYLabels[metric]
+						#print(distanceCompoundData)
+						graphTitle = metricYLabels[metric] + " (" + protocol + " )"
+						printSingleGraphDistance(graphOutFolder, graphTitle, distanceCompoundData, distances, protocol, cw, "500", junctions, metric, yOrigLabel, xLabel , metricYLabels[metric], 0, maxMetricValues[metric], txRanges, colors[protocol])
 
 if __name__ == "__main__":
 	main()

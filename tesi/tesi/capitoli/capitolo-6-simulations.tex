@@ -4,7 +4,7 @@
 
 
 \chapter{Simulations}
-	After the protocols under consideration have been presented in Chapters \ref{chapter:fb} and \ref{chapter:roff}, this Chapter will contain the results of the simulation carried out through various scenario of increasing complexity.
+	After the protocols under consideration have been presented in Chapters \ref{chapter:fb} and \ref{chapter:roff}, this Chapter will contain the results of the simulation carried out through various scenario of increasing complexity. Numeric results in every chart will be coupled with their 95\% confidence interval.
 	
 	\section{Metrics}
 		Before proceeding with the presentation of simulation results, metrics used to evaluate the protocol's performances will be presented in this section. 
@@ -165,6 +165,7 @@
 		
 		
 	\section{Grid scenario}
+		\label{sec:grid}
 		After tests on the 1D Platoon scenario have been carried out, the next step consisted in testing the algorithms' performances in a 2D Grid scenario, employing also the shadowing model introduced in \ref{sec:shadowing}.
 		Parameters for this scenario are included in Table \ref{tab:grid}.  
 		
@@ -487,7 +488,7 @@
 			\centering
 			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b0/j0/tdr}
 			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b0/j1/tdr}
-			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b1/j0/tdr} %todo tutte di quelle di questo tipo
+			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b1/j0/tdr}
 			\includegraphics[width=1.0\textwidth]{immagini/padua-25/b1/j1/tdr}
 			\caption{\textit{TDR} for Padua urban scenario}
 			\label{fig:padua-25-tdr}
@@ -554,7 +555,15 @@
 			\item the first layer is situated at a height of 30 meters from ground level and employs 732 drones;
 			\item the second layer, employing the same number of drones, is situated at a height of 60 meters.
 		\end{itemize}
-		Drones are more spaced from one another than vehicles, with an average distance of 50 meters. We also wanted to test the effects of the Obstacle Model on drones in this scenario. Since the maximum height of a building in the data retrieved from OpenStreetMap is 21.9 meters, drones would not have their line of sight affected by the obstacles. Hence, as an additional configuration of this scenario, all buildings have been heightened to be taller than the second layer of drones (e.g. every building is high 100 meters).
+		Drones are more spaced from one another than vehicles, with an average distance of 50 meters. We also wanted to test the effects of the Obstacle Model on drones in this scenario. Since the maximum height of a building in the data retrieved from OpenStreetMap is 21.9 meters, drones would not have their line of sight affected by the obstacles. Hence, as an additional configuration of this scenario, all buildings have been heightened to be taller than the second layer of drones (e.g. every building is high 100 meters). Figure \ref{fig:la-smart-city} shows a representation of the two scenarios with buildings.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/la-smart-city-low}
+			\includegraphics[width=1.0\textwidth]{immagini/la-smart-city-high}
+			\caption{Los Angeles smart city scenario with real height buildings (top) and very high buildings (bottom)}
+			\label{fig:la-smart-city}
+		\end{figure}
 		
 		
 		The \textit{TDR} metric considers delivery to all entities in the scenario (both vehicles and drones), while the circumference relative to the area of interest continues to be defined in the same way as the 2D Los Angeles urban scenario, hence TDROC concerns exclusively vehicles.
@@ -605,7 +614,6 @@
 		\label{tab:la-smart-city}
 	\end{table}
 
-%	todo cambiare figure con quelle reali
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=1.0\textwidth]{immagini/la-smart-city/b0/tdr}
@@ -651,6 +659,18 @@
 		\label{fig:la-smart-city-fnn}
 	\end{figure}
 
+	Judging by the results shown in Figure \ref{fig:la-smart-city-tdr} \ref{fig:la-smart-city-tdroc}, drones seem to help a lot in signal propagation thanks to their altitude. In fact, the scenario without buildings and with real-height buildings yield comparable results. In the third scenario, when the obstacles's heights exceed the second drone layer's height, the shadowing effect is more pronounced for lower transmission range configurations. Overall the total delivery ratio is still acceptable, with neither Fast-Broadcast or ROFF falling under 90\%. \textit{TDROC} in configurations with 100 meters transmission range is affected in a greater way. In fact, as specified above, in this scenario the \textit{TDROC} metric is only about vehicles on the ground, so the greater shadowing due to high buildings yields the expected results.
+	
+	
+	The effects of obstacles on \textit{NOH} (Figure \ref{fig:la-smart-city-noh}) are consistent with those observed in previous scenarios. The metric's value further increases with high buildings, since the signal probably propagates more often on the ground instead of covering larger distances thanks to inter-street drone to vehicle communications. With high buildings the propagation is restrained inside the road, hence the effects of drones are much more limited.
+	
+	
+	Concerning \textit{NOS} (Figure \ref{fig:la-smart-city-nos}, we can notice that the increase is much higher when going from obstacles with real heights to 100 meters high obstacles. For example, focusing on the 300 meters transmission range configuration, for Fast-Broadcast we have an increase of 64.71\% from the first to the second image and of 553.57\% from the second to the third. For ROFF those values are 27.27\% and 114.29\%. Once again, this phenomenon could be due to the same effect explained in the previous paragraph: with inter-street communication heavily impeded and the increase in \textit{NOH}, \textit{NOS} increases as a consequence.
+	
+	
+	Focusing on the 300 and 500 meters transmission range configurations, \textit{FNN} (Figure \ref{fig:la-smart-city-fnn}) increases for Fast-Broadcast and ROFF, both when going from the first image to the second and from the second to the third. This is expected, since in both cases the shadowing effects are increased and a greater number of forwarders is necessary to cover the same area. For the 100 meters case, we can notice some anomalous results: Fast-Broadcast's value stays around the same number, while ROFF's decreases considerably the last two scenarios. The same observation about collision areas in ROFF introduced in Section \ref{sec:grid} might explain this behaviour, but it would affect in a similar way also the 300 and 500 meters configurations. Hence, this phenomenon needs more thorough testing in order to be explained.
+	
+
 	\section{Hello Message forging scenario}
 		During our analysis we wanted to test how vulnerable the algorithms were to attacks where some malicious attacker tries to increase the end to end delay (the NOS metric in our case). The attack consists in sending fake Hello Messages to vehicles during the Estimation Phase in order to mess with their estimations. We tested two different levels of severity on the attack: a low severity one, reported in Section \ref{sec:low-severity}, and a high severity one, reported in Section \ref{sec:high-severity}. Several percentages of affected vehicles (i.e. the vehicles which receive the forged hello message bursts) ranging from 0 to 50\% have been tested. Both tests were carried out using the Los Angeles urban scenario without the effect of the Obstacle model. Only Fast-Broadcast and ROFF algorithms (and their Smart Junction variants) were tested.
 		
@@ -684,6 +704,7 @@
 				\caption{Low severity forging attack scenario configuration based on Los Angeles urban scenario}
 				\label{tab:low-forging}
 			\end{table}
+%		todo foto + commento
 		
 		\subsection{High severity attack}
 			In the high severity attack the number of forged Hello Messages was increased to 1000. Moreover, even the fake positions included in the messages have been increased in a way such that the receivers detected distances ranging from 301 to 1300 meters. Parameters for this scenario are reported in Table \ref{tab:high-forging}.
@@ -716,8 +737,13 @@
 				\label{tab:high-forging}
 			\end{table}
 			
-			%todo immagine
-			In this case it is possible to observe that ROFF is affected a lot more than Fast-Broadcast. Even when jumping from 0\% to only 10\% of affected nodes, ROFF's \textit{NOS} increases more than tenfold, with a value todo higher than Fast-Broadcast. Fast-Broadcast is affected as well when going from 0\% to 10\%, but the increase is much lower. Higher percentages of affected vehicles increase the Number Of Slots even more for ROFF, while Fast-Broadcast caps out after 10\% and its metric's value does not increase.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=1.0\textwidth]{immagini/la-25/forging/nos-high-severity}
+				\label{fig:high-forging}
+			\end{figure}
+		
+			In this case it is possible to observe that ROFF is affected a lot more than Fast-Broadcast. Even when jumping from 0\% to only 10\% of affected nodes, ROFF's \textit{NOS} increases more than tenfold, with a value 57.97\% higher than Fast-Broadcast under the same conditions. Fast-Broadcast is affected as well when going from 0\% to 10\%, but the increase is much lower. Higher percentages of affected vehicles increase the Number Of Slots even more for ROFF, while Fast-Broadcast caps out after 10\% and its metric's value does not increase.
 	
 	\section{Different vehicle density scenario}
 		The previous scenarios all employed a distance between vehicles equal to 25 meters. Real vehicle distributions are obviously different than this idealistic scenario. Moreover, good broadcasting algorithms should work well regardless of vehicle distribution and density. Hence, in this section different vehicle distribution (generated by different distances between vehicles) have been tested. The scenario is based on the Padua urban scenario (Section \ref{sec:padua-urban}, with vehicle distances ranges from 5 to 45 meters. Parameters are reported in Table \ref{table:densities}.
@@ -732,11 +758,12 @@
 				\rowcolor{P} \multicolumn{3}{c}{Scenario configuration} \\
 				\midrule[1pt]
 				Distance between vehicles				& 5, 15, 25, 35, 45		& 		\\
+				Number of vehicles						& 4975, 2856, 1776, 1318, 1072		& 		\\
 				\midrule[1pt]
 				\rowcolor{P} \multicolumn{3}{c}{Network configuration} \\
 				\midrule[1pt]
-				Transmission power						& 4.6					& dBm	\\
-				Transmission range						& 300					&		\\
+				Transmission powers						& -7.0, 4.6, 13.4		& dBm	\\
+				Transmission range						& 100, 300, 500			& m		\\
 				Shadowing model							& No					&		\\
 				Junction modeling						& No					&		\\
 				\midrule[1pt]
@@ -746,14 +773,77 @@
 				FB contention window					& [32, 1024]	& slot	\\
 				ROFF distance range (\textit{k} parameter) & 1					&		\\	
 				\midrule[1pt]
-				Number of simulations per configuration	& 1000					&		\\
+				Number of simulations per configuration	& 1200					&		\\
 				\bottomrule
 			\end{tabularx}
-			\caption{Smaller contention window scenario configuraton based on Los Angeles urban scenario}
+			\caption{Different vehicle densities scenario configuration based on Padua urban scenario}
 			\label{table:densities}
 		\end{table}
 	
-	\section{Contention window}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/density/fb/tdr}
+			\includegraphics[width=1.0\textwidth]{immagini/density/roff/tdr}
+			\caption{\textit{TDR} for Fast-Broadcast (top) and ROFF (bottom) with different distance between vehicles and transmission ranges}
+			\label{fig:density-tdr}
+		\end{figure}
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/density/fb/tdroc}
+			\includegraphics[width=1.0\textwidth]{immagini/density/roff/tdroc}
+			\caption{\textit{TDROC} for Fast-Broadcast (top) and ROFF (bottom) with different distance between vehicles and transmission ranges}
+			\label{fig:density-tdroc}
+		\end{figure}
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/density/fb/noh}
+			\includegraphics[width=1.0\textwidth]{immagini/density/roff/noh}
+			\caption{\textit{NOH} for Fast-Broadcast (top) and ROFF (bottom) with different distance between vehicles and transmission ranges}
+			\label{fig:density-noh}
+		\end{figure}
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.9\textwidth]{immagini/density/fb/nos-1}
+			\includegraphics[width=0.9\textwidth]{immagini/density/fb/nos-2}
+			\includegraphics[width=0.9\textwidth]{immagini/density/roff/nos}
+			\caption{\textit{NOS} for Fast-Broadcast (top) and ROFF (bottom) with different distance between vehicles and transmission ranges}
+			\label{fig:density-nos}
+		\end{figure}
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/density/fb/fnn-1}
+			\includegraphics[width=1.0\textwidth]{immagini/density/roff/fnn-1}
+			\caption{\textit{FNN} for Fast-Broadcast (top) with different distance between vehicles and transmission ranges}
+			\label{fig:density-fnn-1}
+		\end{figure}
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1.0\textwidth]{immagini/density/fb/fnn-2}
+			\includegraphics[width=1.0\textwidth]{immagini/density/roff/fnn-2}
+			\caption{\textit{FNN} for Fast-Broadcast (top) and ROFF (bottom) with different distance between vehicles and transmission ranges (alternative angle)}
+			\label{fig:density-fnn-2}
+		\end{figure}
+	
+		Figure \ref{fig:density-tdr} and \ref{fig:density-tdr} show optimal delivery ratios both total and on the circumference. We can see a small drop in the metrics' values for the 100 meters transmission range and 5 meters vehicle distance configurations. This might be due to higher collisions near the forwarders, which cause the signal to propagate unevenly to all areas of the scenario. Despite this, the values are still acceptable for both algorithms.
+		
+		
+		Concerning NOS (Figure \ref{fig:density-noh}), we notice that ROFF achieves better results in every case. For both algorithms, different vehicle densities do not seem to affect the number of hops by much. This means that the algorithms manage to designate a distant PFC as next forwarder in both high and low density scenarios, with ROFF designation working better as noticed in previous tests.
+		
+		
+		Figure \ref{fig:density-nos} show that \textit{NOS} decreases as the transmission range decreases for Fast-Broadcast. This phenomenon is also due to the decrease in \textit{NOH} noticed in the previous paragraph. We notice how \textit{NOS} increases as the vehicle distance increases (hence the density decreases) under the 100 meters transmission range condition. This is expected, since the FFC can be quite far from the 100 meters mark which guarantees the minimum waiting time for each hop. Hence, the designated PFC could end up waiting a lot longer than a scenario with higher density.
+		ROFF is not affected by either transmission range and vehicle distance due to the waiting time calculation.
+		
+		
+		With 500 meters transmission range a positive correlation can be noticed for Fast-Broadcast's FNN (Figure \ref{fig:density-fnn-1} and \ref{fig:density-fnn-2}). In fact, the value increases as vehicle density increases. This can be explained by the greater number of node waiting the exact same waiting time after a forwarding, which results in a greater number of redundant transmissions. 
+		For both algorithms, a dramatic increase in \textit{FNN} appears when decreasing the transmission range from 300 to 100 meters. With a reduced transmission range, every retransmission reaches a lower number of nodes.
+		
+	
+	\section{Smaller contention window}
 		All previous tests involving Fast-Broadcast have been carried out with a contention window ranging from 32 to 1024 slots. This interval is so wide in order to guarantee correct waiting time calculation even in high vehicle density scenarios. Fast-Broadcast's results on Number Of Slots could benefit from using a narrower contention window. In this scenario, based on the Los Angeles urban scenario, a contention window ranging from 16 to 128 slots will be utilized. Parameters for this scenario are reported in Table \ref{table:fb-cw}.
 		\begin{table}[H]
 			\def\arraystretch{1.1}
@@ -774,7 +864,7 @@
 				FB contention window					& [16, 128], [32, 1024]	& slot	\\
 				ROFF distance range (\textit{k} parameter) & 1					&		\\	
 				\midrule[1pt]
-				Number of simulations per configuration	& 1000					&		\\
+				Number of simulations per configuration	& 600					&		\\
 				\bottomrule
 			\end{tabularx}
 			\caption{Contention window scenario configuraton based on Los Angeles urban scenario}

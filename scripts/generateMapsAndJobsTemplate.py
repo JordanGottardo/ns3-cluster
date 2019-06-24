@@ -41,7 +41,7 @@ def runScenario(cw, scenario, distance, startingNode, vehiclesNumber, area=1000)
 	# Protocols and transmission ranges
 	highBuildings = ["0"]
 	drones = ["0"]
-	buildings = ["0"]
+	buildings = ["1"]
 	#buildings = ["0"]
 	#errorRates = ["0", "10", "20", "30", "40", "50"]
 	errorRates = ["0"]
@@ -49,8 +49,8 @@ def runScenario(cw, scenario, distance, startingNode, vehiclesNumber, area=1000)
 	forgedCoordRates = ["0"]
 	#buildings = ["1"]
 	junctions = ["0"]
-	#protocols = ["5"]
-	protocols = ["1", "2", "3", "4", "5"]
+	protocols = ["1", "2", "3", "4"]
+	#protocols = ["1", "2", "3", "4", "5"]
 	#txRanges = ["100"]
 	txRanges = ["100", "300", "500"]
 	protocolsMap = {
@@ -141,7 +141,7 @@ def runScenario(cw, scenario, distance, startingNode, vehiclesNumber, area=1000)
 
 def main():
 	#Edit these to launch automatically 	forgedCoordRates = ["0", "10", "20", "30", "40", "50", "100"]
-	scenarios = ["Padova-5", "Padova-15", "Padova-35", "Padova-45"]
+	scenarios = ["Padova-25"]
 	#scenarios = ["LA-25"]
 	#scenarios = ["Padova-5", "Padova-15", "Padova-25", "Padova-35", "Padova-45"] 
 	#scenarios = ["Padova-15", "Padova-25", "Padova-35", "Padova-45", "LA-15", "LA-25", "LA-35", "LA-45"]
