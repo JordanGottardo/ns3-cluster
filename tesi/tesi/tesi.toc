@@ -109,6 +109,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {A}Fast-Broadcast}{95}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Fast-Broadcast's improvement on delivery ratios}{95}{section.A.1}
+\contentsline {section}{\numberline {A.1}Fast-Broadcast's improvement on delivery ratios}{96}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Acronyms}{97}{section*.89}
+\contentsline {section}{\numberline {A.2}Fast-Broadcast's non-pejorative effects}{99}{section.A.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Acronyms}{103}{section*.99}
