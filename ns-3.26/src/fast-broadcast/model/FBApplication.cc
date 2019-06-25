@@ -649,12 +649,12 @@ void FBApplication::HandleAlertMessage(Ptr<FBNode> fbNode, FBHeader fbHeader) {
 	// If starter-to-sender distance is less than starter-to-current distance,
 	// then the message is coming from the front and it needs to be menaged,
 	// otherwise do nothing
-	if (distanceCurrentToStarter <= distanceSenderToStarter) { //todo togliere
-		return;
-		NS_LOG_DEBUG("Alert message received by " << fbNode->GetId() << " from node " << fbHeader.GetSenderId() <<
-			" is being considered for forwarding since distanceCurrentToStarter > distanceSenderToStarter " <<
-			distanceCurrentToStarter << " > " << distanceSenderToStarter);
-	}
+//	if (distanceCurrentToStarter <= distanceSenderToStarter) { //todo togliere
+//		return;
+//		NS_LOG_DEBUG("Alert message received by " << fbNode->GetId() << " from node " << fbHeader.GetSenderId() <<
+//			" is being considered for forwarding since distanceCurrentToStarter > distanceSenderToStarter " <<
+//			distanceCurrentToStarter << " > " << distanceSenderToStarter);
+//	}
 	// Compute the size of the contention window
 	uint32_t bmr = fbNode->GetCMBR();
 	uint32_t cwnd = ComputeContetionWindow(bmr, distanceSenderToCurrent_uint);

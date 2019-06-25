@@ -254,7 +254,6 @@ def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, c
 	
 	barWidth = float((float(1)/float(4)) * float(0.90))
 	fig, ax = plt.subplots()
-	print(colors)
 	rects = []
 	count = 0
 	#colors = ["0.3", "0.7"]
@@ -347,19 +346,24 @@ def initCompoundData(txRanges, protocols, metrics):
 				compoundData[txRange][protocol][metricConfInt] = 0
 	return compoundData
 
-def appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics):
+def appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics, alternativeBasePath=""):
 	for txRange in txRanges:
 		for protocol in protocols:
 			path = None
 			roff = False
 			static = False
+			realBasePath = basePath
+			protocolPath = protocol
+			if "TD" in protocol:
+				realBasePath = alternativeBasePath
+				protocolPath = protocol.replace("TD-", "")
 			if ("STATIC" in protocol and txRange not in protocol):
 				static = True
 			if (protocol != "ROFF"):
-				path = os.path.join(basePath, errorRate, "r" + txRange, "j" + junction, cw, protocol)
+				path = os.path.join(realBasePath, errorRate, "r" + txRange, "j" + junction, cw, protocolPath)
 			else: 
 				roff = True
-				path = os.path.join(basePath, errorRate, "r" + txRange, "j" + junction, protocol)
+				path = os.path.join(realBasePath, errorRate, "r" + txRange, "j" + junction, protocolPath)
 			data = graphUtils.readCsvFromDirectory(path, roff, static)
 			entry = compoundData[txRange][protocol]
 			for metric in metrics:
@@ -375,7 +379,6 @@ def printLineComparison():
 	compoundData = initCompoundData(protocols)
 	basePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/line"
 	appendCompoundData(basePath, protocols, compoundData)
-	print(compoundData)
 	printSingleGraphLineComparison()
 
 def printGridComparison():
@@ -388,10 +391,6 @@ def printGridComparison():
 	appendCompoundData(basePathb0, protocols, compoundDatab0)
 	appendCompoundData(basePathb1, protocols, compoundDatab1)
 
-	print("compoundDatab0")
-	print(compoundDatab0)
-	print("compoundDatab1")
-	print(compoundDatab1)
 	#printSingleGraphLineComparison()
 
 #Given a scenario path and buildings/nobuildings, prints graphs for all txRanges and protocols
@@ -401,16 +400,16 @@ def printProtocolComparison():
 	plt.rcParams["figure.figsize"] = [18, 6]
 	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
 	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
-	scenarios = ["Padova-25"]
-	buildings = ["0", "1"]
+	scenarios = ["LA-25"]
+	buildings = ["0"]
 	errorRate = "e0"
 	#txRanges = ["100", "300", "500"]
 	txRanges = ["100", "300", "500"]
 	protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300", "STATIC-500", "ROFF"]
-	#protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300"ROFF"]
+	#protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300", "STATIC-500"]
 	cws = ["cw[32-1024]"]
 	#cws = ["cw[16-128]", "cw[32-1024]"]
-	junctions = ["0", "1"]
+	junctions = ["0"]
 	#junctions = ["0"]
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
 	metricYLabels = {}
@@ -828,6 +827,98 @@ def printDistanceComparison():
 						#print(distanceCompoundData)
 						graphTitle = metricYLabels[metric] + " (" + protocol + " )"
 						printSingleGraphDistance(graphOutFolder, graphTitle, distanceCompoundData, distances, protocol, cw, "500", junctions, metric, yOrigLabel, xLabel , metricYLabels[metric], 0, maxMetricValues[metric], txRanges, colors[protocol])
+
+def printOldFBComparison():
+	print("PrintOldFBComparison")
+	plt.rcParams["figure.figsize"] = [18, 6]
+	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
+	alternativeInitialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano-oldFB"
+	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
+	scenarios = ["LA-25"]
+	buildings = ["1"]
+	errorRate = "e0"
+	#txRanges = ["100", "300", "500"]
+	txRanges = ["100", "300", "500"]
+	#protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300", "STATIC-500", "ROFF"]
+	protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300", "STATIC-500","TD-Fast-Broadcast", "TD-STATIC-100", "TD-STATIC-300", "TD-STATIC-500"]
+	cws = ["cw[32-1024]"]
+	#cws = ["cw[16-128]", "cw[32-1024]"]
+	junctions = ["0"]
+	tds = ["0", "1"]
+	#junctions = ["0"]
+	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
+	metricYLabels = {}
+	metricYLabels["totCoverage"] = "Total Delivery Ratio (%)"
+	metricYLabels["covOnCirc"] = "Total Delivery Ratio On Circ. (%)"
+	metricYLabels["hops"] = "Number Of Hops"
+	metricYLabels["slotsWaited"] = "Number Of Slots"
+	metricYLabels["messageSent"] = "Forwarding Node Number"
+	
+	graphTitles = {}
+	graphTitles["totCoverage"] = "Total Delivery Ratio"
+	graphTitles["covOnCirc"] = "Total Delivery Ratio On Circumference"
+	graphTitles["hops"] = "Number Of Hops"
+	graphTitles["slotsWaited"] = "Number Of Slots"
+	graphTitles["messageSent"] = "Forwarding Node Number"
+
+	additionalTitle = {}
+	additionalTitle["0"] = {} #no buildings
+	additionalTitle["0"]["0"] = " (without buildings)"
+	additionalTitle["0"]["1"] = " (without buildings)"
+
+
+	additionalTitle["1"] = {} #with buildings
+	additionalTitle["1"]["0"] = " (with buildings)" 
+	additionalTitle["1"]["1"] = " (with buildings)" 
+
+	maxMetricValues = {}
+	for metric in metrics:
+		maxMetricValues[metric] = -1
+ 
+	colors = {}
+	colors["0"] = ["#B5B7FF", "#5155D5", "#00034D"] # td0 blu
+	colors["1"] = ["#FFA6A6", "#BD2525", "#510000"] # td1 rosso
+
+	for scenario in scenarios:
+		if ("Platoon" in scenario):
+			buildings = ["0"]
+		for building in buildings:
+			for cw in cws:
+				for junction in junctions:
+						basePath = os.path.join(initialBasePath, scenario, "b" + building)
+						alternativeBasePath = os.path.join(alternativeInitialBasePath, scenario, "b" + building)
+						compoundData = initCompoundData(txRanges, protocols, metrics)
+						appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics, alternativeBasePath)
+						graphOutFolder = os.path.join(scenario, "b" + building, "j" + junction)
+						for metric in metrics:
+							yLabel = metricYLabels[metric]
+							if (metric == "totCoverage" or metric == "covOnCirc"):
+								maxMetricValues[metric] = 100
+							else:
+								for txRange in txRanges:
+									for protocol in protocols:
+										metricMean = metric + "Mean"
+										value = compoundData[txRange][protocol][metricMean] 
+										if ( value > maxMetricValues[metric]):
+											maxMetricValues[metric] = value
+
+	for scenario in scenarios:
+		for building in buildings:
+			for cw in cws:
+				for junction in junctions:
+					basePath = os.path.join(initialBasePath, scenario, "b" + building)
+					alternativeBasePath = os.path.join(alternativeInitialBasePath, scenario, "b" + building)
+					compoundData = initCompoundData(txRanges, protocols, metrics)
+					appendCompoundData(basePath, txRanges, protocols, cw, junction, errorRate, compoundData, metrics, alternativeBasePath)
+					for metric in metrics:
+						for td in tds:
+							graphOutFolder = os.path.join(scenario + "-old-fb", "td-" + td)
+							myProtocols = filter(lambda x: ((td == "0" and "TD" not in x) or (td == "1" and "TD" in x)), protocols)
+							yLabel = metricYLabels[metric]
+							printSingleGraph(graphOutFolder, graphTitles[metric] + additionalTitle[building][junction], compoundData, txRanges, myProtocols, cw, junction, metric, yLabel, 0, maxMetricValues[metric], 
+							colors[td])
+
+
 
 if __name__ == "__main__":
 	main()
