@@ -4,9 +4,11 @@
 
 
 \chapter{Simulations}
+	\label{chapter:simulations}
 	After the protocols under consideration have been presented in Chapters \ref{chapter:fb} and \ref{chapter:roff}, this Chapter will contain the results of the simulation carried out through various scenario of increasing complexity. Numeric results in every chart will be coupled with their 95\% confidence interval.
 	
 	\section{Metrics}
+		\label{sec:metrics}
 		Before proceeding with the presentation of simulation results, metrics used to evaluate the protocol's performances will be presented in this section. 
 		
 		\subsection{Total Delivery Ratio (TDR)}
@@ -675,7 +677,7 @@
 		During our analysis we wanted to test how vulnerable the algorithms were to attacks where some malicious attacker tries to increase the end to end delay (the NOS metric in our case). The attack consists in sending fake Hello Messages to vehicles during the Estimation Phase in order to mess with their estimations. We tested two different levels of severity on the attack: a low severity one, reported in Section \ref{sec:low-severity}, and a high severity one, reported in Section \ref{sec:high-severity}. Several percentages of affected vehicles (i.e. the vehicles which receive the forged hello message bursts) ranging from 0 to 50\% have been tested. Both tests were carried out using the Los Angeles urban scenario without the effect of the Obstacle model. Only Fast-Broadcast and ROFF algorithms (and their Smart Junction variants) were tested.
 		
 		\subsection{Low severity attack} 
-			In the low severity attack the effect of 100 different forged Hello Messages was tested. Each forged message reports a fake position such that the detected distances by the affected node (the receiver) ranges from 301 ($txRange + 1$) to 40 ($txRange + 100$). Parameters for this scenario are reported in Table \ref{tab:low-forging}.
+			In the low severity attack the effect of 100 different forged Hello Messages was tested. Each forged message reports a fake position such that the detected distances by the affected node (the receiver) ranges from 301 ($txRange + 1$) to 450 ($txRange + 150$). Parameters for this scenario are reported in Table \ref{tab:low-forging}.
 			\label{sec:low-severity}
 				\begin{table}[H]
 				\def\arraystretch{1.1}
@@ -688,8 +690,8 @@
 					\rowcolor{P} \multicolumn{3}{c}{Scenario configuration} \\
 					\midrule[1pt]
 					Vehicles affected by forging			& 0, 10, 20, 30, 40, 50 & \%	\\
-					Number of forged messages				& 100					&		\\
-					Forged distances						& 301, 302,...,400		&		\\
+					Number of forged messages				& 150					&		\\
+					Forged distances						& 301, 302,...,450		&		\\
 					\midrule[1pt]
 					\rowcolor{P} \multicolumn{3}{c}{Network configuration} \\
 					\midrule[1pt]
@@ -704,10 +706,23 @@
 				\caption{Low severity forging attack scenario configuration based on Los Angeles urban scenario}
 				\label{tab:low-forging}
 			\end{table}
-%		todo foto + commento
+			
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=1.0\textwidth]{immagini/la-25/forging/nos-low-severity}
+				\label{fig:low-forging}
+			\end{figure}
+					
+			The hello forging attack fills the Neighbor Table of affected ROFF nodes with fake information about neighbors. The priority acquisition process is hence tainted by the fake PFCs, which get top priority due to forged distances being greater than the real transmission range. It is possible to see an increasing trend in ROFF results when the percentage of affected vehicles is increased. In fact, when more vehicles are affected by this attack, the probability of having affected nodes participating in the source-to-circumference message propagation increases, enlarging \textit{NOS} as a consequence.
+			
+			
+			Fast-Broadcast is only affected in a small way when increasing the percentage of affected nodes from 0\% to 10\%. In fact, Fast-Broadcast utilizes only the estimated value of the transmission range for its waiting time computation, and does not take into account other information about the neighbors of a node. Hence, the only variable which affects Fast-Broadcast's \textit{NOS} is the maximum estimated transmission range, which is $450$ in this scenario. This value gets propagated throughout the network over time, despite the number of vehicles initially affected by the forging. As a consequence, the metric's value stabilizes after 0\% and does not when the percentage of affected vehicle is increased.
+			
+			
+			We can notice that ROFF's performances are similar to Fast-Broadcast's with 20\% of affected vehicles. After this threshold, ROFF's value increase further.
 		
 		\subsection{High severity attack}
-			In the high severity attack the number of forged Hello Messages was increased to 1000. Moreover, even the fake positions included in the messages have been increased in a way such that the receivers detected distances ranging from 301 to 1300 meters. Parameters for this scenario are reported in Table \ref{tab:high-forging}.
+			In the high severity attack the number of forged Hello Messages was increased to 1000. As a consequence, the fake positions included in the messages increased in a way such that the receivers detected distances ranging from 301 to 1300 meters. Parameters for this scenario are reported in Table \ref{tab:high-forging}.
 			\label{sec:high-severity}
 			\begin{table}[H]
 				\def\arraystretch{1.1}
@@ -743,7 +758,13 @@
 				\label{fig:high-forging}
 			\end{figure}
 		
-			In this case it is possible to observe that ROFF is affected a lot more than Fast-Broadcast. Even when jumping from 0\% to only 10\% of affected nodes, ROFF's \textit{NOS} increases more than tenfold, with a value 57.97\% higher than Fast-Broadcast under the same conditions. Fast-Broadcast is affected as well when going from 0\% to 10\%, but the increase is much lower. Higher percentages of affected vehicles increase the Number Of Slots even more for ROFF, while Fast-Broadcast caps out after 10\% and its metric's value does not increase.
+			In this case it is possible to observe that ROFF is affected a lot more than Fast-Broadcast by the attack. Even when jumping from 0\% to only 10\% of affected nodes, ROFF's \textit{NOS} increases more than tenfold, with a value 57.97\% higher than Fast-Broadcast under the same conditions. Fast-Broadcast is affected as well when going from 0\% to 10\%, but the increase is much lower. The reason is the same noticed in the previous Section: Fast-Broadcast is affected only by the maximum estimated transmission range (1300 meters in this scenario), while ROFF is also affected by the great number of information about fake neighbors. Higher percentages of affected vehicles increase the Number Of Slots even more for ROFF, while Fast-Broadcast caps out after 10\% and its metric's value does not increase.
+			
+			
+			One can notice that making the attack stronger requires a smaller percentage of affected vehicles in order to make ROFF's the loser against Fast-Broadcast in this kind of confrontation. 
+			
+			
+			As a consequence of these attacks, a possible solution could be the implementation of identification techniques between vehicles in order to discard forged messages.
 	
 	\section{Different vehicle density scenario}
 		The previous scenarios all employed a distance between vehicles equal to 25 meters. Real vehicle distributions are obviously different than this idealistic scenario. Moreover, good broadcasting algorithms should work well regardless of vehicle distribution and density. Hence, in this section different vehicle distribution (generated by different distances between vehicles) have been tested. The scenario is based on the Padua urban scenario (Section \ref{sec:padua-urban}, with vehicle distances ranges from 5 to 45 meters. Parameters are reported in Table \ref{table:densities}.
@@ -919,8 +940,34 @@
 		
 		These observation could suggest that a dynamic contention window, function of node density, number of neighbors or both could benefit Fast-Broadcast greatly.
 		
-
-	
+	\section{Number of Hello Messages computation}
+		All previous tests focused on metrics concerning the Broadcast Phase, i.e. the phase after the event whose information has to be delivered to a certain area has already happened. We deem also important the analysis of the Estimation Phase, i.e. the phase where nodes exchange information about their position, speed and other data in order to get to know their neighbors. In fact, both Fast-Broadcast and ROFF need nodes to exchange some Hello Message with each other in order to make the Alert Message delivery efficient. The focus of this analysis will mainly regard the number of Hello Messages sent, and will show how the number of Hello Messages required by Fast-Broadcast is a lot lower than those required by ROFF. 
+		
+		The following analysis is based on the theoretical formulation of the algorithms and on a simplified version of the Grid scenario (Section \ref{sec:grid}), with 100, 300 and 500 meters transmission range (\textit{txRange}), as usual.  For Fast-Broadcast, whose analysis has proven to be more diffcult, we are interested in a rough estimation of the number of Hello Messages instead of the exact number. 
+		
+		Suppose we have a 1200x1200 meters grid with 5 north-south and 5 east-west roads, where vehicles are placed every 25 meters. In total, the scenario is composed of 455 vehicles. Since both algorithms utilizes \textit{turns} (or \textit{Beacon Intervals}, as they are called in ROFF), i.e. vehicles wait on average a certain amount of time in between Hello Message transmissions, the comparison between the number of Hello Message sent can be carried out by comparing the number of messages sent for each turn/Beacon Interval. For ROFF,the calculation is pretty simple: each vehicle sends a Hello Message every turn. As a consequence, in the scenario at hand, ROFF sends 455 Hello Messages for each turn. For Fast-Broadcast, the estimation depends on how transmission ranges intersect with each other. The maximum number of Hello Messages sent each turn is bounded from above by the number of circumferences with radius \textit{txRange} such that the intersection between the circumferences' area is maximum and the center of each circumference do not lie inside another circumference. Based on this observation, a rough estimation of the number of Hello Message can be seen in Figure \ref{fig:hello-fb}, where the purple dots represent vehicles sending Hello Messages.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.4\textwidth]{immagini/hello-100}
+			\includegraphics[width=0.4\textwidth]{immagini/hello-300}
+			\includegraphics[width=0.4\textwidth]{immagini/hello-500}
+			\caption{Number of Hello Messages sent for Fast-Broadcast with 100 (top), 300 (middle) and 500 (bottom) meters transmission range}
+			\label{fig:hello-fb}
+		\end{figure}
+		
+		By enumeration it is possible to count the number of nodes which send the Alert Message. Table todo shows.
+		
+		
+		Further experimental tests are required to confirm the outcomes of this analysis.
+		
+		
+		Tabellina
+		
+		
+		
+		
+		
 	
 	
 

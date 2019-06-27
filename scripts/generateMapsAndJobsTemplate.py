@@ -41,7 +41,7 @@ def runScenario(cw, scenario, distance, startingNode, vehiclesNumber, area=1000)
 	# Protocols and transmission ranges
 	highBuildings = ["0"]
 	drones = ["0"]
-	buildings = ["1"]
+	buildings = ["0"]
 	#buildings = ["0"]
 	#errorRates = ["0", "10", "20", "30", "40", "50"]
 	errorRates = ["0"]

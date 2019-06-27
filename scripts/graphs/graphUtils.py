@@ -26,7 +26,7 @@ def calculateMeanAndConfInt(list, static=False, castToInt=False):
 		mean = (int) (round(mean))
 	confInt = st.t.interval(0.95, len(npArray)-1, loc=np.mean(npArray), scale=st.sem(npArray))
 	confIntAmplitude = confInt[1] - confInt[0]
-	return mean, confIntAmplitude / 2;
+	return mean, confIntAmplitude / 4;
 
 def readCsvFromDirectory(path, roff=False, static=False):
 	totalNodes = []
