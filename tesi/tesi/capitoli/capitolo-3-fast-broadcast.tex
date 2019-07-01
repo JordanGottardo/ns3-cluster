@@ -10,7 +10,7 @@
 	Fast-Broadcast employs two different phases:
 	\begin{enumerate}
 		\item the \textbf{Estimation Phase}, during which vehicles estimate their frontward and backward transmission range;
-		\item the \textbf{Broadcasts Phase}, during which a vehicle sends an Alert Message and the other cars need to forward it in order to propagate the information.
+		\item the \textbf{Broadcast Phase}, during which a vehicle sends an Alert Message and the other cars need to forward it in order to propagate the information.
 	\end{enumerate}
 
 	\section{Estimation Phase}
@@ -22,15 +22,15 @@
 		
 		Using this approach, vehicles can estimate two different values:
 		\begin{itemize}
-			\item \textit{Current-turn Maximum Front Range (CMFR)}, which estimates the maximum frontward distance from which another car can be heard by the considered one;
-			\item \textit{Current-turn Maximum Back Range} (CMBR), which estimates the maximum backward distance at which the considered car can be heard.
+			\item \textit{Current-turn Maximum Front Range (\textit{CMFR})}, which estimates the maximum frontward distance from which another car can be heard by the considered one;
+			\item \textit{Current-turn Maximum Back Range} (\textit{CMBR}), which estimates the maximum backward distance at which the considered car can be heard.
 		\end{itemize}
 		When the turn expires, the value of these variables is stored in the \textit{LMFR} and \textit{LMBR} variables (\textit{Latest-turn Maximum Front Range} and \textit{Latest-turn Maximum Back Range}, respectively). The algorithm uses both last turn and current turn data because the former guarantees values calculated with a larger pool of Hello Messages, while the latter considers fresher information.
 		
 		When sending a Hello Message (Algorithm \ref{alg:hello-message-sending-1d}), the vehicle initially waits for a random time between 0 and \textit{turnSize}. After this, if it has not heard another Hello Message or a collision, it proceeds to transmit a Hello Message containing the estimation of its frontward transmission range.
 		
 		
-		When receiving a Hello Message (Algorithm \ref{alg:hello-message-receiving-1d}), the vehicle retrieves its position and the sender's position, calculates the distance between these two positions and then updates the CMFR field if the message comes from ahead, otherwise CMBR is updated. The new value is obtained as the maximum between the old CMFR or CMBR value, the distance between the vehicle and the sender, and the sender's transmission range estimation included in the Hello Message.
+		When receiving a Hello Message (Algorithm \ref{alg:hello-message-receiving-1d}), the vehicle retrieves its position and the sender's position, calculates the distance between these two positions and then updates the \textit{CMFR} field if the message comes from ahead, otherwise \textit{CMBR} is updated. The new value is obtained as the maximum between the old \textit{CMFR} or \textit{CMBR} value, the distance between the vehicle and the sender, and the sender's transmission range estimation included in the Hello Message.
 		
 		\begin{algorithm}[H]
 			\begin{algorithmic}[1]
@@ -118,12 +118,12 @@
 		
 		The modifications to the Fast-Broadcast algorithm are the following:
 		\begin{enumerate}
-			\item Utilizing only one parameter between CMBR and CMFR (thus considering only CMR):
-			\item Including the position of the vehicle which originally generated the Alert Message in addition to the position of the sender of the message.
+			\item Utilizing only one parameter between \textit{CMBR} and \textit{CMFR} (thus considering only \textit{CMR}):
+			\item including the position of the vehicle which originally generated the Alert Message in addition to the position of the sender of the message.
 		\end{enumerate}
 		
 		
-		When a vehicle receives an Alert Message, the origin-vehicle distance is confronted with the origin-sender distance: the vehicle can forward the message only if the former is greater than or equal to the latter, otherwise it simply discards the message.
+		As explained in the original extension, when a vehicle receives an Alert Message, the origin-vehicle distance is confronted with the origin-sender distance: the vehicle can forward the message only if the former is greater than or equal to the latter, otherwise it simply discards the message.
 		
 		\begin{figure}[H]
 			\centering
@@ -142,11 +142,9 @@
 		
 		D receives the message from B as well. D is a good candidate for transmission since the origin-vehicle distance, which amounts to 180m, is greater than origin-sender distance, equal to 120m.
 		
-		However, the condition by which vehicles suppressed their transmission when the origin-sender distance was smaller than the origin-sender distance causes delivery problems in particular scenarios, reported in Appendix TODO %todo appendice dove si confrontano i 2 algoritmi FB
+		However, the condition by which vehicles suppressed their transmission when the origin-sender distance was smaller than the origin-sender distance causes delivery problems in particular scenarios, reported in Appendix \ref{chapter:fbmod}. Hence, that condition has been dropped in the algorithm implemented in this work. Referring to the example in Figure \ref{fig:fb-2d}, this change makes vehicle C a forwarder candidate as well.
 		
-		. Hence, that condition has been dropped in the algorithm implemented in this work. Referring to the example in Figure \ref{fig:fb-2d}, this change makes vehicle C a forwarder candidate as well.
-		
-		Algorithm \ref{alg:hello-message-sending-2d}, \ref{alg:hello-message-receiving-2d}, \ref{alg:alert-message-generation-2d} and \ref{alg:alert-message-forwarding-2d} show the implementation for Fast-Broadcast for multiple dimensions (mainly 2D, but this version actually works also for 3D scenario, for example scenarios with only drones or with drones and vehicles).
+		Algorithm \ref{alg:hello-message-sending-2d}, \ref{alg:hello-message-receiving-2d}, \ref{alg:alert-message-generation-2d} and \ref{alg:alert-message-forwarding-2d} show the implementation for Fast-Broadcast for multiple dimensions (mainly 2D, but this version actually works also for 3D scenarios, for example scenarios with only drones or with drones and vehicles).
 		
 		\begin{algorithm}[H]
 			\begin{algorithmic}[1]

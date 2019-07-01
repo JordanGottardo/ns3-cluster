@@ -1,0 +1,66 @@
+% !TEX encoding = UTF-8
+% !TEX TS-program = pdflatex
+% !TEX root = ../tesi.tex
+
+
+\chapter{Conclusions}
+	This chapter will present the conclusions of this work. Section \ref{sec:comparison} will sum up the comparison between the algorithms, while Section \ref{sec:future} presents some future works and extensions that could be implemented.
+	\section{Algorithm comparison and final evaluation}
+		\label{sec:comparison}
+		After thorough testing in several scenarios of increasing complexity, Fast-Broadcast, ROFF and their Smart Junction variants have been compared. While the original algorithms lacked in delivery ratios, especially in more complicated scenarios, such as Padua, where the shadowing effects of the Obstacle Model were more pronounced, the SJ variants managed to reach good and comparable levels of coverage across all the network at the cost of increasing the number of forwarding nodes. Given the similar increase in metrics for both algorithms when junctions are introduced, the final comparison will focus on the original ROFF and Fast-Broadcast algorithms. As is often the case in these kind of analysis, no algorithm emerges as clear winner across the board. Instead, each scheme has its own pros and cons, which will be analyzed in the following paragraphs.
+		
+		
+		The comparison between the number of Hello Messages sent makes Fast-Broadcast a clear winner, with a decreasing number of messages sent when transmission range increases. Instead, ROFF requires every vehicle to transmit its own Hello Message during the estimation phase in order to reach good performances. A good knowledge of the neighborhood is hence paramount for ROFF. Fast-Broadcast can work with a lower number of transmitted messages since the only information needed is the maximum estimated transmission range. 
+		
+		
+		After this consideration about the Estimation Phase, the comparison can now consider the Broadcast Phase after the initial sending of the Alert Message. Several metrics have been utilized in order to test the effectiveness of the algorithms under different points of view. As already explained earlier, both schemes manage to score comparable results from the delivery ratios point of view. The real advantage of ROFF concerns the number of hops and slots to reach the area of interest. ROFF achieves much better results than Fast-Broadcast especially for lower transmission ranges. With higher transmission ranges, the gap is much narrower. The reason that causes ROFF's higher performances is the much more reliable farthest forwarder candidate selection, which reduces hops, and the lower waiting time due to a more precise scheduling and waiting time computation, which reduces the number of slots. This comes with a cost: the number of nodes who forward the Alert Message is higher for ROFF compared to Fast-Broadcast for the majority of 2D and 3D scenarios. One possible cause which concerns collision areas due to a "too perfect" schedulation has been theorised in Section \ref{sec:grid}. A greater number of forwarders could contribute to a dissemination-hindering congestion across the network, especially when paired with other bandwidth consuming applications, which is obviously an undesirable property for a multi-hop broadcasting protocol.
+		
+		
+		Another point against ROFF is its vulnerability to Hello Message forging, which causes the number of slots waited to increase when the percentage of affected vehicles increases. After a certain threshold, which depends on the severity of the attack, ROFF performs worse than Fast-Broadcast in terms of waited slots.
+		
+		
+%		Alert MEssage overhead %todo  
+		
+		
+		Table \ref{table:pros-cons} summarises all the algorithms' pros and cons.
+		
+		\begin{table}[H]
+			\def\arraystretch{1.2}
+%			\rowcolors{2}{D}{P}	
+			\begin{tabularx}{\textwidth}{|l | R{2cm} | c | p{2cm} | l | }
+%				\rowcolor{I} {\large \textcolor{white}{Parameter}} & {\large \textcolor{white}{Value}} & {\large \textcolor{white}{}} \TBstrut  \\
+				\cline{1-5}
+				\multicolumn{2}{|r|}{\textbf{Fast-Broadcast}} & \textbf{Feature} & \multicolumn{2}{|l|}{\textbf{ROFF}} \\
+				\endhead
+				\cline{1-5}
+				\redx & High & Number of slots & Low & \greencheck \\ 
+				\redx & High & Number of hops & Low & \greencheck \\  
+				\greencheck  & Low & Number of Hello Messages & High & \redx \\ 
+				\yellowcheck & Medium & Number of forwarding nodes & High & \redx \\   
+				\greencheck  & Low & Vulnerability to forging & High & \redx \\
+				\cline{1-5}
+			\end{tabularx}
+			\caption{Fast-Broadcast and ROFF's pros and cons}
+			\label{table:pros-cons}
+		\end{table}
+		
+		
+		Considering all the abovementioned advantages and disadvantages of the two algorithms, and considering also the necessity of quick propagation which characterises alert situations, the algorithm which seems to offer more advantages is ROFF. The low number of hops and slots helps reducing the end-to-end delay, delivering the information quickly to the area of interest.  
+		
+
+	\section{Future works}
+		\label{sec:future}
+		The simulation carried out in \ref{sec:smaller-cw} showed how a smaller contention could benefit Fast-Broadcast's performances on the number of slots waited. A possible extension of Fast-Broadcast which could increase its performances could employ a dynamic contention window based on vehicle density. 
+		
+		
+		The smart junctinon extension to the algorithms in this work operates correctly under the assumption that vehicles know junction's locations, for example via a GPS system. Even though these kind of information is widespread nowadays, having a working broadcasting protocol even in emergency situations where GPS system are not available would be desirable. Hence, one possible proposal could identify junctions based on how many directions a vehicle receives other Hello Messages from. For example, a vehicle \textit{f} receiving three different messages from three different directions such that the angle between \textit{f} and the senders is greater than 270\textdegree  could identify itself as a vehicle inside a junction. This backup mode could prove itself useful even when more accurate data about a location are not available or have not been updated in a long time (e.g. smaller cities, rural areas, etc.).
+		
+		
+		Lastly, the current work employed only multi-hop broadcasting protocols in the comparison. An extension of this work could compare the achieved results with probabilist or single-hop protocols (Section \ref{sec:emd} to test the effectiveness of other state of the art algorithms.
+		
+		
+%
+%confronti pro contro
+%pro fb:
+%
+%-minor overhead nell'invio dell'alert message

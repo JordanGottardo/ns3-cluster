@@ -121,6 +121,7 @@
 \usepackage{algorithm} 
 \usepackage{algpseudocode}
 \usepackage{textcomp}
+\usepackage{multirow}
 
 \raggedbottom
 
@@ -151,6 +152,12 @@
 \newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}} % "bottom" strut
 \newcommand{\TBstrut}{\Tstrut\Bstrut} % top&bottom struts
 
+\usepackage{array}
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
+\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+
 %\lstset{% Add other global options here
 %	%basicstyle=\small\sffamily,
 %	escapechar=\&,	% char to escape out of listings and back to LaTeX
@@ -173,7 +180,7 @@
 \input{inizio-fine/frontespizio}
 \input{inizio-fine/colophon}
 %\input{inizio-fine/dedica}
-%\input{inizio-fine/sommario}
+\input{inizio-fine/sommario}
 %\input{inizio-fine/ringraziamenti}
 \input{inizio-fine/indici}
 \cleardoublepage
@@ -188,7 +195,7 @@
 \input{capitoli/capitolo-4-roff}      
 \input{capitoli/capitolo-5-tools-and-applications}            
 \input{capitoli/capitolo-6-simulations}         
-%\input{capitoli/capitolo-4}           
+\input{capitoli/capitolo-7-conclusions}           
 %\input{capitoli/capitolo-4-old}             % Concept Preview
 %\input{capitoli/capitolo-5-old}             % Product Prototype
 %\input{capitoli/capitolo-6-old}             % Product Design Freeze e SOP
