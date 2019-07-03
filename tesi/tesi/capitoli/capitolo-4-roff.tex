@@ -14,7 +14,6 @@
 			
 			
 			Suppose that $S_f=\{f_i | 0 < i \leq N, i \in \mathbb{N} \}$ is the set of PFCs ordered in ascending order by the distance between the previous forwarder and the PFC, where N is the number of PFCs and $f_n$ is the FFC. We define $f_0$ as the previous forwarder.
-			%TODO immagine con 1..n PFC
 			Based on the most common idea in existing protocols, ideally a PFC $f_i$ suppresses its scheduled transmission whenever it receives the transmission from $f_N$. In order to achieve suppression, vehicles from $f_i$ to $f_i-1$ should wait until they receive the transmission from $f_N$ before forwarding. If a vehicle forwards the message before having received the transmission from $f_N$, then a collision will occur. As stated in Section \ref{sec:emd}, existing protocols employ a strategy for waiting time assignment by which each PFC calculates its waiting time based on the distance between itself and the previous forwarder (that is $distance = d_{f_i, f_0}$). As a consequence, successful suppression of all PFCs ($f_1$ to $f_{N-1}$, $f_{N-1}$ included) can be achieved only if the timer of $f_{N-1}$ is long enough to detect the transmission from $f_N$. The authors define $minDiff$ as the minimum time difference between $f_N$ and $f_{N-1}$ to prevent $f_{N-1}$ from forwarding.
 			
 			\begin{figure}[H]
@@ -27,13 +26,13 @@
 			\imgrefcap{fig:minDiff} depicts a situation where $fwd$ is the forwarder and $f_i$ (farther from fwd than $f_{i-1}$) relays the message before $f_{i-1}$. The two vehicles $f_i$ and $f_{i-1}$ complete receiving the message at different times ($t_a$ and $t_b$) due to propagation delay (calculated as $pd = d / s$, where $d$ is the distance between two points in space and $s$ is the wave propagation speed of the medium, i.e. $s=c$, the speed of light, in wireless communication). After reception we have additional amount of time in order to process and retransmit the message:
 			\begin{itemize}
 				\item each PFC spends MAC Processing Delay (MPD) to process the message and then waits for $WT_i$ calculated according to whichever multi-hop algoritm is being used. As explained previously, this waiting time is inversely proportional to the distance between the PFC and $fwd$;
-				\item after timer expiration, each PFC wait for Rx/Tx turnaround time ($Rx/Tx$), in order to switch their interface from reception to transmission mode.
+				\item after timer expiration, each PFC waits for Rx/Tx turnaround time ($Rx/Tx$), in order to switch their interface from reception to transmission mode.
 			\end{itemize}
-			After $f_i$ has forwarded the message, $f_{i-1}$ starts receiving it at $t_d$, $t_d-t_c$  being equal to $pd{f_{i-1}, f_i}$. The time between the PHY module of $f_{i-1}$ starts reception and the MAC module of the same vehicle is aware of reception is called $CCATime$. Hence, if $f_{i-1}$'s timer expires between $t_a$ and $t_e$, $f_{i-1}$'s transmission will collide with $f_i$'s. In order to accomplish succesful suppression, $f_{i-1}$'s timer should not expire  before $t_e$. 
+			After $f_i$ has forwarded the message, $f_{i-1}$ starts receiving it at $t_d$, $t_d-t_c$  being equal to $pd{f_{i-1}, f_i}$. The time between the PHY module of $f_{i-1}$ starts reception and the MAC module of the same vehicle is aware of reception is called $CCATime$. Hence, if $f_{i-1}$'s timer expires between $t_a$ and $t_e$, $f_{i-1}$'s transmission will collide with $f_i$'s. In order to accomplish successful suppression, $f_{i-1}$'s timer should not expire  before $t_e$. 
 			
 			
 			Given the fact that propagation delay is not controllable and MPD, $Rx/Tx$ and $CCATime$ are usually standard-defined parameters, an algorithm can only manage the difference between waiting times of $f_i$ and $f_{i-1}$ (represented by $WT_i$ and $WT_{i-1}$ respectively in the following formula).
-			To achieve succesful suppression, $f_{i-1}$ should wait until the forwarding from $f_i$ is detected by $f_{i-1}$'s MAC layer, so $MPD+WT_{i-1}$ should be greater than $t_e - t_a$. Hence, the formula for $minDiff$ is the following:
+			To achieve successful suppression, $f_{i-1}$ should wait until the forwarding from $f_i$ is detected by $f_{i-1}$'s MAC layer, so $MPD+WT_{i-1}$ should be greater than $t_e - t_a$. Hence, the formula for $minDiff$ is the following:
 			
 			\begin{gather}
 				\label{eq:minDiff}
@@ -58,21 +57,21 @@
 				\label{fig:emptySpace}
 			\end{figure}
 			
-			Suppose that $S_v = \{v_i | 0 < i \leq M\}$ is a set of M vehicles inside NFA with vehicles ordered by distance between the vehicle and the previous forwarder in ascending order. Referring to Figure \ref{fig:emptySpace} , the empty space $ES_i,i-1$ between $v_i$ and $v_{i-1}$ is the segment within the two circles centered in $fwd$ with radius $d_{i-1}$ and $d_i$ respectively. Hence, the size of $ES_i,i-1$ is equal to $d_i - d{i-1}$.
+			Suppose that $S_v = \{v_i | 0 < i \leq M\}$ is a set of M vehicles inside NFA with vehicles ordered by distance between the vehicle and the previous forwarder in ascending order. Referring to Figure \ref{fig:emptySpace} , the empty space $ES_i,i-1$ between $v_i$ and $v_{i-1}$ is the segment within the two circles centered in $fwd$ with radius $d_{i-1}$ and $d_i$ respectively. Hence, the size of $ES_{i,i-1}$ is equal to $d_i - d_{i-1}$.
 			
 			
-			Large empty spaces have a negative effect on forwarding latency. There is no guarantee that the farthest vehicle from the previous forwarder become the FFC: lossy channel environments, shadowing and other phenomena can make any vehicle within NFA become the forwarder. Suppose that $fwd$ is the previous forwarder and there are two vehicles, $A$ and $B$, inside NFA where A is farther from $fwd$ than $B$, $A$ has not received the transmission from $fwd$ while B has. The empty space $ES_A,B$ between $A$ and $B$ influences the forwarding latency:
+			Large empty spaces have a negative effect on forwarding latency. There is no guarantee that the farthest vehicle from the previous forwarder become the FFC: lossy channel environments, shadowing and other phenomena can make any vehicle within NFA become the forwarder. Suppose that $fwd$ is the previous forwarder and there are two vehicles, $A$ and $B$, inside NFA where A is farther from $fwd$ than $B$, $A$ has not received the transmission from $fwd$ while B has. The empty space $ES_{A,B}$ between $A$ and $B$ influences the forwarding latency:
 			\begin{itemize}
-				\item if  $ES_A,B$ is small, $B$ relays the message after a short waiting time;
-				\item if $ES_A,B$ is large, $B$ waits needlessly (since there is no other vehicle farther from $fwd$ which has received the message) a large amount of time.
+				\item if  $ES_{A,B}$ is small, $B$ relays the message after a short waiting time;
+				\item if $ES_{A,B}$ is large, $B$ waits needlessly (since there is no other vehicle farther from $fwd$ which has received the message) a large amount of time.
 			\end{itemize}
-			ROFF aims at resolving the effect of empty spaces by allowing vehicles to choose waiting time inversely proportional to their \textit{unique forwarding priority} proportional to the distance between the vehicle and the previous forwarder, instead of using directly such distance in the waiting time computation.
+			ROFF aims at resolving the effect of empty spaces by allowing vehicles to choose waiting time directly proportional to their \textit{unique forwarding priority} proportional to the distance between the vehicle and the previous forwarder, instead of using directly such distance in the waiting time computation.
 		
 	\section{ROFF Algorithm}
 		The ROFF algorithm works under the following two assumptions:
 		\begin{enumerate}
 			\item each vehicle has access to a GPS system and a digital map;
-			\item vehicles periodically (e.g. every 100 milliseconds) broadcast a Hello message containing various information, such as its position, velocity, etc. The period between each Hello message broadcast is called \textit{Beacon Interval}.
+			\item vehicles periodically (e.g. every 100 milliseconds) broadcast a Hello Message containing various information, such as its position, velocity, etc. The period between each Hello Message broadcast is called \textit{Beacon Interval}.
 		\end{enumerate}
 		The algorithm is composed of three components, as depicted in Figure \ref{fig:roffAlgo}.
 	
@@ -85,9 +84,9 @@
 	
 		The algorithm in short works as follows (additional information will be given in the following sections):
 		\begin{itemize}
-			\item when a forwarder relays an Alert Message, it also broadcasts a special structure called ESD Bitmap which describe the empty space distribution within the forwarders' NFA;
+			\item when a forwarder relays an Alert Message, it also broadcasts a special structure called ESD Bitmap which describes the empty space distribution within the forwarder's NFA;
 			\item PFCs which receive the Alert Message and the ESD Bitmap decide whether they are eligible for contention based on the ESD Bitmap;
-			\item Eligible PFCs contend by choosing different waiting times based on a unique forwarding priority.
+			\item eligible PFCs contend by choosing different waiting times based on a unique forwarding priority.
 		\end{itemize}
 	
 		\subsection{ESD Bitmap Construction}
@@ -97,7 +96,7 @@
 				\item the position of the neighbor;
 				\item the reception time of the Hello Message to verify the freshness of information and remove outdates entries.
 			\end{itemize}
-			An example of Neighbor Table of node with ID 0 is represented in Picture \ref{fig:nbt}.
+			An example of Neighbor Table of node with ID 0 is represented in Figure \ref{fig:nbt}.
 				
 			\begin{figure}[H]
 				\centering
@@ -126,7 +125,7 @@
 				\item 0 otherwise.
 			\end{itemize} 
 			The parameter \textit{k}, called \textit{distance range}, identifies how many distances can be identified by the same bit in the ESD Bitmap. This parameter can be controlled to manage the compression level and the accuracy of the Bitmap. Increasing \textit{k} decreases the number of bits of the Bitmap, but every bit will identify \textit{k} different distances, hence losing precision.
-			Picture \ref{fig:esdBitmapConstruction} shows the construction of an ESD Bitmap using $k = 1$.
+			Figure \ref{fig:esdBitmapConstruction} shows the construction of an ESD Bitmap using $k = 1$.
 			
 			
 			An ESD Bitmap using $k = 2$ is show in Figure \ref{fig:esdBitmapConstructionK2}. It is possible to see that the bit in position 4 represents distances $d$ such that $8 \leq d \leq 9$. 
@@ -155,7 +154,7 @@
 			\end{figure}
 		
 		\subsection{Waiting Time Assignment}
-			Once forwarding priorities are determined, ROFF assigns a waiting time to each vehicle that is inversely proportional to the priority. Letting $PFC(i)$ be the PFC with forwarding priority $i$ and $WT_p$ the waiting time of PFC $p$, in order to achieve successful suppression of transmission by $PFC(i-1)$, the waiting time of $PFC(i-1)$ should be at least longer by $minDiff_{PFC(i), PFC(i-1)}$ than waiting time of $PFC(i)$ (i.e. $WT_{PFC(i-1)} \geq WT_{PFC(i)} + minDiff_{PFC(i), PFC(i-1)})$. Hence, the waiting time of $PFC(k)$ is the sum of $minDiff$s (calculated using Equation \ref{eq:minDiff}) between PFCs with forwarding priorities lower than $k$, as shown in Equation \ref{eq:waitingTimeAssignment}. PFC with top priority (being equal to 1) broadcasts immediately and does not have to wait any time.
+			Once forwarding priorities are determined, ROFF assigns a waiting time to each vehicle that is inversely proportional to the priority. Letting $PFC(i)$ be the PFC with forwarding priority $i$ and $WT_p$ the waiting time of PFC $p$, in order to achieve successful suppression of transmission by $PFC(i-1)$, the waiting time of $PFC(i-1)$ should be at least longer by $minDiff_{PFC(i), PFC(i-1)}$ than waiting time of $PFC(i)$ (i.e. $WT_{PFC(i-1)} \geq WT_{PFC(i)} + minDiff_{PFC(i), PFC(i-1)})$. Hence, the waiting time of $PFC(k)$ is the sum of $minDiff$s (calculated using Equation \ref{eq:minDiff}) between PFCs with forwarding priorities lower than $k$, as shown in Equation \ref{eq:waitingTimeAssignment}. The PFC with top priority (being equal to 1) broadcasts immediately and does not have to wait any time.
 			
 			\begin{gather}
 				WT_{PFC(k)} = \sum_{i=2}^{k} minDiff_{PFC(i),PFC(i-1)} (k \geq 2)
@@ -171,7 +170,7 @@
 				\label{fig:waitingTimeAssignment}
 			\end{figure}
 			
-			When calculating $minDiff$ as explained in Section \ref{ssec:collision-analysis}, , $MPD$, $Rx/Tx$ and $CCATime$ are fixed system parameters; the only variables are propagation delays between vehicles, which are dependent on distance. Since coordinates are not included in the ESD Bitmap (only distances are), each PFC needs to identify the coordinates of the previous forwarder's neighbors. In other words, whenever a PFC $f_i$ receives the ESD Bitmap from $fwd$ and calculates its own waiting time, it checks for each distance $dist$ in $L_{dist}$ whether there is a vehicle $f_j$ distant $dist$ from $fwd$ (i.e. $d(fwd, f_j) = dist$. If such vehicle exists, then $f_i$ uses $f_j$ coordinates in the propagation delay (hence $minDiff$) calculation, otherwise it disregards $dist$ in the computation since possibly there is no vehicle distant $dist$ from $fwd$ in $f_i$'s local view.
+			When calculating $minDiff$ as explained in Section \ref{ssec:collision-analysis}, $MPD$, $Rx/Tx$ and $CCATime$ are fixed system parameters; the only variables are propagation delays between vehicles, which are dependent on distance. Since coordinates are not included in the ESD Bitmap (only distances are), each PFC needs to identify the coordinates of the previous forwarder's neighbors. In other words, whenever a PFC $f_i$ receives the ESD Bitmap from $fwd$ and calculates its own waiting time, it checks for each distance $dist$ in $L_{dist}$ whether there is a vehicle $f_j$ distant $dist$ from $fwd$ (i.e. $d(fwd, f_j) = dist$) inside its own NBT. If such vehicle exists, then $f_i$ uses $f_j$'s coordinates in the propagation delay (hence $minDiff$) calculation, otherwise it disregards $dist$ in the computation since possibly there is no vehicle distant $dist$ from $fwd$ in $f_i$'s local view.
 			
 	\section{Multiple dimensions extension}
 		
@@ -280,7 +279,7 @@
 			\end{itemize}
 	
 	\section{Smart Junction ROFF (SJ-ROFF)}
-		Since ROFF does not consider junctions in the default algorithm, the proposal explained in Section \ref{sj:fb} could also bring benefits to it. Hence, we have implemented a Smart Junction variant of ROFF (called SJ-ROFF) following the logic of SJ-Fast-Broadcast. The modifications to the base algorithm are fairly simple: two fields have been added to the Alert Message Header to indicate whether the sender is inside a junction (and the ID of the junction, if it is). Algorithm \ref{sj-roff-alert-message-generation} and \ref{alg:sj-roff-alert-message-forwarding} show the updated functionalities of Alert Message creation and forwarding. Hello Message algorithms are unchanged.
+		Since ROFF does not consider junctions in the default algorithm, the proposal explained in Section \ref{sj:fb} could also bring benefits to it. Hence, we have implemented a Smart Junction variant of ROFF (called SJ-ROFF) following the logic of SJ-Fast-Broadcast. The modifications to the base algorithm are fairly simple: two fields have been added to the Alert Message Header to indicate whether the sender is inside a junction (and the ID of the junction, if it is). Algorithm \ref{alg:sj-roff-alert-message-generation} and \ref{alg:sj-roff-alert-message-forwarding} show the updated functionalities of Alert Message creation and forwarding. Hello Message algorithms are unchanged.
 		
 		\begin{algorithm}[H]
 			\begin{algorithmic}[1]
@@ -309,7 +308,7 @@
 				\State dist $\gets$ distance(myPosition, senderPosition)
 				\State myRank $\gets$ getRank(dist, listOfDistances)
 				\State wait $\gets$ computeWaitTime(myRank)
-				\If{(sameBroadcastHeardFromBack() $\land$ vehicleNotInJunction()) $\lor$ (sameBroadcastHeardFromBack() $\land$ vehicleInJunction(j) tel$\land$ alertMsg.senderInJunction $\land$ alertMsg.junctionId == j)}
+				\If{(sameBroadcastHeardFromBack() $\land$ vehicleNotInJunction()) $\lor$ (sameBroadcastHeardFromBack() $\land$ vehicleInJunction(j) $\land$ alertMsg.senderInJunction $\land$ alertMsg.junctionId == j)}
 				\State exit()
 				\ElsIf{sameBroadcastHeardFromFront()}
 				\State restartBroadcastProcedure()

@@ -287,7 +287,7 @@
 				\State cwnd $\gets$ computeCwnd()
 				\State waitTime $\gets$ random(cwnd)
 				\State wait(waitTime)
-				\If{(sameBroadcastHeardFromBack() $\land$ vehicleNotInJunction()) $\lor$ (sameBroadcastHeardFromBack() $\land$ vehicleInJunction(j) tel$\land$ alertMsg.senderInJunction $\land$ alertMsg.junctionId == j)}
+				\If{(sameBroadcastHeardFromBack() $\land$ vehicleNotInJunction()) $\lor$ (sameBroadcastHeardFromBack() $\land$ vehicleInJunction(j) $\land$ alertMsg.senderInJunction $\land$ alertMsg.junctionId == j)}
 				\State exit()
 				\ElsIf{sameBroadcastHeardFromFront()}
 				\State restartBroadcastProcedure()

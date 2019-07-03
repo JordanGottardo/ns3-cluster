@@ -50,13 +50,13 @@
 
 	\section{Future works}
 		\label{sec:future}
-		The simulation carried out in \ref{sec:smaller-cw} showed how a smaller contention could benefit Fast-Broadcast's performances on the number of slots waited. A possible extension of Fast-Broadcast which could increase its performances could employ a dynamic contention window based on vehicle density. 
+		The simulations carried out in Section \ref{sec:smaller-cw} showed how a smaller contention window could benefit Fast-Broadcast's performances on the number of slots waited. A possible extension of Fast-Broadcast which could increase its performances could employ a dynamic contention window based on vehicle density. 
 		
 		
-		The smart junctinon extension to the algorithms in this work operates correctly under the assumption that vehicles know junction's locations, for example via a GPS system. Even though these kind of information is widespread nowadays, having a working broadcasting protocol even in emergency situations where GPS system are not available would be desirable. Hence, one possible proposal could identify junctions based on how many directions a vehicle receives other Hello Messages from. For example, a vehicle \textit{f} receiving three different messages from three different directions such that the angle between \textit{f} and the senders is greater than 270\textdegree  could identify itself as a vehicle inside a junction. This backup mode could prove itself useful even when more accurate data about a location are not available or have not been updated in a long time (e.g. smaller cities, rural areas, etc.).
+		The smart junction extension to the algorithms in this work operates correctly under the assumption that vehicles know junctions' locations, for example via a GPS system. Even though these kind of information is widespread nowadays, having a working broadcasting protocol even in emergency situations where GPS system are not available would be desirable. Hence, one possible proposal could identify junctions based on how many directions a vehicle receives other Hello Messages from. For example, a vehicle \textit{f} receiving three different messages from three different directions such that the angle between \textit{f} and the senders is greater than {270\textdegree} could identify itself as a vehicle inside a junction. This backup mode could prove itself useful even when more accurate data about a location are not available or have not been updated in a long time (e.g. smaller cities, rural areas, etc.).
 		
 		
-		Lastly, the current work employed only multi-hop broadcasting protocols in the comparison. An extension of this work could compare the achieved results with probabilist or single-hop protocols (Section \ref{sec:emd} to test the effectiveness of other state of the art algorithms.
+		Lastly, the current work employed only multi-hop broadcasting protocols in the comparison. An extension of this work could compare the achieved results with probabilist or single-hop protocols (Section \ref{sec:emd}) to test the effectiveness of other state of the art algorithms.
 		
 		
 %

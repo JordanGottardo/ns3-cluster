@@ -9,12 +9,12 @@
 	\begin{itemize}
 		\item Fast-Broadcast and SJ-Fast-Broadcast;
 		\item ROFF and SJ-ROFF;
-		\item STATIC variants of Fast-Broadcast (e.g. STATIC-100), which behave like Fast-Broadcast but do not employ a transmission range estimation. The only use a static parameter (for example 100 meters for STATIC-100) and use it in the Broadcast Phase;
-		\item SJ-STATIC variants of Fast-Broadcast, which also considers junctions during message propagation.
+		\item STATIC variants of Fast-Broadcast (e.g. STATIC-100), which behave like Fast-Broadcast but do not employ a transmission range estimation. They only use a static parameter (for example 100 meters for STATIC-100) and use it in the Broadcast Phase;
+		\item SJ-STATIC variants of Fast-Broadcast, which also considers junctions during message propagation, but do not employ a transmission range estimation.
 	\end{itemize}
 	
 	
-	Numeric results in every chart will be coupled with their 95\% confidence interval. All following simulation have been run on the High Performance Computing platform of the University of Padua, Department of Mathematics\cite{cluster}.
+	Numeric results in every chart will be coupled with their 95\% confidence interval. All following simulation have been run on the High Performance Computing platform of the University of Padua, Department of Mathematics \cite{cluster}.
 	
 	\section{Metrics}
 		\label{sec:metrics}
@@ -32,7 +32,7 @@
 			All scenarios are created in a way such that every node can be reached by multi-hop propagation regardless of the source of the Alert Message. In other words, from graph theory point of view, the graph resulting from vehicle distribution where two nodes are connected only if they are within transmission range of each other is a connected graph. This way, the term at the denominator of Equation \ref{eq:tdr} is equivalent to the number of vehicles reachable by pure flooding.
 			
 		\subsection{Total Delivery Ratio On Circumference (TDROC)}
-			This metric is used to detect how many vehicles on the circumference (i.e. the area of interest where the alert data has to be delivered) have received the Alert Message. The circumference is built starting from the source of the Alert Message. The way it is built depends on scenario topology (e.g. 1D, 2D, etc) and will be explained more thoroughly in the following sections.Basically, this metric considers only vehicles far from the source of the AM, instead of all vehicles as in the previous metric. Hence, this is used to measure how effective the algorithm is at delivering the message far from the origin. The metric is calculated as follows:
+			This metric is used to detect how many vehicles on the circumference (i.e. the area of interest where the alert data has to be delivered) have received the Alert Message. The circumference is built starting from the source of the Alert Message. The way it is built depends on scenario topology (e.g. 1D, 2D, etc) and will be explained more thoroughly in the following sections. Basically, this metric considers only vehicles far from the source of the AM, instead of all vehicles as in the previous metric. Hence, this is used to measure how effective the algorithm is at delivering the message far from the origin. The metric is calculated as follows:
 			
 			\begin{gather}
 			 	\label{eq:tdroc}
@@ -42,7 +42,7 @@
 			The same consideration about vehicles and reachability by pure flooding presented in Section \ref{ssec:tdr} is also valid for Equation \ref{eq:tdroc}.
 			
 		\subsection{Number Of Hops (NOH)}
-			This metric is used to measure the mean number of hops required in order to propagate the Alert Message from the source to all vehicles reached on the circumference. This value is obviously dependent on the paths taken by forwarded Alert Messages from the source to all destinations. We have that \textit{NOH} is always greater than or equal to the \textit{Optimal Number of Hops ONOH} (i.e. $ONOH \leq NOH$). \textit{NOH} is calculated using the following formula:
+			This metric is used to measure the mean number of hops required in order to propagate the Alert Message from the source to all vehicles reached on the circumference. This value is obviously dependent on the paths taken by forwarded Alert Messages from the source to all destinations. We have that \textit{NOH} is always greater than or equal to the \textit{Optimal Number of Hops ONOH} (i.e. $ONOH \leq NOH$). \textit{ONOH} is calculated using the following formula:
 			$$ ONOH = \frac{\textrm{\textit{Circumference Radius}}}{\textrm{\textit{Transmission Range}}} $$
 			
 			The Number Of Hops metric can be calculated as follows:
@@ -98,8 +98,8 @@
 			\end{gather}	
 				
 	\section{Platoon scenario}
-		The first scenario taken into consideration is a simple one-dimensional platoon scenario, where vehicles are placed in a strip-like area 15 kilometers long. Vehicles are 25 meters distant from each other. Transmission ranges of 100, 300 and 500 has been employed during simulations. 
-		Parameters for this scenario are included in Table \ref{table:platoon}.  These parameters will also be true for all following scenarios, unless specified otherwise.
+		The first scenario taken into consideration is a simple one-dimensional platoon scenario, where vehicles are placed in a strip-like area 15 kilometers long. Vehicles are 25 meters distant from each other. Transmission ranges of 100, 300 and 500 meters has been employed during simulations. 
+		Parameters for this scenario are included in Table \ref{table:platoon}.  These parameters will also be valid for all following scenarios, unless specified otherwise.
 		
 		\begin{table}[H]
 			\def\arraystretch{1.1}
@@ -171,7 +171,7 @@
 		Considering the Number Of Hops, ROFF's results are 11.76\%, 6.54\% and 9.08\% lower than Fast-Broadcast's results respectively for 100, 300 and 500 meters transmission range. ROFF's results are close to the optimal number of hops, respectively 140, 46.6 and 28 for the same transmission ranges as above. This means that the forwarder selection algorithms based on ESD Bitmap works better at choosing the farthest vehicle from the previous forwarder compared to the contention window approach for 1D scenarios. Considering STATIC variants of Fast-Broadcast, it is possible to observe that the STATIC-tx variant produces comparable results with Fast-Broadcast with \textit{tx} transmission range (e.g. STATIC-100 value is comparable to Fast-Broadcast with 100 meters transmission range), as expected. The STATIC protocol performs worse (hence the Number of Hops increases) whenever the transmission range is underestimated (e.g. STATIC-100 with 300 meters transmission range, compared to Fast-Broadcast with the same transmission range) or overestimated (e.g. STATIC-500 with 100 meters transmission range, compared to Fast-Broadcast with the same transmission range). This behaviour is expected, as reported in \cite{BAR2017}.
 		
 		
-		Regarding the Number of Slots, ROFF performs much better than Fast-Broadcast. The metric's value is decreased respectively by 97.92\%, 92.27\% and 90.85\% using ROFF. The waiting time calculation, based on unique forwarding priority instead of distance, guarantees a much lower wait compared to Fast-Broadcast contention window approach. As before, STATIC approaches produce results comparable with Fast-Broadcast when the transmission range estimation is correct. Instead, the Number of Slots greatly increases when the transmission range is underestimated and decreases when the transmission range is overestimated. In this last case, the decrease in \textit{NOS} comes with an increase in Number Of Hops reported in the previous paragraph, so an overestimation of transmission range is not desirable.
+		Regarding the Number of Slots, ROFF performs much better than Fast-Broadcast. The metric's value is decreased respectively by 97.92\%, 92.27\% and 90.85\% using ROFF. The waiting time calculation, based on unique forwarding priority instead of distance, guarantees a much lower wait compared to Fast-Broadcast's contention window approach. As before, STATIC approaches produce results comparable with Fast-Broadcast when the transmission range estimation is correct. Instead, the Number of Slots greatly increases when the transmission range is underestimated and decreases when the transmission range is overestimated. In this last case, the decrease in \textit{NOS} comes with an increase in Number Of Hops reported in the previous paragraph, so an overestimation of transmission range is not desirable.
 		
 		
 		Lastly, it is possible to see that ROFF achieves a better suppression of redundant transmissions, guaranteeing a decrease of 19.71\%, 33.33\% and 42.31\% respectively for each one of the transmission ranges considered.
@@ -260,10 +260,10 @@
 		
 		\newpage
 		
-		All the algorithms perform well as far as delivery ratios are concerned (Figure \ref{fig:grid-tdr} \ref{fig:grid-tdroc}), for both configurations with and without buildings. This means that the shadowing caused by the Obstacle Model does not create no-reach zones, and the signal manages to find its way to almost all of the vehicles. The regular pattern by which vehicles are placed may help with that: further testing where this hypothesis is removed will be presented in the next sections. Even though delivery ratios are unchanged, the effect of the Obstacle model can be observed qualitatively comparing Figure \ref{fig:fb-b0-grid-transmission} and \ref{fig:fb-b1-grid-transmission} for Fast-Broadcast, and Figure \ref{fig:roff-b0-grid-transmission} and \ref{fig:roff-b1-grid-transmission} for ROFF. The effects of obstacles on propagation cause the signal to travel only through roads segments where line of sight is possible. Instead, without obstacles the signal can be propagated freely in all directions.
+		All the algorithms perform well as far as delivery ratios are concerned (Figure \ref{fig:grid-tdr} and \ref{fig:grid-tdroc}), for both configurations with and without buildings. This means that the shadowing caused by the Obstacle Model does not create no-reach zones, and the signal manages to find its way to almost all of the vehicles. The regular pattern by which vehicles are placed may help with that: further testing where this hypothesis is removed will be presented in the next sections. Even though delivery ratios are unchanged, the effect of the Obstacle model can be observed qualitatively comparing Figure \ref{fig:fb-b0-grid-transmission} and \ref{fig:fb-b1-grid-transmission} for Fast-Broadcast, and Figure \ref{fig:roff-b0-grid-transmission} and \ref{fig:roff-b1-grid-transmission} for ROFF. The effects of obstacles on propagation cause the signal to travel only through roads segments where line of sight is possible. Instead, without obstacles the signal can be propagated freely in all directions.
 		
 		
-		Moreover, Fast-Broadcast and ROFF can be compared with each other by looking at Figure \ref{fig:fb-b0-grid-transmission} and \ref{fig:roff-b0-grid-transmission} for the scenario without buildings, and Figure \ref{fig:fb-b1-grid-transmission} and \ref{fig:roff-b1-grid-transmission} for the scenario with buildings. In both cases, ROFF designates the furthest PFC as the next forwarder much more reliably than Fast-Broadcast thanks to the Neighbor Table mechanism. Instead, Fast-Broadcast relies on a random choice of waiting time, so the next designated forwarder is sometimes not one of the farthest vehicles from the previous forwarder. Based on this observation, we can expect a much lower NOH value for ROFF. Quantitative analysis of this and other metrics will be reported in the next paragraphs of this section.
+		Moreover, Fast-Broadcast and ROFF can be compared with each other by looking at Figure \ref{fig:fb-b0-grid-transmission} and \ref{fig:roff-b0-grid-transmission} for the scenario without buildings, and Figure \ref{fig:fb-b1-grid-transmission} and \ref{fig:roff-b1-grid-transmission} for the scenario with buildings. In both cases, ROFF designates the farthest PFC as the next forwarder much more reliably than Fast-Broadcast thanks to the Neighbor Table mechanism. Instead, Fast-Broadcast relies on a random choice of waiting time, so the next designated forwarder is sometimes not one of the farthest vehicles from the previous forwarder. Based on this observation, we can expect a much lower NOH value for ROFF. Quantitative analysis of this and other metrics will be reported in the next paragraphs of this section.
 		
 		\begin{figure}[H]
 			\centering
@@ -435,7 +435,7 @@
 		The introduction of the smart junction variants of the algorithms proves to be fairly effective, increasing \textit{TDR} by 3,52\% and 5,03\% when employing SJ-Fast-Broadcast instead of Fast-Broadcast for the scenario with buildings and transmission range of 100 and 300 meters respectively. Increases of the same magnitude can be noticed when utilizing SJ-ROFF instead of ROFF. With regards to \textit{TDROC}, both SJ-Fast-Broadcast and SJ-ROFF reach 100\% for 300 and 500 meters transmission ranges, while having a mild increase of around 3,40\% for 100 meters transmission range.
 		
 		
-		Considering the Number Of Hops to reach the circumference (\ref{fig:la-25-noh}), we can observe that the introduction of the shadowing model leads to an increase in the metric's value across all algorithms. Comparing the first and third configuration, \textit{NOH} rises by 8.98\%, 53.74\% and 115.68\% for Fast-Broadcast, and by 3.85\%, 36.27\% and 64.69\% for ROFF, for the three increasing transmission ranges. We notice that:
+		Considering the Number Of Hops to reach the circumference (Figure \ref{fig:la-25-noh}), we can observe that the introduction of the shadowing model leads to an increase in the metric's value across all algorithms. Comparing the first and third configuration, \textit{NOH} rises by 8.98\%, 53.74\% and 115.68\% for Fast-Broadcast, and by 3.85\%, 36.27\% and 64.69\% for ROFF, for the three increasing transmission ranges. We notice that:
 		\begin{enumerate}
 			\item the rise increases with the increase in transmission range;
 			\item Fast-Broadcast is affected in a greater way by the shadowing model compared to ROFF.
@@ -549,10 +549,10 @@
 		In this scenario the effects of obstacle shadowing on delivery ratios is quite large, especially for the 300 and 500 meters cases, for all algorithms. We have a decrease in \textit{TDR} (Figure \ref{fig:padua-25-tdr}) of around 65\% for Fast-Broadcast in both transmission ranges when introducing buildings (first and third images), which results in quite poor performances. The Smart Junction variants of Fast-Broadcast manages to reach pretty good results in Total Delivery Ratio (fourth image), with 72.1\% and 91.42\% for the two transmission ranges. ROFF's results are even worse before the introduction of junctions, with \textit{TDR} below 10\% for the lowest transmission range. Even in this case, SJ-ROFF manages to improve the values, slightly overcoming SJ-Fast-Broadcast's results.
 		
 		
-		The same observations hold true even for \textit{TDROC} (\ref{fig:padua-25-tdr}). Hence, the benefits of junctions are twofold even for this scenario regarding delivery ratios.
+		The same observations hold true even for \textit{TDROC} (Figure 	\ref{fig:padua-25-tdr}). Hence, the benefits of junctions are twofold even for this scenario regarding delivery ratios.
 		
 		
-		Concerning \textit{NOS}, the increase due to the obstacle model is even more pronounced than the previous scenario for both algorithms. Due to the lower coverage, it is possible that the few messages who reach the circumference go through a very irregular path and  one-hop progress is quite low. The introduction of junctions, as in the Los Angeles scenario, causes a decrease in \textit{NOH}. One anomalous results is ROFF with 100 meters transmission range, whose values shoots up by more than 232\% when comparing it with SJ-ROFF, and is much higher than SJ-Fast-Broadcast under the same conditions. This phenomenon might be due to the harsher vehicle distribution, obstacle and junction positioning which cause the signal to follow very long paths from the source to the circumference. With the other two transmission ranges, SJ-ROFF outperforms SJ-Fast-Broadcast.
+		Concerning \textit{NOS}, the increase due to the obstacle model is even more pronounced than the previous scenario for both algorithms. Due to the lower coverage, it is possible that the few messages which reach the circumference go through a very irregular path and  one-hop progress is quite low. The introduction of junctions, as in the Los Angeles scenario, causes a decrease in \textit{NOH}. One anomalous results is ROFF with 100 meters transmission range, whose values shoots up by more than 232\% when comparing it with SJ-ROFF, and is much higher than SJ-Fast-Broadcast under the same conditions. This phenomenon might be due to the harsher vehicle distribution, obstacle and junction positioning which cause the signal to follow very long paths from the source to the circumference. With the other two transmission ranges, SJ-ROFF outperforms SJ-Fast-Broadcast.
 		
 		
 		Results for \textit{NOH} and \textit{FNN} are comparable with the ones observed in previous scenarios.
@@ -583,7 +583,7 @@
 		\end{figure}
 		\newpage
 		
-		In this scenario, the \textit{TDR} metric considers delivery to all entities in the scenario (both vehicles and drones), while the circumference relative to the area of interest continues to be defined in the same way as the 2D Los Angeles urban scenario, hence TDROC concerns exclusively vehicles.
+		In this scenario, the \textit{TDR} metric considers delivery to all entities in the scenario (both vehicles and drones), while the circumference relative to the area of interest continues to be defined in the same way as the 2D Los Angeles urban scenario, hence \textit{TDROC} concerns exclusively vehicles.
 		
 		
 		All configurations are reported in Figure \ref{fig:la-smart-city-overview}, whose colors will guide the following graph results. Table \ref{tab:la-smart-city} reports all the scenario settings.
@@ -734,7 +734,7 @@
 			The hello forging attack fills the Neighbor Table of affected ROFF nodes with fake information about neighbors. The priority acquisition process is hence tainted by the fake PFCs, which get top priority due to forged distances being greater than the real transmission range. It is possible to see an increasing trend in ROFF results when the percentage of affected vehicles is increased. In fact, when more vehicles are affected by this attack, the probability of having affected nodes participating in the source-to-circumference message propagation increases, enlarging \textit{NOS} as a consequence.
 			
 			
-			Fast-Broadcast is only affected in a small way when increasing the percentage of affected nodes from 0\% to 10\%. In fact, Fast-Broadcast utilizes only the estimated value of the transmission range for its waiting time computation, and does not take into account other information about the neighbors of a node. Hence, the only variable which affects Fast-Broadcast's \textit{NOS} is the maximum estimated transmission range, which is $450$ in this scenario . This value gets propagated throughout the network over time, despite the number of vehicles initially affected by the forging. As a consequence, the metric's value stabilizes after the percentage of affected vehicles is greater than 0\% and does not increase further when that percentage is increased.
+			Fast-Broadcast is only affected in a small way when increasing the percentage of affected nodes from 0\% to 10\%. In fact, Fast-Broadcast utilizes only the estimated value of the transmission range for its waiting time computation, and does not take into account other information about the neighbors of a node. Hence, the only variable which affects Fast-Broadcast's \textit{NOS} is the maximum estimated transmission range, which is 450 meters in this scenario . This value gets propagated throughout the network over time, despite the number of vehicles initially affected by the forging. As a consequence, the metric's value stabilizes after the percentage of affected vehicles is greater than 0\% and does not increase further when that percentage is increased.
 			
 			
 			We can notice that ROFF's performances are similar to Fast-Broadcast's with 20\% of affected vehicles. After this threshold, ROFF's value increase further.
