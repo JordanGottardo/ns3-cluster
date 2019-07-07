@@ -46,7 +46,7 @@
 		\subsection{Key elements}
 			The element at the base of ns-3 is called \textit{node}, instance of \texttt{ns3::Node}. A node can be thought of as a shell of a computer. Various other elements can be added to nodes, such as:
 			\begin{itemize}
-				\item NetDevices (e.g. \acrshort{nica}s, which enable nodes to communicate over \textit{channels});
+				\item NetDevices (e.g., \acrshort{nica}s, which enable nodes to communicate over \textit{channels});
 				\item protocols;
 				\item applications. 
 			\end{itemize}
@@ -58,7 +58,7 @@
 		\subsection{Structure of a simulation}
 			A simulation can be implemented in many ways, but in most cases the following steps are executed:
 			\begin{itemize}
-				\item manage command line arguments (e.g. number of nodes to consider in the simulation, transmission range, etc.);
+				\item manage command line arguments (e.g., number of nodes to consider in the simulation, transmission range, etc.);
 				\item initialize all the necessary fields in classes;
 				\item create nodes;
 				\item set up physical and MAC layers;
@@ -95,7 +95,7 @@
 		\end{enumerate}
 		The process of generating these two files necessary for ns-3 simulations requires some intermediate steps. The full process is represented in Figure \ref{fig:sumo-process}. 
 		
-		The original work considered a only a distance of 25 meters between vehicles; this work considers various distances, ranging from 5 to 45 meters. Figure \ref{fig:sumo-distances}  shows the same scenario (Padua) with different distances between vehicles.
+		The original work considered a only a distance of 25m between vehicles; this work considers various distances, ranging from 5m to 45m. Figure \ref{fig:sumo-distances}  shows the same scenario (Padua) with different distances between vehicles.
 		
 		
 		One of the intermediate results, the \texttt{.net} file which describes the road infrastructure using a graph resulting from \textit{Netconvert}, has been utilized for junction modeling, as explained in Section \ref{sec:junction-modeling}.
@@ -109,6 +109,6 @@
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth]{immagini/sumo-distances}
-			\caption{Padua scenario with vehicle distance equals to 15 meters (top) and 45 meters (bottom)}
+			\caption{Padua scenario with vehicle distance equals to 15m (top) and 45m (bottom)}
 			\label{fig:sumo-distances}
 		\end{figure}

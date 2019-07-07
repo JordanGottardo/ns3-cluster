@@ -140,7 +140,7 @@
 		Now suppose that C receives the message from B. C computes origin-vehicle distance, $d(A, C)$, and origin-sender distance, $d(A, B)$, which amount to 70 and 120m respectively. Since the former is not greater than or equal to the latter, C is not a candidate for forwarding and suppresses the transmission.
 		
 		
-		D receives the message from B as well. D is a good candidate for transmission since the origin-vehicle distance, which amounts to 180m, is greater than origin-sender distance, equal to 120m.
+		D receives the message from B as well. D is a good candidate for becoming the next forwarder since the origin-vehicle distance, which amounts to 180m, is greater than origin-sender distance, equal to 120m.
 		
 		However, the condition by which vehicles suppressed their transmission when the origin-sender distance was smaller than the origin-sender distance causes delivery problems in particular scenarios, reported in Appendix \ref{chapter:fbmod}. Hence, that condition has been dropped in the algorithm implemented in this work. Referring to the example in Figure \ref{fig:fb-2d}, this change makes vehicle C a forwarder candidate as well.
 		
@@ -245,13 +245,13 @@
 			\item in one direction, if the forwarder is not inside a junction and the road segment is surrounded by buildings which block the signal;
 			\item in three directions, whenever the forwarder lies inside a junction. 
 		\end{itemize}
-		Actually the signal travels respectively in two and four directions, but we are not considering the direction where the previous Alert Message is coming from (i.e. we are only considering forwarding towards previously uncovered areas in this analysis).
+		Actually the signal travels respectively in two and four directions, but we are not considering the direction where the previous Alert Message is coming from (i.e., we are only considering forwarding towards previously uncovered areas in this analysis).
 		Referring to Figure \ref{fig:fb-junction-0}, if the message is coming from the top and A and B forwards it, then only vehicles in the north-south road will be reached. Vehicles on the west-east road will be reached by the Alert Message at a later point, if the propagation circles back to them through another road, otherwise they will never be informed about the alert. If C is also forced to forward, then we have coverage across all road segments and the propagation can continue towards all directions. Figure \ref{fig:fb-junction-1} shows an example where SJ-Fast-Broadcast is employed and a greater coverage is achieved.
 		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth]{immagini/fb-junction-0}
-			\caption{Usual Fast-Broadcast Alert Message propagation}
+			\caption{Regular Fast-Broadcast Alert Message propagation}
 			\label{fig:fb-junction-0}
 		\end{figure}
 	

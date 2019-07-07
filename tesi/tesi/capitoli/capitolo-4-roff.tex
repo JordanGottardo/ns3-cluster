@@ -23,7 +23,7 @@
 				\label{fig:minDiff}
 			\end{figure}
 		
-			\imgrefcap{fig:minDiff} depicts a situation where $fwd$ is the forwarder and $f_i$ (farther from fwd than $f_{i-1}$) relays the message before $f_{i-1}$. The two vehicles $f_i$ and $f_{i-1}$ complete receiving the message at different times ($t_a$ and $t_b$) due to propagation delay (calculated as $pd = d / s$, where $d$ is the distance between two points in space and $s$ is the wave propagation speed of the medium, i.e. $s=c$, the speed of light, in wireless communication). After reception we have additional amount of time in order to process and retransmit the message:
+			\imgrefcap{fig:minDiff} depicts a scenario where $fwd$ is the forwarder and $f_i$ (farther from fwd than $f_{i-1}$) relays the message before $f_{i-1}$. The two vehicles $f_i$ and $f_{i-1}$ complete receiving the message at different times ($t_a$ and $t_b$) due to propagation delay (calculated as $pd = d / s$, where $d$ is the distance between two points in space and $s$ is the wave propagation speed of the medium, i.e., $s=c$, the speed of light, in wireless communication). After reception we have additional amount of time in order to process and retransmit the message:
 			\begin{itemize}
 				\item each PFC spends MAC Processing Delay (MPD) to process the message and then waits for $WT_i$ calculated according to whichever multi-hop algoritm is being used. As explained previously, this waiting time is inversely proportional to the distance between the PFC and $fwd$;
 				\item after timer expiration, each PFC waits for Rx/Tx turnaround time ($Rx/Tx$), in order to switch their interface from reception to transmission mode.
@@ -71,13 +71,13 @@
 		The ROFF algorithm works under the following two assumptions:
 		\begin{enumerate}
 			\item each vehicle has access to a GPS system and a digital map;
-			\item vehicles periodically (e.g. every 100 milliseconds) broadcast a Hello Message containing various information, such as its position, velocity, etc. The period between each Hello Message broadcast is called \textit{Beacon Interval}.
+			\item vehicles periodically (e.g., every 100 milliseconds) broadcast a Hello Message containing various information, such as its position, velocity, etc. The period between each Hello Message broadcast is called \textit{Beacon Interval}.
 		\end{enumerate}
 		The algorithm is composed of three components, as depicted in Figure \ref{fig:roffAlgo}.
 	
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.7\textwidth]{immagini/roffAlgo}
+			\includegraphics[width=0.6\textwidth]{immagini/roffAlgo}
 			\caption{Components of ROFF algorithm}
 			\label{fig:roffAlgo}
 		\end{figure}
@@ -90,7 +90,7 @@
 		\end{itemize}
 	
 		\subsection{ESD Bitmap Construction}
-			Upon Hello Message reception, each vehicle uses the data within the message in order to update and maintain a structure called Neighbor Table (NBT) which monitors its local view (i.e. all the vehicles in the neighborhood of said vehicle). Each entry of the NBT contains:
+			Upon Hello Message reception, each vehicle uses the data within the message in order to update and maintain a structure called Neighbor Table (NBT) which monitors its local view (i.e., all the vehicles in the neighborhood of said vehicle). Each entry of the NBT contains:
 			\begin{itemize}
 				\item the ID of the neighbor;
 				\item the position of the neighbor;
@@ -138,7 +138,7 @@
 			\end{figure}
 		
 		\subsection{Forwarding Priority Acquisition}
-			Whenever a PFC $f_i$ receives the Alert Message with included the ESD Bitmap from $fwd$, it checks whether the distance between itself and the previous forwarder is listed inside the bitmap (i.e. $f_i$ checks whether the bit in position $d(fwd, f_i)$ in the bitmap is equal to 1, assuming $k = 1$). If so, $f_i$ can participate in contention since it is inside the \textit{local view} of $fwd$. Otherwise, is cannot participate in contention to forward the Alert Message.
+			Whenever a PFC $f_i$ receives the Alert Message with included the ESD Bitmap from $fwd$, it checks whether the distance between itself and the previous forwarder is listed inside the bitmap (i.e., $f_i$ checks whether the bit in position $d(fwd, f_i)$ in the bitmap is equal to 1, assuming $k = 1$). If so, $f_i$ can participate in contention since it is inside the \textit{local view} of $fwd$. Otherwise, is cannot participate in contention to forward the Alert Message.
 			
 			
 			After $f_i$ has entered contention, it can calculate its own forwarding priority based on the distances express by the ESD Bitmap. These distances are the distances of every other PFC which can participate in contention. Assuming that $L_{dist}$ is the list of distances ordered in ascending order and $distance = d(fwd, f_i)$, $f_i$'s forwarding priority is set as the rank of $distance$ inside $L_{dist}$. This way PFCs that are farther away from $fwd$ are assigned a higher forwarding priority, while PFCs nearer $fwd$ are assigned a lower forwarding priority.
@@ -154,7 +154,7 @@
 			\end{figure}
 		
 		\subsection{Waiting Time Assignment}
-			Once forwarding priorities are determined, ROFF assigns a waiting time to each vehicle that is inversely proportional to the priority. Letting $PFC(i)$ be the PFC with forwarding priority $i$ and $WT_p$ the waiting time of PFC $p$, in order to achieve successful suppression of transmission by $PFC(i-1)$, the waiting time of $PFC(i-1)$ should be at least longer by $minDiff_{PFC(i), PFC(i-1)}$ than waiting time of $PFC(i)$ (i.e. $WT_{PFC(i-1)} \geq WT_{PFC(i)} + minDiff_{PFC(i), PFC(i-1)})$. Hence, the waiting time of $PFC(k)$ is the sum of $minDiff$s (calculated using Equation \ref{eq:minDiff}) between PFCs with forwarding priorities lower than $k$, as shown in Equation \ref{eq:waitingTimeAssignment}. The PFC with top priority (being equal to 1) broadcasts immediately and does not have to wait any time.
+			Once forwarding priorities are determined, ROFF assigns a waiting time to each vehicle that is inversely proportional to the priority. Letting $PFC(i)$ be the PFC with forwarding priority $i$ and $WT_p$ the waiting time of PFC $p$, in order to achieve successful suppression of transmission by $PFC(i-1)$, the waiting time of $PFC(i-1)$ should be at least longer by $minDiff_{PFC(i), PFC(i-1)}$ than waiting time of $PFC(i)$ (i.e., $WT_{PFC(i-1)} \geq WT_{PFC(i)} + minDiff_{PFC(i), PFC(i-1)})$. Hence, the waiting time of $PFC(k)$ is the sum of $minDiff$s (calculated using Equation \ref{eq:minDiff}) between PFCs with forwarding priorities lower than $k$, as shown in Equation \ref{eq:waitingTimeAssignment}. The PFC with top priority (being equal to 1) broadcasts immediately and does not have to wait any time.
 			
 			\begin{gather}
 				WT_{PFC(k)} = \sum_{i=2}^{k} minDiff_{PFC(i),PFC(i-1)} (k \geq 2)
@@ -170,7 +170,7 @@
 				\label{fig:waitingTimeAssignment}
 			\end{figure}
 			
-			When calculating $minDiff$ as explained in Section \ref{ssec:collision-analysis}, $MPD$, $Rx/Tx$ and $CCATime$ are fixed system parameters; the only variables are propagation delays between vehicles, which are dependent on distance. Since coordinates are not included in the ESD Bitmap (only distances are), each PFC needs to identify the coordinates of the previous forwarder's neighbors. In other words, whenever a PFC $f_i$ receives the ESD Bitmap from $fwd$ and calculates its own waiting time, it checks for each distance $dist$ in $L_{dist}$ whether there is a vehicle $f_j$ distant $dist$ from $fwd$ (i.e. $d(fwd, f_j) = dist$) inside its own NBT. If such vehicle exists, then $f_i$ uses $f_j$'s coordinates in the propagation delay (hence $minDiff$) calculation, otherwise it disregards $dist$ in the computation since possibly there is no vehicle distant $dist$ from $fwd$ in $f_i$'s local view.
+			When calculating $minDiff$ as explained in Section \ref{ssec:collision-analysis}, $MPD$, $Rx/Tx$ and $CCATime$ are fixed system parameters; the only variables are propagation delays between vehicles, which are dependent on distance. Since coordinates are not included in the ESD Bitmap (only distances are), each PFC needs to identify the coordinates of the previous forwarder's neighbors. In other words, whenever a PFC $f_i$ receives the ESD Bitmap from $fwd$ and calculates its own waiting time, it checks for each distance $dist$ in $L_{dist}$ whether there is a vehicle $f_j$ distant $dist$ from $fwd$ (i.e., $d(fwd, f_j) = dist$) inside its own NBT. If such vehicle exists, then $f_i$ uses $f_j$'s coordinates in the propagation delay (hence $minDiff$) calculation, otherwise it disregards $dist$ in the computation since possibly there is no vehicle distant $dist$ from $fwd$ in $f_i$'s local view.
 			
 	\section{Multiple dimensions extension}
 		
@@ -279,7 +279,7 @@
 			\end{itemize}
 	
 	\section{Smart Junction ROFF (SJ-ROFF)}
-		Since ROFF does not consider junctions in the default algorithm, the proposal explained in Section \ref{sj:fb} could also bring benefits to it. Hence, we have implemented a Smart Junction variant of ROFF (called SJ-ROFF) following the logic of SJ-Fast-Broadcast. The modifications to the base algorithm are fairly simple: two fields have been added to the Alert Message Header to indicate whether the sender is inside a junction (and the ID of the junction, if it is). Algorithm \ref{alg:sj-roff-alert-message-generation} and \ref{alg:sj-roff-alert-message-forwarding} show the updated functionalities of Alert Message creation and forwarding. Hello Message algorithms are unchanged.
+		Since ROFF does not consider junctions in the default algorithm, the proposal explained in Section \ref{sj:fb} could also bring benefits to it. Hence, we have implemented a Smart Junction variant of ROFF (called SJ-ROFF) following the logic of SJ-Fast-Broadcast. The modifications to the base algorithm are fairly simple: two fields have been added to the Alert Message Header to indicate whether the sender is located within a junction (and the ID of the junction, if it is). Algorithm \ref{alg:sj-roff-alert-message-generation} and \ref{alg:sj-roff-alert-message-forwarding} show the updated functionalities of Alert Message creation and forwarding. Hello Message algorithms are unchanged.
 		
 		\begin{algorithm}[H]
 			\begin{algorithmic}[1]

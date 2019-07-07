@@ -2,7 +2,7 @@
 % !TEX TS-program = pdflatex
 % !TEX root = ../tesi.tex
 
-\chapter{Models}	
+\chapter{Obstacle and Junction Models}	
 	In this Chapter the models implemented and utilized in this work will be presented, namely the Obstacle Shadowing propagation loss model (Section \ref{sec:shadowing}) and the Junction model (Section \ref{sec:junction-modeling}).
 	
 	\section{Obstacle Shadowing propagation loss model}
@@ -52,7 +52,7 @@
 			\label{fig:sumo-obstacle}
 		\end{figure}
 	
-	\section{Junction modeling}
+	\section{Junction model}
 		\label{sec:junction-modeling}
 		Part of this work consisted in implementing extensions for the algorithms which will be presented in Chapter \ref{chapter:fb} and \ref{chapter:roff} to utilize road junctions in a smart way. These extensions aim to reach a higher number of vehicles during the Alert Message propagation. In order for those extension to work, a model to identify and represent junctions was necessary. Using data retrieved from OpenStreetMap elaborated through SUMO (see Section \ref{sec:sumo} for the full process), it has been possible to retrieve information about junctions present inside a urban scenario. Figure \ref{fig:junction} shows the JSON representation of a junction.
 		
@@ -69,7 +69,7 @@
 			\item the \textit{shape} attribute, containing coordinates which represent its shape.
 		\end{itemize}
 		
-		Using from this data it was possible to establish the junction modeling process, represented in Figure \ref{fig:junction-process}. Since the \textit{shape} attribute resulted in a polygon too small for the purpose of this work, a bounding box which extends the polygon by 20 meters in each direction has been implemented.
+		Using from this data it was possible to establish the junction modeling process, represented in Figure \ref{fig:junction-process}. Since the \textit{shape} attribute resulted in a polygon too small for the purpose of this work, a bounding box which extends the polygon by 20m in each direction has been implemented.
 		
 		\begin{figure}[H]
 			\centering

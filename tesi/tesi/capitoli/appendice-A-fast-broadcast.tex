@@ -51,10 +51,10 @@
 			\label{fig:td-fnn}
 		\end{figure}
 
-	Figure \ref{fig:td-tdr} and \ref{fig:td-tdroc} show that TD-Fast-Broadcast struggles to deliver message across the network, even with 500 meters transmission range. The results are poor especially for the lowest transmission ranges, where the achieved delivery ratios are under 10\%. The removal of the suppression based on distance improve Fast-Broadcast's delivery ratios for all three transmission range configurations. 
+	Figure \ref{fig:td-tdr} and \ref{fig:td-tdroc} show that TD-Fast-Broadcast struggles to deliver message across the network, even with 500m transmission range. The results are poor especially for the lowest transmission ranges, where the achieved delivery ratios are under 10\%. The removal of the suppression based on distance improve Fast-Broadcast's delivery ratios for all three transmission range configurations. 
 	
 	
-	Figure \ref{fig:td-noh}, \ref{fig:td-nos} and \ref{fig:td-fnn} show an increase in all three metric's value (except for \textit{NOS} with 500 meters transmission range), but it is important to remember how those metrics are calculated (Section \ref{sec:metrics}). \textit{NOS} and \textit{NOH} take into consideration the nodes on the circumference reached by the Alert Message. Fast-Broadcast reaches a greater number of nodes on the circumference, hence the metric is calculated on different sets of vehicles. Moreover, the increase in \textit{FNN} results in a greater coverage, which is a desirable property. Overall, Fast-Broadcast brings about a great increase in delivery ratios. The non pejorative effects of Fast-Broadcast on the other metrics in a scenario where TD-Fast-Broadcast delivery ratio is not poor will be analyzed in the next section.
+	Figure \ref{fig:td-noh}, \ref{fig:td-nos} and \ref{fig:td-fnn} show an increase in all three metric's value (except for \textit{NOS} with 500m transmission range), but it is important to remember how those metrics are calculated (Section \ref{sec:metrics}). \textit{NOS} and \textit{NOH} take into consideration the nodes on the circumference reached by the Alert Message. Fast-Broadcast reaches a greater number of nodes on the circumference, hence the metric is calculated on different sets of vehicles. Moreover, the increase in \textit{FNN} results in a greater coverage, which is a desirable property. Overall, Fast-Broadcast brings about a great increase in delivery ratios. The non pejorative effects of Fast-Broadcast on the other metrics in a scenario where TD-Fast-Broadcast delivery ratio is not poor will be analyzed in the next section.
 	
 	\section{Fast-Broadcast's non-pejorative effects}
 		\begin{figure}[H]
@@ -97,7 +97,7 @@
 				\label{fig:la-td-fnn}
 		\end{figure}
 		
-		The increase in delivery ratios brought about by Fast-Broadcast is visible also in this scenario. If we focus on the 500 meters transmisison range delivery ratios in Figure \ref{fig:la-td-tdr} and \ref{fig:la-td-tdroc}, the increase is not so severe (from 90.86\% to 99.55\% for \textit{TDR} and from 93.45\% to 99.68\% from \textit{TDROC}), so we will utilize this configuration to notice the non pejorative effects on the other metrics.
+		The increase in delivery ratios brought about by Fast-Broadcast is visible also in this scenario. If we focus on the 500m transmisison range delivery ratios in Figure \ref{fig:la-td-tdr} and \ref{fig:la-td-tdroc}, the increase is not so severe (from 90.86\% to 99.55\% for \textit{TDR} and from 93.45\% to 99.68\% from \textit{TDROC}), so we will utilize this configuration to notice the non pejorative effects on the other metrics.
 		\textit{NOH} (Figure \ref{fig:la-td-noh}) increases by 23.35\%, but this is coupled with a decrease in \textit{NOS} of 46.44\%. Basically, the paths taken from the source to the circumference are slightly longer in terms of hops, but the number of slots waited is a lot smaller. Overall, the decrease in \textit{NOS} outweighs the slight increase in \textit{NOH}, making Fast-Broadcast a winner under this point of view.
 		
 		

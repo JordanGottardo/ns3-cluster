@@ -3,130 +3,128 @@
 % !TEX root = ../tesi.tex
 
 \chapter{Introduction}
-	This Chapter will introduce Emergency Message Dissemination in \acrshort{vaneta}s in Section \ref{sec:emd} and radio propagation models in Section \ref{sec:rpm}.
-	\section{Emergency Message Dissemination and broadcasting protocols}
-		\label{sec:emd}
-		Emergency Message Dissemination (EMD) is a fundamental application in \acrshort{vaneta}s to prevent traffic accidents, thereby reducing death and injury rates. Such task can be executed by the VANET itself by turning it into an infrastructure-less self-organizing network, where the dissemination is carried out by specific protocols. 
+	\label{sec:emd}
+%	This Chapter will introduce Emergency Message Dissemination in \acrshort{vaneta}s in Section \ref{sec:emd} and radio propagation models in Section \ref{sec:rpm}.
+	Emergency Message Dissemination (EMD) is a fundamental application in \acrshort{vaneta}s to prevent traffic accidents, thereby reducing death and injury rates. Such task can be executed by the VANET itself by turning it into an infrastructure-less self-organizing network, where the dissemination is carried out by specific protocols. 
+	
+	
+	Since traffic information, especially emergency data, has a broadcast-oriented nature (i.e., it is of public interest), it is more appropriate to disseminate it using broadcasting routing schemes rather than unicast or multicast ones.\cite{5989903}
+	
+	This choice leads to some advantages, such as:
+	\begin{itemize}
+		\item the fact that vehicles do not need to know the destination address and how to calculate a route towards it;
+		\item a greater coverage of vehicles interested in the information, useful also in lossy scenarios, especially when paired with controlled redundancy schemes;
+		\item a greater efficiency in bandwidth usage.
+	\end{itemize}
+	
+	The idea behind existing algorithms consists in designating the next forwarder in the multi-hop chain from the source of the alert to the target region where the sensitive data has to be delivered. Ideally, the farthest vehicle from a previous forwarder in the dissemination direction should be given priority when designating the next forwarder. However, due to unreliable wireless channel, the designation of the farthest vehicle can fail and interrupt the message dissemination. Therefore, the next forwarder designation keeps into consideration also other vehicles (called potential forwarder candidates, PFCs) which have received an Alert Message. The PFCs participate in a contention to elect the farthest forwarder candidate (FFC) which will continue disseminating the message.
+	
+	
+	In order to carry out the forwarder designation process, the main idea consists in differentiating waiting times (WT) of PFCs. Each PFC should select a waiting time ranging from 0 to a predefined upper bound (PUB). To guarantee the correct designation of the farthest vehicle as forwarder, PFCs choose their waiting time inversely proportional to the distance between the PFC and the previous forwarder. This way other candidates can detect the transmission from the FFC and suppress their transmission.
+	
+	Advancements in research on EMD has lead to the development of a number of broadcasting protocols. However, as identified by {Panichpapiboon} et al.\cite{5989903}, most of them belong to one of two main categories:
+	\begin{itemize}
+		\item Single-hop Broadcasting Protocols, in which no flooding is employed. Instead, vehicles periodically select and broadcast only a subset of the packets it has received;
+		\item Multi-hop Broadcasting Protocols, in which packets are transmitted through the network via flooding by some of the neighbors of the source. It is of utmost importance to reduce the number of redundant transmissions in order not to waste bandwidth and saturate the channel.
+	\end{itemize}
 		
-		
-		Since traffic information, especially emergency data, has a broadcast-oriented nature (i.e. it is of public interest), it is more appropriate to disseminate it using broadcasting routing schemes rather than unicast or multicast ones.\cite{5989903}
-		%		suddivisione broadcasting protocols
-		
-		This choice leads to some advantages, such as:
+	\section{Single-hop Broadcasting Protocols}
+		Vehicles employing Single-Hop Broadcasting protocols will not flood received packets through the network. Instead, vehicles use information from packets to update their database and periodically rebroadcast only a fraction of that information. The two variables these kinds of protocol can work on to aim for greater network efficiency are:
 		\begin{itemize}
-			\item the fact that vehicles do not need to know the destination address and how to calculate a route towards it;
-			\item a greater coverage of vehicles interested in the information, useful also in lossy scenarios, especially when paired with controlled redundancy schemes;
-			\item a greater efficiency in bandwidth usage.
+			\item \textit{Broadcast Interval}, which is the amount of time between retransmissions. When modulating this variable, it is important to keep into consideration both freshness of information and potential redundancy in transmissions;
+			\item \textit{Relevancy of information} to broadcast: as stated before, only relevant information (i.e., a subset of all the information) should be broadcast.
 		\end{itemize}
 		
-		The idea behind existing algorithms consists in designating the next forwarder in the multi-hop chain from the source of the alert to the target region where the sensitive data has to be delivered. Ideally, the farthest vehicle from a previous forwarder in the dissemination direction should be given priority when designating the next forwarder. However, due to unreliable wireless channel, the designation of farthest vehicle can fail and interrupt the message dissemination. Due to this, next forwarder designation keeps into consideration also other vehicles (called potential forwarder candidates, PFCs) which have received an Alert Message. The PFCs participate in contention to elect the farthest forwarder candidate (FFC) who will continue disseminating the message.
-		
-		
-		In order to carry out the forwarder designation process, the main idea consists in differentiating waiting times (WT) of PFCs. Each PFC should select a waiting time ranging from 0 to a predefined upper bound (PUB). To guarantee the correct designation of the farthest vehicle as forwarder, PFCs choose their waiting time inversely proportional to the distance between the PFC and the previous forwarder. This way other candidates can detect the transmission from the FFC and suppress their transmission.
-		
-		Advancements in research on Emergency Message Dissemination has lead to the development of a number of broadcasting protocols. However, as identified by Panichpapiboon et al.\cite{5989903}, most of them belong to one of two main categories:
-		\begin{itemize}
-			\item Single-hop Broadcasting Protocols, in which no flooding is employed. Instead, vehicles periodically select and broadcast only a subset of the packets it has received;
-			\item Multi-hop Broadcasting Protocols, in which packets are transmitted through the network via flooding by some of the neighbors of the source. It is of utmost importance to reduce the number of redundant transmission in order not to waste bandwidth and saturate the channel.
-		\end{itemize}
-		
-		\subsection{Single-hop Broadcasting Protocols}
-			Vehicles employing Single-Hop Broadcasting protocols will not flood received packets immediately through the network. Instead, vehicles use information from packets to update their database and periodically rebroadcast only a fraction of that information. The two variables these kind of protocols can work on to aim for greater network efficiency are:
+		Single-Hop protocols can be further subdivided into two categories:
+		\begin{enumerate}
+			\item \textbf{Fixed Broadcast Interval} protocols, which keep the Broadcast Interval fixed. Some examples are:
 			\begin{itemize}
-				\item \textit{Broadcast Interval}, i.e. the amount of time between retransmissions, which should keep into consideration both freshness of information and potential redundancy in transmissions;
-				\item \textit{Relevancy of information} to broadcast: as stated before, only relevant information (i.e. a subset of all the information) should be broadcast.
+				\renewcommand\labelitemi{--}
+				\item \textit{TrafficInfo}\cite{4621303}, a protocol in which vehicles record, among other information, travel times on road segments (identified by an ID) and keep them on their on-board database. Vehicles periodically exchange information about the learned travel times based on the relevance of such information. The relevance is calculated using a ranking algorithm which uses the current position of the vehicle and the current time (i.e., relevance decreases with distance and time), broadcasting only the $k$  most important information. 
+				\item \textit{TrafficView}\cite{1263039}, in which vehicles exchange information about speed and position and record it in their database. Data about different vehicles are then aggregated into a single record using one of two aggregation algorithms:
+				\begin{itemize}
+					\item the \textit{ratio-based} algorithm, which assigns an aggregation ratio to each portion of a road: the more important the road is, the higher the aggregation ratio will be, increasing the accuracy of the information of that area;
+					\item the \textit{cost-based} algorithm, an algorithm which keeps into consideration the cost of aggregating different records. The aggregation cost is defined as the loss of accuracy the aggregation will bring about.
+				\end{itemize} 
 			\end{itemize}
-			
-			Single-Hop protocols can be further subdivided into two categories:
-			\begin{enumerate}
-				\item \textbf{Fixed Broadcast Interval}, which keep the Broadcast Interval fixed. Some examples are:
+			\item \textbf{Adaptive Broadcast Interval} protocols, which adapt the Broadcast Interval based on dynamic information. Some examples are:
+			\begin{itemize}
+				\renewcommand\labelitemi{--}
+				
+				\item \textit{Collision Ratio Control Protocol (CRCP)}\cite{4357748}, a scheme according to which vehicles exchange information about location, speed and road ID. The Broadcast Interval is dynamically controlled based on the amount of detected collisions and bandwidth efficiency: the protocol tries to maintain the number of collisions under a certain threshold by doubling the Broadcast Interval every time the threshold is exceeded. Otherwise, the Broadcast Interval is decreased by one second when the bandwidth efficiency decreases too much.
+				
+				Moreover, the authors propose three different methods for selecting the data to be transmitted:
 				\begin{itemize}
-					\renewcommand\labelitemi{--}
-					\item \textit{TrafficInfo}\cite{4621303}, a protocol in which vehicles record, among other information, travel times on road segments (identified by an ID) and keep them on their on-board database. Vehicles periodically exchange information about the learned travel times based on the relevance of such information. The relevance is calculated using a ranking algorithm which uses the current position of the vehicle and the current time (i.e. relevance decreases with distance and time), broadcasting only the $k$  most important information. 
-					\item \textit{TrafficView}\cite{1263039}, in which vehicles exchange information about speed and position and record it in their database. Data about different vehicles is then aggregated into a single record using one of two aggregation algorithms:
-					\begin{itemize}
-						\item the \textit{ratio-based} algorithm, which assigns an aggregation ratio to each portion of a road: the more important the road is, the higher the aggregation ratio will be, increasing the accuracy of the information of that area;
-						\item the \textit{cost-based} algorithm, an algorithm which keeps into consideration the cost of aggregating different records. The aggregation cost is defined as the loss of accuracy the aggregation will bring about.
-					\end{itemize} 
+					\item \textit{Random Selection}: a vehicle selects a random information in its database and broadcasts it;
+					\item \textit{Vicinity Priority Selection}: vehicles give priority to information of nearby areas;
+					\item \textit{Vicinity Priority Selection with Queries}: similar to Vicinity Priority Selection, with the possibility of querying information for a certain area.
 				\end{itemize}
-				\item \textbf{Adaptive Broadcast Interval}, which adapt the Broadcast Interval based on dynamic information. Some examples are:
+				
+				\item \textit{Abiding Geocast}\cite{4531929}, which aims to deliver an Alert Message to a specific area where the warning is still relevant. Only vehicles that are travelling towards the effective area can participate in contention to broadcast the message. Moreover, broadcast is dynamically adjusted based on transmission range, speed, and distance between the potential forwarder and the destination area, increasing when such distance increases or the potential forwarder's speed decreases.
+				
+				\item \textit{Segment-Oriented Data Abstraction and Dissemination
+					(SODAD)}\cite{1402433}, a protocol according to which roads are divided into segments and each vehicle can both discover information itself and collect it from neighbors' transmissions. Whenever a vehicle receives a transmission from another vehicle, the information received will be classified as either one of two events:
 				\begin{itemize}
-					\renewcommand\labelitemi{--}
-					
-					\item \textit{Collision Ratio Control Protocol (CRCP)}\cite{4357748}, a scheme according to which vehicles exchange information about location, speed and road ID. The Broadcast Interval is dynamically controlled based on the amount of detected collisions and bandwidth efficiency: the protocol tries to maintain the number of collisions under a certain threshold by doubling the Broadcast Interval every time the threshold is exceeded. Otherwise, the Broadcast Interval is decreased by one second when the bandwidth efficiency decreases too much.
-					
-					Moreover, the authors propose three different methods for selecting the data to be transmitted:
-					\begin{itemize}
-						\item \textit{Random Selection}: a vehicle selects a random information in its database and broadcasts it;
-						\item \textit{Vicinity Priority Selection}: vehicles give priority to information of nearby areas;
-						\item \textit{Vicinity Priority Selection with Queries}: similar to Vicinity Priority Selection, with the possibility of querying information for a certain area.
-					\end{itemize}
-					
-					\item \textit{Abiding Geocast}\cite{4531929}, which aims to deliver an Alert Message to a specific area where the warning is still relevant. Only vehicles that are travelling towards the effective area can participate in contention to broadcast the message. Moreover, broadcast is dynamically adjusted based on transmission range, speed, and distance between the potential forwarder and the destination area, increasing when such distance increases or the potential forwarder's speed decreases.
-					
-					\item \textit{Segment-Oriented Data Abstraction and Dissemination
-						(SODAD)}\cite{1402433}, a protocol according to which roads are divided into segments and each vehicle can both discover information itself and collect it from neighbors' transmissions. Whenever a vehicle receives a transmission from another vehicle, the information received will be classified as either one of two events:
-					\begin{itemize}
-						\item a \textit{provocation} event that will decrease the Broadcast Interval;
-						\item a \textit{mollification} event that will increase the Broadcast Interval.
-					\end{itemize}
-					The classification is done via comparison of the newly received data with the information stored in the vehicle's on-board database. The vehicle assigns a higher weight if the difference between information coming from these two sources is high. The weight will be then compared against a threshold to establish whether a provocation of mollification event has taken place.
+					\item a \textit{provocation} event that will decrease the Broadcast Interval;
+					\item a \textit{mollification} event that will increase the Broadcast Interval.
 				\end{itemize}
-			\end{enumerate}
+				The classification is done via comparison of the newly received data with the information stored in the vehicle's on-board database. The vehicle assigns a higher weight if the difference between information coming from these two sources is high. The weight will be then compared against a threshold to establish whether a provocation or mollification event has taken place.
+			\end{itemize}
+		\end{enumerate}
 		
 	
-		\subsection{Multi-hop Broadcasting Protocols}
-			Multi-hop Broadcasting Protocols can be further subdivided into two categories:
-			\begin{enumerate}
-				\item \textbf{Delay based protocols}, which assign a different waiting time before rebroadcasting the message to each vehicle. This delay is usually inversely proportional to the distance between the source and the potential sender.
-				Some examples are:
-				\begin{itemize}
-					\renewcommand\labelitemi{--}
-					\item \textit{Urban Multi-hop Broadcast (UMB)}\cite{Korkmaz:2004:UMB:1023875.1023887}, designed to solve the broadcast redundancy, hidden node and reliability problems in multi-hop broadcasting using \textit{Request-to-Broadcast (\textit{RTB})} and \textit{Clear-To-Broadcast (\textit{CTB})} packets; 
-					\item \textit{Smart Broadcast (SB)}\cite{4025102} and \textit{Efficient Directional Broadcast (EDB)} \cite{4340158}, which try to reduce the delay introduced by \textit{UMB} and remove the \textit{RTB} and \textit{CTB} packets, respectively;
-					\item \textit{Vehicle-Density-based Emergency Broadcasting (VDEB)}\cite{5663803}, a slotted broadcasting protocol which keeps vehicle density into consideration when computing waiting time slots;
-					\item \textit{Reliable Method for Disseminating Safety Information
-						(RMDSI)}\cite{4591259}, which aims to offer better performances when the network becomes fragmented by making a forwarder keep a copy of the packet it has broadcasted until it hears a retransmission (or until the packet lifetime expires). If no retransmission is heard within a certain time limit, the forwarder tries to find the next node which can relay the message using a small control packet;
-					\item \textit{Multi-hop Vehicular Broadcast (MHVB)}\cite{4068699}, a protocol that keeps traffic congestion into consideration by   checking whether the number of neighbors of a vehicle is greather than a certain threshold and its speed is smaller than another threshold. When a node detects congestion, it increases its broadcast interval in order to try to reduce the network load;
-					\item \textit{Reliable Broadcasting of Life Safety Messages (RBLSM)}\cite{4458046}, whose main objective is reliability, and a higher priority is given to the vehicle nearest to the sender instead to the one farthest from it, due to the assumption that the closer the vehicle is, the more reliable it is considered since its received signal strength is higher.
-				\end{itemize}
-				
-				\item \textbf{Probabilistic-based Multi-hop Broadcasting Protocols}.
-				The idea behind these kind of protocols is similar to the one behind Delay Based Protocols, but instead of assigning a different rebroadcast delay to each vehicle, a different rebroadcast probability is assigned. Each protocol differs in the function that assigns probabilities. Some examples of probabilistic-based protocols are:
-				\begin{itemize}
-					\renewcommand\labelitemi{--}
-					\item \textit{Weighted p-Persistence}\cite{4407231}, in which every PFC computes its own rebroadcast probability based on the distance between itself and the transmitter. The formula used is the following:
-					\begin{gather}
-						p_{ij} = \frac{D_{ij}}{R}
-						\label{eq:weighted-p-persistence}
-					\end{gather}
-					where $D_{ij}$ is the distance between transmitter \textit{i} and PFC \textit{j} and R is the transmission range. Based on this function, the probability to rebroadcast is proportional to the distance between the PFC and the transmitter. The abovementioned formula does not keep vehicle density into account and also assumes that the transmission range is fixed and known to all vehicles.
-					
-					\item \textit{Optimized Adaptive Probabilistic Broadcast (OAPB)\cite{1543865} and AutoCast (AC)\cite{4350058}}, which both keep the vehicle density into consideration when computing the forwarding probability by making vehicle periodically exchange Hello Messages. Thanks to those messages, each vehicle can compute the number of neighbors and then use this information accordingly.
-					
-					\item \textit{Irresponsible Forwarding (IF)}\cite{4740277}\cite{5426212}, a protocol that considers vehicle density like \textit{OAPB} and \textit{AC}, but the formula used is not a simple linear function. In fact, the rebroadcast probability assignment function is the following:
-					\begin{gather}
-						p = e^{-\frac{\rho_s(z-d)}{c}}
-					\end{gather}
-					where $\rho_s$ is the vehicle density, $z$ is the transmission range, $d$ is the distance between the PFC and the transmitter and $c\geq1$ is a shaping parameter which influences the rebroadcast probability. \textit{Irresponsible Forwarding} aims to offer a solution that can scale with network density.
-				\end{itemize}
-			\end{enumerate}
+	\section{Multi-hop Broadcasting Protocols}
+		Multi-hop Broadcasting Protocols can be further subdivided into two categories:
+		\begin{enumerate}
+			\item \textbf{Delay based protocols}, which assign a different waiting time before rebroadcasting the message to each vehicle. This delay is usually inversely proportional to the distance between the source and the potential sender.
+			Some examples are:
+			\begin{itemize}
+				\renewcommand\labelitemi{--}
+				\item \textit{Urban Multi-hop Broadcast (UMB)}\cite{Korkmaz:2004:UMB:1023875.1023887}, designed to solve the broadcast redundancy, hidden node and reliability problems in multi-hop broadcasting using \textit{Request-to-Broadcast (\textit{RTB})} and \textit{Clear-To-Broadcast (\textit{CTB})} packets.
+				\item \textit{Smart Broadcast (SB)}\cite{4025102} and \textit{Efficient Directional Broadcast (EDB)} \cite{4340158}, which try to reduce the delay introduced by \textit{UMB} and remove the \textit{RTB} and \textit{CTB} packets, respectively.
+				\item \textit{Vehicle-Density-based Emergency Broadcasting (VDEB)}\cite{5663803}, a slotted broadcasting protocol which keeps vehicle density into consideration when computing waiting time slots.
+				\item \textit{Reliable Method for Disseminating Safety Information
+					(RMDSI)}\cite{4591259}, which aims to offer better performances when the network becomes fragmented by making a forwarder keep a copy of the packet it has broadcasted until it hears a retransmission (or until the packet lifetime expires). If no retransmission is heard within a certain time limit, the forwarder tries to find the next node which can relay the message using a small control packet.
+				\item \textit{Multi-hop Vehicular Broadcast (MHVB)}\cite{4068699}, a protocol that keeps traffic congestion into consideration by   checking whether the number of neighbors of a vehicle is greather than a certain threshold and its speed is smaller than another threshold. When a node detects congestion, it increases its broadcast interval in order to try to reduce the network load.
+				\item \textit{Reliable Broadcasting of Life Safety Messages (RBLSM)}\cite{4458046}, whose main objective is reliability, and a higher priority is given to the vehicle nearest to the sender instead to the one farthest from it, due to the assumption that the closer the vehicle is, the more reliable it is considered since its received signal strength is higher.
+			\end{itemize}
 			
+			\item \textbf{Probabilistic-based Multi-hop Broadcasting Protocols}.
+			The idea behind these kinds of protocol is similar to the one behind Delay Based Protocols, but instead of assigning a different rebroadcast delay to each vehicle, a different rebroadcast probability is assigned. Each protocol differs in the function that assigns probabilities. Some examples of probabilistic-based protocols are:
+			\begin{itemize}
+				\renewcommand\labelitemi{--}
+				\item \textit{Weighted p-Persistence}\cite{4407231}, in which every PFC computes its own rebroadcast probability based on the distance between itself and the transmitter. The formula used is the following:
+				\begin{gather}
+					p_{ij} = \frac{D_{ij}}{R}
+					\label{eq:weighted-p-persistence}
+				\end{gather}
+				where $D_{ij}$ is the distance between transmitter \textit{i} and PFC \textit{j} and R is the transmission range. Based on this function, the probability to rebroadcast is proportional to the distance between the PFC and the transmitter. The abovementioned formula does not keep vehicle density into account and also assumes that the transmission range is fixed and known to all vehicles.
 				
-				%		\item Network Coding-Based Multi-hop Broadcasting. TODO? da fare?
-					The previous work\cite{ROM2017} focused on the implementation and testing of Fast-Broadcast, a Multi-hop delay based protocol firstly presented in \cite{4199282}. The main focus of the algorithm is to try to overcome the assumption of a fixed and known transmission range, which other protocols often tacitly assume. The protocol will be further analyzed in Chapter \ref{chapter:fb}.
-					
-					The authors of ROFF\cite{6906275}, another Multi-Hop delay based protocol, state that existing protocols are affected by two problems:
-					\begin{itemize}
-						\item the perfect suppression of redundant transmissions, by which potential forwarders which have lost the contention detect the transmission from the farthest vehicle and suppress their transmission. However this suppression can not always be guaranteed due to short difference between waiting times. In fact, if the timer of a potential forwarder expires before it has heard the transmission from the FFC, a redundant transmission will occur;
-						\item the disuniformity and the costant change in spatial vehicle distribution in VANETs. Existing protocols which keep into consideration the distance between PFC and previous forwarder do not keep into consideration large empty spaces in the waiting time computation, leading to unnecessary wait.
-					\end{itemize}
-					ROFF's solutions to these problems and the implementation of the protocol will be analyzed in Chapter \ref{chapter:roff}.
+				\item \textit{Optimized Adaptive Probabilistic Broadcast (OAPB)\cite{1543865} and AutoCast (AC)\cite{4350058}}, which both keep the vehicle density into consideration when computing the forwarding probability by making vehicle periodically exchange Hello Messages. Thanks to those messages, each vehicle can compute the number of neighbors and then use this information accordingly.
+				
+				\item \textit{Irresponsible Forwarding (IF)}\cite{4740277}\cite{5426212}, a protocol that considers vehicle density like \textit{OAPB} and \textit{AC}, but the formula used is not a simple linear function. In fact, the rebroadcast probability assignment function is the following:
+				\begin{gather}
+					p = e^{-\frac{\rho_s(z-d)}{c}}
+				\end{gather}
+				where $\rho_s$ is the vehicle density, $z$ is the transmission range, $d$ is the distance between the PFC and the transmitter and $c\geq1$ is a shaping parameter which influences the rebroadcast probability. \textit{Irresponsible Forwarding} aims to offer a solution that can scale with network density.
+			\end{itemize}
+		\end{enumerate}
+		
+			
+			%		\item Network Coding-Based Multi-hop Broadcasting. TODO? da fare?
+				The previous work\cite{ROM2017} focused on the implementation and testing of Fast-Broadcast, a Multi-hop delay based protocol firstly presented in \cite{4199282}. The main focus of the algorithm is to try to overcome the assumption of a fixed and known transmission range, which other protocols often tacitly assume. The protocol will be further analyzed in Chapter \ref{chapter:fb}.
+				
+				The authors of ROFF\cite{6906275}, another Multi-Hop delay based protocol, state that existing protocols are affected by two main problems:
+				\begin{itemize}
+					\item the unperfect suppression of redundant transmissions, by which potential forwarders which have lost the contention detect the transmission from the farthest vehicle and suppress their transmission. However this suppression can not always be guaranteed due to short difference between waiting times. In fact, if the timer of a potential forwarder expires before it has heard the transmission from the FFC, a redundant transmission will occur;
+					\item the disuniformity and the costant change in spatial vehicle distribution in VANETs. Existing protocols which keep into consideration the distance between PFC and previous forwarder do not keep into consideration large empty spaces in the waiting time computation, leading to unnecessary wait.
+				\end{itemize}
+				ROFF's solutions to these problems and the implementation of the protocol will be analyzed in Chapter \ref{chapter:roff}.
 	
 		\section{Radio Propagation Models}
 			\label{sec:rpm}
 			Since field testing in VANETs, especially in large scenarios, is usually expensive and difficult to execute in real settings, researchers usually carry out their tests in a simulated environment, such as ns-3 (Section \ref{sec:ns3}). In order to model the transmission of signal throughout various media, several radio propagation models have been developed.
-			A \gls{rpma} is an empirical mathematical formulation used to model the propagation of radio waves as a function of frequency, distance, transmission power and other variables. Over the years various RPMs have been developed, some aiming at modelling a general situation, and others more useful in specific scenarios. For example, implementations range from the more general free space model, where only distance and power are considered, to more complex models which account for shadowing, reflection, scattering, and other multipath losses. Moreover, it is important to keep the computational complexity and scalability of the model into consideration: some have poor accuracy but are scalable, while others have very good accuracy but can only work for small sets of nodes. As always, it is very important to find the right trade-off between complexity and accuracy.
+			A \gls{rpma} is an empirical mathematical formulation used to model the propagation of radio waves as a function of frequency, distance, transmission power and other variables. Over the years various RPMs have been developed, some aiming at modelling a general case, and others more useful in specific scenarios. For example, implementations range from the more general free space model, where only distance and power are considered, to more complex models which account for shadowing, reflection, scattering, and other multipath losses. Moreover, it is important to keep the computational complexity and scalability of the model into consideration: some have poor accuracy but are scalable, while others have very good accuracy but can only work for small sets of nodes. As always, it is very important to find the right trade-off between complexity and accuracy.
 			
 			
 			The authors of \cite{6298165} classify the propagation models offered by the network simulator ns-3 in three different categories:
