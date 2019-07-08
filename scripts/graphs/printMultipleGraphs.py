@@ -250,10 +250,13 @@ def printSingleGraphErrorRate(outFolder, graphTitle, compoundData, errorRates, p
 
 def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, cw, junction, metric, yLabel, minY, maxY, colors=["0.3", "0.5", "0.7"]):
 	n = len(protocols)
-	ind = np.arange(n)
+	#ind = np.arange(n)
+	ind = [0.1, 0.9]
+	ind = np.array(ind)
+	#print(ind)
 	
 	#barWidth = float((float(1)/float(4)) * float(0.90))
-	barWidth = 0.20
+	barWidth = 0.18	
 	fig, ax = plt.subplots()
 	rects = []
 	count = 0
@@ -261,7 +264,7 @@ def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, c
 	
 	#widthDistance = [-1, 1]
 	#widthDistance = [-1.5, -0.5, 0.5, 1.5]
-	widthDistance = [-1, 0, 1]
+	widthDistance = [-1.025, 0, 1.025]
 
 	for txRange in txRanges:
 		metricMeanList = []
@@ -274,17 +277,20 @@ def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, c
 			if (math.isnan(confInt)):
 				confInt = 0.35
 			metricConfIntList.append(confInt)
-			
-		rects.append((ax.bar(ind + widthDistance[count] * barWidth, metricMeanList, barWidth, color=colors[count], label=txRange + "m", yerr=metricConfIntList, capsize=4)))
+		#print(ind + widthDistance[count] * barWidth)
+		rects.append((ax.bar(ind + widthDistance[count] * barWidth, metricMeanList, barWidth, color=colors[count], label=txRange + "m", yerr=metricConfIntList, capsize=4, zorder=3)))
 		count = count + 1
 	
+	ax.set_xlim(-0.35, 1.35)
+	ax.yaxis.grid(zorder=0, alpha=0.25, color="black")
+
 	ax.set_xlabel("Protocols", fontsize=35)
 	ax.set_ylabel(yLabel, fontsize=28)
 	if ("cov" in metric or "Cov" in metric):
 		maxY = maxY * 1.07
 	else:
 		maxY = maxY * 1.1
-	ax.set_ylim(minY, maxY)
+	ax.set_ylim(minY - 0.1, maxY)
 	#ax.set_title(graphTitle, fontsize=20)
 	ax.set_xticks(ind)
 	plt.xticks(fontsize=35)
@@ -399,7 +405,7 @@ def printGridComparison():
 def printProtocolComparison():
 	print("PrintProtocolComparison")
 	#plt.rcParams["figure.figsize"] = [18, 6]
-	plt.rcParams["figure.figsize"] = [18, 10]
+	plt.rcParams["figure.figsize"] = [18, 14]
 	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
 	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
 	scenarios = ["Padova-25"]
@@ -412,7 +418,7 @@ def printProtocolComparison():
 	cws = ["cw[32-1024]"]
 	#cws = ["cw[16-128]", "cw[32-1024]"]
 	#junctions = ["0", "1"]
-	junctions = ["0"]
+	junctions = ["0", "1"]
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
 	metricYLabels = {}
 	metricYLabels["totCoverage"] = "Total Delivery Ratio (%)"
