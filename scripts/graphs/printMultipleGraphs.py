@@ -397,16 +397,17 @@ def printGridComparison():
 #Grid-300: contentionWindows = [{"cwMin": 16, "cwMax": 128}], buildings = ["0"], junctions = ["0"], txRanges = ["100", "300", "500"]
 def printProtocolComparison():
 	print("PrintProtocolComparison")
-	plt.rcParams["figure.figsize"] = [18, 6]
+	#plt.rcParams["figure.figsize"] = [18, 6]
+	plt.rcParams["figure.figsize"] = [18, 8]
 	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
 	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
-	scenarios = ["LA-25"]
-	buildings = ["0"]
+	scenarios = ["Padova-25"]
+	buildings = ["0", "1"]
 	errorRate = "e0"
 	#txRanges = ["100", "300", "500"]
 	txRanges = ["100", "300", "500"]
-	protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300", "STATIC-500", "ROFF"]
-	#protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300", "STATIC-500"]
+	#protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300", "STATIC-500", "ROFF"]
+	protocols = ["Fast-Broadcast", "ROFF"]
 	cws = ["cw[32-1024]"]
 	#cws = ["cw[16-128]", "cw[32-1024]"]
 	junctions = ["0"]
@@ -485,7 +486,9 @@ def printProtocolComparison():
 					graphOutFolder = os.path.join(scenario, "b" + building, "j" + junction)
 					for metric in metrics:
 						yLabel = metricYLabels[metric]
-						printSingleGraph(graphOutFolder, graphTitles[metric] + additionalTitle[building][junction], compoundData, txRanges, protocols, cw, junction, metric, yLabel, 0, maxMetricValues[metric], 
+						additionalTitle = ""
+						#additionalTitle = additionalTitle[building][junction]
+						printSingleGraph(graphOutFolder, graphTitles[metric] + additionalTitle, compoundData, txRanges, protocols, cw, junction, metric, yLabel, 0, maxMetricValues[metric], 
 						colors[building][junction])
 
 
