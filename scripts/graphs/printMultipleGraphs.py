@@ -411,7 +411,7 @@ def printProtocolComparison():
 	protocols = ["Fast-Broadcast", "ROFF"]
 	cws = ["cw[32-1024]"]
 	#cws = ["cw[16-128]", "cw[32-1024]"]
-	junctions = ["0"]
+	junctions = ["0", "1"]
 	#junctions = ["0"]
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
 	metricYLabels = {}
