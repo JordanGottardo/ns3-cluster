@@ -278,17 +278,17 @@ def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, c
 		rects.append((ax.bar(ind + widthDistance[count] * barWidth, metricMeanList, barWidth, color=colors[count], label=txRange + "m", yerr=metricConfIntList, capsize=4)))
 		count = count + 1
 	
-	ax.set_xlabel("Protocols", fontsize=25)
-	ax.set_ylabel(yLabel, fontsize=25)
+	ax.set_xlabel("Protocols", fontsize=35)
+	ax.set_ylabel(yLabel, fontsize=28)
 	if ("cov" in metric or "Cov" in metric):
-		maxY = maxY * 1.05
+		maxY = maxY * 1.07
 	else:
 		maxY = maxY * 1.1
 	ax.set_ylim(minY, maxY)
-	ax.set_title(graphTitle, fontsize=20)
+	#ax.set_title(graphTitle, fontsize=20)
 	ax.set_xticks(ind)
-	plt.xticks(fontsize=20)
-	plt.yticks(fontsize=20)
+	plt.xticks(fontsize=35)
+	plt.yticks(fontsize=23)
 	myProtocols = protocols
 	if junction == "1":
 		myProtocols = list(map(lambda x: "SJ-" + x, protocols))
@@ -315,7 +315,7 @@ def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, c
 			if (hasattr(height, "is_integer") and height.is_integer()):
 				height = int(height)
 			ax.text(rect.get_x() + rect.get_width()*offset[xpos], height,
-					'{}'.format(height), ha=ha[xpos], va='bottom', fontsize=20) 
+					'{}'.format(height), ha=ha[xpos], va='bottom', fontsize=28) 
 
 	for rect in rects:
 		autolabel(rect)
@@ -411,8 +411,8 @@ def printProtocolComparison():
 	protocols = ["Fast-Broadcast", "ROFF"]
 	cws = ["cw[32-1024]"]
 	#cws = ["cw[16-128]", "cw[32-1024]"]
-	junctions = ["0", "1"]
-	#junctions = ["0"]
+	#junctions = ["0", "1"]
+	junctions = ["0"]
 	metrics = ["totCoverage", "covOnCirc", "hops", "slotsWaited", "messageSent"]
 	metricYLabels = {}
 	metricYLabels["totCoverage"] = "Total Delivery Ratio (%)"
