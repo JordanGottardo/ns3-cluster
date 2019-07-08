@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Tue 05 Feb 2019 08:56:13 AM CET by Eclipse SUMO GUI Version 1.0.1
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/maps/Padova/Padova.net.xml"/>
+        <route-files value="/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/maps/Padova/Padova-15.trips.xml"/>
+        <additional-files value="/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/maps/Padova/Padova-15.poly.xml"/>
+    </input>
+
+    <output>
+        <fcd-output value="/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/maps/Padova/Padova.trace.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="50"/>
+    </time>
+
+</configuration>
+-->
+
+<fcd-export xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/fcd_file.xsd">
+</fcd-export>

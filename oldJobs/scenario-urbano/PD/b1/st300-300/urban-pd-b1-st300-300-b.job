@@ -1,0 +1,70 @@
+#!/bin/sh
+
+### job name
+#PBS -N urban-pd-b1-st300-300-b
+
+### Programma non-rerunable
+#PBS -r n
+
+### Manda un'e-mail a esecuzione terminata:
+#PBS -m ae
+#PBS -M jordan.gottardo@studenti.unipd.it
+
+### Redirezione dello standard output e standard error del programma
+#PBS -e localhost:${HOME}/ns-3/log/urban-pd-b1-st300-300-b.err
+#PBS -o localhost:${HOME}/ns-3/log/urban-pd-b1-st300-300-b.out
+
+### Scelta della coda "cluster_long"
+#PBS -q cluster_long
+
+### Numero di host (nodes) occupati dal Job e numero di processi da allocare per nodo (ppn)
+#PBS -l nodes=1:ppn=1:cluster
+### Specifica il nome dell'host
+### Memoria che ci si aspetta che il programma utilizzi
+#PBS -l mem=8g
+
+### Limite di tempo che vogliamo assegnare al nostro job
+#PBS -l walltime=999:00:00
+
+###aaa
+### Mi sposto nella directory di lavoro ${HOME}/ns-3-dev/ 
+cd ${HOME}/ns-3/ns-3.26
+
+### Alcuni comandi di shell che ci spostano nella nostra directory e stampano lo stato
+### del sistema prima dell'esecuzione
+echo Host di esecuzione: `hostname`
+echo Data: `date`
+echo Directory: `pwd`
+echo Questo job viene eseguito sui seguenti nodi:
+echo `cat $PBS_NODEFILE`
+echo PBS_WORKDIR=$PBS_O_WORKDIR
+
+### Esecuzione del nostro programma
+echo "Launching job for execution"
+set > /home/jgottard/ns-3/log/urban-pd-b1-st300-300-b
+echo "after set"
+
+export LD_LIBRARY_PATH=/home/jgottard/ns-3/ns-3.26/build:/home/jgottard/ns-3/mpfr_4_0_1/lib:/home/jgottard/ns-3/CGAL_4_11/lib:/usr/local/cuda/lib64:/usr/local/cula/lib64:/usr/local/culasparse/lib64:/home/jgottard/ns-3/boost_1_54_0/lib:$LD_LIBRARY_PATH
+###export LD_LIBRARY_PATH=/home/jgottard/ns-3/ns-3.26/build:/home/jgottard/ns-3/CGAL_4_11/lib:/home/jgottard/mpfr_4_0_1/lib:/usr/local/lib:/usr/lib/:/home/jgottard/ns-3/boost_1_54_0/lib:$LD_LIBRARY_PATH
+export NS3_EXECUTABLE_PATH=/home/jgottard/ns-3/ns-3.26/build/src/fd-net-device:/home/jgottard/ns-3/ns-3.26/build/src/tap-bridge
+export NS3_MODULE_PATH=/home/jgottard/ns-3/ns-3.26/build
+export PATH=/home/jgottard/ns-3/ns-3.26/build/src/fd-net-device:/home/jgottard/ns-3/ns-3.26/build/src/tap-bridge:/home/jgottard/ns-3/ns-3.26:$PATH
+export BOOSTINCL=/home/jgottard/built/include
+export BOOSTDIR=/home/jgottard/built/lib
+echo "boostdir = $BOOSTDIR"
+echo "=================================================================================================="
+echo $LD_LIBRARY_PATH
+echo "after exports"
+echo "==================================================================================================STAT"
+stat /home/jgottard/ns-3/ns-3.26/build/scratch/vanet-urban
+### Below we append the launch command
+###./waf clean
+###./configure
+###./waf build
+
+echo "================================================================================================== STAT2"
+stat /home/jgottard/ns-3/ns-3.26/build/scratch/vanet-urban
+###CXXFLAGS="-Wall" ./waf configure 
+### CXXFLAGS="-Wall" ./waf configure --boost-includes=$BOOSTINCL --boost-libs=$BOOSTDIR
+### NS_GLOBAL_VALUE="RngRun=60" NS_LOG="fb-vanet=info|prefix_level" /home/jgottard/ns-3/ns-3.26/build/scratch/vanet-urban --buildings=1 --actualRange=300 scenario=1 --protocol=1 --flooding=0 --area=1000
+NS_GLOBAL_VALUE="RngRun=25" ./waf --run 'vanet-urban --buildings=1 --actualRange=300 scenario=1 --protocol=2 --flooding=0 --area=1000'
