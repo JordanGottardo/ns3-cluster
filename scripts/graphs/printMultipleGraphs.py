@@ -252,7 +252,8 @@ def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, c
 	n = len(protocols)
 	ind = np.arange(n)
 	
-	barWidth = float((float(1)/float(4)) * float(0.90))
+	#barWidth = float((float(1)/float(4)) * float(0.90))
+	barWidth = 0.20
 	fig, ax = plt.subplots()
 	rects = []
 	count = 0
@@ -277,8 +278,8 @@ def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, c
 		rects.append((ax.bar(ind + widthDistance[count] * barWidth, metricMeanList, barWidth, color=colors[count], label=txRange + "m", yerr=metricConfIntList, capsize=4)))
 		count = count + 1
 	
-	ax.set_xlabel("Protocols", fontsize=15)
-	ax.set_ylabel(yLabel, fontsize=15)
+	ax.set_xlabel("Protocols", fontsize=25)
+	ax.set_ylabel(yLabel, fontsize=25)
 	if ("cov" in metric or "Cov" in metric):
 		maxY = maxY * 1.05
 	else:
@@ -286,15 +287,15 @@ def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, c
 	ax.set_ylim(minY, maxY)
 	ax.set_title(graphTitle, fontsize=20)
 	ax.set_xticks(ind)
-	plt.xticks(fontsize=15)
-	plt.yticks(fontsize=15)
+	plt.xticks(fontsize=20)
+	plt.yticks(fontsize=20)
 	myProtocols = protocols
 	if junction == "1":
 		myProtocols = list(map(lambda x: "SJ-" + x, protocols))
 	ax.set_xticklabels(myProtocols)
 	#ax.set_xticklabels(["15m", "25m", "35m", "45m"])
 
-	ax.legend(loc='center left', bbox_to_anchor=(1, 0.5), fontsize=15)
+	ax.legend(loc='center left', bbox_to_anchor=(1, 0.5), fontsize=17)
 	#ax.legend(loc="upper right")
 
 	def autolabel(rects, xpos='center'):
@@ -314,7 +315,7 @@ def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, c
 			if (hasattr(height, "is_integer") and height.is_integer()):
 				height = int(height)
 			ax.text(rect.get_x() + rect.get_width()*offset[xpos], height,
-					'{}'.format(height), ha=ha[xpos], va='bottom', fontsize=15) 
+					'{}'.format(height), ha=ha[xpos], va='bottom', fontsize=20) 
 
 	for rect in rects:
 		autolabel(rect)
@@ -398,7 +399,7 @@ def printGridComparison():
 def printProtocolComparison():
 	print("PrintProtocolComparison")
 	#plt.rcParams["figure.figsize"] = [18, 6]
-	plt.rcParams["figure.figsize"] = [18, 8]
+	plt.rcParams["figure.figsize"] = [18, 10]
 	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-urbano"
 	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
 	scenarios = ["Padova-25"]
@@ -450,7 +451,7 @@ def printProtocolComparison():
 
 	colors["1"] = {} # 1=buildings
 	colors["1"]["0"] = ["#FFA6A6", "#BD2525", "#510000"] #buildings=1, junctions=0 rosso
-	colors["1"]["1"] = ["#FFC497", "#B9692C", "#4E2200"] #buildings=1, junctions=1 arancione
+	colors["1"]["1"] = ["#FFC497", "#c27230", "#7a3806"] #buildings=1, junctions=1 arancione
 
 	
 
