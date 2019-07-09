@@ -1,3 +1,0 @@
-#!/bin/bash
-
-CXXFLAGS="-Wall" ./waf configure --enable-examples
