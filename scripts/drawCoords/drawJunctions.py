@@ -30,7 +30,7 @@ def main():
     color3 = "#000000"
     
     coordUtils.plotBuildings(polyFilePath)
-    coordUtils.plotJunctions(netFilePath)
+    #coordUtils.plotJunctions(netFilePath)
     coordUtils.plotNodeList(ns2MobilityFile)
     coordUtils.plotStartingNode(startingNodeId, ns2MobilityFile)
     plt.legend(loc='best')
