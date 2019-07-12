@@ -502,7 +502,7 @@ def printProtocolComparison():
 
 def printDroneComparison():
 	print("PrintDroneComparison")
-	plt.rcParams["figure.figsize"] = [18, 10]
+	plt.rcParams["figure.figsize"] = [18, 14]
 	initialBasePath = "/home/jordan/MEGA/Universita_mia/Magistrale/Tesi/ns3-cluster/ns-3.26/out/scenario-droni"
 	#scenarios = ["Grid-200", "Grid-300", "Grid-400", "LA-15", "LA-25", "LA-35", "LA-45", "Padova-15", "Padova-25", "Padova-35", "Padova-45"]
 	scenarios = ["LA-25"]
