@@ -265,9 +265,6 @@ def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, c
 	#widthDistance = [-1, 1]
 	#widthDistance = [-1.5, -0.5, 0.5, 1.5]
 	widthDistance = [-1.025, 0, 1.025]
-
-	ax.set_xlim(-0.35, 1.35)
-	ax.yaxis.grid(alpha=0.25, color="black")
 	ax.set_axisbelow(True)
 
 	for txRange in txRanges:
@@ -283,12 +280,10 @@ def printSingleGraph(outFolder, graphTitle, compoundData, txRanges, protocols, c
 			metricConfIntList.append(confInt)
 		#print(ind + widthDistance[count] * barWidth)
 		rects.append((ax.bar(ind + widthDistance[count] * barWidth, metricMeanList, barWidth, color=colors[count], label=txRange + "m", yerr=metricConfIntList, capsize=4)))
-		#rects.append((ax.bar(ind + widthDistance[count] * barWidth, metricMeanList, barWidth, color=colors[count], label=txRange + "m", capsize=4, zorder=5)))
-		#ax.errorbar
-		#ax.errorbar(ind + widthDistance[count] * barWidth, metricMeanList, yerr=metricConfIntList, zorder=32)
 		count = count + 1
 	
-
+	ax.set_xlim(-0.35, 1.35)
+	ax.yaxis.grid(alpha=0.25, color="black")
 
 	ax.set_xlabel("Protocols", fontsize=35)
 	ax.set_ylabel(yLabel, fontsize=28)
@@ -516,8 +511,8 @@ def printDroneComparison():
 	errorRate = "e0"
 	#txRanges = ["100", "300", "500"]
 	txRanges = ["100", "300", "500"]
-	protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300", "STATIC-500", "ROFF"]
-	#protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300"ROFF"]
+	#protocols = ["Fast-Broadcast", "STATIC-100", "STATIC-300", "STATIC-500", "ROFF"]
+	protocols = ["Fast-Broadcast", "ROFF"]
 	#cws = ["cw[32-1024]"]
 	cws = ["cw[32-1024]"]
 	#junctions = ["0", "1"]
