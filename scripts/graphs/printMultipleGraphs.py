@@ -5,6 +5,7 @@ import sys
 import getopt
 import numpy as np
 import matplotlib
+matplotlib.use("TKAGG")
 import matplotlib.pyplot as plt
 import string
 import shutil
@@ -61,10 +62,15 @@ def printSingleGraphDistance(outFolder, graphTitle, compoundData, distances, pro
 	Z = np.array(Z)
 	ax.set_xticks(X1)
 	ax.set_yticks(Y1)
-	ax.set_xlabel(xLabel, fontsize=15)
-	ax.set_ylabel(yLabel, fontsize=15)
-	ax.set_zlabel(zLabel, fontsize=15)
-	ax.set_title(graphTitle, fontsize=20)
+	ax.set_xticklabels(X1, fontsize=22)
+	ax.set_yticklabels(Y1, fontsize=22)
+	#fig.zticks(fontsize=23)
+	ax.zaxis.set_tick_params(labelsize=22)
+
+	ax.set_xlabel("\n" + xLabel, fontsize=25, linespacing=3.2)
+	ax.set_ylabel("\n" + yLabel, fontsize=25, linespacing=3.2)
+	ax.set_zlabel("\n" + zLabel, fontsize=25, linespacing=3.2)
+	ax.set_title(graphTitle, fontsize=30)
 
 	if ("cov" in metric or "Cov" in metric):
 		maxZ = maxZ * 1.05
