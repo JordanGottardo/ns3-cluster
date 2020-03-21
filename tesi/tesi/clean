@@ -1,0 +1,5 @@
+echo --------------------------------------------------------------
+echo -                         Pulizia                            -
+echo --------------------------------------------------------------
+rm *.sc *.acn *.acr *.alg *.aux *.bbl *.bcf *.blg *.glg *.glo *.gls *.pippo
+rm *.ist *.lof *.log *.lot *.run.xml *.synctex *.toc *-frn.tex
